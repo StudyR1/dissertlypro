@@ -22,6 +22,10 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Ethics = lazy(() => import("./pages/Ethics"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Consultation = lazy(() => import("./pages/Consultation"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const GDPR = lazy(() => import("./pages/GDPR"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -54,6 +58,10 @@ const App = () => (
               <Route path="/ethics" element={<Ethics />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/consultation" element={<Consultation />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/gdpr" element={<GDPR />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
