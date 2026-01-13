@@ -118,48 +118,48 @@ const Index = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-        {/* Background Layers */}
-        <div className="absolute inset-0 bg-hero-gradient noise-overlay">
+        {/* Background - Solid dark */}
+        <div className="absolute inset-0 bg-midnight">
           <div 
-            className="absolute inset-0 opacity-15 mix-blend-overlay"
+            className="absolute inset-0 opacity-20"
             style={{
               backgroundImage: `url(${heroBackground})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-midnight/98 via-midnight/90 to-midnight/70" />
-          {/* Decorative gradient orbs */}
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-copper/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-midnight-soft/30 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight-rich/95 to-midnight-soft/80" />
+          {/* Subtle decorative elements */}
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-copper/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-midnight-soft/20 rounded-full blur-3xl" />
         </div>
 
         {/* Content */}
         <div className="container relative z-10 py-24 lg:py-32">
           <div className="max-w-3xl">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-copper/30 bg-copper/10 backdrop-blur-sm px-5 py-2.5 mb-8 opacity-0 animate-fade-in-up">
-              <Sparkles className="h-4 w-4 text-copper" />
-              <span className="text-sm font-sans font-medium text-copper tracking-wide">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-5 py-2.5 mb-8 opacity-0 animate-fade-in-up">
+              <Sparkles className="h-4 w-4 text-copper-light" />
+              <span className="text-sm font-sans font-medium text-white/90 tracking-wide">
                 Exclusively for Master's & Doctoral Candidates
               </span>
             </div>
             
             {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary-foreground leading-[1.1] mb-8 opacity-0 animate-fade-in-up delay-100">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.1] mb-8 opacity-0 animate-fade-in-up delay-100">
               Your Research. <br />
-              <span className="text-gradient-copper">Our Expertise.</span>
+              <span className="text-copper-light">Our Expertise.</span>
             </h1>
             
             {/* Subheadline */}
-            <p className="text-lg md:text-xl text-primary-foreground/75 font-sans leading-relaxed mb-10 max-w-2xl opacity-0 animate-fade-in-up delay-200">
+            <p className="text-lg md:text-xl text-white/70 font-sans leading-relaxed mb-10 max-w-2xl opacity-0 animate-fade-in-up delay-200">
               Premium academic support for postgraduate students worldwide. 
               From dissertation proposals to final defense—we're with you every step of your scholarly journey.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up delay-300">
-              <Button variant="hero" size="xl" asChild>
+              <Button variant="copper" size="xl" asChild>
                 <Link to="/consultation">
                   Request Free Consultation
                   <ArrowRight className="h-5 w-5" />
@@ -171,7 +171,7 @@ const Index = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mt-14 pt-10 border-t border-primary-foreground/10 opacity-0 animate-fade-in-up delay-400">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mt-14 pt-10 border-t border-white/10 opacity-0 animate-fade-in-up delay-400">
               {[
                 { icon: Shield, text: "100% Confidential" },
                 { icon: Award, text: "PhD-Level Experts" },
@@ -179,10 +179,10 @@ const Index = () => {
                 { icon: Globe, text: "Global Support" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2.5 group">
-                  <div className="p-1.5 rounded-md bg-copper/10 group-hover:bg-copper/20 transition-colors">
-                    <Icon className="h-4 w-4 text-copper" />
+                  <div className="p-1.5 rounded-md bg-white/10 group-hover:bg-white/15 transition-colors">
+                    <Icon className="h-4 w-4 text-copper-light" />
                   </div>
-                  <span className="text-sm text-primary-foreground/60 font-sans">{text}</span>
+                  <span className="text-sm text-white/60 font-sans">{text}</span>
                 </div>
               ))}
             </div>
