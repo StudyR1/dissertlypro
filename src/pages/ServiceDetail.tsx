@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/schemas";
 import { 
   ArrowRight, 
   FileText, 
@@ -351,6 +352,16 @@ const ServiceDetail = () => {
         canonical={`/services/${slug}`}
         keywords={[service.title.toLowerCase(), 'dissertation help', 'thesis support', 'academic services']}
       />
+      <ServiceSchema 
+        name={service.title}
+        description={service.description}
+        url={`/services/${slug}`}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: service.title, url: `/services/${slug}` }
+      ]} />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">

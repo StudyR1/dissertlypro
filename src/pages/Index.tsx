@@ -26,6 +26,14 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import heroBackground from "@/assets/hero-background.jpg";
 import logoIcon from "/logo-icon.png";
+import { 
+  OrganizationSchema, 
+  WebsiteSchema, 
+  FAQSchema, 
+  defaultFAQs, 
+  ReviewSchema, 
+  defaultReviews 
+} from "@/components/schemas";
 
 const services = [
   {
@@ -126,6 +134,10 @@ const Index = () => {
         canonical="/"
         keywords={['dissertation help', 'thesis support', 'PhD assistance', 'masters thesis', 'academic writing']}
       />
+      <OrganizationSchema />
+      <WebsiteSchema />
+      <FAQSchema faqs={defaultFAQs} />
+      <ReviewSchema reviews={defaultReviews} />
       {/* Hero Section */}
       <section className="relative min-h-[100vh] flex items-center overflow-hidden">
         {/* Animated Background */}
