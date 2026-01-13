@@ -18,10 +18,13 @@ import {
   GraduationCap,
   Briefcase,
   Globe,
-  Sparkles
+  Sparkles,
+  Play,
+  MousePointer
 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import heroBackground from "@/assets/hero-background.jpg";
+import logoIcon from "/logo-icon.png";
 
 const services = [
   {
@@ -117,80 +120,230 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-        {/* Background - Solid dark */}
-        <div className="absolute inset-0 bg-midnight">
+      <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight-rich to-midnight-soft">
+          {/* Background image with parallax effect */}
           <div 
-            className="absolute inset-0 opacity-20"
+            className="absolute inset-0 opacity-15"
             style={{
               backgroundImage: `url(${heroBackground})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
+              backgroundAttachment: 'fixed',
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight-rich/95 to-midnight-soft/80" />
-          {/* Subtle decorative elements */}
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-copper/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-midnight-soft/20 rounded-full blur-3xl" />
+          
+          {/* Animated gradient orbs */}
+          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-copper/10 rounded-full blur-[120px] animate-float" />
+          <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-midnight-soft/30 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-copper/5 rounded-full blur-[80px] animate-float" style={{ animationDelay: '4s' }} />
+          
+          {/* Noise texture overlay */}
+          <div className="absolute inset-0 noise-overlay opacity-[0.03]" />
+          
+          {/* Animated grid pattern */}
+          <div className="absolute inset-0 opacity-[0.02]" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
+          }} />
         </div>
 
         {/* Content */}
-        <div className="container relative z-10 py-24 lg:py-32">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-5 py-2.5 mb-8 opacity-0 animate-fade-in-up">
-              <Sparkles className="h-4 w-4 text-copper-light" />
-              <span className="text-sm font-sans font-medium text-white/90 tracking-wide">
-                Exclusively for Master's & Doctoral Candidates
-              </span>
-            </div>
-            
-            {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.1] mb-8 opacity-0 animate-fade-in-up delay-100">
-              Your Research. <br />
-              <span className="text-copper-light">Our Expertise.</span>
-            </h1>
-            
-            {/* Subheadline */}
-            <p className="text-lg md:text-xl text-white/70 font-sans leading-relaxed mb-10 max-w-2xl opacity-0 animate-fade-in-up delay-200">
-              Premium academic support for postgraduate students worldwide. 
-              From dissertation proposals to final defense—we're with you every step of your scholarly journey.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up delay-300">
-              <Button variant="copper" size="xl" asChild>
-                <Link to="/consultation">
-                  Request Free Consultation
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button variant="hero-outline" size="xl" asChild>
-                <Link to="/services">Explore Our Services</Link>
-              </Button>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mt-14 pt-10 border-t border-white/10 opacity-0 animate-fade-in-up delay-400">
-              {[
-                { icon: Shield, text: "100% Confidential" },
-                { icon: Award, text: "PhD-Level Experts" },
-                { icon: Clock, text: "Flexible Timelines" },
-                { icon: Globe, text: "Global Support" },
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2.5 group">
-                  <div className="p-1.5 rounded-md bg-white/10 group-hover:bg-white/15 transition-colors">
-                    <Icon className="h-4 w-4 text-copper-light" />
+        <div className="container relative z-10 py-20 lg:py-28">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            {/* Left Column - Text Content */}
+            <div className="max-w-2xl">
+              {/* Animated Badge */}
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-copper/30 bg-copper/10 backdrop-blur-md px-5 py-2.5 mb-8 opacity-0 animate-fade-in-up shadow-[0_0_20px_rgba(184,137,96,0.15)]">
+                <div className="relative">
+                  <Sparkles className="h-4 w-4 text-copper-light" />
+                  <div className="absolute inset-0 animate-ping">
+                    <Sparkles className="h-4 w-4 text-copper-light opacity-40" />
                   </div>
-                  <span className="text-sm text-white/60 font-sans">{text}</span>
                 </div>
-              ))}
+                <span className="text-sm font-sans font-medium text-white tracking-wide">
+                  Exclusively for Master's & Doctoral Candidates
+                </span>
+              </div>
+              
+              {/* Main Headline with animated reveal */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.05] mb-8">
+                <span className="block opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                  Your Research.
+                </span>
+                <span className="block opacity-0 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
+                  <span className="relative">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-copper-light via-copper to-copper-dark">
+                      Our Expertise.
+                    </span>
+                    {/* Decorative underline */}
+                    <svg className="absolute -bottom-2 left-0 w-full h-3 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s' }} viewBox="0 0 200 12" fill="none">
+                      <path d="M2 10C50 2 150 2 198 10" stroke="url(#copper-gradient)" strokeWidth="3" strokeLinecap="round"/>
+                      <defs>
+                        <linearGradient id="copper-gradient" x1="0" y1="0" x2="200" y2="0">
+                          <stop offset="0%" stopColor="#b88960" stopOpacity="0"/>
+                          <stop offset="50%" stopColor="#b88960"/>
+                          <stop offset="100%" stopColor="#b88960" stopOpacity="0"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </span>
+                </span>
+              </h1>
+              
+              {/* Subheadline */}
+              <p className="text-lg md:text-xl text-white/70 font-sans leading-relaxed mb-10 max-w-xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
+                Premium academic support for postgraduate students worldwide. 
+                From dissertation proposals to final defense—we're with you every step of your scholarly journey.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
+                <Button variant="copper" size="xl" className="group shadow-copper" asChild>
+                  <Link to="/consultation">
+                    Request Free Consultation
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+                <Button variant="glass" size="xl" className="border-white/20 text-white hover:bg-white/10" asChild>
+                  <Link to="/services">
+                    <Play className="h-4 w-4 mr-1" />
+                    Explore Services
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mt-12 pt-8 border-t border-white/10 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.55s' }}>
+                {[
+                  { icon: Shield, text: "100% Confidential" },
+                  { icon: Award, text: "PhD-Level Experts" },
+                  { icon: Clock, text: "Flexible Timelines" },
+                  { icon: Globe, text: "Global Support" },
+                ].map(({ icon: Icon, text }, index) => (
+                  <div 
+                    key={text} 
+                    className="flex items-center gap-2 group cursor-default"
+                    style={{ animationDelay: `${0.6 + index * 0.1}s` }}
+                  >
+                    <div className="p-1.5 rounded-lg bg-copper/10 group-hover:bg-copper/20 transition-all duration-300 group-hover:scale-110">
+                      <Icon className="h-3.5 w-3.5 text-copper-light" />
+                    </div>
+                    <span className="text-sm text-white/60 font-sans group-hover:text-white/80 transition-colors">{text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Visual Element */}
+            <div className="hidden lg:block relative opacity-0 animate-scale-in" style={{ animationDelay: '0.3s' }}>
+              {/* Main floating card */}
+              <div className="relative">
+                {/* Glowing backdrop */}
+                <div className="absolute inset-0 bg-gradient-to-br from-copper/20 to-transparent rounded-3xl blur-2xl scale-110" />
+                
+                {/* Main card */}
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 shadow-2xl">
+                  {/* Logo */}
+                  <div className="flex items-center gap-4 mb-8">
+                    <img src={logoIcon} alt="DissertlyPro" className="h-16 w-16 rounded-xl shadow-lg" />
+                    <div>
+                      <h3 className="text-xl font-serif font-bold text-white">DissertlyPro</h3>
+                      <p className="text-white/50 text-sm font-sans">Academic Excellence Partner</p>
+                    </div>
+                  </div>
+                  
+                  {/* Stats grid */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    {[
+                      { value: "15K+", label: "Students Helped" },
+                      { value: "98%", label: "Success Rate" },
+                      { value: "500+", label: "PhD Experts" },
+                      { value: "50+", label: "Countries" },
+                    ].map((stat, i) => (
+                      <div 
+                        key={i} 
+                        className="bg-white/5 rounded-xl p-4 text-center hover:bg-white/10 transition-colors group"
+                      >
+                        <div className="text-2xl font-serif font-bold text-copper-light group-hover:scale-110 transition-transform">
+                          {stat.value}
+                        </div>
+                        <div className="text-xs text-white/50 font-sans">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Active users indicator */}
+                  <div className="flex items-center justify-between bg-copper/10 rounded-xl p-4">
+                    <div className="flex -space-x-2">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div 
+                          key={i} 
+                          className="h-8 w-8 rounded-full bg-gradient-to-br from-copper to-copper-dark border-2 border-midnight flex items-center justify-center text-xs font-bold text-white"
+                        >
+                          {['S', 'M', 'P', 'J'][i-1]}
+                        </div>
+                      ))}
+                      <div className="h-8 w-8 rounded-full bg-white/10 border-2 border-midnight flex items-center justify-center text-xs font-medium text-white">
+                        +
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-sm font-semibold text-white flex items-center gap-1.5">
+                        <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+                        234 online now
+                      </div>
+                      <div className="text-xs text-white/50">Active researchers</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating testimonial card */}
+                <div className="absolute -bottom-8 -left-8 bg-gradient-to-br from-midnight-rich to-midnight rounded-2xl border border-white/10 p-5 shadow-xl max-w-[260px] animate-float" style={{ animationDelay: '1s' }}>
+                  <div className="flex gap-1 mb-2">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-copper text-copper" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-white/80 font-sans italic leading-relaxed mb-3">
+                    "Completed my PhD thesis 3 months early!"
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-full bg-copper/20 flex items-center justify-center text-copper text-sm font-bold">
+                      S
+                    </div>
+                    <div>
+                      <div className="text-xs font-medium text-white">Dr. Sarah M.</div>
+                      <div className="text-xs text-white/40">PhD Education</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating badge */}
+                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-copper to-copper-dark rounded-xl px-4 py-3 shadow-copper animate-float" style={{ animationDelay: '0.5s' }}>
+                  <div className="flex items-center gap-2 text-white">
+                    <Award className="h-5 w-5" />
+                    <span className="text-sm font-semibold">Top Rated 2024</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style={{ animationDelay: '1s' }}>
+          <div className="flex flex-col items-center gap-2 text-white/40 hover:text-white/60 transition-colors cursor-pointer group">
+            <span className="text-xs font-sans tracking-wider uppercase">Scroll to explore</span>
+            <div className="w-6 h-10 rounded-full border-2 border-current flex items-start justify-center p-1.5">
+              <div className="w-1 h-2 rounded-full bg-current animate-bounce" />
             </div>
           </div>
         </div>
 
         {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent" />
       </section>
 
       {/* Stats Bar */}
