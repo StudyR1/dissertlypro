@@ -134,17 +134,17 @@ const Index = () => {
             }}
           />
           
-          {/* Animated gradient orbs */}
-          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-copper/10 rounded-full blur-[120px] animate-float" />
-          <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-midnight-soft/30 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-copper/5 rounded-full blur-[80px] animate-float" style={{ animationDelay: '4s' }} />
+          {/* Subtle gradient orbs */}
+          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-copper/[0.03] rounded-full blur-[150px] animate-float" />
+          <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-midnight-soft/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-copper/[0.02] rounded-full blur-[100px] animate-float" style={{ animationDelay: '4s' }} />
           
           {/* Noise texture overlay */}
-          <div className="absolute inset-0 noise-overlay opacity-[0.03]" />
+          <div className="absolute inset-0 noise-overlay opacity-[0.02]" />
           
-          {/* Animated grid pattern */}
-          <div className="absolute inset-0 opacity-[0.02]" style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-[0.015]" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
             backgroundSize: '60px 60px'
           }} />
         </div>
@@ -155,7 +155,7 @@ const Index = () => {
             {/* Left Column - Text Content */}
             <div className="max-w-2xl">
               {/* Animated Badge */}
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-copper/30 bg-copper/10 backdrop-blur-md px-5 py-2.5 mb-8 opacity-0 animate-fade-in-up shadow-[0_0_20px_rgba(184,137,96,0.15)]">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-5 py-2.5 mb-8 opacity-0 animate-fade-in-up">
                 <div className="relative">
                   <Sparkles className="h-4 w-4 text-copper-light" />
                   <div className="absolute inset-0 animate-ping">
