@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { FAQSchema, BreadcrumbSchema } from "@/components/schemas";
+import { TrustBadges } from "@/components/cro";
 import { ArrowRight, Check, HelpCircle, MessageSquare } from "lucide-react";
 
 const pricingPlans = [
@@ -176,6 +177,11 @@ const Pricing = () => {
                 </Button>
               </div>
             ))}
+          </div>
+          
+          {/* Trust Badges below pricing */}
+          <div className="mt-16">
+            <TrustBadges />
           </div>
         </div>
       </section>

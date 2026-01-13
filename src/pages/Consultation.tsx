@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import { TrustBadges } from "@/components/cro";
 import { 
   ArrowRight, 
   ArrowLeft, 
@@ -383,20 +384,9 @@ const Consultation = () => {
               </div>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-muted-foreground font-sans">
-              <span className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-gold" />
-                100% Confidential
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-gold" />
-                No Obligations
-              </span>
-              <span className="flex items-center gap-2">
-                <Calendar className="h-4 w-4 text-gold" />
-                Response within 24hrs
-              </span>
+            {/* Trust Badges */}
+            <div className="mt-12">
+              <TrustBadges variant="compact" />
             </div>
           </div>
         </div>
