@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import { BlogPostSchema, BreadcrumbSchema } from "@/components/schemas";
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, Share2, Bookmark } from "lucide-react";
 
 const blogPostsData: Record<string, {
@@ -187,6 +188,21 @@ const BlogPost = () => {
         author={post.author}
         keywords={[post.category, 'dissertation advice', 'thesis tips', 'academic writing']}
       />
+      <BlogPostSchema
+        title={post.title}
+        description={post.excerpt}
+        url={`/blog/${slug}`}
+        datePublished={post.date}
+        author={post.author}
+        authorBio={post.authorBio}
+        category={post.category}
+        readTime={post.readTime}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: post.title, url: `/blog/${slug}` }
+      ]} />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-16 lg:py-24">
         <div className="container">
