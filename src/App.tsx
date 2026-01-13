@@ -27,6 +27,7 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const GDPR = lazy(() => import("./pages/GDPR"));
 const About = lazy(() => import("./pages/About"));
+const Experts = lazy(() => import("./pages/Experts"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -64,6 +65,7 @@ const App = () => (
               <Route path="/terms" element={<Terms />} />
               <Route path="/gdpr" element={<GDPR />} />
               <Route path="/about" element={<About />} />
+              <Route path="/experts" element={<Experts />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
