@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { 
   ArrowRight, 
   Briefcase, 
@@ -191,6 +192,12 @@ const subjects = [
 const Subjects = () => {
   return (
     <Layout>
+      <SEO 
+        title="Subjects We Cover"
+        description="Expert dissertation support across all academic disciplines including Business, Education, Nursing, Psychology, Engineering, IT, Economics, and more. PhD-qualified subject specialists."
+        canonical="/subjects"
+        keywords={['dissertation subjects', 'academic disciplines', 'thesis topics', 'research fields', 'subject experts']}
+      />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">

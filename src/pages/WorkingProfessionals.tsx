@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { 
   ArrowRight, 
   Briefcase, 
@@ -64,6 +65,12 @@ const testimonials = [
 const WorkingProfessionals = () => {
   return (
     <Layout>
+      <SEO 
+        title="Support for Working Professionals"
+        description="Flexible dissertation support designed for working professionals. Evening and weekend consultations, milestone-based progress, and long-term research partnerships for busy executives."
+        canonical="/working-professionals"
+        keywords={['working professional PhD', 'executive dissertation', 'part-time doctoral', 'flexible thesis support', 'career and research']}
+      />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">

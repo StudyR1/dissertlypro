@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { 
   ArrowRight, 
   FileText, 
@@ -152,6 +153,12 @@ const services = [
 const Services = () => {
   return (
     <Layout>
+      <SEO 
+        title="Our Services"
+        description="Comprehensive dissertation and thesis services including proposal development, research methodology, data analysis, literature reviews, editing, and formatting for Master's and PhD students."
+        canonical="/services"
+        keywords={['dissertation services', 'thesis writing help', 'research methodology', 'data analysis', 'academic editing']}
+      />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">
