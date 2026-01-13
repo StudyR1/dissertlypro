@@ -140,7 +140,7 @@ const Index = () => {
       <FAQSchema faqs={defaultFAQs} />
       <ReviewSchema reviews={defaultReviews} />
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[100svh] flex items-center overflow-hidden">
         {/* Animated Background - GPU accelerated */}
         <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight-rich to-midnight-soft gpu-accelerated">
           {/* Background image with optimized loading */}
@@ -150,15 +150,15 @@ const Index = () => {
               backgroundImage: `url(${heroBackground})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              backgroundAttachment: 'scroll', // Changed from 'fixed' for better mobile performance
+              backgroundAttachment: 'scroll',
             }}
             aria-hidden="true"
           />
           
-          {/* Subtle gradient orbs - GPU accelerated */}
-          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-copper/[0.03] rounded-full blur-[150px] animate-float will-change-transform" />
-          <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-midnight-soft/20 rounded-full blur-[120px] animate-float will-change-transform" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-copper/[0.02] rounded-full blur-[100px] animate-float will-change-transform" style={{ animationDelay: '4s' }} />
+          {/* Subtle gradient orbs - GPU accelerated, hidden on mobile for performance */}
+          <div className="hidden md:block absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-copper/[0.03] rounded-full blur-[150px] animate-float will-change-transform" />
+          <div className="hidden md:block absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-midnight-soft/20 rounded-full blur-[120px] animate-float will-change-transform" style={{ animationDelay: '2s' }} />
+          <div className="hidden md:block absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-copper/[0.02] rounded-full blur-[100px] animate-float will-change-transform" style={{ animationDelay: '4s' }} />
           
           {/* Noise texture overlay */}
           <div className="absolute inset-0 noise-overlay opacity-[0.02]" />
@@ -171,25 +171,25 @@ const Index = () => {
         </div>
 
         {/* Content */}
-        <div className="container relative z-10 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="container relative z-10 py-16 sm:py-20 lg:py-28 px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Column - Text Content */}
             <div className="max-w-2xl">
               {/* Animated Badge */}
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-5 py-2.5 mb-8 opacity-0 animate-fade-in-up">
+              <div className="inline-flex items-center gap-2 sm:gap-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-3 sm:px-5 py-2 sm:py-2.5 mb-6 sm:mb-8 opacity-0 animate-fade-in-up">
                 <div className="relative">
-                  <Sparkles className="h-4 w-4 text-copper-light" />
-                  <div className="absolute inset-0 animate-ping">
+                  <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-copper-light" />
+                  <div className="absolute inset-0 animate-ping hidden sm:block">
                     <Sparkles className="h-4 w-4 text-copper-light opacity-40" />
                   </div>
                 </div>
-                <span className="text-sm font-sans font-medium text-white tracking-wide">
-                  Exclusively for Master's & Doctoral Candidates
+                <span className="text-xs sm:text-sm font-sans font-medium text-white tracking-wide">
+                  For Master's & Doctoral Candidates
                 </span>
               </div>
               
               {/* Main Headline with animated reveal */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.05] mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.08] sm:leading-[1.05] mb-6 sm:mb-8">
                 <span className="block opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                   Your Research.
                 </span>
@@ -214,20 +214,20 @@ const Index = () => {
               </h1>
               
               {/* Subheadline */}
-              <p className="text-lg md:text-xl text-white/70 font-sans leading-relaxed mb-10 max-w-xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
+              <p className="text-base sm:text-lg md:text-xl text-white/70 font-sans leading-relaxed mb-8 sm:mb-10 max-w-xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
                 Premium academic support for postgraduate students worldwide. 
-                From dissertation proposals to final defense—we're with you every step of your scholarly journey.
+                From dissertation proposals to final defense—we're with you every step.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
-                <Button variant="copper" size="xl" className="group shadow-copper" asChild>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
+                <Button variant="copper" size="lg" className="group shadow-copper w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
                   <Link to="/consultation">
-                    Request Free Consultation
+                    Free Consultation
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
-                <Button variant="glass" size="xl" className="border-white/20 text-white hover:bg-white/10" asChild>
+                <Button variant="glass" size="lg" className="border-white/20 text-white hover:bg-white/10 w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
                   <Link to="/services">
                     <Play className="h-4 w-4 mr-1" />
                     Explore Services
@@ -236,22 +236,22 @@ const Index = () => {
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mt-12 pt-8 border-t border-white/10 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.55s' }}>
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-3 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.55s' }}>
                 {[
                   { icon: Shield, text: "100% Confidential" },
-                  { icon: Award, text: "PhD-Level Experts" },
-                  { icon: Clock, text: "Flexible Timelines" },
+                  { icon: Award, text: "PhD Experts" },
+                  { icon: Clock, text: "Flexible Times" },
                   { icon: Globe, text: "Global Support" },
                 ].map(({ icon: Icon, text }, index) => (
                   <div 
                     key={text} 
-                    className="flex items-center gap-2 group cursor-default"
+                    className="flex items-center gap-1.5 sm:gap-2 group cursor-default"
                     style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                   >
-                    <div className="p-1.5 rounded-lg bg-copper/10 group-hover:bg-copper/20 transition-all duration-300 group-hover:scale-110">
-                      <Icon className="h-3.5 w-3.5 text-copper-light" />
+                    <div className="p-1 sm:p-1.5 rounded-lg bg-copper/10">
+                      <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-copper-light" />
                     </div>
-                    <span className="text-sm text-white/60 font-sans group-hover:text-white/80 transition-colors">{text}</span>
+                    <span className="text-xs sm:text-sm text-white/60 font-sans">{text}</span>
                   </div>
                 ))}
               </div>
@@ -370,38 +370,38 @@ const Index = () => {
       {/* Stats Bar with Animated Counters */}
       <section className="bg-card border-y border-border relative overflow-hidden">
         <div className="absolute inset-0 pattern-dots opacity-50" />
-        <div className="container py-14 relative">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+        <div className="container py-10 sm:py-14 px-4 sm:px-6 relative">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-2 group-hover:scale-105 transition-transform">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-1 sm:mb-2">
                 <AnimatedCounter end={15000} suffix="+" />
               </div>
-              <div className="text-sm text-muted-foreground font-sans tracking-wide">
-                Graduate Students Supported
+              <div className="text-xs sm:text-sm text-muted-foreground font-sans tracking-wide">
+                Students Supported
               </div>
             </div>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-2 group-hover:scale-105 transition-transform">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-1 sm:mb-2">
                 <AnimatedCounter end={98} suffix="%" />
               </div>
-              <div className="text-sm text-muted-foreground font-sans tracking-wide">
-                Client Satisfaction Rate
+              <div className="text-xs sm:text-sm text-muted-foreground font-sans tracking-wide">
+                Satisfaction Rate
               </div>
             </div>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-2 group-hover:scale-105 transition-transform">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-1 sm:mb-2">
                 <AnimatedCounter end={500} suffix="+" />
               </div>
-              <div className="text-sm text-muted-foreground font-sans tracking-wide">
-                Subject Matter Experts
+              <div className="text-xs sm:text-sm text-muted-foreground font-sans tracking-wide">
+                PhD Experts
               </div>
             </div>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-2 group-hover:scale-105 transition-transform">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-1 sm:mb-2">
                 <AnimatedCounter end={50} suffix="+" />
               </div>
-              <div className="text-sm text-muted-foreground font-sans tracking-wide">
-                Countries Served
+              <div className="text-xs sm:text-sm text-muted-foreground font-sans tracking-wide">
+                Countries
               </div>
             </div>
           </div>
@@ -409,43 +409,44 @@ const Index = () => {
       </section>
 
       {/* Services Section - Content visibility for off-screen optimization */}
-      <section className="py-24 lg:py-32 bg-background relative overflow-hidden content-visibility-auto">
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-cream-warm/50 to-transparent pointer-events-none" />
-        <div className="container relative">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block text-copper font-sans font-semibold text-sm tracking-widest uppercase mb-4">
+      <section className="py-16 sm:py-24 lg:py-32 bg-background relative overflow-hidden content-visibility-auto">
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-cream-warm/50 to-transparent pointer-events-none hidden sm:block" />
+        <div className="container relative px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+            <span className="inline-block text-copper font-sans font-semibold text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4">
               Our Services
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-5">
-              Comprehensive Postgraduate Support
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-5">
+              Comprehensive Support
             </h2>
-            <p className="text-muted-foreground font-sans text-lg leading-relaxed">
-              Expert assistance across every phase of your Master's or PhD journey, 
-              tailored to your unique research needs.
+            <p className="text-muted-foreground font-sans text-base sm:text-lg leading-relaxed px-4 sm:px-0">
+              Expert assistance across every phase of your research journey.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {services.map((service, index) => (
               <Link
                 key={index}
                 to={service.href}
-                className="group relative p-7 bg-card rounded-2xl border border-border shadow-subtle hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+                className="group relative p-5 sm:p-7 bg-card rounded-xl sm:rounded-2xl border border-border shadow-subtle hover:shadow-elevated transition-all duration-300 sm:duration-500 active:scale-[0.98] sm:hover:-translate-y-2 overflow-hidden touch-manipulation"
               >
                 {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-copper/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-copper/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden sm:block" />
                 
-                <div className="relative">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-midnight/5 text-midnight mb-5 group-hover:bg-copper/10 group-hover:text-copper transition-all duration-300">
-                    <service.icon className="h-7 w-7" />
+                <div className="relative flex sm:block items-start gap-4">
+                  <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl bg-midnight/5 text-midnight sm:mb-5 group-active:bg-copper/10 sm:group-hover:bg-copper/10 group-active:text-copper sm:group-hover:text-copper transition-all duration-300">
+                    <service.icon className="h-6 w-6 sm:h-7 sm:w-7" />
                   </div>
-                  <h3 className="text-xl font-serif font-semibold text-foreground mb-3 group-hover:text-copper transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-                  <div className="flex items-center text-copper font-sans text-sm font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg sm:text-xl font-serif font-semibold text-foreground mb-1 sm:mb-3 group-active:text-copper sm:group-hover:text-copper transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground font-sans text-sm leading-relaxed line-clamp-2 sm:line-clamp-none sm:mb-4">
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="hidden sm:flex items-center text-copper font-sans text-sm font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     Learn more <ArrowRight className="h-4 w-4 ml-1.5" />
                   </div>
                 </div>
@@ -453,8 +454,8 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-14">
-            <Button variant="midnight-outline" size="lg" asChild>
+          <div className="text-center mt-10 sm:mt-14">
+            <Button variant="midnight-outline" size="lg" className="w-full sm:w-auto h-12 touch-manipulation" asChild>
               <Link to="/services">
                 View All Services
                 <ArrowRight className="h-4 w-4" />
@@ -465,40 +466,38 @@ const Index = () => {
       </section>
 
       {/* Working Professionals CTA - Content visibility optimization */}
-      <section className="py-24 lg:py-32 bg-cream-warm relative overflow-hidden content-visibility-auto">
-        <div className="absolute inset-0 pattern-grid" />
-        <div className="container relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 sm:py-24 lg:py-32 bg-cream-warm relative overflow-hidden content-visibility-auto">
+        <div className="absolute inset-0 pattern-grid opacity-50 sm:opacity-100" />
+        <div className="container relative px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2.5 text-copper font-sans font-semibold text-sm tracking-widest uppercase mb-5">
+              <div className="inline-flex items-center gap-2 sm:gap-2.5 text-copper font-sans font-semibold text-xs sm:text-sm tracking-widest uppercase mb-4 sm:mb-5">
                 <Briefcase className="h-4 w-4" />
                 For Working Professionals
               </div>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 leading-tight">
-                Balance Your Career, Family, and Research
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6 leading-tight">
+                Balance Career, Family & Research
               </h2>
-              <p className="text-muted-foreground font-sans text-lg leading-relaxed mb-8">
-                We understand the unique challenges faced by working professionals pursuing advanced degrees. 
-                Our flexible support model is designed around your schedule, with evening and weekend consultations, 
-                milestone-based progress, and long-term partnership options.
+              <p className="text-muted-foreground font-sans text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+                Our flexible support model is designed around your schedule, with evening and weekend consultations 
+                and milestone-based progress.
               </p>
-              <ul className="space-y-4 mb-10">
+              <ul className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
                 {[
-                  "Flexible scheduling around work commitments",
-                  "Evening and weekend consultation availability",
-                  "Progress-based milestone system",
-                  "Long-term research partnership model",
-                  "Stress and deadline management support",
+                  "Flexible scheduling",
+                  "Evening & weekend availability",
+                  "Milestone-based progress",
+                  "Long-term partnership model",
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3.5 text-foreground font-sans">
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-copper/10">
-                      <CheckCircle className="h-4 w-4 text-copper" />
+                  <li key={index} className="flex items-center gap-3 text-sm sm:text-base text-foreground font-sans">
+                    <div className="flex h-5 w-5 sm:h-6 sm:w-6 shrink-0 items-center justify-center rounded-full bg-copper/10">
+                      <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-copper" />
                     </div>
                     {item}
                   </li>
                 ))}
               </ul>
-              <Button variant="copper" size="lg" asChild>
+              <Button variant="copper" size="lg" className="w-full sm:w-auto h-12 touch-manipulation" asChild>
                 <Link to="/working-professionals">
                   Learn More
                   <ArrowRight className="h-4 w-4" />
@@ -507,25 +506,25 @@ const Index = () => {
             </div>
             
             {/* Stats Card */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-midnight-rich via-midnight to-midnight-soft p-10 flex flex-col justify-center items-center shadow-elevated relative overflow-hidden">
+            <div className="relative order-first lg:order-last">
+              <div className="aspect-[4/3] sm:aspect-[4/3] rounded-2xl sm:rounded-3xl bg-gradient-to-br from-midnight-rich via-midnight to-midnight-soft p-6 sm:p-10 flex flex-col justify-center items-center shadow-elevated relative overflow-hidden">
                 {/* Glass overlay effect */}
                 <div className="absolute inset-0 glass-card opacity-20" />
                 
                 <div className="relative text-center text-primary-foreground z-10">
-                  <Briefcase className="h-16 w-16 mx-auto mb-6 text-copper opacity-80" />
-                  <p className="text-4xl md:text-5xl font-serif font-bold mb-3">67%</p>
-                  <p className="text-lg text-primary-foreground/70 font-sans max-w-xs">
-                    of our clients are working professionals balancing career and research
+                  <Briefcase className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 sm:mb-6 text-copper opacity-80" />
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-2 sm:mb-3">67%</p>
+                  <p className="text-sm sm:text-lg text-primary-foreground/70 font-sans max-w-xs px-4">
+                    of our clients are working professionals
                   </p>
                 </div>
               </div>
               
               {/* Floating badge */}
-              <div className="absolute -bottom-6 -right-6 lg:bottom-8 lg:-right-8 bg-gradient-to-br from-copper to-copper-dark rounded-2xl p-5 shadow-copper animate-glow-pulse">
+              <div className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-6 lg:bottom-8 lg:-right-8 bg-gradient-to-br from-copper to-copper-dark rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-copper animate-glow-pulse">
                 <div className="text-white text-center">
-                  <p className="text-3xl font-serif font-bold">24/7</p>
-                  <p className="text-sm font-sans opacity-90">Support Available</p>
+                  <p className="text-2xl sm:text-3xl font-serif font-bold">24/7</p>
+                  <p className="text-xs sm:text-sm font-sans opacity-90">Support</p>
                 </div>
               </div>
             </div>
@@ -534,32 +533,31 @@ const Index = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 lg:py-32 bg-background relative">
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block text-copper font-sans font-semibold text-sm tracking-widest uppercase mb-4">
+      <section className="py-16 sm:py-24 lg:py-32 bg-background relative">
+        <div className="container px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+            <span className="inline-block text-copper font-sans font-semibold text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4">
               How It Works
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-5">
-              A Simple, Supportive Process
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-5">
+              Simple, Supportive Process
             </h2>
-            <p className="text-muted-foreground font-sans text-lg leading-relaxed">
-              From initial consultation to final delivery, we guide you through a streamlined process 
-              designed for your success.
+            <p className="text-muted-foreground font-sans text-base sm:text-lg leading-relaxed px-4 sm:px-0">
+              From consultation to delivery, we guide you through a streamlined process.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-6">
             {processSteps.map((step, index) => (
               <div key={index} className="relative group">
                 {/* Step number */}
-                <div className="text-7xl font-serif font-bold text-copper/10 group-hover:text-copper/20 transition-colors mb-4">
+                <div className="text-5xl sm:text-7xl font-serif font-bold text-copper/10 mb-2 sm:mb-4">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
+                <h3 className="text-base sm:text-xl font-serif font-semibold text-foreground mb-2 sm:mb-3">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground font-sans text-sm leading-relaxed">
+                <p className="text-muted-foreground font-sans text-xs sm:text-sm leading-relaxed">
                   {step.description}
                 </p>
                 
@@ -576,41 +574,41 @@ const Index = () => {
       </section>
 
       {/* Testimonials - Content visibility optimization */}
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-midnight-rich to-midnight relative overflow-hidden content-visibility-auto">
+      <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-midnight-rich to-midnight relative overflow-hidden content-visibility-auto">
         <div className="absolute inset-0 pattern-dots opacity-20" />
-        <div className="container relative">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block text-copper font-sans font-semibold text-sm tracking-widest uppercase mb-4">
+        <div className="container relative px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+            <span className="inline-block text-copper font-sans font-semibold text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4">
               Success Stories
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-5">
-              Trusted by Graduate Students Worldwide
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-4 sm:mb-5">
+              Trusted Worldwide
             </h2>
-            <p className="text-primary-foreground/60 font-sans text-lg leading-relaxed">
-              Hear from Master's and PhD candidates who achieved their academic goals with our support.
+            <p className="text-primary-foreground/60 font-sans text-base sm:text-lg leading-relaxed px-4 sm:px-0">
+              Hear from students who achieved their goals with our support.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="glass-card p-8 hover:bg-white/10 transition-all duration-300"
+                className="glass-card p-5 sm:p-8 active:bg-white/10 sm:hover:bg-white/10 transition-all duration-300"
               >
-                <div className="flex gap-1 mb-5">
+                <div className="flex gap-0.5 sm:gap-1 mb-3 sm:mb-5">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-copper text-copper" />
+                    <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 fill-copper text-copper" />
                   ))}
                 </div>
-                <Quote className="h-10 w-10 text-copper/30 mb-4" />
-                <p className="text-primary-foreground/85 font-sans leading-relaxed mb-8">
+                <Quote className="h-8 w-8 sm:h-10 sm:w-10 text-copper/30 mb-3 sm:mb-4" />
+                <p className="text-primary-foreground/85 font-sans text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 line-clamp-4 sm:line-clamp-none">
                   "{testimonial.quote}"
                 </p>
-                <div className="pt-6 border-t border-white/10">
-                  <p className="font-serif font-semibold text-primary-foreground text-lg">
+                <div className="pt-4 sm:pt-6 border-t border-white/10">
+                  <p className="font-serif font-semibold text-primary-foreground text-base sm:text-lg">
                     {testimonial.author}
                   </p>
-                  <p className="text-primary-foreground/50 font-sans text-sm mt-1">
+                  <p className="text-primary-foreground/50 font-sans text-xs sm:text-sm mt-1">
                     {testimonial.role}
                   </p>
                 </div>
@@ -621,37 +619,36 @@ const Index = () => {
       </section>
 
       {/* CTA Section - Content visibility optimization */}
-      <section className="py-24 lg:py-32 bg-background relative overflow-hidden content-visibility-auto">
+      <section className="py-16 sm:py-24 lg:py-32 bg-background relative overflow-hidden content-visibility-auto">
         <div className="absolute inset-0 pattern-grid opacity-50" />
-        <div className="container relative">
-          <div className="border-gradient bg-card rounded-3xl shadow-elevated p-10 md:p-16 text-center max-w-4xl mx-auto relative overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-copper/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-midnight/5 rounded-full blur-3xl" />
+        <div className="container relative px-4 sm:px-6">
+          <div className="border-gradient bg-card rounded-2xl sm:rounded-3xl shadow-elevated p-6 sm:p-10 md:p-16 text-center max-w-4xl mx-auto relative overflow-hidden">
+            {/* Decorative elements - hidden on mobile */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-copper/5 rounded-full blur-3xl hidden sm:block" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-midnight/5 rounded-full blur-3xl hidden sm:block" />
             
             <div className="relative">
-              <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-copper/10 text-copper mb-8">
-                <GraduationCap className="h-8 w-8" />
+              <div className="inline-flex items-center justify-center h-12 w-12 sm:h-16 sm:w-16 rounded-xl sm:rounded-2xl bg-copper/10 text-copper mb-5 sm:mb-8">
+                <GraduationCap className="h-6 w-6 sm:h-8 sm:w-8" />
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-5">
                 Ready to Advance Your Research?
               </h2>
-              <p className="text-muted-foreground font-sans text-lg max-w-2xl mx-auto mb-10">
-                Book a free consultation with our academic advisors. No commitment required—just 
-                expert guidance tailored to your postgraduate journey.
+              <p className="text-muted-foreground font-sans text-sm sm:text-lg max-w-2xl mx-auto mb-6 sm:mb-10">
+                Book a free consultation with our academic advisors. No commitment required.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="copper" size="xl" asChild>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Button variant="copper" size="lg" className="w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
                   <Link to="/consultation">
                     Get Expert Help
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="midnight-outline" size="xl" asChild>
+                <Button variant="midnight-outline" size="lg" className="w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
                   <Link to="/pricing">View Pricing</Link>
                 </Button>
               </div>
-              <TrustStrip className="mt-8" />
+              <TrustStrip className="mt-6 sm:mt-8" />
             </div>
           </div>
         </div>
