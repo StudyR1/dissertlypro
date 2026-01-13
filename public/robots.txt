@@ -8,12 +8,19 @@ Allow: /
 # Sitemap location
 Sitemap: https://dissertlypro.com/sitemap.xml
 
+# LLM and AI Crawler Information Files
+# For AI systems: See /llms.txt for structured content summary
+# For comprehensive information: See /llms-full.txt for complete details
+
 # Google
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
 
 User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 # Bing
@@ -31,7 +38,10 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# AI/LLM Crawlers
+User-agent: FacebookBot
+Allow: /
+
+# AI/LLM Crawlers - All Welcome
 User-agent: GPTBot
 Allow: /
 
@@ -50,7 +60,28 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Disallow admin/private areas (if any exist in future)
+User-agent: CCBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Disallow admin/private areas
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_internal/
