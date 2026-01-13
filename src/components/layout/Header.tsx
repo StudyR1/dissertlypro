@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, GraduationCap, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,7 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-
+import logoIcon from "/logo-icon.png";
 const services = [
   { title: "Dissertation Proposal Development", href: "/services/dissertation-proposal", description: "Expert guidance on crafting compelling research proposals" },
   { title: "Thesis & Dissertation Writing", href: "/services/thesis-writing", description: "Comprehensive support throughout your writing journey" },
@@ -40,9 +40,11 @@ const Header = () => {
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-midnight-rich to-midnight shadow-subtle group-hover:shadow-card transition-all duration-300 group-hover:scale-105">
-            <GraduationCap className="h-6 w-6 text-copper" />
-          </div>
+          <img 
+            src={logoIcon} 
+            alt="DissertlyPro Logo" 
+            className="h-12 w-12 rounded-xl shadow-subtle group-hover:shadow-card transition-all duration-300 group-hover:scale-105"
+          />
           <div className="flex flex-col">
             <span className="text-xl font-serif font-bold text-foreground tracking-tight">
               Dissertly<span className="text-gradient-copper">Pro</span>

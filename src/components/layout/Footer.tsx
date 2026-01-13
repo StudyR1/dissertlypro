@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import logoIcon from "/logo-icon.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -47,11 +48,13 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-8 group">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-copper to-copper-dark shadow-copper group-hover:scale-105 transition-transform">
-                <GraduationCap className="h-6 w-6 text-white" />
-              </div>
+              <img 
+                src={logoIcon} 
+                alt="DissertlyPro Logo" 
+                className="h-14 w-14 rounded-xl shadow-copper group-hover:scale-105 transition-transform"
+              />
               <div className="flex flex-col">
-              <span className="text-xl font-serif font-bold tracking-tight">
+                <span className="text-xl font-serif font-bold tracking-tight">
                   Dissertly<span className="text-copper-light">Pro</span>
                 </span>
                 <span className="text-[10px] text-primary-foreground/50 font-sans tracking-widest uppercase">
