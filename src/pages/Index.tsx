@@ -23,6 +23,7 @@ import {
   MousePointer
 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import heroBackground from "@/assets/hero-background.jpg";
 import logoIcon from "/logo-icon.png";
 
@@ -119,6 +120,12 @@ const stats = [
 const Index = () => {
   return (
     <Layout>
+      <SEO 
+        title="Home"
+        description="DissertlyPro provides premium dissertation and thesis support for Master's and PhD students. Expert research guidance, data analysis, editing, and academic writing services worldwide."
+        canonical="/"
+        keywords={['dissertation help', 'thesis support', 'PhD assistance', 'masters thesis', 'academic writing']}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[100vh] flex items-center overflow-hidden">
         {/* Animated Background */}

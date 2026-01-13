@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { ArrowRight, Check, HelpCircle, MessageSquare } from "lucide-react";
 
 const pricingPlans = [
@@ -88,6 +89,12 @@ const faqs = [
 const Pricing = () => {
   return (
     <Layout>
+      <SEO 
+        title="Pricing"
+        description="Transparent, flexible pricing for dissertation and thesis support services. Chapter packages, full dissertation support, and custom enterprise solutions with milestone-based payments."
+        canonical="/pricing"
+        keywords={['dissertation pricing', 'thesis cost', 'academic support rates', 'dissertation packages', 'research help pricing']}
+      />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">

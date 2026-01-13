@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, Share2, Bookmark } from "lucide-react";
 
 const blogPostsData: Record<string, {
@@ -177,6 +178,15 @@ const BlogPost = () => {
 
   return (
     <Layout>
+      <SEO 
+        title={post.title}
+        description={post.excerpt}
+        canonical={`/blog/${slug}`}
+        type="article"
+        publishedTime={post.date}
+        author={post.author}
+        keywords={[post.category, 'dissertation advice', 'thesis tips', 'academic writing']}
+      />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-16 lg:py-24">
         <div className="container">

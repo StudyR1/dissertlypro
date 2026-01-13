@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { ArrowRight, Calendar, Clock, User } from "lucide-react";
 
 const blogPosts = [
@@ -74,6 +75,12 @@ const categories = [
 const Blog = () => {
   return (
     <Layout>
+      <SEO 
+        title="Blog & Research Resources"
+        description="Expert insights on dissertation writing, research methodology, data analysis, and academic success. Free guides and tips for Master's and PhD students."
+        canonical="/blog"
+        keywords={['dissertation tips', 'thesis writing guide', 'research methods blog', 'academic writing tips', 'PhD advice']}
+      />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">

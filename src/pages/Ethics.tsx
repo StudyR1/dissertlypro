@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { 
   ArrowRight, 
   Shield, 
@@ -15,6 +16,12 @@ import {
 const Ethics = () => {
   return (
     <Layout>
+      <SEO 
+        title="Ethics & Academic Integrity"
+        description="Our commitment to academic integrity and ethical research support. Plagiarism-free guarantee, confidentiality policy, and GDPR-compliant data protection for all students."
+        canonical="/ethics"
+        keywords={['academic integrity', 'plagiarism free', 'ethical research', 'confidential dissertation help', 'legitimate academic support']}
+      />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">

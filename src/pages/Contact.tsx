@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Mail, Phone, MapPin, Clock, MessageSquare } from "lucide-react";
 
 const Contact = () => {
   return (
     <Layout>
+      <SEO 
+        title="Contact Us"
+        description="Get in touch with DissertlyPro for dissertation and thesis support. Available worldwide with 24/7 email support and flexible consultation scheduling."
+        canonical="/contact"
+        keywords={['contact dissertation help', 'thesis support contact', 'academic help inquiry', 'dissertation consultation']}
+      />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">
