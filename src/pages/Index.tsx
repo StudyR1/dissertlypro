@@ -240,22 +240,22 @@ const Index = () => {
             <div className="hidden lg:block relative opacity-0 animate-scale-in" style={{ animationDelay: '0.3s' }}>
               {/* Main floating card */}
               <div className="relative">
-                {/* Glowing backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-br from-copper/20 to-transparent rounded-3xl blur-2xl scale-110" />
+                {/* Subtle backdrop glow */}
+                <div className="absolute inset-0 bg-copper/[0.03] rounded-3xl blur-3xl scale-105" />
                 
                 {/* Main card */}
-                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 shadow-2xl">
+                <div className="relative bg-white/[0.03] backdrop-blur-md rounded-3xl border border-white/[0.08] p-8">
                   {/* Logo */}
                   <div className="flex items-center gap-4 mb-8">
-                    <img src={logoIcon} alt="DissertlyPro" className="h-16 w-16 rounded-xl shadow-lg" />
+                    <img src={logoIcon} alt="DissertlyPro" className="h-14 w-14 rounded-xl" />
                     <div>
-                      <h3 className="text-xl font-serif font-bold text-white">DissertlyPro</h3>
-                      <p className="text-white/50 text-sm font-sans">Academic Excellence Partner</p>
+                      <h3 className="text-lg font-serif font-bold text-white/90">DissertlyPro</h3>
+                      <p className="text-white/40 text-sm font-sans">Academic Excellence Partner</p>
                     </div>
                   </div>
                   
                   {/* Stats grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="grid grid-cols-2 gap-3 mb-5">
                     {[
                       { value: "15K+", label: "Students Helped" },
                       { value: "98%", label: "Success Rate" },
@@ -264,67 +264,67 @@ const Index = () => {
                     ].map((stat, i) => (
                       <div 
                         key={i} 
-                        className="bg-white/5 rounded-xl p-4 text-center hover:bg-white/10 transition-colors group"
+                        className="bg-white/[0.03] rounded-xl p-4 text-center border border-white/[0.05] hover:bg-white/[0.05] transition-colors group"
                       >
-                        <div className="text-2xl font-serif font-bold text-copper-light group-hover:scale-110 transition-transform">
+                        <div className="text-xl font-serif font-bold text-copper/80 group-hover:text-copper transition-colors">
                           {stat.value}
                         </div>
-                        <div className="text-xs text-white/50 font-sans">{stat.label}</div>
+                        <div className="text-xs text-white/40 font-sans">{stat.label}</div>
                       </div>
                     ))}
                   </div>
                   
                   {/* Active users indicator */}
-                  <div className="flex items-center justify-between bg-copper/10 rounded-xl p-4">
+                  <div className="flex items-center justify-between bg-white/[0.03] border border-white/[0.05] rounded-xl p-4">
                     <div className="flex -space-x-2">
                       {[1, 2, 3, 4].map((i) => (
                         <div 
                           key={i} 
-                          className="h-8 w-8 rounded-full bg-gradient-to-br from-copper to-copper-dark border-2 border-midnight flex items-center justify-center text-xs font-bold text-white"
+                          className="h-7 w-7 rounded-full bg-midnight-soft border-2 border-midnight flex items-center justify-center text-xs font-medium text-white/70"
                         >
                           {['S', 'M', 'P', 'J'][i-1]}
                         </div>
                       ))}
-                      <div className="h-8 w-8 rounded-full bg-white/10 border-2 border-midnight flex items-center justify-center text-xs font-medium text-white">
+                      <div className="h-7 w-7 rounded-full bg-white/5 border-2 border-midnight flex items-center justify-center text-xs font-medium text-white/50">
                         +
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-sm font-semibold text-white flex items-center gap-1.5">
-                        <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-                        234 online now
+                      <div className="text-sm font-medium text-white/70 flex items-center gap-1.5">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/70" />
+                        234 online
                       </div>
-                      <div className="text-xs text-white/50">Active researchers</div>
+                      <div className="text-xs text-white/40">Active researchers</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Floating testimonial card */}
-                <div className="absolute -bottom-8 -left-8 bg-gradient-to-br from-midnight-rich to-midnight rounded-2xl border border-white/10 p-5 shadow-xl max-w-[260px] animate-float" style={{ animationDelay: '1s' }}>
-                  <div className="flex gap-1 mb-2">
+                <div className="absolute -bottom-6 -left-6 bg-midnight-rich/90 backdrop-blur-sm rounded-xl border border-white/[0.06] p-4 shadow-lg max-w-[240px] animate-float" style={{ animationDelay: '1s' }}>
+                  <div className="flex gap-0.5 mb-2">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-copper text-copper" />
+                      <Star key={i} className="h-3 w-3 fill-copper/70 text-copper/70" />
                     ))}
                   </div>
-                  <p className="text-sm text-white/80 font-sans italic leading-relaxed mb-3">
+                  <p className="text-sm text-white/60 font-sans italic leading-relaxed mb-2">
                     "Completed my PhD thesis 3 months early!"
                   </p>
                   <div className="flex items-center gap-2">
-                    <div className="h-8 w-8 rounded-full bg-copper/20 flex items-center justify-center text-copper text-sm font-bold">
+                    <div className="h-6 w-6 rounded-full bg-white/10 flex items-center justify-center text-copper/70 text-xs font-medium">
                       S
                     </div>
                     <div>
-                      <div className="text-xs font-medium text-white">Dr. Sarah M.</div>
-                      <div className="text-xs text-white/40">PhD Education</div>
+                      <div className="text-xs font-medium text-white/70">Dr. Sarah M.</div>
+                      <div className="text-xs text-white/30">PhD Education</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Floating badge */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-copper to-copper-dark rounded-xl px-4 py-3 shadow-copper animate-float" style={{ animationDelay: '0.5s' }}>
-                  <div className="flex items-center gap-2 text-white">
-                    <Award className="h-5 w-5" />
-                    <span className="text-sm font-semibold">Top Rated 2024</span>
+                <div className="absolute -top-3 -right-3 bg-midnight-soft border border-copper/20 rounded-lg px-3 py-2 animate-float" style={{ animationDelay: '0.5s' }}>
+                  <div className="flex items-center gap-1.5 text-copper/80">
+                    <Award className="h-4 w-4" />
+                    <span className="text-xs font-medium">Top Rated 2024</span>
                   </div>
                 </div>
               </div>
@@ -334,16 +334,16 @@ const Index = () => {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style={{ animationDelay: '1s' }}>
-          <div className="flex flex-col items-center gap-2 text-white/40 hover:text-white/60 transition-colors cursor-pointer group">
+          <div className="flex flex-col items-center gap-2 text-white/30 hover:text-white/50 transition-colors cursor-pointer group">
             <span className="text-xs font-sans tracking-wider uppercase">Scroll to explore</span>
-            <div className="w-6 h-10 rounded-full border-2 border-current flex items-start justify-center p-1.5">
-              <div className="w-1 h-2 rounded-full bg-current animate-bounce" />
+            <div className="w-5 h-8 rounded-full border border-current flex items-start justify-center p-1">
+              <div className="w-0.5 h-1.5 rounded-full bg-current animate-bounce" />
             </div>
           </div>
         </div>
 
-        {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent" />
+        {/* Bottom gradient fade - more subtle */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* Stats Bar */}
