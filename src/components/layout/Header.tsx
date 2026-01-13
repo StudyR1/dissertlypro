@@ -36,19 +36,19 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary shadow-subtle group-hover:shadow-card transition-shadow duration-300">
-            <GraduationCap className="h-6 w-6 text-primary-foreground" />
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-midnight-rich to-midnight shadow-subtle group-hover:shadow-card transition-all duration-300 group-hover:scale-105">
+            <GraduationCap className="h-6 w-6 text-copper" />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-serif font-semibold text-foreground tracking-tight">
-              Scholarly<span className="text-gold">Edge</span>
+            <span className="text-xl font-serif font-bold text-foreground tracking-tight">
+              Scholarly<span className="text-gradient-copper">Edge</span>
             </span>
-            <span className="text-xs text-muted-foreground font-sans tracking-wide">
-              Master's & PhD Research Support
+            <span className="text-[10px] text-muted-foreground font-sans tracking-widest uppercase">
+              Master's & PhD Support
             </span>
           </div>
         </Link>
@@ -56,36 +56,36 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
           <NavigationMenu>
-            <NavigationMenuList className="gap-1">
+            <NavigationMenuList className="gap-0.5">
               {navLinks.map((link) => (
                 <NavigationMenuItem key={link.title}>
                   {link.hasDropdown ? (
                     <>
-                      <NavigationMenuTrigger className="h-10 px-4 font-sans text-sm font-medium text-muted-foreground hover:text-foreground data-[state=open]:text-foreground transition-colors">
+                      <NavigationMenuTrigger className="h-10 px-4 font-sans text-sm font-medium text-muted-foreground hover:text-foreground data-[state=open]:text-foreground transition-colors bg-transparent">
                         {link.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[500px] gap-2 p-4 md:grid-cols-2">
+                        <ul className="grid w-[520px] gap-2 p-4 md:grid-cols-2">
                           {services.map((service) => (
                             <li key={service.title}>
                               <NavigationMenuLink asChild>
                                 <Link
                                   to={service.href}
-                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                  className="block select-none space-y-1 rounded-lg p-3.5 leading-none no-underline outline-none transition-all hover:bg-cream-warm hover:shadow-subtle focus:bg-cream-warm group"
                                 >
-                                  <div className="text-sm font-medium leading-none font-sans">{service.title}</div>
-                                  <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                                  <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{service.title}</div>
+                                  <p className="line-clamp-2 text-xs leading-snug text-muted-foreground mt-1.5">
                                     {service.description}
                                   </p>
                                 </Link>
                               </NavigationMenuLink>
                             </li>
                           ))}
-                          <li className="col-span-2 border-t pt-2 mt-2">
+                          <li className="col-span-2 border-t border-border pt-3 mt-2">
                             <NavigationMenuLink asChild>
                               <Link
                                 to="/services"
-                                className="flex items-center justify-center gap-2 rounded-md p-3 text-sm font-medium text-gold hover:bg-accent transition-colors"
+                                className="flex items-center justify-center gap-2 rounded-lg p-3 text-sm font-medium text-copper hover:bg-cream-warm transition-all"
                               >
                                 View All Services →
                               </Link>
@@ -98,10 +98,10 @@ const Header = () => {
                     <Link
                       to={link.href}
                       className={cn(
-                        "flex h-10 items-center px-4 text-sm font-medium font-sans transition-colors hover:text-foreground",
+                        "flex h-10 items-center px-4 text-sm font-medium font-sans transition-colors rounded-lg hover:bg-cream-warm",
                         location.pathname === link.href
-                          ? "text-foreground"
-                          : "text-muted-foreground"
+                          ? "text-copper"
+                          : "text-muted-foreground hover:text-foreground"
                       )}
                     >
                       {link.title}
@@ -115,17 +115,17 @@ const Header = () => {
 
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center gap-3">
-          <Button variant="navy-outline" size="sm" asChild>
+          <Button variant="midnight-outline" size="sm" asChild>
             <Link to="/contact">Contact</Link>
           </Button>
-          <Button variant="gold" size="sm" asChild>
+          <Button variant="copper" size="sm" asChild>
             <Link to="/consultation">Free Consultation</Link>
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 text-foreground"
+          className="lg:hidden p-2.5 text-foreground rounded-lg hover:bg-cream-warm transition-colors"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -135,28 +135,28 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden border-t border-border bg-background animate-fade-in">
-          <nav className="container py-4 space-y-1">
+        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl animate-fade-in">
+          <nav className="container py-6 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.title}
                 to={link.href}
                 className={cn(
-                  "block py-3 px-4 text-base font-medium font-sans rounded-md transition-colors",
+                  "block py-3.5 px-4 text-base font-medium font-sans rounded-lg transition-all",
                   location.pathname === link.href
-                    ? "bg-accent text-foreground"
-                    : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                    ? "bg-cream-warm text-copper"
+                    : "text-muted-foreground hover:bg-cream-warm hover:text-foreground"
                 )}
                 onClick={() => setIsOpen(false)}
               >
                 {link.title}
               </Link>
             ))}
-            <div className="pt-4 space-y-2 border-t border-border mt-4">
-              <Button variant="navy-outline" className="w-full" asChild>
+            <div className="pt-6 space-y-3 border-t border-border mt-4">
+              <Button variant="midnight-outline" className="w-full" asChild>
                 <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
               </Button>
-              <Button variant="gold" className="w-full" asChild>
+              <Button variant="copper" className="w-full" asChild>
                 <Link to="/consultation" onClick={() => setIsOpen(false)}>Free Consultation</Link>
               </Button>
             </div>

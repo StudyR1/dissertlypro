@@ -149,7 +149,7 @@ const Pricing = () => {
                 </ul>
 
                 <Button
-                  variant={plan.popular ? "hero" : "navy-outline"}
+                  variant={plan.popular ? "hero" : "midnight-outline"}
                   className="w-full"
                   size="lg"
                   asChild

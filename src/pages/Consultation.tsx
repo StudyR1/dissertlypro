@@ -363,12 +363,12 @@ const Consultation = () => {
                 )}
 
                 {step < totalSteps ? (
-                  <Button variant="gold" onClick={nextStep}>
+                  <Button variant="copper" onClick={nextStep}>
                     Continue
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 ) : (
-                  <Button variant="gold" size="lg">
+                  <Button variant="copper" size="lg">
                     Submit Request
                     <ArrowRight className="h-4 w-4" />
                   </Button>

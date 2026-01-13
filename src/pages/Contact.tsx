@@ -96,7 +96,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button variant="gold" size="lg" className="w-full">
+                <Button variant="copper" size="lg" className="w-full">
                   Send Message
                 </Button>
               </form>

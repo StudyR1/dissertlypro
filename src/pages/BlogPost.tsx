@@ -254,7 +254,7 @@ const BlogPost = () => {
               <p className="text-muted-foreground font-sans mb-6">
                 Our PhD-qualified experts can provide personalized support for your dissertation journey.
               </p>
-              <Button variant="gold" size="lg" asChild>
+              <Button variant="copper" size="lg" asChild>
                 <Link to="/consultation">
                   Request Free Consultation
                   <ArrowRight className="h-4 w-4" />

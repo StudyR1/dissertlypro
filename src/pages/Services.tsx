@@ -203,7 +203,7 @@ const Services = () => {
                     ))}
                   </ul>
 
-                  <Button variant="navy-outline" size="sm" asChild>
+                  <Button variant="midnight-outline" size="sm" asChild>
                     <Link to={`/services/${service.slug}`}>
                       Learn More
                       <ArrowRight className="h-4 w-4" />
@@ -227,7 +227,7 @@ const Services = () => {
               Book a free consultation with our academic advisors. We'll assess your needs and 
               recommend the best support package for your research journey.
             </p>
-            <Button variant="gold" size="xl" asChild>
+            <Button variant="copper" size="xl" asChild>
               <Link to="/consultation">
                 Request Free Consultation
                 <ArrowRight className="h-5 w-5" />
