@@ -43,6 +43,10 @@ const Header = () => {
           <img 
             src={logoIcon} 
             alt="DissertlyPro Logo" 
+            width={48}
+            height={48}
+            loading="eager"
+            decoding="async"
             className="h-12 w-12 rounded-xl shadow-subtle group-hover:shadow-card transition-all duration-300 group-hover:scale-105"
           />
           <div className="flex flex-col">
