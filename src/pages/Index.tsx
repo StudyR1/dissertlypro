@@ -34,6 +34,7 @@ import {
   ReviewSchema, 
   defaultReviews 
 } from "@/components/schemas";
+import { AnimatedCounter, TrustBadges, TrustStrip } from "@/components/cro";
 
 const services = [
   {
@@ -366,21 +367,43 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Stats Bar */}
+      {/* Stats Bar with Animated Counters */}
       <section className="bg-card border-y border-border relative overflow-hidden">
         <div className="absolute inset-0 pattern-dots opacity-50" />
         <div className="container py-14 relative">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-2 group-hover:scale-105 transition-transform">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground font-sans tracking-wide">
-                  {stat.label}
-                </div>
+            <div className="text-center group">
+              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-2 group-hover:scale-105 transition-transform">
+                <AnimatedCounter end={15000} suffix="+" />
               </div>
-            ))}
+              <div className="text-sm text-muted-foreground font-sans tracking-wide">
+                Graduate Students Supported
+              </div>
+            </div>
+            <div className="text-center group">
+              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-2 group-hover:scale-105 transition-transform">
+                <AnimatedCounter end={98} suffix="%" />
+              </div>
+              <div className="text-sm text-muted-foreground font-sans tracking-wide">
+                Client Satisfaction Rate
+              </div>
+            </div>
+            <div className="text-center group">
+              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-2 group-hover:scale-105 transition-transform">
+                <AnimatedCounter end={500} suffix="+" />
+              </div>
+              <div className="text-sm text-muted-foreground font-sans tracking-wide">
+                Subject Matter Experts
+              </div>
+            </div>
+            <div className="text-center group">
+              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-copper mb-2 group-hover:scale-105 transition-transform">
+                <AnimatedCounter end={50} suffix="+" />
+              </div>
+              <div className="text-sm text-muted-foreground font-sans tracking-wide">
+                Countries Served
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -628,9 +651,7 @@ const Index = () => {
                   <Link to="/pricing">View Pricing</Link>
                 </Button>
               </div>
-              <p className="text-muted-foreground font-sans text-sm mt-8">
-                100% confidential · No obligations · Response within 24 hours
-              </p>
+              <TrustStrip className="mt-8" />
             </div>
           </div>
         </div>
