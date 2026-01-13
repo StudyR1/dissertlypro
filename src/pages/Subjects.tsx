@@ -248,7 +248,7 @@ const Subjects = () => {
               Our network is constantly expanding. Contact us with your specific research area, 
               and we'll match you with a qualified expert.
             </p>
-            <Button variant="gold" size="xl" asChild>
+            <Button variant="copper" size="xl" asChild>
               <Link to="/consultation">
                 Discuss Your Research
                 <ArrowRight className="h-5 w-5" />

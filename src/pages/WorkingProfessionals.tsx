@@ -266,7 +266,7 @@ const WorkingProfessionals = () => {
               Book a free consultation to discuss your situation. We'll create a personalized 
               plan that respects your professional and personal commitments.
             </p>
-            <Button variant="gold" size="xl" asChild>
+            <Button variant="copper" size="xl" asChild>
               <Link to="/consultation">
                 Book Your Free Consultation
                 <ArrowRight className="h-5 w-5" />

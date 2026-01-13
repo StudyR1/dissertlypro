@@ -36,40 +36,50 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-gradient-to-b from-midnight-rich to-midnight text-primary-foreground relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 pattern-dots opacity-30 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-copper/30 to-transparent" />
+      
       {/* Main Footer */}
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+      <div className="container py-20 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gold shadow-gold">
-                <GraduationCap className="h-6 w-6 text-foreground" />
+            <Link to="/" className="flex items-center gap-3 mb-8 group">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-copper to-copper-dark shadow-copper group-hover:scale-105 transition-transform">
+                <GraduationCap className="h-6 w-6 text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-serif font-semibold tracking-tight">
-                  Scholarly<span className="text-gold">Edge</span>
+                <span className="text-xl font-serif font-bold tracking-tight">
+                  Scholarly<span className="text-copper-light">Edge</span>
                 </span>
-                <span className="text-xs text-primary-foreground/70 font-sans tracking-wide">
-                  Master's & PhD Research Support
+                <span className="text-[10px] text-primary-foreground/50 font-sans tracking-widest uppercase">
+                  Master's & PhD Support
                 </span>
               </div>
             </Link>
-            <p className="text-primary-foreground/80 font-sans text-sm leading-relaxed mb-6 max-w-sm">
+            <p className="text-primary-foreground/70 font-sans text-sm leading-relaxed mb-8 max-w-sm">
               Premium academic support exclusively for postgraduate students. We help Master's and PhD candidates 
               navigate the complexities of advanced research with expert guidance and unwavering confidentiality.
             </p>
-            <div className="space-y-3 text-sm font-sans">
-              <a href="mailto:support@scholarlyedge.com" className="flex items-center gap-3 text-primary-foreground/70 hover:text-gold transition-colors">
-                <Mail className="h-4 w-4" />
+            <div className="space-y-3.5 text-sm font-sans">
+              <a href="mailto:support@scholarlyedge.com" className="flex items-center gap-3 text-primary-foreground/60 hover:text-copper transition-colors group">
+                <div className="p-2 rounded-lg bg-white/5 group-hover:bg-copper/10 transition-colors">
+                  <Mail className="h-4 w-4" />
+                </div>
                 support@scholarlyedge.com
               </a>
-              <a href="tel:+1-800-555-0199" className="flex items-center gap-3 text-primary-foreground/70 hover:text-gold transition-colors">
-                <Phone className="h-4 w-4" />
+              <a href="tel:+1-800-555-0199" className="flex items-center gap-3 text-primary-foreground/60 hover:text-copper transition-colors group">
+                <div className="p-2 rounded-lg bg-white/5 group-hover:bg-copper/10 transition-colors">
+                  <Phone className="h-4 w-4" />
+                </div>
                 +1 (800) 555-0199
               </a>
-              <div className="flex items-center gap-3 text-primary-foreground/70">
-                <MapPin className="h-4 w-4" />
+              <div className="flex items-center gap-3 text-primary-foreground/60">
+                <div className="p-2 rounded-lg bg-white/5">
+                  <MapPin className="h-4 w-4" />
+                </div>
                 Available Worldwide
               </div>
             </div>
@@ -77,13 +87,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-serif font-semibold text-base mb-4">Services</h4>
-            <ul className="space-y-2.5">
+            <h4 className="font-serif font-semibold text-base mb-5 text-primary-foreground">Services</h4>
+            <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.title}>
                   <Link
                     to={link.href}
-                    className="text-sm font-sans text-primary-foreground/70 hover:text-gold transition-colors"
+                    className="text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors link-underline"
                   >
                     {link.title}
                   </Link>
@@ -94,13 +104,13 @@ const Footer = () => {
 
           {/* Support */}
           <div>
-            <h4 className="font-serif font-semibold text-base mb-4">Support</h4>
-            <ul className="space-y-2.5">
+            <h4 className="font-serif font-semibold text-base mb-5 text-primary-foreground">Support</h4>
+            <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.title}>
                   <Link
                     to={link.href}
-                    className="text-sm font-sans text-primary-foreground/70 hover:text-gold transition-colors"
+                    className="text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors link-underline"
                   >
                     {link.title}
                   </Link>
@@ -111,13 +121,13 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="font-serif font-semibold text-base mb-4">Legal</h4>
-            <ul className="space-y-2.5">
+            <h4 className="font-serif font-semibold text-base mb-5 text-primary-foreground">Legal</h4>
+            <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.title}>
                   <Link
                     to={link.href}
-                    className="text-sm font-sans text-primary-foreground/70 hover:text-gold transition-colors"
+                    className="text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors link-underline"
                   >
                     {link.title}
                   </Link>
@@ -129,21 +139,26 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-primary-foreground/10">
+      <div className="border-t border-white/5">
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm font-sans text-primary-foreground/60">
+          <p className="text-sm font-sans text-primary-foreground/40">
             © {currentYear} ScholarlyEdge. All rights reserved. Committed to academic excellence.
           </p>
-          <div className="flex items-center gap-4">
-            <a href="#" className="text-primary-foreground/60 hover:text-gold transition-colors" aria-label="LinkedIn">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-primary-foreground/60 hover:text-gold transition-colors" aria-label="Twitter">
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-primary-foreground/60 hover:text-gold transition-colors" aria-label="Facebook">
-              <Facebook className="h-5 w-5" />
-            </a>
+          <div className="flex items-center gap-3">
+            {[
+              { icon: Linkedin, label: "LinkedIn" },
+              { icon: Twitter, label: "Twitter" },
+              { icon: Facebook, label: "Facebook" },
+            ].map(({ icon: Icon, label }) => (
+              <a
+                key={label}
+                href="#"
+                className="p-2.5 rounded-lg bg-white/5 text-primary-foreground/50 hover:text-copper hover:bg-copper/10 transition-all"
+                aria-label={label}
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
           </div>
         </div>
       </div>

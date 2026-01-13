@@ -169,7 +169,7 @@ const Blog = () => {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-lg border border-border bg-background font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold"
               />
-              <Button variant="gold" size="lg">
+              <Button variant="copper" size="lg">
                 Subscribe
               </Button>
             </div>
