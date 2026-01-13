@@ -37,9 +37,9 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container flex h-16 sm:h-20 items-center justify-between px-4 sm:px-6">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
           <img 
             src={logoIcon} 
             alt="DissertlyPro Logo" 
@@ -47,13 +47,13 @@ const Header = () => {
             height={48}
             loading="eager"
             decoding="async"
-            className="h-12 w-12 rounded-xl shadow-subtle group-hover:shadow-card transition-all duration-300 group-hover:scale-105"
+            className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl shadow-subtle group-hover:shadow-card transition-all duration-300 group-hover:scale-105"
           />
           <div className="flex flex-col">
-            <span className="text-xl font-serif font-bold text-foreground tracking-tight">
+            <span className="text-lg sm:text-xl font-serif font-bold text-foreground tracking-tight">
               Dissertly<span className="text-gradient-copper">Pro</span>
             </span>
-            <span className="text-[10px] text-muted-foreground font-sans tracking-widest uppercase">
+            <span className="text-[9px] sm:text-[10px] text-muted-foreground font-sans tracking-widest uppercase hidden xs:block">
               Master's & PhD Support
             </span>
           </div>
@@ -131,9 +131,10 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2.5 text-foreground rounded-lg hover:bg-cream-warm transition-colors"
+          className="lg:hidden p-3 -mr-2 text-foreground rounded-lg hover:bg-cream-warm transition-colors active:scale-95 touch-manipulation"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -141,28 +142,28 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl animate-fade-in">
-          <nav className="container py-6 space-y-1">
+        <div className="lg:hidden border-t border-border bg-background/98 backdrop-blur-xl animate-fade-in fixed inset-x-0 top-16 sm:top-20 bottom-0 z-50 overflow-y-auto">
+          <nav className="container py-4 px-4 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.title}
                 to={link.href}
                 className={cn(
-                  "block py-3.5 px-4 text-base font-medium font-sans rounded-lg transition-all",
+                  "flex items-center py-4 px-4 text-base font-medium font-sans rounded-xl transition-all active:scale-[0.98] touch-manipulation",
                   location.pathname === link.href
                     ? "bg-cream-warm text-copper"
-                    : "text-muted-foreground hover:bg-cream-warm hover:text-foreground"
+                    : "text-muted-foreground hover:bg-cream-warm hover:text-foreground active:bg-cream-warm"
                 )}
                 onClick={() => setIsOpen(false)}
               >
                 {link.title}
               </Link>
             ))}
-            <div className="pt-6 space-y-3 border-t border-border mt-4">
-              <Button variant="midnight-outline" className="w-full" asChild>
+            <div className="pt-4 space-y-3 border-t border-border mt-4">
+              <Button variant="midnight-outline" className="w-full h-12 text-base touch-manipulation" asChild>
                 <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
               </Button>
-              <Button variant="copper" className="w-full" asChild>
+              <Button variant="copper" className="w-full h-12 text-base touch-manipulation" asChild>
                 <Link to="/consultation" onClick={() => setIsOpen(false)}>Free Consultation</Link>
               </Button>
             </div>

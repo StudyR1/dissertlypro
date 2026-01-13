@@ -29,14 +29,14 @@ const FloatingCTA = () => {
 
   return (
     <>
-      {/* Mobile Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-card/95 backdrop-blur-lg border-t border-border p-4 animate-slide-up safe-area-bottom">
-        <div className="flex items-center gap-3">
-          <div className="flex-1">
-            <p className="text-sm font-medium text-foreground">Need dissertation help?</p>
+      {/* Mobile Bottom Bar - improved touch targets and spacing */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-card/98 backdrop-blur-lg border-t border-border safe-area-bottom animate-slide-up">
+        <div className="flex items-center gap-3 p-3 sm:p-4">
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-foreground truncate">Need dissertation help?</p>
             <p className="text-xs text-muted-foreground">Free expert consultation</p>
           </div>
-          <Button variant="copper" size="sm" asChild>
+          <Button variant="copper" size="sm" className="shrink-0 h-10 px-4 touch-manipulation active:scale-95" asChild>
             <Link to="/consultation">
               Get Help
               <ArrowRight className="h-4 w-4" />
