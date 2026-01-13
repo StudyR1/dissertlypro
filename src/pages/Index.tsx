@@ -87,7 +87,7 @@ const processSteps = [
 
 const testimonials = [
   {
-    quote: "ScholarlyEdge helped me transform my scattered ideas into a coherent dissertation proposal. My committee approved it on the first submission.",
+    quote: "DissertlyPro helped me transform my scattered ideas into a coherent dissertation proposal. My committee approved it on the first submission.",
     author: "Dr. Sarah M.",
     role: "PhD in Education, University of Michigan",
     rating: 5,

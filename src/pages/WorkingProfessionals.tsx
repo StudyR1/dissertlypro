@@ -50,7 +50,7 @@ const benefits = [
 
 const testimonials = [
   {
-    quote: "As a hospital administrator working 60-hour weeks, I thought completing my DBA was impossible. ScholarlyEdge made it manageable with their flexible approach.",
+    quote: "As a hospital administrator working 60-hour weeks, I thought completing my DBA was impossible. DissertlyPro made it manageable with their flexible approach.",
     author: "James R.",
     role: "DBA, Healthcare Management",
   },

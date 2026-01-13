@@ -45,7 +45,7 @@ const Header = () => {
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-serif font-bold text-foreground tracking-tight">
-              Scholarly<span className="text-gradient-copper">Edge</span>
+              Dissertly<span className="text-gradient-copper">Pro</span>
             </span>
             <span className="text-[10px] text-muted-foreground font-sans tracking-widest uppercase">
               Master's & PhD Support

@@ -51,8 +51,8 @@ const Footer = () => {
                 <GraduationCap className="h-6 w-6 text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-serif font-bold tracking-tight">
-                  Scholarly<span className="text-copper-light">Edge</span>
+              <span className="text-xl font-serif font-bold tracking-tight">
+                  Dissertly<span className="text-copper-light">Pro</span>
                 </span>
                 <span className="text-[10px] text-primary-foreground/50 font-sans tracking-widest uppercase">
                   Master's & PhD Support
@@ -64,11 +64,11 @@ const Footer = () => {
               navigate the complexities of advanced research with expert guidance and unwavering confidentiality.
             </p>
             <div className="space-y-3.5 text-sm font-sans">
-              <a href="mailto:support@scholarlyedge.com" className="flex items-center gap-3 text-primary-foreground/60 hover:text-copper transition-colors group">
+              <a href="mailto:support@dissertlypro.com" className="flex items-center gap-3 text-primary-foreground/60 hover:text-copper transition-colors group">
                 <div className="p-2 rounded-lg bg-white/5 group-hover:bg-copper/10 transition-colors">
                   <Mail className="h-4 w-4" />
                 </div>
-                support@scholarlyedge.com
+                support@dissertlypro.com
               </a>
               <a href="tel:+1-800-555-0199" className="flex items-center gap-3 text-primary-foreground/60 hover:text-copper transition-colors group">
                 <div className="p-2 rounded-lg bg-white/5 group-hover:bg-copper/10 transition-colors">
@@ -142,7 +142,7 @@ const Footer = () => {
       <div className="border-t border-white/5">
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm font-sans text-primary-foreground/40">
-            © {currentYear} ScholarlyEdge. All rights reserved. Committed to academic excellence.
+            © {currentYear} DissertlyPro. All rights reserved. Committed to academic excellence.
           </p>
           <div className="flex items-center gap-3">
             {[
