@@ -6,120 +6,121 @@
 
 @layer base {
   :root {
-    /* Premium Refined Palette */
-    --background: 45 25% 97%;
-    --foreground: 222 35% 10%;
+    /* Premium Refined Palette - Softer, more readable */
+    --background: 220 14% 96%;
+    --foreground: 220 25% 18%;
 
-    --card: 45 30% 99%;
-    --card-foreground: 222 35% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 18%;
 
-    --popover: 45 30% 99%;
-    --popover-foreground: 222 35% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 18%;
 
-    /* Deep Midnight Blue - Primary Brand */
-    --primary: 222 47% 14%;
-    --primary-foreground: 45 30% 97%;
+    /* Deep Navy - Primary Brand */
+    --primary: 220 40% 20%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Warm Stone - Secondary */
-    --secondary: 35 20% 92%;
-    --secondary-foreground: 222 35% 15%;
+    /* Cool Stone - Secondary */
+    --secondary: 220 10% 92%;
+    --secondary-foreground: 220 25% 20%;
 
     /* Muted Scholarly Tones */
-    --muted: 35 15% 94%;
-    --muted-foreground: 222 15% 42%;
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 45%;
 
-    /* Burnished Copper/Bronze Accent */
-    --accent: 28 72% 50%;
-    --accent-foreground: 45 30% 99%;
+    /* Warm Bronze Accent - More muted, elegant */
+    --accent: 25 45% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
-    --ring: 28 72% 50%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 25 45% 45%;
 
     --radius: 0.625rem;
 
     /* Extended Brand Colors */
-    --midnight: 222 55% 8%;
-    --midnight-rich: 222 47% 14%;
-    --midnight-soft: 222 40% 22%;
-    --midnight-pale: 222 35% 35%;
+    --midnight: 220 45% 10%;
+    --midnight-rich: 220 40% 16%;
+    --midnight-soft: 220 35% 25%;
+    --midnight-pale: 220 30% 40%;
     
-    --stone: 35 20% 25%;
-    --stone-light: 35 15% 50%;
+    --stone: 220 15% 30%;
+    --stone-light: 220 10% 55%;
     
-    --copper: 28 72% 50%;
-    --copper-light: 28 65% 65%;
-    --copper-dark: 24 75% 38%;
-    --copper-glow: 28 85% 58%;
+    /* Warm Bronze - Refined, not too bright */
+    --copper: 25 45% 45%;
+    --copper-light: 25 40% 58%;
+    --copper-dark: 22 50% 35%;
+    --copper-glow: 25 50% 52%;
     
-    --cream: 45 30% 97%;
-    --cream-warm: 40 35% 94%;
-    --cream-rich: 38 40% 90%;
+    --cream: 40 20% 97%;
+    --cream-warm: 35 15% 95%;
+    --cream-rich: 30 12% 92%;
     
-    --sage: 155 25% 45%;
-    --sage-light: 155 20% 85%;
+    --sage: 160 20% 45%;
+    --sage-light: 160 15% 88%;
     
-    --success: 155 50% 38%;
+    --success: 160 45% 40%;
     --success-foreground: 0 0% 100%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(222 55% 6%) 0%, hsl(222 47% 14%) 40%, hsl(222 40% 22%) 100%);
-    --gradient-hero-radial: radial-gradient(ellipse at 30% 20%, hsl(222 40% 18%) 0%, hsl(222 55% 8%) 70%);
-    --gradient-copper: linear-gradient(135deg, hsl(28 72% 50%) 0%, hsl(24 75% 38%) 100%);
-    --gradient-copper-shine: linear-gradient(135deg, hsl(28 85% 58%) 0%, hsl(28 72% 50%) 50%, hsl(24 75% 38%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(45 30% 99%) 0%, hsl(40 35% 96%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-    --gradient-text: linear-gradient(135deg, hsl(28 85% 58%) 0%, hsl(28 72% 50%) 50%, hsl(24 75% 38%) 100%);
+    /* Gradients - Deeper, richer */
+    --gradient-hero: linear-gradient(145deg, hsl(220 50% 8%) 0%, hsl(220 45% 14%) 50%, hsl(220 40% 20%) 100%);
+    --gradient-hero-radial: radial-gradient(ellipse at 30% 20%, hsl(220 40% 16%) 0%, hsl(220 50% 8%) 70%);
+    --gradient-copper: linear-gradient(135deg, hsl(25 45% 45%) 0%, hsl(22 50% 35%) 100%);
+    --gradient-copper-shine: linear-gradient(135deg, hsl(25 50% 52%) 0%, hsl(25 45% 45%) 50%, hsl(22 50% 35%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 97%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(25 50% 52%) 0%, hsl(25 45% 45%) 50%, hsl(22 50% 35%) 100%);
 
-    /* Shadows */
-    --shadow-subtle: 0 2px 12px -3px hsl(222 35% 10% / 0.06), 0 1px 4px -2px hsl(222 35% 10% / 0.04);
-    --shadow-card: 0 8px 30px -8px hsl(222 35% 10% / 0.1), 0 4px 12px -4px hsl(222 35% 10% / 0.06);
-    --shadow-elevated: 0 20px 50px -15px hsl(222 35% 10% / 0.15), 0 8px 20px -8px hsl(222 35% 10% / 0.1);
-    --shadow-copper: 0 8px 30px -6px hsl(28 72% 50% / 0.3), 0 4px 12px -4px hsl(28 72% 50% / 0.2);
-    --shadow-inner: inset 0 2px 4px 0 hsl(222 35% 10% / 0.05);
+    /* Shadows - Subtler */
+    --shadow-subtle: 0 2px 12px -3px hsl(220 25% 18% / 0.05), 0 1px 4px -2px hsl(220 25% 18% / 0.03);
+    --shadow-card: 0 8px 30px -8px hsl(220 25% 18% / 0.08), 0 4px 12px -4px hsl(220 25% 18% / 0.04);
+    --shadow-elevated: 0 20px 50px -15px hsl(220 25% 18% / 0.12), 0 8px 20px -8px hsl(220 25% 18% / 0.08);
+    --shadow-copper: 0 8px 30px -6px hsl(25 45% 45% / 0.25), 0 4px 12px -4px hsl(25 45% 45% / 0.15);
+    --shadow-inner: inset 0 2px 4px 0 hsl(220 25% 18% / 0.04);
 
     /* Sidebar */
-    --sidebar-background: 222 55% 8%;
-    --sidebar-foreground: 45 30% 97%;
-    --sidebar-primary: 28 72% 50%;
-    --sidebar-primary-foreground: 222 35% 10%;
-    --sidebar-accent: 222 40% 18%;
-    --sidebar-accent-foreground: 45 30% 97%;
-    --sidebar-border: 222 40% 20%;
-    --sidebar-ring: 28 72% 50%;
+    --sidebar-background: 220 45% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 25 45% 45%;
+    --sidebar-primary-foreground: 220 25% 18%;
+    --sidebar-accent: 220 35% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 35% 22%;
+    --sidebar-ring: 25 45% 45%;
   }
 
   .dark {
-    --background: 222 55% 6%;
-    --foreground: 45 30% 97%;
+    --background: 220 50% 6%;
+    --foreground: 0 0% 96%;
 
-    --card: 222 45% 10%;
-    --card-foreground: 45 30% 97%;
+    --card: 220 45% 10%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 222 45% 10%;
-    --popover-foreground: 45 30% 97%;
+    --popover: 220 45% 10%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 28 72% 50%;
-    --primary-foreground: 222 55% 8%;
+    --primary: 25 45% 50%;
+    --primary-foreground: 220 50% 8%;
 
-    --secondary: 222 35% 15%;
-    --secondary-foreground: 45 30% 97%;
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 222 35% 12%;
-    --muted-foreground: 222 15% 60%;
+    --muted: 220 30% 12%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 28 72% 50%;
-    --accent-foreground: 222 55% 8%;
+    --accent: 25 45% 50%;
+    --accent-foreground: 220 50% 8%;
 
-    --destructive: 0 62% 45%;
+    --destructive: 0 60% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 35% 18%;
-    --input: 222 35% 18%;
-    --ring: 28 72% 50%;
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 25 45% 50%;
   }
 }
 
