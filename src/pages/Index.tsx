@@ -140,23 +140,24 @@ const Index = () => {
       <ReviewSchema reviews={defaultReviews} />
       {/* Hero Section */}
       <section className="relative min-h-[100vh] flex items-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight-rich to-midnight-soft">
-          {/* Background image with parallax effect */}
+        {/* Animated Background - GPU accelerated */}
+        <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight-rich to-midnight-soft gpu-accelerated">
+          {/* Background image with optimized loading */}
           <div 
             className="absolute inset-0 opacity-15"
             style={{
               backgroundImage: `url(${heroBackground})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              backgroundAttachment: 'fixed',
+              backgroundAttachment: 'scroll', // Changed from 'fixed' for better mobile performance
             }}
+            aria-hidden="true"
           />
           
-          {/* Subtle gradient orbs */}
-          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-copper/[0.03] rounded-full blur-[150px] animate-float" />
-          <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-midnight-soft/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-copper/[0.02] rounded-full blur-[100px] animate-float" style={{ animationDelay: '4s' }} />
+          {/* Subtle gradient orbs - GPU accelerated */}
+          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-copper/[0.03] rounded-full blur-[150px] animate-float will-change-transform" />
+          <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-midnight-soft/20 rounded-full blur-[120px] animate-float will-change-transform" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-copper/[0.02] rounded-full blur-[100px] animate-float will-change-transform" style={{ animationDelay: '4s' }} />
           
           {/* Noise texture overlay */}
           <div className="absolute inset-0 noise-overlay opacity-[0.02]" />
@@ -384,8 +385,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
+      {/* Services Section - Content visibility for off-screen optimization */}
+      <section className="py-24 lg:py-32 bg-background relative overflow-hidden content-visibility-auto">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-cream-warm/50 to-transparent pointer-events-none" />
         <div className="container relative">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -440,8 +441,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Working Professionals CTA */}
-      <section className="py-24 lg:py-32 bg-cream-warm relative overflow-hidden">
+      {/* Working Professionals CTA - Content visibility optimization */}
+      <section className="py-24 lg:py-32 bg-cream-warm relative overflow-hidden content-visibility-auto">
         <div className="absolute inset-0 pattern-grid" />
         <div className="container relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -551,8 +552,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-midnight-rich to-midnight relative overflow-hidden">
+      {/* Testimonials - Content visibility optimization */}
+      <section className="py-24 lg:py-32 bg-gradient-to-b from-midnight-rich to-midnight relative overflow-hidden content-visibility-auto">
         <div className="absolute inset-0 pattern-dots opacity-20" />
         <div className="container relative">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -596,8 +597,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
+      {/* CTA Section - Content visibility optimization */}
+      <section className="py-24 lg:py-32 bg-background relative overflow-hidden content-visibility-auto">
         <div className="absolute inset-0 pattern-grid opacity-50" />
         <div className="container relative">
           <div className="border-gradient bg-card rounded-3xl shadow-elevated p-10 md:p-16 text-center max-w-4xl mx-auto relative overflow-hidden">
