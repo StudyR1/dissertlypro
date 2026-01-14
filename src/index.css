@@ -84,6 +84,20 @@
     --success: 160 45% 40%;
     --success-foreground: 0 0% 100%;
 
+    /* Ivory - High contrast text on dark backgrounds */
+    --ivory: 40 30% 95%;
+    --ivory-warm: 35 25% 93%;
+    
+    /* Gold - Accent highlights */
+    --gold: 38 70% 55%;
+    --gold-light: 40 65% 65%;
+    --gold-dark: 35 75% 45%;
+    
+    /* Navy - Dark card backgrounds */
+    --navy: 220 50% 12%;
+    --navy-medium: 220 45% 18%;
+    --navy-light: 220 40% 25%;
+
     /* Gradients - Deeper, richer */
     --gradient-hero: linear-gradient(145deg, hsl(220 50% 8%) 0%, hsl(220 45% 14%) 50%, hsl(220 40% 20%) 100%);
     --gradient-hero-radial: radial-gradient(ellipse at 30% 20%, hsl(220 40% 16%) 0%, hsl(220 50% 8%) 70%);
