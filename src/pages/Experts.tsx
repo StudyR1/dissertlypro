@@ -215,7 +215,7 @@ const Experts = () => {
             {experts.map((expert, index) => (
               <div 
                 key={index} 
-                className="group bg-white rounded-2xl border border-border p-6 hover:shadow-card transition-all duration-300 relative"
+                className="group bg-card rounded-2xl border border-border p-6 hover:shadow-card transition-all duration-300 relative"
               >
                 {/* Availability Badge - Top Right */}
                 <div className="absolute top-4 right-4">
@@ -302,7 +302,7 @@ const Experts = () => {
 
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {expertiseAreas.map((category, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 sm:p-8 border border-border">
+              <div key={index} className="bg-card rounded-2xl p-6 sm:p-8 border border-border">
                 <div className="w-12 h-12 rounded-xl bg-copper/10 flex items-center justify-center mb-4">
                   <category.icon className="h-6 w-6 text-copper" />
                 </div>
@@ -345,7 +345,7 @@ const Experts = () => {
             {studentTestimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className="group bg-white rounded-2xl border border-border p-6 hover:shadow-card transition-all duration-300 flex flex-col"
+                className="group bg-card rounded-2xl border border-border p-6 hover:shadow-card transition-all duration-300 flex flex-col"
               >
                 <div className="relative mb-4">
                   <Quote className="absolute -top-1 -left-1 h-8 w-8 text-copper/20" />

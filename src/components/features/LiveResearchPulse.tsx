@@ -121,7 +121,7 @@ const LiveResearchPulse = () => {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-midnight-deep via-midnight to-midnight-light border border-white/10 p-6">
+    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-midnight via-midnight-rich to-midnight-soft border border-midnight-soft p-6">
       {/* Animated background pulse */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -133,7 +133,7 @@ const LiveResearchPulse = () => {
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -bottom-1/2 -right-1/2 w-full h-full rounded-full bg-blue-500/5"
+          className="absolute -bottom-1/2 -right-1/2 w-full h-full rounded-full bg-midnight-pale/20"
           animate={{
             scale: [1.5, 1, 1.5],
             opacity: [0.1, 0.3, 0.1],
@@ -148,16 +148,16 @@ const LiveResearchPulse = () => {
           <div className="flex items-center gap-3">
             <div className="relative">
               <div className="w-10 h-10 rounded-xl bg-copper/20 flex items-center justify-center">
-                <Activity className="w-5 h-5 text-copper" />
+                <Activity className="w-5 h-5 text-copper-light" />
               </div>
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse" />
             </div>
             <div>
-              <h3 className="font-semibold text-white text-lg">Live Research Pulse</h3>
-              <p className="text-xs text-white/50">Real-time activity feed</p>
+              <h3 className="font-semibold text-primary-foreground text-lg">Live Research Pulse</h3>
+              <p className="text-xs text-primary-foreground/50">Real-time activity feed</p>
             </div>
           </div>
-          <div className="flex items-center gap-2 text-xs text-white/40">
+          <div className="flex items-center gap-2 text-xs text-primary-foreground/40">
             <Globe className="w-3.5 h-3.5" />
             <span>Worldwide</span>
           </div>
@@ -169,39 +169,39 @@ const LiveResearchPulse = () => {
             key={stats.activeNow}
             initial={{ scale: 1 }}
             animate={{ scale: [1, 1.05, 1] }}
-            className="bg-white/5 rounded-xl p-3 text-center border border-white/10"
+            className="bg-primary-foreground/5 rounded-xl p-3 text-center border border-primary-foreground/10"
           >
             <div className="flex items-center justify-center gap-1.5 mb-1">
               <Users className="w-3.5 h-3.5 text-green-400" />
-              <span className="text-lg font-bold text-white">{stats.activeNow}</span>
+              <span className="text-lg font-bold text-primary-foreground">{stats.activeNow}</span>
             </div>
-            <span className="text-[10px] text-white/50 uppercase tracking-wider">Active Now</span>
+            <span className="text-[10px] text-primary-foreground/50 uppercase tracking-wider">Active Now</span>
           </motion.div>
           
           <motion.div 
             key={stats.todayConsultations}
             initial={{ scale: 1 }}
             animate={{ scale: [1, 1.05, 1] }}
-            className="bg-white/5 rounded-xl p-3 text-center border border-white/10"
+            className="bg-primary-foreground/5 rounded-xl p-3 text-center border border-primary-foreground/10"
           >
             <div className="flex items-center justify-center gap-1.5 mb-1">
-              <TrendingUp className="w-3.5 h-3.5 text-blue-400" />
-              <span className="text-lg font-bold text-white">{stats.todayConsultations}</span>
+              <TrendingUp className="w-3.5 h-3.5 text-copper-light" />
+              <span className="text-lg font-bold text-primary-foreground">{stats.todayConsultations}</span>
             </div>
-            <span className="text-[10px] text-white/50 uppercase tracking-wider">Today's Sessions</span>
+            <span className="text-[10px] text-primary-foreground/50 uppercase tracking-wider">Today's Sessions</span>
           </motion.div>
           
           <motion.div 
             key={stats.weeklyMilestones}
             initial={{ scale: 1 }}
             animate={{ scale: [1, 1.05, 1] }}
-            className="bg-white/5 rounded-xl p-3 text-center border border-white/10"
+            className="bg-primary-foreground/5 rounded-xl p-3 text-center border border-primary-foreground/10"
           >
             <div className="flex items-center justify-center gap-1.5 mb-1">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span className="text-lg font-bold text-white">{stats.weeklyMilestones}</span>
+              <span className="text-lg font-bold text-primary-foreground">{stats.weeklyMilestones}</span>
             </div>
-            <span className="text-[10px] text-white/50 uppercase tracking-wider">This Week</span>
+            <span className="text-[10px] text-primary-foreground/50 uppercase tracking-wider">This Week</span>
           </motion.div>
         </div>
 
@@ -222,16 +222,16 @@ const LiveResearchPulse = () => {
                   {event.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-white/90 leading-snug">
+                  <p className="text-sm text-primary-foreground/90 leading-snug">
                     {event.message}
                   </p>
                   <div className="flex items-center gap-2 mt-1">
-                    <span className="text-[10px] text-white/40 flex items-center gap-1">
+                    <span className="text-[10px] text-primary-foreground/40 flex items-center gap-1">
                       <Clock className="w-2.5 h-2.5" />
                       {formatTime(event.timestamp)}
                     </span>
                     {event.location && (
-                      <span className="text-[10px] text-white/40 flex items-center gap-1">
+                      <span className="text-[10px] text-primary-foreground/40 flex items-center gap-1">
                         <Globe className="w-2.5 h-2.5" />
                         {event.location}
                       </span>
@@ -244,13 +244,13 @@ const LiveResearchPulse = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
-          <p className="text-[10px] text-white/30">
+        <div className="mt-4 pt-4 border-t border-primary-foreground/10 flex items-center justify-between">
+          <p className="text-[10px] text-primary-foreground/30">
             Anonymous activity from our global community
           </p>
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-[10px] text-white/40">Live</span>
+            <span className="text-[10px] text-primary-foreground/40">Live</span>
           </div>
         </div>
       </div>
