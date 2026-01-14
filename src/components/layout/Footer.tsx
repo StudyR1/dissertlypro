@@ -108,7 +108,7 @@ const Footer = () => {
           <div>
             <h4 className="font-serif font-semibold text-sm sm:text-base mb-4 sm:mb-5 text-primary-foreground">Support</h4>
             <ul className="space-y-2 sm:space-y-3">
-              {footerLinks.support.slice(0, 4).map((link) => (
+              {footerLinks.support.map((link) => (
                 <li key={link.title}>
                   <Link
                     to={link.href}
