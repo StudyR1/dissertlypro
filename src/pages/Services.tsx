@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { ServicesListSchema, BreadcrumbSchema } from "@/components/schemas";
+import { ServicesListSchema, BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { servicesPageFAQs } from "@/data/serviceFAQs";
 import { 
   ArrowRight, 
   FileText, 
@@ -165,6 +166,7 @@ const Services = () => {
         { name: "Home", url: "/" },
         { name: "Services", url: "/services" }
       ]} />
+      <FAQSchema faqs={servicesPageFAQs} />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-12 sm:py-16 lg:py-28">
         <div className="container px-4 sm:px-6">
