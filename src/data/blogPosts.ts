@@ -790,6 +790,613 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
+
+  // ============================================
+  // PHASE 3: TECHNICAL TUTORIALS
+  // ============================================
+
+  // Article 12: SPSS Tutorial
+  {
+    slug: "spss-tutorial-dissertation-data-analysis",
+    title: "SPSS Tutorial for Dissertation Data Analysis: Complete Guide",
+    excerpt: "Master SPSS for your dissertation research. Learn data entry, cleaning, descriptive statistics, and advanced analysis techniques with step-by-step instructions.",
+    metaDescription: "Complete SPSS tutorial for dissertation students. Learn data entry, descriptive statistics, t-tests, ANOVA, regression, and more with practical examples.",
+    featured: true,
+    category: "Data Analysis",
+    author: "Dr. Michael Chen",
+    authorBio: "PhD in Statistics, 12+ years teaching quantitative research methods",
+    date: "January 11, 2026",
+    readTime: "30 min read",
+    keywords: ["SPSS tutorial", "dissertation SPSS", "SPSS data analysis", "SPSS for beginners", "quantitative analysis SPSS", "statistical analysis dissertation"],
+    tableOfContents: [
+      { id: "getting-started", title: "Getting Started with SPSS" },
+      { id: "data-entry", title: "Data Entry and Import" },
+      { id: "data-cleaning", title: "Data Cleaning and Preparation" },
+      { id: "descriptive-statistics", title: "Descriptive Statistics" },
+      { id: "inferential-statistics", title: "Inferential Statistics" },
+      { id: "regression-analysis", title: "Regression Analysis" },
+      { id: "exporting-results", title: "Exporting Results for Your Dissertation" },
+    ],
+    content: [
+      "SPSS (Statistical Package for the Social Sciences) remains one of the most widely used statistical software packages in academic research. This comprehensive tutorial will guide you through using SPSS for your dissertation, from initial data entry to advanced statistical analyses.",
+
+      "## Getting Started with SPSS",
+      "When you open SPSS, you'll see two main views: **Data View** (where you see your actual data in spreadsheet format) and **Variable View** (where you define the properties of each variable). Understanding both views is essential for effective data management.",
+      "**Key interface elements**: The menu bar provides access to all statistical procedures. The toolbar offers shortcuts to common operations. The output window displays all results. The syntax editor (optional) allows you to write and save commands for reproducibility.",
+      "**Pro tip**: Always save your work in two formats—the .sav data file AND a syntax file (.sps) documenting your analyses. This ensures reproducibility and makes revisions easier.",
+
+      "## Data Entry and Import",
+      "**Manual data entry**: In Variable View, first define your variables with appropriate names (no spaces, max 64 characters), types (numeric, string, date), and value labels. Then switch to Data View to enter your data.",
+      "**Importing from Excel**: Go to File → Open → Data, select your Excel file, and SPSS will guide you through the import process. Ensure your Excel file has variable names in the first row and data starting from row 2.",
+      "**Variable types to know**: Nominal (categories with no order, e.g., gender), Ordinal (ordered categories, e.g., education level), Scale/Continuous (numerical data with meaningful intervals, e.g., age, test scores).",
+      "**Setting up your variables correctly**:",
+      "```\nName: participant_id (unique identifier)\nType: Numeric\nMeasure: Nominal\n\nName: age\nType: Numeric\nMeasure: Scale\n\nName: satisfaction\nType: Numeric (1-5)\nValue Labels: 1='Very Dissatisfied', 2='Dissatisfied', 3='Neutral', 4='Satisfied', 5='Very Satisfied'\nMeasure: Ordinal\n```",
+
+      "## Data Cleaning and Preparation",
+      "Before analysis, clean your data thoroughly. Common issues include missing values, outliers, and data entry errors.",
+      "**Identifying missing values**: Analyze → Descriptive Statistics → Frequencies. Check for unexpected values or high missing data rates. Consider whether data is missing completely at random (MCAR), missing at random (MAR), or missing not at random (MNAR).",
+      "**Handling missing data options**: Listwise deletion (exclude cases with any missing data), pairwise deletion (use all available data for each analysis), mean substitution (replace with variable mean), or multiple imputation (most robust for significant missing data).",
+      "**Detecting outliers**: Use Analyze → Descriptive Statistics → Explore. Check boxplots for extreme values. Calculate z-scores (values beyond ±3.29 are typically outliers). Decide whether to remove, transform, or retain outliers based on your methodology.",
+      "**Recoding variables**: Transform → Recode into Different Variables. Useful for creating categories from continuous variables or collapsing response categories.",
+      "**Computing new variables**: Transform → Compute Variable. Create composite scores, reverse-code items, or calculate derived measures.",
+
+      "## Descriptive Statistics",
+      "Descriptive statistics summarize your data and should be reported for all key variables in your dissertation.",
+      "**For continuous variables** (Analyze → Descriptive Statistics → Descriptives or Explore): Report mean, standard deviation, range, skewness, and kurtosis. Check for normality using histograms and the Shapiro-Wilk test.",
+      "**For categorical variables** (Analyze → Descriptive Statistics → Frequencies): Report frequencies and percentages. Use bar charts or pie charts for visualization.",
+      "**Creating publication-ready tables**: Right-click output tables → Copy Special → select 'Objects' to paste into Word with formatting intact.",
+      "**Example output interpretation**:\n```\nDescriptive Statistics\n                    N    Mean    Std. Deviation\nJob Satisfaction   245   3.72          0.89\nWork Experience    245  12.45          6.32\nAge                245  38.21          9.87\n```",
+
+      "## Inferential Statistics",
+      "Inferential statistics help you draw conclusions about your population from your sample data.",
+      "**Choosing the right test**: Your choice depends on your research question, number of groups/variables, and whether your data meets parametric assumptions (normality, homogeneity of variance).",
+      "**Independent samples t-test** (Analyze → Compare Means → Independent Samples T-Test): Compares means between two unrelated groups. Example: comparing test scores between treatment and control groups. Report t-value, degrees of freedom, p-value, and effect size (Cohen's d).",
+      "**Paired samples t-test** (Analyze → Compare Means → Paired Samples T-Test): Compares means within the same group at two time points. Example: pre-test vs post-test scores. Report the same statistics plus the correlation between measures.",
+      "**One-way ANOVA** (Analyze → Compare Means → One-Way ANOVA): Compares means across three or more groups. Include post-hoc tests (Tukey or Bonferroni) to identify which groups differ. Report F-value, degrees of freedom, p-value, and eta-squared.",
+      "**Chi-square test** (Analyze → Descriptive Statistics → Crosstabs): Tests association between two categorical variables. Report χ², degrees of freedom, p-value, and Cramér's V for effect size.",
+      "**Correlation** (Analyze → Correlate → Bivariate): Measures relationship strength between continuous variables. Use Pearson for normally distributed data, Spearman for ordinal or non-normal data. Report r-value, p-value, and interpret strength (weak: .1-.3, moderate: .3-.5, strong: .5+).",
+
+      "## Regression Analysis",
+      "Regression analysis predicts outcomes and identifies significant predictors—essential for many dissertation research questions.",
+      "**Simple linear regression** (Analyze → Regression → Linear): One predictor, one outcome. Reports R², adjusted R², F-test, unstandardized (B) and standardized (β) coefficients, and p-values.",
+      "**Multiple regression** (Analyze → Regression → Linear with multiple predictors): Multiple predictors, one outcome. Check for multicollinearity using VIF (values >10 indicate problems). Methods: Enter (all predictors simultaneously), Stepwise (automatic selection), Hierarchical (theory-driven blocks).",
+      "**Interpretation example**:\n```\nModel Summary: R² = .342, Adjusted R² = .331\nThe model explains 33.1% of variance in job satisfaction.\n\nCoefficients:\n                      B      SE     β       t      Sig.\n(Constant)         1.245   .312          3.99   .000\nWork-life balance   .456   .078   .412   5.85   .000\nSalary satisfaction .289   .065   .298   4.45   .000\nTeam support        .178   .071   .167   2.51   .013\n```",
+      "**Logistic regression** (Analyze → Regression → Binary Logistic): For binary outcome variables. Reports odds ratios, confidence intervals, and Nagelkerke R².",
+
+      "## Exporting Results for Your Dissertation",
+      "Professional presentation of results is crucial. SPSS offers several export options:",
+      "**Export tables**: Right-click table → Export → choose Word, Excel, or PDF format. For APA formatting, you may need to adjust tables in Word.",
+      "**Export charts**: Right-click chart → Copy or Export. For high-quality graphics, export as PNG or EMF.",
+      "**Creating syntax files**: File → New → Syntax. Record your analyses as commands for reproducibility. This is essential for dissertation committees who may want to verify your analyses.",
+      "**APA reporting format examples**:",
+      "- t-test: \"An independent samples t-test revealed a significant difference in satisfaction between groups, t(243) = 2.84, p = .005, d = 0.42.\"",
+      "- ANOVA: \"A one-way ANOVA showed significant differences across conditions, F(2, 242) = 5.67, p = .004, η² = .045.\"",
+      "- Regression: \"Work-life balance was a significant predictor of job satisfaction (β = .41, p < .001), controlling for salary and team support.\"",
+
+      "## Common SPSS Mistakes to Avoid",
+      "**1. Incorrect variable measurement levels**: Always verify that SPSS correctly identifies your variables as Nominal, Ordinal, or Scale.",
+      "**2. Ignoring assumption checks**: Run normality tests and check homogeneity of variance before parametric tests.",
+      "**3. Not saving syntax**: Always document your analyses for reproducibility.",
+      "**4. Misinterpreting significance**: Statistical significance doesn't equal practical importance—always report effect sizes.",
+      "**5. Using default settings blindly**: Customize analyses based on your research design and data characteristics.",
+
+      "## Next Steps",
+      "This tutorial covers SPSS fundamentals for dissertation research. For advanced techniques like factor analysis, structural equation modeling, or multilevel modeling, consider consulting with a statistician or taking advanced statistics courses. Remember, the best statistical analysis is one that directly addresses your research questions while respecting your data's characteristics and your field's reporting conventions.",
+    ],
+    faqs: [
+      {
+        question: "Is SPSS free for students?",
+        answer: "SPSS is commercial software, but many universities provide free access through site licenses. Check with your institution's IT department. IBM also offers a discounted student version, and there are free alternatives like JASP or jamovi that have similar interfaces."
+      },
+      {
+        question: "What's the difference between SPSS and R?",
+        answer: "SPSS uses a point-and-click interface, making it easier for beginners, while R requires programming knowledge but offers more flexibility and is free. SPSS is common in social sciences; R is increasingly preferred in fields emphasizing reproducibility and advanced analyses."
+      },
+      {
+        question: "How do I report SPSS results in APA format?",
+        answer: "APA format requires specific reporting conventions: italicize statistical symbols (t, F, p), report exact p-values to three decimal places (except p < .001), include effect sizes, and round most values to two decimal places. Example: 't(48) = 2.45, p = .018, d = 0.71'."
+      },
+      {
+        question: "Can SPSS handle qualitative data?",
+        answer: "SPSS is designed for quantitative analysis. For qualitative data, use dedicated software like NVivo, Atlas.ti, or MAXQDA. However, you can code qualitative responses numerically in SPSS for quantitative analysis of qualitative data."
+      }
+    ]
+  },
+
+  // Article 13: Statistical Tests Guide
+  {
+    slug: "statistical-tests-dissertation-which-to-use",
+    title: "Which Statistical Test Should I Use? A Dissertation Guide",
+    excerpt: "Confused about which statistical test to use for your dissertation? This comprehensive decision guide helps you choose the right test based on your research questions and data types.",
+    metaDescription: "Complete guide to choosing the right statistical test for your dissertation. Decision flowchart, assumptions, and when to use t-tests, ANOVA, chi-square, regression, and more.",
+    featured: false,
+    category: "Data Analysis",
+    author: "Dr. Michael Chen",
+    authorBio: "PhD in Statistics, 12+ years teaching quantitative research methods",
+    date: "January 10, 2026",
+    readTime: "25 min read",
+    keywords: ["which statistical test to use", "statistical tests dissertation", "choosing statistical test", "t-test vs ANOVA", "parametric vs nonparametric", "dissertation statistics"],
+    tableOfContents: [
+      { id: "decision-framework", title: "Decision Framework" },
+      { id: "comparing-groups", title: "Tests for Comparing Groups" },
+      { id: "relationships", title: "Tests for Relationships" },
+      { id: "predictions", title: "Tests for Predictions" },
+      { id: "assumptions", title: "Checking Assumptions" },
+      { id: "non-parametric", title: "Non-Parametric Alternatives" },
+      { id: "common-mistakes", title: "Common Mistakes" },
+    ],
+    content: [
+      "Choosing the correct statistical test is one of the most crucial decisions in dissertation research. The wrong test can invalidate your findings, while the right test strengthens your conclusions. This guide provides a systematic framework for selecting appropriate statistical analyses.",
+
+      "## Decision Framework",
+      "To choose the right statistical test, answer these four questions:",
+      "**1. What is your research question?** Are you comparing groups, examining relationships, or making predictions?",
+      "**2. How many variables are involved?** One variable (univariate), two variables (bivariate), or multiple variables (multivariate)?",
+      "**3. What types of variables do you have?** Categorical (nominal/ordinal) or continuous (interval/ratio)?",
+      "**4. Do your data meet parametric assumptions?** Normal distribution, homogeneity of variance, independence of observations?",
+
+      "## Quick Reference Decision Table",
+      "| Research Goal | Variable Types | Test |\n|--------------|----------------|------|\n| Compare 2 group means | 1 categorical (2 groups), 1 continuous | Independent t-test |\n| Compare 3+ group means | 1 categorical (3+ groups), 1 continuous | One-way ANOVA |\n| Compare means with 2 factors | 2 categorical, 1 continuous | Two-way ANOVA |\n| Compare pre/post means | 1 continuous measured twice | Paired t-test |\n| Test association | 2 categorical | Chi-square test |\n| Measure relationship | 2 continuous | Correlation |\n| Predict continuous outcome | Multiple predictors, 1 continuous | Multiple regression |\n| Predict categorical outcome | Multiple predictors, 1 binary | Logistic regression |",
+
+      "## Tests for Comparing Groups",
+      "**Independent samples t-test**: Compares means between two unrelated groups. Use when you have one categorical independent variable with exactly two levels and one continuous dependent variable.",
+      "Example: \"Is there a difference in exam scores between students who received tutoring and those who didn't?\"",
+      "Assumptions: Normal distribution in each group, homogeneity of variance, independent observations.",
+
+      "**Paired samples t-test**: Compares means within the same group at two time points or under two conditions. Use for repeated measures or matched designs.",
+      "Example: \"Did students' anxiety levels change from before to after the intervention?\"",
+      "Assumptions: Differences between pairs are normally distributed.",
+
+      "**One-way ANOVA**: Compares means across three or more groups. Use when your independent variable has more than two levels.",
+      "Example: \"Do students in three different teaching methods (lecture, discussion, project-based) differ in achievement?\"",
+      "Assumptions: Normality within groups, homogeneity of variance, independence. Follow up with post-hoc tests (Tukey, Bonferroni) to identify which groups differ.",
+
+      "**Two-way ANOVA**: Examines main effects and interaction effects of two independent variables on one dependent variable.",
+      "Example: \"How do teaching method and student gender affect achievement, and is there an interaction?\"",
+      "Provides three F-tests: main effect of factor A, main effect of factor B, and A×B interaction.",
+
+      "**Repeated measures ANOVA**: Compares means across three or more time points within the same participants.",
+      "Example: \"How does student motivation change across the beginning, middle, and end of semester?\"",
+      "Assumptions: Sphericity (equal variances of differences between all pairs of conditions).",
+
+      "**MANOVA (Multivariate ANOVA)**: Compares means on multiple dependent variables simultaneously.",
+      "Example: \"Do teaching methods affect both achievement and motivation (two DVs) differently?\"",
+      "Advantages: Controls Type I error when testing multiple DVs; can detect patterns not visible in separate ANOVAs.",
+
+      "## Tests for Relationships",
+      "**Pearson correlation (r)**: Measures the strength and direction of linear relationship between two continuous variables.",
+      "Range: -1 to +1. Interpretation: weak (.1-.3), moderate (.3-.5), strong (.5+).",
+      "Example: \"Is there a relationship between study hours and exam scores?\"",
+      "Assumptions: Both variables normally distributed, linear relationship, no extreme outliers.",
+
+      "**Spearman correlation (ρ)**: Non-parametric alternative to Pearson. Use for ordinal data or when normality assumption is violated.",
+      "Example: \"Is there a relationship between class rank and satisfaction rating?\"",
+
+      "**Chi-square test of independence**: Tests whether two categorical variables are associated.",
+      "Example: \"Is there an association between gender and career choice?\"",
+      "Assumptions: Expected frequency ≥5 in each cell, independent observations.",
+      "Effect size: Cramér's V (.1 = small, .3 = medium, .5 = large).",
+
+      "**Fisher's exact test**: Alternative to chi-square when expected cell frequencies are too small (any expected count <5). Common with small samples.",
+
+      "## Tests for Predictions",
+      "**Simple linear regression**: Predicts a continuous outcome from one continuous predictor.",
+      "Example: \"Can we predict exam scores from study hours?\"",
+      "Reports R² (variance explained), regression equation (Y = a + bX), and significance of the predictor.",
+
+      "**Multiple regression**: Predicts a continuous outcome from multiple predictors.",
+      "Example: \"Can we predict job performance from motivation, experience, and training?\"",
+      "Types: Simultaneous (all predictors entered at once), hierarchical (predictors entered in theory-driven blocks), stepwise (statistical selection—use cautiously).",
+      "Key statistics: R², adjusted R², F-test, individual predictor β weights and p-values.",
+
+      "**Logistic regression**: Predicts a binary categorical outcome from one or more predictors.",
+      "Example: \"What factors predict whether students graduate (yes/no)?\"",
+      "Reports odds ratios, confidence intervals, and Nagelkerke R².",
+
+      "**Hierarchical linear modeling (HLM)/Multilevel modeling**: For nested data structures (e.g., students within classrooms within schools).",
+      "Use when you have data at multiple levels and ignoring the nesting would violate independence assumptions.",
+
+      "## Checking Assumptions",
+      "**Testing normality**:",
+      "- Visual: Histograms, Q-Q plots",
+      "- Statistical: Shapiro-Wilk test (p > .05 = normal), Kolmogorov-Smirnov test",
+      "- Rule of thumb: Skewness and kurtosis between -2 and +2 are acceptable",
+
+      "**Testing homogeneity of variance**:",
+      "- Levene's test: p > .05 indicates equal variances",
+      "- If violated: Use Welch's t-test or Games-Howell post-hoc for ANOVA",
+
+      "**Testing linearity (for regression)**:",
+      "- Scatterplots of residuals vs predicted values",
+      "- Should show random scatter, not patterns",
+
+      "**Testing multicollinearity (for multiple regression)**:",
+      "- Variance Inflation Factor (VIF): Values >10 indicate problematic collinearity",
+      "- Correlation matrix: Predictors correlating >.8 may cause issues",
+
+      "## Non-Parametric Alternatives",
+      "When parametric assumptions are violated, use these alternatives:",
+      "| Parametric Test | Non-Parametric Alternative |\n|-----------------|---------------------------|\n| Independent t-test | Mann-Whitney U |\n| Paired t-test | Wilcoxon signed-rank |\n| One-way ANOVA | Kruskal-Wallis H |\n| Repeated measures ANOVA | Friedman test |\n| Pearson correlation | Spearman correlation |",
+
+      "**When to use non-parametric tests**:",
+      "- Small sample sizes (n < 30) with non-normal data",
+      "- Ordinal outcome variables",
+      "- Severe violations of normality or homogeneity",
+      "- Presence of significant outliers you cannot remove",
+
+      "**Limitations**: Non-parametric tests have less statistical power than their parametric counterparts, meaning you may miss real effects.",
+
+      "## Common Mistakes to Avoid",
+      "**1. Choosing tests based on results**: Select your tests based on your research design and data characteristics, not on which test gives you significant results.",
+      "**2. Ignoring assumption violations**: Always check and report assumption tests. Use robust alternatives when assumptions are violated.",
+      "**3. Multiple testing without correction**: Running many tests inflates Type I error. Use Bonferroni correction or control false discovery rate.",
+      "**4. Confusing correlation with causation**: Correlation does not imply causation—only experimental designs can establish causal relationships.",
+      "**5. Dichotomizing continuous variables**: Don't convert continuous variables to categories (e.g., high/low) unless theoretically justified—it loses information and power.",
+      "**6. Overreliance on p-values**: Report effect sizes and confidence intervals, not just statistical significance.",
+      "**7. Using the wrong level of measurement**: Treating ordinal data as interval or nominal data as ordinal leads to inappropriate analyses.",
+
+      "## Reporting Your Analysis",
+      "A complete statistical report includes:",
+      "- Why you chose this test (research question and data characteristics)",
+      "- Assumption checks and any corrections made",
+      "- Full test statistics (e.g., t, F, χ², r) with degrees of freedom",
+      "- Exact p-values (to three decimal places, or p < .001)",
+      "- Effect sizes and their interpretation",
+      "- Confidence intervals where applicable",
+      "- Any post-hoc tests and their results",
+    ],
+    faqs: [
+      {
+        question: "What if my data violates normality assumptions?",
+        answer: "You have several options: (1) Use the parametric test anyway if the violation is mild and sample size is large (>30), as tests like t-tests are fairly robust; (2) Transform your data (log, square root); (3) Use a non-parametric alternative; (4) Use robust statistical methods. Report what you found and which approach you chose."
+      },
+      {
+        question: "How many participants do I need for each statistical test?",
+        answer: "Sample size depends on effect size, power (typically .80), and alpha level (.05). General minimums: t-tests need ~30 per group, ANOVA needs ~20 per group, correlation needs ~80, regression needs 10-20 participants per predictor. Use G*Power software for precise power analysis."
+      },
+      {
+        question: "Can I use multiple statistical tests in one dissertation?",
+        answer: "Yes, most dissertations use multiple tests to address different research questions. However, be thoughtful about multiple testing corrections to control Type I error, and ensure each test is appropriate for its specific research question and data type."
+      },
+      {
+        question: "What's the difference between statistical significance and practical significance?",
+        answer: "Statistical significance (p < .05) indicates the result is unlikely due to chance. Practical significance indicates the result is meaningful in real-world terms. A large sample can produce statistically significant but trivially small effects. Always report effect sizes to assess practical importance."
+      }
+    ]
+  },
+
+  // Article 14: Thematic Analysis Guide
+  {
+    slug: "thematic-analysis-dissertation-guide",
+    title: "Thematic Analysis for Dissertations: A Step-by-Step Guide",
+    excerpt: "Master thematic analysis for your qualitative dissertation. Learn Braun and Clarke's six-phase approach with practical examples for coding, theme development, and reporting.",
+    metaDescription: "Complete guide to thematic analysis for dissertation research. Learn the six phases, coding techniques, theme development, and how to report qualitative findings.",
+    featured: true,
+    category: "Research Methodology",
+    author: "Dr. Lisa Thompson",
+    authorBio: "PhD in Sociology, Qualitative research specialist with 20+ years experience",
+    date: "January 9, 2026",
+    readTime: "28 min read",
+    keywords: ["thematic analysis", "qualitative research dissertation", "coding qualitative data", "Braun and Clarke thematic analysis", "qualitative data analysis", "dissertation themes"],
+    tableOfContents: [
+      { id: "what-is-thematic-analysis", title: "What Is Thematic Analysis?" },
+      { id: "phase-1-familiarization", title: "Phase 1: Familiarization" },
+      { id: "phase-2-coding", title: "Phase 2: Generating Codes" },
+      { id: "phase-3-themes", title: "Phase 3: Generating Themes" },
+      { id: "phase-4-reviewing", title: "Phase 4: Reviewing Themes" },
+      { id: "phase-5-defining", title: "Phase 5: Defining and Naming Themes" },
+      { id: "phase-6-writing", title: "Phase 6: Writing Up" },
+      { id: "quality-criteria", title: "Quality Criteria" },
+    ],
+    content: [
+      "Thematic analysis is one of the most accessible and widely used qualitative research methods. Whether you're analyzing interviews, focus groups, or textual data, this guide will walk you through Braun and Clarke's influential six-phase approach to thematic analysis.",
+
+      "## What Is Thematic Analysis?",
+      "Thematic analysis is a method for identifying, analyzing, and reporting patterns (themes) within qualitative data. Unlike grounded theory or phenomenology, it is not tied to a specific epistemological or theoretical framework, making it flexible and accessible.",
+      "**Key advantages**: Flexibility across research questions and data types. Accessible to novice researchers. Can work within various theoretical frameworks. Produces rich, detailed accounts of data.",
+      "**Types of thematic analysis**:",
+      "- **Inductive**: Themes emerge from the data without pre-existing framework",
+      "- **Deductive**: Analysis guided by existing theory or framework",
+      "- **Semantic**: Focuses on explicit, surface meanings",
+      "- **Latent**: Examines underlying ideas, assumptions, and ideologies",
+
+      "## Phase 1: Familiarization with the Data",
+      "Before coding, immerse yourself deeply in your data. This phase is about getting to know your data intimately.",
+      "**If you collected the data**: You'll already have some familiarity, but don't assume you know it. Re-read with fresh analytical eyes.",
+      "**Transcription**: If working with interviews, transcribe them yourself if possible—this is an excellent way to begin familiarization. Transcribe verbatim, including pauses, laughter, and emphasis.",
+      "**Active reading**: Read the entire dataset at least twice. Read actively and analytically, not passively. Ask: What is the participant telling me? What experiences, meanings, or realities are being described?",
+      "**Initial notes**: Keep a notebook or document for initial observations, ideas, and potential patterns. These notes will inform your coding.",
+      "**Example familiarization notes**:\n```\nInterview 3: Strong emphasis on work-life balance.\nRecurring phrase: \"always on\" regarding technology.\nEmotional language when discussing family time.\nContrast between participant's ideal and reality.\nPossible tension: career ambition vs. personal values.\n```",
+
+      "## Phase 2: Generating Initial Codes",
+      "Codes are the building blocks of themes. They identify features of the data that appear interesting or relevant to your research question.",
+      "**What is a code?**: A code is a label attached to a segment of text that captures something interesting about that segment. Codes are more specific than themes.",
+      "**Coding approaches**:",
+      "- **Line-by-line**: Code every line (thorough but time-consuming)",
+      "- **Sentence-by-sentence**: Balance between detail and efficiency",
+      "- **Paragraph-by-paragraph**: Captures broader ideas but may miss nuance",
+      "**Coding process**:",
+      "1. Work systematically through your entire dataset",
+      "2. Give equal attention to each data item",
+      "3. Code for as many potential themes as possible",
+      "4. Code data extracts inclusively (include surrounding context)",
+      "5. Remember: individual extracts can be coded multiple times",
+
+      "**Example coding**:\n```\nData extract: \"I check my email first thing in the morning,\nbefore I even get out of bed. It's become automatic.\nI know it's probably not healthy, but I can't help it.\"\n\nCodes applied:\n- Morning email checking\n- Technology as habit/automatic behavior\n- Awareness of unhealthy behavior\n- Lack of control over technology use\n- Guilt about habits\n```",
+
+      "**Tools for coding**:",
+      "- **Software**: NVivo, Atlas.ti, MAXQDA, Dedoose (dedicated qualitative analysis software)",
+      "- **Free alternatives**: Google Docs with comments, color-coded Word documents, spreadsheets",
+      "- **Manual**: Printed transcripts with highlighters and margin notes",
+      "**Tips**: Keep a codebook documenting each code's definition and example. Be open to revising codes as you progress. Maintain consistency while remaining flexible.",
+
+      "## Phase 3: Generating Initial Themes",
+      "Once you have coded the entire dataset, step back and look for patterns across codes. This phase involves sorting codes into potential themes.",
+      "**Theme vs. code**: A theme captures something important about the data in relation to your research question. It represents a pattern of shared meaning. Themes are broader than codes—they organize multiple codes.",
+      "**Process**:",
+      "1. List all your codes",
+      "2. Look for patterns and relationships between codes",
+      "3. Start clustering related codes together",
+      "4. Consider what each cluster is about—what unites these codes?",
+      "5. Create candidate themes and subthemes",
+      "**Visualization techniques**:",
+      "- Mind maps connecting codes to potential themes",
+      "- Tables grouping codes under candidate theme headings",
+      "- Physical sorting with printed codes on paper",
+
+      "**Example theme development**:\n```\nCandidate Theme: 'The Always-On Culture'\n\nRelated codes:\n- Morning email checking\n- Checking phone during family time  \n- Pressure to respond quickly\n- Blurred work-home boundaries\n- Technology as umbilical cord to work\n- Expectation of constant availability\n```",
+
+      "**Don't discard anything yet**: At this stage, keep miscellaneous codes that don't fit anywhere—they may become significant later or form their own theme.",
+
+      "## Phase 4: Reviewing Themes",
+      "This phase involves quality-checking your candidate themes at two levels.",
+      "**Level 1: Review at the level of coded extracts**",
+      "- Read all data extracts for each theme",
+      "- Do they form a coherent pattern?",
+      "- If not, rework the theme: split it, combine with another, or discard",
+      "**Level 2: Review at the level of the entire dataset**",
+      "- Re-read your entire dataset with themes in mind",
+      "- Do themes accurately represent the dataset as a whole?",
+      "- Have you missed anything important?",
+      "- This may involve additional coding",
+
+      "**Theme quality checks**:",
+      "- Does each theme have a clear, distinct central concept?",
+      "- Is there enough data to support each theme?",
+      "- Is the theme internally coherent (codes relate to each other)?",
+      "- Are themes distinct from each other (minimal overlap)?",
+      "- Does the set of themes tell a compelling story about the data?",
+
+      "**Common issues at this phase**:",
+      "- **Theme too broad**: Split into separate themes",
+      "- **Theme too thin**: Merge with another theme or discard",
+      "- **Themes overlap significantly**: Combine them",
+      "- **Theme is just a code**: Elevate only patterns with substantial data",
+
+      "## Phase 5: Defining and Naming Themes",
+      "Now refine each theme by identifying its 'essence'—what story does this theme tell?",
+      "**For each theme, write**:",
+      "- A clear definition (what the theme is and is not)",
+      "- The scope and boundaries of the theme",
+      "- How it relates to other themes",
+      "- What subthemes (if any) it contains",
+
+      "**Theme names should be**:",
+      "- Concise yet informative",
+      "- Immediately giving readers a sense of what the theme is about",
+      "- Engaging—consider using participant language when impactful",
+
+      "**Example theme definition**:\n```\nTheme: 'The Invisible Leash'\n\nDefinition: This theme captures participants' experiences of\nbeing constantly tethered to work through digital technology,\neven during personal time. It encompasses feelings of\nobligationto remain available, guilt when disconnecting, and\nthe psychological burden of work's constant presence.\n\nSubthemes:\n1. Expectation of instant response\n2. Technology as enabler and intruder\n3. Failed attempts to disconnect\n\nRelationship to other themes: Contrasts with 'Protecting\nthe Sanctuary' (strategies for boundary-setting).\n```",
+
+      "## Phase 6: Producing the Report",
+      "The final phase is writing up your analysis in a compelling, evidence-based narrative.",
+      "**Structure of the findings section**:",
+      "1. Brief overview of themes identified",
+      "2. Detailed analysis of each theme (with subthemes)",
+      "3. Use of vivid data extracts to illustrate points",
+      "4. Analytic commentary that goes beyond description",
+
+      "**Writing each theme**:",
+      "- Present the theme's overall story",
+      "- Include multiple data extracts (both typical and unusual)",
+      "- Provide analytic commentary explaining what extracts demonstrate",
+      "- Connect to your research questions",
+      "- Reference relevant literature where appropriate",
+
+      "**Selecting data extracts**:",
+      "- Choose extracts that are vivid, compelling, and clearly illustrate your point",
+      "- Include a range of participants (not just the most articulate)",
+      "- Balance breadth (showing pattern across participants) with depth (detailed individual accounts)",
+      "- Ensure extracts can stand alone with minimal context",
+
+      "**Example write-up excerpt**:\n```\nParticipants described feeling psychologically tethered to\nwork through their devices, a phenomenon we termed 'The\nInvisible Leash.' This constant connection generated\nambivalent emotions—participants recognized the convenience\nof accessibility while resenting its intrusion:\n\n   'My phone is like an umbilical cord to the office.\n    I can never really escape. Even on vacation, there's\n    this anxiety if I don't check emails. It's like work\n    follows me everywhere.' (P7, female, 38)\n\nThis extract illustrates the tension between technological\nconvenience and psychological burden that characterized\nmany participants' experiences...\n```",
+
+      "## Quality Criteria for Thematic Analysis",
+      "**Braun and Clarke's 15-point checklist (abbreviated)**:",
+      "- Transcription was thorough and accurate",
+      "- Each data item was given equal attention during coding",
+      "- Themes are not just paraphrases of participants' questions",
+      "- Data have been coded to support themes rather than just themes for themes' sake",
+      "- Themes cohere internally while being distinct from each other",
+      "- Analysis tells a convincing, well-organized story about the data",
+      "- A balance between analytic narrative and illustrative extracts is provided",
+      "- Enough time was allocated to all phases",
+
+      "**Ensuring trustworthiness**:",
+      "- **Credibility**: Prolonged engagement, member checking, peer debriefing",
+      "- **Transferability**: Thick description enabling readers to assess applicability",
+      "- **Dependability**: Detailed audit trail of analytical decisions",
+      "- **Confirmability**: Reflexivity about researcher's influence",
+
+      "## Common Mistakes in Thematic Analysis",
+      "**1. Themes as topic summaries**: Themes should capture meaning, not just topics. 'Participants discussed technology' is a topic; 'Technology as invisible leash' is a theme.",
+      "**2. Overlapping themes**: If you can't clearly distinguish themes, they may need combining.",
+      "**3. Too many or too few themes**: Typically 3-7 main themes work well. Too many fragments the story; too few oversimplifies.",
+      "**4. Weak data extracts**: Choose vivid, illustrative quotes. Avoid extracts that require extensive explanation.",
+      "**5. No analytic depth**: Don't just describe what participants said. Interpret meaning and patterns.",
+      "**6. Rushing the process**: Thematic analysis is iterative and takes time. Allow for multiple rounds of coding and theme development.",
+    ],
+    faqs: [
+      {
+        question: "How many themes should I have?",
+        answer: "There's no fixed rule, but most studies have 3-7 main themes. The key is quality over quantity—each theme should be distinct, well-supported by data, and contribute meaningfully to answering your research question. Too many themes fragments your story; too few oversimplifies the data."
+      },
+      {
+        question: "What software is best for thematic analysis?",
+        answer: "NVivo is the industry standard and excellent for large datasets. MAXQDA and Atlas.ti are strong alternatives. For free options, try Dedoose (web-based with free tier) or TAGUETTE. For small projects, Word or Google Docs with comments work fine. The best software is the one you'll actually use consistently."
+      },
+      {
+        question: "How is thematic analysis different from grounded theory?",
+        answer: "While both involve coding qualitative data, grounded theory aims to generate new theory from data through iterative theoretical sampling and constant comparison. Thematic analysis is more flexible—it identifies and analyzes themes without necessarily aiming for theory development. Thematic analysis can be used within various theoretical frameworks."
+      },
+      {
+        question: "Do I need to do member checking for thematic analysis?",
+        answer: "Member checking (sharing findings with participants) is optional but can enhance credibility. Some researchers argue it's inappropriate because participants may not recognize analytical interpretations of their words. If you use it, be clear about its purpose and interpret feedback thoughtfully—participants' agreement doesn't automatically validate your analysis."
+      }
+    ]
+  },
+
+  // Article 15: Presenting Research Findings
+  {
+    slug: "presenting-research-findings-dissertation",
+    title: "How to Present Research Findings in Your Dissertation",
+    excerpt: "Learn to present your dissertation findings effectively. Master data visualization, results reporting, and narrative techniques for both quantitative and qualitative research.",
+    metaDescription: "Complete guide to presenting research findings in your dissertation. Learn data visualization, quantitative and qualitative reporting, tables, figures, and effective narrative techniques.",
+    featured: false,
+    category: "Dissertation Writing",
+    author: "Dr. Sarah Mitchell",
+    authorBio: "PhD in Education from Stanford University, 15+ years guiding doctoral candidates",
+    date: "January 8, 2026",
+    readTime: "22 min read",
+    keywords: ["presenting research findings", "dissertation results chapter", "data visualization dissertation", "reporting findings", "dissertation findings chapter", "results section dissertation"],
+    tableOfContents: [
+      { id: "structure-overview", title: "Structure Overview" },
+      { id: "quantitative-results", title: "Presenting Quantitative Results" },
+      { id: "qualitative-findings", title: "Presenting Qualitative Findings" },
+      { id: "tables-figures", title: "Creating Effective Tables and Figures" },
+      { id: "mixed-methods", title: "Mixed Methods Presentations" },
+      { id: "common-mistakes", title: "Common Mistakes to Avoid" },
+    ],
+    content: [
+      "The findings chapter is where your research comes to life. This is where you present the results of your hard work in a clear, compelling, and rigorous manner. Whether your research is quantitative, qualitative, or mixed methods, this guide will help you present findings that impress your committee.",
+
+      "## Structure Overview",
+      "**Findings vs. Discussion**: Your findings chapter presents what you found objectively. Save interpretation, implications, and connections to literature for the discussion chapter. This separation keeps your findings credible and unbiased.",
+      "**Organizing your findings**: There are several effective approaches:",
+      "- **By research question**: Address each research question in sequence (most common approach)",
+      "- **By hypothesis**: Present findings related to each hypothesis",
+      "- **By theme**: For qualitative work, organize by major themes",
+      "- **Chronologically**: For longitudinal or historical research",
+      "- **By case**: For case study research, present each case before cross-case analysis",
+      "**Begin with an overview**: Start with a brief roadmap explaining how the chapter is organized and what readers will find in each section.",
+
+      "## Presenting Quantitative Results",
+      "**Start with descriptive statistics**: Before inferential statistics, present descriptive summaries of your data.",
+      "- Sample characteristics (demographics, group sizes)",
+      "- Means, standard deviations, ranges for key variables",
+      "- Distribution information (normality, outliers)",
+      "**Present in a logical sequence**: Typically: sample description → descriptive statistics → assumption checks → inferential statistics → summary.",
+      "**Report statistical tests completely**: Include test statistic, degrees of freedom, p-value, effect size, and confidence intervals where appropriate.",
+
+      "**Example quantitative reporting**:\n```\nParticipants (N = 245) completed all survey measures.\nThe sample was 58% female, with a mean age of 34.2\nyears (SD = 8.7, range 22-61).\n\nDescriptive statistics for the main study variables are\npresented in Table 4.1. Job satisfaction scores were\nnormally distributed (Shapiro-Wilk W = .987, p = .21),\nwith a mean of 3.72 (SD = 0.89) on the 5-point scale.\n\nAn independent samples t-test was conducted to compare\njob satisfaction between managers and non-managers.\nThere was a significant difference, t(243) = 3.45,\np = .001, d = 0.52, with managers (M = 4.01, SD = 0.76)\nreporting higher satisfaction than non-managers\n(M = 3.58, SD = 0.91).\n```",
+
+      "**Handling non-significant results**: Report them fully—non-significant findings are still findings. Don't hide them or minimize them. Example: 'Contrary to our hypothesis, there was no significant difference between groups, t(98) = 0.89, p = .375, d = 0.12.'",
+      "**Effect size interpretation guide**:",
+      "- Cohen's d: small = 0.2, medium = 0.5, large = 0.8",
+      "- Correlation r: small = 0.1, medium = 0.3, large = 0.5",
+      "- Eta-squared η²: small = 0.01, medium = 0.06, large = 0.14",
+
+      "## Presenting Qualitative Findings",
+      "**Structure by themes**: Present each theme (and subthemes) as a separate section. Move from broader to more specific or from most prevalent to less common.",
+      "**Balance data and interpretation**: Show, don't just tell. Use direct quotes to illustrate themes while providing analytical commentary.",
+      "**Quote integration guidelines**:",
+      "- Short quotes (under 40 words) can be integrated into paragraphs",
+      "- Long quotes (40+ words) should be block indented",
+      "- Include participant identifiers (e.g., P12, female, 34)",
+      "- Ensure quotes can be understood with minimal context",
+      "- Balance vivid quotes with analytical prose",
+
+      "**Example qualitative presentation**:\n```\n4.2 Theme 2: Navigating Competing Demands\n\nParticipants consistently described the challenge of\nbalancing multiple, often conflicting, responsibilities.\nThis theme captures the strategies and struggles involved\nin managing work, family, and personal needs.\n\n4.2.1 The Guilt of 'Never Enough'\n\nA pervasive sense of inadequacy emerged across interviews,\nwith participants expressing guilt about failing to meet\nexpectations in various life domains:\n\n   \"I feel like I'm constantly failing someone. If I'm\n    at work, I feel guilty about missing my kid's soccer\n    game. If I leave early for the game, I feel guilty\n    about the unfinished project. There's no winning.\"\n    (P7, female, 38)\n\nThis sentiment of perpetual inadequacy was echoed by the\nmajority of participants, regardless of gender or career\nstage. Even participants who had achieved conventional\nsuccess described feeling...\n```",
+
+      "**Show patterns, not just individual voices**: Indicate how widespread themes are ('Most participants...', 'Several participants described...', 'One unique perspective was...').",
+      "**Include deviant cases**: Experiences that contradict the main pattern add nuance and credibility to your analysis.",
+
+      "## Creating Effective Tables and Figures",
+      "**When to use tables**: For presenting precise numerical data, comparing values across groups or conditions, displaying statistical results (correlation matrices, regression coefficients).",
+      "**When to use figures**: For showing trends, patterns, or relationships; for making comparisons visually; for process diagrams or conceptual models; when visual impact aids understanding.",
+      "**Table design principles**:",
+      "- Clear, concise title above the table",
+      "- Descriptive column and row headers",
+      "- Consistent decimal places (typically 2)",
+      "- Notes below for abbreviations, significance levels",
+      "- Remove unnecessary borders (minimalist design)",
+      "- Ensure readability in black and white",
+
+      "**Example table format**:\n```\nTable 4.3\nCorrelations Among Study Variables (N = 245)\n\nVariable              1       2       3       4\n----------------------------------------------\n1. Job satisfaction   —\n2. Work-life balance  .52**   —\n3. Salary level       .23**   .18*    —\n4. Manager support    .61**   .45**   .12     —\n\nNote. *p < .05. **p < .01.\n```",
+
+      "**Figure design principles**:",
+      "- Clear, descriptive title below the figure",
+      "- Labeled axes with units",
+      "- Legend for multiple data series",
+      "- Avoid 3D effects that distort data",
+      "- Use color purposefully (and ensure accessibility)",
+      "- Maintain appropriate aspect ratios",
+      "**Chart selection guide**:",
+      "- **Bar charts**: Comparing categories",
+      "- **Line graphs**: Showing trends over time",
+      "- **Scatter plots**: Relationships between continuous variables",
+      "- **Pie charts**: Parts of a whole (use sparingly)",
+      "- **Box plots**: Distributions and outliers",
+
+      "**Qualitative figures**: Thematic maps showing relationships between themes, conceptual frameworks derived from data, process diagrams illustrating sequences.",
+
+      "## Mixed Methods Presentations",
+      "**Integration strategies**:",
+      "- **Sequential presentation**: Quantitative findings first, then qualitative, then integration",
+      "- **Parallel presentation**: Present both strands simultaneously by research question",
+      "- **Joint display**: Use tables or figures that combine both types of findings",
+
+      "**Joint display example**:\n```\nTable 4.8\nIntegration of Quantitative and Qualitative Findings\n\nQuantitative Finding    Qualitative Theme       Integration\n-------------------------------------------------------------\nSignificant positive    'Supportive managers    Qualitative data\ncorrelation between     create safe space for   explained HOW\nmanager support and     experimentation'        support operates\njob satisfaction        (Theme 3)               to increase\n(r = .61, p < .001)                             satisfaction\n\nNo gender difference    'Invisible labor' theme  Women reported\nin reported workload    predominantly expressed  unrecognized work\n(p = .34)               by female participants   not captured in\n                                                 quantitative measure\n```",
+
+      "**Meta-inferences**: After presenting both strands, discuss how they converge, diverge, or complement each other to create understanding greater than either alone.",
+
+      "## Common Mistakes to Avoid",
+      "**1. Interpretation in findings**: Save 'why' and 'so what' for the discussion chapter. The findings chapter answers 'what did you find?'",
+      "**2. Data dumping**: Don't include every table or quote. Select the most important, relevant findings. Supplementary data can go in appendices.",
+      "**3. Inadequate labeling**: Every table and figure needs a clear title and should be interpretable without reading the text.",
+      "**4. Failing to address all research questions**: Ensure you present findings related to each research question or hypothesis—even if null.",
+      "**5. Orphaned tables and figures**: Every table and figure must be referenced in the text. Introduce before presenting: 'Table 4.1 presents the descriptive statistics for...'",
+      "**6. Overwhelming with statistics**: Not every analysis needs to be in the main text. Report key findings prominently; details can go in appendices.",
+      "**7. Quote-heavy qualitative sections**: Balance quotes with analytical commentary. Quotes illustrate; your analysis explains.",
+      "**8. Poor formatting**: Inconsistent formatting undermines credibility. Use your institution's style guide consistently.",
+
+      "## Writing Tips for Your Findings Chapter",
+      "**Use clear, direct language**: 'The analysis revealed...' rather than 'It was found that...'",
+      "**Guide your reader**: Use topic sentences, transitions, and signposting ('Three key themes emerged...').",
+      "**Be precise with language**: 'Significant' means statistically significant. 'Important' or 'notable' are better for practical significance.",
+      "**Present, don't evaluate**: Save judgments for the discussion. In findings, remain objective.",
+      "**Check consistency**: Ensure numbers match between text, tables, and figures. Verify sample sizes and statistics.",
+      "**Consider your audience**: Explain technical analyses enough for educated non-specialists while maintaining rigor for expert readers.",
+    ],
+    faqs: [
+      {
+        question: "Should I include all my statistical analyses in the findings chapter?",
+        answer: "No. Include analyses directly relevant to your research questions in the main text. Supplementary analyses, detailed tables, or robustness checks can go in appendices. Focus on clarity and narrative flow rather than exhaustive reporting."
+      },
+      {
+        question: "How many quotes should I include for each qualitative theme?",
+        answer: "There's no fixed number, but typically 2-4 quotes per theme works well. Include enough to demonstrate the pattern across participants without overwhelming readers. Balance between typical examples and unique perspectives. Quality and relevance matter more than quantity."
+      },
+      {
+        question: "Where do tables and figures go—in the text or appendix?",
+        answer: "Key tables and figures that readers need to understand your findings should appear in the main text, near their first mention. Supplementary tables, raw data, or highly detailed analyses can go in appendices. Check your institution's formatting requirements—some require tables at the end of chapters."
+      },
+      {
+        question: "How do I handle unexpected or contradictory findings?",
+        answer: "Report them honestly and fully. Unexpected findings often lead to the most interesting discussions. In the findings chapter, present them objectively; in the discussion chapter, explore possible explanations. Contradictions between quantitative and qualitative findings can indicate complexity worth examining."
+      }
+    ]
+  },
 ];
 
 // Helper function to get featured posts
