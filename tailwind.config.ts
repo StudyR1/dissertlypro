@@ -87,6 +87,21 @@ export default {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
         },
+        // Additional brand colors
+        ivory: {
+          DEFAULT: "hsl(var(--ivory))",
+          warm: "hsl(var(--ivory-warm))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
+        },
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          medium: "hsl(var(--navy-medium))",
+          light: "hsl(var(--navy-light))",
+        },
       },
       fontFamily: {
         serif: ["'Cormorant Garamond'", "Georgia", "serif"],
