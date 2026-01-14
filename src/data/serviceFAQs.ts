@@ -236,3 +236,67 @@ export const homepageFAQs: FAQItem[] = [
     answer: "We support all major academic disciplines including Business, Education, Psychology, Healthcare, Nursing, Law, Engineering, Computer Science, Social Sciences, Humanities, and Natural Sciences. Our 500+ experts span virtually every field of study."
   }
 ];
+
+// About page FAQs
+export const aboutPageFAQs: FAQItem[] = [
+  {
+    question: "Who founded DissertlyPro and when?",
+    answer: "DissertlyPro was founded in 2015 by Dr. Elizabeth Chen, a former Stanford professor with over 20 years of experience in academic research and education. The company was created to provide the same level of expert guidance that students at elite institutions receive to postgraduate students worldwide."
+  },
+  {
+    question: "How many students has DissertlyPro helped?",
+    answer: "Since 2015, DissertlyPro has supported over 15,000 Master's and PhD students from more than 50 countries. Our 98% client satisfaction rate reflects our commitment to helping every student achieve their academic goals."
+  },
+  {
+    question: "What qualifications do DissertlyPro experts have?",
+    answer: "All DissertlyPro experts hold advanced degrees (Master's or PhD) from accredited institutions. Our 500+ subject-matter experts have published research in peer-reviewed journals and have extensive experience guiding postgraduate students through their dissertations and theses."
+  },
+  {
+    question: "What is DissertlyPro's mission?",
+    answer: "Our mission is to democratize academic support, providing world-class dissertation and thesis assistance to postgraduate students regardless of their institution or location. We believe every brilliant researcher deserves expert guidance to bring their ideas to fruition."
+  },
+  {
+    question: "How does DissertlyPro ensure academic integrity?",
+    answer: "Academic integrity is a core value at DissertlyPro. We operate as tutors and coaches, providing guidance and feedback while students develop their own original work. We never engage in ghostwriting or activities that violate academic policies. All work goes through plagiarism checks."
+  },
+  {
+    question: "Does DissertlyPro work with international students?",
+    answer: "Yes! We serve students from over 50 countries and work across all time zones. Our experts are experienced with various academic systems, citation styles (APA, MLA, Chicago, Harvard, etc.), and institutional requirements from universities worldwide."
+  }
+];
+
+// Pricing page FAQs - comprehensive pricing questions
+export const pricingPageFAQs: FAQItem[] = [
+  {
+    question: "How do I get an accurate quote for my dissertation project?",
+    answer: "Every project is unique. We provide personalized quotes based on your specific requirements, deadline, and complexity. Book a free consultation to discuss your needs and receive a detailed proposal within 24 hours with no obligation."
+  },
+  {
+    question: "What payment options and plans are available?",
+    answer: "We accept all major credit cards, PayPal, and bank transfers. For larger projects, we offer milestone-based payment plans so you pay as work is delivered. This makes managing costs easier throughout your research journey."
+  },
+  {
+    question: "What is your satisfaction guarantee and revision policy?",
+    answer: "Your satisfaction is guaranteed. We offer unlimited revisions within the scope of your original requirements at no additional cost. If we don't meet your expectations, we'll work with you until we do."
+  },
+  {
+    question: "How quickly can you start working on my dissertation?",
+    answer: "We typically match you with an expert within 24-48 hours of confirmation. Rush services are available for urgent deadlines at an additional cost (typically +50% for 48-72 hour delivery)."
+  },
+  {
+    question: "Are there hidden fees or charges?",
+    answer: "No hidden fees. We provide transparent, itemized quotes upfront. The price quoted during your consultation is the price you pay. Any additional services or rush fees are clearly discussed and agreed upon before work begins."
+  },
+  {
+    question: "Can I upgrade my package after starting?",
+    answer: "Yes! Many students start with chapter support and later upgrade to comprehensive dissertation packages. We offer prorated upgrades, and any payments already made are credited toward your new package."
+  },
+  {
+    question: "Do you offer discounts for comprehensive packages?",
+    answer: "Yes, our comprehensive Dissertation Package offers better value than purchasing individual chapter support separately. We also offer returning client discounts and referral bonuses. Ask about current promotions during your consultation."
+  },
+  {
+    question: "What is your refund policy?",
+    answer: "We offer prorated refunds for unused portions of your package if you need to discontinue services. For milestone-based payments, you only pay for completed work. Full refunds are available if we cannot match you with a suitable expert."
+  }
+];

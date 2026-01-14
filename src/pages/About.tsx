@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import { FAQSchema, BreadcrumbSchema } from "@/components/schemas";
+import { aboutPageFAQs } from "@/data/serviceFAQs";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
 
 const values = [
@@ -106,6 +108,11 @@ const About = () => {
         canonical="/about"
         keywords={['about DissertlyPro', 'academic support team', 'PhD experts', 'dissertation help company', 'thesis writing experts', 'research support service', 'academic consulting firm']}
       />
+      <FAQSchema faqs={aboutPageFAQs} />
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "About Us", url: "/about" }
+      ]} />
 
       {/* Breadcrumbs */}
       <div className="bg-midnight-rich border-b border-white/10">
