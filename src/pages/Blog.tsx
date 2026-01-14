@@ -171,7 +171,7 @@ const Blog = () => {
                 <Link
                   key={post.slug}
                   to={`/blog/${post.slug}`}
-                  className="group bg-white rounded-xl border border-border overflow-hidden hover:shadow-card transition-all"
+                  className="group bg-card rounded-xl border border-border overflow-hidden hover:shadow-card transition-all"
                 >
                   <div className="aspect-[16/9] overflow-hidden">
                     <img 
