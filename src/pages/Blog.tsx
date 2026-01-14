@@ -4,10 +4,104 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/schemas";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
-import { ArrowRight, Clock, User, Sparkles, Filter } from "lucide-react";
-import { blogPosts, blogCategories, getFeaturedPosts, getPostImage } from "@/data/blogPosts";
+import { ArrowRight, Clock, User, Sparkles, Filter, CalendarDays } from "lucide-react";
+import { blogPosts, blogCategories, getFeaturedPosts, getPostImage, BlogPost } from "@/data/blogPosts";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+
+// Blog Post Preview Card Component
+const BlogPostCard = ({ post }: { post: BlogPost }) => (
+  <HoverCard openDelay={200} closeDelay={100}>
+    <HoverCardTrigger asChild>
+      <Link
+        to={`/blog/${post.slug}`}
+        className="group bg-card rounded-xl border border-border shadow-subtle hover:shadow-card transition-all duration-300 overflow-hidden block"
+      >
+        <div className="aspect-video relative overflow-hidden">
+          <img 
+            src={getPostImage(post)} 
+            alt={post.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          {post.featured && (
+            <div className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+              <Sparkles className="h-3 w-3" />
+              Featured
+            </div>
+          )}
+        </div>
+        <div className="p-6">
+          <span className="inline-block text-gold font-sans text-xs font-semibold tracking-wider uppercase mb-3">
+            {post.category}
+          </span>
+          <h3 className="text-lg font-serif font-semibold text-foreground mb-2 group-hover:text-gold transition-colors line-clamp-2">
+            {post.title}
+          </h3>
+          <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4 line-clamp-3">
+            {post.excerpt}
+          </p>
+          <div className="flex items-center gap-4 text-xs text-muted-foreground font-sans">
+            <span className="flex items-center gap-1">
+              <User className="h-3 w-3" />
+              {post.author}
+            </span>
+            <span className="flex items-center gap-1">
+              <Clock className="h-3 w-3" />
+              {post.readTime}
+            </span>
+          </div>
+        </div>
+      </Link>
+    </HoverCardTrigger>
+    <HoverCardContent 
+      className="w-80 p-0 overflow-hidden" 
+      side="right" 
+      align="start"
+      sideOffset={12}
+    >
+      <div className="relative h-32 overflow-hidden">
+        <img 
+          src={getPostImage(post)} 
+          alt={post.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        <span className="absolute bottom-3 left-3 text-white text-xs font-semibold uppercase tracking-wider bg-copper/90 px-2 py-1 rounded">
+          {post.category}
+        </span>
+      </div>
+      <div className="p-4">
+        <h4 className="font-serif font-semibold text-foreground text-sm leading-snug mb-2">
+          {post.title}
+        </h4>
+        <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3 mb-3">
+          {post.excerpt}
+        </p>
+        <div className="flex items-center gap-3 pt-3 border-t border-border">
+          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+            <User className="h-4 w-4 text-primary" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-medium text-foreground truncate">{post.author}</p>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <CalendarDays className="h-3 w-3" />
+              <span>{post.date}</span>
+              <span>•</span>
+              <Clock className="h-3 w-3" />
+              <span>{post.readTime}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </HoverCardContent>
+  </HoverCard>
+);
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All Posts");
@@ -153,47 +247,7 @@ const Blog = () => {
         <div className="container px-4 sm:px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
-              <Link
-                key={post.slug}
-                to={`/blog/${post.slug}`}
-                className="group bg-card rounded-xl border border-border shadow-subtle hover:shadow-card transition-all duration-300 overflow-hidden"
-              >
-                <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={getPostImage(post)} 
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  {post.featured && (
-                    <div className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
-                      <Sparkles className="h-3 w-3" />
-                      Featured
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <span className="inline-block text-gold font-sans text-xs font-semibold tracking-wider uppercase mb-3">
-                    {post.category}
-                  </span>
-                  <h3 className="text-lg font-serif font-semibold text-foreground mb-2 group-hover:text-gold transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground font-sans">
-                    <span className="flex items-center gap-1">
-                      <User className="h-3 w-3" />
-                      {post.author}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
-                      {post.readTime}
-                    </span>
-                  </div>
-                </div>
-              </Link>
+              <BlogPostCard key={post.slug} post={post} />
             ))}
           </div>
         </div>
