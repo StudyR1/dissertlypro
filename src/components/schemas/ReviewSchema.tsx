@@ -20,21 +20,21 @@ const ReviewSchema = ({
   reviews,
   itemReviewed = {
     name: "DissertlyPro Academic Support Services",
-    type: "Service"
+    type: "EducationalOrganization"
   }
 }: ReviewSchemaProps) => {
+  const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
+  
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": itemReviewed.type,
+    "@id": "https://dissertlypro.com/#reviews",
     "name": itemReviewed.name,
-    "brand": {
-      "@type": "Brand",
-      "name": "DissertlyPro"
-    },
+    "url": "https://dissertlypro.com",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1),
-      "reviewCount": reviews.length,
+      "ratingValue": avgRating,
+      "reviewCount": String(reviews.length),
       "bestRating": "5",
       "worstRating": "1"
     },
@@ -47,11 +47,15 @@ const ReviewSchema = ({
       "reviewBody": review.reviewBody,
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": review.rating,
+        "ratingValue": String(review.rating),
         "bestRating": "5",
         "worstRating": "1"
       },
-      "datePublished": review.datePublished || new Date().toISOString().split('T')[0]
+      "datePublished": review.datePublished || new Date().toISOString().split('T')[0],
+      "publisher": {
+        "@type": "Organization",
+        "name": "DissertlyPro"
+      }
     }))
   };
 

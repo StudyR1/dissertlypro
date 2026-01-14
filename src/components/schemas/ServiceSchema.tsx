@@ -7,6 +7,7 @@ interface ServiceSchemaProps {
   provider?: string;
   areaServed?: string;
   serviceType?: string;
+  image?: string;
 }
 
 const ServiceSchema = ({ 
@@ -15,7 +16,8 @@ const ServiceSchema = ({
   url,
   provider = "DissertlyPro",
   areaServed = "Worldwide",
-  serviceType = "Educational Support Service"
+  serviceType = "Educational Support Service",
+  image = "https://dissertlypro.com/og-image.jpg"
 }: ServiceSchemaProps) => {
   const schema = {
     "@context": "https://schema.org",
@@ -23,18 +25,25 @@ const ServiceSchema = ({
     "name": name,
     "description": description,
     "url": `https://dissertlypro.com${url}`,
+    "image": image,
     "provider": {
       "@type": "Organization",
       "@id": "https://dissertlypro.com/#organization",
-      "name": provider
+      "name": provider,
+      "url": "https://dissertlypro.com"
     },
-    "areaServed": {
-      "@type": "Place",
-      "name": areaServed
-    },
+    "areaServed": areaServed,
     "serviceType": serviceType,
     "termsOfService": "https://dissertlypro.com/ethics",
-    "category": "Academic Support Services"
+    "category": "Academic Support Services",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD",
+      "price": "299",
+      "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+      "url": `https://dissertlypro.com${url}`
+    }
   };
 
   return (

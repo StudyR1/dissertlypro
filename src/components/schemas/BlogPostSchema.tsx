@@ -23,13 +23,15 @@ const BlogPostSchema = ({
   authorBio,
   category,
   readTime,
-  image = "https://dissertlypro.com/logo-icon.png"
+  image = "https://dissertlypro.com/og-image.jpg"
 }: BlogPostSchemaProps) => {
   // Convert date string to ISO format
   const parseDate = (dateStr: string): string => {
     const date = new Date(dateStr);
     return isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
   };
+
+  const wordCount = readTime ? parseInt(readTime) * 200 : 1000;
 
   const schema = {
     "@context": "https://schema.org",
@@ -42,11 +44,17 @@ const BlogPostSchema = ({
     "author": {
       "@type": "Person",
       "name": author,
-      "description": authorBio,
-      "url": "https://dissertlypro.com/blog"
+      ...(authorBio && { "description": authorBio }),
+      "url": "https://dissertlypro.com/experts"
     },
     "publisher": {
-      "@id": "https://dissertlypro.com/#organization"
+      "@type": "Organization",
+      "@id": "https://dissertlypro.com/#organization",
+      "name": "DissertlyPro",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dissertlypro.com/logo-icon.png"
+      }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -54,10 +62,12 @@ const BlogPostSchema = ({
     },
     "image": {
       "@type": "ImageObject",
-      "url": image
+      "url": image,
+      "width": "1200",
+      "height": "630"
     },
     "articleSection": category,
-    "wordCount": readTime ? parseInt(readTime) * 200 : undefined,
+    "wordCount": String(wordCount),
     "inLanguage": "en-US",
     "isAccessibleForFree": true
   };

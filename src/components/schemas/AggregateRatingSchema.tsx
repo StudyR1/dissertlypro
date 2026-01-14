@@ -6,7 +6,7 @@ interface AggregateRatingSchemaProps {
   bestRating?: number;
   worstRating?: number;
   itemName?: string;
-  itemType?: 'Organization' | 'Product' | 'Service' | 'LocalBusiness';
+  itemType?: 'Organization' | 'Product' | 'Service' | 'LocalBusiness' | 'EducationalOrganization';
 }
 
 const AggregateRatingSchema = ({
@@ -15,20 +15,21 @@ const AggregateRatingSchema = ({
   bestRating = 5,
   worstRating = 1,
   itemName = 'DissertlyPro',
-  itemType = 'Organization'
+  itemType = 'EducationalOrganization'
 }: AggregateRatingSchemaProps) => {
   const schema = {
     "@context": "https://schema.org",
     "@type": itemType,
     "name": itemName,
     "url": "https://dissertlypro.com",
+    "image": "https://dissertlypro.com/logo-icon.png",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": ratingValue.toFixed(1),
-      "bestRating": bestRating,
-      "worstRating": worstRating,
-      "reviewCount": reviewCount,
-      "ratingCount": reviewCount
+      "ratingValue": String(ratingValue.toFixed(1)),
+      "bestRating": String(bestRating),
+      "worstRating": String(worstRating),
+      "reviewCount": String(reviewCount),
+      "ratingCount": String(reviewCount)
     }
   };
 
@@ -44,7 +45,7 @@ const AggregateRatingSchema = ({
 // Default aggregate rating based on testimonials
 export const defaultAggregateRating = {
   ratingValue: 4.9,
-  reviewCount: 15000,
+  reviewCount: 2847,
   bestRating: 5,
   worstRating: 1
 };

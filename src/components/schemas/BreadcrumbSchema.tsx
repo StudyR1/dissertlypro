@@ -15,7 +15,7 @@ const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
     "@type": "BreadcrumbList",
     "itemListElement": items.map((item, index) => ({
       "@type": "ListItem",
-      "position": index + 1,
+      "position": String(index + 1),
       "name": item.name,
       "item": `https://dissertlypro.com${item.url}`
     }))
