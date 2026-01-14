@@ -137,45 +137,190 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Blog Posts -->
+  <!-- Blog Posts - Phase 1: Foundation Articles -->
   <url>
-    <loc>https://dissertlypro.com/blog/how-to-structure-doctoral-dissertation</loc>
-    <lastmod>2025-01-14</lastmod>
+    <loc>https://dissertlypro.com/blog/how-to-write-dissertation-complete-guide</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/dissertation-vs-thesis-key-differences</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/how-to-write-literature-review-complete-guide</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/research-methodology-types-examples-guide</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Posts - Phase 2: Deep Dive Articles -->
+  <url>
+    <loc>https://dissertlypro.com/blog/how-to-structure-phd-dissertation</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/writing-dissertation-introduction-step-by-step</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://dissertlypro.com/blog/choosing-research-methodology</loc>
-    <lastmod>2025-01-14</lastmod>
+    <loc>https://dissertlypro.com/blog/how-to-write-dissertation-conclusion</loc>
+    <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
+  <url>
+    <loc>https://dissertlypro.com/blog/literature-review-examples-annotated-samples</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/systematic-literature-review-methodology-prisma</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/how-to-synthesize-sources-literature-review</loc>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/dissertation-proposal-template-free-download</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Posts - Legacy Articles -->
   <url>
     <loc>https://dissertlypro.com/blog/handling-supervisor-feedback</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/balancing-work-doctoral-research</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/avoiding-plagiarism-graduate-research</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts - Phase 3: Technical Tutorials -->
+  <url>
+    <loc>https://dissertlypro.com/blog/spss-tutorial-dissertation-data-analysis</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/statistical-tests-dissertation-which-to-use</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/thematic-analysis-dissertation-guide</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/presenting-research-findings-dissertation</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts - Phase 4: Academic Writing -->
+  <url>
+    <loc>https://dissertlypro.com/blog/write-dissertation-faster-productivity-tips</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/dissertation-writers-block-overcome</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/academic-writing-style-dissertation</loc>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://dissertlypro.com/blog/mastering-literature-review</loc>
-    <lastmod>2025-01-14</lastmod>
+    <loc>https://dissertlypro.com/blog/dissertation-editing-proofreading-guide</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts - Phase 5: Career & Professional -->
+  <url>
+    <loc>https://dissertlypro.com/blog/publish-dissertation-journal-articles</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/academic-job-market-phd-graduates</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/career-options-after-phd</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/academic-networking-phd-students</loc>
+    <lastmod>2025-12-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
