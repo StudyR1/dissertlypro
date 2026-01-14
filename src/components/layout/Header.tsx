@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import logoIcon from "/logo-icon.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
   { title: "Dissertation Proposal", href: "/services/dissertation-proposal", description: "Expert guidance on research proposals", icon: FileText },
@@ -82,15 +83,33 @@ const Header = () => {
                       <NavigationMenuTrigger className="h-10 px-4 font-sans text-sm font-medium text-muted-foreground hover:text-foreground data-[state=open]:text-foreground transition-colors bg-transparent">
                         {link.title}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <div className="w-[680px] p-5">
+                      <NavigationMenuContent className="data-[motion=from-start]:animate-none data-[motion=from-end]:animate-none data-[motion=to-start]:animate-none data-[motion=to-end]:animate-none">
+                        <motion.div 
+                          className="w-[680px] p-5"
+                          initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -8, scale: 0.98 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                        >
                           <div className="grid grid-cols-5 gap-5">
                             {/* Services Column */}
                             <div className="col-span-3">
-                              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-1">Our Services</h4>
+                              <motion.h4 
+                                className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-1"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.05 }}
+                              >
+                                Our Services
+                              </motion.h4>
                               <ul className="grid grid-cols-2 gap-1.5">
-                                {services.map((service) => (
-                                  <li key={service.title}>
+                                {services.map((service, index) => (
+                                  <motion.li 
+                                    key={service.title}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.03 * index, duration: 0.15 }}
+                                  >
                                     <NavigationMenuLink asChild>
                                       <Link
                                         to={service.href}
@@ -105,10 +124,15 @@ const Header = () => {
                                         </div>
                                       </Link>
                                     </NavigationMenuLink>
-                                  </li>
+                                  </motion.li>
                                 ))}
                               </ul>
-                              <div className="border-t border-border pt-3 mt-3">
+                              <motion.div 
+                                className="border-t border-border pt-3 mt-3"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.2 }}
+                              >
                                 <NavigationMenuLink asChild>
                                   <Link
                                     to="/services"
@@ -117,15 +141,25 @@ const Header = () => {
                                     View All Services →
                                   </Link>
                                 </NavigationMenuLink>
-                              </div>
+                              </motion.div>
                             </div>
                             
                             {/* Featured Posts Column */}
-                            <div className="col-span-2 bg-cream-warm/50 rounded-xl p-4">
+                            <motion.div 
+                              className="col-span-2 bg-cream-warm/50 rounded-xl p-4"
+                              initial={{ opacity: 0, x: 10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.1, duration: 0.2 }}
+                            >
                               <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Featured Articles</h4>
                               <ul className="space-y-2">
-                                {featuredPosts.map((post) => (
-                                  <li key={post.title}>
+                                {featuredPosts.map((post, index) => (
+                                  <motion.li 
+                                    key={post.title}
+                                    initial={{ opacity: 0, x: 5 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.15 + 0.05 * index }}
+                                  >
                                     <NavigationMenuLink asChild>
                                       <Link
                                         to={post.href}
@@ -137,7 +171,7 @@ const Header = () => {
                                         </div>
                                       </Link>
                                     </NavigationMenuLink>
-                                  </li>
+                                  </motion.li>
                                 ))}
                               </ul>
                               <NavigationMenuLink asChild>
@@ -148,9 +182,9 @@ const Header = () => {
                                   Browse All Articles →
                                 </Link>
                               </NavigationMenuLink>
-                            </div>
+                            </motion.div>
                           </div>
-                        </div>
+                        </motion.div>
                       </NavigationMenuContent>
                     </>
                   ) : link.hasDropdown === "about" ? (
@@ -158,10 +192,21 @@ const Header = () => {
                       <NavigationMenuTrigger className="h-10 px-4 font-sans text-sm font-medium text-muted-foreground hover:text-foreground data-[state=open]:text-foreground transition-colors bg-transparent">
                         {link.title}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <ul className="w-[280px] p-3">
-                          {aboutLinks.map((item) => (
-                            <li key={item.title}>
+                      <NavigationMenuContent className="data-[motion=from-start]:animate-none data-[motion=from-end]:animate-none data-[motion=to-start]:animate-none data-[motion=to-end]:animate-none">
+                        <motion.ul 
+                          className="w-[280px] p-3"
+                          initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -8, scale: 0.98 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                        >
+                          {aboutLinks.map((item, index) => (
+                            <motion.li 
+                              key={item.title}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.03 * index, duration: 0.15 }}
+                            >
                               <NavigationMenuLink asChild>
                                 <Link
                                   to={item.href}
@@ -176,9 +221,9 @@ const Header = () => {
                                   </div>
                                 </Link>
                               </NavigationMenuLink>
-                            </li>
+                            </motion.li>
                           ))}
-                        </ul>
+                        </motion.ul>
                       </NavigationMenuContent>
                     </>
                   ) : (
