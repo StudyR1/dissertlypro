@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
 import { Link } from "react-router-dom";
@@ -100,7 +101,7 @@ const studentTestimonials = [
     consultantTitle: "Senior Research Methodologist",
     testimonial: "Dr. Mitchell transformed my understanding of qualitative research. Her guidance on grounded theory was exceptional—she didn't just help me complete my dissertation, she taught me to think like a researcher. I defended with distinction.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face"
+    initials: "AP"
   },
   {
     name: "David K.",
@@ -109,7 +110,7 @@ const studentTestimonials = [
     consultantTitle: "Statistical Analysis Expert",
     testimonial: "I was drowning in data until Dr. Chen stepped in. He broke down complex SEM concepts into digestible pieces and helped me build a model that my committee praised as 'methodologically sophisticated.' His R programming tutorials were invaluable.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+    initials: "DK"
   },
   {
     name: "Jennifer M.",
@@ -118,7 +119,7 @@ const studentTestimonials = [
     consultantTitle: "Academic Writing Specialist",
     testimonial: "My literature review went through 6 drafts before Dr. Rodriguez worked with me. After just two sessions, I finally understood how to synthesize sources and develop my scholarly voice. She's incredibly patient and insightful.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face"
+    initials: "JM"
   },
   {
     name: "Marcus R.",
@@ -127,7 +128,7 @@ const studentTestimonials = [
     consultantTitle: "Business & Management Expert",
     testimonial: "Having a consultant with real Fortune 500 experience made all the difference. Dr. Thompson helped me design a case study methodology that resonated with both academia and industry. His network also helped me secure executive interviews.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+    initials: "MR"
   },
   {
     name: "Sophia L.",
@@ -136,7 +137,7 @@ const studentTestimonials = [
     consultantTitle: "Healthcare Research Specialist",
     testimonial: "Dr. Sharma's systematic review expertise is unmatched. She guided me through PRISMA protocols and meta-analysis with such clarity. Thanks to her mentorship, my research has been published in two peer-reviewed journals.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face"
+    initials: "SL"
   },
   {
     name: "Thomas W.",
@@ -145,13 +146,13 @@ const studentTestimonials = [
     consultantTitle: "Social Sciences Expert",
     testimonial: "Dr. Williams' ethnographic experience brought depth to my fieldwork that I couldn't have achieved alone. His critical theory insights helped me frame my findings in a way that contributed genuinely to the field. Exceptional mentor.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
+    initials: "TW"
   }
 ];
 
 const Experts = () => {
   return (
-    <>
+    <Layout>
       <SEO 
         title="Our Expert Team | DissertlyPro"
         description="Meet our team of PhD-qualified experts with decades of combined experience in research methodology, data analysis, and academic writing across all disciplines."
@@ -362,11 +363,9 @@ const Experts = () => {
 
                 <div className="mt-auto pt-4 border-t border-border">
                   <div className="flex items-center gap-3 mb-3">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-10 h-10 rounded-full object-cover border border-copper/20"
-                    />
+                    <div className="w-10 h-10 rounded-full bg-copper/10 flex items-center justify-center border border-copper/20">
+                      <span className="text-sm font-semibold text-copper">{testimonial.initials}</span>
+                    </div>
                     <div>
                       <p className="font-semibold text-foreground text-sm">{testimonial.name}</p>
                       <p className="text-xs text-muted-foreground">{testimonial.role}</p>
@@ -411,8 +410,8 @@ const Experts = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-midnight to-midnight-light rounded-2xl p-8 sm:p-10 text-white">
-                <Briefcase className="h-12 w-12 text-copper mb-6" />
+              <div className="bg-hero-gradient rounded-2xl p-8 sm:p-10 text-primary-foreground">
+                <Briefcase className="h-12 w-12 text-copper mb-6" aria-hidden="true" />
                 <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4">
                   Join Our Expert Network
                 </h3>
@@ -423,7 +422,7 @@ const Experts = () => {
                 <Button variant="copper" asChild>
                   <Link to="/contact">
                     Apply to Join
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>
               </div>
@@ -433,10 +432,10 @@ const Experts = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-midnight-deep via-midnight to-midnight-light">
+      <section className="py-16 sm:py-24 bg-hero-gradient">
         <div className="container px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-6">
               Ready to Work With Our <span className="text-gradient-copper">Experts?</span>
             </h2>
             <p className="text-base sm:text-lg text-ivory mb-8">
@@ -447,17 +446,17 @@ const Experts = () => {
               <Button variant="copper" size="lg" asChild>
                 <Link to="/consultation">
                   Book Free Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10" asChild>
+              <Button variant="outline" size="lg" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10" asChild>
                 <Link to="/services">View Our Services</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 
