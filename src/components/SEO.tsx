@@ -15,7 +15,7 @@ interface SEOProps {
 
 const SITE_NAME = 'DissertlyPro';
 const SITE_URL = 'https://dissertlypro.com';
-const DEFAULT_IMAGE = '/logo-icon.png';
+const DEFAULT_IMAGE = '/og-image.jpg';
 
 const SEO = ({
   title,

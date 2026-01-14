@@ -32,7 +32,11 @@ import {
   FAQSchema, 
   defaultFAQs, 
   ReviewSchema, 
-  defaultReviews 
+  defaultReviews,
+  HowToSchema,
+  defaultHowToSteps,
+  AggregateRatingSchema,
+  defaultAggregateRating
 } from "@/components/schemas";
 import { AnimatedCounter, TrustBadges, TrustStrip } from "@/components/cro";
 
@@ -139,6 +143,13 @@ const Index = () => {
       <WebsiteSchema />
       <FAQSchema faqs={defaultFAQs} />
       <ReviewSchema reviews={defaultReviews} />
+      <HowToSchema 
+        name="How to Get Dissertation Support from DissertlyPro"
+        description="Step-by-step guide to getting expert dissertation and thesis support from DissertlyPro for Master's and PhD students."
+        steps={defaultHowToSteps}
+        totalTime="P6M"
+      />
+      <AggregateRatingSchema {...defaultAggregateRating} />
       {/* Hero Section */}
       <section className="relative min-h-[100svh] flex items-center overflow-hidden">
         {/* Animated Background - GPU accelerated */}

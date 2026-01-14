@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
 import { Mail, Phone, MapPin, Clock, MessageSquare } from "lucide-react";
 
 const Contact = () => {
@@ -11,8 +12,15 @@ const Contact = () => {
         title="Contact Us"
         description="Get in touch with DissertlyPro for dissertation and thesis support. Available worldwide with 24/7 email support and flexible consultation scheduling."
         canonical="/contact"
-        keywords={['contact dissertation help', 'thesis support contact', 'academic help inquiry', 'dissertation consultation']}
+        keywords={['contact dissertation help', 'thesis support contact', 'academic help inquiry', 'dissertation consultation', 'PhD support contact', 'research assistance contact']}
       />
+
+      {/* Breadcrumbs */}
+      <div className="bg-midnight-rich">
+        <div className="container px-4 sm:px-6">
+          <Breadcrumbs className="text-white/60" />
+        </div>
+      </div>
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">
