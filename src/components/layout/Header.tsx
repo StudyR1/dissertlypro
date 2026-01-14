@@ -251,7 +251,7 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </Button>
           <Button variant="copper" size="sm" asChild>
-            <Link to="/consultation">Free Consultation</Link>
+            <Link to="/order">Order Now</Link>
           </Button>
         </div>
 
@@ -331,7 +331,7 @@ const Header = () => {
                   <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
                 </Button>
                 <Button variant="copper" className="w-full h-12 text-base touch-manipulation" asChild>
-                  <Link to="/consultation" onClick={() => setIsOpen(false)}>Free Consultation</Link>
+                  <Link to="/order" onClick={() => setIsOpen(false)}>Order Now</Link>
                 </Button>
               </div>
             </nav>
