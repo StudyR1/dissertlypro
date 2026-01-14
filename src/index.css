@@ -567,6 +567,87 @@
   }
 }
 
+/* Reading Mode Styles */
+.reading-mode {
+  --background: 45 30% 96%;
+  --foreground: 30 20% 15%;
+  --card: 45 25% 98%;
+  --muted: 40 15% 92%;
+}
+
+.reading-mode body {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif !important;
+  font-size: 18px;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+.reading-mode main {
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+}
+
+.reading-mode h1, 
+.reading-mode h2, 
+.reading-mode h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.reading-mode p {
+  text-indent: 1.5em;
+  margin-bottom: 1.25em;
+}
+
+.reading-mode p:first-of-type {
+  text-indent: 0;
+}
+
+.reading-mode p:first-of-type::first-letter {
+  font-size: 3.5em;
+  float: left;
+  line-height: 1;
+  margin-right: 0.1em;
+  font-weight: 600;
+  color: hsl(var(--copper));
+}
+
+.reading-mode img {
+  margin: 2em auto;
+  max-width: 100%;
+}
+
+.reading-mode blockquote {
+  font-style: italic;
+  border-left: 3px solid hsl(var(--copper));
+  padding-left: 1.5em;
+  margin: 2em 0;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Night Owl Theme - Warmer, easier on eyes */
+.night-owl {
+  --background: 230 25% 8%;
+  --foreground: 40 20% 90%;
+  --card: 230 20% 12%;
+  --muted: 230 15% 15%;
+  --muted-foreground: 40 10% 60%;
+  --border: 230 15% 20%;
+  --copper: 30 60% 55%;
+  --copper-light: 35 55% 65%;
+}
+
+.night-owl body {
+  background: linear-gradient(180deg, hsl(230 25% 6%) 0%, hsl(230 25% 10%) 100%);
+}
+
+.night-owl ::selection {
+  background: hsl(30 60% 55% / 0.3);
+}
+
 /* Mobile-first responsive improvements */
 @media (max-width: 640px) {
   /* Reduce padding on mobile */
@@ -588,5 +669,14 @@
   /* Improve form inputs on mobile */
   input, textarea, select {
     font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+
+  /* Reading mode mobile adjustments */
+  .reading-mode main {
+    padding: 1rem !important;
+  }
+  
+  .reading-mode body {
+    font-size: 17px;
   }
 }
