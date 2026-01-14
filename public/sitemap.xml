@@ -94,6 +94,51 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- Regional Landing Pages -->
+  <url>
+    <loc>https://dissertlypro.com/uk</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-image.jpg</image:loc>
+      <image:title>Dissertation Help UK - DissertlyPro</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/us</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-image.jpg</image:loc>
+      <image:title>Dissertation Help USA - DissertlyPro</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/au</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-image.jpg</image:loc>
+      <image:title>Dissertation Help Australia - DissertlyPro</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/ca</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-image.jpg</image:loc>
+      <image:title>Dissertation Help Canada - DissertlyPro</image:title>
+    </image:image>
+  </url>
+  
   <!-- Service Detail Pages -->
   <url>
     <loc>https://dissertlypro.com/services/dissertation-proposal</loc>
