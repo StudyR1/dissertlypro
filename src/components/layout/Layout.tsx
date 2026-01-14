@@ -10,7 +10,9 @@ import {
 import { 
   ReadingModeToggle, 
   NightOwlTheme, 
-  WordCountCalculator 
+  WordCountCalculator,
+  InstantQuoteCalculator,
+  DeadlineDangerZone
 } from "@/components/features";
 
 interface LayoutProps {
@@ -33,6 +35,8 @@ const Layout = ({ children }: LayoutProps) => {
       <ReadingModeToggle />
       <NightOwlTheme />
       <WordCountCalculator />
+      <InstantQuoteCalculator />
+      <DeadlineDangerZone />
       
       {/* Mobile CTA Bar */}
       <MobileCTA />
