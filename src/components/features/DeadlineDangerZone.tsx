@@ -144,8 +144,10 @@ const DeadlineDangerZone = () => {
         onClick={() => setIsOpen(true)}
         className="fixed left-4 bottom-48 z-40 flex items-center gap-2 px-3 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 hover:bg-amber-500/20 transition-all duration-300 group"
         aria-label="Check deadline danger zone"
+        aria-haspopup="dialog"
+        aria-expanded={isOpen}
       >
-        <AlertTriangle className="w-4 h-4" />
+        <AlertTriangle className="w-4 h-4" aria-hidden="true" />
         <span className="hidden sm:inline text-sm font-medium">Deadline Check</span>
       </motion.button>
 
@@ -166,49 +168,58 @@ const DeadlineDangerZone = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               className="fixed left-1/2 top-4 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto p-6 rounded-2xl bg-card border border-border shadow-2xl"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="deadline-checker-title"
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-amber-500/10">
-                    <AlertTriangle className="w-5 h-5 text-amber-500" />
+                    <AlertTriangle className="w-5 h-5 text-amber-500" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold">Deadline Danger Zone</h3>
+                    <h3 id="deadline-checker-title" className="text-lg font-semibold">Deadline Danger Zone</h3>
                     <p className="text-xs text-muted-foreground">Calculate your risk level</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="rounded-full">
-                  <X className="w-4 h-4" />
+                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="rounded-full" aria-label="Close deadline checker">
+                  <X className="w-4 h-4" aria-hidden="true" />
                 </Button>
               </div>
 
               <div className="space-y-4">
                 <div>
-                  <Label className="text-sm font-medium flex items-center gap-2 mb-2">
-                    <Calendar className="w-4 h-4 text-muted-foreground" />
+                  <Label htmlFor="deadline-date" className="text-sm font-medium flex items-center gap-2 mb-2">
+                    <Calendar className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
                     Submission Deadline
                   </Label>
                   <Input
+                    id="deadline-date"
                     type="date"
                     value={deadline}
                     onChange={(e) => setDeadline(e.target.value)}
                     min={new Date().toISOString().split('T')[0]}
                     className="w-full"
+                    aria-describedby="deadline-help"
                   />
+                  <span id="deadline-help" className="sr-only">Enter your dissertation submission deadline</span>
                 </div>
 
                 <div>
-                  <Label className="text-sm font-medium mb-2">
+                  <Label htmlFor="word-count-input" className="text-sm font-medium mb-2">
                     Target Word Count
                   </Label>
                   <Input
+                    id="word-count-input"
                     type="number"
                     value={wordCount}
                     onChange={(e) => setWordCount(e.target.value)}
                     placeholder="e.g., 10000"
                     min="1000"
                     max="100000"
+                    aria-describedby="word-count-help"
                   />
+                  <span id="word-count-help" className="sr-only">Enter your target word count for the dissertation</span>
                 </div>
 
                 {/* Analysis Result */}

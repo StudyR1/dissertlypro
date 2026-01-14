@@ -45,11 +45,12 @@ const ExitIntentPopup = ({ delay = 5000 }: ExitIntentPopupProps) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fade-in">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fade-in" role="dialog" aria-modal="true" aria-labelledby="exit-popup-title">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-midnight/80 backdrop-blur-sm"
         onClick={handleClose}
+        aria-hidden="true"
       />
       
       {/* Popup */}
@@ -68,13 +69,13 @@ const ExitIntentPopup = ({ delay = 5000 }: ExitIntentPopupProps) => {
 
         <div className="p-8 pt-6">
           {/* Icon */}
-          <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-copper/10 text-copper mb-6 mx-auto">
+          <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-copper/10 text-copper mb-6 mx-auto" aria-hidden="true">
             <Gift className="h-8 w-8" />
           </div>
 
           {/* Content */}
           <div className="text-center">
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-3">
+            <h3 id="exit-popup-title" className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-3">
               Wait! Don't Leave Yet
             </h3>
             <p className="text-muted-foreground font-sans mb-6">
@@ -84,7 +85,7 @@ const ExitIntentPopup = ({ delay = 5000 }: ExitIntentPopupProps) => {
 
             {/* Urgency */}
             <div className="inline-flex items-center gap-2 text-sm text-copper bg-copper/10 rounded-full px-4 py-2 mb-6">
-              <Clock className="h-4 w-4" />
+              <Clock className="h-4 w-4" aria-hidden="true" />
               <span>Limited spots available this week</span>
             </div>
 

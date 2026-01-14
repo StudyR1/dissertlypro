@@ -182,7 +182,7 @@ export const LiveAvailabilityStrip = ({ experts }: LiveAvailabilityStripProps) =
 
         <div className="flex items-center gap-2">
           {/* Stacked avatars */}
-          <div className="flex -space-x-2">
+          <div className="flex -space-x-2" role="group" aria-label={`${onlineExperts.length} experts currently available`}>
             {onlineExperts.slice(0, 4).map((expert, index) => (
               <motion.img
                 key={expert.name}
@@ -190,13 +190,13 @@ export const LiveAvailabilityStrip = ({ experts }: LiveAvailabilityStripProps) =
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
                 src={expert.image}
-                alt={expert.name}
+                alt={`${expert.name} - ${expert.title}`}
                 className="w-8 h-8 rounded-full border-2 border-background object-cover"
                 title={expert.name}
               />
             ))}
             {onlineExperts.length > 4 && (
-              <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center border-2 border-background text-xs font-medium">
+              <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center border-2 border-background text-xs font-medium" aria-label={`${onlineExperts.length - 4} more experts available`}>
                 +{onlineExperts.length - 4}
               </div>
             )}
@@ -206,8 +206,9 @@ export const LiveAvailabilityStrip = ({ experts }: LiveAvailabilityStripProps) =
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg text-sm font-medium hover:bg-green-600 transition-colors"
+            aria-label="Connect with an available expert now"
           >
-            <MessageSquare className="w-4 h-4" />
+            <MessageSquare className="w-4 h-4" aria-hidden="true" />
             <span className="hidden sm:inline">Connect Now</span>
           </motion.button>
         </div>

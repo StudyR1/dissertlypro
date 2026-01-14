@@ -70,13 +70,16 @@ const InstantQuoteCalculator = () => {
         onClick={() => setIsOpen(true)}
         className="fixed left-4 bottom-32 z-40 flex items-center gap-2 px-4 py-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
         aria-label="Get instant quote"
+        aria-haspopup="dialog"
+        aria-expanded={isOpen}
       >
-        <Calculator className="w-5 h-5" />
+        <Calculator className="w-5 h-5" aria-hidden="true" />
         <span className="hidden sm:inline font-medium">Get Quote</span>
         <motion.span 
           className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full"
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ repeat: Infinity, duration: 2 }}
+          aria-hidden="true"
         />
       </motion.button>
 
@@ -97,19 +100,22 @@ const InstantQuoteCalculator = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               className="fixed left-1/2 top-4 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-lg max-h-[calc(100vh-2rem)] overflow-y-auto p-6 rounded-2xl bg-card border border-border shadow-2xl"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="quote-calculator-title"
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
-                    <Calculator className="w-5 h-5 text-primary" />
+                    <Calculator className="w-5 h-5 text-primary" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold">Instant Quote Calculator</h3>
+                    <h3 id="quote-calculator-title" className="text-lg font-semibold">Instant Quote Calculator</h3>
                     <p className="text-xs text-muted-foreground">Get an estimate in seconds</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="rounded-full">
-                  <X className="w-4 h-4" />
+                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="rounded-full" aria-label="Close quote calculator">
+                  <X className="w-4 h-4" aria-hidden="true" />
                 </Button>
               </div>
 

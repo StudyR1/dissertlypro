@@ -212,7 +212,7 @@ const Blog = () => {
               <Filter className="h-4 w-4" />
               <span className="text-sm font-medium hidden sm:inline">Filter:</span>
             </div>
-            <div className="flex flex-wrap gap-2 overflow-x-auto scrollbar-hide pb-1">
+            <div className="flex flex-wrap gap-2 overflow-x-auto scrollbar-hide pb-1" role="tablist" aria-label="Blog category filters">
               {blogCategories.map((category) => (
                 <motion.button
                   key={category}
@@ -224,6 +224,9 @@ const Blog = () => {
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  role="tab"
+                  aria-selected={activeCategory === category}
+                  aria-controls="blog-posts-grid"
                 >
                   {category}
                   {activeCategory === category && (
@@ -243,9 +246,9 @@ const Blog = () => {
       </motion.section>
 
       {/* Blog Posts Grid */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-16 lg:py-24 bg-background" aria-label="Blog posts">
         <div className="container px-4 sm:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div id="blog-posts-grid" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="tabpanel">
             {filteredPosts.map((post) => (
               <BlogPostCard key={post.slug} post={post} />
             ))}
@@ -264,16 +267,20 @@ const Blog = () => {
               Join thousands of graduate students receiving weekly insights, resources, 
               and exclusive content to support your academic journey.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+              <label htmlFor="newsletter-email" className="sr-only">Email address</label>
               <input
+                id="newsletter-email"
                 type="email"
                 placeholder="Enter your email"
+                aria-label="Email address for newsletter subscription"
+                required
                 className="flex-1 px-4 py-3 rounded-lg border border-border bg-background font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold"
               />
-              <Button variant="copper" size="lg">
+              <Button variant="copper" size="lg" type="submit">
                 Subscribe
               </Button>
-            </div>
+            </form>
           </div>
         </div>
       </section>
