@@ -100,7 +100,7 @@ const Consultation = () => {
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-3 sm:mb-4">
               Get Expert Help for Your Research
             </h1>
-            <p className="text-sm sm:text-base lg:text-lg text-primary-foreground/80 font-sans">
+            <p className="text-sm sm:text-base lg:text-lg text-ivory font-sans">
               Tell us about your project and we'll match you with a PhD-qualified expert in your field.
             </p>
           </div>

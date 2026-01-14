@@ -138,7 +138,7 @@ const About = () => {
                 Scholars
               </span>
             </h1>
-            <p className="text-lg sm:text-xl text-white/70 font-sans leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-ivory font-sans leading-relaxed max-w-3xl mx-auto">
               Since 2015, DissertlyPro has been the trusted partner for Master's and PhD students 
               navigating the challenges of advanced academic research.
             </p>
@@ -211,7 +211,7 @@ const About = () => {
                     <GraduationCap className="h-10 w-10 text-copper-light" />
                   </div>
                   <p className="text-2xl sm:text-3xl font-serif font-bold mb-3">Our Promise</p>
-                  <p className="text-primary-foreground/70 font-sans max-w-xs">
+                  <p className="text-ivory font-sans max-w-xs">
                     Every student who works with us will leave with more than a completed project—they'll 
                     have the skills to succeed independently.
                   </p>
@@ -334,7 +334,7 @@ const About = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-5">
               Ready to Start Your Journey With Us?
             </h2>
-            <p className="text-white/70 font-sans text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-ivory font-sans text-lg mb-8 max-w-2xl mx-auto">
               Join thousands of successful students who have achieved their academic goals with 
               DissertlyPro. Your first consultation is completely free.
             </p>

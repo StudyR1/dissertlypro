@@ -208,7 +208,7 @@ const Subjects = () => {
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
               Expertise Across All Disciplines
             </h1>
-            <p className="text-xl text-primary-foreground/80 font-sans leading-relaxed">
+            <p className="text-xl text-ivory font-sans leading-relaxed">
               Our network of PhD-qualified experts spans virtually every academic field. 
               Whatever your research focus, we have specialists ready to support your journey.
             </p>

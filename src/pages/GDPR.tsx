@@ -60,7 +60,7 @@ const GDPR = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-6">
               GDPR Compliance
             </h1>
-            <p className="text-lg text-white/70 font-sans">
+            <p className="text-lg text-ivory font-sans">
               Last updated: {lastUpdated}
             </p>
           </div>
@@ -79,7 +79,7 @@ const GDPR = () => {
                 </div>
                 <div>
                   <h2 className="text-xl font-serif font-bold mb-2">Fully GDPR Compliant</h2>
-                  <p className="text-white/70 font-sans">
+                  <p className="text-ivory font-sans">
                     DissertlyPro is committed to protecting the privacy and security of our users in accordance with the General Data Protection Regulation (GDPR).
                   </p>
                 </div>

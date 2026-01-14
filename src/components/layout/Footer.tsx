@@ -62,7 +62,7 @@ const Footer = () => {
                 </span>
               </div>
             </Link>
-            <p className="text-primary-foreground/70 font-sans text-sm leading-relaxed mb-6 sm:mb-8 max-w-sm">
+            <p className="text-ivory font-sans text-sm leading-relaxed mb-6 sm:mb-8 max-w-sm">
               Premium academic support for postgraduate students worldwide. Expert guidance with complete confidentiality.
             </p>
             <div className="space-y-2.5 sm:space-y-3.5 text-sm font-sans">

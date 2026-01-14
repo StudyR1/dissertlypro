@@ -31,7 +31,7 @@ const Contact = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-4 sm:mb-6">
               Let's Discuss Your Research
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-primary-foreground/80 font-sans leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-ivory font-sans leading-relaxed">
               Have questions about our services? Ready to get started? We're here to help you 
               navigate your postgraduate journey.
             </p>
@@ -185,7 +185,7 @@ const Contact = () => {
                 <h3 className="font-serif font-semibold text-base sm:text-lg mb-2">
                   Ready for a Consultation?
                 </h3>
-                <p className="text-primary-foreground/80 font-sans text-xs sm:text-sm mb-4">
+                <p className="text-ivory font-sans text-xs sm:text-sm mb-4">
                   Book a free consultation to discuss your specific research needs with an academic advisor.
                 </p>
                 <Button variant="hero" size="sm" className="touch-manipulation" asChild>
