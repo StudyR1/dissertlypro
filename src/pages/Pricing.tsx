@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { FAQSchema, BreadcrumbSchema } from "@/components/schemas";
+import { pricingPageFAQs } from "@/data/serviceFAQs";
 import { TrustBadges } from "@/components/cro";
 import { ConfidenceMeter } from "@/components/features";
 import { ArrowRight, Check, HelpCircle, MessageSquare } from "lucide-react";
@@ -70,7 +71,8 @@ const addOns = [
   { name: "Presentation Coaching", price: "$149/session" },
 ];
 
-const faqs = [
+// Display FAQs for the page (subset for UI display)
+const displayFaqs = [
   {
     question: "How do I get an accurate quote for my project?",
     answer: "Every project is unique. We provide personalized quotes based on your specific requirements, deadline, and complexity. Book a free consultation to discuss your needs and receive a detailed proposal within 24 hours.",
@@ -90,8 +92,6 @@ const faqs = [
 ];
 
 const Pricing = () => {
-  const pricingFaqs = faqs.map(f => ({ question: f.question, answer: f.answer }));
-  
   return (
     <Layout>
       <SEO 
@@ -100,7 +100,7 @@ const Pricing = () => {
         canonical="/pricing"
         keywords={['dissertation pricing', 'thesis cost', 'academic support rates', 'dissertation packages', 'research help pricing']}
       />
-      <FAQSchema faqs={pricingFaqs} />
+      <FAQSchema faqs={pricingPageFAQs} />
       <BreadcrumbSchema items={[
         { name: "Home", url: "/" },
         { name: "Pricing", url: "/pricing" }
@@ -241,7 +241,7 @@ const Pricing = () => {
             </div>
 
             <div className="space-y-6">
-              {faqs.map((faq, index) => (
+              {displayFaqs.map((faq, index) => (
                 <div key={index} className="bg-card rounded-xl border border-border p-6">
                   <h3 className="text-lg font-serif font-semibold text-foreground mb-2">
                     {faq.question}
