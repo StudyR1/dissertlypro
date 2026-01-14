@@ -3,100 +3,50 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/schemas";
-import { ArrowRight, Calendar, Clock, User } from "lucide-react";
-
-const blogPosts = [
-  {
-    slug: "how-to-structure-doctoral-dissertation",
-    title: "How to Structure a Doctoral Dissertation",
-    excerpt: "A comprehensive guide to organizing your dissertation chapters, from introduction to conclusion, with tips for maintaining coherence throughout.",
-    category: "Dissertation Planning",
-    author: "Dr. Sarah Mitchell",
-    date: "January 10, 2026",
-    readTime: "12 min read",
-  },
-  {
-    slug: "choosing-right-research-methodology",
-    title: "Choosing the Right Research Methodology",
-    excerpt: "Qualitative, quantitative, or mixed methods? Learn how to select the methodology that best fits your research questions and objectives.",
-    category: "Research Methods",
-    author: "Dr. James Chen",
-    date: "January 8, 2026",
-    readTime: "15 min read",
-  },
-  {
-    slug: "handling-supervisor-feedback",
-    title: "How to Handle Supervisor Feedback Effectively",
-    excerpt: "Strategies for interpreting, prioritizing, and responding to supervisor comments without losing momentum or confidence.",
-    category: "Supervisor Tips",
-    author: "Dr. Emily Rodriguez",
-    date: "January 5, 2026",
-    readTime: "8 min read",
-  },
-  {
-    slug: "balancing-work-doctoral-research",
-    title: "Balancing Full-Time Work with Doctoral Research",
-    excerpt: "Practical time management strategies and mindset shifts for working professionals pursuing advanced degrees.",
-    category: "Work-Life Balance",
-    author: "Dr. Michael Thompson",
-    date: "January 3, 2026",
-    readTime: "10 min read",
-  },
-  {
-    slug: "avoiding-plagiarism-graduate-research",
-    title: "Avoiding Plagiarism in Graduate Research",
-    excerpt: "Understanding academic integrity, proper citation practices, and strategies for maintaining originality in your scholarly work.",
-    category: "Academic Integrity",
-    author: "Dr. Amanda Foster",
-    date: "December 28, 2025",
-    readTime: "9 min read",
-  },
-  {
-    slug: "writing-effective-literature-review",
-    title: "Writing an Effective Literature Review",
-    excerpt: "Master the art of synthesizing sources, identifying gaps, and building a compelling theoretical foundation for your research.",
-    category: "Literature Review",
-    author: "Dr. David Park",
-    date: "December 22, 2025",
-    readTime: "14 min read",
-  },
-];
-
-const categories = [
-  "All Posts",
-  "Dissertation Planning",
-  "Research Methods",
-  "Data Analysis",
-  "Writing Tips",
-  "Supervisor Tips",
-  "Work-Life Balance",
-  "Academic Integrity",
-];
+import Breadcrumbs from "@/components/ui/breadcrumbs";
+import { ArrowRight, Clock, User, Sparkles } from "lucide-react";
+import { blogPosts, blogCategories, getFeaturedPosts } from "@/data/blogPosts";
+import { useState } from "react";
 
 const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState("All Posts");
+  const featuredPosts = getFeaturedPosts();
+  
+  const filteredPosts = activeCategory === "All Posts" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === activeCategory);
+
   return (
     <Layout>
       <SEO 
         title="Blog & Research Resources"
         description="Expert insights on dissertation writing, research methodology, data analysis, and academic success. Free guides and tips for Master's and PhD students."
         canonical="/blog"
-        keywords={['dissertation tips', 'thesis writing guide', 'research methods blog', 'academic writing tips', 'PhD advice']}
+        keywords={['dissertation tips', 'thesis writing guide', 'research methods blog', 'academic writing tips', 'PhD advice', 'literature review help']}
       />
       <BreadcrumbSchema items={[
         { name: "Home", url: "/" },
         { name: "Blog", url: "/blog" }
       ]} />
+
+      {/* Breadcrumbs */}
+      <div className="bg-midnight-rich">
+        <div className="container px-4 sm:px-6">
+          <Breadcrumbs className="text-white/60" />
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section className="bg-hero-gradient py-20 lg:py-28">
-        <div className="container">
+      <section className="bg-hero-gradient py-16 lg:py-24">
+        <div className="container px-4 sm:px-6">
           <div className="max-w-3xl">
             <span className="inline-block text-gold font-sans font-semibold text-sm tracking-wider uppercase mb-4">
               Blog & Resources
             </span>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
               Insights for Graduate Researchers
             </h1>
-            <p className="text-xl text-primary-foreground/80 font-sans leading-relaxed">
+            <p className="text-lg sm:text-xl text-primary-foreground/80 font-sans leading-relaxed">
               Expert advice, practical tips, and research strategies from PhD-qualified academics 
               to support your postgraduate journey.
             </p>
@@ -104,15 +54,45 @@ const Blog = () => {
         </div>
       </section>
 
+      {/* Featured Articles */}
+      {featuredPosts.length > 0 && (
+        <section className="py-12 bg-cream-warm border-b border-border">
+          <div className="container px-4 sm:px-6">
+            <div className="flex items-center gap-2 mb-6">
+              <Sparkles className="h-5 w-5 text-copper" />
+              <h2 className="text-lg font-serif font-bold text-foreground">Featured Guides</h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {featuredPosts.slice(0, 4).map((post) => (
+                <Link
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
+                  className="group bg-white rounded-xl border border-border p-4 hover:shadow-card transition-all"
+                >
+                  <span className="text-copper text-xs font-semibold uppercase tracking-wider">
+                    {post.category}
+                  </span>
+                  <h3 className="text-sm font-serif font-semibold text-foreground mt-2 group-hover:text-copper transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-2">{post.readTime}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Categories */}
-      <section className="py-8 bg-background border-b border-border">
-        <div className="container">
+      <section className="py-6 bg-background border-b border-border sticky top-16 z-10">
+        <div className="container px-4 sm:px-6">
           <div className="flex flex-wrap gap-2">
-            {categories.map((category, index) => (
+            {blogCategories.map((category) => (
               <button
-                key={index}
+                key={category}
+                onClick={() => setActiveCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-sans font-medium transition-colors ${
-                  index === 0
+                  activeCategory === category
                     ? "bg-primary text-primary-foreground"
                     : "bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground"
                 }`}
@@ -125,17 +105,23 @@ const Blog = () => {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-20 lg:py-28 bg-background">
-        <div className="container">
+      <section className="py-16 lg:py-24 bg-background">
+        <div className="container px-4 sm:px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+            {filteredPosts.map((post) => (
               <Link
-                key={index}
+                key={post.slug}
                 to={`/blog/${post.slug}`}
                 className="group bg-card rounded-xl border border-border shadow-subtle hover:shadow-card transition-all duration-300 overflow-hidden"
               >
-                <div className="aspect-video bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center">
+                <div className="aspect-video bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center relative">
                   <span className="text-6xl font-serif text-primary/20">{post.title[0]}</span>
+                  {post.featured && (
+                    <div className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                      <Sparkles className="h-3 w-3" />
+                      Featured
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <span className="inline-block text-gold font-sans text-xs font-semibold tracking-wider uppercase mb-3">
@@ -165,10 +151,10 @@ const Blog = () => {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-20 lg:py-28 bg-ivory-warm">
-        <div className="container">
+      <section className="py-16 lg:py-24 bg-ivory-warm">
+        <div className="container px-4 sm:px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-foreground mb-4">
               Get Research Tips in Your Inbox
             </h2>
             <p className="text-muted-foreground font-sans text-lg mb-8">
@@ -185,9 +171,6 @@ const Blog = () => {
                 Subscribe
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground font-sans mt-4">
-              No spam. Unsubscribe anytime.
-            </p>
           </div>
         </div>
       </section>
