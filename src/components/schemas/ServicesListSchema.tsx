@@ -59,17 +59,19 @@ const ServicesListSchema = () => {
     "@type": "ItemList",
     "name": "DissertlyPro Academic Support Services",
     "description": "Comprehensive dissertation and thesis support services for Master's and PhD students",
-    "numberOfItems": services.length,
+    "numberOfItems": String(services.length),
     "itemListElement": services.map((service, index) => ({
       "@type": "ListItem",
-      "position": index + 1,
+      "position": String(index + 1),
       "item": {
         "@type": "Service",
         "name": service.name,
         "description": service.description,
         "url": `https://dissertlypro.com${service.url}`,
         "provider": {
-          "@id": "https://dissertlypro.com/#organization"
+          "@type": "Organization",
+          "@id": "https://dissertlypro.com/#organization",
+          "name": "DissertlyPro"
         }
       }
     }))

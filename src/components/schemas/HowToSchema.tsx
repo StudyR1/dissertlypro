@@ -25,31 +25,50 @@ const HowToSchema = ({
   steps, 
   totalTime,
   estimatedCost,
-  image 
+  image = "https://dissertlypro.com/og-image.jpg"
 }: HowToSchemaProps) => {
-  const schema = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": name,
     "description": description,
-    ...(totalTime && { "totalTime": totalTime }),
-    ...(estimatedCost && {
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": estimatedCost.currency,
-        "value": estimatedCost.value
+    "image": {
+      "@type": "ImageObject",
+      "url": image,
+      "width": "1200",
+      "height": "630"
+    },
+    "step": steps.map((step, index) => {
+      const stepObj: Record<string, unknown> = {
+        "@type": "HowToStep",
+        "position": String(index + 1),
+        "name": step.name,
+        "text": step.text
+      };
+      if (step.image) {
+        stepObj.image = {
+          "@type": "ImageObject",
+          "url": step.image
+        };
       }
-    }),
-    ...(image && { "image": image }),
-    "step": steps.map((step, index) => ({
-      "@type": "HowToStep",
-      "position": index + 1,
-      "name": step.name,
-      "text": step.text,
-      ...(step.image && { "image": step.image }),
-      ...(step.url && { "url": step.url })
-    }))
+      if (step.url) {
+        stepObj.url = step.url;
+      }
+      return stepObj;
+    })
   };
+
+  if (totalTime) {
+    schema.totalTime = totalTime;
+  }
+
+  if (estimatedCost) {
+    schema.estimatedCost = {
+      "@type": "MonetaryAmount",
+      "currency": estimatedCost.currency,
+      "value": estimatedCost.value
+    };
+  }
 
   return (
     <Helmet>
@@ -69,23 +88,23 @@ export const defaultHowToSteps: HowToStep[] = [
   },
   {
     name: "Expert Matching",
-    text: "Within 24 hours, we pair you with a subject-matter expert who holds an advanced degree in your field. Your expert is selected based on their specialization, experience, and availability to ensure the best fit.",
+    text: "Within 24 hours, we pair you with a subject-matter expert who holds an advanced degree in your field. Your expert is selected based on their specialization, experience, and availability to ensure the best fit."
   },
   {
     name: "Initial Consultation",
-    text: "Schedule a complimentary consultation call with your assigned expert to discuss your project scope, establish milestones, and create a personalized support plan tailored to your academic goals.",
+    text: "Schedule a complimentary consultation call with your assigned expert to discuss your project scope, establish milestones, and create a personalized support plan tailored to your academic goals."
   },
   {
     name: "Collaborative Work",
-    text: "Work directly with your expert through milestone-based progress updates. Receive regular feedback, revisions, and guidance as you develop your dissertation chapters.",
+    text: "Work directly with your expert through milestone-based progress updates. Receive regular feedback, revisions, and guidance as you develop your dissertation chapters."
   },
   {
     name: "Review and Revision",
-    text: "Your expert reviews your work, provides detailed feedback, and helps you refine your arguments, methodology, and writing to meet the highest academic standards.",
+    text: "Your expert reviews your work, provides detailed feedback, and helps you refine your arguments, methodology, and writing to meet the highest academic standards."
   },
   {
     name: "Final Delivery",
-    text: "Receive polished, publication-ready work that meets your university's requirements. Your expert remains available for post-delivery support and defense preparation.",
+    text: "Receive polished, publication-ready work that meets your university's requirements. Your expert remains available for post-delivery support and defense preparation."
   }
 ];
 

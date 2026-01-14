@@ -11,9 +11,10 @@ const OrganizationSchema = () => {
     "logo": {
       "@type": "ImageObject",
       "url": "https://dissertlypro.com/logo-icon.png",
-      "width": 512,
-      "height": 512
+      "width": "512",
+      "height": "512"
     },
+    "image": "https://dissertlypro.com/logo-icon.png",
     "description": "Premium dissertation and thesis support services for Master's and PhD students worldwide. Expert research guidance, data analysis, editing, and academic writing services.",
     "foundingDate": "2018",
     "slogan": "Your Research. Our Expertise.",
@@ -27,30 +28,13 @@ const OrganizationSchema = () => {
         "@type": "ContactPoint",
         "telephone": "+1-800-THESIS",
         "contactType": "customer service",
-        "availableLanguage": ["English"],
+        "availableLanguage": "English",
         "areaServed": "Worldwide"
-      },
-      {
-        "@type": "ContactPoint",
-        "email": "support@dissertlypro.com",
-        "contactType": "customer support",
-        "availableLanguage": ["English"]
       }
     ],
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "US"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "2847",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "numberOfEmployees": {
-      "@type": "QuantitativeValue",
-      "value": "500+"
     }
   };
 
