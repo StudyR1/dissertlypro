@@ -4,17 +4,27 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/schemas";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
-import { ArrowRight, Clock, User, Sparkles } from "lucide-react";
+import { ArrowRight, Clock, User, Sparkles, Filter } from "lucide-react";
 import { blogPosts, blogCategories, getFeaturedPosts } from "@/data/blogPosts";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All Posts");
+  const [isScrolled, setIsScrolled] = useState(false);
   const featuredPosts = getFeaturedPosts();
   
   const filteredPosts = activeCategory === "All Posts" 
     ? blogPosts 
     : blogPosts.filter(post => post.category === activeCategory);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Layout>
@@ -83,26 +93,50 @@ const Blog = () => {
         </section>
       )}
 
-      {/* Categories */}
-      <section className="py-6 bg-background border-b border-border sticky top-16 z-10">
+      {/* Sticky Category Navigation */}
+      <motion.section 
+        className={`py-4 bg-background/95 backdrop-blur-md border-b border-border sticky top-16 sm:top-20 z-40 transition-shadow ${
+          isScrolled ? "shadow-md" : ""
+        }`}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
         <div className="container px-4 sm:px-6">
-          <div className="flex flex-wrap gap-2">
-            {blogCategories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-sans font-medium transition-colors ${
-                  activeCategory === category
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 text-muted-foreground shrink-0">
+              <Filter className="h-4 w-4" />
+              <span className="text-sm font-medium hidden sm:inline">Filter:</span>
+            </div>
+            <div className="flex flex-wrap gap-2 overflow-x-auto scrollbar-hide pb-1">
+              {blogCategories.map((category) => (
+                <motion.button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-sans font-medium transition-all whitespace-nowrap ${
+                    activeCategory === category
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "bg-secondary text-secondary-foreground hover:bg-primary/10 hover:text-primary"
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {category}
+                  {activeCategory === category && (
+                    <motion.span
+                      className="ml-2 text-xs opacity-80"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                    >
+                      ({category === "All Posts" ? blogPosts.length : filteredPosts.length})
+                    </motion.span>
+                  )}
+                </motion.button>
+              ))}
+            </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Blog Posts Grid */}
       <section className="py-16 lg:py-24 bg-background">
