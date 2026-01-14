@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2 } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,13 +12,26 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import logoIcon from "/logo-icon.png";
+
 const services = [
-  { title: "Dissertation Proposal Development", href: "/services/dissertation-proposal", description: "Expert guidance on crafting compelling research proposals" },
-  { title: "Thesis & Dissertation Writing", href: "/services/thesis-writing", description: "Comprehensive support throughout your writing journey" },
-  { title: "Research Methodology Design", href: "/services/methodology", description: "Qualitative, quantitative, and mixed methods expertise" },
-  { title: "Data Analysis Services", href: "/services/data-analysis", description: "SPSS, R, STATA, NVivo, and ATLAS.ti specialists" },
-  { title: "Literature Review Support", href: "/services/literature-review", description: "Thematic analysis and comprehensive reviews" },
-  { title: "Editing & Proofreading", href: "/services/editing", description: "Academic English and citation formatting" },
+  { title: "Dissertation Proposal", href: "/services/dissertation-proposal", description: "Expert guidance on research proposals", icon: FileText },
+  { title: "Thesis Writing", href: "/services/thesis-writing", description: "Comprehensive writing support", icon: BookOpen },
+  { title: "Research Methodology", href: "/services/methodology", description: "Qualitative & quantitative design", icon: BarChart3 },
+  { title: "Data Analysis", href: "/services/data-analysis", description: "SPSS, R, STATA, NVivo experts", icon: BarChart3 },
+  { title: "Literature Review", href: "/services/literature-review", description: "Thematic analysis & reviews", icon: BookOpen },
+  { title: "Editing & Proofreading", href: "/services/editing", description: "Academic English & citations", icon: FileText },
+];
+
+const featuredPosts = [
+  { title: "How to Write a Dissertation", href: "/blog/how-to-write-dissertation-complete-guide", tag: "Guide" },
+  { title: "SPSS Tutorial for Data Analysis", href: "/blog/spss-tutorial-dissertation-data-analysis", tag: "Tutorial" },
+  { title: "Thematic Analysis Guide", href: "/blog/thematic-analysis-dissertation-guide", tag: "Methods" },
+];
+
+const aboutLinks = [
+  { title: "About Us", href: "/about", description: "Our story and mission", icon: Building2 },
+  { title: "Our Experts", href: "/experts", description: "Meet our PhD specialists", icon: Users },
+  { title: "FAQs", href: "/faq", description: "Common questions answered", icon: HelpCircle },
 ];
 
 const Header = () => {
@@ -26,13 +39,12 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { title: "Services", href: "/services", hasDropdown: true },
+    { title: "Services", href: "/services", hasDropdown: "services" },
     { title: "Subjects", href: "/subjects" },
     { title: "Professionals", href: "/working-professionals" },
-    { title: "Experts", href: "/experts" },
     { title: "Pricing", href: "/pricing" },
     { title: "Blog", href: "/blog" },
-    { title: "About", href: "/about" },
+    { title: "About", href: "/about", hasDropdown: "about" },
   ];
 
   return (
@@ -65,38 +77,107 @@ const Header = () => {
             <NavigationMenuList className="gap-0.5">
               {navLinks.map((link) => (
                 <NavigationMenuItem key={link.title}>
-                  {link.hasDropdown ? (
+                {link.hasDropdown === "services" ? (
                     <>
                       <NavigationMenuTrigger className="h-10 px-4 font-sans text-sm font-medium text-muted-foreground hover:text-foreground data-[state=open]:text-foreground transition-colors bg-transparent">
                         {link.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[520px] gap-2 p-4 md:grid-cols-2">
-                          {services.map((service) => (
-                            <li key={service.title}>
+                        <div className="w-[680px] p-5">
+                          <div className="grid grid-cols-5 gap-5">
+                            {/* Services Column */}
+                            <div className="col-span-3">
+                              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-1">Our Services</h4>
+                              <ul className="grid grid-cols-2 gap-1.5">
+                                {services.map((service) => (
+                                  <li key={service.title}>
+                                    <NavigationMenuLink asChild>
+                                      <Link
+                                        to={service.href}
+                                        className="flex items-start gap-3 select-none rounded-lg p-3 leading-none no-underline outline-none transition-all hover:bg-cream-warm group"
+                                      >
+                                        <service.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
+                                        <div>
+                                          <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{service.title}</div>
+                                          <p className="text-xs leading-snug text-muted-foreground mt-1">
+                                            {service.description}
+                                          </p>
+                                        </div>
+                                      </Link>
+                                    </NavigationMenuLink>
+                                  </li>
+                                ))}
+                              </ul>
+                              <div className="border-t border-border pt-3 mt-3">
+                                <NavigationMenuLink asChild>
+                                  <Link
+                                    to="/services"
+                                    className="flex items-center gap-2 rounded-lg p-2 text-sm font-medium text-copper hover:bg-cream-warm transition-all"
+                                  >
+                                    View All Services →
+                                  </Link>
+                                </NavigationMenuLink>
+                              </div>
+                            </div>
+                            
+                            {/* Featured Posts Column */}
+                            <div className="col-span-2 bg-cream-warm/50 rounded-xl p-4">
+                              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Featured Articles</h4>
+                              <ul className="space-y-2">
+                                {featuredPosts.map((post) => (
+                                  <li key={post.title}>
+                                    <NavigationMenuLink asChild>
+                                      <Link
+                                        to={post.href}
+                                        className="block rounded-lg p-2.5 hover:bg-background transition-all group"
+                                      >
+                                        <span className="text-[10px] font-semibold text-copper uppercase tracking-wider">{post.tag}</span>
+                                        <div className="text-sm font-medium leading-snug font-sans group-hover:text-copper transition-colors mt-0.5">
+                                          {post.title}
+                                        </div>
+                                      </Link>
+                                    </NavigationMenuLink>
+                                  </li>
+                                ))}
+                              </ul>
                               <NavigationMenuLink asChild>
                                 <Link
-                                  to={service.href}
-                                  className="block select-none space-y-1 rounded-lg p-3.5 leading-none no-underline outline-none transition-all hover:bg-cream-warm hover:shadow-subtle focus:bg-cream-warm group"
+                                  to="/blog"
+                                  className="flex items-center gap-2 mt-3 pt-3 border-t border-border/50 text-xs font-medium text-copper hover:text-copper-dark transition-colors"
                                 >
-                                  <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{service.title}</div>
-                                  <p className="line-clamp-2 text-xs leading-snug text-muted-foreground mt-1.5">
-                                    {service.description}
-                                  </p>
+                                  Browse All Articles →
+                                </Link>
+                              </NavigationMenuLink>
+                            </div>
+                          </div>
+                        </div>
+                      </NavigationMenuContent>
+                    </>
+                  ) : link.hasDropdown === "about" ? (
+                    <>
+                      <NavigationMenuTrigger className="h-10 px-4 font-sans text-sm font-medium text-muted-foreground hover:text-foreground data-[state=open]:text-foreground transition-colors bg-transparent">
+                        {link.title}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="w-[280px] p-3">
+                          {aboutLinks.map((item) => (
+                            <li key={item.title}>
+                              <NavigationMenuLink asChild>
+                                <Link
+                                  to={item.href}
+                                  className="flex items-start gap-3 select-none rounded-lg p-3 leading-none no-underline outline-none transition-all hover:bg-cream-warm group"
+                                >
+                                  <item.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
+                                  <div>
+                                    <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{item.title}</div>
+                                    <p className="text-xs leading-snug text-muted-foreground mt-1">
+                                      {item.description}
+                                    </p>
+                                  </div>
                                 </Link>
                               </NavigationMenuLink>
                             </li>
                           ))}
-                          <li className="col-span-2 border-t border-border pt-3 mt-2">
-                            <NavigationMenuLink asChild>
-                              <Link
-                                to="/services"
-                                className="flex items-center justify-center gap-2 rounded-lg p-3 text-sm font-medium text-copper hover:bg-cream-warm transition-all"
-                              >
-                                View All Services →
-                              </Link>
-                            </NavigationMenuLink>
-                          </li>
                         </ul>
                       </NavigationMenuContent>
                     </>
