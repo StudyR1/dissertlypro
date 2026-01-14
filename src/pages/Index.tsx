@@ -236,15 +236,14 @@ const Index = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
                 <Button variant="copper" size="lg" className="group shadow-copper w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
-                  <Link to="/consultation">
-                    Free Consultation
+                  <Link to="/order">
+                    Get Started
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
                 <Button variant="glass" size="lg" className="border-white/20 text-white hover:bg-white/10 w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
-                  <Link to="/services">
-                    <Play className="h-4 w-4 mr-1" />
-                    Explore Services
+                  <Link to="/consultation">
+                    Free Consultation
                   </Link>
                 </Button>
               </div>
