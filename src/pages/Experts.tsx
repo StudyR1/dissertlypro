@@ -158,15 +158,15 @@ const Experts = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-24 bg-gradient-to-b from-midnight-deep via-midnight to-midnight-light overflow-hidden">
+      <section className="relative py-16 sm:py-24 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(184,137,96,0.15),transparent_50%)]" />
         <div className="container relative z-10 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-copper/10 border border-copper/20 text-copper text-xs sm:text-sm font-medium mb-6">
-              <Award className="h-4 w-4" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-copper/10 border border-copper/20 text-copper-light text-xs sm:text-sm font-medium mb-6">
+              <Award className="h-4 w-4" aria-hidden="true" />
               PhD-Qualified Specialists
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground mb-6 leading-tight">
               Meet Our Expert <span className="text-gradient-copper">Academic Team</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-ivory max-w-3xl mx-auto leading-relaxed">
