@@ -2,7 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { ServiceSchema, BreadcrumbSchema } from "@/components/schemas";
+import { ServiceSchema, BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { serviceSpecificFAQs } from "@/data/serviceFAQs";
 import { 
   ArrowRight, 
   FileText, 
@@ -362,6 +363,9 @@ const ServiceDetail = () => {
         { name: "Services", url: "/services" },
         { name: service.title, url: `/services/${slug}` }
       ]} />
+      {slug && serviceSpecificFAQs[slug] && (
+        <FAQSchema faqs={serviceSpecificFAQs[slug]} />
+      )}
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">

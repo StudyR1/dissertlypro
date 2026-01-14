@@ -30,7 +30,6 @@ import {
   OrganizationSchema, 
   WebsiteSchema, 
   FAQSchema, 
-  defaultFAQs, 
   ReviewSchema, 
   defaultReviews,
   HowToSchema,
@@ -38,6 +37,7 @@ import {
   AggregateRatingSchema,
   defaultAggregateRating
 } from "@/components/schemas";
+import { homepageFAQs } from "@/data/serviceFAQs";
 import { AnimatedCounter, TrustBadges, TrustStrip } from "@/components/cro";
 import { LiveResearchPulse } from "@/components/features";
 
@@ -142,7 +142,7 @@ const Index = () => {
       />
       <OrganizationSchema />
       <WebsiteSchema />
-      <FAQSchema faqs={defaultFAQs} />
+      <FAQSchema faqs={homepageFAQs} />
       <ReviewSchema reviews={defaultReviews} />
       <HowToSchema 
         name="How to Get Dissertation Support from DissertlyPro"
