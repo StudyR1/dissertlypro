@@ -91,16 +91,16 @@ const Consultation = () => {
         </div>
       </div>
       {/* Hero Section */}
-      <section className="bg-hero-gradient py-16 lg:py-20">
-        <div className="container">
+      <section className="bg-hero-gradient py-10 sm:py-12 lg:py-20">
+        <div className="container px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block text-gold font-sans font-semibold text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-gold font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase mb-3 sm:mb-4">
               Free Consultation
             </span>
-            <h1 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-3 sm:mb-4">
               Get Expert Help for Your Research
             </h1>
-            <p className="text-lg text-primary-foreground/80 font-sans">
+            <p className="text-sm sm:text-base lg:text-lg text-primary-foreground/80 font-sans">
               Tell us about your project and we'll match you with a PhD-qualified expert in your field.
             </p>
           </div>
@@ -108,26 +108,26 @@ const Consultation = () => {
       </section>
 
       {/* Form Section */}
-      <section className="py-16 lg:py-24 bg-background">
-        <div className="container">
+      <section className="py-10 sm:py-12 lg:py-24 bg-background">
+        <div className="container px-4 sm:px-6">
           <div className="max-w-2xl mx-auto">
             {/* Progress Bar */}
-            <div className="mb-12">
-              <div className="flex items-center justify-between mb-4">
+            <div className="mb-8 sm:mb-12">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
                 {[1, 2, 3, 4].map((s) => (
                   <div key={s} className="flex items-center">
                     <div
-                      className={`flex h-10 w-10 items-center justify-center rounded-full font-sans font-semibold text-sm transition-colors ${
+                      className={`flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full font-sans font-semibold text-xs sm:text-sm transition-colors ${
                         s <= step
                           ? "bg-gold text-foreground"
                           : "bg-muted text-muted-foreground"
                       }`}
                     >
-                      {s < step ? <CheckCircle className="h-5 w-5" /> : s}
+                      {s < step ? <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5" /> : s}
                     </div>
                     {s < 4 && (
                       <div
-                        className={`w-16 md:w-24 h-1 mx-2 rounded-full ${
+                        className={`w-8 sm:w-16 md:w-24 h-1 mx-1 sm:mx-2 rounded-full ${
                           s < step ? "bg-gold" : "bg-muted"
                         }`}
                       />
@@ -135,7 +135,7 @@ const Consultation = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between text-xs font-sans text-muted-foreground">
+              <div className="hidden sm:flex justify-between text-xs font-sans text-muted-foreground">
                 <span>Program Info</span>
                 <span>Service Details</span>
                 <span>Your Project</span>
@@ -144,31 +144,31 @@ const Consultation = () => {
             </div>
 
             {/* Form Card */}
-            <div className="bg-card rounded-xl border border-border shadow-card p-8">
+            <div className="bg-card rounded-xl border border-border shadow-card p-5 sm:p-6 lg:p-8">
               {/* Step 1: Program Information */}
               {step === 1 && (
-                <div className="space-y-6">
-                  <div className="text-center mb-8">
-                    <GraduationCap className="h-12 w-12 text-gold mx-auto mb-4" />
-                    <h2 className="text-2xl font-serif font-bold text-foreground mb-2">
+                <div className="space-y-5 sm:space-y-6">
+                  <div className="text-center mb-6 sm:mb-8">
+                    <GraduationCap className="h-10 w-10 sm:h-12 sm:w-12 text-gold mx-auto mb-3 sm:mb-4" />
+                    <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-2">
                       Tell Us About Your Program
                     </h2>
-                    <p className="text-muted-foreground font-sans">
+                    <p className="text-muted-foreground font-sans text-sm">
                       This helps us match you with the right expert
                     </p>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-sans font-medium text-foreground mb-3">
+                    <label className="block text-sm font-sans font-medium text-foreground mb-2 sm:mb-3">
                       Degree Level *
                     </label>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
                       {["Master's", "PhD / Doctorate"].map((level) => (
                         <button
                           key={level}
                           type="button"
                           onClick={() => handleInputChange("degreeLevel", level)}
-                          className={`p-4 rounded-lg border text-sm font-sans font-medium transition-colors ${
+                          className={`p-3 sm:p-4 rounded-lg border text-sm font-sans font-medium transition-colors touch-manipulation ${
                             formData.degreeLevel === level
                               ? "border-gold bg-gold/5 text-foreground"
                               : "border-border hover:border-gold/50 text-muted-foreground"
@@ -188,7 +188,7 @@ const Consultation = () => {
                       type="text"
                       value={formData.university}
                       onChange={(e) => handleInputChange("university", e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold text-base"
                       placeholder="e.g., University of Oxford"
                     />
                   </div>
@@ -200,7 +200,7 @@ const Consultation = () => {
                     <select
                       value={formData.subjectArea}
                       onChange={(e) => handleInputChange("subjectArea", e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background font-sans text-foreground focus:outline-none focus:ring-2 focus:ring-gold"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background font-sans text-foreground focus:outline-none focus:ring-2 focus:ring-gold text-base"
                     >
                       <option value="">Select your field</option>
                       {subjects.map((subject) => (
@@ -368,23 +368,23 @@ const Consultation = () => {
               )}
 
               {/* Navigation Buttons */}
-              <div className="flex justify-between mt-8 pt-6 border-t border-border">
+              <div className="flex justify-between mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-border gap-3">
                 {step > 1 ? (
-                  <Button variant="outline" onClick={prevStep}>
+                  <Button variant="outline" onClick={prevStep} className="touch-manipulation h-11 sm:h-10">
                     <ArrowLeft className="h-4 w-4" />
-                    Back
+                    <span className="hidden sm:inline">Back</span>
                   </Button>
                 ) : (
                   <div />
                 )}
 
                 {step < totalSteps ? (
-                  <Button variant="copper" onClick={nextStep}>
+                  <Button variant="copper" onClick={nextStep} className="touch-manipulation h-11 sm:h-10 flex-1 sm:flex-none">
                     Continue
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 ) : (
-                  <Button variant="copper" size="lg">
+                  <Button variant="copper" size="lg" className="touch-manipulation h-11 sm:h-12 flex-1 sm:flex-none">
                     Submit Request
                     <ArrowRight className="h-4 w-4" />
                   </Button>

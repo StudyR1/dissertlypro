@@ -166,16 +166,16 @@ const Services = () => {
         { name: "Services", url: "/services" }
       ]} />
       {/* Hero Section */}
-      <section className="bg-hero-gradient py-20 lg:py-28">
-        <div className="container">
+      <section className="bg-hero-gradient py-12 sm:py-16 lg:py-28">
+        <div className="container px-4 sm:px-6">
           <div className="max-w-3xl">
-            <span className="inline-block text-gold font-sans font-semibold text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-gold font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase mb-3 sm:mb-4">
               Our Services
             </span>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-4 sm:mb-6">
               Comprehensive Postgraduate Research Support
             </h1>
-            <p className="text-xl text-primary-foreground/80 font-sans leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-primary-foreground/80 font-sans leading-relaxed">
               Expert assistance across every phase of your Master's or PhD journey. 
               Each service is delivered by specialists with advanced degrees in your field.
             </p>
@@ -184,39 +184,44 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 lg:py-28 bg-background">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-8">
+      <section className="py-12 sm:py-16 lg:py-28 bg-background">
+        <div className="container px-4 sm:px-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="group bg-card rounded-xl border border-border shadow-subtle hover:shadow-card transition-all duration-300 overflow-hidden"
               >
-                <div className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/5 text-primary group-hover:bg-gold/10 group-hover:text-gold transition-colors flex-shrink-0">
-                      <service.icon className="h-7 w-7" />
+                <div className="p-5 sm:p-6 lg:p-8">
+                  <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
+                    <div className="flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-lg bg-primary/5 text-primary group-hover:bg-gold/10 group-hover:text-gold transition-colors flex-shrink-0">
+                      <service.icon className="h-5 w-5 sm:h-7 sm:w-7" />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-serif font-semibold text-foreground mb-2 group-hover:text-gold transition-colors">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base sm:text-lg lg:text-xl font-serif font-semibold text-foreground mb-1.5 sm:mb-2 group-hover:text-gold transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-muted-foreground font-sans text-sm leading-relaxed">
+                      <p className="text-muted-foreground font-sans text-xs sm:text-sm leading-relaxed line-clamp-2 sm:line-clamp-none">
                         {service.description}
                       </p>
                     </div>
                   </div>
 
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground font-sans">
-                        <CheckCircle className="h-4 w-4 text-gold flex-shrink-0" />
+                  <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
+                    {service.features.slice(0, 3).map((feature, i) => (
+                      <li key={i} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground font-sans">
+                        <CheckCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-gold flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
+                    {service.features.length > 3 && (
+                      <li className="text-xs text-muted-foreground/60 font-sans pl-5 sm:pl-6 hidden sm:block">
+                        +{service.features.length - 3} more features
+                      </li>
+                    )}
                   </ul>
 
-                  <Button variant="midnight-outline" size="sm" asChild>
+                  <Button variant="midnight-outline" size="sm" className="w-full sm:w-auto touch-manipulation" asChild>
                     <Link to={`/services/${service.slug}`}>
                       Learn More
                       <ArrowRight className="h-4 w-4" />
@@ -230,17 +235,17 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-28 bg-ivory-warm">
-        <div className="container">
+      <section className="py-12 sm:py-16 lg:py-28 bg-ivory-warm">
+        <div className="container px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-3 sm:mb-4">
               Not Sure Which Service You Need?
             </h2>
-            <p className="text-muted-foreground font-sans text-lg mb-8">
+            <p className="text-muted-foreground font-sans text-base sm:text-lg mb-6 sm:mb-8 px-2">
               Book a free consultation with our academic advisors. We'll assess your needs and 
               recommend the best support package for your research journey.
             </p>
-            <Button variant="copper" size="xl" asChild>
+            <Button variant="copper" size="lg" className="w-full sm:w-auto touch-manipulation" asChild>
               <Link to="/consultation">
                 Request Free Consultation
                 <ArrowRight className="h-5 w-5" />

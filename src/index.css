@@ -513,6 +513,11 @@
     padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 
+  /* Safe area for mobile top bar (notch) */
+  .safe-area-top {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+  }
+
   /* Pulse glow effect for urgency */
   @keyframes pulse-glow {
     0%, 100% {
@@ -525,5 +530,63 @@
 
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Mobile-optimized touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Prevent text size adjustment on mobile */
+  .text-size-adjust-none {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Smooth momentum scrolling for mobile */
+  .momentum-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+
+  /* Mobile bottom CTA bar */
+  .mobile-cta-bar {
+    @apply fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-t border-border p-3 safe-area-bottom;
+    box-shadow: 0 -4px 20px -5px hsl(220 25% 18% / 0.1);
+  }
+}
+
+/* Mobile-first responsive improvements */
+@media (max-width: 640px) {
+  /* Reduce padding on mobile */
+  .container {
+    @apply px-4;
+  }
+
+  /* Improve readability on small screens */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Larger tap targets for mobile */
+  button, a, [role="button"] {
+    min-height: 44px;
+  }
+
+  /* Improve form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
   }
 }
