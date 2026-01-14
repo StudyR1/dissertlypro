@@ -1,5 +1,6 @@
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
 import { Link } from "react-router-dom";
 import { 
   GraduationCap, 

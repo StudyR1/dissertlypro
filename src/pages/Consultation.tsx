@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { TrustBadges } from "@/components/cro";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
 import { 
   ArrowRight, 
   ArrowLeft, 
@@ -80,8 +81,15 @@ const Consultation = () => {
         title="Free Consultation"
         description="Book a free consultation to discuss your dissertation or thesis needs. Get personalized advice and a custom quote from our PhD-qualified experts."
         canonical="/consultation"
-        keywords={['free dissertation consultation', 'thesis help quote', 'academic support inquiry', 'research assistance']}
+        keywords={['free dissertation consultation', 'thesis help quote', 'academic support inquiry', 'research assistance consultation', 'PhD dissertation quote', 'free thesis consultation']}
       />
+
+      {/* Breadcrumbs */}
+      <div className="bg-midnight-rich">
+        <div className="container px-4 sm:px-6">
+          <Breadcrumbs className="text-white/60" />
+        </div>
+      </div>
       {/* Hero Section */}
       <section className="bg-hero-gradient py-16 lg:py-20">
         <div className="container">

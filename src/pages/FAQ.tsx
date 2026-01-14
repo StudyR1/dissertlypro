@@ -10,6 +10,7 @@ import { ArrowRight, HelpCircle, MessageCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { FAQSchema } from "@/components/schemas";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
 
 const faqCategories = [
   {
@@ -113,9 +114,16 @@ const FAQ = () => {
         title="Frequently Asked Questions"
         description="Find answers to common questions about DissertlyPro's dissertation and thesis support services. Learn about our process, pricing, and academic integrity standards."
         canonical="/faq"
-        keywords={['dissertation FAQ', 'thesis help questions', 'academic support FAQ', 'PhD help']}
+        keywords={['dissertation FAQ', 'thesis help questions', 'academic support FAQ', 'PhD help questions', 'dissertation service FAQ', 'thesis writing questions', 'research help FAQ']}
       />
       <FAQSchema faqs={allFaqs} />
+
+      {/* Breadcrumbs */}
+      <div className="bg-midnight-rich border-b border-white/10">
+        <div className="container px-4 sm:px-6">
+          <Breadcrumbs className="text-white/60" />
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-midnight-rich to-midnight relative overflow-hidden">

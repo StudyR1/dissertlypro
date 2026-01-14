@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
 
 const values = [
   {
@@ -103,8 +104,15 @@ const About = () => {
         title="About Us"
         description="Learn about DissertlyPro's mission to support Master's and PhD students worldwide. Meet our team of PhD experts and discover our commitment to academic excellence."
         canonical="/about"
-        keywords={['about DissertlyPro', 'academic support team', 'PhD experts', 'dissertation help company']}
+        keywords={['about DissertlyPro', 'academic support team', 'PhD experts', 'dissertation help company', 'thesis writing experts', 'research support service', 'academic consulting firm']}
       />
+
+      {/* Breadcrumbs */}
+      <div className="bg-midnight-rich border-b border-white/10">
+        <div className="container px-4 sm:px-6">
+          <Breadcrumbs className="text-white/60" />
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-midnight-rich to-midnight relative overflow-hidden">
