@@ -7,6 +7,11 @@ import {
   FloatingCTA, 
   SocialProofNotification 
 } from "@/components/cro";
+import { 
+  ReadingModeToggle, 
+  NightOwlTheme, 
+  WordCountCalculator 
+} from "@/components/features";
 
 interface LayoutProps {
   children: ReactNode;
@@ -23,6 +28,11 @@ const Layout = ({ children }: LayoutProps) => {
       <ExitIntentPopup />
       <FloatingCTA />
       <SocialProofNotification />
+      
+      {/* Unique Features */}
+      <ReadingModeToggle />
+      <NightOwlTheme />
+      <WordCountCalculator />
       
       {/* Mobile CTA Bar */}
       <MobileCTA />
