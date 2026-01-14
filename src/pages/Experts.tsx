@@ -169,7 +169,7 @@ const Experts = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
               Meet Our Expert <span className="text-gradient-copper">Academic Team</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-ivory max-w-3xl mx-auto leading-relaxed">
               Our team comprises distinguished academics and industry professionals with doctoral degrees 
               from world-renowned institutions, bringing unparalleled expertise to your research journey.
             </p>
@@ -416,7 +416,7 @@ const Experts = () => {
                 <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4">
                   Join Our Expert Network
                 </h3>
-                <p className="text-white/70 mb-6">
+                <p className="text-ivory mb-6">
                   Are you a PhD holder with a passion for mentoring? We're always looking for 
                   qualified academics to join our team of expert consultants.
                 </p>
@@ -439,7 +439,7 @@ const Experts = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-6">
               Ready to Work With Our <span className="text-gradient-copper">Experts?</span>
             </h2>
-            <p className="text-base sm:text-lg text-white/70 mb-8">
+            <p className="text-base sm:text-lg text-ivory mb-8">
               Schedule a free consultation to discuss your research needs and get matched 
               with the perfect expert for your project.
             </p>
