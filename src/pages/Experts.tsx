@@ -354,9 +354,9 @@ const Experts = () => {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-1 mb-4">
+                <div className="flex items-center gap-1 mb-4" role="img" aria-label={`Rating: ${testimonial.rating} out of 5 stars`}>
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-copper text-copper" />
+                    <Star key={i} className="h-4 w-4 fill-copper text-copper" aria-hidden="true" />
                   ))}
                 </div>
 
