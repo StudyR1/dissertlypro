@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { FAQSchema, BreadcrumbSchema } from "@/components/schemas";
 import { TrustBadges } from "@/components/cro";
+import { ConfidenceMeter } from "@/components/features";
 import { ArrowRight, Check, HelpCircle, MessageSquare } from "lucide-react";
 
 const pricingPlans = [
@@ -125,58 +126,70 @@ const Pricing = () => {
       {/* Pricing Cards */}
       <section className="py-20 lg:py-28 bg-background">
         <div className="container">
-          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingPlans.map((plan, index) => (
-              <div
-                key={index}
-                className={`relative rounded-2xl border p-8 ${
-                  plan.popular
-                    ? "bg-primary text-primary-foreground border-gold shadow-elevated scale-105"
-                    : "bg-card text-card-foreground border-border shadow-card"
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="bg-gold text-foreground text-sm font-sans font-semibold px-4 py-1 rounded-full">
-                      Most Popular
-                    </span>
+          <div className="grid lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {/* Pricing Plans */}
+            <div className="lg:col-span-3">
+              <div className="grid md:grid-cols-3 gap-6">
+                {pricingPlans.map((plan, index) => (
+                  <div
+                    key={index}
+                    className={`relative rounded-2xl border p-8 ${
+                      plan.popular
+                        ? "bg-primary text-primary-foreground border-gold shadow-elevated scale-105"
+                        : "bg-card text-card-foreground border-border shadow-card"
+                    }`}
+                  >
+                    {plan.popular && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span className="bg-gold text-foreground text-sm font-sans font-semibold px-4 py-1 rounded-full">
+                          Most Popular
+                        </span>
+                      </div>
+                    )}
+
+                    <h3 className="text-xl font-serif font-semibold mb-2">{plan.name}</h3>
+                    <p className={`text-sm font-sans mb-6 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                      {plan.description}
+                    </p>
+
+                    <div className="mb-6">
+                      <span className="text-3xl font-serif font-bold">{plan.price}</span>
+                      <span className={`text-sm font-sans ml-2 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                        {plan.priceNote}
+                      </span>
+                    </div>
+
+                    <ul className="space-y-3 mb-8">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm font-sans">
+                          <Check className={`h-5 w-5 flex-shrink-0 ${plan.popular ? "text-gold" : "text-gold"}`} />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Button
+                      variant={plan.popular ? "hero" : "midnight-outline"}
+                      className="w-full"
+                      size="lg"
+                      asChild
+                    >
+                      <Link to="/consultation">
+                        Get Custom Quote
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
                   </div>
-                )}
-
-                <h3 className="text-xl font-serif font-semibold mb-2">{plan.name}</h3>
-                <p className={`text-sm font-sans mb-6 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                  {plan.description}
-                </p>
-
-                <div className="mb-6">
-                  <span className="text-4xl font-serif font-bold">{plan.price}</span>
-                  <span className={`text-sm font-sans ml-2 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                    {plan.priceNote}
-                  </span>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm font-sans">
-                      <Check className={`h-5 w-5 flex-shrink-0 ${plan.popular ? "text-gold" : "text-gold"}`} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  variant={plan.popular ? "hero" : "midnight-outline"}
-                  className="w-full"
-                  size="lg"
-                  asChild
-                >
-                  <Link to="/consultation">
-                    Get Custom Quote
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Confidence Meter Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-24">
+                <ConfidenceMeter planName="Dissertation Package" baseConfidence={25} />
+              </div>
+            </div>
           </div>
           
           {/* Trust Badges below pricing */}
