@@ -4,3 +4,4 @@ export { default as WordCountCalculator } from './WordCountCalculator';
 export { default as InstantQuoteCalculator } from './InstantQuoteCalculator';
 export { default as DeadlineDangerZone } from './DeadlineDangerZone';
 export { default as ConfidenceMeter } from './ConfidenceMeter';
+export { ExpertAvailabilityBadge, LiveAvailabilityStrip } from './ExpertAvailability';

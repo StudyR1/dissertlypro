@@ -15,6 +15,7 @@ import {
   BarChart3,
   Quote
 } from "lucide-react";
+import { ExpertAvailabilityBadge, LiveAvailabilityStrip } from "@/components/features";
 
 const experts = [
   {
@@ -207,19 +208,40 @@ const Experts = () => {
             </p>
           </div>
 
+          {/* Live Availability Strip */}
+          <LiveAvailabilityStrip experts={experts} />
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {experts.map((expert, index) => (
               <div 
                 key={index} 
-                className="group bg-white rounded-2xl border border-border p-6 hover:shadow-card transition-all duration-300"
+                className="group bg-white rounded-2xl border border-border p-6 hover:shadow-card transition-all duration-300 relative"
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <img 
-                    src={expert.image} 
-                    alt={expert.name}
-                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border-2 border-copper/20"
+                {/* Availability Badge - Top Right */}
+                <div className="absolute top-4 right-4">
+                  <ExpertAvailabilityBadge 
+                    expertName={expert.name} 
+                    specialty={expert.expertise[0]}
+                    size="md"
                   />
-                  <div className="flex-1 min-w-0">
+                </div>
+
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="relative">
+                    <img 
+                      src={expert.image} 
+                      alt={expert.name}
+                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border-2 border-copper/20"
+                    />
+                    {/* Small indicator dot on avatar */}
+                    <ExpertAvailabilityBadge 
+                      expertName={expert.name}
+                      size="sm"
+                      showLabel={false}
+                      className="absolute -bottom-1 -right-1 p-1 bg-white rounded-full shadow-sm"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0 pr-20">
                     <h3 className="text-lg font-serif font-bold text-foreground group-hover:text-copper transition-colors">
                       {expert.name}
                     </h3>
