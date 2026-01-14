@@ -115,7 +115,7 @@ const Pricing = () => {
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
               Investment in Your Academic Success
             </h1>
-            <p className="text-xl text-primary-foreground/80 font-sans leading-relaxed">
+            <p className="text-xl text-ivory font-sans leading-relaxed">
               Flexible pricing options designed for postgraduate students. 
               Every project receives a personalized quote based on your specific needs.
             </p>
@@ -148,13 +148,13 @@ const Pricing = () => {
                     )}
 
                     <h3 className="text-xl font-serif font-semibold mb-2">{plan.name}</h3>
-                    <p className={`text-sm font-sans mb-6 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                    <p className={`text-sm font-sans mb-6 ${plan.popular ? "text-ivory" : "text-muted-foreground"}`}>
                       {plan.description}
                     </p>
 
                     <div className="mb-6">
                       <span className="text-3xl font-serif font-bold">{plan.price}</span>
-                      <span className={`text-sm font-sans ml-2 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                      <span className={`text-sm font-sans ml-2 ${plan.popular ? "text-ivory" : "text-muted-foreground"}`}>
                         {plan.priceNote}
                       </span>
                     </div>
@@ -264,7 +264,7 @@ const Pricing = () => {
             <h2 className="text-3xl font-serif font-bold text-primary-foreground mb-4">
               Get Your Personalized Quote
             </h2>
-            <p className="text-primary-foreground/70 font-sans text-lg mb-8">
+            <p className="text-ivory font-sans text-lg mb-8">
               Every project is unique. Tell us about your research, and we'll provide a detailed 
               proposal with transparent pricing within 24 hours.
             </p>

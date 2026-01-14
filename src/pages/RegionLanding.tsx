@@ -78,7 +78,7 @@ const RegionLanding = () => {
               {heroTitle}
             </h1>
             
-            <p className="text-lg sm:text-xl text-white/70 font-sans leading-relaxed mb-8 max-w-3xl">
+            <p className="text-lg sm:text-xl text-ivory font-sans leading-relaxed mb-8 max-w-3xl">
               {heroSubtitle}
             </p>
 
@@ -170,16 +170,16 @@ const RegionLanding = () => {
                 </span>
               </div>
               <h3 className="text-xl font-serif font-semibold mb-2">Full Dissertation</h3>
-              <p className="text-sm text-primary-foreground/70 font-sans mb-6">Complete support package</p>
+              <p className="text-sm text-ivory font-sans mb-6">Complete support package</p>
               <div className="mb-6">
                 <span className="text-4xl font-serif font-bold">
                   {formatPrice(pricing.dissertation, currency)}
                 </span>
-                <span className="text-primary-foreground/70 font-sans ml-2">complete</span>
+                <span className="text-ivory font-sans ml-2">complete</span>
               </div>
               <ul className="space-y-3 mb-8">
                 {['All chapters covered', 'Dedicated expert', 'Unlimited revisions', 'Priority support', 'Data analysis', 'Final formatting'].map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm font-sans text-primary-foreground/80">
+                  <li key={feature} className="flex items-center gap-2 text-sm font-sans text-ivory">
                     <CheckCircle className="h-4 w-4 text-copper-light" />
                     {feature}
                   </li>
@@ -332,7 +332,7 @@ const RegionLanding = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-5">
               Ready to Start Your Research Journey?
             </h2>
-            <p className="text-white/70 font-sans text-lg mb-8">
+            <p className="text-ivory font-sans text-lg mb-8">
               Join {stats.students} successful {name} students. Book your free consultation today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

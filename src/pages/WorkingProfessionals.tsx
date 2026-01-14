@@ -83,7 +83,7 @@ const WorkingProfessionals = () => {
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
                 Your Career Shouldn't Pause for Your Research
               </h1>
-              <p className="text-xl text-primary-foreground/80 font-sans leading-relaxed mb-8">
+              <p className="text-xl text-ivory font-sans leading-relaxed mb-8">
                 We specialize in supporting professionals who are advancing their careers while pursuing 
                 advanced degrees. Our flexible, milestone-based approach is designed for your reality.
               </p>
@@ -100,18 +100,18 @@ const WorkingProfessionals = () => {
               <div className="bg-navy-medium/30 backdrop-blur rounded-2xl p-8 border border-primary-foreground/10">
                 <div className="text-center">
                   <div className="text-5xl font-serif font-bold text-gold mb-4">67%</div>
-                  <p className="text-primary-foreground/80 font-sans">
+                  <p className="text-ivory font-sans">
                     of our doctoral clients are working professionals
                   </p>
                 </div>
                 <div className="mt-8 pt-8 border-t border-primary-foreground/10 grid grid-cols-2 gap-6">
                   <div className="text-center">
                     <div className="text-3xl font-serif font-bold text-primary-foreground mb-1">4.2</div>
-                    <p className="text-sm text-primary-foreground/60">Years avg. to PhD completion</p>
+                    <p className="text-sm text-ivory/80">Years avg. to PhD completion</p>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-serif font-bold text-primary-foreground mb-1">24/7</div>
-                    <p className="text-sm text-primary-foreground/60">Support availability</p>
+                    <p className="text-sm text-ivory/80">Support availability</p>
                   </div>
                 </div>
               </div>
@@ -251,7 +251,7 @@ const WorkingProfessionals = () => {
                   <p className="font-serif font-semibold text-primary-foreground">
                     {testimonial.author}
                   </p>
-                  <p className="text-primary-foreground/60 font-sans text-sm">
+                  <p className="text-ivory/80 font-sans text-sm">
                     {testimonial.role}
                   </p>
                 </div>

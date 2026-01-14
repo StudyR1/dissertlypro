@@ -32,7 +32,7 @@ const Ethics = () => {
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
               Our Commitment to Academic Integrity
             </h1>
-            <p className="text-xl text-primary-foreground/80 font-sans leading-relaxed">
+            <p className="text-xl text-ivory font-sans leading-relaxed">
               We operate with the highest ethical standards, providing legitimate academic support 
               that helps you develop as a researcher while maintaining complete integrity.
             </p>
@@ -202,7 +202,7 @@ const Ethics = () => {
             <h2 className="text-3xl font-serif font-bold text-primary-foreground mb-4">
               Questions About Our Ethics?
             </h2>
-            <p className="text-primary-foreground/70 font-sans text-lg mb-8">
+            <p className="text-ivory font-sans text-lg mb-8">
               We're happy to discuss our approach to academic integrity and answer any 
               questions you may have about our services.
             </p>

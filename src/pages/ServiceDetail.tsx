@@ -369,7 +369,7 @@ const ServiceDetail = () => {
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">
         <div className="container">
-          <div className="flex items-center gap-2 text-primary-foreground/70 text-sm font-sans mb-6">
+          <div className="flex items-center gap-2 text-ivory text-sm font-sans mb-6">
             <Link to="/" className="hover:text-gold transition-colors">Home</Link>
             <span>/</span>
             <Link to="/services" className="hover:text-gold transition-colors">Services</Link>
@@ -384,7 +384,7 @@ const ServiceDetail = () => {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary-foreground mb-6">
                 {service.title}
               </h1>
-              <p className="text-xl text-primary-foreground/80 font-sans leading-relaxed max-w-3xl">
+              <p className="text-xl text-ivory font-sans leading-relaxed max-w-3xl">
                 {service.description}
               </p>
             </div>

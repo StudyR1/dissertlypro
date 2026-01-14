@@ -177,7 +177,7 @@ const Services = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-4 sm:mb-6">
               Comprehensive Postgraduate Research Support
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-primary-foreground/80 font-sans leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-ivory font-sans leading-relaxed">
               Expert assistance across every phase of your Master's or PhD journey. 
               Each service is delivered by specialists with advanced degrees in your field.
             </p>

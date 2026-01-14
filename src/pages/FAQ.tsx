@@ -137,7 +137,7 @@ const FAQ = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg text-white/70 font-sans leading-relaxed">
+            <p className="text-lg text-ivory font-sans leading-relaxed">
               Find answers to common questions about our services, process, and how we can support your academic journey.
             </p>
           </div>

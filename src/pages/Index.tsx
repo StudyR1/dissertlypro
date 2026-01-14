@@ -228,7 +228,7 @@ const Index = () => {
               </h1>
               
               {/* Subheadline */}
-              <p className="text-base sm:text-lg md:text-xl text-white/70 font-sans leading-relaxed mb-8 sm:mb-10 max-w-xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
+              <p className="text-base sm:text-lg md:text-xl text-ivory font-sans leading-relaxed mb-8 sm:mb-10 max-w-xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
                 Premium academic support for postgraduate students worldwide. 
                 From dissertation proposals to final defense—we're with you every step.
               </p>
@@ -265,7 +265,7 @@ const Index = () => {
                     <div className="p-1 sm:p-1.5 rounded-lg bg-copper/10">
                       <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-copper-light" />
                     </div>
-                    <span className="text-xs sm:text-sm text-white/60 font-sans">{text}</span>
+                    <span className="text-xs sm:text-sm text-ivory/80 font-sans">{text}</span>
                   </div>
                 ))}
               </div>
@@ -341,7 +341,7 @@ const Index = () => {
                       <Star key={i} className="h-3 w-3 fill-copper/70 text-copper/70" />
                     ))}
                   </div>
-                  <p className="text-sm text-white/60 font-sans italic leading-relaxed mb-2">
+                  <p className="text-sm text-ivory/80 font-sans italic leading-relaxed mb-2">
                     "Completed my PhD thesis 3 months early!"
                   </p>
                   <div className="flex items-center gap-2">
@@ -575,7 +575,7 @@ const Index = () => {
                 <div className="relative text-center text-primary-foreground z-10">
                   <Briefcase className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 sm:mb-6 text-copper opacity-80" />
                   <p className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-2 sm:mb-3">67%</p>
-                  <p className="text-sm sm:text-lg text-primary-foreground/70 font-sans max-w-xs px-4">
+                  <p className="text-sm sm:text-lg text-ivory font-sans max-w-xs px-4">
                     of our clients are working professionals
                   </p>
                 </div>
@@ -645,7 +645,7 @@ const Index = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-4 sm:mb-5">
               Trusted Worldwide
             </h2>
-            <p className="text-primary-foreground/60 font-sans text-base sm:text-lg leading-relaxed px-4 sm:px-0">
+            <p className="text-ivory font-sans text-base sm:text-lg leading-relaxed px-4 sm:px-0">
               Hear from students who achieved their goals with our support.
             </p>
           </div>
@@ -669,7 +669,7 @@ const Index = () => {
                   <p className="font-serif font-semibold text-primary-foreground text-base sm:text-lg">
                     {testimonial.author}
                   </p>
-                  <p className="text-primary-foreground/50 font-sans text-xs sm:text-sm mt-1">
+                  <p className="text-ivory/80 font-sans text-xs sm:text-sm mt-1">
                     {testimonial.role}
                   </p>
                 </div>

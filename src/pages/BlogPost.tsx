@@ -67,7 +67,7 @@ const BlogPost = () => {
           <div className="max-w-3xl mx-auto">
             <Link
               to="/blog"
-              className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-gold text-sm font-sans mb-6 transition-colors"
+              className="inline-flex items-center gap-2 text-ivory hover:text-gold text-sm font-sans mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Blog
@@ -78,7 +78,7 @@ const BlogPost = () => {
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary-foreground mb-6">
               {post.title}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-primary-foreground/70 text-sm font-sans">
+            <div className="flex flex-wrap items-center gap-4 text-ivory text-sm font-sans">
               <span className="flex items-center gap-2">
                 <User className="h-4 w-4" />
                 {post.author}
@@ -205,7 +205,7 @@ const BlogPost = () => {
               <h3 className="text-xl font-serif font-bold text-white mb-3">
                 Need Expert Help With Your Research?
               </h3>
-              <p className="text-white/70 font-sans mb-6">
+              <p className="text-ivory font-sans mb-6">
                 Our PhD-qualified experts can provide personalized support for your dissertation journey.
               </p>
               <Button variant="copper" size="lg" asChild>
