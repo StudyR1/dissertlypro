@@ -35,7 +35,8 @@ import {
   HowToSchema,
   defaultHowToSteps,
   AggregateRatingSchema,
-  defaultAggregateRating
+  defaultAggregateRating,
+  ProfessionalServiceSchema
 } from "@/components/schemas";
 import { homepageFAQs } from "@/data/serviceFAQs";
 import { AnimatedCounter, TrustBadges, TrustStrip } from "@/components/cro";
@@ -151,6 +152,7 @@ const Index = () => {
         totalTime="P6M"
       />
       <AggregateRatingSchema {...defaultAggregateRating} />
+      <ProfessionalServiceSchema />
       {/* Hero Section */}
       <section className="relative min-h-[100svh] flex items-center overflow-hidden">
         {/* Animated Background - GPU accelerated */}
