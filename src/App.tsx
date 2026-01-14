@@ -28,6 +28,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const GDPR = lazy(() => import("./pages/GDPR"));
 const About = lazy(() => import("./pages/About"));
 const Experts = lazy(() => import("./pages/Experts"));
+const RegionLanding = lazy(() => import("./pages/RegionLanding"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -66,6 +67,12 @@ const App = () => (
               <Route path="/gdpr" element={<GDPR />} />
               <Route path="/about" element={<About />} />
               <Route path="/experts" element={<Experts />} />
+              {/* Region-specific landing pages */}
+              <Route path="/uk" element={<RegionLanding />} />
+              <Route path="/us" element={<RegionLanding />} />
+              <Route path="/au" element={<RegionLanding />} />
+              <Route path="/ca" element={<RegionLanding />} />
+              <Route path="/:region" element={<RegionLanding />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
