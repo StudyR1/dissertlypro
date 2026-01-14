@@ -5,7 +5,7 @@ import SEO from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/schemas";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
 import { ArrowRight, Clock, User, Sparkles, Filter } from "lucide-react";
-import { blogPosts, blogCategories, getFeaturedPosts } from "@/data/blogPosts";
+import { blogPosts, blogCategories, getFeaturedPosts, getPostImage } from "@/data/blogPosts";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -77,15 +77,25 @@ const Blog = () => {
                 <Link
                   key={post.slug}
                   to={`/blog/${post.slug}`}
-                  className="group bg-white rounded-xl border border-border p-4 hover:shadow-card transition-all"
+                  className="group bg-white rounded-xl border border-border overflow-hidden hover:shadow-card transition-all"
                 >
-                  <span className="text-copper text-xs font-semibold uppercase tracking-wider">
-                    {post.category}
-                  </span>
-                  <h3 className="text-sm font-serif font-semibold text-foreground mt-2 group-hover:text-copper transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground mt-2">{post.readTime}</p>
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img 
+                      src={getPostImage(post)} 
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <span className="text-copper text-xs font-semibold uppercase tracking-wider">
+                      {post.category}
+                    </span>
+                    <h3 className="text-sm font-serif font-semibold text-foreground mt-2 group-hover:text-copper transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-2">{post.readTime}</p>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -148,8 +158,13 @@ const Blog = () => {
                 to={`/blog/${post.slug}`}
                 className="group bg-card rounded-xl border border-border shadow-subtle hover:shadow-card transition-all duration-300 overflow-hidden"
               >
-                <div className="aspect-video bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center relative">
-                  <span className="text-6xl font-serif text-primary/20">{post.title[0]}</span>
+                <div className="aspect-video relative overflow-hidden">
+                  <img 
+                    src={getPostImage(post)} 
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
                   {post.featured && (
                     <div className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
                       <Sparkles className="h-3 w-3" />
