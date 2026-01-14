@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import MobileCTA from "./MobileCTA";
 import { 
   ExitIntentPopup, 
   FloatingCTA, 
@@ -13,7 +14,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col text-size-adjust-none">
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
@@ -22,6 +23,9 @@ const Layout = ({ children }: LayoutProps) => {
       <ExitIntentPopup />
       <FloatingCTA />
       <SocialProofNotification />
+      
+      {/* Mobile CTA Bar */}
+      <MobileCTA />
     </div>
   );
 };

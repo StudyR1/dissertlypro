@@ -267,35 +267,77 @@ const Header = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="lg:hidden border-t border-border bg-background/98 backdrop-blur-xl animate-fade-in fixed inset-x-0 top-16 sm:top-20 bottom-0 z-50 overflow-y-auto">
-          <nav className="container py-4 px-4 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.title}
-                to={link.href}
-                className={cn(
-                  "flex items-center py-4 px-4 text-base font-medium font-sans rounded-xl transition-all active:scale-[0.98] touch-manipulation",
-                  location.pathname === link.href
-                    ? "bg-cream-warm text-copper"
-                    : "text-muted-foreground hover:bg-cream-warm hover:text-foreground active:bg-cream-warm"
-                )}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.title}
-              </Link>
-            ))}
-            <div className="pt-4 space-y-3 border-t border-border mt-4">
-              <Button variant="midnight-outline" className="w-full h-12 text-base touch-manipulation" asChild>
-                <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
-              </Button>
-              <Button variant="copper" className="w-full h-12 text-base touch-manipulation" asChild>
-                <Link to="/consultation" onClick={() => setIsOpen(false)}>Free Consultation</Link>
-              </Button>
-            </div>
-          </nav>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden border-t border-border bg-background/98 backdrop-blur-xl fixed inset-x-0 top-16 sm:top-20 bottom-0 z-50 overflow-y-auto momentum-scroll"
+          >
+            <nav className="container py-4 px-4 space-y-1 pb-24">
+              {/* Quick Access Section */}
+              <div className="grid grid-cols-2 gap-2 mb-4 pb-4 border-b border-border">
+                {services.slice(0, 4).map((service) => (
+                  <Link
+                    key={service.title}
+                    to={service.href}
+                    className="flex items-center gap-2 p-3 rounded-xl bg-cream-warm/50 text-sm font-medium text-foreground active:scale-[0.98] touch-manipulation"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <service.icon className="h-4 w-4 text-copper" />
+                    <span className="truncate">{service.title.split(' ')[0]}</span>
+                  </Link>
+                ))}
+              </div>
+              
+              {navLinks.map((link) => (
+                <Link
+                  key={link.title}
+                  to={link.href}
+                  className={cn(
+                    "flex items-center py-4 px-4 text-base font-medium font-sans rounded-xl transition-all active:scale-[0.98] touch-manipulation",
+                    location.pathname === link.href
+                      ? "bg-cream-warm text-copper"
+                      : "text-muted-foreground hover:bg-cream-warm hover:text-foreground active:bg-cream-warm"
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.title}
+                </Link>
+              ))}
+              
+              {/* About Sub-links on Mobile */}
+              <div className="pt-2 mt-2 border-t border-border">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">Quick Links</p>
+                <div className="space-y-1">
+                  {aboutLinks.map((item) => (
+                    <Link
+                      key={item.title}
+                      to={item.href}
+                      className="flex items-center gap-3 py-3 px-4 text-sm font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <item.icon className="h-4 w-4 text-copper/70" />
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="pt-4 space-y-3 border-t border-border mt-4">
+                <Button variant="midnight-outline" className="w-full h-12 text-base touch-manipulation" asChild>
+                  <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
+                </Button>
+                <Button variant="copper" className="w-full h-12 text-base touch-manipulation" asChild>
+                  <Link to="/consultation" onClick={() => setIsOpen(false)}>Free Consultation</Link>
+                </Button>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
