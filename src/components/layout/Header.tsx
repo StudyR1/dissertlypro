@@ -26,14 +26,13 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { title: "Home", href: "/" },
     { title: "Services", href: "/services", hasDropdown: true },
     { title: "Subjects", href: "/subjects" },
-    { title: "Working Professionals", href: "/working-professionals" },
+    { title: "Professionals", href: "/working-professionals" },
     { title: "Experts", href: "/experts" },
-    { title: "About Us", href: "/about" },
     { title: "Pricing", href: "/pricing" },
     { title: "Blog", href: "/blog" },
+    { title: "About", href: "/about" },
   ];
 
   return (
