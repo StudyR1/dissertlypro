@@ -39,6 +39,7 @@ import {
   defaultAggregateRating
 } from "@/components/schemas";
 import { AnimatedCounter, TrustBadges, TrustStrip } from "@/components/cro";
+import { LiveResearchPulse } from "@/components/features";
 
 const services = [
   {
@@ -413,6 +414,53 @@ const Index = () => {
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground font-sans tracking-wide">
                 Countries
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Research Pulse Section */}
+      <section className="py-12 sm:py-16 bg-background">
+        <div className="container px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* Live Pulse Feed */}
+            <div>
+              <LiveResearchPulse />
+            </div>
+            
+            {/* Social Proof Text */}
+            <div className="flex flex-col justify-center">
+              <span className="inline-block text-copper font-sans font-semibold text-xs sm:text-sm tracking-widest uppercase mb-3">
+                Join Our Community
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+                You're Not Alone in This Journey
+              </h2>
+              <p className="text-muted-foreground font-sans text-base sm:text-lg leading-relaxed mb-6">
+                Right now, students and researchers from around the world are making progress 
+                on their dissertations with expert support. Watch our live feed to see the 
+                global community in action.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "Real-time activity from our worldwide community",
+                  "Anonymous updates from fellow researchers",
+                  "See how many experts are available right now",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-copper shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8">
+                <Button variant="copper" size="lg" asChild>
+                  <Link to="/consultation">
+                    Join the Community
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
