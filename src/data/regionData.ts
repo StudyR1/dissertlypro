@@ -36,7 +36,7 @@ export const regionData: Record<string, RegionData> = {
     code: 'us',
     name: 'United States',
     currency: { code: 'USD', symbol: '$' },
-    phone: '+1 (800) 555-0199',
+    phone: '+1 (812) 690-5122',
     pricing: {
       chapter: 299,
       dissertation: 2499,
@@ -86,7 +86,7 @@ export const regionData: Record<string, RegionData> = {
     code: 'uk',
     name: 'United Kingdom',
     currency: { code: 'GBP', symbol: '£' },
-    phone: '+44 (0) 800 123 4567',
+    phone: '+1 (812) 690-5122',
     pricing: {
       chapter: 249,
       dissertation: 1999,
@@ -136,7 +136,7 @@ export const regionData: Record<string, RegionData> = {
     code: 'au',
     name: 'Australia',
     currency: { code: 'AUD', symbol: 'A$' },
-    phone: '+61 1800 555 199',
+    phone: '+1 (812) 690-5122',
     pricing: {
       chapter: 449,
       dissertation: 3499,
@@ -186,7 +186,7 @@ export const regionData: Record<string, RegionData> = {
     code: 'ca',
     name: 'Canada',
     currency: { code: 'CAD', symbol: 'C$' },
-    phone: '+1 (800) 555-0199',
+    phone: '+1 (812) 690-5122',
     pricing: {
       chapter: 399,
       dissertation: 2999,

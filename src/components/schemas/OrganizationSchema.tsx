@@ -26,7 +26,7 @@ const OrganizationSchema = () => {
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+1-800-THESIS",
+        "telephone": "+1-812-690-5122",
         "contactType": "customer service",
         "availableLanguage": "English",
         "areaServed": "Worldwide"

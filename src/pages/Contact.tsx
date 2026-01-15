@@ -148,8 +148,20 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-serif font-semibold text-foreground text-sm sm:text-base mb-0.5 sm:mb-1">Phone</h3>
-                    <a href="tel:+1-800-555-0199" className="text-muted-foreground hover:text-gold transition-colors font-sans text-xs sm:text-sm">
-                      +1 (800) 555-0199
+                    <a href="tel:+18126905122" className="text-muted-foreground hover:text-gold transition-colors font-sans text-xs sm:text-sm">
+                      +1 (812) 690-5122
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-gold/10 text-gold flex-shrink-0">
+                    <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif font-semibold text-foreground text-sm sm:text-base mb-0.5 sm:mb-1">WhatsApp</h3>
+                    <a href="https://wa.me/18126905122" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold transition-colors font-sans text-xs sm:text-sm">
+                      +1 (812) 690-5122
                     </a>
                   </div>
                 </div>
