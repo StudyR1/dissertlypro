@@ -5,7 +5,8 @@ import MobileCTA from "./MobileCTA";
 import { 
   ExitIntentPopup, 
   FloatingCTA, 
-  SocialProofNotification 
+  SocialProofNotification,
+  FloatingWhatsApp
 } from "@/components/cro";
 import { 
   ReadingModeToggle, 
@@ -29,6 +30,7 @@ const Layout = ({ children }: LayoutProps) => {
       {/* CRO Components */}
       <ExitIntentPopup />
       <FloatingCTA />
+      <FloatingWhatsApp />
       <SocialProofNotification />
       
       {/* Unique Features */}
