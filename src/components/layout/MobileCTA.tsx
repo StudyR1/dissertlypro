@@ -42,7 +42,7 @@ const MobileCTA = () => {
           className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-t border-border safe-area-bottom"
           style={{ boxShadow: "0 -4px 20px -5px hsl(220 25% 18% / 0.1)" }}
         >
-          <div className="container px-4 py-3 flex items-center gap-3">
+          <div className="container px-4 py-3 flex items-center gap-2">
             <Button 
               variant="midnight-outline" 
               size="sm" 
@@ -50,8 +50,22 @@ const MobileCTA = () => {
               asChild
             >
               <a href="tel:+18126905122">
-                <Phone className="h-4 w-4 mr-2" />
-                Call Now
+                <Phone className="h-4 w-4 mr-1.5" />
+                Call
+              </a>
+            </Button>
+            <Button 
+              size="sm" 
+              className="flex-1 h-11 text-sm font-medium touch-manipulation bg-[#25D366] hover:bg-[#20BD5A] text-white"
+              asChild
+            >
+              <a 
+                href="https://wa.me/18126905122?text=Hello!%20I%20need%20help%20with%20my%20dissertation." 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="h-4 w-4 mr-1.5" />
+                WhatsApp
               </a>
             </Button>
             <Button 
@@ -61,8 +75,7 @@ const MobileCTA = () => {
               asChild
             >
               <Link to="/consultation">
-                <MessageCircle className="h-4 w-4 mr-2" />
-                Get Started
+                Order
               </Link>
             </Button>
           </div>
