@@ -9,6 +9,8 @@ declare global {
       minimize?: () => void;
       toggle?: () => void;
       onLoad?: () => void;
+      hideWidget?: () => void;
+      showWidget?: () => void;
       isChatMaximized?: () => boolean;
     };
     Tawk_LoadStart?: Date;
@@ -23,9 +25,13 @@ const FloatingCTA = () => {
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
 
-    // Set callback for when Tawk loads
+    // Set callback for when Tawk loads - hide the default widget
     window.Tawk_API.onLoad = () => {
       setIsTawkLoaded(true);
+      // Hide the default Tawk.to widget button
+      if (window.Tawk_API?.hideWidget) {
+        window.Tawk_API.hideWidget();
+      }
     };
 
     const script = document.createElement('script');
@@ -37,8 +43,13 @@ const FloatingCTA = () => {
     const firstScript = document.getElementsByTagName('script')[0];
     firstScript?.parentNode?.insertBefore(script, firstScript);
 
-    // Fallback: set loaded after timeout
-    const timeout = setTimeout(() => setIsTawkLoaded(true), 3000);
+    // Fallback: set loaded after timeout and try to hide widget
+    const timeout = setTimeout(() => {
+      setIsTawkLoaded(true);
+      if (window.Tawk_API?.hideWidget) {
+        window.Tawk_API.hideWidget();
+      }
+    }, 3000);
 
     return () => {
       clearTimeout(timeout);
@@ -47,6 +58,10 @@ const FloatingCTA = () => {
   }, []);
 
   const openChat = () => {
+    // Show widget first, then maximize
+    if (window.Tawk_API?.showWidget) {
+      window.Tawk_API.showWidget();
+    }
     if (window.Tawk_API?.maximize) {
       window.Tawk_API.maximize();
     }
@@ -84,14 +99,28 @@ const FloatingCTA = () => {
         </motion.button>
       </div>
 
-      {/* Hide Tawk.to default button with CSS */}
+      {/* Hide Tawk.to default button with aggressive CSS */}
       <style>{`
-        /* Hide Tawk.to default widget button on desktop */}
-        @media (min-width: 768px) {
-          #tawk-default-container,
-          .tawk-min-container {
-            display: none !important;
-          }
+        /* Hide Tawk.to default widget button everywhere */
+        iframe[title="chat widget"],
+        iframe[src*="tawk.to"]:not(.tawk-chat-panel),
+        .widget-visible,
+        #tawk-default-container,
+        .tawk-min-container,
+        .tawk-button-circle,
+        div[class*="widget-visible"] {
+          display: none !important;
+          visibility: hidden !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+        /* But show the chat window when opened */
+        iframe.tawk-chat-panel,
+        .tawk-chat-panel {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          pointer-events: auto !important;
         }
       `}</style>
     </>
