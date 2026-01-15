@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { ServiceSchema, BreadcrumbSchema, FAQSchema } from "@/components/schemas";
 import { serviceSpecificFAQs } from "@/data/serviceFAQs";
+import { FloatingOrderButton } from "@/components/cro";
 import { 
   ArrowRight, 
   FileText, 
@@ -346,7 +347,9 @@ const ServiceDetail = () => {
   const ServiceIcon = service.icon;
 
   return (
-    <Layout>
+    <>
+      <FloatingOrderButton />
+      <Layout>
       <SEO 
         title={service.title}
         description={service.description}
@@ -535,7 +538,8 @@ const ServiceDetail = () => {
           </Button>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

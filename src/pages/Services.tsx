@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { ServicesListSchema, BreadcrumbSchema, FAQSchema } from "@/components/schemas";
 import { servicesPageFAQs } from "@/data/serviceFAQs";
+import { FloatingOrderButton } from "@/components/cro";
 import { 
   ArrowRight, 
   FileText, 
@@ -154,6 +155,8 @@ const services = [
 
 const Services = () => {
   return (
+    <>
+      <FloatingOrderButton />
     <Layout>
       <SEO 
         title="Our Services"
@@ -256,7 +259,8 @@ const Services = () => {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 
