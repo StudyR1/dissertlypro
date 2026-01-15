@@ -4,7 +4,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { FAQSchema, BreadcrumbSchema } from "@/components/schemas";
 import { pricingPageFAQs } from "@/data/serviceFAQs";
-import { TrustBadges } from "@/components/cro";
+import { TrustBadges, FloatingOrderButton } from "@/components/cro";
 import { ConfidenceMeter } from "@/components/features";
 import { ArrowRight, Check, HelpCircle, MessageSquare } from "lucide-react";
 
@@ -93,7 +93,9 @@ const displayFaqs = [
 
 const Pricing = () => {
   return (
-    <Layout>
+    <>
+      <FloatingOrderButton />
+      <Layout>
       <SEO 
         title="Pricing"
         description="Transparent, flexible pricing for dissertation and thesis support services. Chapter packages, full dissertation support, and custom enterprise solutions with milestone-based payments."
@@ -277,7 +279,8 @@ const Pricing = () => {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 
