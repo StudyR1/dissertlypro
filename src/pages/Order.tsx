@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -165,22 +164,12 @@ const initialFormData: OrderFormData = {
 const DEPOSIT_AMOUNT = 50;
 
 const Order = () => {
-  const [searchParams] = useSearchParams();
-  const previewSuccess = searchParams.get('preview') === 'success';
-  
   const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState<OrderFormData>(previewSuccess ? {
-    ...initialFormData,
-    firstName: "John",
-    lastName: "Smith",
-    email: "john.smith@university.edu",
-    serviceType: "thesis-writing",
-    projectTitle: "Impact of AI on Modern Education Systems",
-  } : initialFormData);
+  const [formData, setFormData] = useState<OrderFormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [orderComplete, setOrderComplete] = useState(previewSuccess);
-  const [orderNumber, setOrderNumber] = useState(previewSuccess ? "DP-PREVIEW-TEST" : "");
-  const [paymentApproved, setPaymentApproved] = useState(previewSuccess);
+  const [orderComplete, setOrderComplete] = useState(false);
+  const [orderNumber, setOrderNumber] = useState("");
+  const [paymentApproved, setPaymentApproved] = useState(false);
 
   const totalSteps = 5;
 
