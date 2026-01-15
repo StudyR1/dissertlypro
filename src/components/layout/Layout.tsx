@@ -3,7 +3,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import MobileCTA from "./MobileCTA";
 import { 
-  ExitIntentPopup, 
   FloatingCTA, 
   SocialProofNotification,
   FloatingWhatsApp
@@ -28,7 +27,6 @@ const Layout = ({ children }: LayoutProps) => {
       <Footer />
       
       {/* CRO Components */}
-      <ExitIntentPopup />
       <FloatingCTA />
       <FloatingWhatsApp />
       <SocialProofNotification />

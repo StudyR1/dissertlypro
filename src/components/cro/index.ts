@@ -1,4 +1,4 @@
-export { default as ExitIntentPopup } from './ExitIntentPopup';
+
 export { default as FloatingCTA } from './FloatingCTA';
 export { default as AnimatedCounter } from './AnimatedCounter';
 export { default as FloatingOrderButton } from './FloatingOrderButton';
