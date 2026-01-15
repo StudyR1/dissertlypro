@@ -73,7 +73,7 @@ const ProfessionalServiceSchema = ({
     "url": "https://dissertlypro.com",
     "logo": "https://dissertlypro.com/logo-icon.png",
     "image": "https://dissertlypro.com/og-image.jpg",
-    "telephone": "+1-800-DISSERT",
+    "telephone": "+1-812-690-5122",
     "email": "support@dissertlypro.com",
     "foundingDate": "2015",
     "priceRange": "$$$",
@@ -196,21 +196,21 @@ const ProfessionalServiceSchema = ({
         "contactType": "customer service",
         "availableLanguage": "English",
         "areaServed": ["US", "CA"],
-        "telephone": "+1-800-DISSERT"
+        "telephone": "+1-812-690-5122"
       },
       {
         "@type": "ContactPoint",
         "contactType": "customer service",
         "availableLanguage": "English",
         "areaServed": ["GB", "IE"],
-        "telephone": "+44-800-DISSERT"
+        "telephone": "+1-812-690-5122"
       },
       {
         "@type": "ContactPoint",
         "contactType": "customer service",
         "availableLanguage": "English",
         "areaServed": ["AU", "NZ"],
-        "telephone": "+61-1800-DISSERT"
+        "telephone": "+1-812-690-5122"
       }
     ],
     

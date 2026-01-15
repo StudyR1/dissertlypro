@@ -72,11 +72,11 @@ const Footer = () => {
                 </div>
                 <span className="text-xs sm:text-sm">support@dissertlypro.com</span>
               </a>
-              <a href="tel:+1-800-555-0199" className="flex items-center gap-2 sm:gap-3 text-primary-foreground/60 hover:text-copper transition-colors group">
+              <a href="tel:+18126905122" className="flex items-center gap-2 sm:gap-3 text-primary-foreground/60 hover:text-copper transition-colors group">
                 <div className="p-1.5 sm:p-2 rounded-lg bg-white/5 group-hover:bg-copper/10 transition-colors">
                   <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
-                <span className="text-xs sm:text-sm">+1 (800) 555-0199</span>
+                <span className="text-xs sm:text-sm">+1 (812) 690-5122</span>
               </a>
               <div className="flex items-center gap-2 sm:gap-3 text-primary-foreground/60">
                 <div className="p-1.5 sm:p-2 rounded-lg bg-white/5">

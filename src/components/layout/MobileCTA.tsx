@@ -49,7 +49,7 @@ const MobileCTA = () => {
               className="flex-1 h-11 text-sm font-medium touch-manipulation"
               asChild
             >
-              <a href="tel:+18005550199">
+              <a href="tel:+18126905122">
                 <Phone className="h-4 w-4 mr-2" />
                 Call Now
               </a>
