@@ -1,98 +1,95 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, X, MessageCircle } from 'lucide-react';
+import { ArrowRight, X, Sparkles, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const FloatingCTA = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show after scrolling 300px
-      const scrolled = window.scrollY > 300;
-      setIsVisible(scrolled && !isDismissed);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isDismissed]);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   const handleDismiss = () => {
     setIsDismissed(true);
-    setIsVisible(false);
   };
 
-  if (!isVisible) return null;
+  if (isDismissed) return null;
 
   return (
     <>
-      {/* Mobile Bottom Bar - improved touch targets and spacing */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-card/98 backdrop-blur-lg border-t border-border safe-area-bottom animate-slide-up">
-        <div className="flex items-center gap-3 p-3 sm:p-4">
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-foreground truncate">Need dissertation help?</p>
-            <p className="text-xs text-muted-foreground">Free expert consultation</p>
-          </div>
-          <Button variant="copper" size="sm" className="shrink-0 h-10 px-4 touch-manipulation active:scale-95" asChild>
-            <Link to="/consultation">
-              Get Help
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-
-      {/* Desktop Floating Button */}
-      <div 
-        className={cn(
-          "fixed bottom-6 right-6 z-50 hidden md:block transition-all duration-300",
-          isExpanded ? "w-80" : "w-auto"
-        )}
-      >
-        {isExpanded ? (
-          <div className="bg-card rounded-2xl shadow-elevated border border-border overflow-hidden animate-scale-in">
-            {/* Close button */}
-            <button
-              onClick={() => setIsExpanded(false)}
-              className="absolute top-3 right-3 p-1.5 text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Collapse"
+      {/* Desktop Floating Button - Bottom Right */}
+      <div className="fixed bottom-6 right-6 z-50 hidden md:block">
+        <AnimatePresence mode="wait">
+          {isExpanded ? (
+            <motion.div
+              key="expanded"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="bg-card rounded-2xl shadow-elevated border border-border overflow-hidden w-80"
             >
-              <X className="h-4 w-4" />
-            </button>
-
-            <div className="p-5">
-              <h4 className="font-serif font-semibold text-foreground mb-2">
-                Need Help With Your Research?
-              </h4>
-              <p className="text-sm text-muted-foreground mb-4">
-                Our PhD experts are ready to guide you through your dissertation journey.
-              </p>
-              <Button variant="copper" size="sm" className="w-full" asChild>
-                <Link to="/consultation">
-                  Free Consultation
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
+              {/* Decorative header */}
+              <div className="bg-gradient-to-r from-copper via-copper-light to-copper h-1.5" />
+              
+              {/* Close button */}
               <button
-                onClick={handleDismiss}
-                className="w-full text-xs text-muted-foreground hover:text-foreground mt-3 transition-colors"
+                onClick={() => setIsExpanded(false)}
+                className="absolute top-4 right-4 p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted"
+                aria-label="Collapse"
               >
-                Don't show again
+                <X className="h-4 w-4" />
               </button>
-            </div>
-          </div>
-        ) : (
-          <button
-            onClick={() => setIsExpanded(true)}
-            className="flex items-center gap-3 bg-copper hover:bg-copper-dark text-white rounded-full pl-5 pr-6 py-3.5 shadow-copper transition-all duration-300 hover:scale-105 group"
-          >
-            <MessageCircle className="h-5 w-5" />
-            <span className="font-sans font-medium">Get Expert Help</span>
-          </button>
-        )}
+
+              <div className="p-6">
+                {/* Icon */}
+                <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-copper/10 text-copper mb-4">
+                  <GraduationCap className="h-7 w-7" />
+                </div>
+                
+                <h4 className="font-serif font-bold text-lg text-foreground mb-2">
+                  Need Expert Research Help?
+                </h4>
+                <p className="text-sm text-muted-foreground mb-5">
+                  Connect with PhD experts who can guide you through your dissertation journey. Free consultation, no commitment.
+                </p>
+                
+                <Button variant="copper" size="lg" className="w-full group" asChild>
+                  <Link to="/consultation">
+                    Get Free Consultation
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                
+                <button
+                  onClick={handleDismiss}
+                  className="w-full text-xs text-muted-foreground hover:text-foreground mt-4 transition-colors"
+                >
+                  Don't show again
+                </button>
+              </div>
+            </motion.div>
+          ) : (
+            <motion.button
+              key="collapsed"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              onClick={() => setIsExpanded(true)}
+              className="relative flex items-center gap-3 bg-gradient-to-r from-copper to-copper-dark text-white rounded-full pl-5 pr-6 py-4 shadow-copper group overflow-hidden"
+            >
+              {/* Shimmer effect */}
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              
+              <span className="relative flex items-center justify-center h-8 w-8 rounded-full bg-white/20">
+                <Sparkles className="h-5 w-5" />
+              </span>
+              <span className="relative font-sans font-semibold">Get Expert Help</span>
+            </motion.button>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );
