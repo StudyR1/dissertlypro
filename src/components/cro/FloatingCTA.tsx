@@ -1,96 +1,99 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, X, Sparkles, GraduationCap } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { MessageCircle, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+declare global {
+  interface Window {
+    Tawk_API?: {
+      maximize?: () => void;
+      minimize?: () => void;
+      toggle?: () => void;
+      onLoad?: () => void;
+      isChatMaximized?: () => boolean;
+    };
+    Tawk_LoadStart?: Date;
+  }
+}
 
 const FloatingCTA = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
+  const [isTawkLoaded, setIsTawkLoaded] = useState(false);
 
-  const handleDismiss = () => {
-    setIsDismissed(true);
+  useEffect(() => {
+    // Initialize Tawk.to
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_LoadStart = new Date();
+
+    // Set callback for when Tawk loads
+    window.Tawk_API.onLoad = () => {
+      setIsTawkLoaded(true);
+    };
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://embed.tawk.to/696896ba7c9eed197f687351/1jf08piv9';
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+
+    const firstScript = document.getElementsByTagName('script')[0];
+    firstScript?.parentNode?.insertBefore(script, firstScript);
+
+    // Fallback: set loaded after timeout
+    const timeout = setTimeout(() => setIsTawkLoaded(true), 3000);
+
+    return () => {
+      clearTimeout(timeout);
+      script.remove();
+    };
+  }, []);
+
+  const openChat = () => {
+    if (window.Tawk_API?.maximize) {
+      window.Tawk_API.maximize();
+    }
   };
-
-  if (isDismissed) return null;
 
   return (
     <>
       {/* Desktop Floating Button - Bottom Right */}
       <div className="fixed bottom-6 right-6 z-50 hidden md:block">
-        <AnimatePresence mode="wait">
-          {isExpanded ? (
-            <motion.div
-              key="expanded"
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="bg-card rounded-2xl shadow-elevated border border-border overflow-hidden w-80"
-            >
-              {/* Decorative header */}
-              <div className="bg-gradient-to-r from-copper via-copper-light to-copper h-1.5" />
-              
-              {/* Close button */}
-              <button
-                onClick={() => setIsExpanded(false)}
-                className="absolute top-4 right-4 p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted"
-                aria-label="Collapse"
-              >
-                <X className="h-4 w-4" />
-              </button>
-
-              <div className="p-6">
-                {/* Icon */}
-                <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-copper/10 text-copper mb-4">
-                  <GraduationCap className="h-7 w-7" />
-                </div>
-                
-                <h4 className="font-serif font-bold text-lg text-foreground mb-2">
-                  Need Expert Research Help?
-                </h4>
-                <p className="text-sm text-muted-foreground mb-5">
-                  Connect with PhD experts who can guide you through your dissertation journey. Free consultation, no commitment.
-                </p>
-                
-                <Button variant="copper" size="lg" className="w-full group" asChild>
-                  <Link to="/consultation">
-                    Get Free Consultation
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-                
-                <button
-                  onClick={handleDismiss}
-                  className="w-full text-xs text-muted-foreground hover:text-foreground mt-4 transition-colors"
-                >
-                  Don't show again
-                </button>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.button
-              key="collapsed"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              onClick={() => setIsExpanded(true)}
-              className="relative flex items-center gap-3 bg-gradient-to-r from-copper to-copper-dark text-white rounded-full pl-5 pr-6 py-4 shadow-copper group overflow-hidden"
-            >
-              {/* Shimmer effect */}
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              
-              <span className="relative flex items-center justify-center h-8 w-8 rounded-full bg-white/20">
-                <Sparkles className="h-5 w-5" />
-              </span>
-              <span className="relative font-sans font-semibold">Get Expert Help</span>
-            </motion.button>
-          )}
-        </AnimatePresence>
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          onClick={openChat}
+          className="relative flex items-center gap-3 bg-gradient-to-r from-copper to-copper-dark text-white rounded-full pl-5 pr-6 py-4 shadow-copper group overflow-hidden"
+        >
+          {/* Shimmer effect */}
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+          
+          {/* Pulse ring */}
+          <span className="absolute inset-0 rounded-full animate-ping bg-copper/30 opacity-75" style={{ animationDuration: '2s' }} />
+          
+          <span className="relative flex items-center justify-center h-8 w-8 rounded-full bg-white/20">
+            <MessageCircle className="h-5 w-5" />
+          </span>
+          <span className="relative font-sans font-semibold">Chat with Expert</span>
+          
+          {/* Online indicator */}
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+          </span>
+        </motion.button>
       </div>
+
+      {/* Hide Tawk.to default button with CSS */}
+      <style>{`
+        /* Hide Tawk.to default widget button on desktop */}
+        @media (min-width: 768px) {
+          #tawk-default-container,
+          .tawk-min-container {
+            display: none !important;
+          }
+        }
+      `}</style>
     </>
   );
 };
