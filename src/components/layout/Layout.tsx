@@ -4,8 +4,7 @@ import Footer from "./Footer";
 import MobileCTA from "./MobileCTA";
 import { 
   FloatingCTA, 
-  FloatingWhatsApp,
-  SocialProofNotification
+  FloatingWhatsApp
 } from "@/components/cro";
 import { 
   ReadingModeToggle, 
@@ -29,7 +28,6 @@ const Layout = ({ children }: LayoutProps) => {
       {/* CRO Components */}
       <FloatingCTA />
       <FloatingWhatsApp />
-      <SocialProofNotification />
       
       {/* Unique Features */}
       <ReadingModeToggle />
