@@ -62,7 +62,7 @@ const Header = () => {
     { title: "Subjects", href: "/subjects" },
     { title: "Professionals", href: "/working-professionals" },
     { title: "Pricing", href: "/pricing" },
-    { title: "Resources", href: "#", hasDropdown: "resources" },
+    { title: "Resources", href: "/resources", hasDropdown: "resources" },
     { title: "Blog", href: "/blog" },
     { title: "About", href: "/about", hasDropdown: "about" },
   ];
