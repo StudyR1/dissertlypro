@@ -46,6 +46,9 @@ const ThesisTopicSelection = lazy(() => import("./pages/ThesisTopicSelection"));
 const AcceleratedMasters = lazy(() => import("./pages/AcceleratedMasters"));
 const CourseworkToThesis = lazy(() => import("./pages/CourseworkToThesis"));
 const LimitedSupervision = lazy(() => import("./pages/LimitedSupervision"));
+const QualitativeAnalysis = lazy(() => import("./pages/QualitativeAnalysis"));
+const MastersDefense = lazy(() => import("./pages/MastersDefense"));
+const CitationMastery = lazy(() => import("./pages/CitationMastery"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -102,6 +105,9 @@ const App = () => (
               <Route path="/accelerated-masters" element={<AcceleratedMasters />} />
               <Route path="/coursework-to-thesis" element={<CourseworkToThesis />} />
               <Route path="/limited-supervision" element={<LimitedSupervision />} />
+              <Route path="/qualitative-analysis" element={<QualitativeAnalysis />} />
+              <Route path="/masters-defense" element={<MastersDefense />} />
+              <Route path="/citation-mastery" element={<CitationMastery />} />
               {/* Region-specific landing pages */}
               <Route path="/uk" element={<RegionLanding />} />
               <Route path="/us" element={<RegionLanding />} />
