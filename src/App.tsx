@@ -39,6 +39,7 @@ const PartTimePhD = lazy(() => import("./pages/PartTimePhD"));
 const SPSSTutorial = lazy(() => import("./pages/SPSSTutorial"));
 const ResearchMethodology = lazy(() => import("./pages/ResearchMethodology"));
 const LiteratureReviewGuide = lazy(() => import("./pages/LiteratureReviewGuide"));
+const Resources = lazy(() => import("./pages/Resources"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -87,6 +88,7 @@ const App = () => (
               <Route path="/spss-tutorial" element={<SPSSTutorial />} />
               <Route path="/research-methodology" element={<ResearchMethodology />} />
               <Route path="/literature-review-guide" element={<LiteratureReviewGuide />} />
+              <Route path="/resources" element={<Resources />} />
               {/* Region-specific landing pages */}
               <Route path="/uk" element={<RegionLanding />} />
               <Route path="/us" element={<RegionLanding />} />
