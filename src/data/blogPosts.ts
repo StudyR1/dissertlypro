@@ -2335,10 +2335,6 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
-];
-
-// Helper function to get featured posts
-export const getFeaturedPosts = () => blogPosts.filter(post => post.featured);
 
   // ============================================
   // FAILED DISSERTATION CASE STUDIES SERIES
@@ -2522,8 +2518,10 @@ export const getFeaturedPosts = () => blogPosts.filter(post => post.featured);
       { question: "Can I use data collected before ethics approval if I get approval afterward?", answer: "No. Ethics approval covers future data collection only. Data collected before approval cannot be 'retroactively approved' and must be discarded. No exceptions." }
     ]
   },
-
 ];
+
+// Helper function to get featured posts
+export const getFeaturedPosts = () => blogPosts.filter(post => post.featured);
 
 // Helper function to get posts by category
 export const getPostsByCategory = (category: string) => 
