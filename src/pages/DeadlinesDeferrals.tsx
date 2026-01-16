@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -304,6 +305,19 @@ Sincerely,
       />
       <BreadcrumbSchema items={breadcrumbItems} />
       <FAQSchema faqs={faqs} />
+      <HowToSchema
+        name="How to Request a Dissertation Extension or Deferral"
+        description="Step-by-step guide to successfully applying for academic deadline extensions, including valid grounds, documentation requirements, and professional request templates."
+        totalTime="PT30M"
+        steps={[
+          { name: "Assess Your Grounds", text: "Determine if your circumstances qualify for extension: medical/health issues, personal circumstances, academic/supervision problems, employment changes, or external factors. Higher success rates come with stronger documentation." },
+          { name: "Gather Supporting Documentation", text: "Collect evidence appropriate to your circumstances: medical certificates, death certificates, employment records, correspondence with supervisors, or official communications proving your situation." },
+          { name: "Calculate Realistic Timeline", text: "Request realistic extension time. 1-3 months for minor issues, 3-6 months for significant circumstances, up to 12 months for major life events. Don't over-request—you can apply for additional time if needed." },
+          { name: "Prepare Your Request", text: "Use professional templates for medical extensions, interruption of studies, or supervisor issues. Be specific about circumstances, impact, and recovery plan. Focus on facts, not emotions." },
+          { name: "Follow Official Procedures", text: "Submit to the correct department using required forms. Keep copies of everything. Follow up if you don't receive acknowledgment within stated timeframes." },
+          { name: "Avoid Common Red Flags", text: "Don't leave requests until the last minute, use vague claims, provide no evidence, request excessive time, or blame others without documentation." }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative py-16 sm:py-24 bg-gradient-to-br from-midnight via-midnight-rich to-midnight overflow-hidden">

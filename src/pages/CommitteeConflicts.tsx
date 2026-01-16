@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/schemas";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -289,6 +290,19 @@ Thank you,
         canonical="https://dissertlypro.com/committee-conflicts"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
+      <HowToSchema
+        name="How to Resolve Dissertation Committee Conflicts"
+        description="Expert strategies for managing contradictory feedback, navigating committee disagreements, and resolving academic politics in your dissertation process."
+        totalTime="PT30M"
+        steps={[
+          { name: "Identify the Conflict Type", text: "Determine whether you're facing contradictory feedback, power struggles between members, absentee members, scope disagreements, or methodological disputes." },
+          { name: "Document Everything in Writing", text: "After every meeting, send a summary email to all committee members with specific decisions, not vibes. Request corrections within one week and reference past summaries when contradictions arise." },
+          { name: "Request a Synthesis Meeting", text: "When contradictions become unworkable, request a meeting with all members present to align on direction. Prepare a one-page summary of conflicting guidance and present it neutrally." },
+          { name: "Leverage Your Chair's Authority", text: "Your dissertation chair typically has final authority. Meet privately to explain conflicting feedback and ask how they recommend you proceed." },
+          { name: "Propose a Third Way", text: "Develop a creative synthesis that addresses everyone's underlying concerns. Analyze what each member actually wants and propose an approach with scholarly precedent." },
+          { name: "Escalate if Necessary", text: "For serious issues like personal attacks or blocking behavior, document the pattern meticulously and consult your graduate school's ombudsman or student advocacy office." }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">

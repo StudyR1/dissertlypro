@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { 
   ArrowRight, 
   Briefcase, 
@@ -70,6 +71,18 @@ const WorkingProfessionals = () => {
         description="Flexible dissertation support designed for working professionals. Evening and weekend consultations, milestone-based progress, and long-term research partnerships for busy executives."
         canonical="/working-professionals"
         keywords={['working professional PhD', 'executive dissertation', 'part-time doctoral', 'flexible thesis support', 'career and research']}
+      />
+      <HowToSchema
+        name="How to Complete a Dissertation While Working Full-Time"
+        description="Strategies for working professionals to balance career demands with doctoral research, including flexible scheduling, milestone-based progress, and long-term expert partnerships."
+        totalTime="PT15M"
+        steps={[
+          { name: "Establish Flexible Scheduling", text: "Work with experts who understand your busy schedule. Schedule consultations around your work hours, including evenings and weekends when you have time to focus." },
+          { name: "Adopt Milestone-Based Progress", text: "Break your dissertation into manageable milestones. Achieve small wins while balancing work, family, and study responsibilities." },
+          { name: "Build Long-Term Partnerships", text: "Establish a lasting relationship with your expert advisor for consistent support throughout your entire doctoral journey." },
+          { name: "Use Asynchronous Communication", text: "Share work, receive feedback, and communicate on your own schedule without requiring synchronous meetings." },
+          { name: "Manage Stress Proactively", text: "Implement stress management strategies that minimize the mental toll of balancing multiple responsibilities while maximizing dissertation progress." }
+        ]}
       />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">

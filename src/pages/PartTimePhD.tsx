@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -321,6 +322,19 @@ Best regards,
       />
       <BreadcrumbSchema items={breadcrumbItems} />
       <FAQSchema faqs={faqs} />
+      <HowToSchema
+        name="How to Complete a Part-Time PhD While Working"
+        description="Comprehensive guide for part-time doctoral students on managing time, balancing work-life demands, maintaining employer relationships, and completing your dissertation."
+        totalTime="PT40M"
+        steps={[
+          { name: "Understand Unique Challenges", text: "Recognize the specific challenges of part-time study: extended timeline fatigue, employer tension, identity split, family strain, and supervisor accessibility issues." },
+          { name: "Create Sustainable Time Blocks", text: "Establish dedicated study periods that work with your schedule. Experiment with morning vs. evening study and track when your best cognitive work happens." },
+          { name: "Negotiate Employer Support", text: "Frame your PhD as a mutual benefit. Get study leave agreements in writing. Be transparent about critical deadlines and maintain clear communication." },
+          { name: "Protect Family Relationships", text: "Schedule dedicated study time agreed with family. Be fully present when not studying. Plan milestone celebrations as family events." },
+          { name: "Optimize Supervisor Relationship", text: "Request flexible meeting times. Use asynchronous communication effectively. Batch questions for efficient meetings and clarify response time expectations." },
+          { name: "Maintain Realistic Expectations", text: "Plan for 6-8 years timeline with contingency. Know your minimum viable thesis. Treat extensions as emergency backup, not Plan A." }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative py-16 sm:py-24 bg-gradient-to-br from-midnight via-midnight-rich to-midnight overflow-hidden">

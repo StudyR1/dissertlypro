@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/schemas";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -262,6 +263,19 @@ Thank you for your support,
         canonical="https://dissertlypro.com/supervisor-guide"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
+      <HowToSchema
+        name="How to Navigate a Difficult PhD Supervisor Relationship"
+        description="Step-by-step guide to managing challenging supervisor dynamics, improving communication, and protecting your dissertation progress through proven strategies."
+        totalTime="PT35M"
+        steps={[
+          { name: "Identify Warning Signs", text: "Recognize patterns like chronic unresponsiveness, vague feedback, scope creep, or dismissive behavior. Document specific instances with dates and contexts." },
+          { name: "Document All Communication", text: "Keep records of all emails, meeting notes, and decisions. Send follow-up emails after meetings to confirm agreements and create a paper trail." },
+          { name: "Use Professional Templates", text: "Craft diplomatic emails for difficult conversations using proven templates for following up, addressing contradictory feedback, or requesting structured meetings." },
+          { name: "Attempt Direct Resolution", text: "Address issues directly with your supervisor using 'I' statements and focusing on specific behaviors. Come prepared with examples and focus on solutions." },
+          { name: "Escalate Through Proper Channels", text: "If direct resolution fails, involve neutral third parties like your graduate program director or university ombudsman for mediation support." },
+          { name: "Implement Structural Solutions", text: "Consider adding a co-supervisor, establishing written supervision agreements, or transferring supervisors if the relationship is irreparable." }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">

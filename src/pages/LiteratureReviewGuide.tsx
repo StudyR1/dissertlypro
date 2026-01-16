@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -483,6 +484,19 @@ const LiteratureReviewGuide = () => {
       />
       <BreadcrumbSchema items={breadcrumbItems} />
       <FAQSchema faqs={faqs} />
+      <HowToSchema
+        name="How to Write a Dissertation Literature Review"
+        description="Complete guide to conducting and writing literature reviews including search strategies, synthesis methods, gap identification, and proper structure for Master's and PhD dissertations."
+        totalTime="PT50M"
+        steps={[
+          { name: "Choose Your Review Type", text: "Select the appropriate approach: narrative/traditional for broad topics, systematic for comprehensive evidence synthesis, scoping for mapping research areas, or critical review for theory development." },
+          { name: "Develop Search Strategy", text: "Define your research question using PICO or PEO frameworks. Identify key concepts, synonyms, and Boolean operators. Use multiple databases and document your search protocol." },
+          { name: "Screen and Select Sources", text: "Apply inclusion/exclusion criteria consistently. Use reference management software. Read strategically—abstracts first, then full papers. Organize sources thematically." },
+          { name: "Synthesize the Literature", text: "Move beyond summarizing to synthesis. Use thematic synthesis, vote counting, narrative synthesis, or framework synthesis depending on your review type and research goals." },
+          { name: "Identify Research Gaps", text: "Look for methodological gaps, population gaps, contextual gaps, temporal gaps, and theoretical gaps. Document how your study addresses these gaps." },
+          { name: "Write with Proper Structure", text: "Begin with introduction and scope, organize body sections thematically, include critical evaluation of sources, establish the gap your study addresses, and conclude with transition to your methodology." }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">

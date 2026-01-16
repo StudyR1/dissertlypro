@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema } from "@/components/schemas";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -263,6 +264,18 @@ const MentalHealthHub = () => {
         canonical="https://dissertlypro.com/phd-mental-health"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
+      <HowToSchema
+        name="How to Manage PhD Mental Health and Prevent Burnout"
+        description="Evidence-based strategies for doctoral students to recognize burnout symptoms, manage anxiety and depression, and maintain wellbeing throughout the dissertation process."
+        totalTime="PT25M"
+        steps={[
+          { name: "Assess Your Current State", text: "Complete the burnout self-assessment to understand your risk level. Evaluate symptoms across exhaustion, cynicism, and inefficacy dimensions." },
+          { name: "Recognize Warning Signs", text: "Identify specific mental health challenges: burnout, imposter syndrome, anxiety, ABD paralysis, or post-submission void. Know that high prevalence is systemic, not personal failure." },
+          { name: "Implement Daily Practices", text: "Establish morning routines (stretching, 3 priorities), work practices (Pomodoro technique, hydration, social interaction), and evening boundaries (hard stop times, screen limits)." },
+          { name: "Seek Appropriate Support", text: "Access university counseling services, community mental health resources, or peer support groups. Don't wait until symptoms are severe—early intervention is more effective." },
+          { name: "Build Sustainable Habits", text: "Protect strict work-hour boundaries, schedule non-negotiable rest days, and reconnect with activities outside academia. Remember that completing your PhD is not worth destroying your mental health." }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">
