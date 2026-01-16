@@ -451,11 +451,11 @@ const Header = () => {
                 </Link>
               ))}
               
-              {/* Resources Section on Mobile */}
+              {/* Technical Deep-Dives Section on Mobile */}
               <div className="pt-2 mt-2 border-t border-border">
-                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">Resources & Guides</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">Technical Deep-Dives</p>
                 <div className="space-y-1">
-                  {resourceLinks.map((item) => (
+                  {resourceLinks.slice(0, 3).map((item) => (
                     <Link
                       key={item.title}
                       to={item.href}
@@ -464,6 +464,24 @@ const Header = () => {
                     >
                       <item.icon className="h-4 w-4 text-copper/70" />
                       {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Academic Guides Section on Mobile */}
+              <div className="pt-2 mt-2 border-t border-border">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">Academic Guides</p>
+                <div className="grid grid-cols-2 gap-1">
+                  {resourceLinks.slice(3).map((item) => (
+                    <Link
+                      key={item.title}
+                      to={item.href}
+                      className="flex items-center gap-2 py-2.5 px-3 text-xs font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <item.icon className="h-4 w-4 text-copper/70 flex-shrink-0" />
+                      <span className="truncate">{item.title}</span>
                     </Link>
                   ))}
                 </div>
