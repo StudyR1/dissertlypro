@@ -22,7 +22,8 @@ import {
   XCircle,
   RefreshCw,
   Target,
-  BookOpen
+  BookOpen,
+  Briefcase
 } from "lucide-react";
 
 const DeadlinesDeferrals = () => {
@@ -702,6 +703,79 @@ Sincerely,
                 </Link>
               </motion.div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Resources */}
+      <section className="py-16 sm:py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Related Resources
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Explore more guides designed for doctoral students facing common challenges.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Link to="/viva-preparation" className="block group">
+                <Card className="h-full transition-all hover:shadow-lg hover:border-copper/30">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-3 group-hover:bg-emerald-500/20 transition-colors">
+                      <Target className="w-6 h-6 text-emerald-600" />
+                    </div>
+                    <CardTitle className="group-hover:text-copper transition-colors">Viva Preparation Hub</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4">
+                      Common examiner questions, mock viva strategies, and tips for a successful defense.
+                    </p>
+                    <span className="text-copper font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+                      Read Guide <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Link to="/part-time-phd" className="block group">
+                <Card className="h-full transition-all hover:shadow-lg hover:border-copper/30">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-3 group-hover:bg-purple-500/20 transition-colors">
+                      <Briefcase className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <CardTitle className="group-hover:text-copper transition-colors">Part-Time PhD Guide</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4">
+                      Time management, employer negotiation templates, and strategies for working doctoral students.
+                    </p>
+                    <span className="text-copper font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+                      Read Guide <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
