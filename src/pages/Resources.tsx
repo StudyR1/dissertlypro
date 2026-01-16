@@ -137,6 +137,37 @@ const resources: Resource[] = [
     readTime: "30 min",
     tags: ["Topic Selection", "Career Alignment", "Research Ideas", "Industry Focus"]
   },
+  // Tier 2: Master's Underserved Niches
+  {
+    title: "Accelerated Master's Programs",
+    description: "Complete your master's degree in 12-18 months. Strategic planning, intensive scheduling, and success strategies for fast-track programs.",
+    href: "/accelerated-masters",
+    icon: Clock,
+    category: "academic",
+    tier: 2,
+    readTime: "30 min",
+    tags: ["Accelerated", "Fast-Track", "Master's", "Time Management"]
+  },
+  {
+    title: "Coursework to Thesis Conversion",
+    description: "Transform your best course papers into thesis chapters. Strategic repurposing, expansion techniques, and committee negotiation strategies.",
+    href: "/coursework-to-thesis",
+    icon: BookOpen,
+    category: "academic",
+    tier: 2,
+    readTime: "25 min",
+    tags: ["Coursework", "Thesis", "Conversion", "Academic Writing"]
+  },
+  {
+    title: "Limited Supervision Success",
+    description: "Thrive despite an absent or overwhelmed thesis advisor. Self-direction strategies, alternative support networks, and progress maintenance.",
+    href: "/limited-supervision",
+    icon: Users,
+    category: "academic",
+    tier: 2,
+    readTime: "30 min",
+    tags: ["Supervision", "Self-Directed", "Independence", "Master's"]
+  },
   // Tier 2: Underserved Niches
   {
     title: "Deadlines & Deferrals Guide",

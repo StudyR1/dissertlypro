@@ -51,6 +51,9 @@ const mastersResourceLinks = [
   { title: "Master's Thesis Guide", href: "/masters-thesis-guide", description: "Complete A-Z thesis roadmap", icon: GraduationCap },
   { title: "Dissertation vs Thesis", href: "/dissertation-vs-thesis", description: "Key differences explained", icon: Scale },
   { title: "Career-Boosting Topics", href: "/thesis-topic-selection", description: "Strategic topic selection", icon: Briefcase },
+  { title: "Accelerated Master's", href: "/accelerated-masters", description: "Complete in 12-18 months", icon: Clock },
+  { title: "Coursework to Thesis", href: "/coursework-to-thesis", description: "Convert course papers", icon: FileText },
+  { title: "Limited Supervision", href: "/limited-supervision", description: "Thrive with absent advisors", icon: Users },
 ];
 
 const toolLinks = [
