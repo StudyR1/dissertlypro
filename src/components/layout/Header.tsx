@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -36,6 +36,9 @@ const aboutLinks = [
 ];
 
 const resourceLinks = [
+  { title: "SPSS Tutorial", href: "/spss-tutorial", description: "Data analysis step-by-step", icon: BarChart3 },
+  { title: "Research Methodology", href: "/research-methodology", description: "Qual, quant & mixed methods", icon: Brain },
+  { title: "Literature Review Guide", href: "/literature-review-guide", description: "Search, synthesize & analyze", icon: Search },
   { title: "Supervisor Guide", href: "/supervisor-guide", description: "Navigate advisor relationships", icon: UserCheck },
   { title: "PhD Mental Health", href: "/phd-mental-health", description: "Wellness resources for researchers", icon: Heart },
   { title: "Committee Conflicts", href: "/committee-conflicts", description: "Resolve academic disputes", icon: Scale },
@@ -210,25 +213,25 @@ const Header = () => {
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="data-[motion=from-start]:animate-none data-[motion=from-end]:animate-none data-[motion=to-start]:animate-none data-[motion=to-end]:animate-none">
                         <motion.div 
-                          className="w-[480px] p-5"
+                          className="w-[680px] p-5"
                           initial={{ opacity: 0, y: -8, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: -8, scale: 0.98 }}
                           transition={{ duration: 0.2, ease: "easeOut" }}
                         >
-                          <div className="grid grid-cols-2 gap-5">
-                            {/* Guides Column */}
-                            <div>
+                          <div className="grid grid-cols-5 gap-5">
+                            {/* Technical Deep-Dives Column */}
+                            <div className="col-span-2">
                               <motion.h4 
                                 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-1"
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.05 }}
                               >
-                                Guides & Resources
+                                Technical Deep-Dives
                               </motion.h4>
                               <ul className="space-y-1.5">
-                                {resourceLinks.map((item, index) => (
+                                {resourceLinks.slice(0, 3).map((item, index) => (
                                   <motion.li 
                                     key={item.title}
                                     initial={{ opacity: 0, y: 10 }}
@@ -254,9 +257,46 @@ const Header = () => {
                               </ul>
                             </div>
                             
+                            {/* Academic Guides Column */}
+                            <div className="col-span-2">
+                              <motion.h4 
+                                className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-1"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.08 }}
+                              >
+                                Academic Guides
+                              </motion.h4>
+                              <ul className="space-y-1.5">
+                                {resourceLinks.slice(3).map((item, index) => (
+                                  <motion.li 
+                                    key={item.title}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.03 * (index + 3), duration: 0.15 }}
+                                  >
+                                    <NavigationMenuLink asChild>
+                                      <Link
+                                        to={item.href}
+                                        className="flex items-start gap-3 select-none rounded-lg p-2.5 leading-none no-underline outline-none transition-all hover:bg-cream-warm group"
+                                      >
+                                        <item.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
+                                        <div>
+                                          <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{item.title}</div>
+                                          <p className="text-xs leading-snug text-muted-foreground mt-1">
+                                            {item.description}
+                                          </p>
+                                        </div>
+                                      </Link>
+                                    </NavigationMenuLink>
+                                  </motion.li>
+                                ))}
+                              </ul>
+                            </div>
+                            
                             {/* Tools Column */}
                             <motion.div 
-                              className="bg-cream-warm/50 rounded-xl p-4"
+                              className="col-span-1 bg-cream-warm/50 rounded-xl p-4"
                               initial={{ opacity: 0, x: 10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.1, duration: 0.2 }}
@@ -275,14 +315,11 @@ const Header = () => {
                                         const event = new CustomEvent(tool.href.replace('#', 'open-'));
                                         window.dispatchEvent(event);
                                       }}
-                                      className="flex items-start gap-3 w-full select-none rounded-lg p-3 leading-none no-underline outline-none transition-all hover:bg-background group text-left"
+                                      className="flex items-start gap-2 w-full select-none rounded-lg p-2 leading-none no-underline outline-none transition-all hover:bg-background group text-left"
                                     >
                                       <tool.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
                                       <div>
-                                        <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{tool.title}</div>
-                                        <p className="text-xs leading-snug text-muted-foreground mt-1">
-                                          {tool.description}
-                                        </p>
+                                        <div className="text-xs font-medium leading-none font-sans group-hover:text-copper transition-colors">{tool.title}</div>
                                       </div>
                                     </button>
                                   </motion.li>
