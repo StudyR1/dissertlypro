@@ -86,7 +86,6 @@ const App = () => (
               <Route path="/us" element={<RegionLanding />} />
               <Route path="/au" element={<RegionLanding />} />
               <Route path="/ca" element={<RegionLanding />} />
-              <Route path="/:region" element={<RegionLanding />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
