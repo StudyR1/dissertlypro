@@ -769,28 +769,49 @@ Best regards,
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {/* Tier 1 Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Link to="/deadlines-deferrals" className="block group">
+              <Link to="/supervisor-guide" className="block group h-full">
                 <Card className="h-full transition-all hover:shadow-lg hover:border-copper/30">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-3 group-hover:bg-amber-500/20 transition-colors">
-                      <Calendar className="w-6 h-6 text-amber-600" />
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2.5 rounded-xl bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors shrink-0">
+                        <Users className="w-5 h-5 text-blue-500" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">Supervisor Guide</h3>
+                        <p className="text-sm text-muted-foreground">Navigate advisor relationships effectively.</p>
+                      </div>
                     </div>
-                    <CardTitle className="group-hover:text-copper transition-colors">Deadlines & Deferrals Guide</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                      Extension request templates, valid grounds, and strategies for navigating deadline challenges.
-                    </p>
-                    <span className="text-copper font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                      Read Guide <ArrowRight className="w-4 h-4" />
-                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+            >
+              <Link to="/phd-mental-health" className="block group h-full">
+                <Card className="h-full transition-all hover:shadow-lg hover:border-copper/30">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2.5 rounded-xl bg-rose-500/10 group-hover:bg-rose-500/20 transition-colors shrink-0">
+                        <Heart className="w-5 h-5 text-rose-500" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">PhD Mental Health</h3>
+                        <p className="text-sm text-muted-foreground">Burnout assessment and wellness resources.</p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </Link>
@@ -802,21 +823,65 @@ Best regards,
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <Link to="/viva-preparation" className="block group">
+              <Link to="/committee-conflicts" className="block group h-full">
                 <Card className="h-full transition-all hover:shadow-lg hover:border-copper/30">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-3 group-hover:bg-emerald-500/20 transition-colors">
-                      <GraduationCap className="w-6 h-6 text-emerald-600" />
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2.5 rounded-xl bg-amber-500/10 group-hover:bg-amber-500/20 transition-colors shrink-0">
+                        <Scale className="w-5 h-5 text-amber-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">Committee Conflicts</h3>
+                        <p className="text-sm text-muted-foreground">Resolve academic disputes professionally.</p>
+                      </div>
                     </div>
-                    <CardTitle className="group-hover:text-copper transition-colors">Viva Preparation Hub</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                      Common examiner questions, mock viva strategies, and tips for a successful defense.
-                    </p>
-                    <span className="text-copper font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                      Read Guide <ArrowRight className="w-4 h-4" />
-                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
+            </motion.div>
+
+            {/* Tier 2 Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 }}
+            >
+              <Link to="/deadlines-deferrals" className="block group h-full">
+                <Card className="h-full transition-all hover:shadow-lg hover:border-copper/30">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2.5 rounded-xl bg-amber-500/10 group-hover:bg-amber-500/20 transition-colors shrink-0">
+                        <Calendar className="w-5 h-5 text-amber-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">Deadlines & Deferrals</h3>
+                        <p className="text-sm text-muted-foreground">Extension request templates and strategies.</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <Link to="/viva-preparation" className="block group h-full">
+                <Card className="h-full transition-all hover:shadow-lg hover:border-copper/30">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2.5 rounded-xl bg-emerald-500/10 group-hover:bg-emerald-500/20 transition-colors shrink-0">
+                        <GraduationCap className="w-5 h-5 text-emerald-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">Viva Preparation</h3>
+                        <p className="text-sm text-muted-foreground">Mock viva questions and defense tips.</p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </Link>
