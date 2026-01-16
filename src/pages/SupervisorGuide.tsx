@@ -22,7 +22,10 @@ import {
   Heart,
   Target,
   RefreshCw,
-  BookOpen
+  BookOpen,
+  Calendar,
+  GraduationCap,
+  Briefcase
 } from "lucide-react";
 
 const SupervisorGuide = () => {
@@ -754,7 +757,7 @@ Thank you for your support,
       {/* Related Resources Section */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -765,22 +768,24 @@ Thank you for your support,
               <p className="text-muted-foreground">More guides to support your academic journey</p>
             </motion.div>
             
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* Tier 1 Links */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
               >
-                <Link to="/phd-mental-health" className="group">
+                <Link to="/phd-mental-health" className="group block h-full">
                   <Card className="h-full hover:shadow-lg transition-all hover:border-copper/50">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-xl bg-rose-500/10 group-hover:bg-rose-500/20 transition-colors">
-                          <Heart className="w-6 h-6 text-rose-500" />
+                    <CardContent className="p-5">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2.5 rounded-xl bg-rose-500/10 group-hover:bg-rose-500/20 transition-colors shrink-0">
+                          <Heart className="w-5 h-5 text-rose-500" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-lg mb-2 group-hover:text-copper transition-colors">PhD Mental Health Hub</h3>
-                          <p className="text-sm text-muted-foreground">Burnout assessment, coping strategies, and wellness resources designed specifically for doctoral students.</p>
+                          <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">PhD Mental Health</h3>
+                          <p className="text-sm text-muted-foreground">Burnout assessment and wellness resources.</p>
                         </div>
                       </div>
                     </CardContent>
@@ -789,20 +794,91 @@ Thank you for your support,
               </motion.div>
               
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
               >
-                <Link to="/committee-conflicts" className="group">
+                <Link to="/committee-conflicts" className="group block h-full">
                   <Card className="h-full hover:shadow-lg transition-all hover:border-copper/50">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-xl bg-amber-500/10 group-hover:bg-amber-500/20 transition-colors">
-                          <Scale className="w-6 h-6 text-amber-500" />
+                    <CardContent className="p-5">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2.5 rounded-xl bg-amber-500/10 group-hover:bg-amber-500/20 transition-colors shrink-0">
+                          <Scale className="w-5 h-5 text-amber-600" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-lg mb-2 group-hover:text-copper transition-colors">Committee Conflict Resolution</h3>
-                          <p className="text-sm text-muted-foreground">Navigate disagreements, contradictory feedback, and political dynamics within your dissertation committee.</p>
+                          <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">Committee Conflicts</h3>
+                          <p className="text-sm text-muted-foreground">Navigate academic disputes professionally.</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
+
+              {/* Tier 2 Links */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <Link to="/deadlines-deferrals" className="group block h-full">
+                  <Card className="h-full hover:shadow-lg transition-all hover:border-copper/50">
+                    <CardContent className="p-5">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2.5 rounded-xl bg-amber-500/10 group-hover:bg-amber-500/20 transition-colors shrink-0">
+                          <Calendar className="w-5 h-5 text-amber-600" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">Deadlines & Deferrals</h3>
+                          <p className="text-sm text-muted-foreground">Extension request templates and strategies.</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.25 }}
+              >
+                <Link to="/viva-preparation" className="group block h-full">
+                  <Card className="h-full hover:shadow-lg transition-all hover:border-copper/50">
+                    <CardContent className="p-5">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2.5 rounded-xl bg-emerald-500/10 group-hover:bg-emerald-500/20 transition-colors shrink-0">
+                          <GraduationCap className="w-5 h-5 text-emerald-600" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">Viva Preparation</h3>
+                          <p className="text-sm text-muted-foreground">Mock viva questions and defense tips.</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                <Link to="/part-time-phd" className="group block h-full">
+                  <Card className="h-full hover:shadow-lg transition-all hover:border-copper/50">
+                    <CardContent className="p-5">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2.5 rounded-xl bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors shrink-0">
+                          <Briefcase className="w-5 h-5 text-purple-600" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold mb-1 group-hover:text-copper transition-colors">Part-Time PhD Guide</h3>
+                          <p className="text-sm text-muted-foreground">Balance work, life, and research.</p>
                         </div>
                       </div>
                     </CardContent>
