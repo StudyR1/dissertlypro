@@ -36,6 +36,9 @@ const CommitteeConflicts = lazy(() => import("./pages/CommitteeConflicts"));
 const DeadlinesDeferrals = lazy(() => import("./pages/DeadlinesDeferrals"));
 const VivaPreparation = lazy(() => import("./pages/VivaPreparation"));
 const PartTimePhD = lazy(() => import("./pages/PartTimePhD"));
+const SPSSTutorial = lazy(() => import("./pages/SPSSTutorial"));
+const ResearchMethodology = lazy(() => import("./pages/ResearchMethodology"));
+const LiteratureReviewGuide = lazy(() => import("./pages/LiteratureReviewGuide"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -81,6 +84,9 @@ const App = () => (
               <Route path="/deadlines-deferrals" element={<DeadlinesDeferrals />} />
               <Route path="/viva-preparation" element={<VivaPreparation />} />
               <Route path="/part-time-phd" element={<PartTimePhD />} />
+              <Route path="/spss-tutorial" element={<SPSSTutorial />} />
+              <Route path="/research-methodology" element={<ResearchMethodology />} />
+              <Route path="/literature-review-guide" element={<LiteratureReviewGuide />} />
               {/* Region-specific landing pages */}
               <Route path="/uk" element={<RegionLanding />} />
               <Route path="/us" element={<RegionLanding />} />
