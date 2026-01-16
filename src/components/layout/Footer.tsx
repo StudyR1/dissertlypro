@@ -14,10 +14,15 @@ const Footer = () => {
       { title: "Literature Reviews", href: "/services/literature-review" },
       { title: "Editing & Proofreading", href: "/services/editing" },
     ],
+    resources: [
+      { title: "Supervisor Guide", href: "/supervisor-guide" },
+      { title: "PhD Mental Health", href: "/phd-mental-health" },
+      { title: "Committee Conflicts", href: "/committee-conflicts" },
+      { title: "Blog & Articles", href: "/blog" },
+    ],
     company: [
       { title: "About Us", href: "/about" },
       { title: "Our Experts", href: "/experts" },
-      { title: "Blog & Resources", href: "/blog" },
       { title: "Pricing", href: "/pricing" },
       { title: "Contact", href: "/contact" },
     ],
@@ -44,9 +49,9 @@ const Footer = () => {
       
       {/* Main Footer */}
       <div className="container py-12 sm:py-20 px-4 sm:px-6 relative">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
           {/* Brand Column */}
-          <div className="col-span-2 lg:col-span-2">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 group">
               <img 
                 src={logoIcon} 
@@ -91,7 +96,24 @@ const Footer = () => {
           <div>
             <h4 className="font-serif font-semibold text-sm sm:text-base mb-4 sm:mb-5 text-primary-foreground">Services</h4>
             <ul className="space-y-2 sm:space-y-3">
-              {footerLinks.services.slice(0, 4).map((link) => (
+              {footerLinks.services.slice(0, 5).map((link) => (
+                <li key={link.title}>
+                  <Link
+                    to={link.href}
+                    className="text-xs sm:text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors"
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources - NEW */}
+          <div>
+            <h4 className="font-serif font-semibold text-sm sm:text-base mb-4 sm:mb-5 text-primary-foreground">Resources</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              {footerLinks.resources.map((link) => (
                 <li key={link.title}>
                   <Link
                     to={link.href}
@@ -121,15 +143,15 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal - Hidden on mobile, shown on larger screens */}
-          <div className="hidden lg:block">
-            <h4 className="font-serif font-semibold text-base mb-5 text-primary-foreground">Legal</h4>
-            <ul className="space-y-3">
+          {/* Legal */}
+          <div>
+            <h4 className="font-serif font-semibold text-sm sm:text-base mb-4 sm:mb-5 text-primary-foreground">Legal</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.title}>
                   <Link
                     to={link.href}
-                    className="text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors"
+                    className="text-xs sm:text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors"
                   >
                     {link.title}
                   </Link>
