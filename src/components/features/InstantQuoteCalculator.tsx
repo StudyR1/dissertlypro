@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Calculator, X, FileText, Clock, GraduationCap, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -35,6 +35,13 @@ const InstantQuoteCalculator = () => {
   const [serviceType, setServiceType] = useState("dissertation");
   const [urgency, setUrgency] = useState("standard");
   const [pageCount, setPageCount] = useState([50]);
+
+  // Listen for navigation menu trigger
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener('open-quote-calculator', handleOpen);
+    return () => window.removeEventListener('open-quote-calculator', handleOpen);
+  }, []);
 
   const calculateQuote = () => {
     const level = academicLevels.find(l => l.value === academicLevel);

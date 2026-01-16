@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2 } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -35,6 +35,18 @@ const aboutLinks = [
   { title: "FAQs", href: "/faq", description: "Common questions answered", icon: HelpCircle },
 ];
 
+const resourceLinks = [
+  { title: "Supervisor Guide", href: "/supervisor-guide", description: "Navigate advisor relationships", icon: UserCheck },
+  { title: "PhD Mental Health", href: "/phd-mental-health", description: "Wellness resources for researchers", icon: Heart },
+  { title: "Committee Conflicts", href: "/committee-conflicts", description: "Resolve academic disputes", icon: Scale },
+];
+
+const toolLinks = [
+  { title: "Deadline Checker", href: "#deadline-checker", description: "Assess your timeline risk", icon: Clock, isModal: true },
+  { title: "Word Counter", href: "#word-counter", description: "Calculate your word count", icon: Calculator, isModal: true },
+  { title: "Get Quote", href: "#quote-calculator", description: "Instant pricing estimate", icon: Receipt, isModal: true },
+];
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -44,6 +56,7 @@ const Header = () => {
     { title: "Subjects", href: "/subjects" },
     { title: "Professionals", href: "/working-professionals" },
     { title: "Pricing", href: "/pricing" },
+    { title: "Resources", href: "#", hasDropdown: "resources" },
     { title: "Blog", href: "/blog" },
     { title: "About", href: "/about", hasDropdown: "about" },
   ];
@@ -187,6 +200,96 @@ const Header = () => {
                         </motion.div>
                       </NavigationMenuContent>
                     </>
+                  ) : link.hasDropdown === "resources" ? (
+                    <>
+                      <NavigationMenuTrigger className="h-10 px-4 font-sans text-sm font-medium text-muted-foreground hover:text-foreground data-[state=open]:text-foreground transition-colors bg-transparent">
+                        {link.title}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="data-[motion=from-start]:animate-none data-[motion=from-end]:animate-none data-[motion=to-start]:animate-none data-[motion=to-end]:animate-none">
+                        <motion.div 
+                          className="w-[480px] p-5"
+                          initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -8, scale: 0.98 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                        >
+                          <div className="grid grid-cols-2 gap-5">
+                            {/* Guides Column */}
+                            <div>
+                              <motion.h4 
+                                className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-1"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.05 }}
+                              >
+                                Guides & Resources
+                              </motion.h4>
+                              <ul className="space-y-1.5">
+                                {resourceLinks.map((item, index) => (
+                                  <motion.li 
+                                    key={item.title}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.03 * index, duration: 0.15 }}
+                                  >
+                                    <NavigationMenuLink asChild>
+                                      <Link
+                                        to={item.href}
+                                        className="flex items-start gap-3 select-none rounded-lg p-3 leading-none no-underline outline-none transition-all hover:bg-cream-warm group"
+                                      >
+                                        <item.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
+                                        <div>
+                                          <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{item.title}</div>
+                                          <p className="text-xs leading-snug text-muted-foreground mt-1">
+                                            {item.description}
+                                          </p>
+                                        </div>
+                                      </Link>
+                                    </NavigationMenuLink>
+                                  </motion.li>
+                                ))}
+                              </ul>
+                            </div>
+                            
+                            {/* Tools Column */}
+                            <motion.div 
+                              className="bg-cream-warm/50 rounded-xl p-4"
+                              initial={{ opacity: 0, x: 10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.1, duration: 0.2 }}
+                            >
+                              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Quick Tools</h4>
+                              <ul className="space-y-1.5">
+                                {toolLinks.map((tool, index) => (
+                                  <motion.li 
+                                    key={tool.title}
+                                    initial={{ opacity: 0, x: 5 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.15 + 0.05 * index }}
+                                  >
+                                    <button
+                                      onClick={() => {
+                                        const event = new CustomEvent(tool.href.replace('#', 'open-'));
+                                        window.dispatchEvent(event);
+                                      }}
+                                      className="flex items-start gap-3 w-full select-none rounded-lg p-3 leading-none no-underline outline-none transition-all hover:bg-background group text-left"
+                                    >
+                                      <tool.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
+                                      <div>
+                                        <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{tool.title}</div>
+                                        <p className="text-xs leading-snug text-muted-foreground mt-1">
+                                          {tool.description}
+                                        </p>
+                                      </div>
+                                    </button>
+                                  </motion.li>
+                                ))}
+                              </ul>
+                            </motion.div>
+                          </div>
+                        </motion.div>
+                      </NavigationMenuContent>
+                    </>
                   ) : link.hasDropdown === "about" ? (
                     <>
                       <NavigationMenuTrigger className="h-10 px-4 font-sans text-sm font-medium text-muted-foreground hover:text-foreground data-[state=open]:text-foreground transition-colors bg-transparent">
@@ -292,7 +395,7 @@ const Header = () => {
                 ))}
               </div>
               
-              {navLinks.map((link) => (
+              {navLinks.filter(link => link.href !== "#").map((link) => (
                 <Link
                   key={link.title}
                   to={link.href}
@@ -308,9 +411,50 @@ const Header = () => {
                 </Link>
               ))}
               
+              {/* Resources Section on Mobile */}
+              <div className="pt-2 mt-2 border-t border-border">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">Resources & Guides</p>
+                <div className="space-y-1">
+                  {resourceLinks.map((item) => (
+                    <Link
+                      key={item.title}
+                      to={item.href}
+                      className="flex items-center gap-3 py-3 px-4 text-sm font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <item.icon className="h-4 w-4 text-copper/70" />
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Quick Tools Section on Mobile */}
+              <div className="pt-2 mt-2 border-t border-border">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">Quick Tools</p>
+                <div className="grid grid-cols-3 gap-2">
+                  {toolLinks.map((tool) => (
+                    <button
+                      key={tool.title}
+                      onClick={() => {
+                        setIsOpen(false);
+                        setTimeout(() => {
+                          const event = new CustomEvent(tool.href.replace('#', 'open-'));
+                          window.dispatchEvent(event);
+                        }, 300);
+                      }}
+                      className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-cream-warm/50 text-sm font-medium text-foreground active:scale-[0.98] touch-manipulation"
+                    >
+                      <tool.icon className="h-5 w-5 text-copper" />
+                      <span className="text-xs text-center">{tool.title.split(' ')[0]}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
               {/* About Sub-links on Mobile */}
               <div className="pt-2 mt-2 border-t border-border">
-                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">Quick Links</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">About Us</p>
                 <div className="space-y-1">
                   {aboutLinks.map((item) => (
                     <Link

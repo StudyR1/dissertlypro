@@ -112,6 +112,13 @@ const DeadlineDangerZone = () => {
   const [wordCount, setWordCount] = useState("10000");
   const [analysis, setAnalysis] = useState<DeadlineAnalysis | null>(null);
 
+  // Listen for navigation menu trigger
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener('open-deadline-checker', handleOpen);
+    return () => window.removeEventListener('open-deadline-checker', handleOpen);
+  }, []);
+
   useEffect(() => {
     if (deadline && wordCount) {
       const deadlineDate = new Date(deadline);
