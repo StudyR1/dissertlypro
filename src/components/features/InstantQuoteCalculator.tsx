@@ -69,28 +69,7 @@ const InstantQuoteCalculator = () => {
 
   return (
     <>
-      {/* Floating Trigger */}
-      <motion.button
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.8 }}
-        onClick={() => setIsOpen(true)}
-        className="fixed left-4 bottom-32 z-40 flex items-center gap-2 px-4 py-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
-        aria-label="Get instant quote"
-        aria-haspopup="dialog"
-        aria-expanded={isOpen}
-      >
-        <Calculator className="w-5 h-5" aria-hidden="true" />
-        <span className="hidden sm:inline font-medium">Get Quote</span>
-        <motion.span 
-          className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          aria-hidden="true"
-        />
-      </motion.button>
-
-      {/* Modal */}
+      {/* Modal - triggered from navigation menu */}
       <AnimatePresence>
         {isOpen && (
           <>

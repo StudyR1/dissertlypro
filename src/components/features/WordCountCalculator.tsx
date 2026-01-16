@@ -39,19 +39,7 @@ const WordCountCalculator = () => {
 
   return (
     <>
-      {/* Trigger Button */}
-      <motion.button
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.2 }}
-        onClick={() => setIsOpen(true)}
-        className="fixed right-4 bottom-32 z-40 p-3 rounded-full bg-accent text-accent-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-        aria-label="Word count calculator"
-      >
-        <Calculator className="w-5 h-5" />
-      </motion.button>
-
-      {/* Modal */}
+      {/* Modal - triggered from navigation menu */}
       <AnimatePresence>
         {isOpen && (
           <>
