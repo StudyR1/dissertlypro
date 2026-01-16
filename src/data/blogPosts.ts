@@ -25,6 +25,7 @@ export const categoryImages: Record<string, string> = {
   "Academic Career": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop",
   "Writing Tips": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop",
   "Work-Life Balance": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&h=400&fit=crop",
+  "Case Studies": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
 };
 
 export const getPostImage = (post: BlogPost): string => {
@@ -40,6 +41,7 @@ export const blogCategories = [
   "Academic Career",
   "Writing Tips",
   "Work-Life Balance",
+  "Case Studies",
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -2337,6 +2339,191 @@ export const blogPosts: BlogPost[] = [
 
 // Helper function to get featured posts
 export const getFeaturedPosts = () => blogPosts.filter(post => post.featured);
+
+  // ============================================
+  // FAILED DISSERTATION CASE STUDIES SERIES
+  // ============================================
+
+  {
+    slug: "failed-dissertation-case-study-scope-creep",
+    title: "Failed Dissertation Case Study: When Scope Creep Destroyed 3 Years of Work",
+    excerpt: "An anonymized analysis of how an ambitious PhD candidate's dissertation collapsed under the weight of an ever-expanding research scope. Learn the warning signs and prevention strategies.",
+    metaDescription: "Learn from a real failed dissertation case study where scope creep led to project failure. Understand warning signs, prevention strategies, and how to protect your PhD research.",
+    category: "Case Studies",
+    author: "Dr. Sarah Mitchell",
+    authorBio: "PhD in Education from Stanford University, 15+ years guiding doctoral candidates",
+    date: "January 15, 2026",
+    readTime: "18 min read",
+    keywords: ["failed dissertation", "scope creep", "PhD failure", "dissertation problems"],
+    tableOfContents: [
+      { id: "overview", title: "Case Overview" },
+      { id: "warning-signs", title: "Early Warning Signs" },
+      { id: "breakdown", title: "The Breakdown" },
+      { id: "lessons", title: "Lessons Learned" },
+    ],
+    content: [
+      "**Note**: This case study is based on a real doctoral experience, with identifying details changed to protect privacy.",
+      "## Case Overview",
+      "**Field**: Social Sciences (Organizational Psychology) | **Outcome**: Dissertation failed at final examination; required complete restructuring | **Time Lost**: 18 months",
+      "Marcus entered his PhD program with stellar credentials. His initial proposal was focused: examining how middle managers in healthcare navigate organizational change with 25-30 interviews across 4 organizations.",
+      "## Early Warning Signs",
+      "**Warning Sign #1: The 'Interesting' Tangent** — During pilot interviews, Marcus noticed generational differences. Rather than noting this for future research, he added a generational component. Research questions expanded from 3 to 5.",
+      "**Warning Sign #2: Methodology Multiplication** — A colleague suggested quantitative data would strengthen findings. Without formal committee approval, Marcus began developing a survey. His methodology chapter grew from 30 to 65 pages.",
+      "**Warning Sign #3: The Comparison Trap** — At a conference, Marcus decided his study needed a comparative element—NHS vs. private healthcare. His sample doubled; his timeline extended indefinitely.",
+      "**Warning Sign #4: Theoretical Framework Explosion** — What started with one theory now attempted to integrate six: adaptive leadership, transformational leadership, generational theory, organizational change theory, sense-making theory, and institutional theory.",
+      "## The Breakdown",
+      "By year two, Marcus had 47 interviews (double his target), 156 survey responses, and no clear analytical framework. His literature review reached 35,000 words. He couldn't articulate his central argument in under 10 minutes.",
+      "His 127,000-word submission received a devastating verdict: 'This reads as three separate dissertations struggling to coexist. The candidate cannot answer: What is the single most important contribution?'",
+      "## Root Cause Analysis",
+      "**Fear of Missing Data**: Every new theme felt too important to exclude. **Inadequate Boundaries**: Research questions allowed unlimited expansion. **Conference Comparison Syndrome**: Trying to match established researchers' decades of work. **Sunk Cost Fallacy**: Too invested to abandon any element.",
+      "## Lessons Learned",
+      "**A PhD Is Not a Life's Work**: Your dissertation answers one question well, not every question in your field. **'Interesting' Is the Enemy of 'Complete'**: Tangents belong in a 'future research' folder. **Regular Scope Audits Are Essential**: Monthly comparison of current work to approved proposal reveals drift immediately.",
+      "## Prevention Strategies",
+      "Create a one-page Scope Control Document stating exact boundaries. Implement the 'Parking Lot' method for interesting tangents. Practice your 60-second elevator pitch monthly. Schedule explicit scope conversations with your supervisor. Set hard data collection limits before starting.",
+      "Marcus eventually restructured around his original question, analyzed 25 interviews with one framework, and produced a focused 85,000-word dissertation that passed. His reflection: 'Ambition in doctoral research means doing one thing exceptionally well.'",
+    ],
+    faqs: [
+      { question: "How do I know if my dissertation has scope creep?", answer: "Warning signs: you can't explain your argument in 60 seconds, research questions have grown beyond your proposal, you're collecting more data than planned, your framework includes 3+ competing theories, and word count exceeds targets." },
+      { question: "Is it too late to reduce scope in year 3 or 4?", answer: "It's rarely too late. A focused dissertation with less data is preferable to an unfocused one with extensive data. Work with your supervisor to identify your core contribution and cut everything that doesn't serve it." }
+    ]
+  },
+
+  {
+    slug: "failed-dissertation-case-study-supervisor-breakdown",
+    title: "Failed Dissertation Case Study: A Supervisor Relationship That Destroyed a PhD",
+    excerpt: "How miscommunication, conflicting expectations, and unwillingness to seek help led to one doctoral candidate's devastating academic failure.",
+    metaDescription: "Case study analyzing how a toxic supervisor relationship led to dissertation failure. Learn warning signs and communication strategies.",
+    category: "Case Studies",
+    author: "Dr. Emily Rodriguez",
+    authorBio: "PhD in English Literature from Yale University, Academic Writing Specialist",
+    date: "January 15, 2026",
+    readTime: "20 min read",
+    keywords: ["supervisor problems", "PhD supervisor conflict", "dissertation failure"],
+    tableOfContents: [
+      { id: "overview", title: "Case Overview" },
+      { id: "fractures", title: "First Fractures" },
+      { id: "breakdown", title: "The Breakdown" },
+      { id: "prevention", title: "Prevention Framework" },
+    ],
+    content: [
+      "**Note**: This case study is a composite of real doctoral experiences with details altered to protect privacy.",
+      "## Case Overview",
+      "**Field**: Humanities (History) | **Outcome**: Forced to change supervisors after submission failure | **Time Lost**: 24 months",
+      "Amara was recruited specifically to work with Professor H, a renowned scholar with 15 doctoral completions. Year 1 showed regular meetings and prompt feedback. What she didn't know was that Professor H's style worked for candidates who already knew what they wanted—not those needing guidance.",
+      "## First Fractures",
+      "**The Feedback Problem**: As Amara moved to independent research, feedback became cryptic: 'This needs more theoretical grounding.' 'Think about whether this is really your argument.' When asked for clarification, Professor H responded: 'I don't want to impose my views. You need to develop your own scholarly voice.'",
+      "**Meeting Reduction**: Professor H accepted a visiting position. Meetings went from monthly to 'as needed.' Amara waited to be contacted; Professor H assumed she'd reach out when ready. Months passed with minimal contact.",
+      "**The Draft Disaster**: After six months of independent work, Amara's first chapter draft received: 'not quite there' with no specific guidance. She rewrote completely. Same feedback. Then again. Each time told it 'wasn't quite there' without knowing what 'there' looked like.",
+      "## The Breakdown",
+      "By year three, Amara had written 80,000 words across 15 drafts. None approved. Her confidence destroyed. A pivotal meeting revealed the disconnect: Professor H expected independent arrival at PhD standards; Amara expected guidance toward those standards. Neither had articulated these expectations.",
+      "Six months of silence followed—Amara paralyzed by anxiety, Professor H interpreting silence as focused writing. She submitted against advice. The viva was a disaster; examiners identified 'insufficient supervisory guidance evident in the submission.'",
+      "## The Communication Autopsy",
+      "| What Was Said | What Was Meant | What Was Understood |",
+      "|---------------|----------------|---------------------|",
+      "| 'This needs more grounding' | 'Engage with scholars X, Y, Z' | 'Something is wrong' |",
+      "| 'Develop your own voice' | 'Stop summarizing, start arguing' | 'Won't tell me what to do' |",
+      "| 'Reach out when needed' | 'I trust you to manage' | 'Don't bother supervisor' |",
+      "## Prevention Framework",
+      "**Establish Expectations Early**: In first meetings, discuss meeting frequency, feedback turnaround, what 'finished' looks like, and how to handle disagreements. **Request Concrete Examples**: Never leave feedback without understanding what 'good' looks like. **Create a Paper Trail**: Send follow-up emails after meetings confirming your understanding. **Use Your Second Supervisor**: If primary feedback is unclear, seek another perspective. **Know Your Escalation Path**: Identify your department's process for raising concerns BEFORE you need it.",
+      "Amara was assigned a new supervisor who provided biweekly check-ins, explicit expectations, annotated examples, and encouragement to ask 'basic' questions. She restructured her dissertation in 14 months and now holds a faculty position.",
+    ],
+    faqs: [
+      { question: "How do I know if my supervisor relationship is problematic?", answer: "Warning signs: dreading interactions, leaving meetings more confused, receiving unactionable feedback, months without contact, feeling unable to ask questions, and chronic anxiety tied to supervision." },
+      { question: "Can I change supervisors mid-PhD?", answer: "Yes. Most universities have procedures for this. Valid reasons include communication differences, research direction shifts, or documented supervisory failures. Speak with your graduate coordinator confidentially." }
+    ]
+  },
+
+  {
+    slug: "failed-dissertation-case-study-methodology-mismatch",
+    title: "Failed Dissertation Case Study: Wrong Methodology, Wrong Conclusions",
+    excerpt: "How choosing the wrong research methodology undermined an otherwise excellent dissertation, leading to examination failure.",
+    metaDescription: "Case study of dissertation failure due to methodology mismatch. Learn how choosing wrong methods can invalidate findings.",
+    category: "Case Studies",
+    author: "Dr. James Chen",
+    authorBio: "PhD in Statistics, Methodology consultant who has reviewed 200+ proposals",
+    date: "January 15, 2026",
+    readTime: "22 min read",
+    keywords: ["dissertation methodology", "research methods failure", "methodology mismatch"],
+    tableOfContents: [
+      { id: "overview", title: "Case Overview" },
+      { id: "mismatch", title: "The Methodology Mismatch" },
+      { id: "examination", title: "The Examination" },
+      { id: "lessons", title: "Lessons and Prevention" },
+    ],
+    content: [
+      "**Note**: Based on a real doctoral examination with details changed to protect privacy.",
+      "## Case Overview",
+      "**Field**: Business (Marketing) | **Outcome**: Failed at viva; required complete re-analysis | **Time Lost**: 14 months",
+      "David's research focused on consumer decision-making in sustainable fashion: 'Why do consumers say they value sustainability but fail to purchase sustainable products?' His questions asked 'why' and 'how'—inherently exploratory and interpretive.",
+      "## The Methodology Mismatch",
+      "Despite interpretive questions, David chose primarily quantitative methods: a large-scale survey (n=1,500) with structural equation modeling, treating 20 qualitative interviews as 'supplementary.'",
+      "**Why This Was Wrong**: Surveys capture what people SAY, not what they actually think or do. When studying the attitude-behavior gap, self-report is precisely wrong—you're asking people to explain discrepancies they may not consciously understand.",
+      "**The Fundamental Flaw**: David was modeling relationships between attitudes and other attitudes. His survey captured post-hoc rationalizations, not actual decision processes. His questions needed in-depth interviews, observation, or experiments—not self-report surveys.",
+      "## The Examination",
+      "The methodologist examiner asked: 'You ask why consumers don't purchase sustainably despite valuing sustainability. How does measuring what consumers SAY help you understand what happens when they PURCHASE?'",
+      "David: 'The survey captures their reasoning and self-reported behavior.'",
+      "Examiner: 'So you're studying the attitude-behavior gap using only attitudes and no behavior?'",
+      "Verdict: Major corrections requiring fundamental methodological revision.",
+      "## Lessons and Prevention",
+      "**Questions Dictate Methods**: 'Why' questions need interpretive methods. 'How much' questions need measurement. **Beware Methodological Comfort Zones**: David chose quantitative because his supervisor was quantitative—not because it fit his questions. **Self-Report Has Limits**: Surveys cannot access unconscious processes or the gap between what people say and do.",
+      "**Methodology Matching Framework**:",
+      "| Question Type | Appropriate Approaches |",
+      "|--------------|----------------------|",
+      "| What is the prevalence? | Surveys, secondary data |",
+      "| What is the lived experience? | Phenomenological interviews |",
+      "| Why do people do Y when they say Z? | Observation, experiments, in-depth interviews |",
+      "David's recovery took 14 months. He narrowed his quantitative questions to what surveys could address, collected new qualitative data properly analyzed, and restructured as a two-phase mixed-methods study. His revised dissertation was accepted.",
+    ],
+    faqs: [
+      { question: "How do I know if my methodology matches my research questions?", answer: "Ask: 'What kind of knowledge am I seeking?' If you want meaning and process (why/how), use interpretive methods. If you want to measure and predict (what/how much), use quantitative. Consult a methodologist before committing." },
+      { question: "My supervisor favors different methods than my question needs. What should I do?", answer: "Discuss directly with a methodologist present. Either adjust your question to fit available methods, or seek a co-supervisor with appropriate expertise. Don't force a mismatch." }
+    ]
+  },
+
+  {
+    slug: "failed-dissertation-case-study-ethics-catastrophe",
+    title: "Failed Dissertation Case Study: The Ethics Approval Disaster That Ended a Career",
+    excerpt: "How shortcuts through ethics approval led to data invalidation, investigation, and complete academic failure. A stark warning about research integrity.",
+    metaDescription: "Case study of dissertation failure due to ethics violations. Learn how cutting corners can destroy your PhD permanently.",
+    category: "Case Studies",
+    author: "Dr. Michael Thompson",
+    authorBio: "PhD in Clinical Psychology, Research Ethics Board member for 12 years",
+    date: "January 15, 2026",
+    readTime: "24 min read",
+    keywords: ["research ethics", "ethics approval failure", "academic misconduct"],
+    tableOfContents: [
+      { id: "overview", title: "Case Overview" },
+      { id: "shortcuts", title: "The Shortcuts Taken" },
+      { id: "consequences", title: "The Consequences" },
+      { id: "prevention", title: "Prevention and Best Practices" },
+    ],
+    content: [
+      "**Note**: This case describes serious ethics violations with career-ending consequences. Details changed to protect privacy. Presented to prevent others from similar mistakes.",
+      "## Case Overview",
+      "**Field**: Health Sciences (Nursing Research) | **Outcome**: Dissertation invalidated, degree revoked, career ended | **Core Problem**: Data collection without proper approval",
+      "Christine's doctoral research addressed nurse decision-making in end-of-life care—important, sensitive research requiring careful ethical oversight.",
+      "## The Shortcuts Taken",
+      "**Proceeding Before Approval**: While waiting for ethics review, Christine began 'informal conversations' with colleagues—recorded, transcribed, and analyzed. By any definition, data collection without approval.",
+      "**Retroactive Consent**: After approval, she contacted participants to sign consent forms for conversations already completed. Most signed; one asked, 'Didn't we talk before you got approval?' Christine assured her it was fine.",
+      "**Expanding Scope Without Amendment**: Struggling to find participants, she recruited from her own workplace—a fourth hospital not in her approved protocol. 'The committee would approve it if I asked. I'm just saving time.'",
+      "**Collecting Patient Data**: During interviews, participants shared specific patient stories. Her protocol didn't include patient data. But the stories were 'so rich' she began asking follow-up questions about cases. She now had identifiable patient data she had no approval to collect.",
+      "**Storage Violations**: Her protocol specified secure university storage. In practice: personal laptop, Dropbox, email attachments.",
+      "## The Unraveling",
+      "A participant mentioned the research to a hospital governance colleague who noted Christine's hospital wasn't on the approved protocol. An informal inquiry revealed: interview dates predating approval, consent forms dated after interviews, unauthorized site, patient-identifiable data throughout.",
+      "The university investigation found: data collection without approval, invalid retroactive consent, scope violations, unauthorized patient data, storage breaches, and misrepresentation to the ethics board.",
+      "## The Consequences",
+      "**Immediate**: All data destroyed, candidacy terminated, three years discarded, permanent misconduct finding. **Professional**: Dismissed from clinical position, nursing registration restrictions, barred from academic research. Unlike other case studies, Christine cannot recover. Research integrity findings follow academics permanently.",
+      "## Prevention and Best Practices",
+      "**Ethics Approval Is Protection**: An approved protocol provides legal cover. Violations remove that protection. **Never Collect Data Before Approval**: 'Informal conversations' you record and analyze ARE data collection. If unsure, ask your ethics committee BEFORE proceeding. **If You Need to Change, Amend**: Ethics amendments are normal and usually fast. Never assume approval—get actual approval. **Consent Cannot Be Retroactive**: Informed consent means BEFORE participation. Data collected without consent must be discarded. No exceptions. **If You've Made Errors, Disclose Immediately**: Early disclosure may allow remediation. Concealment guarantees catastrophic consequences when discovered.",
+      "Research ethics aren't bureaucratic obstacles. They exist because research has caused harm when conducted without proper oversight. Your dissertation, timeline, and career are not more important than participant protection and research integrity.",
+    ],
+    faqs: [
+      { question: "What counts as 'data collection' needing ethics approval?", answer: "Any systematic gathering from or about participants: formal interviews, informal conversations you record or note, surveys, observations, accessing records, biological samples. If unsure, consult your ethics committee BEFORE proceeding." },
+      { question: "Can I use data collected before ethics approval if I get approval afterward?", answer: "No. Ethics approval covers future data collection only. Data collected before approval cannot be 'retroactively approved' and must be discarded. No exceptions." }
+    ]
+  },
+
+];
 
 // Helper function to get posts by category
 export const getPostsByCategory = (category: string) => 
