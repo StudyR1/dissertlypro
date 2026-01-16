@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -323,6 +324,19 @@ FREQUENCIES VARIABLES=gender marital_status
       />
       <BreadcrumbSchema items={breadcrumbItems} />
       <FAQSchema faqs={faqs} />
+      <HowToSchema
+        name="How to Analyze Dissertation Data Using SPSS"
+        description="Complete SPSS tutorial for dissertation analysis covering data preparation, descriptive statistics, inferential tests, regression analysis, and APA-style reporting."
+        totalTime="PT90M"
+        steps={[
+          { name: "Prepare Your Data", text: "Create and import your dataset. In Variable View, define variable types (nominal, ordinal, scale), set value labels and missing values. Clean data and detect outliers before analysis." },
+          { name: "Run Descriptive Statistics", text: "Calculate frequencies, measures of central tendency (mean, median, mode), and dispersion (SD, variance, range). Create summary tables and test normality using Shapiro-Wilk or K-S tests." },
+          { name: "Choose the Right Statistical Test", text: "Match your test to your research question: t-tests for comparing two groups, ANOVA for multiple groups, chi-square for categorical relationships, correlation for continuous relationships." },
+          { name: "Check Assumptions Before Testing", text: "Always test normality (Analyze → Descriptive Statistics → Explore) and homogeneity of variance (Levene's test) before running parametric tests. Use non-parametric alternatives when assumptions are violated." },
+          { name: "Run Your Analysis", text: "Execute inferential statistics and regression analyses. For regression, check multicollinearity (VIF), homoscedasticity, and normality of residuals." },
+          { name: "Interpret and Report Results", text: "Read all output carefully including footnotes and warnings. Report test statistics, degrees of freedom, p-values, and effect sizes in APA format. Example: 't(98) = 2.45, p = .016, d = 0.49'." }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">

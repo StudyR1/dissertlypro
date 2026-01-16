@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -293,6 +294,19 @@ const VivaPreparation = () => {
       />
       <BreadcrumbSchema items={breadcrumbItems} />
       <FAQSchema faqs={faqs} />
+      <HowToSchema
+        name="How to Prepare for Your Viva Voce (Thesis Defense)"
+        description="Complete guide to viva preparation covering timeline planning, mock vivas, common questions, handling different outcomes, and day-of strategies for oral defense success."
+        totalTime="PT45M"
+        steps={[
+          { name: "Understand the Timeline", text: "Begin preparation 3-6 months before by researching examiners and re-reading your thesis. 1-2 months before, conduct mock vivas and prepare answers to predictable questions. 2 weeks before, do final read-through with annotations." },
+          { name: "Research Your Examiners", text: "Study your examiners' published work, theoretical positions, and research interests. Understand how their perspectives might shape their questions about your methodology and conclusions." },
+          { name: "Prepare for Common Questions", text: "Master responses to universal questions: thesis summary, contribution to knowledge, methodology justification, and what you'd do differently. Practice articulating complex ideas clearly." },
+          { name: "Conduct Mock Vivas", text: "Schedule 2-3 weeks before actual viva with supervisor plus another academic. Simulate formal conditions, practice your opening statement, and get detailed feedback on weak areas." },
+          { name: "Prepare for All Outcomes", text: "Understand possible results: pass, minor corrections, major corrections, revise and resubmit, or fail. Know that most outcomes involve some corrections—this is normal and expected." },
+          { name: "Master Day-Of Strategies", text: "Arrive 15-20 minutes early. Bring annotated thesis, summary notes, and water. Remember you're the world expert on your research. Listen carefully, think before speaking, and acknowledge limits honestly." }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative py-16 sm:py-24 bg-gradient-to-br from-midnight via-midnight-rich to-midnight overflow-hidden">

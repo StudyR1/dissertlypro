@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -386,6 +387,19 @@ const ResearchMethodology = () => {
       />
       <BreadcrumbSchema items={breadcrumbItems} />
       <FAQSchema faqs={faqs} />
+      <HowToSchema
+        name="How to Design Your Dissertation Research Methodology"
+        description="Comprehensive guide to selecting and justifying research methodology for your dissertation including qualitative, quantitative, and mixed methods approaches."
+        totalTime="PT60M"
+        steps={[
+          { name: "Understand Methodology Types", text: "Learn the distinctions between quantitative (testing hypotheses, measuring relationships), qualitative (exploring experiences, understanding 'how' and 'why'), and mixed methods (combining both for breadth and depth)." },
+          { name: "Match Method to Research Questions", text: "Align your methodology with your research questions. 'How many' and 'what relationship' questions suit quantitative methods; 'how' and 'why' questions suit qualitative approaches." },
+          { name: "Select Research Design", text: "Choose specific designs: experimental, survey, or correlational for quantitative; phenomenology, grounded theory, or case study for qualitative; concurrent or sequential for mixed methods." },
+          { name: "Plan Your Sampling Strategy", text: "Determine probability sampling (random, stratified, cluster) for generalizability or non-probability sampling (purposive, snowball, theoretical) for specific insights. Calculate required sample size." },
+          { name: "Choose Data Collection Methods", text: "Select appropriate methods: surveys, experiments, existing data for quantitative; interviews, focus groups, observations for qualitative. Ensure alignment with research design." },
+          { name: "Address Validity and Ethics", text: "Plan for internal and external validity, reliability, and trustworthiness. Obtain IRB approval, design informed consent procedures, and address confidentiality and data security." }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">
