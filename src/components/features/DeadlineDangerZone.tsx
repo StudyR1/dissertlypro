@@ -143,22 +143,7 @@ const DeadlineDangerZone = () => {
 
   return (
     <>
-      {/* Trigger in floating tools area */}
-      <motion.button
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1 }}
-        onClick={() => setIsOpen(true)}
-        className="fixed left-4 bottom-48 z-40 flex items-center gap-2 px-3 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 hover:bg-amber-500/20 transition-all duration-300 group"
-        aria-label="Check deadline danger zone"
-        aria-haspopup="dialog"
-        aria-expanded={isOpen}
-      >
-        <AlertTriangle className="w-4 h-4" aria-hidden="true" />
-        <span className="hidden sm:inline text-sm font-medium">Deadline Check</span>
-      </motion.button>
-
-      {/* Modal */}
+      {/* Modal - triggered from navigation menu */}
       <AnimatePresence>
         {isOpen && (
           <>
