@@ -327,6 +327,21 @@ const Header = () => {
                               </ul>
                             </motion.div>
                           </div>
+                          <motion.div 
+                            className="border-t border-border pt-3 mt-3"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                          >
+                            <NavigationMenuLink asChild>
+                              <Link
+                                to="/resources"
+                                className="flex items-center gap-2 rounded-lg p-2 text-sm font-medium text-copper hover:bg-cream-warm transition-all"
+                              >
+                                View All Resources →
+                              </Link>
+                            </NavigationMenuLink>
+                          </motion.div>
                         </motion.div>
                       </NavigationMenuContent>
                     </>
