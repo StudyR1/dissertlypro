@@ -751,6 +751,69 @@ Thank you for your support,
         </div>
       </section>
 
+      {/* Related Resources Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10"
+            >
+              <h2 className="text-2xl font-bold text-foreground mb-3">Related Resources</h2>
+              <p className="text-muted-foreground">More guides to support your academic journey</p>
+            </motion.div>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <Link to="/phd-mental-health" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all hover:border-copper/50">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-xl bg-rose-500/10 group-hover:bg-rose-500/20 transition-colors">
+                          <Heart className="w-6 h-6 text-rose-500" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-lg mb-2 group-hover:text-copper transition-colors">PhD Mental Health Hub</h3>
+                          <p className="text-sm text-muted-foreground">Burnout assessment, coping strategies, and wellness resources designed specifically for doctoral students.</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <Link to="/committee-conflicts" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all hover:border-copper/50">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-xl bg-amber-500/10 group-hover:bg-amber-500/20 transition-colors">
+                          <Scale className="w-6 h-6 text-amber-500" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-lg mb-2 group-hover:text-copper transition-colors">Committee Conflict Resolution</h3>
+                          <p className="text-sm text-muted-foreground">Navigate disagreements, contradictory feedback, and political dynamics within your dissertation committee.</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-copper/10 via-background to-background">
         <div className="container mx-auto px-4">
