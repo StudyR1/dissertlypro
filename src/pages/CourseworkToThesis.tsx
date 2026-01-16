@@ -817,42 +817,55 @@ Best regards,
             </h2>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Link to="/masters-thesis-guide" className="group">
               <Card className="h-full bg-card border-border hover:border-copper/30 transition-colors">
-                <CardContent className="p-6">
-                  <GraduationCap className="w-8 h-8 text-copper mb-4" />
-                  <h3 className="font-bold text-foreground mb-2 group-hover:text-copper transition-colors">
+                <CardContent className="p-5">
+                  <GraduationCap className="w-6 h-6 text-copper mb-3" />
+                  <h3 className="font-bold text-foreground mb-1 group-hover:text-copper transition-colors text-sm">
                     Master's Thesis Guide
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Complete A-Z roadmap for thesis success.
+                  <p className="text-xs text-muted-foreground">
+                    Complete A-Z roadmap
                   </p>
                 </CardContent>
               </Card>
             </Link>
-            <Link to="/literature-review-guide" className="group">
+            <Link to="/accelerated-masters" className="group">
               <Card className="h-full bg-card border-border hover:border-copper/30 transition-colors">
-                <CardContent className="p-6">
-                  <BookOpen className="w-8 h-8 text-copper mb-4" />
-                  <h3 className="font-bold text-foreground mb-2 group-hover:text-copper transition-colors">
-                    Literature Review Guide
+                <CardContent className="p-5">
+                  <Clock className="w-6 h-6 text-copper mb-3" />
+                  <h3 className="font-bold text-foreground mb-1 group-hover:text-copper transition-colors text-sm">
+                    Accelerated Programs
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Master the art of reviewing research.
+                  <p className="text-xs text-muted-foreground">
+                    Complete in 12-18 months
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to="/citation-mastery" className="group">
+              <Card className="h-full bg-card border-border hover:border-copper/30 transition-colors">
+                <CardContent className="p-5">
+                  <FileText className="w-6 h-6 text-copper mb-3" />
+                  <h3 className="font-bold text-foreground mb-1 group-hover:text-copper transition-colors text-sm">
+                    Citation Mastery
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    APA, MLA, Chicago styles
                   </p>
                 </CardContent>
               </Card>
             </Link>
             <Link to="/thesis-topic-selection" className="group">
               <Card className="h-full bg-card border-border hover:border-copper/30 transition-colors">
-                <CardContent className="p-6">
-                  <Target className="w-8 h-8 text-copper mb-4" />
-                  <h3 className="font-bold text-foreground mb-2 group-hover:text-copper transition-colors">
+                <CardContent className="p-5">
+                  <Target className="w-6 h-6 text-copper mb-3" />
+                  <h3 className="font-bold text-foreground mb-1 group-hover:text-copper transition-colors text-sm">
                     Career-Boosting Topics
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Choose a thesis topic strategically.
+                  <p className="text-xs text-muted-foreground">
+                    Strategic topic selection
                   </p>
                 </CardContent>
               </Card>
