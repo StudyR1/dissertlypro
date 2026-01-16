@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Calculator, FileText, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,13 @@ const WordCountCalculator = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [wordCount, setWordCount] = useState<string>("");
   const [format, setFormat] = useState<keyof typeof formatOptions>("academic");
+
+  // Listen for navigation menu trigger
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener('open-word-counter', handleOpen);
+    return () => window.removeEventListener('open-word-counter', handleOpen);
+  }, []);
 
   const calculatePages = () => {
     const words = parseInt(wordCount) || 0;
