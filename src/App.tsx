@@ -30,6 +30,9 @@ const About = lazy(() => import("./pages/About"));
 const Experts = lazy(() => import("./pages/Experts"));
 const RegionLanding = lazy(() => import("./pages/RegionLanding"));
 const Order = lazy(() => import("./pages/Order"));
+const SupervisorGuide = lazy(() => import("./pages/SupervisorGuide"));
+const MentalHealthHub = lazy(() => import("./pages/MentalHealthHub"));
+const CommitteeConflicts = lazy(() => import("./pages/CommitteeConflicts"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -69,6 +72,9 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/experts" element={<Experts />} />
               <Route path="/order" element={<Order />} />
+              <Route path="/supervisor-guide" element={<SupervisorGuide />} />
+              <Route path="/phd-mental-health" element={<MentalHealthHub />} />
+              <Route path="/committee-conflicts" element={<CommitteeConflicts />} />
               {/* Region-specific landing pages */}
               <Route path="/uk" element={<RegionLanding />} />
               <Route path="/us" element={<RegionLanding />} />
