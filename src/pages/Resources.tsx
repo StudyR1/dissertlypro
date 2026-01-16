@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -193,6 +193,12 @@ const Resources = () => {
         canonical="https://dissertlypro.com/resources"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="DissertlyPro Research Resources"
+        itemType="EducationalOrganization"
+      />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">
