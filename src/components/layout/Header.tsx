@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -39,6 +39,9 @@ const resourceLinks = [
   { title: "Supervisor Guide", href: "/supervisor-guide", description: "Navigate advisor relationships", icon: UserCheck },
   { title: "PhD Mental Health", href: "/phd-mental-health", description: "Wellness resources for researchers", icon: Heart },
   { title: "Committee Conflicts", href: "/committee-conflicts", description: "Resolve academic disputes", icon: Scale },
+  { title: "Deadlines & Deferrals", href: "/deadlines-deferrals", description: "Extension strategies that work", icon: Calendar },
+  { title: "Viva Preparation", href: "/viva-preparation", description: "Ace your oral examination", icon: Mic },
+  { title: "Part-Time PhD", href: "/part-time-phd", description: "Balance work and research", icon: Briefcase },
 ];
 
 const toolLinks = [

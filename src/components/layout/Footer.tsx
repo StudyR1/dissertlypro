@@ -18,6 +18,9 @@ const Footer = () => {
       { title: "Supervisor Guide", href: "/supervisor-guide" },
       { title: "PhD Mental Health", href: "/phd-mental-health" },
       { title: "Committee Conflicts", href: "/committee-conflicts" },
+      { title: "Deadlines & Deferrals", href: "/deadlines-deferrals" },
+      { title: "Viva Preparation", href: "/viva-preparation" },
+      { title: "Part-Time PhD", href: "/part-time-phd" },
       { title: "Blog & Articles", href: "/blog" },
     ],
     company: [
