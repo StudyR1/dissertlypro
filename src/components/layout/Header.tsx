@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -45,6 +45,12 @@ const resourceLinks = [
   { title: "Deadlines & Deferrals", href: "/deadlines-deferrals", description: "Extension strategies that work", icon: Calendar },
   { title: "Viva Preparation", href: "/viva-preparation", description: "Ace your oral examination", icon: Mic },
   { title: "Part-Time PhD", href: "/part-time-phd", description: "Balance work and research", icon: Briefcase },
+];
+
+const mastersResourceLinks = [
+  { title: "Master's Thesis Guide", href: "/masters-thesis-guide", description: "Complete A-Z thesis roadmap", icon: GraduationCap },
+  { title: "Dissertation vs Thesis", href: "/dissertation-vs-thesis", description: "Key differences explained", icon: Scale },
+  { title: "Career-Boosting Topics", href: "/thesis-topic-selection", description: "Strategic topic selection", icon: Briefcase },
 ];
 
 const toolLinks = [
@@ -213,15 +219,15 @@ const Header = () => {
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="data-[motion=from-start]:animate-none data-[motion=from-end]:animate-none data-[motion=to-start]:animate-none data-[motion=to-end]:animate-none">
                         <motion.div 
-                          className="w-[680px] p-5"
+                          className="w-[800px] p-5"
                           initial={{ opacity: 0, y: -8, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: -8, scale: 0.98 }}
                           transition={{ duration: 0.2, ease: "easeOut" }}
                         >
-                          <div className="grid grid-cols-5 gap-5">
+                          <div className="grid grid-cols-4 gap-5">
                             {/* Technical Deep-Dives Column */}
-                            <div className="col-span-2">
+                            <div className="col-span-1">
                               <motion.h4 
                                 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-1"
                                 initial={{ opacity: 0, x: -10 }}
@@ -237,43 +243,6 @@ const Header = () => {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.03 * index, duration: 0.15 }}
-                                  >
-                                    <NavigationMenuLink asChild>
-                                      <Link
-                                        to={item.href}
-                                        className="flex items-start gap-3 select-none rounded-lg p-3 leading-none no-underline outline-none transition-all hover:bg-cream-warm group"
-                                      >
-                                        <item.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
-                                        <div>
-                                          <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{item.title}</div>
-                                          <p className="text-xs leading-snug text-muted-foreground mt-1">
-                                            {item.description}
-                                          </p>
-                                        </div>
-                                      </Link>
-                                    </NavigationMenuLink>
-                                  </motion.li>
-                                ))}
-                              </ul>
-                            </div>
-                            
-                            {/* Academic Guides Column */}
-                            <div className="col-span-2">
-                              <motion.h4 
-                                className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-1"
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.08 }}
-                              >
-                                Academic Guides
-                              </motion.h4>
-                              <ul className="space-y-1.5">
-                                {resourceLinks.slice(3).map((item, index) => (
-                                  <motion.li 
-                                    key={item.title}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.03 * (index + 3), duration: 0.15 }}
                                   >
                                     <NavigationMenuLink asChild>
                                       <Link
@@ -294,12 +263,81 @@ const Header = () => {
                               </ul>
                             </div>
                             
+                            {/* PhD Academic Guides Column */}
+                            <div className="col-span-1">
+                              <motion.h4 
+                                className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-1"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.08 }}
+                              >
+                                PhD Guides
+                              </motion.h4>
+                              <ul className="space-y-1">
+                                {resourceLinks.slice(3).map((item, index) => (
+                                  <motion.li 
+                                    key={item.title}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.03 * (index + 3), duration: 0.15 }}
+                                  >
+                                    <NavigationMenuLink asChild>
+                                      <Link
+                                        to={item.href}
+                                        className="flex items-start gap-2 select-none rounded-lg p-2 leading-none no-underline outline-none transition-all hover:bg-cream-warm group"
+                                      >
+                                        <item.icon className="h-3.5 w-3.5 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
+                                        <div>
+                                          <div className="text-xs font-medium leading-none font-sans group-hover:text-copper transition-colors">{item.title}</div>
+                                        </div>
+                                      </Link>
+                                    </NavigationMenuLink>
+                                  </motion.li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            {/* Master's Thesis Column */}
+                            <motion.div 
+                              className="col-span-1 bg-copper/5 rounded-xl p-4"
+                              initial={{ opacity: 0, x: 10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.1, duration: 0.2 }}
+                            >
+                              <h4 className="text-xs font-semibold text-copper uppercase tracking-wider mb-3">Master's Thesis</h4>
+                              <ul className="space-y-1.5">
+                                {mastersResourceLinks.map((item, index) => (
+                                  <motion.li 
+                                    key={item.title}
+                                    initial={{ opacity: 0, x: 5 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.12 + 0.05 * index }}
+                                  >
+                                    <NavigationMenuLink asChild>
+                                      <Link
+                                        to={item.href}
+                                        className="flex items-start gap-2 w-full select-none rounded-lg p-2 leading-none no-underline outline-none transition-all hover:bg-background group text-left"
+                                      >
+                                        <item.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
+                                        <div>
+                                          <div className="text-xs font-medium leading-none font-sans group-hover:text-copper transition-colors">{item.title}</div>
+                                          <p className="text-[10px] leading-snug text-muted-foreground mt-0.5">
+                                            {item.description}
+                                          </p>
+                                        </div>
+                                      </Link>
+                                    </NavigationMenuLink>
+                                  </motion.li>
+                                ))}
+                              </ul>
+                            </motion.div>
+                            
                             {/* Tools Column */}
                             <motion.div 
                               className="col-span-1 bg-cream-warm/50 rounded-xl p-4"
                               initial={{ opacity: 0, x: 10 }}
                               animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: 0.1, duration: 0.2 }}
+                              transition={{ delay: 0.15, duration: 0.2 }}
                             >
                               <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Quick Tools</h4>
                               <ul className="space-y-1.5">
@@ -308,7 +346,7 @@ const Header = () => {
                                     key={tool.title}
                                     initial={{ opacity: 0, x: 5 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.15 + 0.05 * index }}
+                                    transition={{ delay: 0.18 + 0.05 * index }}
                                   >
                                     <button
                                       onClick={() => {
@@ -497,6 +535,24 @@ const Header = () => {
                     >
                       <item.icon className="h-4 w-4 text-copper/70 flex-shrink-0" />
                       <span className="truncate">{item.title}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Master's Thesis Section on Mobile */}
+              <div className="pt-2 mt-2 border-t border-border">
+                <p className="text-xs text-copper uppercase tracking-wider px-4 py-2">Master's Thesis</p>
+                <div className="space-y-1">
+                  {mastersResourceLinks.map((item) => (
+                    <Link
+                      key={item.title}
+                      to={item.href}
+                      className="flex items-center gap-3 py-3 px-4 text-sm font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <item.icon className="h-4 w-4 text-copper/70" />
+                      {item.title}
                     </Link>
                   ))}
                 </div>

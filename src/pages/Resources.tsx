@@ -74,7 +74,7 @@ const resources: Resource[] = [
     tags: ["Literature Review", "Synthesis", "Research Gap", "Academic Writing"],
     featured: true
   },
-  // Tier 1: High-Impact Rare Content
+  // Tier 1: High-Impact Rare Content (PhD)
   {
     title: "Surviving Your PhD Supervisor",
     description: "Navigate difficult supervisor relationships with confidence. Expert strategies for communication, conflict resolution, and protecting your progress.",
@@ -104,6 +104,38 @@ const resources: Resource[] = [
     tier: 1,
     readTime: "30 min",
     tags: ["Committee", "Conflict", "Academic Politics", "Dissertation Defense"]
+  },
+  // Tier 1: Master's Thesis Resources
+  {
+    title: "Master's Thesis Survival Guide",
+    description: "Complete A-Z roadmap for thesis success. 36-week timeline, common mistakes to avoid, and defense preparation strategies.",
+    href: "/masters-thesis-guide",
+    icon: GraduationCap,
+    category: "academic",
+    tier: 1,
+    readTime: "45 min",
+    tags: ["Master's Thesis", "Timeline", "Thesis Writing", "Defense Prep"],
+    featured: true
+  },
+  {
+    title: "Dissertation vs Thesis Explained",
+    description: "Understand the key differences between dissertations and theses. Regional variations, structural comparison, and career implications.",
+    href: "/dissertation-vs-thesis",
+    icon: Scale,
+    category: "academic",
+    tier: 1,
+    readTime: "25 min",
+    tags: ["Dissertation", "Thesis", "Academic Terminology", "Degree Differences"]
+  },
+  {
+    title: "Career-Boosting Thesis Topics",
+    description: "Choose a thesis topic that advances your career. Industry-aligned ideas, selection frameworks, and strategic positioning guidance.",
+    href: "/thesis-topic-selection",
+    icon: Briefcase,
+    category: "academic",
+    tier: 1,
+    readTime: "30 min",
+    tags: ["Topic Selection", "Career Alignment", "Research Ideas", "Industry Focus"]
   },
   // Tier 2: Underserved Niches
   {
