@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -54,6 +54,9 @@ const mastersResourceLinks = [
   { title: "Accelerated Master's", href: "/accelerated-masters", description: "Complete in 12-18 months", icon: Clock },
   { title: "Coursework to Thesis", href: "/coursework-to-thesis", description: "Convert course papers", icon: FileText },
   { title: "Limited Supervision", href: "/limited-supervision", description: "Thrive with absent advisors", icon: Users },
+  { title: "Qualitative Analysis", href: "/qualitative-analysis", description: "Coding & thematic analysis", icon: Brain },
+  { title: "Master's Defense Prep", href: "/masters-defense", description: "Ace your oral exam", icon: Mic },
+  { title: "Citation Mastery", href: "/citation-mastery", description: "APA, MLA, Chicago styles", icon: Quote },
 ];
 
 const toolLinks = [

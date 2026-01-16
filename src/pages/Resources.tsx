@@ -22,7 +22,9 @@ import {
   Clock,
   Sparkles,
   Filter,
-  X
+  X,
+  Mic,
+  Quote
 } from "lucide-react";
 
 type ResourceCategory = "all" | "technical" | "academic";
@@ -167,6 +169,37 @@ const resources: Resource[] = [
     tier: 2,
     readTime: "30 min",
     tags: ["Supervision", "Self-Directed", "Independence", "Master's"]
+  },
+  // Tier 3: Master's Technical Deep-Dives
+  {
+    title: "Qualitative Analysis Guide",
+    description: "Master thematic analysis, coding techniques, NVivo, and research trustworthiness for qualitative master's thesis research.",
+    href: "/qualitative-analysis",
+    icon: Brain,
+    category: "technical",
+    tier: 3,
+    readTime: "8+ hours",
+    tags: ["Qualitative", "Thematic Analysis", "Coding", "NVivo", "Master's"]
+  },
+  {
+    title: "Master's Defense Preparation",
+    description: "Presentation strategies, common questions, response techniques, and anxiety management for your thesis oral examination.",
+    href: "/masters-defense",
+    icon: Mic,
+    category: "technical",
+    tier: 3,
+    readTime: "6+ hours",
+    tags: ["Defense", "Oral Exam", "Presentation", "Master's"]
+  },
+  {
+    title: "Citation Mastery Guide",
+    description: "Complete guide to APA, MLA, Chicago, and Harvard styles. Reference management, plagiarism prevention, and citation strategies.",
+    href: "/citation-mastery",
+    icon: Quote,
+    category: "technical",
+    tier: 3,
+    readTime: "7+ hours",
+    tags: ["Citation", "APA", "MLA", "References", "Academic Writing"]
   },
   // Tier 2: Underserved Niches
   {
