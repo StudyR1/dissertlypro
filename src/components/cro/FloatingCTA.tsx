@@ -72,11 +72,20 @@ const FloatingCTA = () => {
       {/* Desktop Floating Button - Bottom Right */}
       <div className="fixed bottom-6 right-6 z-50 hidden md:block">
         <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0, y: 20 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1, 
+            y: 0,
+          }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
-          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 260, 
+            damping: 20,
+            delay: 1.5,
+          }}
           onClick={openChat}
           className="relative flex items-center gap-3 bg-gradient-to-r from-copper to-copper-dark text-white rounded-full pl-5 pr-6 py-4 shadow-copper group overflow-hidden"
         >
