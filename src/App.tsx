@@ -40,6 +40,9 @@ const SPSSTutorial = lazy(() => import("./pages/SPSSTutorial"));
 const ResearchMethodology = lazy(() => import("./pages/ResearchMethodology"));
 const LiteratureReviewGuide = lazy(() => import("./pages/LiteratureReviewGuide"));
 const Resources = lazy(() => import("./pages/Resources"));
+const MastersThesisGuide = lazy(() => import("./pages/MastersThesisGuide"));
+const DissertationVsThesis = lazy(() => import("./pages/DissertationVsThesis"));
+const ThesisTopicSelection = lazy(() => import("./pages/ThesisTopicSelection"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -89,6 +92,10 @@ const App = () => (
               <Route path="/research-methodology" element={<ResearchMethodology />} />
               <Route path="/literature-review-guide" element={<LiteratureReviewGuide />} />
               <Route path="/resources" element={<Resources />} />
+              {/* Master's Thesis Resources */}
+              <Route path="/masters-thesis-guide" element={<MastersThesisGuide />} />
+              <Route path="/dissertation-vs-thesis" element={<DissertationVsThesis />} />
+              <Route path="/thesis-topic-selection" element={<ThesisTopicSelection />} />
               {/* Region-specific landing pages */}
               <Route path="/uk" element={<RegionLanding />} />
               <Route path="/us" element={<RegionLanding />} />
