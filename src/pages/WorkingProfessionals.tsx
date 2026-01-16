@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import { AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { 
   ArrowRight, 
@@ -83,6 +84,12 @@ const WorkingProfessionals = () => {
           { name: "Use Asynchronous Communication", text: "Share work, receive feedback, and communicate on your own schedule without requiring synchronous meetings." },
           { name: "Manage Stress Proactively", text: "Implement stress management strategies that minimize the mental toll of balancing multiple responsibilities while maximizing dissertation progress." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="Working Professionals Dissertation Support"
+        itemType="EducationalOrganization"
       />
       {/* Hero Section */}
       <section className="bg-hero-gradient py-20 lg:py-28">

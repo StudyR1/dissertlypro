@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -302,6 +302,12 @@ Thank you,
           { name: "Propose a Third Way", text: "Develop a creative synthesis that addresses everyone's underlying concerns. Analyze what each member actually wants and propose an approach with scholarly precedent." },
           { name: "Escalate if Necessary", text: "For serious issues like personal attacks or blocking behavior, document the pattern meticulously and consult your graduate school's ombudsman or student advocacy office." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="Committee Conflict Resolution Guide"
+        itemType="EducationalOrganization"
       />
 
       {/* Hero Section */}

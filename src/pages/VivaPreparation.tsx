@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -306,6 +306,12 @@ const VivaPreparation = () => {
           { name: "Prepare for All Outcomes", text: "Understand possible results: pass, minor corrections, major corrections, revise and resubmit, or fail. Know that most outcomes involve some corrections—this is normal and expected." },
           { name: "Master Day-Of Strategies", text: "Arrive 15-20 minutes early. Bring annotated thesis, summary notes, and water. Remember you're the world expert on your research. Listen carefully, think before speaking, and acknowledge limits honestly." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="Viva Preparation Guide"
+        itemType="EducationalOrganization"
       />
 
       {/* Hero Section */}

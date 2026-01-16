@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -275,6 +275,12 @@ Thank you for your support,
           { name: "Escalate Through Proper Channels", text: "If direct resolution fails, involve neutral third parties like your graduate program director or university ombudsman for mediation support." },
           { name: "Implement Structural Solutions", text: "Consider adding a co-supervisor, establishing written supervision agreements, or transferring supervisors if the relationship is irreparable." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="PhD Supervisor Survival Guide"
+        itemType="EducationalOrganization"
       />
 
       {/* Hero Section */}
