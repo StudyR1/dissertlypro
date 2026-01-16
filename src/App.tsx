@@ -33,6 +33,9 @@ const Order = lazy(() => import("./pages/Order"));
 const SupervisorGuide = lazy(() => import("./pages/SupervisorGuide"));
 const MentalHealthHub = lazy(() => import("./pages/MentalHealthHub"));
 const CommitteeConflicts = lazy(() => import("./pages/CommitteeConflicts"));
+const DeadlinesDeferrals = lazy(() => import("./pages/DeadlinesDeferrals"));
+const VivaPreparation = lazy(() => import("./pages/VivaPreparation"));
+const PartTimePhD = lazy(() => import("./pages/PartTimePhD"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -75,6 +78,9 @@ const App = () => (
               <Route path="/supervisor-guide" element={<SupervisorGuide />} />
               <Route path="/phd-mental-health" element={<MentalHealthHub />} />
               <Route path="/committee-conflicts" element={<CommitteeConflicts />} />
+              <Route path="/deadlines-deferrals" element={<DeadlinesDeferrals />} />
+              <Route path="/viva-preparation" element={<VivaPreparation />} />
+              <Route path="/part-time-phd" element={<PartTimePhD />} />
               {/* Region-specific landing pages */}
               <Route path="/uk" element={<RegionLanding />} />
               <Route path="/us" element={<RegionLanding />} />
