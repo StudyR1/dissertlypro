@@ -33,7 +33,8 @@ import {
   HelpCircle,
   Network,
   Layers,
-  Star
+  Star,
+  Brain
 } from "lucide-react";
 
 const LimitedSupervision = () => {
@@ -880,42 +881,55 @@ Best regards,
             </h2>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
-            <Link to="/supervisor-guide" className="group">
-              <Card className="h-full bg-card border-border hover:border-copper/30 transition-colors">
-                <CardContent className="p-6">
-                  <Users className="w-8 h-8 text-copper mb-4" />
-                  <h3 className="font-bold text-foreground mb-2 group-hover:text-copper transition-colors">
-                    Supervisor Survival Guide
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Navigate difficult supervisor relationships.
-                  </p>
-                </CardContent>
-              </Card>
-            </Link>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Link to="/masters-thesis-guide" className="group">
               <Card className="h-full bg-card border-border hover:border-copper/30 transition-colors">
-                <CardContent className="p-6">
-                  <GraduationCap className="w-8 h-8 text-copper mb-4" />
-                  <h3 className="font-bold text-foreground mb-2 group-hover:text-copper transition-colors">
+                <CardContent className="p-5">
+                  <GraduationCap className="w-6 h-6 text-copper mb-3" />
+                  <h3 className="font-bold text-foreground mb-1 group-hover:text-copper transition-colors text-sm">
                     Master's Thesis Guide
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Complete A-Z roadmap for thesis success.
+                  <p className="text-xs text-muted-foreground">
+                    Complete A-Z roadmap
                   </p>
                 </CardContent>
               </Card>
             </Link>
             <Link to="/accelerated-masters" className="group">
               <Card className="h-full bg-card border-border hover:border-copper/30 transition-colors">
-                <CardContent className="p-6">
-                  <Calendar className="w-8 h-8 text-copper mb-4" />
-                  <h3 className="font-bold text-foreground mb-2 group-hover:text-copper transition-colors">
+                <CardContent className="p-5">
+                  <Calendar className="w-6 h-6 text-copper mb-3" />
+                  <h3 className="font-bold text-foreground mb-1 group-hover:text-copper transition-colors text-sm">
                     Accelerated Programs
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Survive intensive 12-18 month programs.
+                  <p className="text-xs text-muted-foreground">
+                    Complete in 12-18 months
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to="/qualitative-analysis" className="group">
+              <Card className="h-full bg-card border-border hover:border-copper/30 transition-colors">
+                <CardContent className="p-5">
+                  <Brain className="w-6 h-6 text-copper mb-3" />
+                  <h3 className="font-bold text-foreground mb-1 group-hover:text-copper transition-colors text-sm">
+                    Qualitative Analysis
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    Coding & thematic methods
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to="/masters-defense" className="group">
+              <Card className="h-full bg-card border-border hover:border-copper/30 transition-colors">
+                <CardContent className="p-5">
+                  <MessageSquare className="w-6 h-6 text-copper mb-3" />
+                  <h3 className="font-bold text-foreground mb-1 group-hover:text-copper transition-colors text-sm">
+                    Defense Preparation
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    Ace your oral exam
                   </p>
                 </CardContent>
               </Card>
