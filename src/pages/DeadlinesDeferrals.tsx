@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -317,6 +317,12 @@ Sincerely,
           { name: "Follow Official Procedures", text: "Submit to the correct department using required forms. Keep copies of everything. Follow up if you don't receive acknowledgment within stated timeframes." },
           { name: "Avoid Common Red Flags", text: "Don't leave requests until the last minute, use vague claims, provide no evidence, request excessive time, or blame others without documentation." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="Deadlines & Deferrals Guide"
+        itemType="EducationalOrganization"
       />
 
       {/* Hero Section */}

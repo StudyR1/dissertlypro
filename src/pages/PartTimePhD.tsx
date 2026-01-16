@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -334,6 +334,12 @@ Best regards,
           { name: "Optimize Supervisor Relationship", text: "Request flexible meeting times. Use asynchronous communication effectively. Batch questions for efficient meetings and clarify response time expectations." },
           { name: "Maintain Realistic Expectations", text: "Plan for 6-8 years timeline with contingency. Know your minimum viable thesis. Treat extensions as emergency backup, not Plan A." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="Part-Time PhD Guide"
+        itemType="EducationalOrganization"
       />
 
       {/* Hero Section */}

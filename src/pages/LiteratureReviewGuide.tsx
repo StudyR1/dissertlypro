@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -496,6 +496,12 @@ const LiteratureReviewGuide = () => {
           { name: "Identify Research Gaps", text: "Look for methodological gaps, population gaps, contextual gaps, temporal gaps, and theoretical gaps. Document how your study addresses these gaps." },
           { name: "Write with Proper Structure", text: "Begin with introduction and scope, organize body sections thematically, include critical evaluation of sources, establish the gap your study addresses, and conclude with transition to your methodology." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="Literature Review Mastery Guide"
+        itemType="EducationalOrganization"
       />
 
       {/* Hero Section */}

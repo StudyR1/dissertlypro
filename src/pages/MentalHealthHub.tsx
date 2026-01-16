@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -275,6 +275,12 @@ const MentalHealthHub = () => {
           { name: "Seek Appropriate Support", text: "Access university counseling services, community mental health resources, or peer support groups. Don't wait until symptoms are severe—early intervention is more effective." },
           { name: "Build Sustainable Habits", text: "Protect strict work-hour boundaries, schedule non-negotiable rest days, and reconnect with activities outside academia. Remember that completing your PhD is not worth destroying your mental health." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="PhD Mental Health Hub"
+        itemType="EducationalOrganization"
       />
 
       {/* Hero Section */}

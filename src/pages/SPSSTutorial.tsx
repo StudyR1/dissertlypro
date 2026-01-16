@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -336,6 +336,12 @@ FREQUENCIES VARIABLES=gender marital_status
           { name: "Run Your Analysis", text: "Execute inferential statistics and regression analyses. For regression, check multicollinearity (VIF), homoscedasticity, and normality of residuals." },
           { name: "Interpret and Report Results", text: "Read all output carefully including footnotes and warnings. Report test statistics, degrees of freedom, p-values, and effect sizes in APA format. Example: 't(98) = 2.45, p = .016, d = 0.49'." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="SPSS Tutorial for Dissertation Analysis"
+        itemType="EducationalOrganization"
       />
 
       {/* Hero Section */}

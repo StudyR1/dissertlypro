@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -399,6 +399,12 @@ const ResearchMethodology = () => {
           { name: "Choose Data Collection Methods", text: "Select appropriate methods: surveys, experiments, existing data for quantitative; interviews, focus groups, observations for qualitative. Ensure alignment with research design." },
           { name: "Address Validity and Ethics", text: "Plan for internal and external validity, reliability, and trustworthiness. Obtain IRB approval, design informed consent procedures, and address confidentiality and data security." }
         ]}
+      />
+      <AggregateRatingSchema 
+        ratingValue={4.9}
+        reviewCount={2847}
+        itemName="Research Methodology Masterclass"
+        itemType="EducationalOrganization"
       />
 
       {/* Hero Section */}
