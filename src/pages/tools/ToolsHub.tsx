@@ -26,7 +26,7 @@ const tools = [
     icon: Lightbulb,
     href: "/tools/thesis-builder",
     features: ["5-step wizard", "4 thesis types", "Instant generation"],
-    badge: "New",
+    badge: null,
     badgeVariant: "secondary" as const,
   },
   {
@@ -39,14 +39,39 @@ const tools = [
     badge: null,
     badgeVariant: "secondary" as const,
   },
+  {
+    id: "deadline-checker",
+    title: "Deadline Risk Checker",
+    description: "Assess your dissertation timeline risk level. Get actionable recommendations based on your deadline and word count target.",
+    icon: Zap,
+    href: "/tools/deadline-checker",
+    features: ["Risk assessment", "Action items", "Timeline analysis"],
+    badge: "New",
+    badgeVariant: "secondary" as const,
+  },
+  {
+    id: "word-counter",
+    title: "Word Count Calculator",
+    description: "Calculate reading time, page counts, and character counts for your dissertation. Supports multiple academic formats.",
+    icon: Calculator,
+    href: "/tools/word-counter",
+    features: ["Pages calculator", "Reading time", "Multiple formats"],
+    badge: null,
+    badgeVariant: "secondary" as const,
+  },
+  {
+    id: "quote-calculator",
+    title: "Quote Calculator",
+    description: "Get an instant price estimate for dissertation support services. Transparent pricing with no hidden fees.",
+    icon: FileText,
+    href: "/tools/quote-calculator",
+    features: ["Instant quotes", "Multiple services", "Flexible timelines"],
+    badge: null,
+    badgeVariant: "secondary" as const,
+  },
 ];
 
 const upcomingTools = [
-  {
-    title: "Word Count Calculator",
-    description: "Calculate reading time, page counts, and chapter distributions for your dissertation.",
-    icon: Calculator,
-  },
   {
     title: "Research Question Validator",
     description: "Assess if your research questions are well-formed using PICO and SPIDER frameworks.",
