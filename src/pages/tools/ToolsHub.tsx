@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb } from "lucide-react";
+import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
@@ -69,12 +69,22 @@ const tools = [
     badge: null,
     badgeVariant: "secondary" as const,
   },
+  {
+    id: "research-question-validator",
+    title: "Research Question Validator",
+    description: "Assess if your research questions are well-formed using PICO and SPIDER frameworks. Get instant scoring and improvement suggestions.",
+    icon: HelpCircle,
+    href: "/tools/research-question-validator",
+    features: ["PICO framework", "SPIDER framework", "Instant scoring"],
+    badge: "New",
+    badgeVariant: "secondary" as const,
+  },
 ];
 
 const upcomingTools = [
   {
-    title: "Research Question Validator",
-    description: "Assess if your research questions are well-formed using PICO and SPIDER frameworks.",
+    title: "Outline Generator",
+    description: "Create structured dissertation chapter outlines based on your research question and methodology.",
     icon: FileText,
   },
 ];
@@ -102,7 +112,7 @@ const toolsFAQs = [
   },
   {
     question: "Will you add more free tools?",
-    answer: "Yes! We're constantly developing new tools to help students. Upcoming tools include a Word Count Calculator and Research Question Validator."
+    answer: "Yes! We're constantly developing new tools to help students. Upcoming tools include an Outline Generator and more."
   }
 ];
 
