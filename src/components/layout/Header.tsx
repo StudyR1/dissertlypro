@@ -45,6 +45,7 @@ const resourceLinks = [
   { title: "Deadlines & Deferrals", href: "/deadlines-deferrals", description: "Extension strategies that work", icon: Calendar },
   { title: "Viva Preparation", href: "/viva-preparation", description: "Ace your oral examination", icon: Mic },
   { title: "Part-Time PhD", href: "/part-time-phd", description: "Balance work and research", icon: Briefcase },
+  { title: "View All PhD Resources", href: "/phd-resources", description: "20+ guides for doctoral students", icon: GraduationCap },
 ];
 
 const mastersResourceLinks = [
