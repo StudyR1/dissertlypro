@@ -1,72 +1,66 @@
 import { Skeleton } from '@/components/ui/skeleton';
+import { memo } from 'react';
+
+// Memoized header skeleton component
+const HeaderSkeleton = memo(() => (
+  <div className="h-16 sm:h-20 border-b border-border bg-card">
+    <div className="container flex items-center justify-between h-full px-4 sm:px-6">
+      <Skeleton className="h-10 w-32 sm:w-40" />
+      <div className="hidden md:flex gap-6">
+        <Skeleton className="h-4 w-20" />
+        <Skeleton className="h-4 w-20" />
+        <Skeleton className="h-4 w-20" />
+        <Skeleton className="h-4 w-20" />
+      </div>
+      <Skeleton className="h-10 w-24 sm:w-32" />
+    </div>
+  </div>
+));
+HeaderSkeleton.displayName = 'HeaderSkeleton';
 
 // Generic page skeleton with header and hero
-const SkeletonPage = () => {
-  return (
-    <div className="min-h-screen bg-background animate-fade-in">
-      {/* Header skeleton */}
-      <div className="h-20 border-b border-border bg-card">
-        <div className="container flex items-center justify-between h-full px-4 sm:px-6">
-          <Skeleton className="h-10 w-32 sm:w-40" />
-          <div className="hidden md:flex gap-6">
-            <Skeleton className="h-4 w-20" />
-            <Skeleton className="h-4 w-20" />
-            <Skeleton className="h-4 w-20" />
-            <Skeleton className="h-4 w-20" />
-          </div>
-          <Skeleton className="h-10 w-24 sm:w-32" />
-        </div>
-      </div>
+const SkeletonPage = memo(() => (
+  <div className="min-h-screen bg-background animate-fade-in">
+    <HeaderSkeleton />
 
-      {/* Hero skeleton */}
-      <div className="py-16 lg:py-24 bg-primary">
-        <div className="container px-4 sm:px-6">
-          <div className="max-w-2xl">
-            <Skeleton className="h-4 w-32 mb-4 bg-white/10" />
-            <Skeleton className="h-10 sm:h-12 w-full mb-4 bg-white/10" />
-            <Skeleton className="h-10 sm:h-12 w-3/4 mb-6 bg-white/10" />
-            <Skeleton className="h-5 w-full mb-2 bg-white/10" />
-            <Skeleton className="h-5 w-2/3 mb-8 bg-white/10" />
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Skeleton className="h-12 w-full sm:w-40 bg-white/10" />
-              <Skeleton className="h-12 w-full sm:w-32 bg-white/10" />
-            </div>
+    {/* Hero skeleton */}
+    <div className="py-16 lg:py-24 bg-primary">
+      <div className="container px-4 sm:px-6">
+        <div className="max-w-2xl">
+          <Skeleton className="h-4 w-32 mb-4 bg-white/10" />
+          <Skeleton className="h-10 sm:h-12 w-full mb-4 bg-white/10" />
+          <Skeleton className="h-10 sm:h-12 w-3/4 mb-6 bg-white/10" />
+          <Skeleton className="h-5 w-full mb-2 bg-white/10" />
+          <Skeleton className="h-5 w-2/3 mb-8 bg-white/10" />
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Skeleton className="h-12 w-full sm:w-40 bg-white/10" />
+            <Skeleton className="h-12 w-full sm:w-32 bg-white/10" />
           </div>
-        </div>
-      </div>
-
-      {/* Content skeleton */}
-      <div className="py-12 sm:py-16 container px-4 sm:px-6">
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="p-5 sm:p-6 rounded-xl border border-border bg-card">
-              <Skeleton className="h-12 w-12 rounded-lg mb-4" />
-              <Skeleton className="h-6 w-3/4 mb-3" />
-              <Skeleton className="h-4 w-full mb-2" />
-              <Skeleton className="h-4 w-2/3" />
-            </div>
-          ))}
         </div>
       </div>
     </div>
-  );
-};
+
+    {/* Content skeleton */}
+    <div className="py-12 sm:py-16 container px-4 sm:px-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        {[1, 2, 3, 4, 5, 6].map((i) => (
+          <div key={i} className="p-5 sm:p-6 rounded-xl border border-border bg-card">
+            <Skeleton className="h-12 w-12 rounded-lg mb-4" />
+            <Skeleton className="h-6 w-3/4 mb-3" />
+            <Skeleton className="h-4 w-full mb-2" />
+            <Skeleton className="h-4 w-2/3" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+));
+SkeletonPage.displayName = 'SkeletonPage';
 
 // Services grid skeleton
-export const ServicesGridSkeleton = () => (
+export const ServicesGridSkeleton = memo(() => (
   <div className="min-h-screen bg-background animate-fade-in">
-    {/* Header */}
-    <div className="h-20 border-b border-border bg-card">
-      <div className="container flex items-center justify-between h-full px-4 sm:px-6">
-        <Skeleton className="h-10 w-32 sm:w-40" />
-        <div className="hidden md:flex gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} className="h-4 w-20" />
-          ))}
-        </div>
-        <Skeleton className="h-10 w-24 sm:w-32" />
-      </div>
-    </div>
+    <HeaderSkeleton />
 
     {/* Hero */}
     <div className="py-12 sm:py-16 lg:py-24 bg-primary">
@@ -106,23 +100,13 @@ export const ServicesGridSkeleton = () => (
       </div>
     </div>
   </div>
-);
+));
+ServicesGridSkeleton.displayName = 'ServicesGridSkeleton';
 
 // Blog grid skeleton
-export const BlogGridSkeleton = () => (
+export const BlogGridSkeleton = memo(() => (
   <div className="min-h-screen bg-background animate-fade-in">
-    {/* Header */}
-    <div className="h-20 border-b border-border bg-card">
-      <div className="container flex items-center justify-between h-full px-4 sm:px-6">
-        <Skeleton className="h-10 w-32 sm:w-40" />
-        <div className="hidden md:flex gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} className="h-4 w-20" />
-          ))}
-        </div>
-        <Skeleton className="h-10 w-24 sm:w-32" />
-      </div>
-    </div>
+    <HeaderSkeleton />
 
     {/* Hero */}
     <div className="py-12 sm:py-16 lg:py-20 bg-primary">
@@ -194,23 +178,13 @@ export const BlogGridSkeleton = () => (
       </div>
     </div>
   </div>
-);
+));
+BlogGridSkeleton.displayName = 'BlogGridSkeleton';
 
 // Article/resource page skeleton
-export const ArticleSkeleton = () => (
+export const ArticleSkeleton = memo(() => (
   <div className="min-h-screen bg-background animate-fade-in">
-    {/* Header */}
-    <div className="h-20 border-b border-border bg-card">
-      <div className="container flex items-center justify-between h-full px-4 sm:px-6">
-        <Skeleton className="h-10 w-32 sm:w-40" />
-        <div className="hidden md:flex gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} className="h-4 w-20" />
-          ))}
-        </div>
-        <Skeleton className="h-10 w-24 sm:w-32" />
-      </div>
-    </div>
+    <HeaderSkeleton />
 
     {/* Breadcrumb */}
     <div className="py-3 bg-muted/30">
@@ -303,23 +277,13 @@ export const ArticleSkeleton = () => (
       </div>
     </div>
   </div>
-);
+));
+ArticleSkeleton.displayName = 'ArticleSkeleton';
 
 // Service detail skeleton
-export const ServiceDetailSkeleton = () => (
+export const ServiceDetailSkeleton = memo(() => (
   <div className="min-h-screen bg-background animate-fade-in">
-    {/* Header */}
-    <div className="h-20 border-b border-border bg-card">
-      <div className="container flex items-center justify-between h-full px-4 sm:px-6">
-        <Skeleton className="h-10 w-32 sm:w-40" />
-        <div className="hidden md:flex gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} className="h-4 w-20" />
-          ))}
-        </div>
-        <Skeleton className="h-10 w-24 sm:w-32" />
-      </div>
-    </div>
+    <HeaderSkeleton />
 
     {/* Hero */}
     <div className="py-16 lg:py-24 bg-primary">
@@ -406,6 +370,7 @@ export const ServiceDetailSkeleton = () => (
       </div>
     </div>
   </div>
-);
+));
+ServiceDetailSkeleton.displayName = 'ServiceDetailSkeleton';
 
 export default SkeletonPage;

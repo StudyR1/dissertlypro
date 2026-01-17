@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const FloatingWhatsApp = () => {
+const FloatingWhatsApp = memo(() => {
   const phoneNumber = '18126905122';
   const message = encodeURIComponent('Hello! I need help with my dissertation.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -20,6 +21,8 @@ const FloatingWhatsApp = () => {
       <MessageCircle className="h-7 w-7" />
     </motion.a>
   );
-};
+});
+
+FloatingWhatsApp.displayName = 'FloatingWhatsApp';
 
 export default FloatingWhatsApp;

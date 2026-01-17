@@ -1,35 +1,35 @@
+import { memo, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
 
-const MobileCTA = () => {
+const MobileCTA = memo(() => {
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Show after scrolling down 300px
-      if (currentScrollY > 300) {
-        // Hide when scrolling down, show when scrolling up
-        if (currentScrollY < lastScrollY || currentScrollY > 500) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    
+    // Show after scrolling down 300px
+    if (currentScrollY > 300) {
+      // Hide when scrolling down, show when scrolling up
+      if (currentScrollY < lastScrollY || currentScrollY > 500) {
+        setIsVisible(true);
       } else {
         setIsVisible(false);
       }
-      
-      setLastScrollY(currentScrollY);
-    };
+    } else {
+      setIsVisible(false);
+    }
+    
+    setLastScrollY(currentScrollY);
+  }, [lastScrollY]);
 
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [handleScroll]);
 
   return (
     <AnimatePresence>
@@ -83,6 +83,8 @@ const MobileCTA = () => {
       )}
     </AnimatePresence>
   );
-};
+});
+
+MobileCTA.displayName = 'MobileCTA';
 
 export default MobileCTA;
