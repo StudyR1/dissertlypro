@@ -95,7 +95,7 @@ const resources: Resource[] = [
   {
     title: "PhD Candidacy & Qualifying Exams",
     description: "Prepare for comprehensive exams and candidacy milestones. Study strategies, reading lists, and oral exam techniques.",
-    href: "/resources#candidacy-exams",
+    href: "/candidacy-exams",
     icon: Award,
     category: "core",
     tier: 1,
@@ -148,7 +148,7 @@ const resources: Resource[] = [
   {
     title: "PhD Funding & Grants",
     description: "Secure funding for your doctoral research. Grant writing strategies, fellowship applications, and funding source databases.",
-    href: "/resources#phd-funding",
+    href: "/phd-funding",
     icon: TrendingUp,
     category: "specialized",
     tier: 2,
@@ -158,7 +158,7 @@ const resources: Resource[] = [
   {
     title: "Academic Networking for PhDs",
     description: "Build your academic network strategically. Conference networking, collaboration strategies, and social media for researchers.",
-    href: "/resources#academic-networking",
+    href: "/academic-networking",
     icon: Network,
     category: "specialized",
     tier: 2,
@@ -168,7 +168,7 @@ const resources: Resource[] = [
   {
     title: "Publishing During Your PhD",
     description: "Navigate academic publishing while completing your dissertation. Journal selection, peer review, and building your publication record.",
-    href: "/resources#phd-publishing",
+    href: "/phd-publishing",
     icon: BookMarked,
     category: "specialized",
     tier: 2,
@@ -178,7 +178,7 @@ const resources: Resource[] = [
   {
     title: "PhD to Industry Transition",
     description: "Translate your doctoral skills for industry careers. Resume conversion, interview strategies, and non-academic job search.",
-    href: "/resources#phd-industry",
+    href: "/phd-industry",
     icon: Briefcase,
     category: "specialized",
     tier: 2,
@@ -188,7 +188,7 @@ const resources: Resource[] = [
   {
     title: "International PhD Guide",
     description: "Navigate doctoral study in a foreign country. Visa considerations, cultural adaptation, and building support networks abroad.",
-    href: "/resources#international-phd",
+    href: "/international-phd",
     icon: Globe,
     category: "specialized",
     tier: 2,
@@ -231,7 +231,7 @@ const resources: Resource[] = [
   {
     title: "Dissertation Writing & Structure",
     description: "Master the five-chapter dissertation format. Chapter templates, word count guides, and strategies for maintaining momentum.",
-    href: "/resources#dissertation-structure",
+    href: "/dissertation-structure",
     icon: FileText,
     category: "technical",
     tier: 3,
@@ -251,7 +251,7 @@ const resources: Resource[] = [
   {
     title: "Academic Writing for Dissertations",
     description: "Develop your scholarly voice. Argumentation, critical analysis, and maintaining consistency across a 80,000+ word document.",
-    href: "/resources#dissertation-writing",
+    href: "/dissertation-writing",
     icon: PenTool,
     category: "technical",
     tier: 3,
