@@ -13,6 +13,7 @@ const NightOwlTheme = lazy(() => import("@/components/features/NightOwlTheme"));
 const WordCountCalculator = lazy(() => import("@/components/features/WordCountCalculator"));
 const InstantQuoteCalculator = lazy(() => import("@/components/features/InstantQuoteCalculator"));
 const DeadlineDangerZone = lazy(() => import("@/components/features/DeadlineDangerZone"));
+const ChapterTimelinePlanner = lazy(() => import("@/components/features/ChapterTimelinePlanner"));
 
 interface LayoutProps {
   children: ReactNode;
@@ -39,6 +40,7 @@ const Layout = memo(({ children }: LayoutProps) => {
         <WordCountCalculator />
         <InstantQuoteCalculator />
         <DeadlineDangerZone />
+        <ChapterTimelinePlanner />
       </Suspense>
       
       {/* Mobile CTA Bar */}
