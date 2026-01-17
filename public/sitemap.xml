@@ -646,6 +646,27 @@
     <priority>0.9</priority>
   </url>
   
+  <url>
+    <loc>https://dissertlypro.com/tools/deadline-checker</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/tools/word-counter</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/tools/quote-calculator</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
   <!-- Legal Pages -->
   <url>
     <loc>https://dissertlypro.com/privacy</loc>

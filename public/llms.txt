@@ -89,6 +89,18 @@ Visual Gantt-style dissertation timeline planner. Calculate chapter deadlines, t
 **URL:** https://dissertlypro.com/tools/thesis-builder
 Build a strong thesis statement with a 5-step wizard. Supports argumentative, analytical, expository, and compare/contrast thesis types. Perfect for dissertations. Free, no sign-up required.
 
+### Deadline Risk Checker
+**URL:** https://dissertlypro.com/tools/deadline-checker
+Assess your dissertation timeline risk level. Get actionable recommendations based on your deadline and word count target. Free, no sign-up required.
+
+### Word Count Calculator
+**URL:** https://dissertlypro.com/tools/word-counter
+Calculate reading time, page counts, and character counts for your dissertation. Supports multiple academic formats. Free, no sign-up required.
+
+### Quote Calculator
+**URL:** https://dissertlypro.com/tools/quote-calculator
+Get an instant price estimate for dissertation support services. Transparent pricing with no hidden fees. Free, no sign-up required.
+
 ## Tool-Focused Guides
 
 ### How to Write a Thesis Statement
