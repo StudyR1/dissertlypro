@@ -83,6 +83,7 @@ const WordCounterPage = lazy(() => import("./pages/tools/WordCounterPage"));
 const QuoteCalculatorPage = lazy(() => import("./pages/tools/QuoteCalculatorPage"));
 const ResearchQuestionValidatorPage = lazy(() => import("./pages/tools/ResearchQuestionValidatorPage"));
 const PersonalizationQuizPage = lazy(() => import("./pages/tools/PersonalizationQuizPage"));
+const DIYComparisonCalculatorPage = lazy(() => import("./pages/tools/DIYComparisonCalculatorPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -216,6 +217,7 @@ const App = () => (
             <Route path="/tools/quote-calculator" element={<Suspense fallback={<SkeletonPage />}><QuoteCalculatorPage /></Suspense>} />
             <Route path="/tools/research-question-validator" element={<Suspense fallback={<SkeletonPage />}><ResearchQuestionValidatorPage /></Suspense>} />
             <Route path="/tools/personalization-quiz" element={<Suspense fallback={<SkeletonPage />}><PersonalizationQuizPage /></Suspense>} />
+            <Route path="/tools/diy-comparison" element={<Suspense fallback={<SkeletonPage />}><DIYComparisonCalculatorPage /></Suspense>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
