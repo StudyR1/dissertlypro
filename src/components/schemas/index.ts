@@ -1,4 +1,5 @@
 export { default as OrganizationSchema } from './OrganizationSchema';
+export { default as ToolSchema } from './ToolSchema';
 export { default as WebsiteSchema } from './WebsiteSchema';
 export { default as ServiceSchema } from './ServiceSchema';
 export { default as ServicesListSchema } from './ServicesListSchema';

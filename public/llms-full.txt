@@ -402,6 +402,10 @@ A: Yes. All client information is protected with enterprise-grade security. We n
 - /services/journal-preparation
 - /services/formatting
 
+### Free Academic Tools
+- /tools/citation-generator (Free Citation Generator - APA, MLA, Chicago, Harvard)
+- /tools/chapter-planner (Dissertation Timeline Planner - Gantt-style scheduling)
+
 ---
 
 ## TECHNICAL INFORMATION
