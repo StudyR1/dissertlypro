@@ -6,7 +6,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "@/components/ScrollToTop";
-import SkeletonPage from "@/components/ui/skeleton-page";
+import SkeletonPage, { 
+  ServicesGridSkeleton, 
+  BlogGridSkeleton, 
+  ArticleSkeleton,
+  ServiceDetailSkeleton 
+} from "@/components/ui/skeleton-page";
 
 // Critical path - load immediately
 import Index from "./pages/Index";
@@ -75,6 +80,37 @@ const queryClient = new QueryClient({
   },
 });
 
+// Wrapper components with appropriate skeletons
+const ServicesWithSkeleton = () => (
+  <Suspense fallback={<ServicesGridSkeleton />}>
+    <Services />
+  </Suspense>
+);
+
+const ServiceDetailWithSkeleton = () => (
+  <Suspense fallback={<ServiceDetailSkeleton />}>
+    <ServiceDetail />
+  </Suspense>
+);
+
+const BlogWithSkeleton = () => (
+  <Suspense fallback={<BlogGridSkeleton />}>
+    <Blog />
+  </Suspense>
+);
+
+const BlogPostWithSkeleton = () => (
+  <Suspense fallback={<ArticleSkeleton />}>
+    <BlogPost />
+  </Suspense>
+);
+
+const ResourceWithSkeleton = ({ Component }: { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }) => (
+  <Suspense fallback={<ArticleSkeleton />}>
+    <Component />
+  </Suspense>
+);
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
@@ -83,70 +119,79 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <Suspense fallback={<SkeletonPage />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/services/:slug" element={<ServiceDetail />} />
-              <Route path="/subjects" element={<Subjects />} />
-              <Route path="/working-professionals" element={<WorkingProfessionals />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              <Route path="/ethics" element={<Ethics />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/consultation" element={<Consultation />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/gdpr" element={<GDPR />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/experts" element={<Experts />} />
-              <Route path="/order" element={<Order />} />
-              <Route path="/supervisor-guide" element={<SupervisorGuide />} />
-              <Route path="/phd-mental-health" element={<MentalHealthHub />} />
-              <Route path="/committee-conflicts" element={<CommitteeConflicts />} />
-              <Route path="/deadlines-deferrals" element={<DeadlinesDeferrals />} />
-              <Route path="/viva-preparation" element={<VivaPreparation />} />
-              <Route path="/part-time-phd" element={<PartTimePhD />} />
-              <Route path="/spss-tutorial" element={<SPSSTutorial />} />
-              <Route path="/research-methodology" element={<ResearchMethodology />} />
-              <Route path="/literature-review-guide" element={<LiteratureReviewGuide />} />
-              <Route path="/resources" element={<Resources />} />
-              <Route path="/phd-resources" element={<PhDResources />} />
-              <Route path="/candidacy-exams" element={<CandidacyExams />} />
-              <Route path="/phd-funding" element={<PhDFunding />} />
-              <Route path="/academic-networking" element={<AcademicNetworking />} />
-              <Route path="/phd-publishing" element={<PhDPublishing />} />
-              <Route path="/phd-industry" element={<PhDIndustry />} />
-              <Route path="/international-phd" element={<InternationalPhD />} />
-              <Route path="/dissertation-structure" element={<DissertationStructure />} />
-              <Route path="/dissertation-writing" element={<DissertationWriting />} />
-              {/* Master's Thesis Resources */}
-              <Route path="/masters-resources" element={<MastersResources />} />
-              <Route path="/masters-thesis-guide" element={<MastersThesisGuide />} />
-              <Route path="/dissertation-vs-thesis" element={<DissertationVsThesis />} />
-              <Route path="/thesis-topic-selection" element={<ThesisTopicSelection />} />
-              <Route path="/accelerated-masters" element={<AcceleratedMasters />} />
-              <Route path="/coursework-to-thesis" element={<CourseworkToThesis />} />
-              <Route path="/limited-supervision" element={<LimitedSupervision />} />
-              <Route path="/qualitative-analysis" element={<QualitativeAnalysis />} />
-              <Route path="/masters-defense" element={<MastersDefense />} />
-              <Route path="/citation-mastery" element={<CitationMastery />} />
-              <Route path="/research-questions" element={<ResearchQuestions />} />
-              <Route path="/thesis-structure" element={<ThesisStructure />} />
-              <Route path="/international-students" element={<InternationalStudents />} />
-              <Route path="/committee-communication" element={<CommitteeCommunication />} />
-              <Route path="/academic-writing" element={<AcademicWriting />} />
-              {/* Region-specific landing pages */}
-              <Route path="/uk" element={<RegionLanding />} />
-              <Route path="/us" element={<RegionLanding />} />
-              <Route path="/au" element={<RegionLanding />} />
-              <Route path="/ca" element={<RegionLanding />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            
+            {/* Services routes with grid skeleton */}
+            <Route path="/services" element={<ServicesWithSkeleton />} />
+            <Route path="/services/:slug" element={<ServiceDetailWithSkeleton />} />
+            
+            {/* Blog routes with appropriate skeletons */}
+            <Route path="/blog" element={<BlogWithSkeleton />} />
+            <Route path="/blog/:slug" element={<BlogPostWithSkeleton />} />
+            
+            {/* Standard pages with generic skeleton */}
+            <Route path="/subjects" element={<Suspense fallback={<ServicesGridSkeleton />}><Subjects /></Suspense>} />
+            <Route path="/working-professionals" element={<Suspense fallback={<SkeletonPage />}><WorkingProfessionals /></Suspense>} />
+            <Route path="/pricing" element={<Suspense fallback={<SkeletonPage />}><Pricing /></Suspense>} />
+            <Route path="/ethics" element={<Suspense fallback={<SkeletonPage />}><Ethics /></Suspense>} />
+            <Route path="/contact" element={<Suspense fallback={<SkeletonPage />}><Contact /></Suspense>} />
+            <Route path="/consultation" element={<Suspense fallback={<SkeletonPage />}><Consultation /></Suspense>} />
+            <Route path="/faq" element={<Suspense fallback={<SkeletonPage />}><FAQ /></Suspense>} />
+            <Route path="/privacy" element={<Suspense fallback={<SkeletonPage />}><Privacy /></Suspense>} />
+            <Route path="/terms" element={<Suspense fallback={<SkeletonPage />}><Terms /></Suspense>} />
+            <Route path="/gdpr" element={<Suspense fallback={<SkeletonPage />}><GDPR /></Suspense>} />
+            <Route path="/about" element={<Suspense fallback={<SkeletonPage />}><About /></Suspense>} />
+            <Route path="/experts" element={<Suspense fallback={<SkeletonPage />}><Experts /></Suspense>} />
+            <Route path="/order" element={<Suspense fallback={<SkeletonPage />}><Order /></Suspense>} />
+            
+            {/* Resource/Article pages with article skeleton */}
+            <Route path="/supervisor-guide" element={<Suspense fallback={<ArticleSkeleton />}><SupervisorGuide /></Suspense>} />
+            <Route path="/phd-mental-health" element={<Suspense fallback={<ArticleSkeleton />}><MentalHealthHub /></Suspense>} />
+            <Route path="/committee-conflicts" element={<Suspense fallback={<ArticleSkeleton />}><CommitteeConflicts /></Suspense>} />
+            <Route path="/deadlines-deferrals" element={<Suspense fallback={<ArticleSkeleton />}><DeadlinesDeferrals /></Suspense>} />
+            <Route path="/viva-preparation" element={<Suspense fallback={<ArticleSkeleton />}><VivaPreparation /></Suspense>} />
+            <Route path="/part-time-phd" element={<Suspense fallback={<ArticleSkeleton />}><PartTimePhD /></Suspense>} />
+            <Route path="/spss-tutorial" element={<Suspense fallback={<ArticleSkeleton />}><SPSSTutorial /></Suspense>} />
+            <Route path="/research-methodology" element={<Suspense fallback={<ArticleSkeleton />}><ResearchMethodology /></Suspense>} />
+            <Route path="/literature-review-guide" element={<Suspense fallback={<ArticleSkeleton />}><LiteratureReviewGuide /></Suspense>} />
+            <Route path="/resources" element={<Suspense fallback={<ServicesGridSkeleton />}><Resources /></Suspense>} />
+            <Route path="/phd-resources" element={<Suspense fallback={<ServicesGridSkeleton />}><PhDResources /></Suspense>} />
+            <Route path="/candidacy-exams" element={<Suspense fallback={<ArticleSkeleton />}><CandidacyExams /></Suspense>} />
+            <Route path="/phd-funding" element={<Suspense fallback={<ArticleSkeleton />}><PhDFunding /></Suspense>} />
+            <Route path="/academic-networking" element={<Suspense fallback={<ArticleSkeleton />}><AcademicNetworking /></Suspense>} />
+            <Route path="/phd-publishing" element={<Suspense fallback={<ArticleSkeleton />}><PhDPublishing /></Suspense>} />
+            <Route path="/phd-industry" element={<Suspense fallback={<ArticleSkeleton />}><PhDIndustry /></Suspense>} />
+            <Route path="/international-phd" element={<Suspense fallback={<ArticleSkeleton />}><InternationalPhD /></Suspense>} />
+            <Route path="/dissertation-structure" element={<Suspense fallback={<ArticleSkeleton />}><DissertationStructure /></Suspense>} />
+            <Route path="/dissertation-writing" element={<Suspense fallback={<ArticleSkeleton />}><DissertationWriting /></Suspense>} />
+            
+            {/* Master's Resources */}
+            <Route path="/masters-resources" element={<Suspense fallback={<ServicesGridSkeleton />}><MastersResources /></Suspense>} />
+            <Route path="/masters-thesis-guide" element={<Suspense fallback={<ArticleSkeleton />}><MastersThesisGuide /></Suspense>} />
+            <Route path="/dissertation-vs-thesis" element={<Suspense fallback={<ArticleSkeleton />}><DissertationVsThesis /></Suspense>} />
+            <Route path="/thesis-topic-selection" element={<Suspense fallback={<ArticleSkeleton />}><ThesisTopicSelection /></Suspense>} />
+            <Route path="/accelerated-masters" element={<Suspense fallback={<ArticleSkeleton />}><AcceleratedMasters /></Suspense>} />
+            <Route path="/coursework-to-thesis" element={<Suspense fallback={<ArticleSkeleton />}><CourseworkToThesis /></Suspense>} />
+            <Route path="/limited-supervision" element={<Suspense fallback={<ArticleSkeleton />}><LimitedSupervision /></Suspense>} />
+            <Route path="/qualitative-analysis" element={<Suspense fallback={<ArticleSkeleton />}><QualitativeAnalysis /></Suspense>} />
+            <Route path="/masters-defense" element={<Suspense fallback={<ArticleSkeleton />}><MastersDefense /></Suspense>} />
+            <Route path="/citation-mastery" element={<Suspense fallback={<ArticleSkeleton />}><CitationMastery /></Suspense>} />
+            <Route path="/research-questions" element={<Suspense fallback={<ArticleSkeleton />}><ResearchQuestions /></Suspense>} />
+            <Route path="/thesis-structure" element={<Suspense fallback={<ArticleSkeleton />}><ThesisStructure /></Suspense>} />
+            <Route path="/international-students" element={<Suspense fallback={<ArticleSkeleton />}><InternationalStudents /></Suspense>} />
+            <Route path="/committee-communication" element={<Suspense fallback={<ArticleSkeleton />}><CommitteeCommunication /></Suspense>} />
+            <Route path="/academic-writing" element={<Suspense fallback={<ArticleSkeleton />}><AcademicWriting /></Suspense>} />
+            
+            {/* Region-specific landing pages */}
+            <Route path="/uk" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
+            <Route path="/us" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
+            <Route path="/au" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
+            <Route path="/ca" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
+            
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
+          </Routes>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
