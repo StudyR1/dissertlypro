@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { BreadcrumbSchema, HowToSchema, AggregateRatingSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SeeAlso } from "@/components/ui/see-also";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -307,6 +308,15 @@ const DissertationStructure = () => {
                 </p>
               </CardContent>
             </Card>
+            {/* See Also inline callout */}
+            <SeeAlso 
+              links={[
+                { title: "Dissertation Writing Strategies", href: "/dissertation-writing", description: "Develop your scholarly voice" },
+                { title: "Literature Review Guide", href: "/literature-review-guide", description: "Master Chapter 2" },
+                { title: "Research Methodology", href: "/research-methodology", description: "Design Chapter 3" },
+              ]}
+              title="Deep-dive into specific chapters"
+            />
           </div>
         </div>
       </section>

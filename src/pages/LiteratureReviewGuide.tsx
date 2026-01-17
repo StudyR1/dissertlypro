@@ -4,6 +4,7 @@ import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SeeAlso } from "@/components/ui/see-also";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
@@ -589,6 +590,15 @@ const LiteratureReviewGuide = () => {
                 </ul>
               </div>
             </motion.div>
+
+            {/* Inline See Also */}
+            <SeeAlso 
+              links={[
+                { title: "Citation Mastery Guide", href: "/citation-mastery", description: "APA, MLA, Chicago styles" },
+                { title: "Research Methodology", href: "/research-methodology", description: "Design your research approach" },
+              ]}
+              title="Managing your references?"
+            />
           </div>
         </div>
       </section>
