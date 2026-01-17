@@ -4,6 +4,7 @@ import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SeeAlso } from "@/components/ui/see-also";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
@@ -492,6 +493,16 @@ const ResearchMethodology = () => {
                 </ul>
               </div>
             </motion.div>
+
+            {/* Inline See Also */}
+            <SeeAlso 
+              links={[
+                { title: "SPSS Data Analysis", href: "/spss-tutorial", description: "Master statistical analysis" },
+                { title: "Qualitative Analysis Guide", href: "/qualitative-analysis", description: "Coding & thematic methods" },
+              ]}
+              title="Ready to analyze your data?"
+              variant="highlight"
+            />
           </div>
         </div>
       </section>

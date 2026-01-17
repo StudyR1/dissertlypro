@@ -4,6 +4,7 @@ import { BreadcrumbSchema, AggregateRatingSchema, FAQSchema } from "@/components
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { SeeAlso } from "@/components/ui/see-also";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -377,6 +378,16 @@ const MastersThesisGuide = () => {
                   </li>
                 </ul>
               </div>
+
+              {/* Inline See Also */}
+              <SeeAlso 
+                links={[
+                  { title: "Thesis Topic Selection", href: "/thesis-topic-selection", description: "Career-boosting topic strategies" },
+                  { title: "Research Questions Guide", href: "/research-questions", description: "PICO framework & feasibility" },
+                ]}
+                title="Stuck on topic selection?"
+                variant="highlight"
+              />
             </motion.div>
           </div>
         </div>

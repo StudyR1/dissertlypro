@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { BreadcrumbSchema, HowToSchema, AggregateRatingSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SeeAlso } from "@/components/ui/see-also";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -253,6 +254,15 @@ const CandidacyExams = () => {
                 </motion.div>
               ))}
             </div>
+            {/* See Also inline callout */}
+            <SeeAlso 
+              links={[
+                { title: "Viva Preparation Masterclass", href: "/viva-preparation", description: "Oral exam techniques" },
+                { title: "Supervisor Relationship Guide", href: "/supervisor-guide", description: "Committee communication" },
+              ]}
+              title="Preparing for oral exams?"
+              variant="highlight"
+            />
           </div>
         </div>
       </section>
