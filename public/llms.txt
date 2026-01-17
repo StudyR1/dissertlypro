@@ -119,6 +119,28 @@ Comprehensive guide to creating a realistic PhD timeline. Covers phases, chapter
 **URL:** https://dissertlypro.com/blog/citation-styles-guide-apa-mla-chicago-harvard
 Master APA, MLA, Chicago, and Harvard citation styles. Includes examples, quick references, and links to free Citation Generator tool.
 
+## Technical Deep-Dives
+
+### NVivo Tutorial
+**URL:** https://dissertlypro.com/nvivo-tutorial
+Complete guide to qualitative data analysis using NVivo. Covers coding, thematic analysis, node creation, and data visualization for dissertation research.
+
+### Systematic Literature Review Guide
+**URL:** https://dissertlypro.com/systematic-literature-review
+PRISMA methodology for conducting systematic literature reviews. Includes step-by-step protocol, search strategies, quality assessment, and meta-analysis techniques.
+
+### Mixed Methods Research Guide
+**URL:** https://dissertlypro.com/mixed-methods-research
+Comprehensive guide to combining quantitative and qualitative research methods. Covers convergent, explanatory, exploratory, and embedded designs with implementation strategies.
+
+### IRB/Ethics Application Guide
+**URL:** https://dissertlypro.com/irb-ethics-guide
+Step-by-step guide to institutional review board ethics approval. Covers human subjects research, informed consent, risk assessment, and common application mistakes.
+
+### Data Visualization Best Practices
+**URL:** https://dissertlypro.com/data-visualization
+Create effective charts, figures, and tables for dissertations. Covers APA/MLA formatting, choosing chart types, accessibility, and common mistakes to avoid.
+
 ## Ethics & Academic Integrity
 
 DissertlyPro operates as an educational support service. We provide guidance, coaching, and tutoring to help students develop their own academic work. We adhere to strict ethical guidelines and help students learn while producing original research.
