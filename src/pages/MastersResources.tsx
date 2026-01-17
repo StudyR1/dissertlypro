@@ -612,6 +612,19 @@ const MastersResources = () => {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl font-bold text-foreground mb-6">Also Explore</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link to="/phd-resources" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all">
+                  <CardContent className="p-5 flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:bg-copper/10 transition-colors">
+                      <GraduationCap className="w-5 h-5 text-muted-foreground group-hover:text-copper" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">PhD Resources</h3>
+                      <p className="text-sm text-muted-foreground">20+ doctoral guides</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
               <Link to="/resources" className="group">
                 <Card className="border-border hover:border-copper/30 transition-all">
                   <CardContent className="p-5 flex items-center gap-4">
@@ -647,19 +660,6 @@ const MastersResources = () => {
                     <div>
                       <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Our Services</h3>
                       <p className="text-sm text-muted-foreground">Professional thesis support</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-              <Link to="/pricing" className="group">
-                <Card className="border-border hover:border-copper/30 transition-all">
-                  <CardContent className="p-5 flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:bg-copper/10 transition-colors">
-                      <Award className="w-5 h-5 text-muted-foreground group-hover:text-copper" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Pricing</h3>
-                      <p className="text-sm text-muted-foreground">Transparent pricing plans</p>
                     </div>
                   </CardContent>
                 </Card>
