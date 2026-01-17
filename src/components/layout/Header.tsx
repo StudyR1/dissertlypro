@@ -78,6 +78,7 @@ const toolLinks = [
   { title: "Deadline Checker", href: "#deadline-checker", description: "Assess your timeline risk", icon: Clock, isModal: true },
   { title: "Word Counter", href: "#word-counter", description: "Calculate your word count", icon: Calculator, isModal: true },
   { title: "Get Quote", href: "#quote-calculator", description: "Instant pricing estimate", icon: Receipt, isModal: true },
+  { title: "Timeline Planner", href: "#timeline-planner", description: "Gantt-style chapter schedule", icon: Calendar, isModal: true },
 ];
 
 const Header = () => {

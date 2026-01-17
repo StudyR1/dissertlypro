@@ -6,3 +6,4 @@ export { default as DeadlineDangerZone } from './DeadlineDangerZone';
 export { default as ConfidenceMeter } from './ConfidenceMeter';
 export { ExpertAvailabilityBadge, LiveAvailabilityStrip } from './ExpertAvailability';
 export { default as LiveResearchPulse } from './LiveResearchPulse';
+export { default as ChapterTimelinePlanner } from './ChapterTimelinePlanner';
