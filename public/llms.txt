@@ -75,13 +75,15 @@ Ensure dissertations meet university formatting requirements. Table of contents 
 
 ## Free Academic Tools
 
+**Tools Hub:** https://dissertlypro.com/tools
+
 ### Citation Generator
 **URL:** https://dissertlypro.com/tools/citation-generator
-Generate accurate citations in APA 7th, MLA 9th, Chicago, and Harvard styles. Supports books, journals, websites, newspapers, videos, and theses.
+Generate accurate citations in APA 7th, MLA 9th, Chicago, and Harvard styles. Supports books, journals, websites, newspapers, videos, and theses. Free, no sign-up required.
 
 ### Chapter Timeline Planner
 **URL:** https://dissertlypro.com/tools/chapter-planner
-Visual Gantt-style dissertation timeline planner. Calculate chapter deadlines, track progress, and manage your thesis writing schedule.
+Visual Gantt-style dissertation timeline planner. Calculate chapter deadlines, track progress, and manage your thesis writing schedule. Free, no sign-up required.
 
 ## Ethics & Academic Integrity
 
