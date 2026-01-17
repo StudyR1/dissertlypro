@@ -111,7 +111,11 @@ Take a 2-minute quiz to discover personalized resources and recommendations for 
 
 ### DIY vs Expert Help Calculator
 **URL:** https://dissertlypro.com/tools/diy-comparison
-Compare the true cost of completing your dissertation yourself vs. getting professional help. Calculates time investment, opportunity cost, and success probability. Helps you make an informed decision about academic support. Free, no sign-up required.
+Compare the true cost of completing your dissertation yourself vs. getting professional help. Calculates time investment, opportunity cost, and success probability. Free, no sign-up required.
+
+### Outline Generator
+**URL:** https://dissertlypro.com/tools/outline-generator
+Generate a customized dissertation or thesis chapter outline based on your research question, methodology type (quantitative, qualitative, mixed methods), and degree level. Get detailed section structures, word count targets, and writing tips for all 6 chapters. Free, no sign-up required.
 
 ## Downloadable Templates
 

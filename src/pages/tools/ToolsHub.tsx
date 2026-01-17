@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale } from "lucide-react";
+import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
@@ -99,15 +99,19 @@ const tools = [
     badge: "New",
     badgeVariant: "secondary" as const,
   },
-];
-
-const upcomingTools = [
   {
+    id: "outline-generator",
     title: "Outline Generator",
-    description: "Create structured dissertation chapter outlines based on your research question and methodology.",
-    icon: FileText,
+    description: "Create structured dissertation chapter outlines based on your research question and methodology. Get detailed section breakdowns for each chapter.",
+    icon: ListTree,
+    href: "/tools/outline-generator",
+    features: ["6 chapter structure", "Section breakdowns", "Word count targets"],
+    badge: "New",
+    badgeVariant: "default" as const,
   },
 ];
+
+const upcomingTools: { title: string; description: string; icon: React.ElementType }[] = [];
 
 const toolsFAQs = [
   {
