@@ -85,6 +85,10 @@ Generate accurate citations in APA 7th, MLA 9th, Chicago, and Harvard styles. Su
 **URL:** https://dissertlypro.com/tools/chapter-planner
 Visual Gantt-style dissertation timeline planner. Calculate chapter deadlines, track progress, and manage your thesis writing schedule. Free, no sign-up required.
 
+### Thesis Statement Builder
+**URL:** https://dissertlypro.com/tools/thesis-builder
+Build a strong thesis statement with a 5-step wizard. Supports argumentative, analytical, expository, and compare/contrast thesis types. Perfect for dissertations. Free, no sign-up required.
+
 ## Ethics & Academic Integrity
 
 DissertlyPro operates as an educational support service. We provide guidance, coaching, and tutoring to help students develop their own academic work. We adhere to strict ethical guidelines and help students learn while producing original research.

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap } from "lucide-react";
+import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
@@ -20,13 +20,23 @@ const tools = [
     badgeVariant: "default" as const,
   },
   {
+    id: "thesis-builder",
+    title: "Thesis Statement Builder",
+    description: "Craft a compelling thesis statement in 5 simple steps. Our wizard guides you through building a strong foundation for your dissertation.",
+    icon: Lightbulb,
+    href: "/tools/thesis-builder",
+    features: ["5-step wizard", "4 thesis types", "Instant generation"],
+    badge: "New",
+    badgeVariant: "secondary" as const,
+  },
+  {
     id: "chapter-planner",
     title: "Dissertation Timeline Planner",
     description: "Plan your dissertation journey with a visual Gantt-style timeline. Calculate chapter deadlines, track progress, and stay on schedule.",
     icon: GanttChart,
     href: "/tools/chapter-planner",
     features: ["Visual timeline", "Progress tracking", "Deadline alerts"],
-    badge: "New",
+    badge: null,
     badgeVariant: "secondary" as const,
   },
 ];
@@ -136,7 +146,7 @@ const ToolsHub = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
             {tools.map((tool, index) => {
               const Icon = tool.icon;
               return (
@@ -153,7 +163,7 @@ const ToolsHub = () => {
                           <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                             <Icon className="w-6 h-6" />
                           </div>
-                          <Badge variant={tool.badgeVariant}>{tool.badge}</Badge>
+                          {tool.badge && <Badge variant={tool.badgeVariant}>{tool.badge}</Badge>}
                         </div>
                         <CardTitle className="text-xl group-hover:text-primary transition-colors">
                           {tool.title}
