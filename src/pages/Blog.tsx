@@ -202,7 +202,7 @@ const Blog = () => {
         className={`py-4 bg-background/95 backdrop-blur-md border-b border-border sticky top-16 sm:top-20 z-40 transition-shadow ${
           isScrolled ? "shadow-md" : ""
         }`}
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
       >
