@@ -10,11 +10,6 @@ const MobileCTA = lazy(() => import("./MobileCTA"));
 // Lazy load feature components
 const ReadingModeToggle = lazy(() => import("@/components/features/ReadingModeToggle"));
 const NightOwlTheme = lazy(() => import("@/components/features/NightOwlTheme"));
-const WordCountCalculator = lazy(() => import("@/components/features/WordCountCalculator"));
-const InstantQuoteCalculator = lazy(() => import("@/components/features/InstantQuoteCalculator"));
-const DeadlineDangerZone = lazy(() => import("@/components/features/DeadlineDangerZone"));
-const ChapterTimelinePlanner = lazy(() => import("@/components/features/ChapterTimelinePlanner"));
-const CitationGenerator = lazy(() => import("@/components/features/CitationGenerator"));
 
 interface LayoutProps {
   children: ReactNode;
@@ -38,11 +33,6 @@ const Layout = memo(({ children }: LayoutProps) => {
       <Suspense fallback={null}>
         <ReadingModeToggle />
         <NightOwlTheme />
-        <WordCountCalculator />
-        <InstantQuoteCalculator />
-        <DeadlineDangerZone />
-        <ChapterTimelinePlanner />
-        <CitationGenerator />
       </Suspense>
       
       {/* Mobile CTA Bar */}
