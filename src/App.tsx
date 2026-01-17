@@ -41,6 +41,7 @@ const ResearchMethodology = lazy(() => import("./pages/ResearchMethodology"));
 const LiteratureReviewGuide = lazy(() => import("./pages/LiteratureReviewGuide"));
 const Resources = lazy(() => import("./pages/Resources"));
 const MastersThesisGuide = lazy(() => import("./pages/MastersThesisGuide"));
+const MastersResources = lazy(() => import("./pages/MastersResources"));
 const DissertationVsThesis = lazy(() => import("./pages/DissertationVsThesis"));
 const ThesisTopicSelection = lazy(() => import("./pages/ThesisTopicSelection"));
 const AcceleratedMasters = lazy(() => import("./pages/AcceleratedMasters"));
@@ -99,6 +100,7 @@ const App = () => (
               <Route path="/literature-review-guide" element={<LiteratureReviewGuide />} />
               <Route path="/resources" element={<Resources />} />
               {/* Master's Thesis Resources */}
+              <Route path="/masters-resources" element={<MastersResources />} />
               <Route path="/masters-thesis-guide" element={<MastersThesisGuide />} />
               <Route path="/dissertation-vs-thesis" element={<DissertationVsThesis />} />
               <Route path="/thesis-topic-selection" element={<ThesisTopicSelection />} />

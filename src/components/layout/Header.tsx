@@ -57,6 +57,7 @@ const mastersResourceLinks = [
   { title: "Qualitative Analysis", href: "/qualitative-analysis", description: "Coding & thematic analysis", icon: Brain },
   { title: "Master's Defense Prep", href: "/masters-defense", description: "Ace your oral exam", icon: Mic },
   { title: "Citation Mastery", href: "/citation-mastery", description: "APA, MLA, Chicago styles", icon: Quote },
+  { title: "View All Master's Resources", href: "/masters-resources", description: "20+ guides for master's students", icon: GraduationCap },
 ];
 
 const toolLinks = [
