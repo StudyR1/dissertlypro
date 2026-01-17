@@ -88,7 +88,7 @@ const resources: Resource[] = [
   {
     title: "Research Question Development",
     description: "Craft focused, researchable questions that pass committee scrutiny. PICO frameworks, scope refinement, and feasibility testing.",
-    href: "/resources#research-questions",
+    href: "/research-questions",
     icon: Target,
     category: "core",
     tier: 1,
@@ -98,7 +98,7 @@ const resources: Resource[] = [
   {
     title: "Thesis Structure Blueprint",
     description: "Chapter-by-chapter breakdown of master's thesis architecture. Templates, word count guides, and formatting standards.",
-    href: "/resources#thesis-structure",
+    href: "/thesis-structure",
     icon: FileText,
     category: "core",
     tier: 1,
@@ -150,7 +150,7 @@ const resources: Resource[] = [
   {
     title: "International Student Thesis Guide",
     description: "Navigate thesis writing in a second language. Academic English conventions, cultural expectations, and support resources.",
-    href: "/resources#international-students",
+    href: "/international-students",
     icon: Globe,
     category: "specialized",
     tier: 2,
@@ -170,7 +170,7 @@ const resources: Resource[] = [
   {
     title: "Committee Communication Mastery",
     description: "Manage advisor and committee expectations effectively. Email templates, meeting protocols, and feedback integration strategies.",
-    href: "/resources#committee-communication",
+    href: "/committee-communication",
     icon: Users,
     category: "specialized",
     tier: 2,
@@ -243,7 +243,7 @@ const resources: Resource[] = [
   {
     title: "Academic Writing Excellence",
     description: "Master thesis-level writing. Argumentation, paragraph structure, transitions, and academic voice development.",
-    href: "/resources#academic-writing",
+    href: "/academic-writing",
     icon: PenTool,
     category: "technical",
     tier: 3,
