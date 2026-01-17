@@ -105,11 +105,7 @@ const BlogPostWithSkeleton = () => (
   </Suspense>
 );
 
-const ResourceWithSkeleton = ({ Component }: { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }) => (
-  <Suspense fallback={<ArticleSkeleton />}>
-    <Component />
-  </Suspense>
-);
+// Removed unused ResourceWithSkeleton wrapper to prevent potential lazy-loading issues
 
 const App = () => (
   <HelmetProvider>
