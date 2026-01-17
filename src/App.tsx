@@ -69,6 +69,11 @@ const PhDIndustry = lazy(() => import("./pages/PhDIndustry"));
 const InternationalPhD = lazy(() => import("./pages/InternationalPhD"));
 const DissertationStructure = lazy(() => import("./pages/DissertationStructure"));
 const DissertationWriting = lazy(() => import("./pages/DissertationWriting"));
+const NVivoTutorial = lazy(() => import("./pages/NVivoTutorial"));
+const SystematicLiteratureReview = lazy(() => import("./pages/SystematicLiteratureReview"));
+const MixedMethodsResearch = lazy(() => import("./pages/MixedMethodsResearch"));
+const IRBEthicsGuide = lazy(() => import("./pages/IRBEthicsGuide"));
+const DataVisualization = lazy(() => import("./pages/DataVisualization"));
 const CitationGeneratorPage = lazy(() => import("./pages/tools/CitationGeneratorPage"));
 const ChapterPlannerPage = lazy(() => import("./pages/tools/ChapterPlannerPage"));
 const ToolsHub = lazy(() => import("./pages/tools/ToolsHub"));
@@ -169,6 +174,13 @@ const App = () => (
             <Route path="/international-phd" element={<Suspense fallback={<ArticleSkeleton />}><InternationalPhD /></Suspense>} />
             <Route path="/dissertation-structure" element={<Suspense fallback={<ArticleSkeleton />}><DissertationStructure /></Suspense>} />
             <Route path="/dissertation-writing" element={<Suspense fallback={<ArticleSkeleton />}><DissertationWriting /></Suspense>} />
+            
+            {/* Technical Deep-Dives */}
+            <Route path="/nvivo-tutorial" element={<Suspense fallback={<ArticleSkeleton />}><NVivoTutorial /></Suspense>} />
+            <Route path="/systematic-literature-review" element={<Suspense fallback={<ArticleSkeleton />}><SystematicLiteratureReview /></Suspense>} />
+            <Route path="/mixed-methods-research" element={<Suspense fallback={<ArticleSkeleton />}><MixedMethodsResearch /></Suspense>} />
+            <Route path="/irb-ethics-guide" element={<Suspense fallback={<ArticleSkeleton />}><IRBEthicsGuide /></Suspense>} />
+            <Route path="/data-visualization" element={<Suspense fallback={<ArticleSkeleton />}><DataVisualization /></Suspense>} />
             
             {/* Master's Resources */}
             <Route path="/masters-resources" element={<Suspense fallback={<ServicesGridSkeleton />}><MastersResources /></Suspense>} />

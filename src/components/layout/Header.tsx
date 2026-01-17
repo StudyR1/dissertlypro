@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -35,10 +35,18 @@ const aboutLinks = [
   { title: "FAQs", href: "/faq", description: "Common questions answered", icon: HelpCircle },
 ];
 
+const technicalDeepDives = [
+  { title: "SPSS Tutorial", href: "/spss-tutorial", description: "Quantitative data analysis", icon: BarChart3 },
+  { title: "NVivo Tutorial", href: "/nvivo-tutorial", description: "Qualitative software guide", icon: Brain },
+  { title: "Systematic Review", href: "/systematic-literature-review", description: "PRISMA methodology", icon: Search },
+  { title: "Mixed Methods", href: "/mixed-methods-research", description: "Combining qual + quant", icon: Combine },
+  { title: "IRB/Ethics Guide", href: "/irb-ethics-guide", description: "Ethics approval steps", icon: Shield },
+  { title: "Data Visualization", href: "/data-visualization", description: "Charts, figures & tables", icon: PieChart },
+  { title: "Research Methodology", href: "/research-methodology", description: "Qual, quant & mixed", icon: Brain },
+  { title: "Literature Review", href: "/literature-review-guide", description: "Search & synthesize", icon: BookOpen },
+];
+
 const resourceLinks = [
-  { title: "SPSS Tutorial", href: "/spss-tutorial", description: "Data analysis step-by-step", icon: BarChart3 },
-  { title: "Research Methodology", href: "/research-methodology", description: "Qual, quant & mixed methods", icon: Brain },
-  { title: "Literature Review Guide", href: "/literature-review-guide", description: "Search, synthesize & analyze", icon: Search },
   { title: "Supervisor Guide", href: "/supervisor-guide", description: "Navigate advisor relationships", icon: UserCheck },
   { title: "PhD Mental Health", href: "/phd-mental-health", description: "Wellness resources for researchers", icon: Heart },
   { title: "Committee Conflicts", href: "/committee-conflicts", description: "Resolve academic disputes", icon: Scale },
@@ -262,7 +270,7 @@ const Header = () => {
                                 Technical Deep-Dives
                               </motion.h4>
                               <ul className="space-y-1.5">
-                                {resourceLinks.slice(0, 3).map((item, index) => (
+                                {technicalDeepDives.slice(0, 4).map((item, index) => (
                                   <motion.li 
                                     key={item.title}
                                     initial={{ opacity: 0, y: 10 }}
@@ -299,7 +307,7 @@ const Header = () => {
                                 PhD Guides
                               </motion.h4>
                               <ul className="space-y-1">
-                                {resourceLinks.slice(3).map((item, index) => (
+                                {resourceLinks.map((item, index) => (
                                   <motion.li 
                                     key={item.title}
                                     initial={{ opacity: 0, y: 10 }}
