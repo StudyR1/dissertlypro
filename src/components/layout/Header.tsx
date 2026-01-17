@@ -81,6 +81,7 @@ const toolLinks = [
   { title: "Timeline Planner", href: "/tools/chapter-planner", description: "Gantt-style chapter schedule", icon: GanttChart },
   { title: "Citation Generator", href: "/tools/citation-generator", description: "APA, MLA, Chicago, Harvard", icon: Quote },
   { title: "Thesis Builder", href: "/tools/thesis-builder", description: "Build strong thesis statements", icon: FileText },
+  { title: "RQ Validator", href: "/tools/research-question-validator", description: "PICO & SPIDER frameworks", icon: HelpCircle },
 ];
 
 const Header = () => {

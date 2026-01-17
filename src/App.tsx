@@ -76,6 +76,7 @@ const ThesisBuilderPage = lazy(() => import("./pages/tools/ThesisBuilderPage"));
 const DeadlineCheckerPage = lazy(() => import("./pages/tools/DeadlineCheckerPage"));
 const WordCounterPage = lazy(() => import("./pages/tools/WordCounterPage"));
 const QuoteCalculatorPage = lazy(() => import("./pages/tools/QuoteCalculatorPage"));
+const ResearchQuestionValidatorPage = lazy(() => import("./pages/tools/ResearchQuestionValidatorPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -200,6 +201,7 @@ const App = () => (
             <Route path="/tools/deadline-checker" element={<Suspense fallback={<SkeletonPage />}><DeadlineCheckerPage /></Suspense>} />
             <Route path="/tools/word-counter" element={<Suspense fallback={<SkeletonPage />}><WordCounterPage /></Suspense>} />
             <Route path="/tools/quote-calculator" element={<Suspense fallback={<SkeletonPage />}><QuoteCalculatorPage /></Suspense>} />
+            <Route path="/tools/research-question-validator" element={<Suspense fallback={<SkeletonPage />}><ResearchQuestionValidatorPage /></Suspense>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
