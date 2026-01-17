@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3 } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -45,6 +45,14 @@ const resourceLinks = [
   { title: "Deadlines & Deferrals", href: "/deadlines-deferrals", description: "Extension strategies that work", icon: Calendar },
   { title: "Viva Preparation", href: "/viva-preparation", description: "Ace your oral examination", icon: Mic },
   { title: "Part-Time PhD", href: "/part-time-phd", description: "Balance work and research", icon: Briefcase },
+  { title: "Candidacy Exams", href: "/candidacy-exams", description: "Comprehensive exam strategies", icon: Award },
+  { title: "PhD Funding", href: "/phd-funding", description: "Grants, fellowships & stipends", icon: DollarSign },
+  { title: "Academic Networking", href: "/academic-networking", description: "Build your research network", icon: Network },
+  { title: "PhD Publishing", href: "/phd-publishing", description: "Journal publication guide", icon: Newspaper },
+  { title: "PhD to Industry", href: "/phd-industry", description: "Non-academic career paths", icon: Factory },
+  { title: "International PhD", href: "/international-phd", description: "Global doctoral programs", icon: MapPin },
+  { title: "Dissertation Structure", href: "/dissertation-structure", description: "Chapter-by-chapter blueprint", icon: BookMarked },
+  { title: "Dissertation Writing", href: "/dissertation-writing", description: "Writing strategies & tips", icon: Edit3 },
   { title: "View All PhD Resources", href: "/phd-resources", description: "20+ guides for doctoral students", icon: GraduationCap },
 ];
 
