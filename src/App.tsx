@@ -6,11 +6,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "@/components/ScrollToTop";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import SkeletonPage, { 
   ServicesGridSkeleton, 
   BlogGridSkeleton, 
   ArticleSkeleton,
-  ServiceDetailSkeleton 
+  ServiceDetailSkeleton,
+  ToolPageSkeleton 
 } from "@/components/ui/skeleton-page";
 
 // Critical path - load immediately
@@ -132,7 +134,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <Routes>
+          <ErrorBoundary>
+            <Routes>
             <Route path="/" element={<Index />} />
             
             {/* Services routes with grid skeleton */}
@@ -211,21 +214,22 @@ const App = () => (
             <Route path="/ca" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
             
             {/* Free Tools */}
-            <Route path="/tools" element={<Suspense fallback={<SkeletonPage />}><ToolsHub /></Suspense>} />
-            <Route path="/tools/citation-generator" element={<Suspense fallback={<SkeletonPage />}><CitationGeneratorPage /></Suspense>} />
-            <Route path="/tools/chapter-planner" element={<Suspense fallback={<SkeletonPage />}><ChapterPlannerPage /></Suspense>} />
-            <Route path="/tools/thesis-builder" element={<Suspense fallback={<SkeletonPage />}><ThesisBuilderPage /></Suspense>} />
-            <Route path="/tools/deadline-checker" element={<Suspense fallback={<SkeletonPage />}><DeadlineCheckerPage /></Suspense>} />
-            <Route path="/tools/word-counter" element={<Suspense fallback={<SkeletonPage />}><WordCounterPage /></Suspense>} />
-            <Route path="/tools/quote-calculator" element={<Suspense fallback={<SkeletonPage />}><QuoteCalculatorPage /></Suspense>} />
-            <Route path="/tools/research-question-validator" element={<Suspense fallback={<SkeletonPage />}><ResearchQuestionValidatorPage /></Suspense>} />
-            <Route path="/tools/personalization-quiz" element={<Suspense fallback={<SkeletonPage />}><PersonalizationQuizPage /></Suspense>} />
-            <Route path="/tools/diy-comparison" element={<Suspense fallback={<SkeletonPage />}><DIYComparisonCalculatorPage /></Suspense>} />
-            <Route path="/tools/outline-generator" element={<Suspense fallback={<SkeletonPage />}><OutlineGeneratorPage /></Suspense>} />
+            <Route path="/tools" element={<Suspense fallback={<ServicesGridSkeleton />}><ToolsHub /></Suspense>} />
+            <Route path="/tools/citation-generator" element={<Suspense fallback={<ToolPageSkeleton />}><CitationGeneratorPage /></Suspense>} />
+            <Route path="/tools/chapter-planner" element={<Suspense fallback={<ToolPageSkeleton />}><ChapterPlannerPage /></Suspense>} />
+            <Route path="/tools/thesis-builder" element={<Suspense fallback={<ToolPageSkeleton />}><ThesisBuilderPage /></Suspense>} />
+            <Route path="/tools/deadline-checker" element={<Suspense fallback={<ToolPageSkeleton />}><DeadlineCheckerPage /></Suspense>} />
+            <Route path="/tools/word-counter" element={<Suspense fallback={<ToolPageSkeleton />}><WordCounterPage /></Suspense>} />
+            <Route path="/tools/quote-calculator" element={<Suspense fallback={<ToolPageSkeleton />}><QuoteCalculatorPage /></Suspense>} />
+            <Route path="/tools/research-question-validator" element={<Suspense fallback={<ToolPageSkeleton />}><ResearchQuestionValidatorPage /></Suspense>} />
+            <Route path="/tools/personalization-quiz" element={<Suspense fallback={<ToolPageSkeleton />}><PersonalizationQuizPage /></Suspense>} />
+            <Route path="/tools/diy-comparison" element={<Suspense fallback={<ToolPageSkeleton />}><DIYComparisonCalculatorPage /></Suspense>} />
+            <Route path="/tools/outline-generator" element={<Suspense fallback={<ToolPageSkeleton />}><OutlineGeneratorPage /></Suspense>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
           </Routes>
+          </ErrorBoundary>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
