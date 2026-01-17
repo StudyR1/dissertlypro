@@ -75,11 +75,12 @@ const mastersResourceLinks = [
 ];
 
 const toolLinks = [
-  { title: "Deadline Checker", href: "#deadline-checker", description: "Assess your timeline risk", icon: Clock, isModal: true },
-  { title: "Word Counter", href: "#word-counter", description: "Calculate your word count", icon: Calculator, isModal: true },
-  { title: "Get Quote", href: "#quote-calculator", description: "Instant pricing estimate", icon: Receipt, isModal: true },
-  { title: "Timeline Planner", href: "#timeline-planner", description: "Gantt-style chapter schedule", icon: GanttChart, isModal: true },
-  { title: "Citation Generator", href: "#citation-generator", description: "APA, MLA, Chicago, Harvard", icon: Quote, isModal: true },
+  { title: "Deadline Checker", href: "/tools/deadline-checker", description: "Assess your timeline risk", icon: Clock },
+  { title: "Word Counter", href: "/tools/word-counter", description: "Calculate your word count", icon: Calculator },
+  { title: "Quote Calculator", href: "/tools/quote-calculator", description: "Instant pricing estimate", icon: Receipt },
+  { title: "Timeline Planner", href: "/tools/chapter-planner", description: "Gantt-style chapter schedule", icon: GanttChart },
+  { title: "Citation Generator", href: "/tools/citation-generator", description: "APA, MLA, Chicago, Harvard", icon: Quote },
+  { title: "Thesis Builder", href: "/tools/thesis-builder", description: "Build strong thesis statements", icon: FileText },
 ];
 
 const Header = () => {
@@ -371,18 +372,17 @@ const Header = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.18 + 0.05 * index }}
                                   >
-                                    <button
-                                      onClick={() => {
-                                        const event = new CustomEvent(tool.href.replace('#', 'open-'));
-                                        window.dispatchEvent(event);
-                                      }}
-                                      className="flex items-start gap-2 w-full select-none rounded-lg p-2 leading-none no-underline outline-none transition-all hover:bg-background group text-left"
-                                    >
-                                      <tool.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
-                                      <div>
-                                        <div className="text-xs font-medium leading-none font-sans group-hover:text-copper transition-colors">{tool.title}</div>
-                                      </div>
-                                    </button>
+                                    <NavigationMenuLink asChild>
+                                      <Link
+                                        to={tool.href}
+                                        className="flex items-start gap-2 w-full select-none rounded-lg p-2 leading-none no-underline outline-none transition-all hover:bg-background group text-left"
+                                      >
+                                        <tool.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
+                                        <div>
+                                          <div className="text-xs font-medium leading-none font-sans group-hover:text-copper transition-colors">{tool.title}</div>
+                                        </div>
+                                      </Link>
+                                    </NavigationMenuLink>
                                   </motion.li>
                                 ))}
                               </ul>
@@ -595,20 +595,15 @@ const Header = () => {
                 <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">Quick Tools</p>
                 <div className="grid grid-cols-3 gap-2">
                   {toolLinks.map((tool) => (
-                    <button
+                    <Link
                       key={tool.title}
-                      onClick={() => {
-                        setIsOpen(false);
-                        setTimeout(() => {
-                          const event = new CustomEvent(tool.href.replace('#', 'open-'));
-                          window.dispatchEvent(event);
-                        }, 300);
-                      }}
+                      to={tool.href}
+                      onClick={() => setIsOpen(false)}
                       className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-cream-warm/50 text-sm font-medium text-foreground active:scale-[0.98] touch-manipulation"
                     >
                       <tool.icon className="h-5 w-5 text-copper" />
                       <span className="text-xs text-center">{tool.title.split(' ')[0]}</span>
-                    </button>
+                    </Link>
                   ))}
                 </div>
                 <Link
