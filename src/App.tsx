@@ -50,6 +50,11 @@ const LimitedSupervision = lazy(() => import("./pages/LimitedSupervision"));
 const QualitativeAnalysis = lazy(() => import("./pages/QualitativeAnalysis"));
 const MastersDefense = lazy(() => import("./pages/MastersDefense"));
 const CitationMastery = lazy(() => import("./pages/CitationMastery"));
+const ResearchQuestions = lazy(() => import("./pages/ResearchQuestions"));
+const ThesisStructure = lazy(() => import("./pages/ThesisStructure"));
+const InternationalStudents = lazy(() => import("./pages/InternationalStudents"));
+const CommitteeCommunication = lazy(() => import("./pages/CommitteeCommunication"));
+const AcademicWriting = lazy(() => import("./pages/AcademicWriting"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -110,6 +115,11 @@ const App = () => (
               <Route path="/qualitative-analysis" element={<QualitativeAnalysis />} />
               <Route path="/masters-defense" element={<MastersDefense />} />
               <Route path="/citation-mastery" element={<CitationMastery />} />
+              <Route path="/research-questions" element={<ResearchQuestions />} />
+              <Route path="/thesis-structure" element={<ThesisStructure />} />
+              <Route path="/international-students" element={<InternationalStudents />} />
+              <Route path="/committee-communication" element={<CommitteeCommunication />} />
+              <Route path="/academic-writing" element={<AcademicWriting />} />
               {/* Region-specific landing pages */}
               <Route path="/uk" element={<RegionLanding />} />
               <Route path="/us" element={<RegionLanding />} />
