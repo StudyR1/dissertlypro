@@ -373,73 +373,246 @@
   <!-- Resources Hub -->
   <url>
     <loc>https://dissertlypro.com/resources</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Resource Pages - Tier 1: High-Impact Rare Content -->
+  <!-- PhD Resources Hub -->
+  <url>
+    <loc>https://dissertlypro.com/phd-resources</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Master's Resources Hub -->
+  <url>
+    <loc>https://dissertlypro.com/masters-resources</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- PhD Resource Pages - Tier 1: Core Essential Guides -->
   <url>
     <loc>https://dissertlypro.com/supervisor-guide</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/phd-mental-health</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/committee-conflicts</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Resource Pages - Tier 2: Underserved Niches -->
   <url>
-    <loc>https://dissertlypro.com/deadlines-deferrals</loc>
-    <lastmod>2026-01-16</lastmod>
+    <loc>https://dissertlypro.com/candidacy-exams</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/viva-preparation</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- PhD Resource Pages - Tier 2: Specialized Guides -->
+  <url>
+    <loc>https://dissertlypro.com/deadlines-deferrals</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/part-time-phd</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Resource Pages - Tier 3: Technical Deep-Dives -->
+  <url>
+    <loc>https://dissertlypro.com/phd-funding</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/academic-networking</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/phd-publishing</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/phd-industry</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/international-phd</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- PhD Resource Pages - Tier 3: Technical Deep-Dives -->
   <url>
     <loc>https://dissertlypro.com/spss-tutorial</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/research-methodology</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/literature-review-guide</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/dissertation-structure</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/dissertation-writing</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Master's Thesis Resource Pages - Tier 1: Core Guides -->
+  <url>
+    <loc>https://dissertlypro.com/masters-thesis-guide</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/dissertation-vs-thesis</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/thesis-topic-selection</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/thesis-structure</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/masters-defense</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Master's Thesis Resource Pages - Tier 2: Specialized Guides -->
+  <url>
+    <loc>https://dissertlypro.com/accelerated-masters</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/coursework-to-thesis</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/limited-supervision</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/international-students</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/committee-communication</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Master's Thesis Resource Pages - Tier 3: Technical Deep-Dives -->
+  <url>
+    <loc>https://dissertlypro.com/research-questions</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/qualitative-analysis</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/citation-mastery</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/academic-writing</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
