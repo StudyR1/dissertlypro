@@ -336,6 +336,53 @@ const PhDFunding = () => {
         </div>
       </section>
 
+      {/* Related Resources */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Related PhD Resources</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link to="/academic-networking" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <Globe className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Academic Networking</h3>
+                    <p className="text-sm text-muted-foreground">Build your research network</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/phd-publishing" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <FileText className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">PhD Publishing</h3>
+                    <p className="text-sm text-muted-foreground">Journal publication guide</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/international-phd" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <Globe className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">International PhD</h3>
+                    <p className="text-sm text-muted-foreground">Global doctoral programs</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/phd-industry" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <Award className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">PhD to Industry</h3>
+                    <p className="text-sm text-muted-foreground">Non-academic career paths</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-copper/5">
         <div className="container mx-auto px-4">

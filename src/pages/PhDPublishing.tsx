@@ -18,7 +18,8 @@ import {
   RefreshCw,
   Award,
   Lightbulb,
-  Shield
+  Shield,
+  Users
 } from "lucide-react";
 
 const PhDPublishing = () => {
@@ -330,6 +331,53 @@ const PhDPublishing = () => {
                 </ul>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Resources */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Related PhD Resources</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link to="/academic-networking" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <Users className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Academic Networking</h3>
+                    <p className="text-sm text-muted-foreground">Build your research network</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/dissertation-writing" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <FileText className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Dissertation Writing</h3>
+                    <p className="text-sm text-muted-foreground">Writing strategies & tips</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/literature-review-guide" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <BookOpen className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Literature Review</h3>
+                    <p className="text-sm text-muted-foreground">Search, synthesize & analyze</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/phd-funding" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <Award className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">PhD Funding</h3>
+                    <p className="text-sm text-muted-foreground">Grants & fellowships</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

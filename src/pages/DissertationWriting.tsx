@@ -384,6 +384,53 @@ const DissertationWriting = () => {
         </div>
       </section>
 
+      {/* Related Resources */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Related Resources</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link to="/dissertation-structure" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <BookOpen className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Dissertation Structure</h3>
+                    <p className="text-sm text-muted-foreground">Chapter-by-chapter blueprint</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/literature-review-guide" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <BookOpen className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Literature Review Guide</h3>
+                    <p className="text-sm text-muted-foreground">Search, synthesize & analyze</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/citation-mastery" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <PenTool className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Citation Mastery</h3>
+                    <p className="text-sm text-muted-foreground">APA, MLA, Chicago styles</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/academic-writing" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <PenTool className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Academic Writing</h3>
+                    <p className="text-sm text-muted-foreground">Master thesis-level writing</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-copper/5">
         <div className="container mx-auto px-4">

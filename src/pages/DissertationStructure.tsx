@@ -373,6 +373,53 @@ const DissertationStructure = () => {
         </div>
       </section>
 
+      {/* Related Resources */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Related Resources</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link to="/dissertation-writing" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <FileText className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Dissertation Writing</h3>
+                    <p className="text-sm text-muted-foreground">Writing strategies & tips</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/literature-review-guide" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <BookOpen className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Literature Review</h3>
+                    <p className="text-sm text-muted-foreground">Search, synthesize & analyze</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/research-methodology" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <Brain className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Research Methodology</h3>
+                    <p className="text-sm text-muted-foreground">Qual, quant & mixed methods</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/thesis-structure" className="group">
+                <Card className="border-border hover:border-copper/30 transition-all h-full">
+                  <CardContent className="p-5">
+                    <Layers className="w-6 h-6 text-copper mb-3" />
+                    <h3 className="font-medium text-foreground group-hover:text-copper transition-colors">Thesis Structure</h3>
+                    <p className="text-sm text-muted-foreground">Master's thesis blueprint</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-copper/5">
         <div className="container mx-auto px-4">
