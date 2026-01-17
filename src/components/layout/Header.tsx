@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -386,6 +386,15 @@ const Header = () => {
                                   </motion.li>
                                 ))}
                               </ul>
+                              <NavigationMenuLink asChild>
+                                <Link
+                                  to="/tools"
+                                  className="flex items-center gap-2 mt-3 pt-3 border-t border-border/50 text-xs font-medium text-copper hover:text-copper-dark transition-colors"
+                                >
+                                  <Wrench className="h-3.5 w-3.5" />
+                                  View All Free Tools →
+                                </Link>
+                              </NavigationMenuLink>
                             </motion.div>
                           </div>
                           <motion.div 
@@ -602,6 +611,14 @@ const Header = () => {
                     </button>
                   ))}
                 </div>
+                <Link
+                  to="/tools"
+                  className="flex items-center justify-center gap-2 mt-3 py-2.5 px-4 text-sm font-medium text-copper border border-copper/20 rounded-xl hover:bg-copper/5 active:bg-copper/10 touch-manipulation"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Wrench className="h-4 w-4" />
+                  View All Free Tools
+                </Link>
               </div>
               
               {/* About Sub-links on Mobile */}
