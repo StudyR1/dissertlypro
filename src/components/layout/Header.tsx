@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3 } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -78,7 +78,8 @@ const toolLinks = [
   { title: "Deadline Checker", href: "#deadline-checker", description: "Assess your timeline risk", icon: Clock, isModal: true },
   { title: "Word Counter", href: "#word-counter", description: "Calculate your word count", icon: Calculator, isModal: true },
   { title: "Get Quote", href: "#quote-calculator", description: "Instant pricing estimate", icon: Receipt, isModal: true },
-  { title: "Timeline Planner", href: "#timeline-planner", description: "Gantt-style chapter schedule", icon: Calendar, isModal: true },
+  { title: "Timeline Planner", href: "#timeline-planner", description: "Gantt-style chapter schedule", icon: GanttChart, isModal: true },
+  { title: "Citation Generator", href: "#citation-generator", description: "APA, MLA, Chicago, Harvard", icon: Quote, isModal: true },
 ];
 
 const Header = () => {

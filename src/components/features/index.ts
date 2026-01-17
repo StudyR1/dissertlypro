@@ -7,3 +7,4 @@ export { default as ConfidenceMeter } from './ConfidenceMeter';
 export { ExpertAvailabilityBadge, LiveAvailabilityStrip } from './ExpertAvailability';
 export { default as LiveResearchPulse } from './LiveResearchPulse';
 export { default as ChapterTimelinePlanner } from './ChapterTimelinePlanner';
+export { default as CitationGenerator } from './CitationGenerator';

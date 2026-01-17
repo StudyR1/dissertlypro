@@ -14,6 +14,7 @@ const WordCountCalculator = lazy(() => import("@/components/features/WordCountCa
 const InstantQuoteCalculator = lazy(() => import("@/components/features/InstantQuoteCalculator"));
 const DeadlineDangerZone = lazy(() => import("@/components/features/DeadlineDangerZone"));
 const ChapterTimelinePlanner = lazy(() => import("@/components/features/ChapterTimelinePlanner"));
+const CitationGenerator = lazy(() => import("@/components/features/CitationGenerator"));
 
 interface LayoutProps {
   children: ReactNode;
@@ -41,6 +42,7 @@ const Layout = memo(({ children }: LayoutProps) => {
         <InstantQuoteCalculator />
         <DeadlineDangerZone />
         <ChapterTimelinePlanner />
+        <CitationGenerator />
       </Suspense>
       
       {/* Mobile CTA Bar */}
