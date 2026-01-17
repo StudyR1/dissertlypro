@@ -109,6 +109,10 @@ Validate your research question using PICO and SPIDER frameworks. Get instant sc
 **URL:** https://dissertlypro.com/tools/personalization-quiz
 Take a 2-minute quiz to discover personalized resources and recommendations for your dissertation or thesis. Answer questions about your degree type, stage, challenges, and timeline to get a tailored action plan. Free, no sign-up required.
 
+### DIY vs Expert Help Calculator
+**URL:** https://dissertlypro.com/tools/diy-comparison
+Compare the true cost of completing your dissertation yourself vs. getting professional help. Calculates time investment, opportunity cost, and success probability. Helps you make an informed decision about academic support. Free, no sign-up required.
+
 ## Tool-Focused Guides
 
 ### How to Write a Thesis Statement

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain } from "lucide-react";
+import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
@@ -88,6 +88,16 @@ const tools = [
     features: ["5 quick questions", "Personalized plan", "Tailored resources"],
     badge: "New",
     badgeVariant: "default" as const,
+  },
+  {
+    id: "diy-comparison",
+    title: "DIY vs Expert Calculator",
+    description: "Compare the true cost of completing your dissertation yourself vs. getting professional help. Includes time, opportunity cost, and success probability analysis.",
+    icon: Scale,
+    href: "/tools/diy-comparison",
+    features: ["Time breakdown", "Cost analysis", "Success probability"],
+    badge: "New",
+    badgeVariant: "secondary" as const,
   },
 ];
 

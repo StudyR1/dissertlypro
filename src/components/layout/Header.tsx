@@ -84,6 +84,7 @@ const mastersResourceLinks = [
 
 const toolLinks = [
   { title: "Personalization Quiz", href: "/tools/personalization-quiz", description: "Get tailored recommendations", icon: Brain },
+  { title: "DIY vs Expert", href: "/tools/diy-comparison", description: "Compare costs & time", icon: Scale },
   { title: "Deadline Checker", href: "/tools/deadline-checker", description: "Assess your timeline risk", icon: Clock },
   { title: "Word Counter", href: "/tools/word-counter", description: "Calculate your word count", icon: Calculator },
   { title: "Quote Calculator", href: "/tools/quote-calculator", description: "Instant pricing estimate", icon: Receipt },
