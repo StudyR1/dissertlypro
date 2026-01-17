@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download, ListTree } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -85,6 +85,7 @@ const mastersResourceLinks = [
 
 const toolLinks = [
   { title: "Personalization Quiz", href: "/tools/personalization-quiz", description: "Get tailored recommendations", icon: Brain },
+  { title: "Outline Generator", href: "/tools/outline-generator", description: "Chapter structure builder", icon: ListTree },
   { title: "DIY vs Expert", href: "/tools/diy-comparison", description: "Compare costs & time", icon: Scale },
   { title: "Deadline Checker", href: "/tools/deadline-checker", description: "Assess your timeline risk", icon: Clock },
   { title: "Word Counter", href: "/tools/word-counter", description: "Calculate your word count", icon: Calculator },
