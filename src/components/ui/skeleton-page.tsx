@@ -373,4 +373,56 @@ export const ServiceDetailSkeleton = memo(() => (
 ));
 ServiceDetailSkeleton.displayName = 'ServiceDetailSkeleton';
 
+// Tool page skeleton with form and results panel
+export const ToolPageSkeleton = memo(() => (
+  <div className="min-h-screen bg-background animate-fade-in">
+    <HeaderSkeleton />
+
+    {/* Hero */}
+    <div className="py-12 px-4">
+      <div className="container max-w-5xl mx-auto text-center">
+        <Skeleton className="h-6 w-32 mx-auto mb-4" />
+        <Skeleton className="h-10 w-3/4 mx-auto mb-3" />
+        <Skeleton className="h-5 w-2/3 mx-auto" />
+      </div>
+    </div>
+
+    {/* Tool content */}
+    <div className="px-4 pb-16">
+      <div className="container max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Input Panel */}
+          <div className="p-6 rounded-xl border border-border bg-card">
+            <div className="flex items-center gap-2 mb-6">
+              <Skeleton className="h-5 w-5" />
+              <Skeleton className="h-6 w-40" />
+            </div>
+            <div className="space-y-6">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="space-y-2">
+                  <Skeleton className="h-4 w-24" />
+                  <Skeleton className="h-10 w-full" />
+                </div>
+              ))}
+              <Skeleton className="h-12 w-full mt-4" />
+            </div>
+          </div>
+          
+          {/* Results Panel */}
+          <div className="p-6 rounded-xl border border-border bg-card">
+            <div className="flex items-center justify-center h-64">
+              <div className="text-center space-y-4">
+                <Skeleton className="h-12 w-12 rounded-xl mx-auto" />
+                <Skeleton className="h-5 w-32 mx-auto" />
+                <Skeleton className="h-4 w-48 mx-auto" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+));
+ToolPageSkeleton.displayName = 'ToolPageSkeleton';
+
 export default SkeletonPage;
