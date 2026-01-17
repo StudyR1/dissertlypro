@@ -89,6 +89,20 @@ Visual Gantt-style dissertation timeline planner. Calculate chapter deadlines, t
 **URL:** https://dissertlypro.com/tools/thesis-builder
 Build a strong thesis statement with a 5-step wizard. Supports argumentative, analytical, expository, and compare/contrast thesis types. Perfect for dissertations. Free, no sign-up required.
 
+## Tool-Focused Guides
+
+### How to Write a Thesis Statement
+**URL:** https://dissertlypro.com/blog/how-to-write-thesis-statement-guide
+Step-by-step guide to crafting compelling thesis statements. Covers argumentative, analytical, expository, and compare/contrast types with examples. Links to free Thesis Builder tool.
+
+### Dissertation Timeline Planning Guide
+**URL:** https://dissertlypro.com/blog/dissertation-timeline-planning-guide
+Comprehensive guide to creating a realistic PhD timeline. Covers phases, chapter breakdowns, and common pitfalls. Links to free Chapter Timeline Planner tool.
+
+### Citation Styles Guide
+**URL:** https://dissertlypro.com/blog/citation-styles-guide-apa-mla-chicago-harvard
+Master APA, MLA, Chicago, and Harvard citation styles. Includes examples, quick references, and links to free Citation Generator tool.
+
 ## Ethics & Academic Integrity
 
 DissertlyPro operates as an educational support service. We provide guidance, coaching, and tutoring to help students develop their own academic work. We adhere to strict ethical guidelines and help students learn while producing original research.
