@@ -543,19 +543,19 @@ const Header = () => {
                 </div>
               </div>
               
-              {/* Academic Guides Section on Mobile */}
+              {/* PhD Resources Section on Mobile */}
               <div className="pt-2 mt-2 border-t border-border">
-                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 py-2">Academic Guides</p>
-                <div className="grid grid-cols-2 gap-1">
+                <p className="text-xs text-copper uppercase tracking-wider px-4 py-2">PhD Resources</p>
+                <div className="grid grid-cols-2 gap-1.5">
                   {resourceLinks.slice(3).map((item) => (
                     <Link
                       key={item.title}
                       to={item.href}
-                      className="flex items-center gap-2 py-2.5 px-3 text-xs font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
+                      className="flex items-center gap-2 py-2 px-2.5 text-xs font-medium font-sans text-muted-foreground rounded-lg hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
                       onClick={() => setIsOpen(false)}
                     >
-                      <item.icon className="h-4 w-4 text-copper/70 flex-shrink-0" />
-                      <span className="truncate">{item.title}</span>
+                      <item.icon className="h-3.5 w-3.5 text-copper/70 flex-shrink-0" />
+                      <span className="truncate text-[11px]">{item.title}</span>
                     </Link>
                   ))}
                 </div>
