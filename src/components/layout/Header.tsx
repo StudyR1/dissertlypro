@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -44,6 +44,7 @@ const technicalDeepDives = [
   { title: "Data Visualization", href: "/data-visualization", description: "Charts, figures & tables", icon: PieChart },
   { title: "Research Methodology", href: "/research-methodology", description: "Qual, quant & mixed", icon: Brain },
   { title: "Literature Review", href: "/literature-review-guide", description: "Search & synthesize", icon: BookOpen },
+  { title: "Free Templates", href: "/templates", description: "Proposal & chapter templates", icon: Download },
 ];
 
 const resourceLinks = [

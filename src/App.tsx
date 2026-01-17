@@ -35,6 +35,7 @@ const About = lazy(() => import("./pages/About"));
 const Experts = lazy(() => import("./pages/Experts"));
 const RegionLanding = lazy(() => import("./pages/RegionLanding"));
 const Order = lazy(() => import("./pages/Order"));
+const Templates = lazy(() => import("./pages/Templates"));
 const SupervisorGuide = lazy(() => import("./pages/SupervisorGuide"));
 const MentalHealthHub = lazy(() => import("./pages/MentalHealthHub"));
 const CommitteeConflicts = lazy(() => import("./pages/CommitteeConflicts"));
@@ -155,6 +156,7 @@ const App = () => (
             <Route path="/about" element={<Suspense fallback={<SkeletonPage />}><About /></Suspense>} />
             <Route path="/experts" element={<Suspense fallback={<SkeletonPage />}><Experts /></Suspense>} />
             <Route path="/order" element={<Suspense fallback={<SkeletonPage />}><Order /></Suspense>} />
+            <Route path="/templates" element={<Suspense fallback={<ServicesGridSkeleton />}><Templates /></Suspense>} />
             
             {/* Resource/Article pages with article skeleton */}
             <Route path="/supervisor-guide" element={<Suspense fallback={<ArticleSkeleton />}><SupervisorGuide /></Suspense>} />
