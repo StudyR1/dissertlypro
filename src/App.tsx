@@ -56,6 +56,14 @@ const InternationalStudents = lazy(() => import("./pages/InternationalStudents")
 const CommitteeCommunication = lazy(() => import("./pages/CommitteeCommunication"));
 const AcademicWriting = lazy(() => import("./pages/AcademicWriting"));
 const PhDResources = lazy(() => import("./pages/PhDResources"));
+const CandidacyExams = lazy(() => import("./pages/CandidacyExams"));
+const PhDFunding = lazy(() => import("./pages/PhDFunding"));
+const AcademicNetworking = lazy(() => import("./pages/AcademicNetworking"));
+const PhDPublishing = lazy(() => import("./pages/PhDPublishing"));
+const PhDIndustry = lazy(() => import("./pages/PhDIndustry"));
+const InternationalPhD = lazy(() => import("./pages/InternationalPhD"));
+const DissertationStructure = lazy(() => import("./pages/DissertationStructure"));
+const DissertationWriting = lazy(() => import("./pages/DissertationWriting"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -106,6 +114,14 @@ const App = () => (
               <Route path="/literature-review-guide" element={<LiteratureReviewGuide />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/phd-resources" element={<PhDResources />} />
+              <Route path="/candidacy-exams" element={<CandidacyExams />} />
+              <Route path="/phd-funding" element={<PhDFunding />} />
+              <Route path="/academic-networking" element={<AcademicNetworking />} />
+              <Route path="/phd-publishing" element={<PhDPublishing />} />
+              <Route path="/phd-industry" element={<PhDIndustry />} />
+              <Route path="/international-phd" element={<InternationalPhD />} />
+              <Route path="/dissertation-structure" element={<DissertationStructure />} />
+              <Route path="/dissertation-writing" element={<DissertationWriting />} />
               {/* Master's Thesis Resources */}
               <Route path="/masters-resources" element={<MastersResources />} />
               <Route path="/masters-thesis-guide" element={<MastersThesisGuide />} />
