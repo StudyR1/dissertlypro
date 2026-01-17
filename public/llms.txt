@@ -73,6 +73,16 @@ Ensure dissertations meet university formatting requirements. Table of contents 
 - Services: https://dissertlypro.com/services
 - Pricing: https://dissertlypro.com/pricing
 
+## Free Academic Tools
+
+### Citation Generator
+**URL:** https://dissertlypro.com/tools/citation-generator
+Generate accurate citations in APA 7th, MLA 9th, Chicago, and Harvard styles. Supports books, journals, websites, newspapers, videos, and theses.
+
+### Chapter Timeline Planner
+**URL:** https://dissertlypro.com/tools/chapter-planner
+Visual Gantt-style dissertation timeline planner. Calculate chapter deadlines, track progress, and manage your thesis writing schedule.
+
 ## Ethics & Academic Integrity
 
 DissertlyPro operates as an educational support service. We provide guidance, coaching, and tutoring to help students develop their own academic work. We adhere to strict ethical guidelines and help students learn while producing original research.

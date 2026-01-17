@@ -69,6 +69,8 @@ const PhDIndustry = lazy(() => import("./pages/PhDIndustry"));
 const InternationalPhD = lazy(() => import("./pages/InternationalPhD"));
 const DissertationStructure = lazy(() => import("./pages/DissertationStructure"));
 const DissertationWriting = lazy(() => import("./pages/DissertationWriting"));
+const CitationGeneratorPage = lazy(() => import("./pages/tools/CitationGeneratorPage"));
+const ChapterPlannerPage = lazy(() => import("./pages/tools/ChapterPlannerPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -184,6 +186,10 @@ const App = () => (
             <Route path="/us" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
             <Route path="/au" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
             <Route path="/ca" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
+            
+            {/* Free Tools */}
+            <Route path="/tools/citation-generator" element={<Suspense fallback={<SkeletonPage />}><CitationGeneratorPage /></Suspense>} />
+            <Route path="/tools/chapter-planner" element={<Suspense fallback={<SkeletonPage />}><ChapterPlannerPage /></Suspense>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
