@@ -166,9 +166,10 @@ const LiveResearchPulse = () => {
         {/* Stats Row */}
         <div className="grid grid-cols-3 gap-3 mb-6">
           <motion.div 
-            key={stats.activeNow}
+            key="stat-active-now"
             initial={{ scale: 1 }}
             animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 0.3 }}
             className="bg-primary-foreground/5 rounded-xl p-3 text-center border border-primary-foreground/10"
           >
             <div className="flex items-center justify-center gap-1.5 mb-1">
@@ -179,9 +180,10 @@ const LiveResearchPulse = () => {
           </motion.div>
           
           <motion.div 
-            key={stats.todayConsultations}
+            key="stat-today-consultations"
             initial={{ scale: 1 }}
             animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 0.3 }}
             className="bg-primary-foreground/5 rounded-xl p-3 text-center border border-primary-foreground/10"
           >
             <div className="flex items-center justify-center gap-1.5 mb-1">
@@ -192,9 +194,10 @@ const LiveResearchPulse = () => {
           </motion.div>
           
           <motion.div 
-            key={stats.weeklyMilestones}
+            key="stat-weekly-milestones"
             initial={{ scale: 1 }}
             animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 0.3 }}
             className="bg-primary-foreground/5 rounded-xl p-3 text-center border border-primary-foreground/10"
           >
             <div className="flex items-center justify-center gap-1.5 mb-1">
