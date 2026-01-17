@@ -196,8 +196,7 @@ const DataVisualization = () => {
       <AggregateRatingSchema
         itemName="Data Visualization Best Practices"
         ratingValue={4.8}
-        ratingCount={1432}
-        reviewCount={356}
+        reviewCount={1432}
       />
 
       {/* Hero Section */}

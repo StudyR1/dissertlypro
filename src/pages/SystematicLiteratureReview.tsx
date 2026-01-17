@@ -173,8 +173,7 @@ const SystematicLiteratureReview = () => {
       <AggregateRatingSchema
         itemName="Systematic Literature Review Guide"
         ratingValue={4.9}
-        ratingCount={2156}
-        reviewCount={512}
+        reviewCount={2156}
       />
 
       {/* Hero Section */}

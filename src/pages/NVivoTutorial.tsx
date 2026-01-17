@@ -171,8 +171,7 @@ const NVivoTutorial = () => {
       <AggregateRatingSchema
         itemName="NVivo Tutorial for Qualitative Research"
         ratingValue={4.9}
-        ratingCount={1847}
-        reviewCount={423}
+        reviewCount={1847}
       />
 
       {/* Hero Section */}

@@ -172,8 +172,7 @@ const MixedMethodsResearch = () => {
       <AggregateRatingSchema
         itemName="Mixed Methods Research Guide"
         ratingValue={4.8}
-        ratingCount={1923}
-        reviewCount={467}
+        reviewCount={1923}
       />
 
       {/* Hero Section */}

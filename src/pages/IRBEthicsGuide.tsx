@@ -201,8 +201,7 @@ const IRBEthicsGuide = () => {
       <AggregateRatingSchema
         itemName="IRB/Ethics Application Guide"
         ratingValue={4.9}
-        ratingCount={1654}
-        reviewCount={389}
+        reviewCount={1654}
       />
 
       {/* Hero Section */}
