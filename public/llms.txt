@@ -101,6 +101,10 @@ Calculate reading time, page counts, and character counts for your dissertation.
 **URL:** https://dissertlypro.com/tools/quote-calculator
 Get an instant price estimate for dissertation support services. Transparent pricing with no hidden fees. Free, no sign-up required.
 
+### Research Question Validator
+**URL:** https://dissertlypro.com/tools/research-question-validator
+Validate your research question using PICO and SPIDER frameworks. Get instant scoring, feedback, and improvement suggestions for well-formed dissertation research questions. Ideal for quantitative and qualitative research. Free, no sign-up required.
+
 ## Tool-Focused Guides
 
 ### How to Write a Thesis Statement
