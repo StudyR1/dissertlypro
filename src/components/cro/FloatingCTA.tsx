@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { MessageCircle, Sparkles } from 'lucide-react';
+import { useState, useEffect, useRef, memo } from 'react';
+import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 declare global {
@@ -14,25 +14,43 @@ declare global {
       isChatMaximized?: () => boolean;
     };
     Tawk_LoadStart?: Date;
+    __tawkLoaded?: boolean;
   }
 }
 
-const FloatingCTA = () => {
+const FloatingCTA = memo(() => {
   const [isTawkLoaded, setIsTawkLoaded] = useState(false);
+  const scriptLoadedRef = useRef(false);
 
   useEffect(() => {
+    // Prevent duplicate script loading across navigations
+    if (window.__tawkLoaded || scriptLoadedRef.current) {
+      setIsTawkLoaded(true);
+      return;
+    }
+
+    scriptLoadedRef.current = true;
+    
     // Initialize Tawk.to
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
 
     // Set callback for when Tawk loads - hide the default widget
     window.Tawk_API.onLoad = () => {
+      window.__tawkLoaded = true;
       setIsTawkLoaded(true);
       // Hide the default Tawk.to widget button
       if (window.Tawk_API?.hideWidget) {
         window.Tawk_API.hideWidget();
       }
     };
+
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src*="tawk.to"]');
+    if (existingScript) {
+      setIsTawkLoaded(true);
+      return;
+    }
 
     const script = document.createElement('script');
     script.async = true;
@@ -45,6 +63,7 @@ const FloatingCTA = () => {
 
     // Fallback: set loaded after timeout and try to hide widget
     const timeout = setTimeout(() => {
+      window.__tawkLoaded = true;
       setIsTawkLoaded(true);
       if (window.Tawk_API?.hideWidget) {
         window.Tawk_API.hideWidget();
@@ -53,7 +72,7 @@ const FloatingCTA = () => {
 
     return () => {
       clearTimeout(timeout);
-      script.remove();
+      // Don't remove script on unmount - keep it for subsequent navigations
     };
   }, []);
 
@@ -134,6 +153,8 @@ const FloatingCTA = () => {
       `}</style>
     </>
   );
-};
+});
+
+FloatingCTA.displayName = 'FloatingCTA';
 
 export default FloatingCTA;

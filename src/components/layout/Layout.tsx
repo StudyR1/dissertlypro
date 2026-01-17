@@ -1,45 +1,54 @@
-import { ReactNode } from "react";
+import { ReactNode, memo, Suspense, lazy } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import MobileCTA from "./MobileCTA";
-import { 
-  FloatingCTA, 
-  FloatingWhatsApp
-} from "@/components/cro";
-import { 
-  ReadingModeToggle, 
-  NightOwlTheme, 
-  WordCountCalculator,
-  InstantQuoteCalculator,
-  DeadlineDangerZone
-} from "@/components/features";
+
+// Lazy load non-critical CRO components to prevent blocking page loads
+const FloatingCTA = lazy(() => import("@/components/cro/FloatingCTA"));
+const FloatingWhatsApp = lazy(() => import("@/components/cro/FloatingWhatsApp"));
+const MobileCTA = lazy(() => import("./MobileCTA"));
+
+// Lazy load feature components
+const ReadingModeToggle = lazy(() => import("@/components/features/ReadingModeToggle"));
+const NightOwlTheme = lazy(() => import("@/components/features/NightOwlTheme"));
+const WordCountCalculator = lazy(() => import("@/components/features/WordCountCalculator"));
+const InstantQuoteCalculator = lazy(() => import("@/components/features/InstantQuoteCalculator"));
+const DeadlineDangerZone = lazy(() => import("@/components/features/DeadlineDangerZone"));
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+// Memoize the Layout to prevent unnecessary re-renders
+const Layout = memo(({ children }: LayoutProps) => {
   return (
     <div className="flex min-h-screen flex-col text-size-adjust-none">
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
       
-      {/* CRO Components */}
-      <FloatingCTA />
-      <FloatingWhatsApp />
+      {/* Lazy-loaded CRO Components - won't block initial page render */}
+      <Suspense fallback={null}>
+        <FloatingCTA />
+        <FloatingWhatsApp />
+      </Suspense>
       
-      {/* Unique Features */}
-      <ReadingModeToggle />
-      <NightOwlTheme />
-      <WordCountCalculator />
-      <InstantQuoteCalculator />
-      <DeadlineDangerZone />
+      {/* Lazy-loaded Feature Components */}
+      <Suspense fallback={null}>
+        <ReadingModeToggle />
+        <NightOwlTheme />
+        <WordCountCalculator />
+        <InstantQuoteCalculator />
+        <DeadlineDangerZone />
+      </Suspense>
       
       {/* Mobile CTA Bar */}
-      <MobileCTA />
+      <Suspense fallback={null}>
+        <MobileCTA />
+      </Suspense>
     </div>
   );
-};
+});
+
+Layout.displayName = 'Layout';
 
 export default Layout;
