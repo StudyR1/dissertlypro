@@ -55,6 +55,7 @@ const ThesisStructure = lazy(() => import("./pages/ThesisStructure"));
 const InternationalStudents = lazy(() => import("./pages/InternationalStudents"));
 const CommitteeCommunication = lazy(() => import("./pages/CommitteeCommunication"));
 const AcademicWriting = lazy(() => import("./pages/AcademicWriting"));
+const PhDResources = lazy(() => import("./pages/PhDResources"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -104,6 +105,7 @@ const App = () => (
               <Route path="/research-methodology" element={<ResearchMethodology />} />
               <Route path="/literature-review-guide" element={<LiteratureReviewGuide />} />
               <Route path="/resources" element={<Resources />} />
+              <Route path="/phd-resources" element={<PhDResources />} />
               {/* Master's Thesis Resources */}
               <Route path="/masters-resources" element={<MastersResources />} />
               <Route path="/masters-thesis-guide" element={<MastersThesisGuide />} />
