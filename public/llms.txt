@@ -223,6 +223,7 @@ Comprehensive doctoral guides for specific institutions, covering requirements, 
 - **Cambridge PhD Thesis Guide:** https://dissertlypro.com/blog/cambridge-phd-thesis-guide - First-year registration review, second-year review, thesis submission
 - **Imperial College PhD Research Guide:** https://dissertlypro.com/blog/imperial-college-phd-research-guide - Early Stage Assessment, Late Stage Review, STEM focus
 - **UCL PhD Doctoral Guide:** https://dissertlypro.com/blog/ucl-phd-doctoral-guide - MPhil to PhD upgrade, thesis requirements, viva preparation
+- **LSE PhD Dissertation Guide:** https://dissertlypro.com/blog/lse-phd-dissertation-guide - MPhil to PhD upgrade, social science focus, viva preparation
 
 ### United States
 - **Harvard Dissertation Requirements:** https://dissertlypro.com/blog/harvard-dissertation-requirements - Qualifying papers, prospectus defense, committee structure
@@ -233,10 +234,14 @@ Comprehensive doctoral guides for specific institutions, covering requirements, 
 
 ### Australia
 - **Melbourne Thesis Completion Guide:** https://dissertlypro.com/blog/melbourne-thesis-completion-guide - Candidature confirmation, annual review, external examination
+- **Sydney PhD Thesis Guide:** https://dissertlypro.com/blog/sydney-phd-thesis-guide - Annual progress reviews, confirmation of candidature, external examination
 - **ANU PhD Thesis Guide:** https://dissertlypro.com/blog/anu-phd-thesis-guide - Annual milestones, thesis requirements, examination process
 - **Monash PhD Candidature Guide:** https://dissertlypro.com/blog/monash-phd-candidature-guide - Confirmation of candidature, progress milestones, thesis examination
 
 ### Canada
+- **Toronto PhD Dissertation Guide:** https://dissertlypro.com/blog/toronto-phd-dissertation-guide - Comprehensive exams, Final Oral Examination, SGS requirements
+- **UBC PhD Thesis Guide:** https://dissertlypro.com/blog/ubc-phd-thesis-guide - Comprehensive exam, manuscript-based thesis, final doctoral examination
+- **McGill PhD Thesis Guide:** https://dissertlypro.com/blog/mcgill-phd-thesis-guide - PhD1 vs PhD2, bilingual options, oral defense
 - **Waterloo PhD Thesis Guide:** https://dissertlypro.com/blog/waterloo-phd-thesis-guide - Comprehensive exams, manuscript-based thesis, defense process
 
 ---

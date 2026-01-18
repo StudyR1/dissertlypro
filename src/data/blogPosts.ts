@@ -4185,6 +4185,508 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
+
+  // LSE - London School of Economics Doctoral Guide
+  {
+    slug: "lse-phd-dissertation-guide",
+    title: "LSE PhD Guide: Excellence in Social Science Doctoral Research",
+    excerpt: "Navigate London School of Economics' rigorous doctoral programme with our guide to upgrade, thesis requirements, and viva examination for social science PhDs.",
+    metaDescription: "Complete LSE PhD guide covering upgrade from MPhil, thesis writing, and viva preparation. Essential for London School of Economics doctoral candidates.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Sophie Anderson",
+    authorBio: "PhD in International Relations from LSE, Academic Development Advisor",
+    date: "January 18, 2026",
+    readTime: "17 min read",
+    keywords: ["LSE PhD", "London School of Economics thesis", "LSE upgrade", "LSE viva", "social science PhD", "London doctorate"],
+    tableOfContents: [
+      { id: "lse-overview", title: "LSE's Doctoral Framework" },
+      { id: "upgrade-process", title: "The Upgrade Process" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "viva-examination", title: "Viva Examination" },
+      { id: "lse-resources", title: "LSE Resources" },
+    ],
+    content: [
+      "The London School of Economics and Political Science (LSE) is a world-leading social science institution, offering doctoral programmes across economics, politics, sociology, law, and related fields. This guide covers key requirements for LSE PhD candidates.",
+
+      "## LSE's Doctoral Framework",
+      "LSE PhD programmes follow a structured model with clear milestones:",
+      "- **Duration**: 3-4 years full-time (5-8 years part-time)",
+      "- **Initial registration**: All students register for MPhil initially",
+      "- **Supervision**: Primary supervisor plus advisor",
+      "- **Departments**: Economics, Government, Sociology, Law, and more",
+      "The LSE Doctoral School provides central support and coordinates policy across departments.",
+
+      "## The Upgrade Process",
+      "LSE's **upgrade from MPhil to PhD** typically occurs 18-24 months into your programme:",
+      "- **Written submission**: Research proposal, literature review, methodology, preliminary findings (typically 10,000-15,000 words)",
+      "- **Upgrade panel**: Two faculty members (not your supervisor)",
+      "- **Oral presentation**: Present and defend your research plan",
+      "**Outcomes:**",
+      "- Upgrade to PhD",
+      "- Conditional upgrade with specific requirements",
+      "- Second attempt required",
+      "- Remain on MPhil track",
+      "The upgrade is rigorous—LSE expects clear evidence of PhD-level research capability.",
+
+      "## Thesis Requirements",
+      "LSE PhD theses must:",
+      "- Make original contribution to knowledge in your field",
+      "- Demonstrate comprehensive understanding of relevant literature",
+      "- Show mastery of appropriate research methods",
+      "- Meet LSE formatting and presentation standards",
+      "**Word limits** vary by department:",
+      "- Most social science theses: 80,000-100,000 words",
+      "- Economics: often shorter with extensive technical appendices",
+      "- Law: may be longer for doctrinal analysis",
+      "Check your department's specific guidelines.",
+
+      "## Viva Examination",
+      "LSE conducts traditional viva voce examinations:",
+      "- **Two examiners**: Internal (LSE) and external",
+      "- **Duration**: Typically 2-3 hours",
+      "- **Format**: In-depth discussion of your thesis and methodology",
+      "**Possible outcomes:**",
+      "- Pass without corrections",
+      "- Pass with minor corrections (typically 3 months)",
+      "- Pass with major corrections (up to 18 months)",
+      "- Revise and resubmit",
+      "- Award of MPhil",
+      "Most candidates pass with minor corrections. LSE offers viva preparation workshops.",
+
+      "## LSE Resources",
+      "LSE provides extensive doctoral support:",
+      "- **LSE LIFE**: Academic skills development and workshops",
+      "- **PhD Academy**: Research training and community events",
+      "- **Library specialists**: Research support by discipline",
+      "- **Careers service**: Academic and non-academic career guidance",
+      "For personalized guidance on LSE's doctoral requirements, [DissertlyPro's LSE support](/uk/lse) provides expert assistance from advisors familiar with LSE systems.",
+    ],
+    faqs: [
+      {
+        question: "When is LSE's upgrade?",
+        answer: "LSE's upgrade from MPhil to PhD typically occurs 18-24 months into your programme. The exact timing depends on your department and mode of study."
+      },
+      {
+        question: "How long is an LSE PhD thesis?",
+        answer: "LSE PhD theses are typically 80,000-100,000 words for most social science disciplines. Economics theses may be shorter with technical appendices, while Law theses may be longer."
+      },
+      {
+        question: "Does LSE have a viva?",
+        answer: "Yes, LSE conducts traditional viva voce examinations with internal and external examiners. Vivas typically last 2-3 hours and involve detailed discussion of your thesis."
+      },
+      {
+        question: "What makes LSE PhDs distinctive?",
+        answer: "LSE is a specialist social science institution, offering focused expertise across economics, politics, sociology, and law. The research environment is highly international with strong policy connections."
+      }
+    ]
+  },
+
+  // University of Sydney - Doctoral Guide
+  {
+    slug: "sydney-phd-thesis-guide",
+    title: "Sydney PhD Guide: Doctoral Excellence at University of Sydney",
+    excerpt: "Navigate University of Sydney's HDR programme with our comprehensive guide to annual progress reviews, thesis requirements, and external examination.",
+    metaDescription: "Complete University of Sydney PhD guide covering progress milestones, thesis submission, and examination. Essential for Sydney doctoral candidates.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. James Mitchell",
+    authorBio: "PhD in Public Health from University of Sydney, HDR Coordinator",
+    date: "January 18, 2026",
+    readTime: "16 min read",
+    keywords: ["Sydney PhD", "University of Sydney thesis", "Sydney HDR", "Sydney candidature", "Australian PhD", "Sydney examination"],
+    tableOfContents: [
+      { id: "sydney-overview", title: "Sydney's Doctoral Framework" },
+      { id: "progress-milestones", title: "Progress Milestones" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "examination", title: "Thesis Examination" },
+      { id: "sydney-support", title: "Sydney Support Services" },
+    ],
+    content: [
+      "The University of Sydney is Australia's oldest university and one of its most prestigious, offering doctoral programmes across all disciplines. This guide covers key requirements for Sydney PhD candidates.",
+
+      "## Sydney's Doctoral Framework",
+      "Sydney's Higher Degree by Research (HDR) programmes follow a structured approach:",
+      "- **Duration**: 3-4 years full-time (6-8 years part-time)",
+      "- **Supervision**: Supervisory team including primary supervisor",
+      "- **Faculties**: Wide range including Arts, Science, Medicine, Engineering, Business",
+      "- **Research training**: Required coursework and professional development",
+      "Sydney's Graduate Research Hub coordinates HDR policy and support.",
+
+      "## Progress Milestones",
+      "Sydney uses **Annual Progress Reviews (APR)** to track candidature:",
+      "**Year 1 - Confirmation of Candidature:**",
+      "- Research proposal and plan",
+      "- Literature review progress",
+      "- Methodology development",
+      "- Oral presentation to panel",
+      "**Year 2 - Mid-candidature Review:**",
+      "- Substantial research progress",
+      "- Draft chapters or data collection",
+      "- Revised completion timeline",
+      "**Year 3+ - Pre-submission Review:**",
+      "- Near-complete thesis",
+      "- Clear submission date",
+      "- Publication record (if applicable)",
+      "Each APR involves written documentation, panel meeting, and formal assessment.",
+
+      "## Thesis Requirements",
+      "Sydney PhD theses must:",
+      "- Make significant original contribution to knowledge",
+      "- Demonstrate advanced research competency",
+      "- Be presented in clear, scholarly English",
+      "- Meet Sydney's formatting requirements",
+      "**Thesis formats:**",
+      "- Traditional monograph",
+      "- Thesis by publication (collection of papers with linking chapters)",
+      "**Word limits** typically 80,000-100,000 words, varying by faculty.",
+
+      "## Thesis Examination",
+      "Sydney uses external examination without oral defense:",
+      "- **Two external examiners**: International experts in your field",
+      "- **Written reports**: Independent assessment from each examiner",
+      "- **No viva**: Examination is thesis-based only (standard for Australia)",
+      "**Possible outcomes:**",
+      "- Pass without amendment",
+      "- Pass with minor amendments (typically 3 months)",
+      "- Pass with major amendments (typically 12 months)",
+      "- Revise and resubmit",
+      "- Not passed (rare)",
+      "Your supervisory team guides your response to examiner feedback.",
+
+      "## Sydney Support Services",
+      "Sydney provides comprehensive doctoral support:",
+      "- **Graduate Research Hub**: Policy, scholarships, milestones",
+      "- **Library Research Services**: Specialist librarians, research data management",
+      "- **Learning Hub**: Writing support, statistics consultation",
+      "- **Counselling and Psychological Services**: Wellbeing support",
+      "For specialized guidance on Sydney's doctoral requirements, [DissertlyPro's Sydney support](/au/sydney) connects you with experts familiar with Sydney's HDR system.",
+    ],
+    faqs: [
+      {
+        question: "Does Sydney have a PhD viva?",
+        answer: "No, University of Sydney PhDs don't have an oral defense/viva. Theses are examined by two external examiners who submit independent written reports. This is standard for Australian universities."
+      },
+      {
+        question: "When is Sydney's confirmation of candidature?",
+        answer: "Confirmation of candidature typically occurs within the first 12 months of full-time enrolment. It involves a written submission and oral presentation to a panel."
+      },
+      {
+        question: "What is thesis by publication at Sydney?",
+        answer: "Thesis by publication compiles published or publishable papers with linking introduction and conclusion chapters. It's available in most faculties with supervisor approval and must be requested early in candidature."
+      },
+      {
+        question: "How long is a Sydney PhD thesis?",
+        answer: "Sydney PhD theses are typically 80,000-100,000 words for monograph format. Thesis by publication may have different requirements depending on the number and length of publications included."
+      }
+    ]
+  },
+
+  // University of Toronto - Doctoral Guide
+  {
+    slug: "toronto-phd-dissertation-guide",
+    title: "University of Toronto PhD Guide: Doctoral Excellence in Canada",
+    excerpt: "Navigate U of T's comprehensive doctoral programme with our guide to qualifying exams, thesis requirements, and defense procedures for Canada's top research university.",
+    metaDescription: "Complete University of Toronto PhD guide covering comprehensive exams, thesis writing, and defense. Essential for U of T doctoral candidates.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Michael Chang",
+    authorBio: "PhD in History from University of Toronto, Graduate Studies Advisor",
+    date: "January 18, 2026",
+    readTime: "18 min read",
+    keywords: ["Toronto PhD", "University of Toronto thesis", "U of T comprehensive exam", "Toronto defense", "Canadian PhD", "Ontario doctorate"],
+    tableOfContents: [
+      { id: "toronto-overview", title: "U of T's Doctoral Framework" },
+      { id: "comprehensive-exam", title: "Comprehensive Examination" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "defense-process", title: "Final Oral Examination" },
+      { id: "toronto-resources", title: "U of T Resources" },
+    ],
+    content: [
+      "The University of Toronto is Canada's largest and most research-intensive university, offering doctoral programmes across all disciplines. This guide covers key requirements for U of T PhD candidates.",
+
+      "## U of T's Doctoral Framework",
+      "U of T PhD programmes follow a rigorous structure:",
+      "- **Duration**: Typically 4-6 years",
+      "- **Faculties**: Arts & Science, Engineering, Medicine, Law, Education, and more",
+      "- **Supervision**: Supervisor plus supervisory committee",
+      "- **Funding**: Most PhD students receive funding packages",
+      "The School of Graduate Studies (SGS) coordinates doctoral policies across all faculties.",
+
+      "## Comprehensive Examination",
+      "U of T's **comprehensive examination** (often called 'comps') is a critical milestone:",
+      "- **Timing**: Usually within first 2 years of programme",
+      "- **Format**: Varies by department—written, oral, or combination",
+      "- **Scope**: Broad field knowledge plus specialized areas",
+      "- **Committee**: Supervisory committee members evaluate",
+      "**Purpose:**",
+      "- Confirm breadth and depth of knowledge",
+      "- Assess readiness for independent research",
+      "- Identify gaps that need addressing",
+      "Passing comps advances you to PhD candidacy and allows you to focus on thesis research.",
+
+      "## Thesis Requirements",
+      "U of T PhD theses must:",
+      "- Represent original contribution to knowledge",
+      "- Demonstrate mastery of relevant literature",
+      "- Show competence in research methodology",
+      "- Meet SGS formatting requirements",
+      "**Thesis formats:**",
+      "- Traditional monograph (most common)",
+      "- Manuscript-based thesis (collection of papers—varies by department)",
+      "**Length** varies significantly by discipline but is typically 200-400 pages.",
+
+      "## Final Oral Examination",
+      "U of T's PhD defense is called the **Final Oral Examination (FOE)**:",
+      "- **Committee**: Supervisory committee plus external examiner",
+      "- **Chair**: SGS-appointed non-voting chair ensures fair process",
+      "- **Duration**: Typically 2-3 hours",
+      "- **Format**: Brief presentation followed by questioning rounds",
+      "**Examination process:**",
+      "- Candidate presentation (15-20 minutes)",
+      "- Rounds of questions from each committee member",
+      "- Private deliberation",
+      "- Announcement of result",
+      "**Outcomes:**",
+      "- Pass",
+      "- Pass with minor corrections",
+      "- Adjourn for major revisions",
+      "- Fail (rare)",
+
+      "## U of T Resources",
+      "U of T provides extensive doctoral support:",
+      "- **School of Graduate Studies**: Policy, funding, professional development",
+      "- **Graduate Centre for Academic Communication**: Writing support",
+      "- **Library services**: Research guides, specialist librarians",
+      "- **Graduate Professional Skills**: Career development workshops",
+      "For personalized guidance on U of T's doctoral requirements, [DissertlyPro's Toronto support](/ca/toronto) provides expert assistance.",
+    ],
+    faqs: [
+      {
+        question: "When are U of T comprehensive exams?",
+        answer: "Comprehensive exams typically occur within the first 2 years of the PhD programme. The exact format and timing varies by department—check with your graduate unit."
+      },
+      {
+        question: "What is the Final Oral Examination at U of T?",
+        answer: "The Final Oral Examination (FOE) is U of T's PhD defense. It includes your supervisory committee plus an external examiner, chaired by an SGS representative."
+      },
+      {
+        question: "How long is a U of T PhD?",
+        answer: "U of T PhD programmes typically take 4-6 years, depending on discipline. Humanities and social sciences often take longer than STEM fields."
+      },
+      {
+        question: "Does U of T fund PhD students?",
+        answer: "Yes, most U of T PhD students receive funding packages that include graduate assistantships, scholarships, and/or fellowships. Check with your specific department for details."
+      }
+    ]
+  },
+
+  // UBC - University of British Columbia Doctoral Guide
+  {
+    slug: "ubc-phd-thesis-guide",
+    title: "UBC PhD Guide: Doctoral Success at University of British Columbia",
+    excerpt: "Navigate UBC's doctoral programme with our comprehensive guide to comprehensive exams, thesis requirements, and final examination for BC's leading research university.",
+    metaDescription: "Complete UBC PhD guide covering comprehensive examination, thesis writing, and defense. Essential for University of British Columbia doctoral candidates.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Jennifer Lee",
+    authorBio: "PhD in Environmental Science from UBC, Graduate Advisor",
+    date: "January 18, 2026",
+    readTime: "17 min read",
+    keywords: ["UBC PhD", "University of British Columbia thesis", "UBC comprehensive exam", "UBC defense", "Vancouver PhD", "Canadian doctorate"],
+    tableOfContents: [
+      { id: "ubc-overview", title: "UBC's Doctoral Framework" },
+      { id: "comprehensive-exam", title: "Comprehensive Examination" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "final-examination", title: "Final Doctoral Examination" },
+      { id: "ubc-support", title: "UBC Support Services" },
+    ],
+    content: [
+      "The University of British Columbia (UBC) is one of Canada's top research universities, with campuses in Vancouver and the Okanagan. This guide covers key requirements for UBC PhD candidates.",
+
+      "## UBC's Doctoral Framework",
+      "UBC PhD programmes follow a structured model:",
+      "- **Duration**: Typically 4-6 years",
+      "- **Campuses**: Vancouver (main) and Okanagan",
+      "- **Supervision**: Supervisor plus supervisory committee (minimum 3 members)",
+      "- **Faculties**: Arts, Science, Applied Science, Medicine, and more",
+      "The Faculty of Graduate and Postdoctoral Studies (G+PS) coordinates doctoral policies.",
+
+      "## Comprehensive Examination",
+      "UBC's **comprehensive examination** assesses readiness for dissertation research:",
+      "- **Timing**: Within 36 months of programme start (varies by department)",
+      "- **Format**: Department-specific—may be written, oral, or both",
+      "- **Scope**: Breadth in field plus depth in research area",
+      "- **Committee**: Supervisory committee evaluates",
+      "**Requirements:**",
+      "- Demonstrate broad knowledge of your discipline",
+      "- Show specialized expertise in your research area",
+      "- Present viable dissertation plan",
+      "Passing the comprehensive exam is required before you can schedule your final defense.",
+
+      "## Thesis Requirements",
+      "UBC PhD theses must:",
+      "- Make original contribution to knowledge",
+      "- Demonstrate research competency",
+      "- Be written in scholarly English",
+      "- Meet G+PS formatting requirements",
+      "**Thesis formats:**",
+      "- Traditional monograph",
+      "- Manuscript-based thesis (papers with linking chapters)",
+      "UBC has specific guidelines for both formats, including manuscript-based theses.",
+
+      "## Final Doctoral Examination",
+      "UBC's PhD defense involves multiple examination stages:",
+      "**Departmental Examination:**",
+      "- Supervisory committee reviews thesis",
+      "- Must approve thesis before university-level examination",
+      "**University Examination:**",
+      "- External examiner (outside UBC)",
+      "- University examiners (UBC faculty outside your department)",
+      "- Supervisory committee",
+      "- Non-voting chair",
+      "**Examination format:**",
+      "- Candidate presentation (20-30 minutes)",
+      "- Rounds of questions from all examiners",
+      "- Private deliberation",
+      "**Outcomes:**",
+      "- Pass",
+      "- Pass with minor revisions",
+      "- Adjourn for major revisions",
+      "- Fail (rare)",
+
+      "## UBC Support Services",
+      "UBC provides comprehensive doctoral support:",
+      "- **Graduate and Postdoctoral Studies**: Policy, funding, professional development",
+      "- **Centre for Writing and Scholarly Communication**: Writing workshops",
+      "- **Library Research Commons**: Research skills, data management",
+      "- **Graduate Student Society**: Community and advocacy",
+      "For specialized guidance on UBC's doctoral requirements, [DissertlyPro's UBC support](/ca/ubc) connects you with experts familiar with UBC's systems.",
+    ],
+    faqs: [
+      {
+        question: "When is UBC's comprehensive exam?",
+        answer: "UBC comprehensive exams must be completed within 36 months of programme start, though most departments have earlier deadlines. The exact format varies by department."
+      },
+      {
+        question: "What is a manuscript-based thesis at UBC?",
+        answer: "A manuscript-based thesis compiles published or publishable papers with linking introduction and conclusion chapters. UBC has specific guidelines for this format, including requirements for co-authored papers."
+      },
+      {
+        question: "How long is a UBC PhD?",
+        answer: "UBC PhD programmes typically take 4-6 years. The maximum time limit is 6 years for most programmes, with possible extensions."
+      },
+      {
+        question: "What is UBC's external examiner?",
+        answer: "UBC's external examiner is an expert from outside UBC who reads your thesis and participates in your final doctoral examination. They provide independent assessment of your work."
+      }
+    ]
+  },
+
+  // McGill University - Doctoral Guide
+  {
+    slug: "mcgill-phd-thesis-guide",
+    title: "McGill PhD Guide: Doctoral Excellence at McGill University",
+    excerpt: "Navigate McGill's prestigious doctoral programme with our guide to comprehensive exams, thesis requirements, and oral defense for Canada's internationally renowned university.",
+    metaDescription: "Complete McGill PhD guide covering comprehensive examination, thesis writing, and defense. Essential for McGill University doctoral candidates.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Marie Dubois",
+    authorBio: "PhD in French Literature from McGill, Graduate Studies Advisor",
+    date: "January 18, 2026",
+    readTime: "17 min read",
+    keywords: ["McGill PhD", "McGill thesis", "McGill comprehensive exam", "McGill defense", "Montreal PhD", "Quebec doctorate"],
+    tableOfContents: [
+      { id: "mcgill-overview", title: "McGill's Doctoral Framework" },
+      { id: "comprehensive-exam", title: "Comprehensive Examination" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "oral-defense", title: "Oral Defense" },
+      { id: "mcgill-resources", title: "McGill Resources" },
+    ],
+    content: [
+      "McGill University is one of Canada's most prestigious universities and a global research leader. Located in Montreal, McGill offers doctoral programmes across all disciplines in a bilingual environment. This guide covers key requirements for McGill PhD candidates.",
+
+      "## McGill's Doctoral Framework",
+      "McGill PhD programmes follow a structured model:",
+      "- **Duration**: Typically 4-5 years (PhD2) or 5-6 years (PhD1)",
+      "- **PhD1 vs PhD2**: PhD1 for students without Master's; PhD2 for students with Master's",
+      "- **Supervision**: Supervisor plus supervisory committee",
+      "- **Faculties**: Arts, Science, Engineering, Medicine, Law, Education, and more",
+      "Graduate and Postdoctoral Studies (GPS) coordinates doctoral policies across McGill.",
+
+      "## Comprehensive Examination",
+      "McGill's **comprehensive examination** (also called 'comps' or 'candidacy exam') is required:",
+      "- **Timing**: Within specified timeframe (varies by programme—often 2-3 years)",
+      "- **Format**: Department-specific—written, oral, or combination",
+      "- **Scope**: Broad field knowledge plus research proposal",
+      "- **Committee**: Supervisory committee evaluates",
+      "**Purpose:**",
+      "- Assess breadth and depth of knowledge",
+      "- Evaluate research proposal viability",
+      "- Confirm readiness for independent research",
+      "Passing the comprehensive exam advances you to PhD candidacy.",
+
+      "## Thesis Requirements",
+      "McGill PhD theses must:",
+      "- Make original contribution to knowledge",
+      "- Demonstrate research competency",
+      "- Be written in English or French (department-dependent)",
+      "- Meet GPS formatting requirements",
+      "**Thesis formats:**",
+      "- Traditional monograph",
+      "- Manuscript-based thesis (published papers with linking chapters)",
+      "McGill permits manuscript-based theses in most departments, with specific requirements for author contributions.",
+
+      "## Oral Defense",
+      "McGill's PhD oral defense is a formal examination:",
+      "- **Committee**: Supervisory committee plus external examiner",
+      "- **Pro-Dean**: GPS representative chairs the examination",
+      "- **Duration**: Typically 2-3 hours",
+      "- **Format**: Presentation followed by questioning",
+      "**Examination process:**",
+      "- Candidate presentation (20-30 minutes)",
+      "- Questions from committee members and external",
+      "- Private deliberation",
+      "- Decision announced",
+      "**Outcomes:**",
+      "- Pass",
+      "- Pass with minor corrections",
+      "- Major revisions required",
+      "- Fail (rare)",
+
+      "## McGill Resources",
+      "McGill provides extensive doctoral support:",
+      "- **Graduate and Postdoctoral Studies**: Policy, funding, milestones",
+      "- **Skillsets**: Professional development workshops",
+      "- **Library services**: Research guides, specialist librarians",
+      "- **PGSS**: Post-Graduate Students' Society advocacy and community",
+      "**Bilingual advantage**: McGill's location in Montreal offers unique opportunities for bilingual research and cultural experience.",
+      "For personalized guidance on McGill's doctoral requirements, [DissertlyPro's McGill support](/ca/mcgill) provides expert assistance, including French-language support.",
+    ],
+    faqs: [
+      {
+        question: "What is the difference between PhD1 and PhD2 at McGill?",
+        answer: "PhD1 is for students entering without a Master's degree (typically 5-6 years). PhD2 is for students who already have a Master's (typically 4-5 years). Both lead to the same PhD degree."
+      },
+      {
+        question: "Can I write my McGill thesis in French?",
+        answer: "Yes, McGill permits theses in English or French, depending on your department's policies. Some departments require English; others allow choice. Check with your supervisor and department."
+      },
+      {
+        question: "When is McGill's comprehensive exam?",
+        answer: "Timing varies by programme, but comprehensive exams are typically completed within 2-3 years. PhD2 students often complete comps earlier than PhD1 students."
+      },
+      {
+        question: "What is a manuscript-based thesis at McGill?",
+        answer: "A manuscript-based thesis at McGill compiles published or submitted papers with linking introduction and conclusion. Each included paper must clearly indicate the candidate's contribution."
+      }
+    ]
+  },
 ];
 
 // Helper function to get featured posts
