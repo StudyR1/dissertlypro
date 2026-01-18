@@ -101,6 +101,7 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
+    { title: "Home", href: "/" },
     { title: "Services", href: "/services", hasDropdown: "services" },
     { title: "Subjects", href: "/subjects" },
     { title: "Professionals", href: "/working-professionals" },
