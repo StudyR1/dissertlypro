@@ -82,7 +82,7 @@ const ukPolicies: AIPolicy[] = [
     disclosureLocation: ["Methodology section", "Acknowledgments"],
     policyUrl: "https://www.ox.ac.uk/students/academic/guidance/skills/ai",
     lastUpdated: "2024-09",
-    notes: "Must clearly distinguish between AI-assisted and original work"
+    notes: "Must clearly distinguish between AI-assisted and original work. College-specific variations may apply."
   },
   {
     universityName: "University of Cambridge",
@@ -94,7 +94,8 @@ const ukPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Declaration of authorship"],
     policyUrl: "https://www.cambridgestudents.cam.ac.uk/your-course/examinations/assessment",
-    lastUpdated: "2024-09"
+    lastUpdated: "2024-09",
+    notes: "Faculty-specific guidelines may impose additional restrictions."
   },
   {
     universityName: "Imperial College London",
@@ -105,7 +106,9 @@ const ukPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Appendix"],
-    lastUpdated: "2024-08"
+    policyUrl: "https://www.imperial.ac.uk/students/academic-support/academic-integrity/",
+    lastUpdated: "2024-08",
+    notes: "Strong support for AI in STEM research applications. Code must be fully documented."
   },
   {
     universityName: "University College London (UCL)",
@@ -116,6 +119,7 @@ const ukPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting", "paraphrasing"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Author contribution statement"],
+    policyUrl: "https://www.ucl.ac.uk/students/exams-and-assessments/academic-integrity",
     lastUpdated: "2024-09"
   },
   {
@@ -127,7 +131,9 @@ const ukPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting", "paraphrasing", "data-analysis", "summarization"],
     disclosureRequired: true,
     disclosureLocation: ["Declaration form", "Methodology section"],
-    lastUpdated: "2024-07"
+    policyUrl: "https://info.lse.ac.uk/current-students/services/assessment-and-results/academic-conduct",
+    lastUpdated: "2024-07",
+    notes: "Stricter policy for social sciences. Quantitative analysis AI use requires explicit approval."
   },
   {
     universityName: "University of Edinburgh",
@@ -138,6 +144,7 @@ const ukPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
+    policyUrl: "https://www.ed.ac.uk/academic-services/students/conduct/academic-misconduct",
     lastUpdated: "2024-08"
   },
   {
@@ -183,6 +190,241 @@ const ukPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Appendix"],
     lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Glasgow",
+    country: "UK",
+    region: "Scotland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Leeds",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Birmingham",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Acknowledgments"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "University of Southampton",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Durham University",
+    country: "UK",
+    region: "England",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing", "citation-formatting"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Declaration form", "Methodology section"],
+    lastUpdated: "2024-08",
+    notes: "Humanities departments have stricter restrictions than STEM."
+  },
+  {
+    universityName: "University of Nottingham",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Sheffield",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "University of Liverpool",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Exeter",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Cardiff University",
+    country: "UK",
+    region: "Wales",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Queen's University Belfast",
+    country: "UK",
+    region: "Northern Ireland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of St Andrews",
+    country: "UK",
+    region: "Scotland",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing", "citation-formatting"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Declaration form", "Methodology section"],
+    lastUpdated: "2024-08",
+    notes: "Traditional emphasis on original scholarly contribution."
+  },
+  {
+    universityName: "University of York",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Lancaster University",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "University of Bath",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Reading",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Loughborough University",
+    country: "UK",
+    region: "England",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08",
+    notes: "Engineering and technology departments have more permissive AI policies."
+  },
+  {
+    universityName: "University of Surrey",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Sussex",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Royal Holloway, University of London",
+    country: "UK",
+    region: "England",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming", "citation-formatting"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "SOAS University of London",
+    country: "UK",
+    region: "England",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization", "translation"],
+    disclosureRequired: true,
+    disclosureLocation: ["Declaration form", "Methodology section"],
+    lastUpdated: "2024-07",
+    notes: "Strong emphasis on original language scholarship and translation work."
   }
 ];
 
@@ -198,7 +440,8 @@ const usPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Acknowledgments"],
     policyUrl: "https://provost.harvard.edu/guidelines-using-chatgpt-and-other-generative-ai-tools-harvard",
-    lastUpdated: "2024-09"
+    lastUpdated: "2024-09",
+    notes: "School-specific policies may vary. Check with your department."
   },
   {
     universityName: "Stanford University",
@@ -209,7 +452,9 @@ const usPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
-    lastUpdated: "2024-08"
+    policyUrl: "https://communitystandards.stanford.edu/policies-guidance/honor-code",
+    lastUpdated: "2024-08",
+    notes: "Leading institution in AI research with progressive policies."
   },
   {
     universityName: "Massachusetts Institute of Technology (MIT)",
@@ -220,7 +465,9 @@ const usPolicies: AIPolicy[] = [
     prohibitedUses: [],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Author contribution"],
-    lastUpdated: "2024-09"
+    policyUrl: "https://integrity.mit.edu/",
+    lastUpdated: "2024-09",
+    notes: "Most permissive policy. Encourages AI as research tool with full transparency."
   },
   {
     universityName: "Yale University",
@@ -242,7 +489,9 @@ const usPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
     disclosureRequired: true,
     disclosureLocation: ["Honor code acknowledgment", "Methodology section"],
-    lastUpdated: "2024-07"
+    policyUrl: "https://odoc.princeton.edu/curriculum/academic-integrity",
+    lastUpdated: "2024-07",
+    notes: "Strong honor code tradition. More restrictive than peer institutions."
   },
   {
     universityName: "Columbia University",
@@ -298,6 +547,419 @@ const usPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
     lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Pennsylvania",
+    country: "US",
+    region: "Pennsylvania",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Acknowledgments"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "Cornell University",
+    country: "US",
+    region: "New York",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Johns Hopkins University",
+    country: "US",
+    region: "Maryland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08",
+    notes: "Medical and public health programs have specific AI guidelines."
+  },
+  {
+    universityName: "University of California, Los Angeles (UCLA)",
+    country: "US",
+    region: "California",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "University of Michigan",
+    country: "US",
+    region: "Michigan",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "New York University (NYU)",
+    country: "US",
+    region: "New York",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Carnegie Mellon University",
+    country: "US",
+    region: "Pennsylvania",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation", "summarization"],
+    prohibitedUses: [],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09",
+    notes: "Leading AI research institution with progressive, transparent policies."
+  },
+  {
+    universityName: "University of Washington",
+    country: "US",
+    region: "Washington",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Texas at Austin",
+    country: "US",
+    region: "Texas",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Georgia Institute of Technology",
+    country: "US",
+    region: "Georgia",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Wisconsin-Madison",
+    country: "US",
+    region: "Wisconsin",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "University of Illinois Urbana-Champaign",
+    country: "US",
+    region: "Illinois",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Boston University",
+    country: "US",
+    region: "Massachusetts",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Southern California (USC)",
+    country: "US",
+    region: "California",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Vanderbilt University",
+    country: "US",
+    region: "Tennessee",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Acknowledgments"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Rice University",
+    country: "US",
+    region: "Texas",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Emory University",
+    country: "US",
+    region: "Georgia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Brown University",
+    country: "US",
+    region: "Rhode Island",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Dartmouth College",
+    country: "US",
+    region: "New Hampshire",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing", "citation-formatting"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Honor code acknowledgment", "Methodology section"],
+    lastUpdated: "2024-07",
+    notes: "Strong liberal arts tradition with emphasis on original work."
+  },
+  {
+    universityName: "University of Virginia",
+    country: "US",
+    region: "Virginia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of North Carolina at Chapel Hill",
+    country: "US",
+    region: "North Carolina",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Ohio State University",
+    country: "US",
+    region: "Ohio",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Arizona State University",
+    country: "US",
+    region: "Arizona",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09",
+    notes: "Innovation-focused institution with progressive AI policies."
+  },
+  {
+    universityName: "University of Florida",
+    country: "US",
+    region: "Florida",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Indiana University Bloomington",
+    country: "US",
+    region: "Indiana",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Purdue University",
+    country: "US",
+    region: "Indiana",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Minnesota",
+    country: "US",
+    region: "Minnesota",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Michigan State University",
+    country: "US",
+    region: "Michigan",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Penn State University",
+    country: "US",
+    region: "Pennsylvania",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Maryland",
+    country: "US",
+    region: "Maryland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of California, San Diego (UCSD)",
+    country: "US",
+    region: "California",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "University of California, Davis",
+    country: "US",
+    region: "California",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Colorado Boulder",
+    country: "US",
+    region: "Colorado",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Washington University in St. Louis",
+    country: "US",
+    region: "Missouri",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Acknowledgments"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Tufts University",
+    country: "US",
+    region: "Massachusetts",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Georgetown University",
+    country: "US",
+    region: "Washington D.C.",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing", "citation-formatting"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Honor pledge", "Methodology section"],
+    lastUpdated: "2024-07",
+    notes: "Traditional academic values with emphasis on original scholarship."
+  },
+  {
+    universityName: "University of Notre Dame",
+    country: "US",
+    region: "Indiana",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing", "citation-formatting"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Honor code acknowledgment", "Methodology section"],
+    lastUpdated: "2024-08",
+    notes: "Strong honor code tradition with restrictive AI policies."
   }
 ];
 
@@ -313,7 +975,8 @@ const auPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Academic integrity statement"],
     policyUrl: "https://academicintegrity.unimelb.edu.au/plagiarism-and-collusion/artificial-intelligence-tools",
-    lastUpdated: "2024-09"
+    lastUpdated: "2024-09",
+    notes: "Comprehensive AI policy with clear guidance on disclosure requirements."
   },
   {
     universityName: "University of Sydney",
@@ -324,6 +987,7 @@ const auPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
+    policyUrl: "https://www.sydney.edu.au/students/academic-integrity.html",
     lastUpdated: "2024-08"
   },
   {
@@ -346,6 +1010,7 @@ const auPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting", "paraphrasing"],
     disclosureRequired: true,
     disclosureLocation: ["Authorship declaration", "Methodology section"],
+    policyUrl: "https://www.monash.edu/students/academic/policies/academic-integrity",
     lastUpdated: "2024-08"
   },
   {
@@ -368,6 +1033,7 @@ const auPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting", "paraphrasing"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
+    policyUrl: "https://www.student.unsw.edu.au/plagiarism",
     lastUpdated: "2024-08"
   },
   {
@@ -391,6 +1057,139 @@ const auPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
     lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Macquarie University",
+    country: "Australia",
+    region: "New South Wales",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "RMIT University",
+    country: "Australia",
+    region: "Victoria",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08",
+    notes: "Technology-focused institution with progressive AI policies."
+  },
+  {
+    universityName: "University of Technology Sydney (UTS)",
+    country: "Australia",
+    region: "New South Wales",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "Queensland University of Technology (QUT)",
+    country: "Australia",
+    region: "Queensland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Deakin University",
+    country: "Australia",
+    region: "Victoria",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Griffith University",
+    country: "Australia",
+    region: "Queensland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "La Trobe University",
+    country: "Australia",
+    region: "Victoria",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "University of Tasmania",
+    country: "Australia",
+    region: "Tasmania",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Wollongong",
+    country: "Australia",
+    region: "New South Wales",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Curtin University",
+    country: "Australia",
+    region: "Western Australia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Swinburne University of Technology",
+    country: "Australia",
+    region: "Victoria",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "James Cook University",
+    country: "Australia",
+    region: "Queensland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
   }
 ];
 
@@ -406,7 +1205,8 @@ const caPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Academic integrity declaration"],
     policyUrl: "https://www.artsci.utoronto.ca/current/academic-advising-and-support/student-academic-integrity",
-    lastUpdated: "2024-09"
+    lastUpdated: "2024-09",
+    notes: "Faculty-specific policies may have additional requirements."
   },
   {
     universityName: "University of British Columbia (UBC)",
@@ -417,6 +1217,7 @@ const caPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
+    policyUrl: "https://academicintegrity.ubc.ca/",
     lastUpdated: "2024-08"
   },
   {
@@ -428,6 +1229,7 @@ const caPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting", "paraphrasing"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Acknowledgments"],
+    policyUrl: "https://www.mcgill.ca/students/srr/academicrights/integrity",
     lastUpdated: "2024-09"
   },
   {
@@ -450,7 +1252,9 @@ const caPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
-    lastUpdated: "2024-08"
+    policyUrl: "https://uwaterloo.ca/academic-integrity/",
+    lastUpdated: "2024-08",
+    notes: "Tech-focused institution with progressive approach to AI tools."
   },
   {
     universityName: "McMaster University",
@@ -484,6 +1288,139 @@ const caPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
     lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Ottawa",
+    country: "Canada",
+    region: "Ontario",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Western University",
+    country: "Canada",
+    region: "Ontario",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Dalhousie University",
+    country: "Canada",
+    region: "Nova Scotia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Simon Fraser University",
+    country: "Canada",
+    region: "British Columbia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Victoria",
+    country: "Canada",
+    region: "British Columbia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "University of Manitoba",
+    country: "Canada",
+    region: "Manitoba",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "York University",
+    country: "Canada",
+    region: "Ontario",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Carleton University",
+    country: "Canada",
+    region: "Ontario",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Concordia University",
+    country: "Canada",
+    region: "Quebec",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Saskatchewan",
+    country: "Canada",
+    region: "Saskatchewan",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Université de Montréal",
+    country: "Canada",
+    region: "Quebec",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing", "citation-formatting"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Déclaration d'intégrité", "Methodology section"],
+    lastUpdated: "2024-07",
+    notes: "Stricter policy in humanities; STEM departments more permissive."
+  },
+  {
+    universityName: "University of Guelph",
+    country: "Canada",
+    region: "Ontario",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
   }
 ];
 
@@ -498,7 +1435,9 @@ const euPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
-    lastUpdated: "2024-08"
+    policyUrl: "https://ethz.ch/en/the-eth-zurich/education/academic-integrity.html",
+    lastUpdated: "2024-08",
+    notes: "Leading technical university with progressive AI research policies."
   },
   {
     universityName: "University of Amsterdam",
@@ -530,8 +1469,9 @@ const euPolicies: AIPolicy[] = [
     allowedUses: ["literature-search", "grammar-editing"],
     prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
     disclosureRequired: true,
-    disclosureLocation: ["Declaration d'intégrité académique"],
-    lastUpdated: "2024-07"
+    disclosureLocation: ["Déclaration d'intégrité académique"],
+    lastUpdated: "2024-07",
+    notes: "Traditional French academic emphasis on original authorship."
   },
   {
     universityName: "University of Copenhagen",
@@ -554,6 +1494,227 @@ const euPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
     lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Technical University of Munich",
+    country: "Germany",
+    region: "Bavaria",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "Heidelberg University",
+    country: "Germany",
+    region: "Baden-Württemberg",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Humboldt University of Berlin",
+    country: "Germany",
+    region: "Berlin",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Zurich",
+    country: "Switzerland",
+    region: "Zurich",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Uppsala University",
+    country: "Sweden",
+    region: "Uppsala",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Karolinska Institute",
+    country: "Sweden",
+    region: "Stockholm",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09",
+    notes: "Medical research focus with specific guidelines for AI in clinical research."
+  },
+  {
+    universityName: "Delft University of Technology",
+    country: "Netherlands",
+    region: "South Holland",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "École Polytechnique Fédérale de Lausanne (EPFL)",
+    country: "Switzerland",
+    region: "Vaud",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "Trinity College Dublin",
+    country: "Ireland",
+    region: "Dublin",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University College Dublin",
+    country: "Ireland",
+    region: "Dublin",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Leiden University",
+    country: "Netherlands",
+    region: "South Holland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Sciences Po",
+    country: "France",
+    region: "Paris",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing", "citation-formatting"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Déclaration d'intégrité académique"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "RWTH Aachen University",
+    country: "Germany",
+    region: "North Rhine-Westphalia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Politecnico di Milano",
+    country: "Italy",
+    region: "Lombardy",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Barcelona",
+    country: "Spain",
+    region: "Catalonia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "University of Helsinki",
+    country: "Finland",
+    region: "Uusimaa",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Oslo",
+    country: "Norway",
+    region: "Oslo",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Vienna",
+    country: "Austria",
+    region: "Vienna",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Charles University",
+    country: "Czech Republic",
+    region: "Prague",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Declaration form"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "University of Warsaw",
+    country: "Poland",
+    region: "Masovia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
   }
 ];
 
@@ -568,7 +1729,9 @@ const asiaPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section", "Academic declaration"],
-    lastUpdated: "2024-09"
+    policyUrl: "https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/academic-integrity",
+    lastUpdated: "2024-09",
+    notes: "Progressive approach to AI with clear disclosure guidelines."
   },
   {
     universityName: "University of Hong Kong",
@@ -590,7 +1753,8 @@ const asiaPolicies: AIPolicy[] = [
     prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
-    lastUpdated: "2024-07"
+    lastUpdated: "2024-07",
+    notes: "Traditional emphasis on original scholarship; conservative AI approach."
   },
   {
     universityName: "Seoul National University",
@@ -624,6 +1788,216 @@ const asiaPolicies: AIPolicy[] = [
     disclosureRequired: true,
     disclosureLocation: ["Declaration form"],
     lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Nanyang Technological University (NTU)",
+    country: "Singapore",
+    region: "Singapore",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "Hong Kong University of Science and Technology",
+    country: "Hong Kong",
+    region: "Hong Kong",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Chinese University of Hong Kong",
+    country: "Hong Kong",
+    region: "Hong Kong",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Kyoto University",
+    country: "Japan",
+    region: "Kyoto",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "Fudan University",
+    country: "China",
+    region: "Shanghai",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Declaration form"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Zhejiang University",
+    country: "China",
+    region: "Zhejiang",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Declaration form"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "KAIST",
+    country: "South Korea",
+    region: "Daejeon",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09",
+    notes: "Leading tech university with progressive AI research policies."
+  },
+  {
+    universityName: "Korea University",
+    country: "South Korea",
+    region: "Seoul",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Yonsei University",
+    country: "South Korea",
+    region: "Seoul",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Tokyo Institute of Technology",
+    country: "Japan",
+    region: "Tokyo",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Indian Institute of Technology Bombay",
+    country: "India",
+    region: "Maharashtra",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Indian Institute of Technology Delhi",
+    country: "India",
+    region: "Delhi",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Indian Institute of Science",
+    country: "India",
+    region: "Karnataka",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "University of Delhi",
+    country: "India",
+    region: "Delhi",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "summarization"],
+    disclosureRequired: true,
+    disclosureLocation: ["Declaration form"],
+    lastUpdated: "2024-07"
+  },
+  {
+    universityName: "National Taiwan University",
+    country: "Taiwan",
+    region: "Taipei",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Hebrew University of Jerusalem",
+    country: "Israel",
+    region: "Jerusalem",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "Technion - Israel Institute of Technology",
+    country: "Israel",
+    region: "Haifa",
+    policyLevel: "permissive",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming", "code-generation"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-09"
+  },
+  {
+    universityName: "King Saud University",
+    country: "Saudi Arabia",
+    region: "Riyadh",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
+  },
+  {
+    universityName: "University of Malaya",
+    country: "Malaysia",
+    region: "Kuala Lumpur",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "data-analysis", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-08"
   }
 ];
 
