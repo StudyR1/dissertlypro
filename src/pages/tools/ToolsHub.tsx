@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree, FlaskConical, Search, GitBranch } from "lucide-react";
+import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree, FlaskConical, Search, GitBranch, Library } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
@@ -136,6 +136,16 @@ const tools = [
     icon: GitBranch,
     href: "/tools/prisma-flow",
     features: ["PRISMA 2020 format", "Visual flowchart", "Copy as text"],
+    badge: "New",
+    badgeVariant: "default" as const,
+  },
+  {
+    id: "reference-manager",
+    title: "Reference Manager",
+    description: "Save, organize, tag, and export your citations. Build your dissertation bibliography with BibTeX and RIS export support.",
+    icon: Library,
+    href: "/tools/reference-manager",
+    features: ["Tag organization", "BibTeX export", "RIS export"],
     badge: "New",
     badgeVariant: "default" as const,
   },

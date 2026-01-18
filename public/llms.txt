@@ -129,6 +129,10 @@ Build systematic database search queries with Boolean operators (AND, OR, NOT) f
 **URL:** https://dissertlypro.com/tools/prisma-flow
 Create professional PRISMA 2020 flow diagrams for systematic reviews and meta-analyses. Enter your study selection data (identification, screening, eligibility, inclusion) and generate a visual flowchart. Includes copy-as-text export and exclusion reason tracking. Free, no sign-up required.
 
+### Reference Manager
+**URL:** https://dissertlypro.com/tools/reference-manager
+Save, organize, tag, and export your dissertation citations. Build your bibliography library with multiple source types (journal articles, books, websites, conference papers, theses). Features include tag organization, search and filter, BibTeX and RIS export, and one-click APA citation copying. References are saved locally in your browser. Free, no sign-up required.
+
 ## Downloadable Templates
 
 ### Free Dissertation & Thesis Templates
