@@ -89,6 +89,7 @@ const PersonalizationQuizPage = lazy(() => import("./pages/tools/Personalization
 const DIYComparisonCalculatorPage = lazy(() => import("./pages/tools/DIYComparisonCalculatorPage"));
 const OutlineGeneratorPage = lazy(() => import("./pages/tools/OutlineGeneratorPage"));
 const MethodologySelectorPage = lazy(() => import("./pages/tools/MethodologySelectorPage"));
+const LiteratureSearchPage = lazy(() => import("./pages/tools/LiteratureSearchPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -227,6 +228,7 @@ const App = () => (
             <Route path="/tools/diy-comparison" element={<Suspense fallback={<ToolPageSkeleton />}><DIYComparisonCalculatorPage /></Suspense>} />
             <Route path="/tools/outline-generator" element={<Suspense fallback={<ToolPageSkeleton />}><OutlineGeneratorPage /></Suspense>} />
             <Route path="/tools/methodology-selector" element={<Suspense fallback={<ToolPageSkeleton />}><MethodologySelectorPage /></Suspense>} />
+            <Route path="/tools/literature-search" element={<Suspense fallback={<ToolPageSkeleton />}><LiteratureSearchPage /></Suspense>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
