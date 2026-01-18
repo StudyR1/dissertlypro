@@ -37,6 +37,7 @@ const About = lazy(() => import("./pages/About"));
 const Experts = lazy(() => import("./pages/Experts"));
 const RegionLanding = lazy(() => import("./pages/RegionLanding"));
 const UniversityLanding = lazy(() => import("./pages/UniversityLanding"));
+const UniversitiesHub = lazy(() => import("./pages/UniversitiesHub"));
 const Order = lazy(() => import("./pages/Order"));
 const Templates = lazy(() => import("./pages/Templates"));
 const SupervisorGuide = lazy(() => import("./pages/SupervisorGuide"));
@@ -217,6 +218,9 @@ const App = () => (
             <Route path="/us" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
             <Route path="/au" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
             <Route path="/ca" element={<Suspense fallback={<SkeletonPage />}><RegionLanding /></Suspense>} />
+            
+            {/* Universities Hub */}
+            <Route path="/universities" element={<Suspense fallback={<ServicesGridSkeleton />}><UniversitiesHub /></Suspense>} />
             
             {/* University-specific landing pages */}
             <Route path="/uk/:university" element={<Suspense fallback={<SkeletonPage />}><UniversityLanding /></Suspense>} />
