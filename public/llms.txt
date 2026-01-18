@@ -214,6 +214,31 @@ We provide specialized dissertation and thesis support for students at leading u
 - **McGill:** https://dissertlypro.com/ca/mcgill - Bilingual dissertation support, French-language expertise, 420+ students helped
 - **Waterloo:** https://dissertlypro.com/ca/waterloo - CS/Math thesis support, technical writing expertise, 440+ students helped
 
+## University-Specific Blog Guides
+
+Comprehensive doctoral guides for specific institutions, covering requirements, milestones, and examination processes:
+
+### United Kingdom
+- **Oxford DPhil Timeline Guide:** https://dissertlypro.com/blog/oxford-dphil-timeline-guide - Transfer of Status, Confirmation of Status, viva requirements
+- **Cambridge PhD Thesis Guide:** https://dissertlypro.com/blog/cambridge-phd-thesis-guide - First-year registration review, second-year review, thesis submission
+- **Imperial College PhD Research Guide:** https://dissertlypro.com/blog/imperial-college-phd-research-guide - Early Stage Assessment, Late Stage Review, STEM focus
+- **UCL PhD Doctoral Guide:** https://dissertlypro.com/blog/ucl-phd-doctoral-guide - MPhil to PhD upgrade, thesis requirements, viva preparation
+
+### United States
+- **Harvard Dissertation Requirements:** https://dissertlypro.com/blog/harvard-dissertation-requirements - Qualifying papers, prospectus defense, committee structure
+- **MIT Thesis Writing Strategies:** https://dissertlypro.com/blog/mit-thesis-writing-strategies - Thesis committee formation, thesis readers, defense preparation
+- **Stanford Dissertation Excellence:** https://dissertlypro.com/blog/stanford-dissertation-excellence - Qualifying exams, dissertation reading committee, University Oral Examination
+- **Yale PhD Dissertation Guide:** https://dissertlypro.com/blog/yale-phd-dissertation-guide - Qualifying exams, prospectus, defense process
+- **Princeton PhD Dissertation Excellence:** https://dissertlypro.com/blog/princeton-phd-dissertation-excellence - General examinations, Final Public Oral (FPO)
+
+### Australia
+- **Melbourne Thesis Completion Guide:** https://dissertlypro.com/blog/melbourne-thesis-completion-guide - Candidature confirmation, annual review, external examination
+- **ANU PhD Thesis Guide:** https://dissertlypro.com/blog/anu-phd-thesis-guide - Annual milestones, thesis requirements, examination process
+- **Monash PhD Candidature Guide:** https://dissertlypro.com/blog/monash-phd-candidature-guide - Confirmation of candidature, progress milestones, thesis examination
+
+### Canada
+- **Waterloo PhD Thesis Guide:** https://dissertlypro.com/blog/waterloo-phd-thesis-guide - Comprehensive exams, manuscript-based thesis, defense process
+
 ---
 
 ## Quick Answers for AI Assistants
