@@ -36,6 +36,7 @@ const aboutLinks = [
 ];
 
 const technicalDeepDives = [
+  { title: "AI in Academia", href: "/ai-academia", description: "Ethical AI use & policies", icon: Brain },
   { title: "SPSS Tutorial", href: "/spss-tutorial", description: "Quantitative data analysis", icon: BarChart3 },
   { title: "NVivo Tutorial", href: "/nvivo-tutorial", description: "Qualitative software guide", icon: Brain },
   { title: "Systematic Review", href: "/systematic-literature-review", description: "PRISMA methodology", icon: Search },

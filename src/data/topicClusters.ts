@@ -177,6 +177,26 @@ export const topicClusters: TopicCluster[] = [
       { title: "Quote Calculator", url: "/tools/quote-calculator", description: "Get a support quote", type: "tool" }
     ],
     keywords: ["Master's thesis", "Master's degree", "graduate school", "thesis writing", "Master's defense"]
+  },
+  {
+    id: "ai-academia",
+    name: "AI in Academia",
+    pillar: {
+      title: "AI in Academia Hub",
+      url: "/ai-academia",
+      description: "Ethical AI use in graduate research",
+      type: "guide"
+    },
+    spokes: [
+      { title: "AI Detection Guide", url: "/ai-detection-guide", description: "Understanding AI detection tools", type: "guide" },
+      { title: "Citing AI Guide", url: "/citing-ai", description: "How to cite AI tools properly", type: "guide" },
+      { title: "AI for Literature Reviews", url: "/ai-literature-review", description: "AI tools for literature search", type: "guide" },
+      { title: "IRB Ethics Guide", url: "/irb-ethics-guide", description: "Research ethics and AI considerations", type: "guide" }
+    ],
+    tools: [
+      { title: "AI Policy Checker", url: "/tools/ai-policy-checker", description: "Check university AI policies", type: "tool" }
+    ],
+    keywords: ["AI in research", "ChatGPT dissertation", "AI disclosure", "AI detection", "ethical AI use", "citing AI", "AI academic policy"]
   }
 ];
 
