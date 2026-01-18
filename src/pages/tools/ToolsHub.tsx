@@ -149,6 +149,16 @@ const tools = [
     badge: "New",
     badgeVariant: "default" as const,
   },
+  {
+    id: "ai-policy-checker",
+    title: "AI Policy Checker",
+    description: "Check your university's AI policy for dissertations. Find out what's allowed and get disclosure templates for 50+ universities.",
+    icon: Brain,
+    href: "/tools/ai-policy-checker",
+    features: ["50+ universities", "Disclosure templates", "Use analysis"],
+    badge: "New",
+    badgeVariant: "default" as const,
+  },
 ];
 
 const upcomingTools: { title: string; description: string; icon: React.ElementType }[] = [];
