@@ -217,7 +217,7 @@ const Blog = () => {
                 <motion.button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-sans font-medium transition-all whitespace-nowrap ${
+                  className={`px-4 py-2 rounded-full text-sm font-sans font-medium transition-all whitespace-nowrap flex items-center gap-2 ${
                     activeCategory === category
                       ? "bg-primary text-primary-foreground shadow-sm"
                       : "bg-secondary text-secondary-foreground hover:bg-primary/10 hover:text-primary"
@@ -229,9 +229,14 @@ const Blog = () => {
                   aria-controls="blog-posts-grid"
                 >
                   {category}
+                  {category === "AI in Academia" && (
+                    <span className="text-[9px] font-bold uppercase tracking-wider bg-copper text-white px-1.5 py-0.5 rounded-full">
+                      New
+                    </span>
+                  )}
                   {activeCategory === category && (
                     <motion.span
-                      className="ml-2 text-xs opacity-80"
+                      className="text-xs opacity-80"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                     >

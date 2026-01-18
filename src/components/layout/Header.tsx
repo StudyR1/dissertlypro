@@ -36,7 +36,7 @@ const aboutLinks = [
 ];
 
 const technicalDeepDives = [
-  { title: "AI in Academia", href: "/ai-academia", description: "Ethical AI use & policies", icon: Brain },
+  { title: "AI in Academia", href: "/ai-academia", description: "Ethical AI use & policies", icon: Brain, isNew: true },
   { title: "SPSS Tutorial", href: "/spss-tutorial", description: "Quantitative data analysis", icon: BarChart3 },
   { title: "NVivo Tutorial", href: "/nvivo-tutorial", description: "Qualitative software guide", icon: Brain },
   { title: "Systematic Review", href: "/systematic-literature-review", description: "PRISMA methodology", icon: Search },
@@ -289,8 +289,15 @@ const Header = () => {
                                         className="flex items-start gap-3 select-none rounded-lg p-2.5 leading-none no-underline outline-none transition-all hover:bg-cream-warm group"
                                       >
                                         <item.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
-                                        <div>
-                                          <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{item.title}</div>
+                                        <div className="flex-1">
+                                          <div className="flex items-center gap-2">
+                                            <span className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{item.title}</span>
+                                            {'isNew' in item && item.isNew && (
+                                              <span className="text-[9px] font-bold uppercase tracking-wider bg-copper text-white px-1.5 py-0.5 rounded-full">
+                                                New
+                                              </span>
+                                            )}
+                                          </div>
                                           <p className="text-xs leading-snug text-muted-foreground mt-1">
                                             {item.description}
                                           </p>
