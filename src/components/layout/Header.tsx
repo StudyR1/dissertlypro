@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download, ListTree } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download, ListTree, Home } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -472,12 +472,13 @@ const Header = () => {
                     <Link
                       to={link.href}
                       className={cn(
-                        "flex h-10 items-center px-4 text-sm font-medium font-sans transition-colors rounded-lg hover:bg-cream-warm",
+                        "flex h-10 items-center gap-1.5 px-4 text-sm font-medium font-sans transition-colors rounded-lg hover:bg-cream-warm",
                         location.pathname === link.href
                           ? "text-copper"
                           : "text-muted-foreground hover:text-foreground"
                       )}
                     >
+                      {link.href === "/" && <Home className="h-4 w-4" />}
                       {link.title}
                     </Link>
                   )}
