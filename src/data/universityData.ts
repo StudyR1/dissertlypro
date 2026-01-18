@@ -25,6 +25,7 @@ export interface UniversityData {
   };
   heroTitle: string;
   heroSubtitle: string;
+  blogPostSlug?: string; // Links to university-specific blog post
   stats: {
     studentsHelped: string;
     avgRating: number;
@@ -68,6 +69,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 51.7548, longitude: -1.2544 },
     heroTitle: "Dissertation Support for Oxford Students",
     heroSubtitle: "Expert guidance for Oxford's rigorous DPhil and Master's programmes. Navigate the tutorial system with confidence.",
+    blogPostSlug: "oxford-dphil-timeline-guide",
     stats: { studentsHelped: "450+", avgRating: 4.9, completionRate: "98%" },
     testimonials: [
       {
@@ -118,6 +120,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 52.2043, longitude: 0.1218 },
     heroTitle: "Dissertation Help for Cambridge Students",
     heroSubtitle: "Navigate Cambridge's demanding PhD and MPhil requirements with expert support tailored to the Cambridge system.",
+    blogPostSlug: "cambridge-phd-thesis-guide",
     stats: { studentsHelped: "380+", avgRating: 4.9, completionRate: "97%" },
     testimonials: [
       {
@@ -158,6 +161,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 51.5144, longitude: -0.1165 },
     heroTitle: "Academic Support for LSE Students",
     heroSubtitle: "Expert dissertation guidance for LSE's rigorous social science programmes. Data-driven support for quantitative research.",
+    blogPostSlug: "lse-phd-dissertation-guide",
     stats: { studentsHelped: "520+", avgRating: 4.8, completionRate: "96%" },
     testimonials: [
       {
@@ -200,6 +204,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 42.3770, longitude: -71.1167 },
     heroTitle: "Dissertation Support for Harvard Students",
     heroSubtitle: "Navigate Harvard's rigorous doctoral programmes with expert guidance. From prospectus to defense, we're here to help.",
+    blogPostSlug: "harvard-dissertation-requirements",
     stats: { studentsHelped: "620+", avgRating: 4.9, completionRate: "98%" },
     testimonials: [
       {
@@ -250,6 +255,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 37.4275, longitude: -122.1697 },
     heroTitle: "Dissertation Help for Stanford Students",
     heroSubtitle: "Expert support for Stanford's innovative research environment. From CS to humanities, we've got you covered.",
+    blogPostSlug: "stanford-dissertation-excellence",
     stats: { studentsHelped: "410+", avgRating: 4.9, completionRate: "97%" },
     testimonials: [
       {
@@ -290,6 +296,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 42.3601, longitude: -71.0942 },
     heroTitle: "Thesis Support for MIT Students",
     heroSubtitle: "Navigate MIT's demanding technical thesis requirements with expert guidance from PhD-qualified specialists.",
+    blogPostSlug: "mit-thesis-writing-strategies",
     stats: { studentsHelped: "340+", avgRating: 4.9, completionRate: "98%" },
     testimonials: [
       {
@@ -332,6 +339,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: -37.7963, longitude: 144.9614 },
     heroTitle: "Dissertation Support for Melbourne Students",
     heroSubtitle: "Expert guidance for Australia's top-ranked university. Navigate the Melbourne Model with confidence.",
+    blogPostSlug: "melbourne-thesis-completion-guide",
     stats: { studentsHelped: "680+", avgRating: 4.8, completionRate: "96%" },
     testimonials: [
       {
@@ -372,6 +380,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: -33.8882, longitude: 151.1875 },
     heroTitle: "Thesis Help for Sydney Students",
     heroSubtitle: "Navigate Sydney's research requirements with expert support. From HDR to professional doctorates.",
+    blogPostSlug: "sydney-phd-thesis-guide",
     stats: { studentsHelped: "720+", avgRating: 4.8, completionRate: "95%" },
     testimonials: [
       {
@@ -414,6 +423,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 43.6629, longitude: -79.3957 },
     heroTitle: "Dissertation Support for UofT Students",
     heroSubtitle: "Expert guidance for Canada's top university. Navigate thesis requirements across St. George, UTM, and UTSC.",
+    blogPostSlug: "toronto-phd-dissertation-guide",
     stats: { studentsHelped: "890+", avgRating: 4.8, completionRate: "96%" },
     testimonials: [
       {
@@ -454,6 +464,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 49.2606, longitude: -123.2460 },
     heroTitle: "Thesis Help for UBC Students",
     heroSubtitle: "Navigate UBC's research requirements with expert support. From comprehensive exams to final defense.",
+    blogPostSlug: "ubc-phd-thesis-guide",
     stats: { studentsHelped: "560+", avgRating: 4.8, completionRate: "95%" },
     testimonials: [
       {
@@ -494,6 +505,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 45.5048, longitude: -73.5772 },
     heroTitle: "Dissertation Support for McGill Students",
     heroSubtitle: "Bilingual support for McGill's world-class research programmes. Navigate thesis requirements with expert guidance.",
+    blogPostSlug: "mcgill-phd-thesis-guide",
     stats: { studentsHelped: "420+", avgRating: 4.8, completionRate: "96%" },
     testimonials: [
       {
@@ -536,6 +548,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 51.4988, longitude: -0.1749 },
     heroTitle: "Dissertation Support for Imperial Students",
     heroSubtitle: "Expert guidance for Imperial's world-class STEM and business programmes. Technical writing support from PhD specialists.",
+    blogPostSlug: "imperial-college-phd-research-guide",
     stats: { studentsHelped: "390+", avgRating: 4.9, completionRate: "97%" },
     testimonials: [
       {
@@ -580,6 +593,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 51.5246, longitude: -0.1340 },
     heroTitle: "Thesis Help for UCL Students",
     heroSubtitle: "Navigate UCL's diverse academic landscape with expert dissertation support across all faculties.",
+    blogPostSlug: "ucl-phd-doctoral-guide",
     stats: { studentsHelped: "480+", avgRating: 4.8, completionRate: "96%" },
     testimonials: [
       {
@@ -622,6 +636,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 41.3163, longitude: -72.9223 },
     heroTitle: "Dissertation Support for Yale Students",
     heroSubtitle: "Expert guidance for Yale's distinguished doctoral programmes. From prospectus to defense, we support your scholarly journey.",
+    blogPostSlug: "yale-phd-dissertation-guide",
     stats: { studentsHelped: "320+", avgRating: 4.9, completionRate: "98%" },
     testimonials: [
       {
@@ -662,6 +677,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 40.3431, longitude: -74.6551 },
     heroTitle: "Dissertation Help for Princeton Students",
     heroSubtitle: "Navigate Princeton's exceptional doctoral standards with expert support tailored to the university's scholarly tradition.",
+    blogPostSlug: "princeton-phd-dissertation-excellence",
     stats: { studentsHelped: "280+", avgRating: 4.9, completionRate: "98%" },
     testimonials: [
       {
@@ -704,6 +720,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: -35.2777, longitude: 149.1185 },
     heroTitle: "Thesis Support for ANU Students",
     heroSubtitle: "Expert dissertation guidance for Australia's national research university. Navigate HDR requirements with confidence.",
+    blogPostSlug: "anu-phd-thesis-guide",
     stats: { studentsHelped: "420+", avgRating: 4.8, completionRate: "96%" },
     testimonials: [
       {
@@ -744,6 +761,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: -37.9105, longitude: 145.1362 },
     heroTitle: "Dissertation Help for Monash Students",
     heroSubtitle: "Navigate Monash's research degree requirements with expert support across all campuses and faculties.",
+    blogPostSlug: "monash-phd-candidature-guide",
     stats: { studentsHelped: "580+", avgRating: 4.8, completionRate: "95%" },
     testimonials: [
       {
@@ -786,6 +804,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 43.4723, longitude: -80.5449 },
     heroTitle: "Thesis Support for Waterloo Students",
     heroSubtitle: "Expert guidance for Waterloo's renowned STEM programmes. Technical thesis support from PhD specialists.",
+    blogPostSlug: "waterloo-phd-thesis-guide",
     stats: { studentsHelped: "440+", avgRating: 4.8, completionRate: "96%" },
     testimonials: [
       {

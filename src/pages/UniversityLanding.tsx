@@ -261,6 +261,34 @@ const UniversityLanding = () => {
         </div>
       </section>
 
+      {/* Blog Guide Cross-Link */}
+      {universityInfo.blogPostSlug && (
+        <section className="py-12 bg-gradient-to-r from-copper/10 via-copper/5 to-copper/10">
+          <div className="container px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto">
+              <Link 
+                to={`/blog/${universityInfo.blogPostSlug}`}
+                className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 bg-card rounded-2xl border border-copper/20 hover:border-copper/40 hover:shadow-card transition-all group"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-copper/10 rounded-xl">
+                    <BookOpen className="h-6 w-6 text-copper" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-serif font-semibold text-foreground mb-1 group-hover:text-copper transition-colors">
+                      {universityInfo.shortName} PhD Guide
+                    </h3>
+                    <p className="text-muted-foreground font-sans text-sm">
+                      Read our comprehensive guide to {universityInfo.shortName}'s doctoral requirements, milestones, and examination process.
+                    </p>
+                  </div>
+                </div>
+                <ArrowRight className="h-5 w-5 text-copper group-hover:translate-x-1 transition-transform shrink-0" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
       {/* Key Takeaways */}
       <section className="py-16 lg:py-24 bg-background">
         <div className="container px-4 sm:px-6">
