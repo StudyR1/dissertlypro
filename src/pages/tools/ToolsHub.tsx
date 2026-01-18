@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree } from "lucide-react";
+import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree, FlaskConical } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
@@ -106,6 +106,16 @@ const tools = [
     icon: ListTree,
     href: "/tools/outline-generator",
     features: ["6 chapter structure", "Section breakdowns", "Word count targets"],
+    badge: "New",
+    badgeVariant: "default" as const,
+  },
+  {
+    id: "methodology-selector",
+    title: "Methodology Selector Quiz",
+    description: "Discover whether quantitative, qualitative, or mixed methods is best for your research. Answer 7 questions for personalized methodology recommendations.",
+    icon: FlaskConical,
+    href: "/tools/methodology-selector",
+    features: ["7 questions", "Personalized result", "Method suggestions"],
     badge: "New",
     badgeVariant: "default" as const,
   },

@@ -117,6 +117,10 @@ Compare the true cost of completing your dissertation yourself vs. getting profe
 **URL:** https://dissertlypro.com/tools/outline-generator
 Generate a customized dissertation or thesis chapter outline based on your research question, methodology type (quantitative, qualitative, mixed methods), and degree level. Get detailed section structures, word count targets, and writing tips for all 6 chapters. Free, no sign-up required.
 
+### Methodology Selector Quiz
+**URL:** https://dissertlypro.com/tools/methodology-selector
+Take a 7-question quiz to discover whether quantitative, qualitative, or mixed methods research is best for your dissertation. Get personalized methodology recommendations, key strengths and considerations, and suggested research methods based on your research goals, data preferences, and question type. Free, no sign-up required.
+
 ## Downloadable Templates
 
 ### Free Dissertation & Thesis Templates
