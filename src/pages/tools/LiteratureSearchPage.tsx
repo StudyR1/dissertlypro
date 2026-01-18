@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -220,11 +220,12 @@ const LiteratureSearchPage = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Literature Search Strategy Builder | Boolean Query Generator | DissertlyPro</title>
-        <meta name="description" content="Build systematic literature search queries with Boolean operators (AND, OR, NOT). Generate database-specific searches for PubMed, Scopus, Web of Science, and more. Free tool for systematic reviews." />
-        <link rel="canonical" href="https://dissertlypro.com/tools/literature-search" />
-      </Helmet>
+      <SEO
+        title="Literature Search Strategy Builder | Boolean Query Generator"
+        description="Build systematic literature search queries with Boolean operators (AND, OR, NOT). Generate database-specific searches for PubMed, Scopus, Web of Science, and more. Free tool for systematic reviews."
+        canonical="/tools/literature-search"
+        keywords={["literature search strategy", "Boolean search", "systematic review search", "database search", "PubMed search", "Scopus query", "research search tool", "Web of Science"]}
+      />
       
       <ToolSchema
         name="Literature Search Strategy Builder"
