@@ -94,6 +94,8 @@ const MethodologySelectorPage = lazy(() => import("./pages/tools/MethodologySele
 const LiteratureSearchPage = lazy(() => import("./pages/tools/LiteratureSearchPage"));
 const PRISMAFlowPage = lazy(() => import("./pages/tools/PRISMAFlowPage"));
 const ReferenceManagerPage = lazy(() => import("./pages/tools/ReferenceManagerPage"));
+const AIAcademiaHub = lazy(() => import("./pages/AIAcademiaHub"));
+const AIPolicyCheckerPage = lazy(() => import("./pages/tools/AIPolicyCheckerPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -244,6 +246,10 @@ const App = () => (
             <Route path="/tools/literature-search" element={<Suspense fallback={<ToolPageSkeleton />}><LiteratureSearchPage /></Suspense>} />
             <Route path="/tools/prisma-flow" element={<Suspense fallback={<ToolPageSkeleton />}><PRISMAFlowPage /></Suspense>} />
             <Route path="/tools/reference-manager" element={<Suspense fallback={<ToolPageSkeleton />}><ReferenceManagerPage /></Suspense>} />
+            <Route path="/tools/ai-policy-checker" element={<Suspense fallback={<ToolPageSkeleton />}><AIPolicyCheckerPage /></Suspense>} />
+            
+            {/* AI in Academia Hub */}
+            <Route path="/ai-academia" element={<Suspense fallback={<ArticleSkeleton />}><AIAcademiaHub /></Suspense>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
