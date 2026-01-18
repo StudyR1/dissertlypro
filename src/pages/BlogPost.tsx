@@ -11,17 +11,17 @@ import { getUniversitiesByRegion, UniversityData } from "@/data/universityData";
 
 // Map university blog post slugs to their regions
 const universityBlogToRegion: Record<string, string> = {
-  "oxford-dphil-timeline-guide": "uk",
-  "cambridge-phd-thesis-guide": "uk",
+  "oxford-dphil-timeline-complete-guide": "uk",
+  "cambridge-phd-guide-milestones-requirements": "uk",
   "imperial-college-phd-research-guide": "uk",
   "ucl-phd-doctoral-guide": "uk",
   "lse-phd-dissertation-guide": "uk",
-  "harvard-dissertation-requirements": "us",
-  "mit-thesis-writing-strategies": "us",
-  "stanford-dissertation-excellence": "us",
+  "harvard-dissertation-requirements-complete-guide": "us",
+  "mit-thesis-requirements-complete-guide": "us",
+  "stanford-dissertation-guide-requirements-process": "us",
   "yale-phd-dissertation-guide": "us",
   "princeton-phd-dissertation-excellence": "us",
-  "melbourne-thesis-completion-guide": "au",
+  "melbourne-phd-candidature-confirmation-guide": "au",
   "sydney-phd-thesis-guide": "au",
   "anu-phd-thesis-guide": "au",
   "monash-phd-candidature-guide": "au",
