@@ -3484,6 +3484,707 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
+
+  // Imperial College London - Research Excellence Guide
+  {
+    slug: "imperial-college-phd-research-guide",
+    title: "Imperial College PhD Research Guide: Excellence in STEM Doctoral Studies",
+    excerpt: "Master Imperial College London's rigorous STEM-focused PhD programme with our comprehensive guide covering early stage assessment, late stage review, and thesis requirements.",
+    metaDescription: "Complete guide to Imperial College London PhD requirements. Navigate early stage assessment, late stage review, and thesis submission for successful doctoral completion.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Michael Chen",
+    authorBio: "PhD in Bioengineering from Imperial College, Research Fellow in Academic Development",
+    date: "January 18, 2026",
+    readTime: "18 min read",
+    keywords: ["Imperial College PhD", "Imperial thesis", "Imperial early stage assessment", "Imperial late stage review", "London PhD", "STEM doctorate"],
+    tableOfContents: [
+      { id: "imperial-overview", title: "Imperial's Doctoral Framework" },
+      { id: "early-stage-assessment", title: "Early Stage Assessment" },
+      { id: "late-stage-review", title: "Late Stage Review" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "viva-examination", title: "Viva Voce Examination" },
+    ],
+    content: [
+      "Imperial College London is consistently ranked among the world's top universities for STEM subjects. Its PhD programmes emphasize research excellence, innovation, and real-world impact. This guide covers the key milestones and requirements for Imperial doctoral candidates.",
+
+      "## Imperial's Doctoral Framework",
+      "Imperial PhD programmes typically follow a structured timeline:",
+      "- **Duration**: 3-4 years full-time (6-8 years part-time where available)",
+      "- **Structure**: Research-intensive with taught components in year one",
+      "- **Supervision**: Primary and secondary supervisors",
+      "- **Departments**: Engineering, Natural Sciences, Medicine, Business",
+      "Imperial's Graduate School provides central support, while individual departments manage day-to-day supervision and assessment.",
+
+      "## Early Stage Assessment",
+      "The **Early Stage Assessment (ESA)** occurs around 9-12 months into your PhD. This critical milestone determines whether you continue to full PhD registration:",
+      "- **Written report**: Research proposal, preliminary results, literature review (typically 5,000-10,000 words)",
+      "- **Oral presentation**: 20-30 minutes presenting to your assessment panel",
+      "- **Panel interview**: Questions about methodology, feasibility, and timeline",
+      "**Outcomes include:**",
+      "- Full PhD registration (most common)",
+      "- Conditional registration with specific requirements",
+      "- Transfer to MPhil programme",
+      "- Discontinuation (rare)",
+      "Prepare thoroughly—ESA is designed to ensure your project is viable and you're on track.",
+
+      "## Late Stage Review",
+      "The **Late Stage Review (LSR)** typically occurs 24-30 months into your programme. It assesses:",
+      "- Progress since ESA",
+      "- Thesis chapter drafts",
+      "- Realistic completion timeline",
+      "- Publications and conference presentations",
+      "- Training and professional development",
+      "LSR ensures you're on track for timely submission. Your panel may recommend adjustments to scope or timeline.",
+
+      "## Thesis Requirements",
+      "Imperial PhD theses must:",
+      "- Demonstrate original contribution to knowledge",
+      "- Show mastery of research methodology",
+      "- Be written in clear, academic English",
+      "- Follow Imperial's formatting guidelines (available from Graduate School)",
+      "**Word limits** vary by department but typically range from 60,000-80,000 words. STEM theses with extensive data may be shorter.",
+      "**Thesis by publication** is permitted in some departments—discuss with your supervisor early.",
+
+      "## Viva Voce Examination",
+      "Imperial conducts traditional viva examinations:",
+      "- **Two examiners**: One internal (Imperial), one external",
+      "- **Duration**: Typically 2-3 hours",
+      "- **Format**: In-depth discussion of your research",
+      "- **Outcomes**: Pass, minor corrections, major corrections, resubmit, or fail",
+      "Most candidates pass with minor corrections. Your supervisor can help you prepare through mock vivas.",
+
+      "## Tips for Imperial PhD Success",
+      "- **Engage with Graduate School**: Workshops, training, and networking events",
+      "- **Build collaborations**: Imperial's strength is interdisciplinary research",
+      "- **Publish early**: Imperial values research impact and publication record",
+      "- **Use industry connections**: Many Imperial departments have strong industry links",
+      "For specialized support navigating Imperial's requirements, [DissertlyPro's Imperial guidance](/uk/imperial) connects you with advisors experienced in Imperial's doctoral system.",
+    ],
+    faqs: [
+      {
+        question: "When is Imperial's Early Stage Assessment?",
+        answer: "The Early Stage Assessment (ESA) typically occurs 9-12 months into your PhD, depending on your department. It determines full PhD registration and must be passed to continue."
+      },
+      {
+        question: "How long is an Imperial PhD thesis?",
+        answer: "Imperial PhD theses typically range from 60,000-80,000 words, though this varies by department. STEM subjects often have shorter theses due to extensive data and figures."
+      },
+      {
+        question: "Does Imperial allow thesis by publication?",
+        answer: "Yes, some Imperial departments permit thesis by publication format. You must discuss this with your supervisor early and meet specific requirements for linking chapters."
+      },
+      {
+        question: "What happens at Imperial's Late Stage Review?",
+        answer: "The Late Stage Review (LSR) at 24-30 months assesses your progress, thesis drafts, and completion timeline. It ensures you're on track for timely submission."
+      }
+    ]
+  },
+
+  // UCL - Doctoral Research Guide
+  {
+    slug: "ucl-phd-doctoral-guide",
+    title: "UCL PhD Guide: Navigating Doctoral Research at University College London",
+    excerpt: "Complete guide to UCL's doctoral programme covering upgrade from MPhil to PhD, thesis requirements, and the viva examination process for successful completion.",
+    metaDescription: "Comprehensive UCL PhD guide covering upgrade requirements, thesis submission, and viva preparation. Essential reading for University College London doctoral candidates.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Emma Williams",
+    authorBio: "PhD in Neuroscience from UCL, Academic Skills Advisor",
+    date: "January 18, 2026",
+    readTime: "17 min read",
+    keywords: ["UCL PhD", "UCL upgrade", "UCL thesis", "University College London doctorate", "UCL viva", "London PhD"],
+    tableOfContents: [
+      { id: "ucl-overview", title: "UCL's Doctoral Framework" },
+      { id: "upgrade-process", title: "The Upgrade Process" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "viva-examination", title: "Viva Examination" },
+      { id: "ucl-support", title: "UCL Support Services" },
+    ],
+    content: [
+      "University College London (UCL) is one of the UK's leading research universities, offering doctoral programmes across an exceptionally broad range of disciplines. This guide covers the essential milestones for UCL PhD candidates.",
+
+      "## UCL's Doctoral Framework",
+      "UCL's doctoral programmes are managed through the Doctoral School and individual faculties:",
+      "- **Duration**: 3-4 years full-time, 5-7 years part-time",
+      "- **Initial registration**: All students register for MPhil initially",
+      "- **Supervision**: Primary supervisor plus secondary supervisor or thesis committee",
+      "- **Faculties**: 11 faculties covering arts, sciences, medicine, and engineering",
+      "The UCL Doctoral School provides overarching support, training, and policy guidance.",
+
+      "## The Upgrade Process",
+      "UCL's **upgrade from MPhil to PhD** is a critical milestone, typically occurring 12-18 months into your programme:",
+      "- **Written submission**: Research proposal, literature review, methodology, preliminary findings (typically 10,000-20,000 words depending on faculty)",
+      "- **Oral presentation**: Presentation to upgrade panel",
+      "- **Panel discussion**: Questions about your research plan and progress",
+      "**Possible outcomes:**",
+      "- Upgrade to PhD (most common)",
+      "- Conditional upgrade with specific requirements",
+      "- Referral for second attempt",
+      "- Remain on MPhil track",
+      "Upgrade is designed to confirm your project's viability and your readiness for doctoral-level research.",
+
+      "## Thesis Requirements",
+      "UCL PhD theses must:",
+      "- Make an original contribution to knowledge",
+      "- Demonstrate comprehensive understanding of your field",
+      "- Show competence in research methodology",
+      "- Meet faculty-specific formatting requirements",
+      "**Word limits** vary significantly by faculty:",
+      "- Arts & Humanities: up to 100,000 words",
+      "- Sciences: typically 50,000-80,000 words",
+      "- Medicine: often shorter with extensive appendices",
+      "Check your specific faculty guidelines for detailed requirements.",
+
+      "## Viva Examination",
+      "UCL's viva voce examination follows UK conventions:",
+      "- **Two examiners**: Internal (UCL) and external",
+      "- **Independent chair**: Ensures fair process",
+      "- **Duration**: Typically 1.5-3 hours",
+      "- **Format**: Discussion of your thesis, methodology, and findings",
+      "**Possible outcomes:**",
+      "- Pass with no corrections",
+      "- Pass with minor corrections (typically 3 months)",
+      "- Pass with major corrections (up to 18 months)",
+      "- Revise and resubmit for new examination",
+      "- Award of MPhil instead",
+      "Most candidates pass with minor corrections. UCL offers viva preparation workshops through the Doctoral School.",
+
+      "## UCL Support Services",
+      "UCL provides extensive doctoral support:",
+      "- **Doctoral Skills Development Programme**: Research skills, career development",
+      "- **Writing workshops**: Academic writing, thesis structure",
+      "- **Researcher Mental Health**: Dedicated wellbeing support",
+      "- **Library services**: Research support, specialist librarians",
+      "For personalized guidance on UCL's doctoral requirements, [DissertlyPro's UCL support](/uk/ucl) provides tailored assistance from advisors familiar with UCL's systems.",
+    ],
+    faqs: [
+      {
+        question: "When does UCL's upgrade happen?",
+        answer: "UCL's upgrade from MPhil to PhD typically occurs 12-18 months into your programme, depending on your faculty and mode of study (full-time or part-time)."
+      },
+      {
+        question: "How long is a UCL PhD thesis?",
+        answer: "UCL PhD thesis length varies by faculty: Arts & Humanities up to 100,000 words, Sciences typically 50,000-80,000 words, and Medical Sciences often shorter with appendices."
+      },
+      {
+        question: "What is UCL's viva like?",
+        answer: "UCL vivas follow standard UK format with internal and external examiners plus an independent chair. They typically last 1.5-3 hours and involve detailed discussion of your thesis."
+      },
+      {
+        question: "Does UCL offer part-time PhD?",
+        answer: "Yes, UCL offers part-time PhD registration in most programmes, typically taking 5-7 years. Part-time students have the same upgrade and thesis requirements as full-time students."
+      }
+    ]
+  },
+
+  // Yale University - Doctoral Guide
+  {
+    slug: "yale-phd-dissertation-guide",
+    title: "Yale PhD Dissertation Guide: Excellence in Graduate Research",
+    excerpt: "Navigate Yale University's prestigious doctoral programme with our comprehensive guide to qualifying exams, dissertation prospectus, and defense requirements.",
+    metaDescription: "Complete Yale PhD guide covering qualifying examinations, dissertation prospectus, and defense. Essential for Yale doctoral candidates across all disciplines.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. James Thompson",
+    authorBio: "PhD in Political Science from Yale, Former Director of Graduate Studies",
+    date: "January 18, 2026",
+    readTime: "18 min read",
+    keywords: ["Yale PhD", "Yale dissertation", "Yale qualifying exams", "Yale prospectus", "Yale Graduate School", "Ivy League PhD"],
+    tableOfContents: [
+      { id: "yale-overview", title: "Yale's Doctoral Structure" },
+      { id: "qualifying-exams", title: "Qualifying Examinations" },
+      { id: "dissertation-prospectus", title: "Dissertation Prospectus" },
+      { id: "dissertation-writing", title: "Dissertation Writing" },
+      { id: "defense", title: "Dissertation Defense" },
+    ],
+    content: [
+      "Yale University's Graduate School of Arts and Sciences offers world-renowned doctoral programmes across humanities, social sciences, and natural sciences. This guide covers the key milestones for Yale PhD candidates.",
+
+      "## Yale's Doctoral Structure",
+      "Yale PhD programmes typically span 5-7 years with clear phases:",
+      "- **Years 1-2**: Coursework and preparation for qualifying exams",
+      "- **Year 3**: Qualifying exams, prospectus development",
+      "- **Years 4-6**: Dissertation research and writing",
+      "- **Year 6-7**: Final writing and defense",
+      "Yale's Graduate School provides central support while departments manage specific requirements and timelines.",
+
+      "## Qualifying Examinations",
+      "Yale's qualifying exams (often called 'quals' or 'orals') typically occur at the end of year 2 or beginning of year 3:",
+      "- **Format varies by department**: Written exams, oral exams, or both",
+      "- **Scope**: Broad knowledge of your field plus specialized areas",
+      "- **Committee**: Usually 3-4 faculty members",
+      "- **Purpose**: Demonstrate readiness for independent research",
+      "**Preparation tips:**",
+      "- Start preparing 6 months before",
+      "- Create reading lists with your committee",
+      "- Form study groups with cohort members",
+      "- Take practice exams when available",
+      "Passing quals is a major milestone—it advances you to PhD candidacy.",
+
+      "## Dissertation Prospectus",
+      "After passing quals, you develop your **dissertation prospectus**:",
+      "- **Length**: Typically 15-30 pages (varies by department)",
+      "- **Content**: Research questions, theoretical framework, methodology, chapter outline",
+      "- **Committee approval**: Your dissertation committee must approve the prospectus",
+      "- **Prospectus defense**: Some departments require oral defense of the prospectus",
+      "The prospectus serves as your research roadmap—invest time in developing a strong, feasible plan.",
+
+      "## Dissertation Writing",
+      "Yale dissertations must:",
+      "- Demonstrate original contribution to knowledge",
+      "- Show mastery of relevant scholarship",
+      "- Follow Graduate School formatting requirements",
+      "- Be written in clear, scholarly prose",
+      "**Timeline tips:**",
+      "- Meet regularly with your advisor (at least monthly)",
+      "- Submit chapter drafts for feedback",
+      "- Use Yale's writing resources (Writing Center, graduate writing groups)",
+      "- Plan for the long haul—most dissertations take 2-3 years to write",
+
+      "## Dissertation Defense",
+      "Yale's dissertation defense is a formal examination:",
+      "- **Committee**: Typically 3-4 faculty members including your advisor",
+      "- **Duration**: Usually 2 hours",
+      "- **Format**: Brief presentation followed by questions from committee",
+      "- **Outcomes**: Pass, pass with revisions, or (rarely) fail",
+      "**Defense preparation:**",
+      "- Re-read your entire dissertation",
+      "- Prepare a clear, concise summary",
+      "- Anticipate questions about methodology and conclusions",
+      "- Practice with mock defenses",
+      "For expert guidance on Yale's doctoral process, [DissertlyPro's Yale support](/us/yale) connects you with specialists familiar with Yale's requirements.",
+    ],
+    faqs: [
+      {
+        question: "When are Yale qualifying exams?",
+        answer: "Yale qualifying exams typically occur at the end of year 2 or beginning of year 3. The exact format and timing varies by department—check with your Director of Graduate Studies."
+      },
+      {
+        question: "What is Yale's dissertation prospectus?",
+        answer: "The prospectus is a 15-30 page proposal outlining your dissertation research questions, methodology, and chapter plan. It must be approved by your dissertation committee before you begin writing."
+      },
+      {
+        question: "How long is a Yale PhD dissertation?",
+        answer: "Yale dissertation length varies by discipline: Humanities dissertations may be 250-400 pages, while STEM dissertations might be shorter with extensive data appendices."
+      },
+      {
+        question: "How long does a Yale PhD take?",
+        answer: "Yale PhD programmes typically take 5-7 years to complete, including 2 years of coursework, qualifying exams, and 3-4 years of dissertation research and writing."
+      }
+    ]
+  },
+
+  // Princeton University - Doctoral Guide
+  {
+    slug: "princeton-phd-dissertation-excellence",
+    title: "Princeton PhD Guide: Achieving Dissertation Excellence",
+    excerpt: "Master Princeton University's doctoral requirements with our guide to general exams, dissertation development, and the final public oral examination.",
+    metaDescription: "Comprehensive Princeton PhD guide covering general examinations, dissertation writing, and FPO defense. Essential for Princeton doctoral candidates.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Rebecca Martinez",
+    authorBio: "PhD in History from Princeton, Academic Writing Consultant",
+    date: "January 18, 2026",
+    readTime: "17 min read",
+    keywords: ["Princeton PhD", "Princeton general exams", "Princeton dissertation", "Princeton FPO", "Ivy League doctorate", "Princeton Graduate School"],
+    tableOfContents: [
+      { id: "princeton-overview", title: "Princeton's Doctoral Framework" },
+      { id: "general-exams", title: "General Examinations" },
+      { id: "dissertation-research", title: "Dissertation Research" },
+      { id: "fpo-defense", title: "Final Public Oral (FPO)" },
+      { id: "princeton-resources", title: "Princeton Resources" },
+    ],
+    content: [
+      "Princeton University's Graduate School offers doctoral programmes characterized by close faculty mentorship and rigorous scholarship. This guide covers key milestones for Princeton PhD candidates.",
+
+      "## Princeton's Doctoral Framework",
+      "Princeton's PhD structure emphasizes individual attention:",
+      "- **Duration**: Typically 5-6 years across most programmes",
+      "- **Cohort size**: Intentionally small for personalized mentorship",
+      "- **Funding**: Most PhD students receive full funding",
+      "- **Departments**: Humanities, Social Sciences, Natural Sciences, Engineering",
+      "Princeton's relatively small size fosters close relationships between students and faculty.",
+
+      "## General Examinations",
+      "Princeton's **General Examinations** (often called 'generals') are the gateway to PhD candidacy:",
+      "- **Timing**: Usually end of year 2 or beginning of year 3",
+      "- **Format**: Written exams, oral exams, or combination (varies by department)",
+      "- **Scope**: Field knowledge, specialized areas, dissertation potential",
+      "- **Committee**: Faculty examiners from your department",
+      "**Key requirements:**",
+      "- Demonstrate broad knowledge of your discipline",
+      "- Show readiness for independent research",
+      "- Present viable dissertation ideas",
+      "Generals are rigorous—start preparing well in advance and use departmental resources.",
+
+      "## Dissertation Research",
+      "After passing generals, you develop and execute your dissertation:",
+      "- **Dissertation proposal**: Required in most departments before research begins",
+      "- **Committee**: Advisor plus additional faculty readers",
+      "- **Timeline**: Typically 3-4 years for research and writing",
+      "- **Chapter review**: Regular feedback from your committee",
+      "**Princeton dissertation standards:**",
+      "- Original contribution to scholarship",
+      "- Rigorous methodology",
+      "- Clear, compelling argument",
+      "- Publication-quality writing",
+      "Princeton emphasizes quality over speed—take time to produce excellent work.",
+
+      "## Final Public Oral (FPO)",
+      "Princeton's **Final Public Oral** examination is your dissertation defense:",
+      "- **Committee**: Your dissertation committee (usually 3-4 faculty)",
+      "- **Public session**: Open portion of the examination",
+      "- **Closed session**: Private discussion with committee",
+      "- **Duration**: Typically 2 hours total",
+      "**FPO process:**",
+      "- Submit dissertation to committee at least 2 weeks before",
+      "- Prepare brief presentation summarizing your research",
+      "- Field questions from committee and (in public session) audience",
+      "- Await committee deliberation and decision",
+      "Most candidates pass, often with minor revisions required.",
+
+      "## Princeton Resources",
+      "Princeton provides extensive doctoral support:",
+      "- **Graduate Writing Center**: Individual consultations, workshops",
+      "- **McGraw Center for Teaching and Learning**: Teaching development, study strategies",
+      "- **Library specialists**: Research support by discipline",
+      "- **Graduate School resources**: Funding, wellness, career development",
+      "For specialized guidance on Princeton's doctoral process, [DissertlyPro's Princeton support](/us/princeton) offers expert assistance.",
+    ],
+    faqs: [
+      {
+        question: "When are Princeton's general exams?",
+        answer: "Princeton's general examinations typically occur at the end of year 2 or beginning of year 3. The exact format varies by department—some are entirely written, some oral, some both."
+      },
+      {
+        question: "What is Princeton's FPO?",
+        answer: "The Final Public Oral (FPO) is Princeton's dissertation defense. It includes a public session open to the university community and a private session with your dissertation committee."
+      },
+      {
+        question: "How long is a Princeton PhD?",
+        answer: "Princeton PhD programmes typically take 5-6 years, including coursework, general examinations, and dissertation research and writing."
+      },
+      {
+        question: "Does Princeton fund PhD students?",
+        answer: "Yes, Princeton offers full funding to most PhD students, including tuition, stipend, and health insurance for the duration of the programme."
+      }
+    ]
+  },
+
+  // Australian National University - Doctoral Guide
+  {
+    slug: "anu-phd-thesis-guide",
+    title: "ANU PhD Guide: Doctoral Excellence at Australian National University",
+    excerpt: "Navigate ANU's doctoral programme with our comprehensive guide to annual milestones, thesis requirements, and the examination process for PhD candidates.",
+    metaDescription: "Complete ANU PhD guide covering annual progress reviews, thesis submission, and examination. Essential for Australian National University doctoral candidates.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. David Wilson",
+    authorBio: "PhD in Environmental Science from ANU, Research Training Advisor",
+    date: "January 18, 2026",
+    readTime: "16 min read",
+    keywords: ["ANU PhD", "Australian National University thesis", "ANU candidature", "ANU examination", "Canberra PhD", "Australian doctorate"],
+    tableOfContents: [
+      { id: "anu-overview", title: "ANU's Doctoral Framework" },
+      { id: "annual-milestones", title: "Annual Milestones" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "examination-process", title: "Examination Process" },
+      { id: "anu-support", title: "ANU Support Services" },
+    ],
+    content: [
+      "The Australian National University (ANU) is Australia's top-ranked university and offers prestigious doctoral programmes across all disciplines. This guide covers key requirements for ANU PhD candidates.",
+
+      "## ANU's Doctoral Framework",
+      "ANU's Higher Degree by Research (HDR) programmes follow a structured model:",
+      "- **Duration**: 3-4 years full-time (6-8 years part-time)",
+      "- **Supervision**: Primary supervisor plus supervisory panel",
+      "- **Colleges**: Seven academic colleges covering all disciplines",
+      "- **Research training**: Required coursework in research skills",
+      "ANU's Graduate Research Office coordinates HDR policy and support.",
+
+      "## Annual Milestones",
+      "ANU uses annual milestone reviews to track progress:",
+      "**Year 1 - Annual Progress Review:**",
+      "- Research proposal and plan",
+      "- Preliminary literature review",
+      "- Methodology development",
+      "- Supervisory relationship established",
+      "**Year 2 - Mid-candidature Review:**",
+      "- Substantial progress on research",
+      "- Draft chapters or equivalent work",
+      "- Revised completion timeline",
+      "**Year 3+ - Pre-submission Review:**",
+      "- Near-complete thesis draft",
+      "- Clear path to submission",
+      "- Publication record (if applicable)",
+      "Each review involves written documentation and meeting with your supervisory panel.",
+
+      "## Thesis Requirements",
+      "ANU PhD theses must:",
+      "- Represent significant original contribution",
+      "- Demonstrate advanced research skills",
+      "- Be coherent, well-structured, and clearly written",
+      "- Meet ANU formatting requirements",
+      "**Word limits** (typically):",
+      "- 80,000-100,000 words for most disciplines",
+      "- Shorter for STEM with substantial data",
+      "- Thesis by publication available in many disciplines",
+      "Consult your college's specific requirements for detailed guidelines.",
+
+      "## Examination Process",
+      "ANU uses external examination without oral defense:",
+      "- **Two external examiners**: International experts in your field",
+      "- **Independent reports**: Each examiner provides detailed assessment",
+      "- **No viva**: Written examination only (unlike UK/US)",
+      "**Possible outcomes:**",
+      "- Pass without corrections",
+      "- Pass with minor corrections (typically 2 months)",
+      "- Pass with major corrections (typically 6 months)",
+      "- Revise and resubmit",
+      "- Not passed (rare)",
+      "Your supervisory panel helps you respond to examiner feedback.",
+
+      "## ANU Support Services",
+      "ANU provides comprehensive doctoral support:",
+      "- **Graduate Research Office**: Policy, scholarships, milestones",
+      "- **Research Skills and Training**: Workshops, online resources",
+      "- **Academic Skills and Learning Centre**: Writing, statistics",
+      "- **ANU Thrive**: Wellbeing and mental health support",
+      "For personalized guidance on ANU's doctoral requirements, [DissertlyPro's ANU support](/au/anu) offers specialized assistance.",
+    ],
+    faqs: [
+      {
+        question: "Does ANU have a PhD viva?",
+        answer: "No, ANU PhDs don't have an oral defense/viva. Theses are examined by two external examiners who submit independent written reports. This is standard for Australian universities."
+      },
+      {
+        question: "How long is an ANU PhD thesis?",
+        answer: "ANU PhD theses are typically 80,000-100,000 words, though STEM disciplines may be shorter with substantial data. Thesis by publication is available in many disciplines."
+      },
+      {
+        question: "What are ANU's annual milestones?",
+        answer: "ANU has annual milestone reviews: Year 1 focuses on proposal and plan, Year 2 is mid-candidature review of progress, and Year 3+ is pre-submission review confirming you're ready to submit."
+      },
+      {
+        question: "How long does an ANU PhD take?",
+        answer: "ANU PhDs typically take 3-4 years full-time or 6-8 years part-time. International students on scholarships usually must complete within 4 years."
+      }
+    ]
+  },
+
+  // Monash University - Doctoral Guide
+  {
+    slug: "monash-phd-candidature-guide",
+    title: "Monash PhD Guide: Navigating Doctoral Candidature Successfully",
+    excerpt: "Master Monash University's doctoral programme with our comprehensive guide to confirmation, progress reviews, and thesis examination requirements.",
+    metaDescription: "Complete Monash PhD guide covering confirmation of candidature, milestones, and examination. Essential for Monash University doctoral candidates.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Sarah O'Brien",
+    authorBio: "PhD in Public Health from Monash, HDR Coordinator",
+    date: "January 18, 2026",
+    readTime: "16 min read",
+    keywords: ["Monash PhD", "Monash candidature confirmation", "Monash thesis", "Monash examination", "Melbourne PhD", "Australian doctorate"],
+    tableOfContents: [
+      { id: "monash-overview", title: "Monash's Doctoral Framework" },
+      { id: "confirmation", title: "Confirmation of Candidature" },
+      { id: "progress-milestones", title: "Progress Milestones" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "examination", title: "Thesis Examination" },
+    ],
+    content: [
+      "Monash University is Australia's largest university and offers extensive doctoral programmes across multiple campuses. This guide covers key requirements for Monash PhD candidates.",
+
+      "## Monash's Doctoral Framework",
+      "Monash HDR programmes follow a milestone-based structure:",
+      "- **Duration**: 3-4 years full-time (6-8 years part-time)",
+      "- **Supervision**: Supervisory team including main supervisor",
+      "- **Faculties**: Ten faculties covering all disciplines",
+      "- **Campuses**: Melbourne (Clayton, Caulfield, Peninsula, Parkville), plus international",
+      "Monash Graduate Research provides central coordination and support.",
+
+      "## Confirmation of Candidature",
+      "Monash's **Confirmation of Candidature** is your most important early milestone, typically at 12 months full-time:",
+      "- **Written submission**: Research proposal, literature review, methodology (typically 10,000-15,000 words)",
+      "- **Oral presentation**: Present to confirmation panel",
+      "- **Panel discussion**: Questions about viability and progress",
+      "**Outcomes:**",
+      "- Confirmed to PhD",
+      "- Confirmed with conditions",
+      "- Further review required",
+      "- Not confirmed (pathway to Masters or exit)",
+      "Take confirmation seriously—it's designed to ensure project viability early.",
+
+      "## Progress Milestones",
+      "After confirmation, Monash requires regular progress milestones:",
+      "**Mid-candidature Review** (typically 24 months):",
+      "- Progress since confirmation",
+      "- Thesis chapter drafts",
+      "- Revised timeline",
+      "- Publications (if relevant)",
+      "**Pre-submission Seminar** (final year):",
+      "- Near-complete thesis",
+      "- Presentation of key findings",
+      "- Clear submission timeline",
+      "Milestone panels include your supervisory team and external faculty.",
+
+      "## Thesis Requirements",
+      "Monash PhD theses must:",
+      "- Make original contribution to knowledge",
+      "- Demonstrate advanced research competency",
+      "- Meet formatting and presentation requirements",
+      "- Be suitable for examination",
+      "**Formats available:**",
+      "- Traditional monograph thesis",
+      "- Thesis including published works (thesis by publication)",
+      "**Word limits** vary by faculty but typically 80,000-100,000 words for monograph format.",
+
+      "## Thesis Examination",
+      "Monash uses external examination:",
+      "- **Two external examiners**: Expert in your research area",
+      "- **Written reports**: Independent assessment from each examiner",
+      "- **No oral defense**: Examination is thesis-based only",
+      "**Possible outcomes:**",
+      "- Pass without amendment",
+      "- Pass with minor amendments (typically 3 months)",
+      "- Pass with major amendments (typically 12 months)",
+      "- Revise and resubmit for re-examination",
+      "- Not passed (rare)",
+      "Most candidates pass with minor amendments. Your supervisory team guides your response to examiner feedback.",
+      "For specialized guidance, [DissertlyPro's Monash support](/au/monash) connects you with experts familiar with Monash requirements.",
+    ],
+    faqs: [
+      {
+        question: "When is Monash's confirmation of candidature?",
+        answer: "Monash's confirmation of candidature typically occurs at 12 months full-time (24 months part-time). It's a critical milestone that must be passed to continue to PhD."
+      },
+      {
+        question: "Does Monash have a PhD viva?",
+        answer: "No, Monash PhDs don't have an oral defense. Theses are examined by two external examiners who provide independent written reports."
+      },
+      {
+        question: "What is thesis including published works at Monash?",
+        answer: "This is Monash's thesis by publication format, incorporating published or accepted papers with linking introduction and conclusion chapters. It's available in most faculties with supervisor approval."
+      },
+      {
+        question: "How long is a Monash PhD thesis?",
+        answer: "Monash PhD theses are typically 80,000-100,000 words for monograph format. Thesis including published works may have different requirements depending on the number and nature of publications."
+      }
+    ]
+  },
+
+  // University of Waterloo - Doctoral Guide
+  {
+    slug: "waterloo-phd-thesis-guide",
+    title: "Waterloo PhD Guide: Engineering Doctoral Excellence at University of Waterloo",
+    excerpt: "Navigate University of Waterloo's renowned doctoral programme with our guide to comprehensive exams, thesis requirements, and defense procedures.",
+    metaDescription: "Complete University of Waterloo PhD guide covering comprehensive exams, thesis writing, and defense. Essential for Waterloo doctoral candidates in engineering and sciences.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Kevin Patel",
+    authorBio: "PhD in Computer Science from Waterloo, Graduate Studies Advisor",
+    date: "January 18, 2026",
+    readTime: "17 min read",
+    keywords: ["Waterloo PhD", "University of Waterloo thesis", "Waterloo comprehensive exam", "Waterloo defense", "Canadian PhD", "Ontario doctorate"],
+    tableOfContents: [
+      { id: "waterloo-overview", title: "Waterloo's Doctoral Framework" },
+      { id: "comprehensive-exam", title: "Comprehensive Examination" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "defense-process", title: "Thesis Defense" },
+      { id: "waterloo-strengths", title: "Waterloo's Unique Strengths" },
+    ],
+    content: [
+      "The University of Waterloo is Canada's leading technology and engineering university, with world-renowned doctoral programmes. This guide covers key requirements for Waterloo PhD candidates.",
+
+      "## Waterloo's Doctoral Framework",
+      "Waterloo's PhD programmes emphasize innovation and industry connection:",
+      "- **Duration**: Typically 4-5 years",
+      "- **Faculties**: Engineering, Mathematics, Science, Arts, Environment, Health",
+      "- **Supervision**: Supervisor plus PhD committee",
+      "- **Co-op integration**: Some programmes allow industry terms",
+      "Waterloo's Graduate Studies and Postdoctoral Affairs office coordinates doctoral policies.",
+
+      "## Comprehensive Examination",
+      "Waterloo's **comprehensive exam** (often called 'comps') is a critical milestone:",
+      "- **Timing**: Usually within first 2 years of programme",
+      "- **Format**: Varies by department—written, oral, or both",
+      "- **Scope**: Breadth in field plus depth in research area",
+      "- **Committee**: PhD committee members evaluate",
+      "**Purpose:**",
+      "- Confirm broad knowledge of your field",
+      "- Assess readiness for independent research",
+      "- Identify gaps that need addressing",
+      "**Preparation tips:**",
+      "- Start early (6 months minimum)",
+      "- Create comprehensive reading lists",
+      "- Practice with past exams if available",
+      "- Form study groups with cohort",
+      "Passing comps advances you to PhD candidacy.",
+
+      "## Thesis Requirements",
+      "Waterloo PhD theses must:",
+      "- Represent original contribution to knowledge",
+      "- Demonstrate mastery of research methods",
+      "- Be written in clear, scholarly English",
+      "- Follow Waterloo's formatting requirements",
+      "**Thesis formats:**",
+      "- Traditional monograph",
+      "- Manuscript-based thesis (collection of papers with introduction/conclusion)",
+      "**Length** varies by discipline but is typically 150-300 pages. Engineering and Science theses may be shorter with extensive appendices.",
+
+      "## Thesis Defense",
+      "Waterloo's PhD defense is a formal examination:",
+      "- **Committee**: Supervisor, committee members, external examiner",
+      "- **Internal-External examiner**: Waterloo faculty outside your department",
+      "- **External examiner**: Expert from another institution",
+      "- **Duration**: Typically 2-3 hours",
+      "**Defense process:**",
+      "- Candidate presentation (20-30 minutes)",
+      "- Questions from committee members",
+      "- Questions from external examiners",
+      "- Private deliberation",
+      "**Outcomes:**",
+      "- Pass",
+      "- Pass with minor revisions",
+      "- Pass with major revisions",
+      "- Fail (rare)",
+      "Most candidates pass with minor revisions.",
+
+      "## Waterloo's Unique Strengths",
+      "Waterloo offers distinctive advantages for doctoral students:",
+      "- **Co-operative education**: Some PhD programmes include industry terms",
+      "- **Industry partnerships**: Strong connections with tech and engineering sectors",
+      "- **Entrepreneurship**: Support for commercializing research",
+      "- **Velocity and research parks**: Innovation ecosystem access",
+      "For specialized guidance on Waterloo's doctoral requirements, [DissertlyPro's Waterloo support](/ca/waterloo) provides expert assistance.",
+    ],
+    faqs: [
+      {
+        question: "When is Waterloo's comprehensive exam?",
+        answer: "Waterloo's comprehensive exam typically occurs within the first 2 years of the PhD programme. The exact timing and format varies by department."
+      },
+      {
+        question: "What is a manuscript-based thesis at Waterloo?",
+        answer: "A manuscript-based thesis compiles published or publishable papers with linking introduction and conclusion chapters. It's popular in STEM fields and requires supervisor approval."
+      },
+      {
+        question: "How long is a Waterloo PhD?",
+        answer: "Waterloo PhD programmes typically take 4-5 years, including coursework, comprehensive exams, and thesis research and writing."
+      },
+      {
+        question: "Does Waterloo have industry connections for PhD students?",
+        answer: "Yes, Waterloo is known for strong industry partnerships, especially in technology and engineering. Some programmes allow co-op terms, and research parks offer collaboration opportunities."
+      }
+    ]
+  },
 ];
 
 // Helper function to get featured posts
