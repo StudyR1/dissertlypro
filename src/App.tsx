@@ -91,6 +91,7 @@ const OutlineGeneratorPage = lazy(() => import("./pages/tools/OutlineGeneratorPa
 const MethodologySelectorPage = lazy(() => import("./pages/tools/MethodologySelectorPage"));
 const LiteratureSearchPage = lazy(() => import("./pages/tools/LiteratureSearchPage"));
 const PRISMAFlowPage = lazy(() => import("./pages/tools/PRISMAFlowPage"));
+const ReferenceManagerPage = lazy(() => import("./pages/tools/ReferenceManagerPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -231,6 +232,7 @@ const App = () => (
             <Route path="/tools/methodology-selector" element={<Suspense fallback={<ToolPageSkeleton />}><MethodologySelectorPage /></Suspense>} />
             <Route path="/tools/literature-search" element={<Suspense fallback={<ToolPageSkeleton />}><LiteratureSearchPage /></Suspense>} />
             <Route path="/tools/prisma-flow" element={<Suspense fallback={<ToolPageSkeleton />}><PRISMAFlowPage /></Suspense>} />
+            <Route path="/tools/reference-manager" element={<Suspense fallback={<ToolPageSkeleton />}><ReferenceManagerPage /></Suspense>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
