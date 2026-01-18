@@ -5,6 +5,7 @@ import SEO from "@/components/SEO";
 import { BlogPostSchema, BreadcrumbSchema, FAQSchema } from "@/components/schemas";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, List, GraduationCap, MapPin } from "lucide-react";
+import AuthorBio from "@/components/blog/AuthorBio";
 import { blogPosts, getRelatedPosts } from "@/data/blogPosts";
 import { getUniversitiesByRegion, UniversityData } from "@/data/universityData";
 
@@ -204,15 +205,8 @@ const BlogPost = () => {
 
             {/* Author Bio */}
             <div className="mt-12 pt-8 border-t border-border">
-              <div className="flex items-start gap-4">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl font-serif text-primary">{post.author.split(' ')[1]?.[0] || post.author[0]}</span>
-                </div>
-                <div>
-                  <h4 className="font-serif font-semibold text-foreground">{post.author}</h4>
-                  <p className="text-muted-foreground font-sans text-sm">{post.authorBio}</p>
-                </div>
-              </div>
+              <h3 className="text-lg font-serif font-bold text-foreground mb-4">About the Author</h3>
+              <AuthorBio authorName={post.author} authorBio={post.authorBio} />
             </div>
 
             {/* Related Universities - for University Guides */}
