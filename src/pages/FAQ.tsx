@@ -10,7 +10,9 @@ import { ArrowRight, HelpCircle, MessageCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { FAQSchema } from "@/components/schemas";
+import SpeakableSchema from "@/components/schemas/SpeakableSchema";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
+import QuickAnswer, { TLDRBlock } from "@/components/ui/QuickAnswer";
 
 const faqCategories = [
   {
@@ -117,6 +119,12 @@ const FAQ = () => {
         keywords={['dissertation FAQ', 'thesis help questions', 'academic support FAQ', 'PhD help questions', 'dissertation service FAQ', 'thesis writing questions', 'research help FAQ']}
       />
       <FAQSchema faqs={allFaqs} />
+      <SpeakableSchema 
+        name="DissertlyPro FAQ"
+        description="Answers to common questions about dissertation and thesis support services"
+        url="/faq"
+        speakableSelectors={[".quick-answer", ".tldr-summary"]}
+      />
 
       {/* Breadcrumbs */}
       <div className="bg-midnight-rich border-b border-white/10">
@@ -140,6 +148,41 @@ const FAQ = () => {
             <p className="text-lg text-ivory font-sans leading-relaxed">
               Find answers to common questions about our services, process, and how we can support your academic journey.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Answers Section - Featured Snippet Optimized */}
+      <section className="py-12 sm:py-16 bg-cream-warm">
+        <div className="container px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <TLDRBlock>
+              DissertlyPro provides dissertation and thesis support for Master's and PhD students worldwide. 
+              Our 500+ PhD-qualified experts offer research methodology design, data analysis, literature reviews, 
+              and academic writing guidance. Free consultation available—start at dissertlypro.com/consultation.
+            </TLDRBlock>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <QuickAnswer question="How much does dissertation help cost?" variant="highlighted">
+                Pricing varies by service type, word count, and deadline. Standard editing starts at $15-25/page; 
+                full methodology support ranges $500-2000+. Get an instant quote with our free calculator.
+              </QuickAnswer>
+
+              <QuickAnswer question="Is dissertation help considered cheating?">
+                No. DissertlyPro operates as educational support, similar to tutoring. We provide guidance, 
+                coaching, and feedback to help you develop your own original work—not ghostwriting.
+              </QuickAnswer>
+
+              <QuickAnswer question="How long does a dissertation take?">
+                Most doctoral dissertations take 2-4 years; Master's theses typically 6-12 months. 
+                Timeline depends on methodology complexity and data collection requirements.
+              </QuickAnswer>
+
+              <QuickAnswer question="Can you help with my specific subject?">
+                Yes! Our 500+ experts cover all major disciplines including Business, Psychology, Education, 
+                Healthcare, Law, Engineering, and Social Sciences. We match you with a subject-matter specialist.
+              </QuickAnswer>
+            </div>
           </div>
         </div>
       </section>

@@ -17,8 +17,10 @@ import {
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { FAQSchema, BreadcrumbSchema } from "@/components/schemas";
+import SpeakableSchema from "@/components/schemas/SpeakableSchema";
 import { aboutPageFAQs } from "@/data/serviceFAQs";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
+import { TLDRBlock, ExpertInsight } from "@/components/ui/QuickAnswer";
 
 const values = [
   {
@@ -113,6 +115,12 @@ const About = () => {
         { name: "Home", url: "/" },
         { name: "About Us", url: "/about" }
       ]} />
+      <SpeakableSchema 
+        name="About DissertlyPro"
+        description="Learn about DissertlyPro's mission to support Master's and PhD students worldwide"
+        url="/about"
+        speakableSelectors={[".tldr-summary", ".expert-insight"]}
+      />
 
       {/* Breadcrumbs */}
       <div className="bg-midnight-rich border-b border-white/10">
@@ -176,17 +184,25 @@ const About = () => {
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
                 Transforming Academic Dreams Into Reality
               </h2>
+              
+              <TLDRBlock>
+                DissertlyPro was founded in 2015 to democratize academic support. We believe every 
+                postgraduate student deserves access to PhD-qualified experts. 15,000+ students helped 
+                across 50+ countries with 98% satisfaction rate.
+              </TLDRBlock>
+
               <p className="text-muted-foreground font-sans text-lg leading-relaxed mb-6">
                 We believe every postgraduate student deserves access to expert guidance. Our mission 
                 is to democratize academic support, providing world-class assistance that was once 
                 available only to students at elite institutions.
               </p>
-              <p className="text-muted-foreground font-sans leading-relaxed mb-8">
-                Too many brilliant minds struggle in isolation, overwhelmed by the complexity of 
-                dissertation research. We're here to change that—offering personalized, ethical 
-                support that empowers students to develop their own expertise while achieving their 
-                academic goals.
-              </p>
+
+              <ExpertInsight
+                quote="When I was struggling with my own PhD at Stanford, I wished I had access to the kind of 
+                personalized support we now provide. That experience inspired me to build DissertlyPro."
+                expertName="Dr. Elizabeth Chen"
+                expertTitle="Founder & CEO"
+              />
               <ul className="space-y-3">
                 {[
                   "Personalized expert matching for every student",

@@ -38,9 +38,11 @@ import {
   defaultAggregateRating,
   ProfessionalServiceSchema
 } from "@/components/schemas";
+import SpeakableSchema from "@/components/schemas/SpeakableSchema";
 import { homepageFAQs } from "@/data/serviceFAQs";
 import { AnimatedCounter, TrustBadges, TrustStrip } from "@/components/cro";
 import { LiveResearchPulse } from "@/components/features";
+import { TLDRBlock, KeyTakeaways } from "@/components/ui/QuickAnswer";
 
 const services = [
   {
@@ -153,6 +155,12 @@ const Index = () => {
       />
       <AggregateRatingSchema {...defaultAggregateRating} />
       <ProfessionalServiceSchema />
+      <SpeakableSchema 
+        name="DissertlyPro - Premium Dissertation Support"
+        description="Expert dissertation and thesis support for Master's and PhD students worldwide"
+        url="/"
+        speakableSelectors={[".tldr-summary", ".key-takeaways"]}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[100svh] flex items-center overflow-hidden">
         {/* Animated Background - GPU accelerated */}
@@ -484,6 +492,15 @@ const Index = () => {
             </p>
           </div>
 
+          {/* TL;DR for AI/Voice Search */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <TLDRBlock>
+              DissertlyPro offers 6 core services: dissertation proposals, thesis writing guidance, 
+              research methodology design, data analysis (SPSS, R, NVivo), literature reviews, and 
+              academic editing. All services include unlimited revisions and expert matching.
+            </TLDRBlock>
+          </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {services.map((service, index) => (
               <Link
@@ -605,6 +622,19 @@ const Index = () => {
             <p className="text-muted-foreground font-sans text-base sm:text-lg leading-relaxed px-4 sm:px-0">
               From consultation to delivery, we guide you through a streamlined process.
             </p>
+          </div>
+
+          {/* Key Takeaways - Featured Snippet Optimized */}
+          <div className="max-w-2xl mx-auto mb-12">
+            <KeyTakeaways
+              title="Getting Started with DissertlyPro"
+              items={[
+                "Book a free consultation to discuss your research needs and timeline",
+                "Get matched with a PhD expert in your specific subject area",
+                "Work collaboratively with milestone-based updates and unlimited revisions",
+                "Receive polished, publication-ready deliverables on schedule"
+              ]}
+            />
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-6">
