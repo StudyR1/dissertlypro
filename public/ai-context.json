@@ -255,6 +255,34 @@
       },
       {
         "@type": "EducationalOrganization",
+        "name": "Imperial College London",
+        "alternateName": "Imperial",
+        "url": "https://dissertlypro.com/uk/imperial",
+        "location": "London, United Kingdom",
+        "description": "STEM thesis support for engineering, medicine, and natural sciences with technical writing expertise.",
+        "studentsHelped": "390+",
+        "specializations": ["Engineering thesis support", "Technical writing", "Early stage assessment preparation"],
+        "typicalRequirements": {
+          "masters": "10,000-15,000 words for MSc",
+          "phd": "80,000 words maximum"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University College London",
+        "alternateName": "UCL",
+        "url": "https://dissertlypro.com/uk/ucl",
+        "location": "London, United Kingdom",
+        "description": "Interdisciplinary research support across diverse faculties with cross-disciplinary expertise.",
+        "studentsHelped": "480+",
+        "specializations": ["Interdisciplinary research", "MRes support", "Cross-faculty thesis guidance"],
+        "typicalRequirements": {
+          "masters": "15,000-20,000 words",
+          "phd": "80,000-100,000 words"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
         "name": "Harvard University",
         "alternateName": "Harvard",
         "url": "https://dissertlypro.com/us/harvard",
@@ -297,6 +325,34 @@
       },
       {
         "@type": "EducationalOrganization",
+        "name": "Yale University",
+        "alternateName": "Yale",
+        "url": "https://dissertlypro.com/us/yale",
+        "location": "New Haven, CT, United States",
+        "description": "Humanities PhD excellence with strong tradition in drama, law, and political science.",
+        "studentsHelped": "320+",
+        "specializations": ["Humanities dissertation support", "Prospectus development", "Law and drama theses"],
+        "typicalRequirements": {
+          "masters": "50-80 pages typically",
+          "phd": "200-350 pages typically"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Princeton University",
+        "alternateName": "Princeton",
+        "url": "https://dissertlypro.com/us/princeton",
+        "location": "Princeton, NJ, United States",
+        "description": "Direct PhD programme support with expertise in mathematics, physics, and public policy.",
+        "studentsHelped": "280+",
+        "specializations": ["Direct PhD entry support", "General exam preparation", "Mathematics/Physics dissertations"],
+        "typicalRequirements": {
+          "masters": "No traditional masters; PhD direct entry",
+          "phd": "Department dependent; rigorous standards"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
         "name": "University of Melbourne",
         "alternateName": "Melbourne",
         "url": "https://dissertlypro.com/au/melbourne",
@@ -320,6 +376,34 @@
         "specializations": ["HDR thesis support", "Annual Progress Review preparation", "Professional doctorate guidance"],
         "typicalRequirements": {
           "masters": "15,000-20,000 words",
+          "phd": "80,000-100,000 words"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Australian National University",
+        "alternateName": "ANU",
+        "url": "https://dissertlypro.com/au/anu",
+        "location": "Canberra, Australia",
+        "description": "National research university expertise with strong focus on public policy and international relations.",
+        "studentsHelped": "420+",
+        "specializations": ["HDR milestone support", "Public policy research", "Asia-Pacific studies"],
+        "typicalRequirements": {
+          "masters": "20,000-40,000 words for research masters",
+          "phd": "80,000-100,000 words"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Monash University",
+        "alternateName": "Monash",
+        "url": "https://dissertlypro.com/au/monash",
+        "location": "Melbourne, Australia",
+        "description": "Multi-campus support with expertise in pharmacy, education, and business research.",
+        "studentsHelped": "580+",
+        "specializations": ["Multi-campus expertise", "Pharmacy research", "Education dissertations"],
+        "typicalRequirements": {
+          "masters": "15,000-50,000 words depending on programme",
           "phd": "80,000-100,000 words"
         }
       },
@@ -364,8 +448,23 @@
           "masters": "75-150 pages typically",
           "phd": "Department dependent"
         }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Waterloo",
+        "alternateName": "Waterloo",
+        "url": "https://dissertlypro.com/ca/waterloo",
+        "location": "Waterloo, ON, Canada",
+        "description": "CS and Mathematics thesis support with strong technical writing expertise for STEM programmes.",
+        "studentsHelped": "440+",
+        "specializations": ["Computer Science theses", "Mathematics research", "Technical thesis writing"],
+        "typicalRequirements": {
+          "masters": "80-120 pages for thesis option",
+          "phd": "Department dependent; strong technical focus"
+        }
       }
     ],
+    "universitiesHub": "https://dissertlypro.com/universities",
     "totalUniversitiesSupported": "50+",
     "keyBenefits": [
       "Institution-specific requirement knowledge",
