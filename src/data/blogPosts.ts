@@ -16,11 +16,11 @@ export interface BlogPost {
   faqs?: { question: string; answer: string }[];
 }
 
-// Category-based placeholder images using Unsplash
+// Category-based placeholder images
 export const categoryImages: Record<string, string> = {
-  "Dissertation Writing": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=400&fit=crop",
-  "Literature Review": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
-  "Research Methodology": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop",
+  "Dissertation Writing": "/images/blog/foundation-dissertation-writing.jpg",
+  "Literature Review": "/images/blog/foundation-literature-review.jpg",
+  "Research Methodology": "/images/blog/foundation-research-methodology.jpg",
   "Data Analysis": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
   "Academic Career": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop",
   "Writing Tips": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop",
