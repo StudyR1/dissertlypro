@@ -360,7 +360,7 @@ Sincerely,
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
+              <Button asChild variant="glass" size="lg">
                 <a href="#grounds">View Valid Grounds</a>
               </Button>
             </div>

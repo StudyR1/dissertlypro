@@ -249,7 +249,7 @@ const Index = () => {
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
-                <Button variant="glass" size="lg" className="border-white/20 text-white hover:bg-white/10 w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
+                <Button variant="glass" size="lg" className="w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
                   <Link to="/consultation">
                     Free Consultation
                   </Link>
