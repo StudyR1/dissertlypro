@@ -5,6 +5,7 @@ import { BreadcrumbSchema, AggregateRatingSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
@@ -676,6 +677,9 @@ const PhDResources = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/phd-resources" />
     </Layout>
   );
 };

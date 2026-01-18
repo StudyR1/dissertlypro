@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { BreadcrumbSchema, HowToSchema, AggregateRatingSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -454,6 +455,9 @@ const DissertationWriting = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/dissertation-writing" />
     </Layout>
   );
 };

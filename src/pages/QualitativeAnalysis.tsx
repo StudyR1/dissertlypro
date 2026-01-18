@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -746,6 +747,9 @@ const QualitativeAnalysis = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/qualitative-analysis" />
     </Layout>
   );
 };
