@@ -4,13 +4,49 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BlogPostSchema, BreadcrumbSchema, FAQSchema } from "@/components/schemas";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
-import { ArrowLeft, ArrowRight, Calendar, Clock, User, List } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock, User, List, GraduationCap, MapPin } from "lucide-react";
 import { blogPosts, getRelatedPosts } from "@/data/blogPosts";
+import { getUniversitiesByRegion, UniversityData } from "@/data/universityData";
+
+// Map university blog post slugs to their regions
+const universityBlogToRegion: Record<string, string> = {
+  "oxford-dphil-timeline-guide": "uk",
+  "cambridge-phd-thesis-guide": "uk",
+  "imperial-college-phd-research-guide": "uk",
+  "ucl-phd-doctoral-guide": "uk",
+  "lse-phd-dissertation-guide": "uk",
+  "harvard-dissertation-requirements": "us",
+  "mit-thesis-writing-strategies": "us",
+  "stanford-dissertation-excellence": "us",
+  "yale-phd-dissertation-guide": "us",
+  "princeton-phd-dissertation-excellence": "us",
+  "melbourne-thesis-completion-guide": "au",
+  "sydney-phd-thesis-guide": "au",
+  "anu-phd-thesis-guide": "au",
+  "monash-phd-candidature-guide": "au",
+  "toronto-phd-dissertation-guide": "ca",
+  "ubc-phd-thesis-guide": "ca",
+  "mcgill-phd-thesis-guide": "ca",
+  "waterloo-phd-thesis-guide": "ca",
+};
+
+const regionNames: Record<string, string> = {
+  uk: "United Kingdom",
+  us: "United States",
+  au: "Australia",
+  ca: "Canada",
+};
 
 const BlogPost = () => {
   const { slug } = useParams();
   const post = blogPosts.find(p => p.slug === slug);
   const relatedPosts = slug ? getRelatedPosts(slug, 3) : [];
+  
+  // Get related universities for university guide posts
+  const postRegion = slug ? universityBlogToRegion[slug] : undefined;
+  const relatedUniversities = postRegion 
+    ? getUniversitiesByRegion(postRegion).filter(uni => uni.blogPostSlug !== slug)
+    : [];
 
   if (!post) {
     return (
@@ -178,6 +214,54 @@ const BlogPost = () => {
                 </div>
               </div>
             </div>
+
+            {/* Related Universities - for University Guides */}
+            {relatedUniversities.length > 0 && postRegion && (
+              <div className="mt-12 pt-8 border-t border-border">
+                <div className="flex items-center gap-2 mb-6">
+                  <GraduationCap className="h-5 w-5 text-copper" />
+                  <h2 className="text-xl font-serif font-bold text-foreground">
+                    More {regionNames[postRegion]} University Guides
+                  </h2>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {relatedUniversities.slice(0, 4).map((uni) => (
+                    <Link
+                      key={uni.slug}
+                      to={uni.blogPostSlug ? `/blog/${uni.blogPostSlug}` : `/${uni.region}/${uni.slug}`}
+                      className="group flex items-start gap-4 bg-card rounded-xl border border-border p-4 hover:border-copper/40 hover:shadow-card transition-all"
+                    >
+                      <div className="p-2 bg-copper/10 rounded-lg shrink-0">
+                        <GraduationCap className="h-5 w-5 text-copper" />
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="font-serif font-semibold text-foreground group-hover:text-copper transition-colors">
+                          {uni.name}
+                        </h3>
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
+                          <MapPin className="h-3 w-3" />
+                          <span>{uni.city}</span>
+                        </div>
+                        {uni.blogPostSlug && (
+                          <span className="text-xs text-copper font-medium mt-2 inline-block">
+                            Read PhD Guide →
+                          </span>
+                        )}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+                <div className="mt-4 text-center">
+                  <Link 
+                    to="/universities" 
+                    className="text-sm text-copper hover:text-copper-dark font-medium inline-flex items-center gap-1 transition-colors"
+                  >
+                    View all universities
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            )}
 
             {/* Related Posts */}
             {relatedPosts.length > 0 && (
