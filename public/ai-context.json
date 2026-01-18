@@ -208,6 +208,173 @@
     "canada": "https://dissertlypro.com/ca"
   },
   
+  "universitySupport": {
+    "description": "DissertlyPro provides specialized dissertation support for students at leading universities worldwide, with institution-specific expertise in requirements, deadlines, and academic expectations.",
+    "universities": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Oxford",
+        "alternateName": "Oxford",
+        "url": "https://dissertlypro.com/uk/oxford",
+        "location": "Oxford, United Kingdom",
+        "description": "DPhil and MPhil support with deep understanding of Oxford's tutorial system and collegiate structure.",
+        "studentsHelped": "450+",
+        "specializations": ["DPhil thesis support", "Confirmation of status preparation", "Tutorial system guidance"],
+        "typicalRequirements": {
+          "masters": "15,000-20,000 words for MSc/MPhil",
+          "phd": "80,000-100,000 words for DPhil"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Cambridge",
+        "alternateName": "Cambridge",
+        "url": "https://dissertlypro.com/uk/cambridge",
+        "location": "Cambridge, United Kingdom",
+        "description": "PhD and MPhil thesis support with expertise in Cambridge's registration review process.",
+        "studentsHelped": "380+",
+        "specializations": ["First-year registration support", "MPhil thesis guidance", "Viva preparation"],
+        "typicalRequirements": {
+          "masters": "12,000-15,000 words for MPhil",
+          "phd": "80,000 words maximum"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "London School of Economics",
+        "alternateName": "LSE",
+        "url": "https://dissertlypro.com/uk/lse",
+        "location": "London, United Kingdom",
+        "description": "MSc dissertation and PhD support with quantitative methods expertise for social sciences.",
+        "studentsHelped": "520+",
+        "specializations": ["Econometrics support", "STATA and R analysis", "Social science methodology"],
+        "typicalRequirements": {
+          "masters": "10,000-12,000 words for MSc",
+          "phd": "100,000 words maximum"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Harvard University",
+        "alternateName": "Harvard",
+        "url": "https://dissertlypro.com/us/harvard",
+        "location": "Cambridge, MA, United States",
+        "description": "Doctoral dissertation support across all Harvard schools including HBS, HLS, and GSAS.",
+        "studentsHelped": "620+",
+        "specializations": ["Prospectus development", "Qualifying exam preparation", "EdD capstone support"],
+        "typicalRequirements": {
+          "masters": "50-100 pages typically",
+          "phd": "200-400 pages typically"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Stanford University",
+        "alternateName": "Stanford",
+        "url": "https://dissertlypro.com/us/stanford",
+        "location": "Stanford, CA, United States",
+        "description": "Technical thesis support for engineering, CS, and business with innovation-focused approach.",
+        "studentsHelped": "410+",
+        "specializations": ["Technical writing for CS/Engineering", "ML research support", "GSB dissertation guidance"],
+        "typicalRequirements": {
+          "masters": "Programme dependent",
+          "phd": "Quality over quantity focus"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Massachusetts Institute of Technology",
+        "alternateName": "MIT",
+        "url": "https://dissertlypro.com/us/mit",
+        "location": "Cambridge, MA, United States",
+        "description": "SM thesis and PhD support with deep technical expertise in engineering and sciences.",
+        "studentsHelped": "340+",
+        "specializations": ["SM thesis support", "Technical exposition", "EECS dissertation guidance"],
+        "typicalRequirements": {
+          "masters": "50-100 pages for SM thesis",
+          "phd": "Department dependent"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Melbourne",
+        "alternateName": "Melbourne",
+        "url": "https://dissertlypro.com/au/melbourne",
+        "location": "Melbourne, Australia",
+        "description": "PhD and research masters support with Melbourne Model expertise.",
+        "studentsHelped": "680+",
+        "specializations": ["Candidature confirmation", "Annual progress review", "Melbourne Model navigation"],
+        "typicalRequirements": {
+          "masters": "15,000-25,000 words for research masters",
+          "phd": "80,000-100,000 words"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Sydney",
+        "alternateName": "Sydney",
+        "url": "https://dissertlypro.com/au/sydney",
+        "location": "Sydney, Australia",
+        "description": "HDR and professional doctorate support with annual progress review expertise.",
+        "studentsHelped": "720+",
+        "specializations": ["HDR thesis support", "Annual Progress Review preparation", "Professional doctorate guidance"],
+        "typicalRequirements": {
+          "masters": "15,000-20,000 words",
+          "phd": "80,000-100,000 words"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Toronto",
+        "alternateName": "UofT",
+        "url": "https://dissertlypro.com/ca/toronto",
+        "location": "Toronto, Canada",
+        "description": "Thesis-stream masters and PhD support across St. George, UTM, and UTSC campuses.",
+        "studentsHelped": "890+",
+        "specializations": ["Thesis-stream masters support", "Comprehensive exam preparation", "Multi-campus expertise"],
+        "typicalRequirements": {
+          "masters": "50-100 pages for thesis stream",
+          "phd": "200-300 pages typically"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of British Columbia",
+        "alternateName": "UBC",
+        "url": "https://dissertlypro.com/ca/ubc",
+        "location": "Vancouver, Canada",
+        "description": "Doctoral comprehensive exam and thesis support with West Coast expertise.",
+        "studentsHelped": "560+",
+        "specializations": ["Comprehensive examination prep", "Thesis writing guidance", "Doctoral milestones support"],
+        "typicalRequirements": {
+          "masters": "Programme dependent",
+          "phd": "Department dependent"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "McGill University",
+        "alternateName": "McGill",
+        "url": "https://dissertlypro.com/ca/mcgill",
+        "location": "Montreal, Canada",
+        "description": "Bilingual dissertation support with French and English language expertise.",
+        "studentsHelped": "420+",
+        "specializations": ["Bilingual support (French/English)", "Quebec health policy research", "Schulich Music theses"],
+        "typicalRequirements": {
+          "masters": "75-150 pages typically",
+          "phd": "Department dependent"
+        }
+      }
+    ],
+    "totalUniversitiesSupported": "50+",
+    "keyBenefits": [
+      "Institution-specific requirement knowledge",
+      "Understanding of unique academic systems and milestones",
+      "Local expert networks familiar with university expectations",
+      "Timezone-appropriate support availability"
+    ]
+  },
+  
   "contact": {
     "website": "https://dissertlypro.com",
     "consultation": "https://dissertlypro.com/consultation",
