@@ -2013,6 +2013,7 @@ export const aiPolicies: AIPolicy[] = [
 
 // Default regional policies for unlisted universities
 export const defaultPolicies: Record<string, Omit<AIPolicy, "universityName" | "region" | "policyUrl" | "notes">> = {
+  // English-speaking countries
   "UK": {
     country: "UK",
     policyLevel: "disclosure-required",
@@ -2047,6 +2048,390 @@ export const defaultPolicies: Record<string, Omit<AIPolicy, "universityName" | "
     prohibitedUses: ["content-drafting"],
     disclosureRequired: true,
     disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  // European countries
+  "Germany": {
+    country: "Germany",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Declaration of originality"],
+    lastUpdated: "2024-01"
+  },
+  "Netherlands": {
+    country: "Netherlands",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming", "data-analysis"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "France": {
+    country: "France",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "brainstorming"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Attestation d'originalité"],
+    lastUpdated: "2024-01"
+  },
+  "Switzerland": {
+    country: "Switzerland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming", "data-analysis"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Sweden": {
+    country: "Sweden",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Denmark": {
+    country: "Denmark",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Norway": {
+    country: "Norway",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Finland": {
+    country: "Finland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Ireland": {
+    country: "Ireland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Belgium": {
+    country: "Belgium",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Austria": {
+    country: "Austria",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Eidesstattliche Erklärung"],
+    lastUpdated: "2024-01"
+  },
+  "Italy": {
+    country: "Italy",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Spain": {
+    country: "Spain",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Portugal": {
+    country: "Portugal",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Poland": {
+    country: "Poland",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Czech Republic": {
+    country: "Czech Republic",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  // Asian countries
+  "China": {
+    country: "China",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "grammar-editing", "brainstorming"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Academic integrity declaration"],
+    lastUpdated: "2024-01"
+  },
+  "Japan": {
+    country: "Japan",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "South Korea": {
+    country: "South Korea",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Singapore": {
+    country: "Singapore",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming", "data-analysis"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Hong Kong": {
+    country: "Hong Kong",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Academic honesty declaration"],
+    lastUpdated: "2024-01"
+  },
+  "Taiwan": {
+    country: "Taiwan",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "India": {
+    country: "India",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Declaration of originality"],
+    lastUpdated: "2024-01"
+  },
+  "Malaysia": {
+    country: "Malaysia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Thailand": {
+    country: "Thailand",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Vietnam": {
+    country: "Vietnam",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "grammar-editing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Philippines": {
+    country: "Philippines",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Indonesia": {
+    country: "Indonesia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  // Middle East
+  "UAE": {
+    country: "UAE",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Saudi Arabia": {
+    country: "Saudi Arabia",
+    policyLevel: "restricted",
+    allowedUses: ["literature-search"],
+    prohibitedUses: ["content-drafting", "paraphrasing", "grammar-editing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Academic integrity declaration"],
+    lastUpdated: "2024-01"
+  },
+  "Israel": {
+    country: "Israel",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming", "data-analysis"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Qatar": {
+    country: "Qatar",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  // Africa
+  "South Africa": {
+    country: "South Africa",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Declaration of originality"],
+    lastUpdated: "2024-01"
+  },
+  "Nigeria": {
+    country: "Nigeria",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting", "paraphrasing"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Egypt": {
+    country: "Egypt",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Kenya": {
+    country: "Kenya",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  // Latin America
+  "Brazil": {
+    country: "Brazil",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Mexico": {
+    country: "Mexico",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Argentina": {
+    country: "Argentina",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Chile": {
+    country: "Chile",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  "Colombia": {
+    country: "Colombia",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section"],
+    lastUpdated: "2024-01"
+  },
+  // Oceania
+  "New Zealand": {
+    country: "New Zealand",
+    policyLevel: "disclosure-required",
+    allowedUses: ["literature-search", "grammar-editing", "brainstorming"],
+    prohibitedUses: ["content-drafting"],
+    disclosureRequired: true,
+    disclosureLocation: ["Methodology section", "Academic integrity statement"],
     lastUpdated: "2024-01"
   }
 };
