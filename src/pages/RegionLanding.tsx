@@ -5,6 +5,7 @@ import SEO from "@/components/SEO";
 import { FAQSchema, BreadcrumbSchema, ProfessionalServiceSchema } from "@/components/schemas";
 import { homepageFAQs } from "@/data/serviceFAQs";
 import { regionData, formatPrice, getRegionByCode } from "@/data/regionData";
+import { getUniversitiesByRegion } from "@/data/universityData";
 import { 
   ArrowRight, 
   Shield, 
@@ -42,7 +43,9 @@ const RegionLanding = () => {
   }
 
   const { currency, pricing, universities, testimonials, stats, supportHours, flagEmoji, heroTitle, heroSubtitle, name, phone } = regionInfo;
-
+  
+  // Get detailed university data for this region
+  const regionUniversities = getUniversitiesByRegion(region || '');
   return (
     <Layout>
       <SEO 
@@ -230,21 +233,44 @@ const RegionLanding = () => {
               Supporting Students at {name}'s Top Universities
             </h2>
             <p className="text-muted-foreground font-sans text-lg">
-              Our experts have guided students from the leading institutions across {name}.
+              Our experts have guided students from the leading institutions across {name}. Click to see university-specific support.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {universities.map((uni) => (
-              <div 
-                key={uni}
-                className="bg-card rounded-xl border border-border p-4 text-center hover:shadow-card transition-all"
+            {/* Universities with dedicated pages */}
+            {regionUniversities.map((uni) => (
+              <Link
+                key={uni.slug}
+                to={`/${region}/${uni.slug}`}
+                className="bg-card rounded-xl border border-border p-4 text-center hover:shadow-card hover:border-copper/30 transition-all group"
               >
-                <GraduationCap className="h-6 w-6 text-copper mx-auto mb-2" />
-                <p className="text-sm font-sans text-foreground font-medium">{uni}</p>
-              </div>
+                <GraduationCap className="h-6 w-6 text-copper mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                <p className="text-sm font-sans text-foreground font-medium group-hover:text-copper transition-colors">{uni.shortName}</p>
+                <p className="text-xs text-muted-foreground mt-1">{uni.stats.studentsHelped} helped</p>
+              </Link>
             ))}
+            
+            {/* Other universities without dedicated pages */}
+            {universities
+              .filter(uni => !regionUniversities.some(ru => uni.includes(ru.shortName) || uni.includes(ru.name)))
+              .map((uni) => (
+                <div 
+                  key={uni}
+                  className="bg-card rounded-xl border border-border p-4 text-center hover:shadow-card transition-all"
+                >
+                  <GraduationCap className="h-6 w-6 text-copper mx-auto mb-2" />
+                  <p className="text-sm font-sans text-foreground font-medium">{uni}</p>
+                </div>
+              ))
+            }
           </div>
+          
+          {regionUniversities.length > 0 && (
+            <p className="text-center text-sm text-muted-foreground mt-6">
+              Click on highlighted universities to see institution-specific support details
+            </p>
+          )}
         </div>
       </section>
 
