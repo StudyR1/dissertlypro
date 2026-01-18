@@ -27,6 +27,7 @@ export const categoryImages: Record<string, string> = {
   "Work-Life Balance": "/images/blog/foundation-work-life-balance.jpg",
   "Case Studies": "/images/blog/foundation-case-studies.jpg",
   "University Guides": "/images/blog/foundation-university-guides.jpg",
+  "AI in Academia": "/images/blog/ai-academia-hub.jpg",
 };
 
 export const getPostImage = (post: BlogPost): string => {
@@ -44,6 +45,7 @@ export const blogCategories = [
   "Work-Life Balance",
   "Case Studies",
   "University Guides",
+  "AI in Academia",
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -4688,6 +4690,337 @@ export const blogPosts: BlogPost[] = [
       {
         question: "What is a manuscript-based thesis at McGill?",
         answer: "A manuscript-based thesis at McGill compiles published or submitted papers with linking introduction and conclusion. Each included paper must clearly indicate the candidate's contribution."
+      }
+    ]
+  },
+
+  // ============================================
+  // AI IN ACADEMIA ARTICLES
+  // ============================================
+
+  // AI Article 1: Can I Use ChatGPT for My Dissertation?
+  {
+    slug: "can-i-use-chatgpt-for-dissertation-complete-guide",
+    title: "Can I Use ChatGPT for My Dissertation? A Complete Guide",
+    excerpt: "Understand the ethical, academic, and practical considerations of using ChatGPT and other AI tools in your dissertation. Learn what's allowed, what's not, and how to disclose AI use properly.",
+    metaDescription: "Learn if you can use ChatGPT for your dissertation. Comprehensive guide on AI policies, ethical use, disclosure requirements, and best practices for Master's and PhD students.",
+    featured: true,
+    image: "/images/blog/ai-academia-hub.jpg",
+    category: "AI in Academia",
+    author: "Dr. Helena Vranos",
+    authorBio: "PhD in Research Ethics, Former IRB Chair with expertise in emerging technology policies",
+    date: "January 18, 2026",
+    readTime: "18 min read",
+    keywords: ["chatgpt dissertation", "can I use chatgpt for dissertation", "AI dissertation", "chatgpt thesis", "AI academic writing", "AI disclosure"],
+    tableOfContents: [
+      { id: "short-answer", title: "The Short Answer" },
+      { id: "what-policies-say", title: "What University Policies Say" },
+      { id: "acceptable-uses", title: "Acceptable Uses of ChatGPT" },
+      { id: "prohibited-uses", title: "Prohibited Uses" },
+      { id: "disclosure-requirements", title: "Disclosure Requirements" },
+      { id: "detection-risks", title: "Detection Risks" },
+      { id: "best-practices", title: "Best Practices" },
+    ],
+    content: [
+      "The question 'Can I use ChatGPT for my dissertation?' is one of the most common queries we receive from graduate students in 2025. The short answer is nuanced: **yes, in specific ways, with proper disclosure**—but the details depend heavily on your institution, discipline, and how you intend to use AI.",
+
+      "## The Short Answer",
+      "Most universities now permit limited AI use in dissertations, but with strict conditions. The key principles that apply across most institutions are: **Transparency** (you must disclose AI use), **Human authorship** (the intellectual contribution must be yours), **Critical evaluation** (you must verify and improve AI outputs), and **Appropriate scope** (certain uses are acceptable, others are not).",
+      "Before using any AI tool, check your university's specific policy. Policies vary dramatically—from complete prohibition to structured integration guidelines.",
+
+      "## What University Policies Say",
+      "University AI policies generally fall into four categories:",
+      "**Restrictive policies** prohibit AI use in assessed work entirely. These are increasingly rare but still exist at some institutions, particularly for humanities dissertations where original voice is paramount.",
+      "**Conditional policies** permit AI for specific tasks (e.g., grammar checking, brainstorming) but prohibit content generation. This is the most common approach in 2025.",
+      "**Disclosure-based policies** allow broader AI use provided students fully disclose how, when, and why AI was used. These policies treat AI as a tool similar to statistical software.",
+      "**Integrated policies** actively encourage AI use as part of research methodology, with structured frameworks for ethical implementation. These are emerging primarily in STEM and data science fields.",
+
+      "## Acceptable Uses of ChatGPT",
+      "Most institutions consider these uses acceptable (with disclosure):",
+      "**Brainstorming and ideation**: Using AI to generate initial ideas, explore angles, or overcome writer's block. The key is that you critically evaluate and substantially develop these ideas yourself.",
+      "**Grammar and language assistance**: Similar to Grammarly, using AI to improve grammar, clarity, and academic tone—particularly valuable for non-native English speakers.",
+      "**Explaining complex concepts**: Asking AI to explain difficult theories or methods in simpler terms to aid your understanding (not for direct inclusion in your work).",
+      "**Code debugging**: In computational dissertations, using AI to help debug code or explain programming concepts is generally acceptable.",
+      "**Literature search assistance**: Using AI tools like Elicit or Consensus to help identify relevant papers (though you must read and evaluate sources yourself).",
+      "**Summarization for personal use**: Generating summaries of papers to aid your own comprehension—not for inclusion in your dissertation.",
+
+      "## Prohibited Uses",
+      "The following uses are almost universally prohibited:",
+      "**Direct content generation**: Having AI write paragraphs, sections, or chapters that you submit as your own work. This constitutes academic misconduct at virtually all institutions.",
+      "**Fabricating sources**: AI can 'hallucinate' citations that don't exist. Including AI-generated references without verification is a serious integrity violation.",
+      "**Paraphrasing to avoid detection**: Using AI to rewrite content to evade plagiarism or AI detection tools is explicitly prohibited.",
+      "**Data analysis without understanding**: Using AI to analyse data without understanding the methods or being able to defend your choices.",
+      "**Generating original research claims**: AI cannot conduct original research, so any claims about your findings must be genuinely yours.",
+
+      "## Disclosure Requirements",
+      "Proper disclosure is essential. Most universities require disclosure in one or more of these locations:",
+      "**Methodology section**: Describe which AI tools you used, for what purposes, and how you verified outputs. Example: 'ChatGPT-4 was used to assist with initial brainstorming of research themes. All generated ideas were critically evaluated, substantially developed, and independently verified through primary sources.'",
+      "**Acknowledgments**: A brief statement acknowledging AI assistance. Example: 'The author used Grammarly and ChatGPT for grammar and clarity improvements during the editing process.'",
+      "**Declaration/attestation**: Many institutions now require a specific AI use declaration form or statement.",
+      "**In-text citations**: Some style guides (APA 7th ed. updated guidelines) now include formats for citing AI tools when their outputs are directly referenced.",
+
+      "## Detection Risks",
+      "AI detection tools like Turnitin's AI indicator, GPTZero, and Originality.ai are increasingly used by universities. However, they have significant limitations:",
+      "**False positives**: These tools can incorrectly flag human-written content as AI-generated, particularly academic writing that uses formal, structured language.",
+      "**False negatives**: Heavily edited AI content may not be detected.",
+      "**Inconsistent results**: The same text can receive different scores across different tools or even on the same tool at different times.",
+      "The best protection against detection concerns is **transparency**. If you've used AI appropriately and disclosed it properly, detection becomes irrelevant—you've already acknowledged the use.",
+
+      "## Best Practices",
+      "**1. Check your policy first**: Before using any AI tool, read your institution's specific policy. If unclear, ask your supervisor or academic integrity office.",
+      "**2. Document everything**: Keep records of your AI interactions, including prompts, outputs, and how you modified content. This creates an audit trail if questions arise.",
+      "**3. Use AI as a starting point, not an endpoint**: AI outputs should be raw material that you substantially transform through your own expertise and critical thinking.",
+      "**4. Verify all information**: Never trust AI-generated facts, citations, or statistics without independent verification.",
+      "**5. Maintain your voice**: Your dissertation should sound like you. If AI assistance changes your writing style dramatically, you may be relying on it too heavily.",
+      "**6. Disclose proactively**: When in doubt, disclose. Over-disclosure is never penalized; under-disclosure can be career-ending.",
+      "**7. Use AI ethically in research**: If your research involves AI (e.g., using AI to analyze data), ensure this is covered in your ethics approval.",
+
+      "## Conclusion",
+      "AI tools like ChatGPT can be valuable aids in your dissertation journey when used appropriately. The key is approaching AI as a tool that supports—not replaces—your intellectual contribution. Stay informed about your institution's policies, disclose transparently, and always maintain the integrity that your doctoral or master's credential represents.",
+    ],
+    faqs: [
+      {
+        question: "Will I get caught if I use ChatGPT for my dissertation?",
+        answer: "AI detection tools are improving but imperfect. However, the better question is: are you using AI appropriately? If you're using it for prohibited purposes (like generating content to submit as your own), you risk serious consequences. If you're using it appropriately with disclosure, there's nothing to 'get caught' for."
+      },
+      {
+        question: "Can I use ChatGPT to write my literature review?",
+        answer: "No. Having ChatGPT write your literature review would constitute academic misconduct. However, you can use AI to help identify sources, generate initial reading lists, or explain difficult concepts—provided you read the sources yourself and write the review in your own words."
+      },
+      {
+        question: "Do I need to cite ChatGPT in my dissertation?",
+        answer: "If you're referencing specific AI outputs in your work, yes. APA 7th edition provides guidance: treat AI as the author, include the version, date, and a description of the prompt. For general assistance (like grammar checking), an acknowledgment may suffice—check your institution's requirements."
+      },
+      {
+        question: "What if my supervisor doesn't know about AI policies?",
+        answer: "Some supervisors are still catching up with AI developments. Consult your institution's academic integrity office or graduate school directly for policy clarification. You can also share resources from your university's teaching and learning center."
+      }
+    ]
+  },
+
+  // AI Article 2: Understanding AI Detection
+  {
+    slug: "turnitin-ai-detection-what-it-measures-how-it-works",
+    title: "Understanding AI Detection: What Turnitin's AI Checker Actually Measures",
+    excerpt: "Demystify AI detection technology. Learn how Turnitin's AI indicator works, its limitations, why false positives occur, and what to do if your work is incorrectly flagged.",
+    metaDescription: "Learn how Turnitin's AI detection works, its accuracy limitations, false positive rates, and what to do if your dissertation is incorrectly flagged as AI-generated.",
+    featured: false,
+    image: "/images/blog/ai-academia-hub.jpg",
+    category: "AI in Academia",
+    author: "Dr. Marcus Thorne",
+    authorBio: "PhD in Computer Science, AI Research Specialist with expertise in natural language processing",
+    date: "January 17, 2026",
+    readTime: "15 min read",
+    keywords: ["turnitin AI detection", "AI detection tools", "GPTZero", "AI checker", "false positive AI detection", "AI writing detection"],
+    tableOfContents: [
+      { id: "how-detection-works", title: "How AI Detection Works" },
+      { id: "turnitin-specifics", title: "Turnitin's AI Indicator" },
+      { id: "accuracy-limitations", title: "Accuracy and Limitations" },
+      { id: "false-positives", title: "Understanding False Positives" },
+      { id: "what-to-do", title: "What To Do If Flagged" },
+      { id: "prevention", title: "Prevention Strategies" },
+    ],
+    content: [
+      "As AI writing tools have proliferated, universities have adopted AI detection technologies to maintain academic integrity. Understanding how these tools work—and their significant limitations—is essential for graduate students navigating the current academic landscape.",
+
+      "## How AI Detection Works",
+      "AI detection tools analyze text using machine learning models trained on large datasets of human and AI-generated writing. They look for statistical patterns that differentiate the two:",
+      "**Perplexity analysis**: AI-generated text tends to be more 'predictable' than human writing. Detection tools measure how 'surprised' a language model would be by each word choice. Lower perplexity (less surprise) suggests AI generation.",
+      "**Burstiness patterns**: Human writing typically varies in sentence length, complexity, and rhythm. AI-generated text often has more uniform patterns. 'Burstiness' measures this variation.",
+      "**Token probability distributions**: Detection models analyze whether word sequences follow patterns typical of AI language models or human writers.",
+      "**Stylistic markers**: Certain phrases, transitions, and structural patterns are more common in AI outputs. Detection tools can identify these 'fingerprints'.",
+
+      "## Turnitin's AI Indicator",
+      "Turnitin introduced its AI writing indicator in April 2023, integrated into its existing plagiarism detection platform. Key features include:",
+      "**Percentage score**: Documents receive a 0-100% score indicating the proportion of text identified as potentially AI-generated.",
+      "**Sentence-level highlighting**: Specific sentences flagged as AI-generated are highlighted in the report.",
+      "**Confidence threshold**: Turnitin only reports scores when it has sufficient confidence. Low-confidence results may show as 'unable to determine'.",
+      "**Integration with plagiarism reports**: AI indicators appear alongside traditional similarity scores, giving instructors a comprehensive view.",
+      "Turnitin claims 98% accuracy in identifying AI-generated content and less than 1% false positive rate for fully human-written documents. However, these figures have been disputed by independent researchers.",
+
+      "## Accuracy and Limitations",
+      "Despite marketing claims, AI detection technology has significant limitations:",
+      "**Training data lag**: Detection models are trained on older AI outputs. Newer AI models may produce text that evades detection.",
+      "**Editing effects**: Heavily edited AI content may not be detected. Conversely, heavily edited human content may be incorrectly flagged.",
+      "**Academic writing bias**: Formal academic writing—with its structured arguments, technical vocabulary, and conventional phrasing—can resemble AI outputs, increasing false positive rates.",
+      "**Language effects**: Non-native English speakers' writing patterns may trigger false positives more frequently.",
+      "**Length sensitivity**: Very short or very long documents may produce less reliable results.",
+      "**Inconsistency**: The same text submitted multiple times can receive different scores.",
+
+      "## Understanding False Positives",
+      "False positives occur when human-written text is incorrectly identified as AI-generated. This is particularly concerning for graduate students because:",
+      "**Academic writing is formal**: Dissertations use structured language that detection algorithms associate with AI.",
+      "**Technical content is predictable**: Methodology sections and literature reviews follow conventional patterns.",
+      "**Non-native speakers are vulnerable**: Learned academic English patterns may differ from 'native' writing in ways that trigger false positives.",
+      "**Collaborative writing**: Text edited by multiple people or professional editors may have smoothed-out stylistic variations.",
+      "Research by independent academics has found false positive rates significantly higher than vendors claim—some studies showing 10-15% false positive rates for academic writing.",
+
+      "## What To Do If Flagged",
+      "If your dissertation or coursework is flagged by AI detection:",
+      "**Stay calm**: A flag is not an accusation. It's a data point that requires interpretation.",
+      "**Document your process**: Gather evidence of your writing process—drafts, notes, research logs, version histories, and supervisor communications.",
+      "**Request a meeting**: Ask to discuss the flag with your supervisor or academic integrity officer before any formal proceedings.",
+      "**Explain your methodology**: Walk through how you researched and wrote the flagged sections. Genuine authors can explain their reasoning.",
+      "**Highlight AI tool disclosure**: If you used AI appropriately and disclosed it, emphasize that this is documented.",
+      "**Request re-evaluation**: Ask if the institution will consider multiple detection tools, as results vary significantly.",
+      "**Understand your rights**: Familiarize yourself with your institution's academic integrity procedures and appeal processes.",
+
+      "## Prevention Strategies",
+      "The best approach is proactive transparency:",
+      "**Disclose AI use upfront**: If you've used AI tools appropriately, declare this in your methodology or acknowledgments.",
+      "**Maintain documentation**: Keep drafts, notes, and research logs that demonstrate your authentic writing process.",
+      "**Write iteratively**: Genuine human writing typically evolves through multiple drafts. This history is evidence of authentic authorship.",
+      "**Use version control**: Tools like Google Docs' version history or Git for code-heavy dissertations create audit trails.",
+      "**Communicate with supervisors**: Regular meetings and feedback exchanges create witnesses to your intellectual development.",
+
+      "## Conclusion",
+      "AI detection technology is imperfect and evolving. While universities increasingly rely on these tools, they should be one input among many in assessing academic integrity. For graduate students, the best protection is transparency: use AI tools appropriately, disclose their use, and maintain evidence of your authentic intellectual contribution.",
+    ],
+    faqs: [
+      {
+        question: "How accurate is Turnitin's AI detection?",
+        answer: "Turnitin claims 98% accuracy and <1% false positives. However, independent research suggests false positive rates may be higher for academic writing, particularly formal dissertation content and non-native English speakers' work."
+      },
+      {
+        question: "Can I check my work before submitting?",
+        answer: "Some institutions provide students access to AI detection tools for self-checking. Third-party tools like GPTZero offer free checks, though results may differ from what your institution uses. Be cautious about uploading sensitive dissertation content to third-party services."
+      },
+      {
+        question: "What if I'm wrongly accused of using AI?",
+        answer: "Document your writing process (drafts, notes, research logs), request a meeting to explain your methodology, and understand your institution's appeal process. False positives can be challenged with evidence of authentic authorship."
+      },
+      {
+        question: "Do AI detection tools work on non-English text?",
+        answer: "Most tools are optimized for English. Detection accuracy for other languages varies significantly and is generally lower. Check if your institution uses language-specific detection tools."
+      }
+    ]
+  },
+
+  // AI Article 3: How to Cite ChatGPT
+  {
+    slug: "how-to-cite-chatgpt-apa-mla-chicago-harvard",
+    title: "How to Cite ChatGPT in APA, MLA, Chicago, and Harvard Formats",
+    excerpt: "Complete guide to citing AI tools in your dissertation. Learn the correct citation formats for ChatGPT, Claude, and other AI assistants across all major academic styles.",
+    metaDescription: "Learn how to cite ChatGPT and AI tools correctly in APA 7th edition, MLA 9th edition, Chicago, and Harvard referencing styles. Includes examples and templates.",
+    featured: false,
+    image: "/images/blog/ai-academia-hub.jpg",
+    category: "AI in Academia",
+    author: "Dr. Isabelle Fontaine",
+    authorBio: "PhD in Library Science, Academic Citation Specialist and Style Guide Author",
+    date: "January 16, 2026",
+    readTime: "12 min read",
+    keywords: ["cite chatgpt", "how to cite AI", "chatgpt citation APA", "cite chatgpt MLA", "AI citation format", "reference chatgpt"],
+    tableOfContents: [
+      { id: "when-to-cite", title: "When to Cite AI Tools" },
+      { id: "apa-format", title: "APA 7th Edition Format" },
+      { id: "mla-format", title: "MLA 9th Edition Format" },
+      { id: "chicago-format", title: "Chicago/Turabian Format" },
+      { id: "harvard-format", title: "Harvard Format" },
+      { id: "special-cases", title: "Special Cases" },
+    ],
+    content: [
+      "As AI tools become integrated into academic workflows, proper citation has become essential. This guide provides authoritative formats for citing ChatGPT and other AI assistants across major academic styles, based on the latest guidance from style manual publishers.",
+
+      "## When to Cite AI Tools",
+      "You should cite AI tools when:",
+      "**Quoting AI output directly**: If you include text generated by an AI in your work (even in quotation marks), citation is required.",
+      "**Paraphrasing AI content**: If you use AI-generated ideas that you've rephrased, citation is required.",
+      "**Describing AI methodology**: If AI tools were part of your research methodology (e.g., data analysis), describe and cite them in your methods section.",
+      "**Building on AI suggestions**: If an AI tool substantially shaped your thinking or approach, acknowledge this.",
+      "You typically don't need formal citations for:",
+      "**Grammar/spelling assistance**: Using AI like Grammarly for editing (though acknowledgment may be appropriate).",
+      "**Personal comprehension**: Using AI to understand concepts without including its outputs in your work.",
+      "**Brainstorming privately**: Using AI for idea generation when the final ideas are substantially your own.",
+
+      "## APA 7th Edition Format",
+      "The American Psychological Association updated its guidance in 2023 to address AI citations.",
+      "**Reference list format:**",
+      "Author. (Year). *Title of AI tool* (Version) [Type of AI model]. Publisher. URL",
+      "**Example:**",
+      "OpenAI. (2024). *ChatGPT* (Jan 15 version) [Large language model]. https://chat.openai.com",
+      "**In-text citation:**",
+      "(OpenAI, 2024) or OpenAI (2024)",
+      "**Including the prompt:**",
+      "When relevant, describe the prompt in your text: 'When prompted with \"Explain the key differences between qualitative and quantitative research,\" ChatGPT (OpenAI, 2024) generated...'",
+      "**Key APA notes:**",
+      "- Treat the AI company as the author",
+      "- Include the version or date of the AI you used",
+      "- Specify the type of model in brackets",
+      "- Include the URL where the AI can be accessed",
+      "- Note that AI outputs cannot be retrieved by readers (no stable URL to specific output)",
+
+      "## MLA 9th Edition Format",
+      "The Modern Language Association provides guidance for citing AI as a tool that generates text.",
+      "**Works Cited format:**",
+      "\"Prompt text\" prompt. *AI Tool Name*, version, Company, Date, URL.",
+      "**Example:**",
+      "\"Explain the key differences between qualitative and quantitative research methodologies\" prompt. *ChatGPT*, GPT-4, OpenAI, 15 Jan. 2024, chat.openai.com.",
+      "**In-text citation:**",
+      "Use a shortened form: (\"Explain the key differences\" prompt)",
+      "**Alternative format (tool as author):**",
+      "OpenAI. *ChatGPT*. GPT-4 version, 15 Jan. 2024, chat.openai.com.",
+      "**Key MLA notes:**",
+      "- The prompt itself can serve as the 'title' of the source",
+      "- Include the AI version and access date",
+      "- MLA emphasizes that AI cannot be an 'author' in the traditional sense",
+
+      "## Chicago/Turabian Format",
+      "The Chicago Manual of Style (17th ed.) treats AI outputs as personal communications or unpublished materials.",
+      "**Notes-Bibliography style (footnote):**",
+      "1. OpenAI, ChatGPT, response to \"Explain the key differences between qualitative and quantitative research methodologies,\" January 15, 2024, https://chat.openai.com.",
+      "**Bibliography entry:**",
+      "OpenAI. ChatGPT. Response to \"Explain the key differences between qualitative and quantitative research methodologies.\" January 15, 2024. https://chat.openai.com.",
+      "**Author-Date style:**",
+      "(OpenAI 2024) in text, with full reference in the reference list.",
+      "**Key Chicago notes:**",
+      "- Treat as you would a personal communication",
+      "- Include the prompt to provide context",
+      "- Some instructors may prefer AI citations only in footnotes, not the bibliography",
+
+      "## Harvard Format",
+      "Harvard referencing varies by institution, but the general approach follows:",
+      "**Reference list format:**",
+      "Author (Year) *Title* (Version) [Type]. Available at: URL (Accessed: Date).",
+      "**Example:**",
+      "OpenAI (2024) *ChatGPT* (Jan 15 version) [Large language model]. Available at: https://chat.openai.com (Accessed: 15 January 2024).",
+      "**In-text citation:**",
+      "(OpenAI, 2024) or According to ChatGPT (OpenAI, 2024)...",
+      "**Key Harvard notes:**",
+      "- Harvard style varies by institution—check your university's specific guidelines",
+      "- Include access date, as AI outputs are not stable",
+      "- Describe the prompt in your text when relevant",
+
+      "## Special Cases",
+      "**Citing other AI tools:**",
+      "The same principles apply to Claude (Anthropic), Gemini (Google), Copilot (Microsoft), and other AI assistants. Use the company as author and specify the tool and version.",
+      "**Claude example (APA):**",
+      "Anthropic. (2024). *Claude* (Claude 3 version) [Large language model]. https://claude.ai",
+      "**AI-assisted data analysis:**",
+      "If AI tools were used in your methodology (e.g., Python libraries with AI components), cite them as software: Developer. (Year). *Software Name* (Version) [Computer software]. URL",
+      "**AI-generated images:**",
+      "For AI image generators, include the prompt and tool: OpenAI. (2024). *DALL-E 3* [AI image generator]. Image generated from prompt: \"[your prompt].\" https://openai.com/dall-e-3",
+      "**When AI writes the citation:**",
+      "Never let AI generate your citations without verification. AI frequently 'hallucinates' fake sources. Always verify every citation independently.",
+
+      "## Conclusion",
+      "Citing AI tools correctly demonstrates academic integrity and helps readers understand how AI contributed to your work. When in doubt, err on the side of more disclosure rather than less. As AI citation standards continue to evolve, check for the latest guidance from your style manual and institution.",
+    ],
+    faqs: [
+      {
+        question: "Do I need to cite ChatGPT if I only used it for brainstorming?",
+        answer: "If the final ideas are substantially your own and AI content isn't directly included, a formal citation may not be required. However, an acknowledgment in your methodology or acknowledgments section is good practice and demonstrates transparency."
+      },
+      {
+        question: "Can I cite a specific ChatGPT conversation?",
+        answer: "Unlike web pages, ChatGPT conversations don't have stable URLs that others can access. Include the date and describe the prompt, but note that the exact output is not retrievable by readers."
+      },
+      {
+        question: "What if my institution has different citation requirements for AI?",
+        answer: "Institutional guidelines take precedence over style manual recommendations. Check with your supervisor, department, or library for specific requirements."
+      },
+      {
+        question: "How do I cite AI if I used it multiple times?",
+        answer: "For repeated use of the same tool, one reference entry suffices with multiple in-text citations. If different prompts are significant, describe them individually in your text while citing the same reference."
       }
     ]
   },
