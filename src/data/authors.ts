@@ -114,6 +114,19 @@ export const authorNameToId: Record<string, string> = {
   "Dr. Susan Taylor": "dr-isabelle-fontaine",
   "Dr. Richard Davis": "dr-marcus-thorne",
   "Dr. Nancy Kim": "dr-amara-okonkwo",
+  // Additional university guide authors
+  "Dr. James Richardson": "dr-nathaniel-ashford",
+  "Dr. Elizabeth Chen": "dr-yuki-tanaka",
+  "Dr. Alexandra Hughes": "dr-evelyn-hartwell",
+  "Dr. Benjamin Carter": "dr-marcus-thorne",
+  "Dr. Catherine Mills": "dr-helena-vranos",
+  "Dr. Daniel Lee": "dr-julian-castellanos",
+  "Dr. Helen Park": "dr-amara-okonkwo",
+  "Dr. Victoria Chen": "dr-yuki-tanaka",
+  "Dr. Sophie Williams": "dr-isabelle-fontaine",
+  "Dr. Oliver Grant": "dr-nathaniel-ashford",
+  "Dr. Caroline Bennett": "dr-evelyn-hartwell",
+  "Dr. Peter Walsh": "dr-marcus-thorne",
 };
 
 export const getAuthorByName = (name: string): Author | undefined => {
