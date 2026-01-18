@@ -25,8 +25,8 @@ export const categoryImages: Record<string, string> = {
   "Academic Career": "/images/blog/foundation-academic-career.jpg",
   "Writing Tips": "/images/blog/foundation-writing-tips.jpg",
   "Work-Life Balance": "/images/blog/foundation-work-life-balance.jpg",
-  "Case Studies": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
-  "University Guides": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop",
+  "Case Studies": "/images/blog/foundation-case-studies.jpg",
+  "University Guides": "/images/blog/foundation-university-guides.jpg",
 };
 
 export const getPostImage = (post: BlogPost): string => {
