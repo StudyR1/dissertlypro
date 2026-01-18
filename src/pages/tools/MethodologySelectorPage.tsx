@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -364,11 +364,12 @@ const MethodologySelectorPage = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Methodology Selector Quiz | Choose Quantitative, Qualitative or Mixed Methods | DissertlyPro</title>
-        <meta name="description" content="Take our free methodology selector quiz to determine whether quantitative, qualitative, or mixed methods research is best for your dissertation or thesis." />
-        <link rel="canonical" href="https://dissertlypro.com/tools/methodology-selector" />
-      </Helmet>
+      <SEO
+        title="Methodology Selector Quiz | Choose Quantitative, Qualitative or Mixed Methods"
+        description="Take our free methodology selector quiz to determine whether quantitative, qualitative, or mixed methods research is best for your dissertation or thesis."
+        canonical="/tools/methodology-selector"
+        keywords={["methodology selector", "research methodology quiz", "quantitative vs qualitative", "mixed methods", "dissertation methodology", "thesis research design", "research methods tool"]}
+      />
       
       <ToolSchema
         name="Methodology Selector Quiz"

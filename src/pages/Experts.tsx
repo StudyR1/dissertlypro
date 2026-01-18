@@ -156,6 +156,8 @@ const Experts = () => {
       <SEO 
         title="Our Expert Team | DissertlyPro"
         description="Meet our team of PhD-qualified experts with decades of combined experience in research methodology, data analysis, and academic writing across all disciplines."
+        canonical="/experts"
+        keywords={["dissertation experts", "PhD consultants", "academic writing specialists", "research methodology experts", "data analysis experts", "subject matter experts", "thesis consultants"]}
       />
       
       {/* Hero Section */}

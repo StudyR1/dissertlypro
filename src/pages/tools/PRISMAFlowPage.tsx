@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -130,12 +130,12 @@ Studies included in quantitative synthesis (meta-analysis): ${data.studiesInclud
 
   return (
     <Layout>
-      <Helmet>
-        <title>PRISMA Flow Diagram Generator | Free Systematic Review Tool | DissertlyPro</title>
-        <meta name="description" content="Create professional PRISMA flow diagrams for your systematic review. Free tool to visualize identification, screening, eligibility, and inclusion stages." />
-        <meta name="keywords" content="PRISMA flow diagram, systematic review, meta-analysis, literature review, study selection, PRISMA 2020" />
-        <link rel="canonical" href="https://dissertlypro.com/tools/prisma-flow" />
-      </Helmet>
+      <SEO
+        title="PRISMA Flow Diagram Generator | Free Systematic Review Tool"
+        description="Create professional PRISMA flow diagrams for your systematic review. Free tool to visualize identification, screening, eligibility, and inclusion stages."
+        canonical="/tools/prisma-flow"
+        keywords={["PRISMA flow diagram", "systematic review", "meta-analysis", "literature review", "study selection", "PRISMA 2020", "systematic review tool"]}
+      />
       
       <ToolSchema
         name="PRISMA Flow Diagram Generator"
