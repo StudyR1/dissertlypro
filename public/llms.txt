@@ -125,6 +125,10 @@ Take a 7-question quiz to discover whether quantitative, qualitative, or mixed m
 **URL:** https://dissertlypro.com/tools/literature-search
 Build systematic database search queries with Boolean operators (AND, OR, NOT) for comprehensive literature reviews. Add concepts and synonyms, get database-specific formatting for PubMed, Scopus, Web of Science, PsycINFO, ERIC, and Google Scholar. Includes synonym suggestions and one-click copy. Free, no sign-up required.
 
+### PRISMA Flow Diagram Generator
+**URL:** https://dissertlypro.com/tools/prisma-flow
+Create professional PRISMA 2020 flow diagrams for systematic reviews and meta-analyses. Enter your study selection data (identification, screening, eligibility, inclusion) and generate a visual flowchart. Includes copy-as-text export and exclusion reason tracking. Free, no sign-up required.
+
 ## Downloadable Templates
 
 ### Free Dissertation & Thesis Templates

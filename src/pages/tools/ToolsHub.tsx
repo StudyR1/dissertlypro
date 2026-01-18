@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree, FlaskConical, Search } from "lucide-react";
+import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree, FlaskConical, Search, GitBranch } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
@@ -126,6 +126,16 @@ const tools = [
     icon: Search,
     href: "/tools/literature-search",
     features: ["Boolean builder", "6 database formats", "Synonym suggestions"],
+    badge: "New",
+    badgeVariant: "default" as const,
+  },
+  {
+    id: "prisma-flow",
+    title: "PRISMA Flow Diagram",
+    description: "Create professional PRISMA 2020 flow diagrams for systematic reviews. Visualize study identification, screening, eligibility, and inclusion stages.",
+    icon: GitBranch,
+    href: "/tools/prisma-flow",
+    features: ["PRISMA 2020 format", "Visual flowchart", "Copy as text"],
     badge: "New",
     badgeVariant: "default" as const,
   },
