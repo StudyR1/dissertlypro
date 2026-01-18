@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SeeAlso } from "@/components/ui/see-also";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -941,6 +942,9 @@ const ResearchMethodology = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/research-methodology" />
     </Layout>
   );
 };
