@@ -10,3 +10,6 @@ export { default as BreadcrumbSchema } from './BreadcrumbSchema';
 export { default as HowToSchema, defaultHowToSteps } from './HowToSchema';
 export { default as AggregateRatingSchema, defaultAggregateRating } from './AggregateRatingSchema';
 export { default as ProfessionalServiceSchema } from './ProfessionalServiceSchema';
+export { default as PersonSchema, expertPersonData } from './PersonSchema';
+export { default as SpeakableSchema } from './SpeakableSchema';
+export { default as FAQToolSchema, toolFAQs } from './FAQToolSchema';

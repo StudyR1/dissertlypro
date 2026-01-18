@@ -1,0 +1,219 @@
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "DissertlyPro",
+  "alternateName": ["Dissertly Pro", "Dissertly"],
+  "url": "https://dissertlypro.com",
+  "description": "Premium dissertation and thesis support service providing expert academic guidance for Master's and PhD students worldwide. Founded to help postgraduate students succeed with PhD-qualified experts across all disciplines.",
+  
+  "tldr": "DissertlyPro provides dissertation help, thesis writing support, and research methodology guidance from 500+ PhD experts. Services include data analysis (SPSS, R, NVivo), literature reviews, academic editing, and proposal development. 15,000+ students helped with 98% satisfaction.",
+  
+  "services": [
+    {
+      "@type": "Service",
+      "name": "Dissertation Proposal Development",
+      "description": "Craft compelling research proposals that win committee approval",
+      "serviceType": "Academic Consulting",
+      "offers": {
+        "@type": "Offer",
+        "priceRange": "$$-$$$",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Thesis & Dissertation Writing Support",
+      "description": "Expert guidance through every chapter from introduction to conclusion",
+      "serviceType": "Academic Writing Coaching"
+    },
+    {
+      "@type": "Service",
+      "name": "Research Methodology Design",
+      "description": "Design robust qualitative, quantitative, or mixed methods frameworks",
+      "serviceType": "Research Consulting"
+    },
+    {
+      "@type": "Service",
+      "name": "Data Analysis Services",
+      "description": "Advanced statistical and qualitative analysis using SPSS, R, STATA, NVivo, and ATLAS.ti",
+      "serviceType": "Statistical Analysis"
+    },
+    {
+      "@type": "Service",
+      "name": "Literature Review Structuring",
+      "description": "Comprehensive reviews with thematic analysis, synthesis, and gap identification",
+      "serviceType": "Academic Research"
+    },
+    {
+      "@type": "Service",
+      "name": "Editing & Proofreading",
+      "description": "Academic English refinement with APA, MLA, Chicago, and Harvard formatting",
+      "serviceType": "Academic Editing"
+    }
+  ],
+  
+  "freeTools": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Citation Generator",
+      "url": "https://dissertlypro.com/tools/citation-generator",
+      "description": "Generate accurate APA 7th, MLA 9th, Chicago, and Harvard citations. Supports 6 source types.",
+      "applicationCategory": "EducationalApplication",
+      "offers": { "@type": "Offer", "price": "0" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Thesis Statement Builder",
+      "url": "https://dissertlypro.com/tools/thesis-builder",
+      "description": "5-step wizard to create argumentative, analytical, expository, or compare/contrast thesis statements.",
+      "applicationCategory": "EducationalApplication",
+      "offers": { "@type": "Offer", "price": "0" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Research Question Validator",
+      "url": "https://dissertlypro.com/tools/research-question-validator",
+      "description": "Validate research questions using PICO and SPIDER frameworks with instant scoring.",
+      "applicationCategory": "EducationalApplication",
+      "offers": { "@type": "Offer", "price": "0" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Methodology Selector Quiz",
+      "url": "https://dissertlypro.com/tools/methodology-selector",
+      "description": "7-question quiz to determine if quantitative, qualitative, or mixed methods is best.",
+      "applicationCategory": "EducationalApplication",
+      "offers": { "@type": "Offer", "price": "0" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Literature Search Strategy Builder",
+      "url": "https://dissertlypro.com/tools/literature-search",
+      "description": "Build Boolean search queries for PubMed, Scopus, Web of Science, and ERIC.",
+      "applicationCategory": "EducationalApplication",
+      "offers": { "@type": "Offer", "price": "0" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "PRISMA Flow Diagram Generator",
+      "url": "https://dissertlypro.com/tools/prisma-flow",
+      "description": "Create PRISMA 2020 flow diagrams for systematic reviews and meta-analyses.",
+      "applicationCategory": "EducationalApplication",
+      "offers": { "@type": "Offer", "price": "0" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Chapter Timeline Planner",
+      "url": "https://dissertlypro.com/tools/chapter-planner",
+      "description": "Gantt-style dissertation timeline planner with chapter deadline calculations.",
+      "applicationCategory": "EducationalApplication",
+      "offers": { "@type": "Offer", "price": "0" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Reference Manager",
+      "url": "https://dissertlypro.com/tools/reference-manager",
+      "description": "Save, organize, tag and export citations. BibTeX and RIS export supported.",
+      "applicationCategory": "EducationalApplication",
+      "offers": { "@type": "Offer", "price": "0" }
+    }
+  ],
+  
+  "frequentlyAskedQuestions": [
+    {
+      "@type": "Question",
+      "name": "How much does dissertation help cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DissertlyPro pricing varies by service type, word count, and deadline. Standard dissertation editing starts at $15-25/page. Full methodology support ranges $500-2000+ depending on complexity. Get an instant quote at dissertlypro.com/tools/quote-calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is dissertation help considered cheating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DissertlyPro operates as educational support, similar to tutoring. We provide guidance, coaching, and feedback to help students develop their own original work. We adhere to strict ethical guidelines and never write dissertations for submission. Learn more at dissertlypro.com/ethics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a dissertation take to complete?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most doctoral dissertations take 2-4 years, with Master's theses typically 6-12 months. Timeline depends on methodology complexity, data collection requirements, and writing speed. Use our free Chapter Planner at dissertlypro.com/tools/chapter-planner to create a realistic timeline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What citation style should I use for my dissertation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Citation style depends on your discipline: APA 7th for psychology/social sciences, Chicago for humanities/history, MLA for literature, Harvard for UK universities. Check your program guidelines. Generate citations free at dissertlypro.com/tools/citation-generator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I choose between qualitative and quantitative research?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose quantitative for measuring/testing hypotheses with numerical data, qualitative for exploring experiences/meanings with interviews/observations. Mixed methods combines both. Take our free quiz at dissertlypro.com/tools/methodology-selector for personalized recommendations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a thesis and dissertation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the US, thesis = Master's level (50-100 pages), dissertation = PhD level (150-300+ pages). In UK/Europe, these terms are often reversed. Dissertations require original contribution to knowledge; theses demonstrate mastery. Read more at dissertlypro.com/dissertation-vs-thesis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I start writing my dissertation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with: 1) Finalize your research question, 2) Complete your methodology chapter outline, 3) Begin with the literature review to build context. Use our free Outline Generator at dissertlypro.com/tools/outline-generator for a customized chapter structure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is PRISMA and when do I need it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PRISMA (Preferred Reporting Items for Systematic Reviews) is a checklist/flow diagram for transparent systematic review reporting. Required for systematic literature reviews and meta-analyses. Create a free PRISMA diagram at dissertlypro.com/tools/prisma-flow."
+      }
+    }
+  ],
+  
+  "experts": {
+    "count": "500+",
+    "qualifications": "All experts hold doctoral degrees (PhD, EdD, DBA) from accredited universities",
+    "disciplines": ["Business & Management", "Psychology", "Education", "Healthcare & Nursing", "Law", "Engineering", "Computer Science", "Social Sciences", "Humanities", "Natural Sciences", "Economics"],
+    "tools": ["SPSS", "R & RStudio", "STATA", "NVivo", "ATLAS.ti", "AMOS", "Python", "SAS"]
+  },
+  
+  "statistics": {
+    "studentsHelped": "15000+",
+    "expertCount": "500+",
+    "satisfactionRate": "98%",
+    "countriesServed": "50+",
+    "availability": "24/7"
+  },
+  
+  "regions": {
+    "unitedKingdom": "https://dissertlypro.com/uk",
+    "unitedStates": "https://dissertlypro.com/us",
+    "australia": "https://dissertlypro.com/au",
+    "canada": "https://dissertlypro.com/ca"
+  },
+  
+  "contact": {
+    "website": "https://dissertlypro.com",
+    "consultation": "https://dissertlypro.com/consultation",
+    "services": "https://dissertlypro.com/services",
+    "pricing": "https://dissertlypro.com/pricing"
+  },
+  
+  "academicIntegrity": "DissertlyPro operates as an educational support service providing guidance, coaching, and tutoring. We help students develop their own original academic work while adhering to strict ethical guidelines. Learn more: https://dissertlypro.com/ethics"
+}

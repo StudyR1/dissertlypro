@@ -17,6 +17,7 @@ import {
   Quote
 } from "lucide-react";
 import { ExpertAvailabilityBadge, LiveAvailabilityStrip } from "@/components/features";
+import PersonSchema, { expertPersonData } from "@/components/schemas/PersonSchema";
 
 const experts = [
   {
@@ -159,6 +160,22 @@ const Experts = () => {
         canonical="/experts"
         keywords={["dissertation experts", "PhD consultants", "academic writing specialists", "research methodology experts", "data analysis experts", "subject matter experts", "thesis consultants"]}
       />
+      
+      {/* Person Schema for each expert - E-E-A-T signals */}
+      {expertPersonData.map((expert, index) => (
+        <PersonSchema
+          key={index}
+          name={expert.name}
+          jobTitle={expert.jobTitle}
+          description={expert.description}
+          image={expert.image}
+          expertise={expert.expertise}
+          alumniOf={expert.alumniOf}
+          publications={expert.publications}
+          hasCredential={expert.hasCredential}
+          sameAs={expert.sameAs}
+        />
+      ))}
       
       {/* Hero Section */}
       <section className="relative py-16 sm:py-24 bg-hero-gradient overflow-hidden">
