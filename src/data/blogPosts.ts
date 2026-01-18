@@ -26,6 +26,7 @@ export const categoryImages: Record<string, string> = {
   "Writing Tips": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop",
   "Work-Life Balance": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&h=400&fit=crop",
   "Case Studies": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+  "University Guides": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop",
 };
 
 export const getPostImage = (post: BlogPost): string => {
@@ -42,6 +43,7 @@ export const blogCategories = [
   "Writing Tips",
   "Work-Life Balance",
   "Case Studies",
+  "University Guides",
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -2815,6 +2817,670 @@ export const blogPosts: BlogPost[] = [
       {
         question: "Do I need to cite common knowledge?",
         answer: "No. Facts that are widely known and easily verified (e.g., 'World War II ended in 1945') don't need citation. However, when in doubt, cite. What's 'common knowledge' varies by audience and discipline."
+      }
+    ]
+  },
+
+  // ============================================
+  // UNIVERSITY-SPECIFIC GUIDES
+  // ============================================
+
+  // Oxford DPhil Guide
+  {
+    slug: "oxford-dphil-timeline-complete-guide",
+    title: "Oxford DPhil Timeline: Complete Guide to Doctoral Success (2025)",
+    excerpt: "Navigate Oxford's unique DPhil journey from admission to viva. Understand confirmation of status, the tutorial system, and key milestones for doctoral success at the world's oldest English-speaking university.",
+    metaDescription: "Complete guide to the Oxford DPhil timeline. Learn about confirmation of status, transfer of status, viva preparation, and navigating Oxford's collegiate system for doctoral success.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1548793917-9e6a0e28f970?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. James Richardson",
+    authorBio: "DPhil in History from Balliol College, Oxford. Former college tutor with 12 years of doctoral supervision experience.",
+    date: "January 18, 2026",
+    readTime: "18 min read",
+    keywords: ["Oxford DPhil", "DPhil timeline", "Oxford doctoral", "confirmation of status", "Oxford viva", "Oxford thesis"],
+    tableOfContents: [
+      { id: "dphil-overview", title: "Understanding the DPhil" },
+      { id: "year-one", title: "Year 1: Probationer Research Student" },
+      { id: "confirmation-status", title: "Confirmation of Status" },
+      { id: "year-two-three", title: "Years 2-3: Core Research Period" },
+      { id: "transfer-status", title: "Transfer of Status" },
+      { id: "thesis-submission", title: "Thesis Submission" },
+      { id: "viva-voce", title: "The Viva Voce Examination" },
+    ],
+    content: [
+      "The Oxford DPhil (Doctor of Philosophy) represents one of the most prestigious doctoral qualifications in the world. Unlike PhD programmes elsewhere, Oxford's DPhil operates within a unique collegiate system that shapes every aspect of your doctoral journey. This comprehensive guide will help you navigate the key milestones and expectations.",
+
+      "## Understanding the DPhil",
+      "Oxford uses the term 'DPhil' rather than 'PhD'—a tradition dating back to the degree's introduction in 1917. The DPhil typically takes 3-4 years of full-time study, with most students completing within 4 years. The degree requires original research resulting in a thesis of 80,000-100,000 words, though STEM subjects often have shorter theses with extensive appendices.",
+      "What makes Oxford unique is its **collegiate system**. You belong to both a department (for academic training) and a college (for pastoral support, accommodation, and community). Your college assigns you a College Advisor who provides additional guidance beyond your departmental supervisor.",
+
+      "## Year 1: Probationer Research Student",
+      "You enter Oxford as a **Probationer Research Student (PRS)**, a provisional status lasting your first year. During this period, you'll:",
+      "- Develop your research proposal and refine your methodology",
+      "- Complete any required taught courses or research training",
+      "- Meet regularly with your supervisor (typically every 1-2 weeks)",
+      "- Engage with your college's graduate community",
+      "- Prepare for Transfer of Status at the end of Year 1",
+      "Most departments require PRS students to submit a **Qualifying Report** within the first term, demonstrating initial progress and confirming your research direction.",
+
+      "## Confirmation of Status",
+      "At the end of Year 1 (typically months 9-12), you must pass **Transfer of Status** to become a full DPhil student. This involves:",
+      "- Submitting written work (usually 10,000-15,000 words, though this varies by department)",
+      "- A viva with two assessors (not your supervisor)",
+      "- Demonstrating your research is viable for a DPhil",
+      "The assessors will recommend one of three outcomes: outright transfer, transfer with conditions, or (rarely) that the research is better suited for an MSt or MPhil. Taking Transfer seriously is crucial—it's designed to identify problems early.",
+      "**Pro tip**: Treat your Transfer document as a draft of your first thesis chapter. Many successful students use this work directly in their final submission.",
+
+      "## Years 2-3: Core Research Period",
+      "Once transferred, you enter the most intensive phase of your DPhil. Key activities include:",
+      "- Conducting primary research (fieldwork, experiments, archival work)",
+      "- Regular supervision meetings (frequency varies; often monthly)",
+      "- Presenting at departmental seminars and conferences",
+      "- Beginning to draft thesis chapters",
+      "Oxford expects you to engage with the wider academic community. Attend seminars, present at graduate conferences, and consider publishing early findings. Most humanities and social science DPhils submit 1-2 journal articles before completion.",
+
+      "## Transfer of Status",
+      "Around months 18-24, you face **Confirmation of Status**—a second formal assessment confirming you're on track for timely completion. Requirements typically include:",
+      "- A substantial piece of written work (30,000-40,000 words in humanities; equivalent for sciences)",
+      "- A detailed thesis outline",
+      "- A realistic completion timeline",
+      "- Another viva with assessors",
+      "Confirmation assessors evaluate whether your work meets DPhil standards and whether you can complete within your remaining time. This is also your opportunity to receive detailed feedback before the final thesis.",
+
+      "## Thesis Submission",
+      "Oxford has specific formatting requirements for DPhil theses:",
+      "- A4 paper, double or 1.5 line spacing",
+      "- Maximum 100,000 words (80,000 for some departments)",
+      "- Bound copies plus electronic submission",
+      "- Abstract of no more than 300 words",
+      "You submit through your department's Graduate Studies Administrator. Allow 2-3 months between final draft completion and actual submission for revisions, proofreading, and binding. Most students take 4 years to submit, though extensions are possible with cause.",
+
+      "## The Viva Voce Examination",
+      "Oxford's viva (oral examination) typically lasts 1.5-3 hours and involves:",
+      "- Two examiners: one internal (from Oxford, not your supervisor) and one external (from another university)",
+      "- Deep discussion of your thesis, methodology, and contribution",
+      "- Defence of your arguments and handling of challenges",
+      "**Possible outcomes:**",
+      "- Pass with no corrections (rare but possible)",
+      "- Pass with minor corrections (most common—corrections within 1 month)",
+      "- Pass with major corrections (revisions within 6 months)",
+      "- Referral for significant resubmission (uncommon)",
+      "- Award of MPhil instead of DPhil (rare)",
+      "Preparation is essential. Re-read your thesis, anticipate questions, and practice articulating your contribution. Many colleges offer mock vivas—use them.",
+
+      "## Key Tips for Oxford DPhil Success",
+      "**1. Embrace the collegiate system**: Your college provides resources, community, and support that complement your department. Attend college dinners, use college libraries, and connect with graduates across disciplines.",
+      "**2. Build relationships early**: Your supervisor is crucial, but also cultivate relationships with your College Advisor, other faculty, and senior graduate students.",
+      "**3. Take milestones seriously**: Transfer and Confirmation aren't bureaucratic hurdles—they're genuine quality checkpoints. Prepare thoroughly.",
+      "**4. Manage the Oxford pressure**: Oxford's intensity can be overwhelming. Use university counselling services, maintain outside interests, and connect with the [Oxford DPhil community](/uk/oxford).",
+      "**5. Plan for what's next**: Start thinking about post-DPhil careers by Year 2. Attend careers events, build your publication record, and network at conferences.",
+
+      "## Getting Support",
+      "If you're navigating the Oxford DPhil journey and need additional guidance, [DissertlyPro's Oxford-specific support](/uk/oxford) connects you with advisors who understand the unique demands of the collegiate system. From Transfer preparation to viva coaching, expert support can make the difference between struggling and thriving.",
+    ],
+    faqs: [
+      {
+        question: "How long does an Oxford DPhil take?",
+        answer: "Most Oxford DPhils take 3-4 years full-time. The minimum period is 2 years, but this is rare. Many students take 4 years, and extensions are available for valid reasons. Part-time DPhils take 6-8 years."
+      },
+      {
+        question: "What is the difference between Transfer and Confirmation of Status?",
+        answer: "Transfer of Status (end of Year 1) moves you from Probationer Research Student to full DPhil status, confirming your project is viable. Confirmation of Status (around Year 2) confirms you're on track for timely completion with DPhil-quality work."
+      },
+      {
+        question: "Can I fail the Oxford DPhil viva?",
+        answer: "Outright failure is extremely rare. More commonly, candidates receive 'major corrections' requiring significant revision within 6 months, or in rare cases are awarded an MPhil instead. With proper preparation, most candidates pass with minor or no corrections."
+      },
+      {
+        question: "How often should I meet with my Oxford supervisor?",
+        answer: "Frequency varies by department and supervisor. In humanities, fortnightly or monthly meetings are common. In sciences with lab work, you may see your supervisor daily. Establish clear expectations early and don't hesitate to request more support if needed."
+      }
+    ]
+  },
+
+  // Harvard Dissertation Requirements Guide
+  {
+    slug: "harvard-dissertation-requirements-complete-guide",
+    title: "Harvard Dissertation Requirements: Complete Guide for Doctoral Students (2025)",
+    excerpt: "Everything you need to know about Harvard's doctoral dissertation requirements, from prospectus to defense. Navigate GSAS, professional schools, and the path to becoming a Harvard PhD.",
+    metaDescription: "Complete guide to Harvard dissertation requirements. Learn about prospectus development, qualifying exams, dissertation committees, and defense preparation for Harvard PhD students.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Elizabeth Chen",
+    authorBio: "PhD in Government from Harvard University. Former GSAS dissertation fellow and academic writing consultant.",
+    date: "January 18, 2026",
+    readTime: "20 min read",
+    keywords: ["Harvard dissertation", "Harvard PhD requirements", "GSAS dissertation", "Harvard qualifying exams", "Harvard prospectus", "Harvard defense"],
+    tableOfContents: [
+      { id: "harvard-overview", title: "Harvard's Doctoral Landscape" },
+      { id: "qualifying-exams", title: "Qualifying Examinations" },
+      { id: "prospectus", title: "Developing Your Prospectus" },
+      { id: "dissertation-committee", title: "Your Dissertation Committee" },
+      { id: "writing-process", title: "The Writing Process" },
+      { id: "defense", title: "The Dissertation Defense" },
+      { id: "professional-schools", title: "Professional School Requirements" },
+    ],
+    content: [
+      "Harvard University offers doctoral programmes across multiple schools, each with distinct requirements and traditions. Whether you're pursuing a PhD through the Graduate School of Arts and Sciences (GSAS) or a professional doctorate through Harvard Business School, Law School, or other faculties, this guide will help you navigate the dissertation process.",
+
+      "## Harvard's Doctoral Landscape",
+      "Harvard's doctoral ecosystem is complex. The Graduate School of Arts and Sciences (GSAS) awards the PhD in arts, humanities, social sciences, and natural sciences. Professional schools offer their own doctorates: the DBA at Harvard Business School, the SJD at Harvard Law School, the EdD and PhD at the Graduate School of Education, and the DrPH at the School of Public Health.",
+      "Each programme has unique requirements, but common elements include comprehensive examinations, prospectus approval, supervised research, and a final defense. This guide focuses primarily on GSAS requirements, with notes on professional school variations.",
+
+      "## Qualifying Examinations",
+      "Before beginning dissertation work, Harvard doctoral students must pass **qualifying examinations** (often called 'generals' or 'prelims'). The format varies dramatically by department:",
+      "- **Humanities**: Often involve written exams on reading lists plus an oral examination",
+      "- **Social Sciences**: May include field exams, methods exams, and teaching requirements",
+      "- **Natural Sciences**: Typically include an oral qualifying exam on research proposal",
+      "Most departments require qualifying exams by the end of Year 2 or 3. Passing qualifies you for 'ABD' (All But Dissertation) status and allows you to focus on dissertation research.",
+      "**Preparation tips:**",
+      "- Start preparing 6+ months in advance",
+      "- Form study groups with cohort members",
+      "- Request past exams from your department",
+      "- Schedule regular meetings with committee members",
+
+      "## Developing Your Prospectus",
+      "The **dissertation prospectus** is a detailed research proposal submitted after passing qualifiers. A strong Harvard prospectus typically includes:",
+      "- **Research question**: Clear, focused, and significant to your field",
+      "- **Literature review**: Demonstrating command of relevant scholarship",
+      "- **Theoretical framework**: The conceptual lens guiding your analysis",
+      "- **Methodology**: Detailed research design and methods",
+      "- **Chapter outline**: Proposed structure with brief descriptions",
+      "- **Timeline**: Realistic completion schedule",
+      "- **Bibliography**: Comprehensive list of sources",
+      "Prospectus length varies—humanities proposals may run 30-50 pages, while sciences may be shorter. Your department holds a **prospectus meeting** where your committee evaluates and approves your plan.",
+
+      "## Your Dissertation Committee",
+      "Harvard dissertations are supervised by a committee typically comprising:",
+      "- **Primary Advisor**: Your main supervisor and intellectual guide",
+      "- **Second Reader**: Another faculty member providing regular feedback",
+      "- **Additional Members**: Usually 1-2 more faculty (may include scholars from other universities)",
+      "Choose committee members strategically. Consider:",
+      "- Expertise alignment with your research",
+      "- Advising style and availability",
+      "- Career connections in your target field",
+      "- Diverse methodological perspectives",
+      "Build relationships early—attend office hours, take courses with potential advisors, and seek feedback on preliminary work.",
+
+      "## The Writing Process",
+      "Harvard dissertations don't have a universal length requirement, but norms exist:",
+      "- **Humanities**: 200-400 pages (80,000-120,000 words)",
+      "- **Social Sciences**: 150-300 pages (60,000-100,000 words)",
+      "- **Natural Sciences**: Often shorter, with emphasis on publications",
+      "Many Harvard programmes now accept **three-paper dissertations**, especially in economics, psychology, and sciences. These compile three publishable papers with an introduction and conclusion.",
+      "**Writing strategies:**",
+      "- Write regularly—aim for daily or near-daily writing sessions",
+      "- Join or form a dissertation writing group",
+      "- Use Harvard's writing resources (Writing Center, Dissertation Completion Fellowships)",
+      "- Submit chapters to your advisor regularly, even if imperfect",
+
+      "## The Dissertation Defense",
+      "The final defense (called the 'dissertation exam' at Harvard) involves:",
+      "- Presenting your research to your committee (usually 1-2 hours)",
+      "- Responding to questions and critiques",
+      "- Demonstrating mastery of your field and methodology",
+      "- Defending your original contribution",
+      "Unlike some universities, Harvard defenses are typically **not public**—only committee members attend. The committee deliberates privately and announces one of three outcomes:",
+      "- **Pass**: Dissertation accepted, pending minor revisions",
+      "- **Conditional Pass**: Significant revisions required before final approval",
+      "- **Fail**: Rare, and usually signalled well before defense",
+      "Most students who reach defense pass—your committee wouldn't schedule it otherwise. Prepare by re-reading your dissertation, anticipating questions, and practicing your presentation.",
+
+      "## Professional School Requirements",
+      "**Harvard Business School (DBA):**",
+      "The DBA is a research doctorate with rigorous methodology requirements. Expect coursework in Years 1-2, qualifying papers, and a dissertation comprising three empirical papers.",
+      "**Graduate School of Education (EdD/PhD):**",
+      "The EdD emphasizes practice-oriented research; the PhD focuses on scholarship. Both require qualifying papers, a dissertation proposal, and final defense.",
+      "**Law School (SJD):**",
+      "The SJD (Doctor of Juridical Science) requires a prior LLM and involves a major dissertation on legal scholarship.",
+      "**School of Public Health (DrPH):**",
+      "The DrPH emphasizes leadership in public health practice. Requirements include integrative experience, qualifying exams, and a doctoral dissertation or project.",
+
+      "## Timeline and Funding",
+      "Typical Harvard PhD timeline:",
+      "- **Years 1-2**: Coursework, language requirements, teaching",
+      "- **Year 2-3**: Qualifying examinations",
+      "- **Year 3-4**: Prospectus development and approval",
+      "- **Years 4-6**: Dissertation research and writing",
+      "- **Year 5-7**: Completion and defense",
+      "GSAS guarantees funding for most PhD students (typically 5 years), including tuition, health insurance, and stipend. Additional years may require external fellowships or teaching.",
+
+      "## Getting Support",
+      "Harvard's doctoral journey is demanding but achievable with the right support. If you need guidance navigating qualifying exams, prospectus development, or dissertation writing, [DissertlyPro's Harvard-specific support](/us/harvard) connects you with advisors who understand Harvard's expectations across departments and professional schools.",
+    ],
+    faqs: [
+      {
+        question: "How long does a Harvard PhD take?",
+        answer: "Harvard PhDs typically take 5-7 years, with humanities and social sciences often taking longer than sciences. GSAS guarantees funding for 5 years for most programmes, with additional support available through fellowships and teaching."
+      },
+      {
+        question: "What are Harvard qualifying exams like?",
+        answer: "Format varies dramatically by department. Some have written exams on reading lists, others have oral exams on research proposals, and some combine multiple formats. Consult your specific department's requirements and speak with recent graduates."
+      },
+      {
+        question: "Can I write a three-paper dissertation at Harvard?",
+        answer: "Many Harvard programmes now accept three-paper dissertations, especially in economics, psychology, and sciences. Each paper should be publishable quality. Check with your department and advisor about specific requirements."
+      },
+      {
+        question: "Is the Harvard dissertation defense public?",
+        answer: "Unlike many universities, Harvard dissertation defenses are typically private, attended only by committee members. Some departments allow guests by invitation. The format is usually a brief presentation followed by questions from the committee."
+      }
+    ]
+  },
+
+  // Cambridge PhD Guide
+  {
+    slug: "cambridge-phd-guide-milestones-requirements",
+    title: "Cambridge PhD Guide: Milestones, Requirements & Tips for Success (2025)",
+    excerpt: "Navigate the Cambridge PhD from admission to viva. Understand first-year registration, the PhD upgrade process, and what makes doctoral study at Cambridge unique.",
+    metaDescription: "Complete guide to Cambridge PhD requirements and milestones. Learn about first-year registration, PhD upgrade, thesis submission, and viva preparation at Cambridge University.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1580663879219-af5e96baa6cd?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Thomas Wright",
+    authorBio: "PhD in Engineering from Cambridge. College Teaching Associate with 8 years of graduate supervision experience.",
+    date: "January 18, 2026",
+    readTime: "16 min read",
+    keywords: ["Cambridge PhD", "Cambridge doctorate", "Cambridge first year report", "Cambridge viva", "Cambridge thesis", "PhD upgrade"],
+    tableOfContents: [
+      { id: "cambridge-overview", title: "The Cambridge PhD Experience" },
+      { id: "first-year", title: "First Year Requirements" },
+      { id: "registration-review", title: "Registration Review" },
+      { id: "core-research", title: "Core Research Period" },
+      { id: "thesis-writing", title: "Writing Your Thesis" },
+      { id: "viva", title: "The Viva Examination" },
+    ],
+    content: [
+      "Cambridge University offers one of the world's most prestigious doctoral experiences, combining world-class research with a unique collegiate environment. This guide will help you navigate the key milestones of a Cambridge PhD, from your first term to your viva voce examination.",
+
+      "## The Cambridge PhD Experience",
+      "Cambridge PhDs typically take 3-4 years of full-time study. Unlike some systems, Cambridge doesn't have extensive coursework—you begin research immediately. You'll work under a primary supervisor while belonging to both a department and a college.",
+      "The collegiate system provides additional support: your college assigns a Tutor and may offer funding, accommodation, and a community of scholars across disciplines. Take advantage of both structures.",
+
+      "## First Year Requirements",
+      "Your first year focuses on:",
+      "- Developing your research project and methodology",
+      "- Building foundational knowledge through reading and seminars",
+      "- Completing any required training (research methods, ethics, safety)",
+      "- Preparing for the First Year Registration Review",
+      "Most departments require a **First Year Report** (typically 10,000-15,000 words) demonstrating initial progress. This forms the basis of your registration assessment.",
+
+      "## Registration Review",
+      "At the end of Year 1 (typically months 9-12), you undergo **Registration Review**. This formal assessment determines whether you continue as a PhD student. Requirements typically include:",
+      "- Written report (first year report or equivalent)",
+      "- Oral examination with two assessors (not your supervisor)",
+      "- Demonstration that your project is PhD-worthy",
+      "Possible outcomes: full registration as PhD student, registration with conditions, or recommendation for MPhil instead. Most well-prepared candidates pass. Use this milestone to get valuable feedback and refine your thesis plan.",
+
+      "## Core Research Period",
+      "Years 2-3 constitute the heart of your PhD. Activities include:",
+      "- Conducting primary research (lab work, fieldwork, archival research)",
+      "- Regular supervision meetings",
+      "- Presenting at seminars and conferences",
+      "- Writing thesis chapters",
+      "- Publishing papers (increasingly expected across disciplines)",
+      "Cambridge expects you to engage with the wider academic community. Attend departmental seminars, present your work, and build your professional network.",
+
+      "## Writing Your Thesis",
+      "Cambridge PhD theses have specific requirements:",
+      "- Maximum 80,000 words (60,000 for some science subjects)",
+      "- Original contribution to knowledge",
+      "- Specific formatting requirements (check your department)",
+      "The word limit is strictly enforced—plan your structure accordingly. Many students underestimate writing time; begin drafting chapters during Year 2 rather than waiting until Year 3.",
+
+      "## The Viva Examination",
+      "The viva voce ('living voice') is your oral examination. It typically lasts 2-3 hours and involves:",
+      "- Two examiners: one internal (from Cambridge) and one external (from another university)",
+      "- Detailed discussion of your thesis",
+      "- Defence of your methodology and conclusions",
+      "- Demonstration of your field expertise",
+      "**Possible outcomes:**",
+      "- Pass with no corrections",
+      "- Pass with minor corrections (1-3 months)",
+      "- Pass with major corrections (up to 6 months)",
+      "- Referral for significant revision",
+      "- MPhil awarded instead",
+      "Most candidates pass with minor corrections. Prepare by re-reading your thesis thoroughly, anticipating questions, and practicing articulating your contribution.",
+
+      "## Tips for Cambridge PhD Success",
+      "- **Use your college**: Colleges offer funding, dining rights, accommodation, and interdisciplinary community. Engage fully.",
+      "- **Build supervision relationships**: Meet regularly, communicate clearly, and don't wait for problems to escalate.",
+      "- **Publish early**: A first-author publication strengthens your thesis and career prospects.",
+      "- **Manage wellbeing**: Cambridge intensity can be overwhelming. Use university counselling, maintain work-life balance, and connect with peers.",
+      "For additional support navigating your Cambridge PhD journey, [DissertlyPro's Cambridge-specific guidance](/uk/cambridge) connects you with advisors who understand the Cambridge system.",
+    ],
+    faqs: [
+      {
+        question: "How long is a Cambridge PhD?",
+        answer: "Cambridge PhDs typically take 3-4 years full-time. The minimum period is 2 years (rare), and the maximum submission deadline is usually 4 years from registration. Extensions require special permission."
+      },
+      {
+        question: "What is Cambridge's first year registration review?",
+        answer: "The registration review (end of Year 1) formally assesses whether your research project is viable for a PhD. You submit a written report and undergo an oral examination. Passing confirms your status as a PhD student."
+      },
+      {
+        question: "What's the Cambridge PhD word limit?",
+        answer: "Cambridge PhD theses are limited to 80,000 words for most subjects, with some science subjects allowing only 60,000. This limit is strictly enforced and excludes bibliography, appendices, and front matter."
+      },
+      {
+        question: "Can I fail a Cambridge viva?",
+        answer: "Outright failure is very rare. More commonly, candidates requiring significant work receive 'major corrections' with 6 months to revise. Candidates not meeting PhD standards may be awarded an MPhil. With proper preparation, most candidates pass."
+      }
+    ]
+  },
+
+  // MIT Thesis Guide
+  {
+    slug: "mit-thesis-requirements-complete-guide",
+    title: "MIT Thesis Requirements: Complete Guide for Graduate Students (2025)",
+    excerpt: "Navigate MIT's rigorous thesis requirements for SM and PhD students. Learn about qualifying exams, thesis committee formation, and the unique expectations of MIT graduate programmes.",
+    metaDescription: "Complete guide to MIT thesis requirements. Learn about SM thesis expectations, PhD qualifying exams, thesis committee formation, and defense preparation for MIT graduate students.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Michael Zhao",
+    authorBio: "PhD in EECS from MIT. Former Graduate Resident Tutor and technical writing consultant.",
+    date: "January 18, 2026",
+    readTime: "15 min read",
+    keywords: ["MIT thesis", "MIT SM thesis", "MIT PhD requirements", "MIT qualifying exam", "MIT thesis format", "MIT defense"],
+    tableOfContents: [
+      { id: "mit-overview", title: "MIT Graduate Programmes" },
+      { id: "sm-thesis", title: "SM Thesis Requirements" },
+      { id: "phd-quals", title: "PhD Qualifying Exams" },
+      { id: "thesis-committee", title: "Forming Your Committee" },
+      { id: "writing-standards", title: "MIT Writing Standards" },
+      { id: "defense", title: "The Thesis Defense" },
+    ],
+    content: [
+      "MIT's graduate programmes are renowned for technical excellence and rigorous standards. Whether you're pursuing an SM (Master of Science) or PhD, your thesis must meet MIT's exacting expectations. This guide covers requirements across departments, with emphasis on what makes MIT unique.",
+
+      "## MIT Graduate Programmes",
+      "MIT offers two primary graduate paths:",
+      "- **SM (Master of Science)**: Typically 2 years, thesis required in most programmes",
+      "- **PhD (Doctor of Philosophy)**: Typically 5-6 years, with qualifying exam and doctoral thesis",
+      "Some programmes offer an **MEng** (Master of Engineering) with project rather than thesis, and the **SM without thesis** option exists in select departments. Check your specific programme requirements.",
+
+      "## SM Thesis Requirements",
+      "MIT SM theses typically run 50-100 pages and demonstrate ability to:",
+      "- Conduct independent research",
+      "- Apply advanced technical knowledge",
+      "- Communicate complex ideas clearly",
+      "**Department variations:**",
+      "- EECS: Often involves significant implementation/experimental work",
+      "- Mechanical Engineering: May require design projects",
+      "- Sloan: Business-oriented research with industry implications",
+      "Your thesis advisor guides the research; a thesis reader (second faculty member) provides additional review. Together they form your minimal thesis committee.",
+
+      "## PhD Qualifying Exams",
+      "MIT PhD students must pass qualifying examinations before advancing to doctoral candidacy. Formats vary by department:",
+      "- **EECS**: Written and oral quals, typically by end of Year 2",
+      "- **Mechanical Engineering**: Research qualifying exam (RQE) based on original research",
+      "- **Chemistry**: Cumulative exams plus oral presentation",
+      "- **Biology**: Written proposal defence",
+      "Failing quals is serious—most departments allow only one retake. Preparation should begin in Year 1, with committee guidance.",
+
+      "## Forming Your Committee",
+      "MIT thesis committees include:",
+      "- **Thesis Advisor**: Your primary supervisor",
+      "- **Thesis Committee Members**: 2-3 additional faculty",
+      "- **Committee Chair** (for PhD): Often your advisor or another senior professor",
+      "Choose committee members for complementary expertise. Meet with your full committee at least annually, more frequently as you approach completion.",
+
+      "## MIT Writing Standards",
+      "MIT expects exceptional clarity in technical writing. Your thesis should:",
+      "- Present complex ideas accessibly",
+      "- Include rigorous methodology documentation",
+      "- Provide reproducible results where applicable",
+      "- Follow MIT thesis formatting specifications exactly",
+      "**MIT Thesis Formatting:**",
+      "- Title page with specific elements",
+      "- Abstract (max 500 words for PhD, 150 for SM)",
+      "- Proper citations and bibliography",
+      "- Archival-quality paper for bound copies",
+      "The Libraries' thesis specifications are strict—theses have been rejected for formatting errors.",
+
+      "## The Thesis Defense",
+      "MIT thesis defenses vary by department:",
+      "- **Public presentation**: 30-45 minutes presenting your work",
+      "- **Committee questions**: Technical deep-dive with committee members",
+      "- **Closed deliberation**: Committee discusses outcome privately",
+      "PhD defenses are typically public; SM defenses may be private. The committee may request revisions before final approval.",
+
+      "## Tips for MIT Success",
+      "- **Start writing early**: Documentation should accompany research, not follow it",
+      "- **Use MIT resources**: Writing and Communication Center, library workshops, peer review groups",
+      "- **Communicate with committee**: Regular updates prevent surprises",
+      "- **Manage scope**: Better to complete a focused thesis than abandon an overambitious one",
+      "For additional support with MIT thesis requirements, [DissertlyPro's MIT-specific guidance](/us/mit) connects you with advisors experienced in MIT's technical standards.",
+    ],
+    faqs: [
+      {
+        question: "How long is an MIT SM thesis?",
+        answer: "MIT SM theses typically range from 50-100 pages, though this varies by department and project scope. Focus on quality and completeness rather than length—some technical theses are shorter with extensive appendices."
+      },
+      {
+        question: "What happens if I fail MIT qualifying exams?",
+        answer: "Most MIT departments allow one retake. Failing twice typically results in leaving the PhD programme, though you may be offered an SM degree for work completed. Seek committee guidance early if you're struggling."
+      },
+      {
+        question: "How long does an MIT PhD take?",
+        answer: "MIT PhDs typically take 5-6 years, with some variation by department. Engineering programmes may be slightly shorter; humanities and social sciences slightly longer. Funding is usually guaranteed for 5 years."
+      },
+      {
+        question: "Is the MIT thesis defense public?",
+        answer: "PhD thesis defenses at MIT are typically public, with a presentation open to the MIT community. SM defenses may be private. Committee questioning follows the public portion and is usually closed."
+      }
+    ]
+  },
+
+  // Stanford Dissertation Guide
+  {
+    slug: "stanford-dissertation-guide-requirements-process",
+    title: "Stanford Dissertation Guide: Requirements & Process for PhD Students (2025)",
+    excerpt: "Navigate Stanford's doctoral requirements from coursework to dissertation defense. Understand quarter system timing, committee formation, and what makes Stanford PhDs distinctive.",
+    metaDescription: "Complete guide to Stanford dissertation requirements. Learn about PhD milestones, qualifying exams, dissertation reading committee, and oral examination for Stanford doctoral students.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Jennifer Martinez",
+    authorBio: "PhD in Education from Stanford. Former dissertation writing group facilitator and academic coach.",
+    date: "January 18, 2026",
+    readTime: "17 min read",
+    keywords: ["Stanford dissertation", "Stanford PhD", "Stanford qualifying exam", "Stanford orals", "Stanford thesis", "Stanford doctoral"],
+    tableOfContents: [
+      { id: "stanford-overview", title: "Stanford Doctoral Overview" },
+      { id: "coursework", title: "Coursework Requirements" },
+      { id: "qualifying-exams", title: "Qualifying Examinations" },
+      { id: "dissertation-proposal", title: "Dissertation Proposal" },
+      { id: "writing-dissertation", title: "Writing the Dissertation" },
+      { id: "oral-examination", title: "The Oral Examination" },
+    ],
+    content: [
+      "Stanford University's doctoral programmes combine rigorous scholarship with an innovative, entrepreneurial culture. Operating on the quarter system, Stanford PhDs progress through distinct milestones leading to the dissertation. This guide covers requirements across schools and departments.",
+
+      "## Stanford Doctoral Overview",
+      "Stanford awards PhDs through multiple schools:",
+      "- School of Humanities and Sciences (H&S)",
+      "- School of Engineering",
+      "- Graduate School of Business (joint PhD programmes)",
+      "- School of Education",
+      "- School of Medicine (PhD programmes)",
+      "Each has specific requirements, but common elements include coursework, qualifying exams, dissertation proposal, and oral examination. Most Stanford PhDs take 5-6 years.",
+
+      "## Coursework Requirements",
+      "Stanford PhD programmes require substantial coursework, typically during Years 1-2:",
+      "- **Core courses**: Foundational knowledge in your field",
+      "- **Methods courses**: Research methodology training",
+      "- **Electives**: Specialization and breadth requirements",
+      "- **Teaching requirements**: Many programmes require teaching experience",
+      "The quarter system means faster course pacing than semester systems—plan accordingly. Most students complete coursework by Year 2, though some programmes extend into Year 3.",
+
+      "## Qualifying Examinations",
+      "Stanford 'quals' vary significantly by department but generally include:",
+      "- **Written component**: Comprehensive exams, field papers, or take-home exams",
+      "- **Oral component**: Defense of written work or broader field examination",
+      "Timing varies: some departments require quals by end of Year 2, others by Year 3. Passing quals admits you to 'candidacy'—official status as a dissertation student.",
+      "**Preparation strategies:**",
+      "- Form study groups with cohort members",
+      "- Review past exam questions (ask department administrator)",
+      "- Meet with faculty to understand expectations",
+      "- Begin preparation early—at least one quarter before exams",
+
+      "## Dissertation Proposal",
+      "After passing quals, you develop and defend a dissertation proposal. Stanford proposals typically include:",
+      "- Clear research questions",
+      "- Literature review demonstrating field knowledge",
+      "- Theoretical framework",
+      "- Detailed methodology",
+      "- Preliminary results (if available)",
+      "- Chapter outline and timeline",
+      "Your **Dissertation Reading Committee** (DRC) must approve the proposal. The DRC includes your advisor plus two additional faculty members. Choose committee members strategically—they'll guide your dissertation and evaluate your final work.",
+
+      "## Writing the Dissertation",
+      "Stanford dissertation norms vary by field:",
+      "- **Humanities**: Often 200-350 pages of sustained argument",
+      "- **Social Sciences**: 150-250 pages, may use three-paper format",
+      "- **Engineering/Sciences**: Shorter, with emphasis on publications",
+      "The **three-paper dissertation** is increasingly common, compiling three publishable papers with introduction and conclusion. Discuss format options with your advisor early.",
+      "**Writing support:**",
+      "- Hume Center for Writing and Speaking",
+      "- Dissertation writing groups (departmental or university-wide)",
+      "- Graduate Life Office resources",
+
+      "## The Oral Examination",
+      "Stanford's final oral examination is the dissertation defense. It involves:",
+      "- **Oral Examination Committee**: Your DRC plus additional member (University Oral Examiner)",
+      "- **Presentation**: 30-45 minutes presenting your research",
+      "- **Questions**: Committee members probe your work and field knowledge",
+      "- **Deliberation**: Private committee discussion determining outcome",
+      "The oral exam is typically open to the Stanford community. Most students who reach this stage pass, though revisions may be required. Schedule well in advance—committee calendars can be challenging.",
+
+      "## Stanford-Specific Tips",
+      "- **Embrace interdisciplinarity**: Stanford encourages cross-departmental work",
+      "- **Engage with the entrepreneurial culture**: Consider how research connects to innovation",
+      "- **Use the quarter system wisely**: Faster pace enables diverse coursework but requires careful planning",
+      "- **Build your committee early**: Faculty relationships take time to develop",
+      "For additional guidance on Stanford's doctoral requirements, [DissertlyPro's Stanford-specific support](/us/stanford) connects you with advisors experienced in Stanford's unique academic culture.",
+    ],
+    faqs: [
+      {
+        question: "How long does a Stanford PhD take?",
+        answer: "Stanford PhDs typically take 5-6 years, with some variation by field. Engineering may be slightly shorter (5 years), humanities slightly longer (6-7 years). Funding is typically guaranteed for 5 years."
+      },
+      {
+        question: "What are Stanford qualifying exams like?",
+        answer: "Format varies dramatically by department—some have written comprehensive exams, others require field papers or oral examinations. Consult your department's graduate handbook and speak with recent graduates."
+      },
+      {
+        question: "Can I write a three-paper dissertation at Stanford?",
+        answer: "Yes, many Stanford departments accept three-paper dissertations, especially in social sciences, engineering, and some natural sciences. Discuss this option with your advisor during proposal development."
+      },
+      {
+        question: "Who is the University Oral Examiner?",
+        answer: "The University Oral Examiner is a faculty member from outside your department who participates in your oral examination. They ensure university-wide standards and provide an external perspective on your work."
+      }
+    ]
+  },
+
+  // University of Melbourne PhD Guide
+  {
+    slug: "melbourne-phd-candidature-confirmation-guide",
+    title: "Melbourne PhD Guide: Candidature Confirmation & Key Milestones (2025)",
+    excerpt: "Navigate the University of Melbourne's doctoral requirements including candidature confirmation, annual progress reviews, and thesis examination. Essential guide for Melbourne HDR students.",
+    metaDescription: "Complete guide to University of Melbourne PhD requirements. Learn about candidature confirmation, annual progress review, thesis submission, and oral examination for Melbourne doctoral students.",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=500&fit=crop&q=80",
+    category: "University Guides",
+    author: "Dr. Rachel Thompson",
+    authorBio: "PhD in Arts from University of Melbourne. Graduate Research Supervisor with 10 years of HDR student support experience.",
+    date: "January 18, 2026",
+    readTime: "14 min read",
+    keywords: ["Melbourne PhD", "Melbourne candidature confirmation", "Melbourne HDR", "Melbourne thesis", "University of Melbourne doctoral", "Melbourne annual review"],
+    tableOfContents: [
+      { id: "melbourne-overview", title: "Melbourne's Doctoral Framework" },
+      { id: "candidature-confirmation", title: "Candidature Confirmation" },
+      { id: "annual-review", title: "Annual Progress Review" },
+      { id: "thesis-requirements", title: "Thesis Requirements" },
+      { id: "examination", title: "Thesis Examination" },
+    ],
+    content: [
+      "The University of Melbourne offers Australia's most comprehensive doctoral programme through its Melbourne Model. As a Higher Degree by Research (HDR) student, you'll navigate specific milestones designed to ensure timely, successful completion. This guide covers key requirements for Melbourne PhD candidates.",
+
+      "## Melbourne's Doctoral Framework",
+      "Melbourne PhDs operate within the Graduate Research Training Framework:",
+      "- **Duration**: 3-4 years full-time (6-8 part-time)",
+      "- **Structure**: Research-focused with required training components",
+      "- **Supervision**: Primary supervisor plus advisory committee",
+      "- **Support**: Graduate Research Hub, faculty support teams",
+      "The Melbourne Model emphasizes breadth alongside depth—expect some coursework or professional development requirements alongside your research.",
+
+      "## Candidature Confirmation",
+      "The most critical milestone, **Candidature Confirmation** occurs 12-18 months into your PhD (typically 12 months full-time). Requirements include:",
+      "- **Written submission**: Research proposal, literature review, methodology (usually 10,000-15,000 words)",
+      "- **Oral presentation**: 20-30 minutes presenting to your advisory panel",
+      "- **Panel assessment**: Your committee evaluates viability and progress",
+      "**Possible outcomes:**",
+      "- Confirmation with commendation",
+      "- Confirmation with recommendations",
+      "- Conditional confirmation (specific requirements to meet)",
+      "- Not confirmed (requires re-submission or alternative pathway)",
+      "Take confirmation seriously—it's designed to identify issues early. Use the feedback to strengthen your research plan.",
+
+      "## Annual Progress Review",
+      "After confirmation, you undergo **Annual Progress Review** each year until submission. The review assesses:",
+      "- Progress against milestones",
+      "- Thesis chapter development",
+      "- Publication progress (if relevant)",
+      "- Wellbeing and support needs",
+      "- Revised completion timeline",
+      "Your supervisory team and Graduate Research Coordinator participate. Satisfactory progress is required for continued enrolment.",
+
+      "## Thesis Requirements",
+      "Melbourne PhD theses must:",
+      "- Be 80,000-100,000 words (varies by discipline)",
+      "- Demonstrate original contribution to knowledge",
+      "- Meet specific formatting requirements",
+      "- Include required declarations and acknowledgements",
+      "**Thesis by publication** is permitted in some faculties—a collection of published papers with linking chapters. Discuss this option with your supervisor early.",
+
+      "## Thesis Examination",
+      "Melbourne uses external examination:",
+      "- **Two external examiners**: International experts in your field",
+      "- **Independent reports**: Each examiner submits detailed assessment",
+      "- **No oral defense** (unlike UK/US vivas)",
+      "Examiners may recommend:",
+      "- Pass without corrections",
+      "- Pass with minor corrections (1 month)",
+      "- Pass with major corrections (6 months)",
+      "- Revise and resubmit",
+      "- Not pass (rare)",
+      "Most candidates pass with minor corrections. Your supervisor helps you respond to examiner feedback.",
+
+      "## Tips for Melbourne PhD Success",
+      "- **Engage with Graduate Research Hub**: Training, workshops, and support services",
+      "- **Build your advisory committee strategically**: Diverse expertise strengthens your research",
+      "- **Plan for confirmation early**: Start preparing 3-4 months before your milestone",
+      "- **Consider thesis by publication**: If your field values publications, this format can accelerate your career",
+      "For personalized guidance on Melbourne's doctoral requirements, [DissertlyPro's Melbourne-specific support](/au/melbourne) connects you with advisors experienced in the Melbourne system.",
+    ],
+    faqs: [
+      {
+        question: "When is Melbourne's candidature confirmation?",
+        answer: "Candidature confirmation typically occurs 12 months into full-time PhD enrolment (24 months part-time). Some faculties allow flexibility up to 18 months. Check your specific faculty requirements."
+      },
+      {
+        question: "Does Melbourne have a PhD viva?",
+        answer: "No, Melbourne PhDs don't have an oral defense/viva. Theses are assessed by two external examiners who submit independent written reports. This differs from UK/US systems."
+      },
+      {
+        question: "How long is a Melbourne PhD thesis?",
+        answer: "Melbourne PhD theses are typically 80,000-100,000 words, though this varies by discipline. Some STEM fields accept shorter theses with substantial data appendices. Thesis by publication may have different word limits."
+      },
+      {
+        question: "What is thesis by publication at Melbourne?",
+        answer: "Thesis by publication compiles published or publishable papers with linking introduction and conclusion chapters. It's available in many Melbourne faculties but must be approved by your supervisor and faculty early in candidature."
       }
     ]
   },
