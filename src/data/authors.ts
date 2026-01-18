@@ -76,6 +76,7 @@ export const authors: Record<string, Author> = {
 
 // Map existing author names to new author IDs
 export const authorNameToId: Record<string, string> = {
+  // Original mappings
   "Dr. Sarah Mitchell": "dr-evelyn-hartwell",
   "Dr. Emily Rodriguez": "dr-marcus-thorne",
   "Dr. David Park": "dr-amara-okonkwo",
@@ -92,6 +93,27 @@ export const authorNameToId: Record<string, string> = {
   "Dr. Thomas Wright": "dr-nathaniel-ashford",
   "Dr. Elizabeth Harper": "dr-yuki-tanaka",
   "Dr. Daniel Foster": "dr-isabelle-fontaine",
+  // Additional mappings for all blog authors
+  "Dr. James Thompson": "dr-nathaniel-ashford",
+  "Dr. Amanda Foster": "dr-marcus-thorne",
+  "Dr. Michael Zhao": "dr-yuki-tanaka",
+  "Dr. Jennifer Martinez": "dr-evelyn-hartwell",
+  "Dr. Rachel Thompson": "dr-amara-okonkwo",
+  "Dr. Emma Williams": "dr-helena-vranos",
+  "Dr. David Wilson": "dr-julian-castellanos",
+  "Dr. Jennifer Lee": "dr-isabelle-fontaine",
+  "Dr. William Chen": "dr-julian-castellanos",
+  "Dr. Sarah Anderson": "dr-evelyn-hartwell",
+  "Dr. Andrew Roberts": "dr-nathaniel-ashford",
+  "Dr. Michelle Park": "dr-amara-okonkwo",
+  "Dr. Steven Hughes": "dr-marcus-thorne",
+  "Dr. Laura Chen": "dr-yuki-tanaka",
+  "Dr. Mark Williams": "dr-nathaniel-ashford",
+  "Dr. Patricia Moore": "dr-helena-vranos",
+  "Dr. Kevin Zhang": "dr-julian-castellanos",
+  "Dr. Susan Taylor": "dr-isabelle-fontaine",
+  "Dr. Richard Davis": "dr-marcus-thorne",
+  "Dr. Nancy Kim": "dr-amara-okonkwo",
 };
 
 export const getAuthorByName = (name: string): Author | undefined => {
