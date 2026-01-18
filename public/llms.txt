@@ -121,6 +121,10 @@ Generate a customized dissertation or thesis chapter outline based on your resea
 **URL:** https://dissertlypro.com/tools/methodology-selector
 Take a 7-question quiz to discover whether quantitative, qualitative, or mixed methods research is best for your dissertation. Get personalized methodology recommendations, key strengths and considerations, and suggested research methods based on your research goals, data preferences, and question type. Free, no sign-up required.
 
+### Literature Search Strategy Builder
+**URL:** https://dissertlypro.com/tools/literature-search
+Build systematic database search queries with Boolean operators (AND, OR, NOT) for comprehensive literature reviews. Add concepts and synonyms, get database-specific formatting for PubMed, Scopus, Web of Science, PsycINFO, ERIC, and Google Scholar. Includes synonym suggestions and one-click copy. Free, no sign-up required.
+
 ## Downloadable Templates
 
 ### Free Dissertation & Thesis Templates

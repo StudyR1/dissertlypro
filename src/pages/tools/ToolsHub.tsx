@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree, FlaskConical } from "lucide-react";
+import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree, FlaskConical, Search } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
@@ -116,6 +116,16 @@ const tools = [
     icon: FlaskConical,
     href: "/tools/methodology-selector",
     features: ["7 questions", "Personalized result", "Method suggestions"],
+    badge: "New",
+    badgeVariant: "default" as const,
+  },
+  {
+    id: "literature-search",
+    title: "Literature Search Builder",
+    description: "Build systematic database search queries with Boolean operators (AND, OR, NOT). Generate optimized searches for PubMed, Scopus, Web of Science, and more.",
+    icon: Search,
+    href: "/tools/literature-search",
+    features: ["Boolean builder", "6 database formats", "Synonym suggestions"],
     badge: "New",
     badgeVariant: "default" as const,
   },
