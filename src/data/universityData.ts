@@ -69,7 +69,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 51.7548, longitude: -1.2544 },
     heroTitle: "Dissertation Support for Oxford Students",
     heroSubtitle: "Expert guidance for Oxford's rigorous DPhil and Master's programmes. Navigate the tutorial system with confidence.",
-    blogPostSlug: "oxford-dphil-timeline-guide",
+    blogPostSlug: "oxford-dphil-timeline-complete-guide",
     stats: { studentsHelped: "450+", avgRating: 4.9, completionRate: "98%" },
     testimonials: [
       {
@@ -120,7 +120,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: 52.2043, longitude: 0.1218 },
     heroTitle: "Dissertation Help for Cambridge Students",
     heroSubtitle: "Navigate Cambridge's demanding PhD and MPhil requirements with expert support tailored to the Cambridge system.",
-    blogPostSlug: "cambridge-phd-thesis-guide",
+    blogPostSlug: "cambridge-phd-guide-milestones-requirements",
     stats: { studentsHelped: "380+", avgRating: 4.9, completionRate: "97%" },
     testimonials: [
       {
@@ -339,7 +339,7 @@ export const universityData: Record<string, UniversityData> = {
     geo: { latitude: -37.7963, longitude: 144.9614 },
     heroTitle: "Dissertation Support for Melbourne Students",
     heroSubtitle: "Expert guidance for Australia's top-ranked university. Navigate the Melbourne Model with confidence.",
-    blogPostSlug: "melbourne-thesis-completion-guide",
+    blogPostSlug: "melbourne-phd-candidature-confirmation-guide",
     stats: { studentsHelped: "680+", avgRating: 4.8, completionRate: "96%" },
     testimonials: [
       {
