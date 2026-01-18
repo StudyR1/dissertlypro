@@ -6,6 +6,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ToolSchema from "@/components/schemas/ToolSchema";
 import FAQSchema from "@/components/schemas/FAQSchema";
+import FAQToolSchema from "@/components/schemas/FAQToolSchema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
