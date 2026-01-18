@@ -52,8 +52,8 @@ const buttonVariants = cva(
           "hover:before:from-copper/30",
         ].join(" "),
         glass: [
-          "bg-white/10 backdrop-blur-md border border-white/20 text-white",
-          "hover:bg-white/20 hover:border-white/30",
+          "bg-white/15 backdrop-blur-md border-2 border-white/40 text-white font-medium",
+          "hover:bg-white/25 hover:border-white/60",
           "shadow-subtle",
         ].join(" "),
       },

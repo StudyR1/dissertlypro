@@ -361,7 +361,7 @@ const About = () => {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="glass" size="lg" className="border-white/20 text-white hover:bg-white/10 touch-manipulation" asChild>
+              <Button variant="glass" size="lg" className="touch-manipulation" asChild>
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>

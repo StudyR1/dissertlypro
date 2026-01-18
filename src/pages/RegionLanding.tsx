@@ -109,7 +109,7 @@ const RegionLanding = () => {
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button variant="glass" size="lg" className="border-white/20 text-white hover:bg-white/10" asChild>
+              <Button variant="glass" size="lg" asChild>
                 <a href={`tel:${phone.replace(/\s/g, '')}`}>
                   <Phone className="h-4 w-4 mr-2" />
                   {phone}
@@ -368,7 +368,7 @@ const RegionLanding = () => {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="glass" size="lg" className="border-white/20 text-white hover:bg-white/10" asChild>
+              <Button variant="glass" size="lg" asChild>
                 <Link to="/pricing">View All Pricing</Link>
               </Button>
             </div>

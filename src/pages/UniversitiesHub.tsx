@@ -352,7 +352,7 @@ const UniversitiesHub = () => {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="glass" size="lg" className="border-white/20 text-white hover:bg-white/10" asChild>
+              <Button variant="glass" size="lg" asChild>
                 <Link to="/services">View All Services</Link>
               </Button>
             </div>
