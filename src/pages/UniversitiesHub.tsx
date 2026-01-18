@@ -132,45 +132,54 @@ const UniversitiesHub = () => {
         </div>
       </section>
 
-      {/* Search and Filter Section */}
-      <section className="py-8 bg-cream-warm border-b border-border">
+      {/* Region Tabs and Search Section */}
+      <section className="sticky top-0 z-30 bg-cream-warm border-b border-border shadow-sm">
         <div className="container px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
+            {/* Region Tabs */}
+            <div className="flex overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 py-4 gap-1 border-b border-border">
+              {regions.map((region) => (
+                <button
+                  key={region.code}
+                  onClick={() => setSelectedRegion(region.code)}
+                  className={`relative flex items-center gap-2 px-5 py-3 rounded-t-lg text-sm font-sans font-medium whitespace-nowrap transition-all ${
+                    selectedRegion === region.code
+                      ? "bg-card text-copper border-t border-l border-r border-border -mb-px"
+                      : "text-muted-foreground hover:text-foreground hover:bg-card/50"
+                  }`}
+                >
+                  <span className="text-lg">{region.flag}</span>
+                  <span className="hidden sm:inline">{region.name}</span>
+                  <span className="sm:hidden">{region.code === "all" ? "All" : region.code.toUpperCase()}</span>
+                  <span className={`inline-flex items-center justify-center min-w-[1.5rem] h-6 px-1.5 rounded-full text-xs ${
+                    selectedRegion === region.code
+                      ? "bg-copper text-white"
+                      : "bg-muted text-muted-foreground"
+                  }`}>
+                    {regionCounts[region.code]}
+                  </span>
+                </button>
+              ))}
+            </div>
+
             {/* Search Bar */}
-            <div className="relative mb-6">
+            <div className="relative py-4">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 type="text"
                 placeholder="Search by university name, city, or research focus..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 py-6 text-base bg-card border-border"
+                className="pl-12 py-5 text-base bg-card border-border"
               />
-            </div>
-
-            {/* Region Filter */}
-            <div className="flex flex-wrap gap-2">
-              <span className="flex items-center gap-2 text-sm text-muted-foreground font-sans mr-2">
-                <Filter className="h-4 w-4" />
-                Filter by region:
-              </span>
-              {regions.map((region) => (
+              {searchQuery && (
                 <button
-                  key={region.code}
-                  onClick={() => setSelectedRegion(region.code)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-sans transition-all ${
-                    selectedRegion === region.code
-                      ? "bg-copper text-white shadow-copper"
-                      : "bg-card border border-border text-foreground hover:border-copper/30 hover:bg-copper/5"
-                  }`}
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground text-sm"
                 >
-                  <span>{region.flag}</span>
-                  <span>{region.name}</span>
-                  <span className={`text-xs ${selectedRegion === region.code ? "text-white/80" : "text-muted-foreground"}`}>
-                    ({regionCounts[region.code]})
-                  </span>
+                  Clear
                 </button>
-              ))}
+              )}
             </div>
           </div>
         </div>
