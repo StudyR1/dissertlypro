@@ -510,6 +510,298 @@ export const universityData: Record<string, UniversityData> = {
       },
     ],
   },
+  
+  // Additional UK Universities
+  imperial: {
+    slug: "imperial",
+    name: "Imperial College London",
+    shortName: "Imperial",
+    region: "uk",
+    city: "London",
+    country: "United Kingdom",
+    countryCode: "GB",
+    founded: 1907,
+    ranking: "#2 in UK for Engineering (QS 2025)",
+    studentCount: "22,000+",
+    researchFocus: ["Engineering", "Medicine", "Natural Sciences", "Business"],
+    notableDepartments: ["Faculty of Engineering", "Imperial College Business School", "Faculty of Medicine"],
+    dissertationRequirements: {
+      masters: "10,000-15,000 words for MSc",
+      phd: "80,000 words maximum",
+    },
+    deadlines: {
+      fall: "March for October entry",
+      spring: "November for January entry",
+    },
+    geo: { latitude: 51.4988, longitude: -0.1749 },
+    heroTitle: "Dissertation Support for Imperial Students",
+    heroSubtitle: "Expert guidance for Imperial's world-class STEM and business programmes. Technical writing support from PhD specialists.",
+    stats: { studentsHelped: "390+", avgRating: 4.9, completionRate: "97%" },
+    testimonials: [
+      {
+        quote: "The technical depth of feedback on my engineering thesis was exceptional. They understood both the science and the academic writing requirements.",
+        author: "Raj P.",
+        program: "PhD Bioengineering",
+        year: "2024",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you support Imperial's technical dissertations?",
+        answer: "Yes, we have experts with backgrounds in engineering, computing, and natural sciences who understand Imperial's technical standards and can support complex quantitative work.",
+      },
+      {
+        question: "How does Imperial's PhD timeline work?",
+        answer: "Imperial PhDs typically take 3-4 years with an early stage assessment at 9-12 months. We help prepare you for this milestone and structure your thesis timeline accordingly.",
+      },
+    ],
+  },
+  ucl: {
+    slug: "ucl",
+    name: "University College London",
+    shortName: "UCL",
+    region: "uk",
+    city: "London",
+    country: "United Kingdom",
+    countryCode: "GB",
+    founded: 1826,
+    ranking: "#4 in UK (QS 2025)",
+    studentCount: "50,000+",
+    researchFocus: ["Arts & Humanities", "Engineering", "Medical Sciences", "Social Sciences"],
+    notableDepartments: ["Bartlett School of Architecture", "UCL Laws", "Institute of Education"],
+    dissertationRequirements: {
+      masters: "15,000-20,000 words for most programmes",
+      phd: "80,000-100,000 words",
+    },
+    deadlines: {
+      fall: "March for September entry",
+      spring: "October for January entry",
+    },
+    geo: { latitude: 51.5246, longitude: -0.1340 },
+    heroTitle: "Thesis Help for UCL Students",
+    heroSubtitle: "Navigate UCL's diverse academic landscape with expert dissertation support across all faculties.",
+    stats: { studentsHelped: "480+", avgRating: 4.8, completionRate: "96%" },
+    testimonials: [
+      {
+        quote: "UCL's interdisciplinary approach required a unique thesis structure. DissertlyPro helped me navigate this complexity brilliantly.",
+        author: "Amara K.",
+        program: "MRes Social Sciences",
+        year: "2024",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you support UCL's interdisciplinary programmes?",
+        answer: "UCL is known for cross-disciplinary research. Our experts can support thesis work that spans multiple fields, helping you create coherent arguments across disciplinary boundaries.",
+      },
+    ],
+  },
+
+  // Additional US Universities
+  yale: {
+    slug: "yale",
+    name: "Yale University",
+    shortName: "Yale",
+    region: "us",
+    city: "New Haven, CT",
+    country: "United States",
+    countryCode: "US",
+    founded: 1701,
+    ranking: "#5 in USA (QS 2025)",
+    studentCount: "14,000+",
+    researchFocus: ["Law", "Drama", "Art History", "Political Science", "Medicine"],
+    notableDepartments: ["Yale Law School", "School of Drama", "Yale School of Medicine"],
+    dissertationRequirements: {
+      masters: "Programme dependent; typically 50-80 pages",
+      phd: "Department dependent; typically 200-350 pages",
+    },
+    deadlines: {
+      fall: "December for September entry",
+      spring: "Varies by programme",
+    },
+    geo: { latitude: 41.3163, longitude: -72.9223 },
+    heroTitle: "Dissertation Support for Yale Students",
+    heroSubtitle: "Expert guidance for Yale's distinguished doctoral programmes. From prospectus to defense, we support your scholarly journey.",
+    stats: { studentsHelped: "320+", avgRating: 4.9, completionRate: "98%" },
+    testimonials: [
+      {
+        quote: "Yale's humanities PhD demands exceptional writing. The feedback I received elevated my dissertation to publication quality.",
+        author: "Dr. Elizabeth N.",
+        program: "PhD English",
+        year: "2024",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you support Yale's humanities dissertations?",
+        answer: "We have experts specializing in close reading, theoretical frameworks, and the argumentative structures expected in Yale's humanities departments. We understand the tradition of scholarly excellence.",
+      },
+    ],
+  },
+  princeton: {
+    slug: "princeton",
+    name: "Princeton University",
+    shortName: "Princeton",
+    region: "us",
+    city: "Princeton, NJ",
+    country: "United States",
+    countryCode: "US",
+    founded: 1746,
+    ranking: "#1 for Undergraduate, #6 Overall (US News 2025)",
+    studentCount: "8,500+",
+    researchFocus: ["Mathematics", "Physics", "Economics", "Public Policy", "Philosophy"],
+    notableDepartments: ["Woodrow Wilson School", "Department of Mathematics", "Department of Physics"],
+    dissertationRequirements: {
+      masters: "No traditional master's; PhD direct entry",
+      phd: "Department dependent; rigorous standards",
+    },
+    deadlines: {
+      fall: "December for September entry",
+      spring: "N/A for most programmes",
+    },
+    geo: { latitude: 40.3431, longitude: -74.6551 },
+    heroTitle: "Dissertation Help for Princeton Students",
+    heroSubtitle: "Navigate Princeton's exceptional doctoral standards with expert support tailored to the university's scholarly tradition.",
+    stats: { studentsHelped: "280+", avgRating: 4.9, completionRate: "98%" },
+    testimonials: [
+      {
+        quote: "Princeton's mathematics department has incredibly high standards. The guidance I received helped me meet them while developing original contributions.",
+        author: "Dr. Michael L.",
+        program: "PhD Mathematics",
+        year: "2024",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you support Princeton's unique PhD structure?",
+        answer: "Princeton's direct PhD entry means students face dissertations earlier than elsewhere. We help structure your research timeline and navigate general exams with strategic preparation.",
+      },
+    ],
+  },
+
+  // Additional Australian Universities
+  anu: {
+    slug: "anu",
+    name: "Australian National University",
+    shortName: "ANU",
+    region: "au",
+    city: "Canberra",
+    country: "Australia",
+    countryCode: "AU",
+    founded: 1946,
+    ranking: "#3 in Australia (QS 2025)",
+    studentCount: "25,000+",
+    researchFocus: ["Public Policy", "International Relations", "Physics", "Astronomy", "Asian Studies"],
+    notableDepartments: ["Crawford School of Public Policy", "Research School of Physics", "College of Asia & the Pacific"],
+    dissertationRequirements: {
+      masters: "20,000-40,000 words for research masters",
+      phd: "80,000-100,000 words",
+    },
+    deadlines: {
+      fall: "October for February entry",
+      spring: "April for July entry",
+    },
+    geo: { latitude: -35.2777, longitude: 149.1185 },
+    heroTitle: "Thesis Support for ANU Students",
+    heroSubtitle: "Expert dissertation guidance for Australia's national research university. Navigate HDR requirements with confidence.",
+    stats: { studentsHelped: "420+", avgRating: 4.8, completionRate: "96%" },
+    testimonials: [
+      {
+        quote: "ANU's research intensity required exceptional methodology. DissertlyPro's guidance through my thesis milestone reviews was invaluable.",
+        author: "Chen W.",
+        program: "PhD International Relations",
+        year: "2024",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you support ANU's HDR programmes?",
+        answer: "We understand ANU's Higher Degree by Research structure, including annual progress reviews, thesis proposals, and the oral examination. Our experts help at every milestone.",
+      },
+    ],
+  },
+  monash: {
+    slug: "monash",
+    name: "Monash University",
+    shortName: "Monash",
+    region: "au",
+    city: "Melbourne",
+    country: "Australia",
+    countryCode: "AU",
+    founded: 1958,
+    ranking: "#4 in Australia (QS 2025)",
+    studentCount: "86,000+",
+    researchFocus: ["Pharmacy", "Education", "Engineering", "Medicine", "Business"],
+    notableDepartments: ["Faculty of Pharmacy", "Faculty of Education", "Monash Business School"],
+    dissertationRequirements: {
+      masters: "15,000-50,000 words depending on programme",
+      phd: "80,000-100,000 words",
+    },
+    deadlines: {
+      fall: "October for February entry",
+      spring: "May for July entry",
+    },
+    geo: { latitude: -37.9105, longitude: 145.1362 },
+    heroTitle: "Dissertation Help for Monash Students",
+    heroSubtitle: "Navigate Monash's research degree requirements with expert support across all campuses and faculties.",
+    stats: { studentsHelped: "580+", avgRating: 4.8, completionRate: "95%" },
+    testimonials: [
+      {
+        quote: "Monash's pharmacy research thesis was complex. The statistical analysis support I received was exactly what I needed.",
+        author: "Priya M.",
+        program: "PhD Pharmaceutical Sciences",
+        year: "2024",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you support Monash's multi-campus structure?",
+        answer: "Yes, we support students across all Monash campuses including Clayton, Caulfield, Peninsula, and international locations. Requirements are consistent, and our experts understand the Monash system.",
+      },
+    ],
+  },
+
+  // Additional Canadian Universities
+  waterloo: {
+    slug: "waterloo",
+    name: "University of Waterloo",
+    shortName: "Waterloo",
+    region: "ca",
+    city: "Waterloo, ON",
+    country: "Canada",
+    countryCode: "CA",
+    founded: 1957,
+    ranking: "#1 in Canada for Computer Science (Maclean's 2025)",
+    studentCount: "42,000+",
+    researchFocus: ["Computer Science", "Engineering", "Mathematics", "Actuarial Science", "Optometry"],
+    notableDepartments: ["David R. Cheriton School of Computer Science", "Faculty of Mathematics", "Faculty of Engineering"],
+    dissertationRequirements: {
+      masters: "Thesis option typically 80-120 pages",
+      phd: "Department dependent; strong technical focus",
+    },
+    deadlines: {
+      fall: "February for September entry",
+      spring: "June for January entry",
+    },
+    geo: { latitude: 43.4723, longitude: -80.5449 },
+    heroTitle: "Thesis Support for Waterloo Students",
+    heroSubtitle: "Expert guidance for Waterloo's renowned STEM programmes. Technical thesis support from PhD specialists.",
+    stats: { studentsHelped: "440+", avgRating: 4.8, completionRate: "96%" },
+    testimonials: [
+      {
+        quote: "Waterloo CS requires balancing theoretical depth with practical applications. The thesis guidance helped me achieve both.",
+        author: "Jason T.",
+        program: "MMath Computer Science",
+        year: "2024",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you support Waterloo's technical thesis requirements?",
+        answer: "We have experts with strong CS, mathematics, and engineering backgrounds who understand Waterloo's emphasis on innovation and technical rigor. We support both thesis-based and research paper options.",
+      },
+    ],
+  },
 };
 
 export const getUniversityBySlug = (slug: string): UniversityData | undefined => {
