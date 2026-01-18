@@ -934,4 +934,47 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- University-Specific Blog Posts -->
+  <url>
+    <loc>https://dissertlypro.com/blog/oxford-dphil-timeline-guide</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/harvard-dissertation-requirements</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/cambridge-phd-thesis-guide</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/mit-thesis-writing-strategies</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/stanford-dissertation-excellence</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/melbourne-thesis-completion-guide</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
 </urlset>
