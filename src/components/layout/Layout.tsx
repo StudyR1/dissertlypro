@@ -8,7 +8,6 @@ const FloatingWhatsApp = lazy(() => import("@/components/cro/FloatingWhatsApp"))
 const MobileCTA = lazy(() => import("./MobileCTA"));
 
 // Lazy load feature components
-const ReadingModeToggle = lazy(() => import("@/components/features/ReadingModeToggle"));
 const NightOwlTheme = lazy(() => import("@/components/features/NightOwlTheme"));
 
 interface LayoutProps {
@@ -31,7 +30,6 @@ const Layout = memo(({ children }: LayoutProps) => {
       
       {/* Lazy-loaded Feature Components */}
       <Suspense fallback={null}>
-        <ReadingModeToggle />
         <NightOwlTheme />
       </Suspense>
       
