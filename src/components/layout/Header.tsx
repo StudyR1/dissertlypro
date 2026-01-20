@@ -21,6 +21,7 @@ const services = [
   { title: "Data Analysis", href: "/services/data-analysis", description: "SPSS, R, STATA, NVivo experts", icon: BarChart3 },
   { title: "Literature Review", href: "/services/literature-review", description: "Thematic analysis & reviews", icon: BookOpen },
   { title: "Editing & Proofreading", href: "/services/editing", description: "Academic English & citations", icon: FileText },
+  { title: "Quick Services", href: "/quick-services", description: "Fast tasks from $15", icon: Clock, isNew: true },
 ];
 
 const featuredPosts = [
