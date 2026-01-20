@@ -253,27 +253,58 @@ const QuickServiceCheckout = () => {
         canonical="/quick-checkout"
       />
 
-      <section className="py-12 bg-gradient-to-b from-midnight to-midnight-light">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        className="py-12 bg-gradient-to-b from-midnight to-midnight-light"
+      >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
+            className="flex items-center justify-center gap-2 mb-4"
+          >
             <Zap className="w-5 h-5 text-copper" />
             <Badge className="bg-copper/20 text-copper border-copper/30">Express Checkout</Badge>
-          </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-2">
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            className="text-3xl md:text-4xl font-bold text-white text-center mb-2"
+          >
             Quick Service Checkout
-          </h1>
-          <p className="text-white/70 text-center">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
+            className="text-white/70 text-center"
+          >
             Complete your order in just 2 simple steps
-          </p>
+          </motion.p>
         </div>
-      </section>
+      </motion.section>
 
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           {/* Progress Indicator */}
-          <div className="flex items-center justify-center mb-12">
-            {[1, 2].map((step) => (
-              <div key={step} className="flex items-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="flex items-center justify-center mb-12"
+          >
+            {[1, 2].map((step, index) => (
+              <motion.div 
+                key={`progress-step-${step}`} 
+                className="flex items-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4 + index * 0.1, duration: 0.3 }}
+              >
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-colors ${
                   currentStep >= step 
                     ? 'bg-copper text-white' 
@@ -282,17 +313,22 @@ const QuickServiceCheckout = () => {
                   {currentStep > step ? <CheckCircle className="w-5 h-5" /> : step}
                 </div>
                 {step < 2 && (
-                  <div className={`w-24 h-1 mx-2 rounded ${
+                  <div className={`w-24 h-1 mx-2 rounded transition-colors duration-300 ${
                     currentStep > step ? 'bg-copper' : 'bg-muted'
                   }`} />
                 )}
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Main Form */}
-            <div className="lg:col-span-2">
+            <motion.div 
+              className="lg:col-span-2"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
               <AnimatePresence mode="wait">
                 {currentStep === 1 && (
                   <motion.div
@@ -466,10 +502,15 @@ const QuickServiceCheckout = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
 
             {/* Order Summary Sidebar */}
-            <div className="lg:col-span-1">
+            <motion.div 
+              className="lg:col-span-1"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
               <Card className="sticky top-24">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg">Order Summary</CardTitle>
@@ -527,7 +568,7 @@ const QuickServiceCheckout = () => {
                   </div>
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
