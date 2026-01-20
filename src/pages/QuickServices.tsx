@@ -259,8 +259,8 @@ const QuickServices = () => {
 
   const bundleOrderUrl = useMemo(() => {
     const serviceIds = selectedServices.join(",");
-    const total = bundleCalculation.total;
-    return `/order?bundle=${serviceIds}&price=${total}&discount=${bundleCalculation.hasDiscount ? "10" : "0"}`;
+    const discountPercent = bundleCalculation.discountPercent * 100;
+    return `/quick-checkout?services=${serviceIds}&discount=${discountPercent}`;
   }, [selectedServices, bundleCalculation]);
 
   return (
@@ -651,7 +651,7 @@ const ServiceCard = ({ service, isSelected = false, onToggle }: ServiceCardProps
             {isSelected ? 'Remove' : 'Add to Bundle'}
           </Button>
           <Button asChild className="flex-1 bg-midnight hover:bg-midnight-light group-hover:bg-copper group-hover:text-white transition-colors">
-            <Link to={`/order?service=quick-${service.id}&price=${service.price}`}>
+            <Link to={`/quick-checkout?services=${service.id}`}>
               Order Now
             </Link>
           </Button>

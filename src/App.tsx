@@ -100,6 +100,7 @@ const AIDetectionGuide = lazy(() => import("./pages/AIDetectionGuide"));
 const CitingAIGuide = lazy(() => import("./pages/CitingAIGuide"));
 const AILiteratureReview = lazy(() => import("./pages/AILiteratureReview"));
 const QuickServices = lazy(() => import("./pages/QuickServices"));
+const QuickServiceCheckout = lazy(() => import("./pages/QuickServiceCheckout"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -260,6 +261,7 @@ const App = () => (
             
             {/* Quick Services */}
             <Route path="/quick-services" element={<Suspense fallback={<ServicesGridSkeleton />}><QuickServices /></Suspense>} />
+            <Route path="/quick-checkout" element={<Suspense fallback={<SkeletonPage />}><QuickServiceCheckout /></Suspense>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
