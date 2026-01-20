@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
+import { logQuickServiceOrder } from "@/lib/googleSheets";
 
 const PAYPAL_CLIENT_ID = "AbqfzvcYIxGrnSHuB9QlTM7bNDxfSVx52sZqAjuuGXqVhmP2bk1ngI37ZoJydg7D7L-5nSBLhh7lzt4M";
 
@@ -116,11 +117,22 @@ const QuickServiceCheckout = () => {
     return `${prefix}-${timestamp}-${random}`;
   };
 
-  const handlePaymentSuccess = () => {
+  const handlePaymentSuccess = async (paymentId: string = "") => {
     const newOrderNumber = generateOrderNumber();
     setOrderNumber(newOrderNumber);
     setOrderComplete(true);
     toast.success("Payment successful! Your order has been placed.");
+
+    // Log order to Google Sheets (fire and forget - don't block success flow)
+    logQuickServiceOrder({
+      orderNumber: newOrderNumber,
+      customerName: formData.fullName,
+      customerEmail: formData.email,
+      services: orderDetails.services.map(s => s.name),
+      instructions: formData.instructions,
+      totalAmount: orderDetails.total,
+      paymentId: paymentId,
+    }).catch(console.error);
   };
 
   // Redirect if no services selected
@@ -472,8 +484,8 @@ const QuickServiceCheckout = () => {
                               }}
                               onApprove={async (data, actions) => {
                                 if (actions.order) {
-                                  await actions.order.capture();
-                                  handlePaymentSuccess();
+                                  const details = await actions.order.capture();
+                                  handlePaymentSuccess(details.id || data.orderID || "");
                                 }
                               }}
                               onError={(err) => {

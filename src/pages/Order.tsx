@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
+import { logFullOrder } from "@/lib/googleSheets";
 
 const PAYPAL_CLIENT_ID = "AbqfzvcYIxGrnSHuB9QlTM7bNDxfSVx52sZqAjuuGXqVhmP2bk1ngI37ZoJydg7D7L-5nSBLhh7lzt4M";
 
@@ -217,17 +218,39 @@ const Order = () => {
     setOrderNumber(newOrderNumber);
     setPaymentApproved(true);
     
+    const paymentId = (details as { id?: string }).id || "PAYPAL_" + Date.now();
+    
     // Store order in localStorage for receipt retrieval
     const orderData = {
       orderNumber: newOrderNumber,
       ...formData,
       depositPaid: DEPOSIT_AMOUNT,
-      paymentId: (details as { id?: string }).id || "PAYPAL_" + Date.now(),
+      paymentId: paymentId,
       paymentDate: new Date().toISOString(),
       status: "Pending Review",
     };
     
     localStorage.setItem(`order_${newOrderNumber}`, JSON.stringify(orderData));
+    
+    // Log order to Google Sheets (fire and forget - don't block success flow)
+    logFullOrder({
+      orderNumber: newOrderNumber,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      degreeType: formData.degreeType,
+      university: formData.university,
+      subjectArea: formData.subjectArea,
+      serviceType: formData.serviceType,
+      projectTitle: formData.projectTitle,
+      projectDescription: formData.projectDescription,
+      deadline: formData.deadline,
+      citationStyle: formData.citationStyle,
+      specialInstructions: formData.specialInstructions,
+      depositAmount: DEPOSIT_AMOUNT,
+      paymentId: paymentId,
+    }).catch(console.error);
     
     setOrderComplete(true);
     toast.success("Payment successful! Your order has been submitted.");
