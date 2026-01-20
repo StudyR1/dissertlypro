@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Checkbox } from "@/components/ui/checkbox";
 import { BreadcrumbSchema } from "@/components/schemas";
 import { FloatingOrderButton } from "@/components/cro";
 import {
@@ -22,7 +23,10 @@ import {
   Zap,
   ShieldCheck,
   Timer,
-  Star
+  Star,
+  ShoppingCart,
+  Percent,
+  X
 } from "lucide-react";
 
 interface QuickService {
@@ -181,13 +185,38 @@ const categoryInfo = {
 
 const QuickServices = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
   const filteredServices = selectedCategory === "all" 
     ? quickServices 
     : quickServices.filter(s => s.category === selectedCategory);
 
-  const getServicesByCategory = (category: string) => 
-    quickServices.filter(s => s.category === category);
+  const toggleService = (serviceId: string) => {
+    setSelectedServices(prev => 
+      prev.includes(serviceId) 
+        ? prev.filter(id => id !== serviceId)
+        : [...prev, serviceId]
+    );
+  };
+
+  const removeService = (serviceId: string) => {
+    setSelectedServices(prev => prev.filter(id => id !== serviceId));
+  };
+
+  const bundleCalculation = useMemo(() => {
+    const selected = quickServices.filter(s => selectedServices.includes(s.id));
+    const subtotal = selected.reduce((sum, s) => sum + s.price, 0);
+    const hasDiscount = selected.length >= 2;
+    const discount = hasDiscount ? subtotal * 0.10 : 0;
+    const total = subtotal - discount;
+    return { selected, subtotal, discount, total, hasDiscount };
+  }, [selectedServices]);
+
+  const bundleOrderUrl = useMemo(() => {
+    const serviceIds = selectedServices.join(",");
+    const total = bundleCalculation.total;
+    return `/order?bundle=${serviceIds}&price=${total}&discount=${bundleCalculation.hasDiscount ? "10" : "0"}`;
+  }, [selectedServices, bundleCalculation]);
 
   return (
     <Layout>
@@ -265,13 +294,103 @@ const QuickServices = () => {
             </TabsList>
 
             <TabsContent value={selectedCategory} className="mt-0">
+              {/* Bundle Banner */}
+              <div className="mb-8 p-4 bg-gradient-to-r from-copper/10 to-copper/5 rounded-xl border border-copper/20">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-copper/20 flex items-center justify-center">
+                    <Percent className="w-5 h-5 text-copper" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">Bundle & Save 10%</h3>
+                    <p className="text-sm text-muted-foreground">Select 2 or more services to unlock your discount</p>
+                  </div>
+                  {selectedServices.length > 0 && (
+                    <Badge className="ml-auto bg-copper text-white">
+                      {selectedServices.length} selected
+                    </Badge>
+                  )}
+                </div>
+              </div>
+
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredServices.map((service) => (
-                  <ServiceCard key={service.id} service={service} />
+                  <ServiceCard 
+                    key={service.id} 
+                    service={service} 
+                    isSelected={selectedServices.includes(service.id)}
+                    onToggle={() => toggleService(service.id)}
+                  />
                 ))}
               </div>
             </TabsContent>
           </Tabs>
+
+          {/* Floating Bundle Cart */}
+          {selectedServices.length > 0 && (
+            <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-2xl px-4">
+              <div className="bg-midnight text-white rounded-2xl shadow-2xl p-4 border border-copper/30">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <ShoppingCart className="w-5 h-5 text-copper" />
+                    <span className="font-semibold">Your Bundle</span>
+                    {bundleCalculation.hasDiscount && (
+                      <Badge className="bg-emerald-500 text-white text-xs">
+                        10% OFF
+                      </Badge>
+                    )}
+                  </div>
+                  <button 
+                    onClick={() => setSelectedServices([])}
+                    className="text-white/60 hover:text-white text-sm"
+                  >
+                    Clear all
+                  </button>
+                </div>
+                
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {bundleCalculation.selected.map(service => (
+                    <div 
+                      key={service.id}
+                      className="flex items-center gap-1 bg-white/10 rounded-full px-3 py-1 text-sm"
+                    >
+                      <span>{service.name}</span>
+                      <button 
+                        onClick={() => removeService(service.id)}
+                        className="text-white/60 hover:text-white ml-1"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    {bundleCalculation.hasDiscount ? (
+                      <>
+                        <div className="text-sm text-white/60">
+                          <span className="line-through">${bundleCalculation.subtotal}</span>
+                          <span className="ml-2 text-emerald-400">-${bundleCalculation.discount.toFixed(0)}</span>
+                        </div>
+                        <div className="text-2xl font-bold">${bundleCalculation.total.toFixed(0)}</div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="text-sm text-white/60">Add 1 more for 10% off</div>
+                        <div className="text-2xl font-bold">${bundleCalculation.subtotal}</div>
+                      </>
+                    )}
+                  </div>
+                  <Button asChild size="lg" className="bg-copper hover:bg-copper-light text-white">
+                    <Link to={bundleOrderUrl}>
+                      Order Bundle
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -325,18 +444,37 @@ const QuickServices = () => {
   );
 };
 
-const ServiceCard = ({ service }: { service: QuickService }) => {
+interface ServiceCardProps {
+  service: QuickService;
+  isSelected?: boolean;
+  onToggle?: () => void;
+}
+
+const ServiceCard = ({ service, isSelected = false, onToggle }: ServiceCardProps) => {
   const Icon = service.icon;
   
   return (
-    <Card className="relative overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50 hover:border-copper/30">
+    <Card className={`relative overflow-hidden hover:shadow-lg transition-all duration-300 group border-2 ${isSelected ? 'border-copper bg-copper/5' : 'border-border/50 hover:border-copper/30'}`}>
+      {/* Selection checkbox */}
+      <div className="absolute top-4 left-4 z-10">
+        <div 
+          onClick={(e) => {
+            e.preventDefault();
+            onToggle?.();
+          }}
+          className="flex items-center justify-center w-6 h-6 rounded-md border-2 border-copper/50 bg-background cursor-pointer hover:border-copper transition-colors"
+        >
+          {isSelected && <CheckCircle className="w-5 h-5 text-copper" />}
+        </div>
+      </div>
+
       {service.popular && (
         <div className="absolute top-4 right-4">
           <Badge className="bg-copper text-white">Popular</Badge>
         </div>
       )}
       
-      <CardHeader className="pb-4">
+      <CardHeader className="pb-4 pt-12">
         <div className="w-12 h-12 rounded-xl bg-copper/10 flex items-center justify-center mb-4 group-hover:bg-copper/20 transition-colors">
           <Icon className="w-6 h-6 text-copper" />
         </div>
@@ -375,12 +513,20 @@ const ServiceCard = ({ service }: { service: QuickService }) => {
           ))}
         </ul>
         
-        <Button asChild className="w-full bg-midnight hover:bg-midnight-light group-hover:bg-copper group-hover:text-white transition-colors">
-          <Link to={`/order?service=quick-${service.id}&price=${service.price}`}>
-            Order Now
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
-        </Button>
+        <div className="flex gap-2">
+          <Button 
+            variant="outline" 
+            className={`flex-1 ${isSelected ? 'border-copper text-copper hover:bg-copper/10' : ''}`}
+            onClick={onToggle}
+          >
+            {isSelected ? 'Remove' : 'Add to Bundle'}
+          </Button>
+          <Button asChild className="flex-1 bg-midnight hover:bg-midnight-light group-hover:bg-copper group-hover:text-white transition-colors">
+            <Link to={`/order?service=quick-${service.id}&price=${service.price}`}>
+              Order Now
+            </Link>
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );
