@@ -99,6 +99,7 @@ const AIPolicyCheckerPage = lazy(() => import("./pages/tools/AIPolicyCheckerPage
 const AIDetectionGuide = lazy(() => import("./pages/AIDetectionGuide"));
 const CitingAIGuide = lazy(() => import("./pages/CitingAIGuide"));
 const AILiteratureReview = lazy(() => import("./pages/AILiteratureReview"));
+const QuickServices = lazy(() => import("./pages/QuickServices"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -256,6 +257,9 @@ const App = () => (
             <Route path="/ai-detection-guide" element={<Suspense fallback={<ArticleSkeleton />}><AIDetectionGuide /></Suspense>} />
             <Route path="/citing-ai" element={<Suspense fallback={<ArticleSkeleton />}><CitingAIGuide /></Suspense>} />
             <Route path="/ai-literature-review" element={<Suspense fallback={<ArticleSkeleton />}><AILiteratureReview /></Suspense>} />
+            
+            {/* Quick Services */}
+            <Route path="/quick-services" element={<Suspense fallback={<ServicesGridSkeleton />}><QuickServices /></Suspense>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
