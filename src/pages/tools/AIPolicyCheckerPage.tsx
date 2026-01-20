@@ -90,12 +90,35 @@ const AIPolicyCheckerPage = () => {
     );
   }, [universities, searchQuery]);
 
-  const selectedPolicy: AIPolicy | null = useMemo(() => {
+  // Track if we're using a regional default vs specific university policy
+  const { selectedPolicy, isUsingDefault } = useMemo((): { selectedPolicy: AIPolicy | null; isUsingDefault: boolean } => {
     if (selectedUniversity) {
-      return aiPolicies.find(p => p.universityName === selectedUniversity) || null;
+      const policy = aiPolicies.find(p => p.universityName === selectedUniversity);
+      if (policy) {
+        return { selectedPolicy: policy, isUsingDefault: false };
+      }
     }
-    return null;
-  }, [selectedUniversity]);
+    
+    // Fall back to regional default if country selected but no specific university found
+    if (selectedCountry && defaultPolicies[selectedCountry]) {
+      const defaultPolicy = defaultPolicies[selectedCountry];
+      const syntheticPolicy: AIPolicy = {
+        universityName: `${selectedCountry} Regional Default`,
+        country: selectedCountry,
+        region: selectedCountry,
+        policyLevel: defaultPolicy.policyLevel,
+        allowedUses: defaultPolicy.allowedUses,
+        prohibitedUses: defaultPolicy.prohibitedUses,
+        disclosureRequired: defaultPolicy.disclosureRequired,
+        disclosureLocation: defaultPolicy.disclosureLocation,
+        lastUpdated: defaultPolicy.lastUpdated,
+        notes: `This is a regional default policy for ${selectedCountry}. Your specific institution may have different requirements. Always verify with your university's official policy.`
+      };
+      return { selectedPolicy: syntheticPolicy, isUsingDefault: true };
+    }
+    
+    return { selectedPolicy: null, isUsingDefault: false };
+  }, [selectedUniversity, selectedCountry]);
 
   const handleUseToggle = (useType: AIUseType) => {
     setSelectedUses(prev => 
@@ -337,9 +360,22 @@ const AIPolicyCheckerPage = () => {
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div>
-                          <CardTitle className="text-xl mb-2">
-                            {selectedPolicy?.universityName || `${selectedCountry} Regional Default`}
-                          </CardTitle>
+                          <div className="flex items-center gap-3 mb-2">
+                            <CardTitle className="text-xl">
+                              {selectedPolicy?.universityName || `${selectedCountry} Regional Default`}
+                            </CardTitle>
+                            {isUsingDefault ? (
+                              <Badge variant="outline" className="border-blue-500/50 bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                                <Globe className="w-3 h-3 mr-1" />
+                                Regional Default
+                              </Badge>
+                            ) : (
+                              <Badge variant="outline" className="border-green-500/50 bg-green-500/10 text-green-600 dark:text-green-400">
+                                <Building2 className="w-3 h-3 mr-1" />
+                                Verified Policy
+                              </Badge>
+                            )}
+                          </div>
                           <CardDescription>
                             Policy Level: {" "}
                             <Badge className={`
@@ -362,9 +398,23 @@ const AIPolicyCheckerPage = () => {
                         )}
                       </div>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="space-y-4">
+                      {/* Regional Default Notice */}
+                      {isUsingDefault && (
+                        <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 flex gap-3">
+                          <Info className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                          <div>
+                            <div className="font-medium text-blue-700 dark:text-blue-400">Regional Default Policy</div>
+                            <div className="text-sm text-muted-foreground">
+                              Your specific university isn't in our database. This guidance reflects typical {selectedCountry} academic standards. 
+                              <strong className="text-foreground"> Always verify with your institution's official policy.</strong>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
                       {selectedPolicy && (
-                        <p className="text-muted-foreground mb-4">
+                        <p className="text-muted-foreground">
                           {policyLevelInfo[selectedPolicy.policyLevel].description}
                         </p>
                       )}
