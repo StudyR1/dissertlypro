@@ -26,8 +26,19 @@ import {
   Star,
   ShoppingCart,
   Percent,
-  X
+  X,
+  Package,
+  Crown
 } from "lucide-react";
+
+interface SuggestedBundle {
+  id: string;
+  name: string;
+  description: string;
+  serviceIds: string[];
+  savings: string;
+  popular?: boolean;
+}
 
 interface QuickService {
   id: string;
@@ -160,6 +171,39 @@ const quickServices: QuickService[] = [
   }
 ];
 
+const suggestedBundles: SuggestedBundle[] = [
+  {
+    id: "thesis-polish",
+    name: "Thesis Polish Bundle",
+    description: "Perfect for final submission prep: proofreading + citations + abstract",
+    serviceIds: ["express-proofreading", "citation-formatting", "abstract-polishing"],
+    savings: "$13.50",
+    popular: true
+  },
+  {
+    id: "research-kickstart",
+    name: "Research Kickstart Bundle",
+    description: "Get your research off to a strong start with methodology check + bibliography + chapter outline",
+    serviceIds: ["methodology-check", "bibliography-starter", "chapter-outline"],
+    savings: "$20.25"
+  },
+  {
+    id: "integrity-check",
+    name: "Academic Integrity Bundle",
+    description: "Comprehensive AI and plagiarism review: AI detection + paraphrase audit",
+    serviceIds: ["ai-detection-report", "paraphrase-audit"],
+    savings: "$4"
+  },
+  {
+    id: "supervisor-ready",
+    name: "Supervisor-Ready Bundle",
+    description: "Prepare for supervisor meetings: clarity call + email review + proofreading",
+    serviceIds: ["clarity-call", "email-review", "express-proofreading"],
+    savings: "$12",
+    popular: true
+  }
+];
+
 const categoryInfo = {
   document: {
     label: "Document Services",
@@ -206,10 +250,11 @@ const QuickServices = () => {
   const bundleCalculation = useMemo(() => {
     const selected = quickServices.filter(s => selectedServices.includes(s.id));
     const subtotal = selected.reduce((sum, s) => sum + s.price, 0);
+    const discountPercent = selected.length >= 3 ? 0.15 : selected.length >= 2 ? 0.10 : 0;
     const hasDiscount = selected.length >= 2;
-    const discount = hasDiscount ? subtotal * 0.10 : 0;
+    const discount = subtotal * discountPercent;
     const total = subtotal - discount;
-    return { selected, subtotal, discount, total, hasDiscount };
+    return { selected, subtotal, discount, total, hasDiscount, discountPercent };
   }, [selectedServices]);
 
   const bundleOrderUrl = useMemo(() => {
@@ -270,6 +315,90 @@ const QuickServices = () => {
         </div>
       </section>
 
+      {/* Suggested Bundles Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-copper/20 text-copper border-copper/30">
+              <Crown className="w-3 h-3 mr-1" />
+              Curated Combinations
+            </Badge>
+            <h2 className="text-3xl font-bold mb-4">Suggested Bundles</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Popular service combinations with <span className="text-copper font-semibold">15% off</span> when you select 3+ services. 
+              Click to add all services instantly.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {suggestedBundles.map((bundle) => {
+              const bundleServices = quickServices.filter(s => bundle.serviceIds.includes(s.id));
+              const originalPrice = bundleServices.reduce((sum, s) => sum + s.price, 0);
+              const discountedPrice = originalPrice * 0.85;
+              const allSelected = bundle.serviceIds.every(id => selectedServices.includes(id));
+
+              return (
+                <Card 
+                  key={bundle.id}
+                  className={`relative cursor-pointer transition-all hover:shadow-lg hover:border-copper/50 ${
+                    allSelected ? 'ring-2 ring-copper border-copper' : ''
+                  }`}
+                  onClick={() => {
+                    if (allSelected) {
+                      setSelectedServices(prev => prev.filter(id => !bundle.serviceIds.includes(id)));
+                    } else {
+                      setSelectedServices(prev => [...new Set([...prev, ...bundle.serviceIds])]);
+                    }
+                  }}
+                >
+                  {bundle.popular && (
+                    <div className="absolute -top-3 left-4">
+                      <Badge className="bg-copper text-white shadow-md">
+                        <Star className="w-3 h-3 mr-1" />
+                        Popular
+                      </Badge>
+                    </div>
+                  )}
+                  <CardHeader className="pb-2">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <CardTitle className="text-lg flex items-center gap-2">
+                          <Package className="w-5 h-5 text-copper" />
+                          {bundle.name}
+                        </CardTitle>
+                        <CardDescription className="mt-1">{bundle.description}</CardDescription>
+                      </div>
+                      <Checkbox 
+                        checked={allSelected}
+                        className="mt-1 border-copper data-[state=checked]:bg-copper data-[state=checked]:border-copper"
+                      />
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {bundleServices.map(service => (
+                        <Badge key={service.id} variant="secondary" className="text-xs">
+                          {service.name}
+                        </Badge>
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-2xl font-bold text-foreground">${discountedPrice.toFixed(0)}</span>
+                        <span className="text-sm text-muted-foreground line-through">${originalPrice}</span>
+                      </div>
+                      <Badge variant="outline" className="border-emerald-500 text-emerald-600">
+                        Save {bundle.savings}
+                      </Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
@@ -301,8 +430,8 @@ const QuickServices = () => {
                     <Percent className="w-5 h-5 text-copper" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Bundle & Save 10%</h3>
-                    <p className="text-sm text-muted-foreground">Select 2 or more services to unlock your discount</p>
+                    <h3 className="font-semibold text-foreground">Bundle & Save up to 15%</h3>
+                    <p className="text-sm text-muted-foreground">Select 2 services for 10% off, or 3+ for 15% off</p>
                   </div>
                   {selectedServices.length > 0 && (
                     <Badge className="ml-auto bg-copper text-white">
@@ -335,7 +464,7 @@ const QuickServices = () => {
                     <span className="font-semibold">Your Bundle</span>
                     {bundleCalculation.hasDiscount && (
                       <Badge className="bg-emerald-500 text-white text-xs">
-                        10% OFF
+                        {Math.round(bundleCalculation.discountPercent * 100)}% OFF
                       </Badge>
                     )}
                   </div>
@@ -368,7 +497,7 @@ const QuickServices = () => {
                   <div className="space-y-0.5">
                     {bundleCalculation.hasDiscount ? (
                       <>
-                        <div className="text-sm text-white/60">
+                        <div className="text-sm text-ivory/60">
                           <span className="line-through">${bundleCalculation.subtotal}</span>
                           <span className="ml-2 text-emerald-400">-${bundleCalculation.discount.toFixed(0)}</span>
                         </div>
@@ -376,7 +505,7 @@ const QuickServices = () => {
                       </>
                     ) : (
                       <>
-                        <div className="text-sm text-white/60">Add 1 more for 10% off</div>
+                        <div className="text-sm text-ivory/60">Add 1 more for 10% off</div>
                         <div className="text-2xl font-bold">${bundleCalculation.subtotal}</div>
                       </>
                     )}
