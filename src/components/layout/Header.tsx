@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download, ListTree, Home, ChevronDown } from "lucide-react";
+import { Menu, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download, ListTree, Home, ChevronDown } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,9 +10,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import logoIcon from "/logo-icon.png";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const services = [
@@ -525,23 +526,18 @@ const Header = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-3 -mr-2 text-foreground rounded-lg hover:bg-cream-warm transition-colors active:scale-95 touch-manipulation"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isOpen}
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div 
-          className="lg:hidden border-t border-border bg-background backdrop-blur-xl fixed inset-x-0 top-16 sm:top-20 bottom-0 z-50 overflow-y-auto momentum-scroll"
-        >
-            <nav className="container py-4 px-4 space-y-1 pb-24">
+        {/* Mobile Menu */}
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
+            <button
+              className="lg:hidden p-3 -mr-2 text-foreground rounded-lg hover:bg-cream-warm transition-colors active:scale-95 touch-manipulation"
+              aria-label="Toggle menu"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-full sm:w-[400px] p-0 overflow-y-auto">
+            <nav className="py-4 px-4 space-y-1 pb-24 pt-12">
               {/* Quick Access Section */}
               <div className="grid grid-cols-2 gap-2 mb-4 pb-4 border-b border-border">
                 {services.slice(0, 4).map((service) => (
@@ -752,8 +748,9 @@ const Header = () => {
                 </Button>
               </div>
             </nav>
-        </div>
-      )}
+          </SheetContent>
+        </Sheet>
+      </div>
     </header>
   );
 };
