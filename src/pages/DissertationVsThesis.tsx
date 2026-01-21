@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, AggregateRatingSchema, FAQSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema, FAQSchema, DefinedTermSetSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -247,6 +247,20 @@ const DissertationVsThesis = () => {
         reviewCount={2654}
         itemName="Dissertation vs Thesis Guide"
         itemType="EducationalOrganization"
+      />
+      <DefinedTermSetSchema
+        name="Academic Degree Terminology Glossary"
+        description="Comprehensive definitions of dissertation, thesis, and related academic degree terminology with regional variations."
+        url="/dissertation-vs-thesis"
+        terms={[
+          { term: "Dissertation", definition: "A substantial written document presenting original research, typically required for doctoral degrees (PhD, EdD, DBA). In the UK/Europe, refers specifically to PhD-level work; in the US, the term is used more broadly.", relatedTerms: ["PhD", "Doctoral Research", "Original Contribution"] },
+          { term: "Thesis", definition: "A research document demonstrating mastery of a subject, typically required for Master's degrees. In the UK/Europe, refers to Master's-level work; in the US, may refer to either Master's or doctoral work.", relatedTerms: ["Master's Degree", "Research Project", "Graduate Work"] },
+          { term: "Viva Voce", definition: "An oral examination where doctoral candidates defend their dissertation before a panel of experts. Common terminology in UK, Europe, and Australia. Also known as a 'thesis defense' in North America.", relatedTerms: ["Defense", "Oral Examination", "PhD Defense"] },
+          { term: "ABD (All But Dissertation)", definition: "A status indicating a doctoral student has completed all program requirements except the dissertation. Common in US academic contexts.", relatedTerms: ["Doctoral Candidate", "PhD Candidate", "Dissertation Stage"] },
+          { term: "Original Contribution", definition: "New knowledge, methodology, or theoretical framework that advances the field. Required for doctoral work; Master's theses typically apply existing knowledge.", relatedTerms: ["Research Contribution", "Novel Research", "Academic Innovation"] },
+          { term: "Literature Review", definition: "A comprehensive survey and synthesis of existing research on a topic. A required chapter in both theses and dissertations, establishing the research context and gap.", relatedTerms: ["Research Survey", "State of the Art", "Research Gap"] }
+        ]}
+        inDefinedTermSet="Academic Research Terminology"
       />
       <FAQSchema faqs={faqs} />
 

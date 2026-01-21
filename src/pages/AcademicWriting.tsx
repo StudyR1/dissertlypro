@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, AggregateRatingSchema, HowToSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema, HowToSchema, DefinedTermSetSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -191,6 +191,20 @@ const AcademicWriting = () => {
         description="A comprehensive guide to developing excellent thesis-level writing skills"
         steps={howToSteps}
         totalTime="P2M"
+      />
+      <DefinedTermSetSchema
+        name="Academic Writing Terminology Glossary"
+        description="Key terms and concepts for thesis-level academic writing including paragraph structure, argumentation, and scholarly voice."
+        url="/academic-writing"
+        terms={[
+          { term: "TEAT Structure", definition: "Topic-Evidence-Analysis-Transition: A paragraph structure framework where each paragraph opens with a topic sentence, provides evidence, offers analysis, and transitions to the next idea.", relatedTerms: ["Paragraph Structure", "Academic Paragraphs", "Writing Framework"] },
+          { term: "Hedging Language", definition: "Academic writing technique using qualifying words (may, suggests, appears to) to express appropriate uncertainty and avoid overclaiming. Essential for scholarly credibility.", relatedTerms: ["Academic Tone", "Qualifying Statements", "Scholarly Voice"] },
+          { term: "Topic Sentence", definition: "The opening sentence of a paragraph that states the main claim or point. Should be clear, specific, and connect to the thesis argument.", relatedTerms: ["Paragraph Opening", "Main Claim", "Thesis Support"] },
+          { term: "Signposting", definition: "Explicit language that guides readers through an argument (e.g., 'First...', 'In contrast...', 'This section examines...'). Improves readability and argument clarity.", relatedTerms: ["Transitions", "Reader Guidance", "Discourse Markers"] },
+          { term: "Synthesis", definition: "Combining multiple sources to create new understanding, rather than simply summarizing each source separately. Critical for literature reviews and theoretical frameworks.", relatedTerms: ["Source Integration", "Critical Analysis", "Literature Synthesis"] },
+          { term: "Academic Voice", definition: "The formal, objective, and authoritative tone expected in scholarly writing. Balances confidence with appropriate hedging and maintains third-person perspective.", relatedTerms: ["Scholarly Tone", "Formal Register", "Academic Style"] }
+        ]}
+        inDefinedTermSet="Academic Writing Terminology"
       />
 
       {/* Hero Section */}
