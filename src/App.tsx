@@ -96,6 +96,7 @@ const LiteratureSearchPage = lazy(() => import("./pages/tools/LiteratureSearchPa
 const PRISMAFlowPage = lazy(() => import("./pages/tools/PRISMAFlowPage"));
 const ReferenceManagerPage = lazy(() => import("./pages/tools/ReferenceManagerPage"));
 const GlossaryQuizPage = lazy(() => import("./pages/tools/GlossaryQuizPage"));
+const GlossaryFlashcardsPage = lazy(() => import("./pages/tools/GlossaryFlashcardsPage"));
 const AIAcademiaHub = lazy(() => import("./pages/AIAcademiaHub"));
 const AIPolicyCheckerPage = lazy(() => import("./pages/tools/AIPolicyCheckerPage"));
 const AIDetectionGuide = lazy(() => import("./pages/AIDetectionGuide"));
@@ -252,6 +253,7 @@ const AppRoutes = () => {
         <Route path="/tools/prisma-flow" element={<Suspense fallback={<ToolPageSkeleton />}><PRISMAFlowPage /></Suspense>} />
         <Route path="/tools/reference-manager" element={<Suspense fallback={<ToolPageSkeleton />}><ReferenceManagerPage /></Suspense>} />
         <Route path="/tools/glossary-quiz" element={<Suspense fallback={<ToolPageSkeleton />}><GlossaryQuizPage /></Suspense>} />
+        <Route path="/tools/glossary-flashcards" element={<Suspense fallback={<ToolPageSkeleton />}><GlossaryFlashcardsPage /></Suspense>} />
         
         {/* AI Academia Hub */}
         <Route path="/ai-academia" element={<Suspense fallback={<ServicesGridSkeleton />}><AIAcademiaHub /></Suspense>} />
