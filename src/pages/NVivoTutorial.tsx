@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema, VideoObjectSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema, VideoObjectSchema, CourseSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -188,6 +188,24 @@ const NVivoTutorial = () => {
           { name: "Visualization & Reporting", startOffset: 16200, endOffset: 19800 },
           { name: "Team Collaboration & Quality", startOffset: 19800, endOffset: 23400 }
         ]}
+      />
+      <CourseSchema
+        name="NVivo Tutorial for Qualitative Research"
+        description="Complete NVivo tutorial for dissertation and thesis research. Learn qualitative data analysis, coding techniques, queries, and visualization for academic research."
+        url="/nvivo-tutorial"
+        image="https://dissertlypro.com/og-images/og-tools.jpg"
+        courseMode="online"
+        educationalLevel="Graduate"
+        isAccessibleForFree={true}
+        syllabusSections={[
+          { name: "Project Setup & Data Import", description: "Creating projects, importing transcripts, audio, video, and managing sources", duration: "PT45M" },
+          { name: "Coding Fundamentals", description: "Creating nodes, in-vivo coding, descriptive and interpretive coding techniques", duration: "PT60M" },
+          { name: "Advanced Coding & Organization", description: "Building node hierarchies, cases, classifications, and auto-coding", duration: "PT75M" },
+          { name: "Queries & Analysis", description: "Text search, word frequency, matrix coding, and compound queries", duration: "PT90M" },
+          { name: "Visualization & Reporting", description: "Word clouds, hierarchy charts, project maps, and export options", duration: "PT60M" },
+          { name: "Team Collaboration & Quality", description: "Inter-coder reliability, merging projects, memos, and audit trails", duration: "PT45M" }
+        ]}
+        aggregateRating={{ ratingValue: 4.9, reviewCount: 1847 }}
       />
 
       {/* Hero Section */}

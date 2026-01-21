@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema, VideoObjectSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema, VideoObjectSchema, CourseSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -357,6 +357,23 @@ FREQUENCIES VARIABLES=gender marital_status
           { name: "Regression Analysis", startOffset: 11700, endOffset: 18900 },
           { name: "Advanced Techniques", startOffset: 18900, endOffset: 27000 }
         ]}
+      />
+      <CourseSchema
+        name="SPSS Tutorial for Dissertation Data Analysis"
+        description="Complete SPSS tutorial for dissertation and thesis research. Learn statistical analysis, data preparation, inferential tests, regression, and APA-style reporting."
+        url="/spss-tutorial"
+        image="https://dissertlypro.com/og-images/og-tools.jpg"
+        courseMode="online"
+        educationalLevel="Graduate"
+        isAccessibleForFree={true}
+        syllabusSections={[
+          { name: "Data Entry & Preparation", description: "Creating datasets, variable types, value labels, data cleaning and outlier detection", duration: "PT45M" },
+          { name: "Descriptive Statistics", description: "Frequencies, central tendency, dispersion, summary tables, and normality testing", duration: "PT60M" },
+          { name: "Inferential Statistics", description: "T-tests, ANOVA, chi-square, and correlation analysis", duration: "PT90M" },
+          { name: "Regression Analysis", description: "Linear, multiple, and hierarchical regression with assumption checking", duration: "PT120M" },
+          { name: "Advanced Techniques", description: "Factor analysis, reliability, mediation, moderation, and non-parametric tests", duration: "PT90M" }
+        ]}
+        aggregateRating={{ ratingValue: 4.9, reviewCount: 2847 }}
       />
 
       {/* Hero Section */}
