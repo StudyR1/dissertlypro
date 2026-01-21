@@ -6,6 +6,7 @@ import Footer from "./Footer";
 const FloatingCTA = lazy(() => import("@/components/cro/FloatingCTA"));
 const FloatingWhatsApp = lazy(() => import("@/components/cro/FloatingWhatsApp"));
 const MobileCTA = lazy(() => import("./MobileCTA"));
+const CookieConsent = lazy(() => import("@/components/cro/CookieConsent"));
 
 // Lazy load feature components
 const NightOwlTheme = lazy(() => import("@/components/features/NightOwlTheme"));
@@ -36,6 +37,11 @@ const Layout = memo(({ children }: LayoutProps) => {
       {/* Mobile CTA Bar */}
       <Suspense fallback={null}>
         <MobileCTA />
+      </Suspense>
+      
+      {/* Cookie Consent Banner */}
+      <Suspense fallback={null}>
+        <CookieConsent />
       </Suspense>
     </div>
   );
