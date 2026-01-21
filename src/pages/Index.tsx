@@ -340,7 +340,7 @@ const Index = () => {
                     </div>
                     <div className="text-right">
                       <div className="text-sm font-medium text-white/70 flex items-center gap-1.5">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/70" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-success/70" />
                         234 online
                       </div>
                       <div className="text-xs text-white/40">Active researchers</div>

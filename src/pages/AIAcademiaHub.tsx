@@ -289,8 +289,8 @@ const AIAcademiaHub = () => {
               />
               <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-xl shadow-lg border">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-green-500" />
+                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 text-success" />
                   </div>
                   <div>
                     <div className="font-semibold">Ethical AI Use</div>
@@ -555,15 +555,15 @@ const AIAcademiaHub = () => {
                 <Card className="overflow-hidden">
                   <div className="flex flex-col md:flex-row">
                     <div className={`w-full md:w-48 p-6 flex items-center justify-center ${
-                      category.status === "generally-allowed" ? "bg-green-500/10" :
-                      category.status === "allowed-with-disclosure" ? "bg-yellow-500/10" :
-                      category.status === "restricted" ? "bg-orange-500/10" : "bg-red-500/10"
+                      category.status === "generally-allowed" ? "bg-success/10" :
+                      category.status === "allowed-with-disclosure" ? "bg-warning/10" :
+                      category.status === "restricted" ? "bg-caution/10" : "bg-destructive/10"
                     }`}>
                       <div className="text-center">
-                        {category.status === "generally-allowed" && <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2" />}
-                        {category.status === "allowed-with-disclosure" && <AlertTriangle className="w-8 h-8 text-yellow-500 mx-auto mb-2" />}
-                        {category.status === "restricted" && <AlertTriangle className="w-8 h-8 text-orange-500 mx-auto mb-2" />}
-                        {category.status === "prohibited" && <XCircle className="w-8 h-8 text-red-500 mx-auto mb-2" />}
+                        {category.status === "generally-allowed" && <CheckCircle className="w-8 h-8 text-success mx-auto mb-2" />}
+                        {category.status === "allowed-with-disclosure" && <AlertTriangle className="w-8 h-8 text-warning mx-auto mb-2" />}
+                        {category.status === "restricted" && <AlertTriangle className="w-8 h-8 text-caution mx-auto mb-2" />}
+                        {category.status === "prohibited" && <XCircle className="w-8 h-8 text-destructive mx-auto mb-2" />}
                         <Badge variant={
                           category.status === "generally-allowed" ? "default" :
                           category.status === "allowed-with-disclosure" ? "secondary" :

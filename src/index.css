@@ -83,6 +83,12 @@
     
     --success: 160 45% 40%;
     --success-foreground: 0 0% 100%;
+    
+    /* Status Colors - Semantic tokens for accessibility */
+    --warning: 45 85% 50%;
+    --warning-foreground: 220 25% 18%;
+    --caution: 25 75% 50%;
+    --caution-foreground: 0 0% 100%;
 
     /* Ivory - High contrast text on dark backgrounds */
     --ivory: 40 30% 95%;
