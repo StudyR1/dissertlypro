@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { getOGImageForPath, OGImageCategory, getOGImageByCategory } from '@/lib/ogImages';
 
 interface SEOProps {
   title: string;
@@ -6,6 +7,7 @@ interface SEOProps {
   canonical?: string;
   type?: 'website' | 'article';
   image?: string;
+  ogCategory?: OGImageCategory;
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
@@ -24,7 +26,8 @@ const SEO = ({
   description,
   canonical,
   type = 'website',
-  image = DEFAULT_IMAGE,
+  image,
+  ogCategory,
   publishedTime,
   modifiedTime,
   author,
@@ -38,7 +41,16 @@ const SEO = ({
     : `${title} | ${SITE_NAME}`;
   
   const fullUrl = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
-  const fullImage = image.startsWith('http') ? image : `${SITE_URL}${image}`;
+  
+  // Determine OG image: explicit image > category-based > path-based > default
+  const resolvedImage = image 
+    ? image 
+    : ogCategory 
+      ? getOGImageByCategory(ogCategory)
+      : canonical 
+        ? getOGImageForPath(canonical)
+        : DEFAULT_IMAGE;
+  const fullImage = resolvedImage.startsWith('http') ? resolvedImage : `${SITE_URL}${resolvedImage}`;
 
   const defaultKeywords = [
     'dissertation help',
