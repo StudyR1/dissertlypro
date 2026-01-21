@@ -537,15 +537,10 @@ const Header = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden border-t border-border bg-background/98 backdrop-blur-xl fixed inset-x-0 top-16 sm:top-20 bottom-0 z-50 overflow-y-auto momentum-scroll"
-          >
+      {isOpen && (
+        <div 
+          className="lg:hidden border-t border-border bg-background backdrop-blur-xl fixed inset-x-0 top-16 sm:top-20 bottom-0 z-50 overflow-y-auto momentum-scroll"
+        >
             <nav className="container py-4 px-4 space-y-1 pb-24">
               {/* Quick Access Section */}
               <div className="grid grid-cols-2 gap-2 mb-4 pb-4 border-b border-border">
@@ -757,9 +752,8 @@ const Header = () => {
                 </Button>
               </div>
             </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
     </header>
   );
 };
