@@ -40,7 +40,7 @@ import {
 } from "@/components/schemas";
 import SpeakableSchema from "@/components/schemas/SpeakableSchema";
 import { homepageFAQs } from "@/data/serviceFAQs";
-import { AnimatedCounter, TrustBadges, TrustStrip } from "@/components/cro";
+import { AnimatedCounter, TrustBadges, TrustStrip, GuaranteeBadge, PaymentLogos } from "@/components/cro";
 import { LiveResearchPulse, TermOfTheDay } from "@/components/features";
 import { TLDRBlock, KeyTakeaways } from "@/components/ui/QuickAnswer";
 
@@ -261,6 +261,11 @@ const Index = () => {
                     <span className="text-xs bg-copper/20 px-2 py-0.5 rounded-full group-hover:bg-copper/30 transition-colors">From $15</span>
                   </Link>
                 </Button>
+              </div>
+              
+              {/* Guarantee Badge */}
+              <div className="mt-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+                <GuaranteeBadge variant="hero" />
               </div>
 
               {/* Trust Indicators */}
@@ -747,6 +752,9 @@ const Index = () => {
                 </Button>
               </div>
               <TrustStrip className="mt-6 sm:mt-8" />
+              <div className="mt-4 flex justify-center">
+                <PaymentLogos variant="compact" />
+              </div>
             </div>
           </div>
         </div>

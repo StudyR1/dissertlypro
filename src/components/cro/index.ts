@@ -5,3 +5,6 @@ export { default as FloatingWhatsApp } from './FloatingWhatsApp';
 export { default as SocialProofNotification } from './SocialProofNotification';
 export { default as TrustBadges, TrustStrip } from './TrustBadges';
 export { default as UrgencyBanner } from './UrgencyBanner';
+export { default as CookieConsent } from './CookieConsent';
+export { default as GuaranteeBadge } from './GuaranteeBadge';
+export { default as PaymentLogos } from './PaymentLogos';

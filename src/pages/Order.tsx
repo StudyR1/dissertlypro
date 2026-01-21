@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { GuaranteeBadge, PaymentLogos } from "@/components/cro";
 import { 
   FileText, 
   GraduationCap, 
@@ -965,18 +966,27 @@ const Order = () => {
             </AnimatePresence>
 
             {/* Trust Indicators */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-copper" />
-                <span>256-bit SSL Encryption</span>
+            <div className="mt-8 space-y-6">
+              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Shield className="h-4 w-4 text-copper" />
+                  <span>256-bit SSL Encryption</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-copper" />
+                  <span>100% Satisfaction Guarantee</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-copper" />
+                  <span>24-Hour Response</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-copper" />
-                <span>100% Satisfaction Guarantee</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-copper" />
-                <span>24-Hour Response</span>
+              
+              {/* Guarantee Badge & Payment Logos */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <GuaranteeBadge variant="compact" />
+                <div className="h-8 w-px bg-border hidden sm:block" />
+                <PaymentLogos variant="compact" showLabel={false} />
               </div>
             </div>
           </div>
