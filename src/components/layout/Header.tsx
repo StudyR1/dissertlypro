@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download, ListTree, Home, ChevronDown } from "lucide-react";
+import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download, ListTree, Home, ChevronDown } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -537,109 +537,163 @@ const Header = () => {
             </button>
           </SheetTrigger>
           <SheetContent side="right" className="w-full sm:w-[400px] p-0 overflow-y-auto">
-            <nav className="py-4 px-4 space-y-1 pb-24 pt-12">
+            {/* Header with close button */}
+            <div className="flex items-center justify-between p-4 border-b border-border">
+              <Link to="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                <img src={logoIcon} alt="DissertlyPro" className="h-8 w-8 rounded-lg" />
+                <span className="font-serif font-bold text-foreground">DissertlyPro</span>
+              </Link>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-2 rounded-lg hover:bg-cream-warm transition-colors active:scale-95"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5 text-muted-foreground" />
+              </button>
+            </div>
+            
+            <nav className="py-4 px-4 space-y-1 pb-24">
               {/* Quick Access Section */}
-              <div className="grid grid-cols-2 gap-2 mb-4 pb-4 border-b border-border">
-                {services.slice(0, 4).map((service) => (
-                  <Link
+              <motion.div 
+                className="grid grid-cols-2 gap-2 mb-4 pb-4 border-b border-border"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {},
+                  visible: { transition: { staggerChildren: 0.05 } }
+                }}
+              >
+                {services.slice(0, 4).map((service, index) => (
+                  <motion.div
                     key={service.title}
-                    to={service.href}
-                    className="flex items-center gap-2 p-3 rounded-xl bg-cream-warm/50 text-sm font-medium text-foreground active:scale-[0.98] touch-manipulation"
-                    onClick={() => setIsOpen(false)}
+                    variants={{
+                      hidden: { opacity: 0, x: 20 },
+                      visible: { opacity: 1, x: 0, transition: { duration: 0.3 } }
+                    }}
                   >
-                    <service.icon className="h-4 w-4 text-copper" />
-                    <span className="truncate">{service.title.split(' ')[0]}</span>
-                  </Link>
-                ))}
-              </div>
-              
-              {navLinks.filter(link => link.href !== "#").map((link) => {
-                const hasDropdown = link.hasDropdown;
-                
-                if (hasDropdown) {
-                  return (
-                    <Collapsible 
-                      key={link.title}
-                      open={openMobileSection === link.title}
-                      onOpenChange={(open) => setOpenMobileSection(open ? link.title : null)}
+                    <Link
+                      to={service.href}
+                      className="flex items-center gap-2 p-3 rounded-xl bg-cream-warm/50 text-sm font-medium text-foreground active:scale-[0.98] touch-manipulation"
+                      onClick={() => setIsOpen(false)}
                     >
-                      <CollapsibleTrigger className="flex items-center justify-between w-full py-4 px-4 text-base font-medium font-sans rounded-xl transition-all active:scale-[0.98] touch-manipulation text-muted-foreground hover:bg-cream-warm hover:text-foreground">
-                        <span>{link.title}</span>
-                        <ChevronDown className={cn(
-                          "h-5 w-5 transition-transform duration-200",
-                          openMobileSection === link.title && "rotate-180"
-                        )} />
-                      </CollapsibleTrigger>
-                      <CollapsibleContent className="pl-4 space-y-1 bg-background">
-                        {/* Main link to section */}
-                        <Link
-                          to={link.href}
-                          className="flex items-center gap-3 py-3 px-4 text-sm font-medium font-sans text-copper rounded-xl hover:bg-cream-warm active:bg-cream-warm touch-manipulation"
-                          onClick={() => setIsOpen(false)}
+                      <service.icon className="h-4 w-4 text-copper" />
+                      <span className="truncate">{service.title.split(' ')[0]}</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </motion.div>
+              
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {},
+                  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } }
+                }}
+                className="space-y-1"
+              >
+                {navLinks.filter(link => link.href !== "#").map((link, index) => {
+                  const hasDropdown = link.hasDropdown;
+                  
+                  if (hasDropdown) {
+                    return (
+                      <motion.div
+                        key={link.title}
+                        variants={{
+                          hidden: { opacity: 0, x: 20 },
+                          visible: { opacity: 1, x: 0, transition: { duration: 0.3 } }
+                        }}
+                      >
+                        <Collapsible 
+                          open={openMobileSection === link.title}
+                          onOpenChange={(open) => setOpenMobileSection(open ? link.title : null)}
                         >
-                          View All {link.title} →
-                        </Link>
-                        {/* Sub-items based on dropdown type */}
-                        {hasDropdown === "services" && services.map((item) => (
-                          <Link
-                            key={item.title}
-                            to={item.href}
-                            className="flex items-center gap-3 py-3 px-4 text-sm font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <item.icon className="h-4 w-4 text-copper/70" />
-                            {item.title}
-                          </Link>
-                        ))}
-                        {hasDropdown === "resources" && (
-                          <>
-                            <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 pt-2 pb-1">Technical Deep-Dives</p>
-                            {technicalDeepDives.slice(0, 6).map((item) => (
+                          <CollapsibleTrigger className="flex items-center justify-between w-full py-4 px-4 text-base font-medium font-sans rounded-xl transition-all active:scale-[0.98] touch-manipulation text-muted-foreground hover:bg-cream-warm hover:text-foreground">
+                            <span>{link.title}</span>
+                            <ChevronDown className={cn(
+                              "h-5 w-5 transition-transform duration-200",
+                              openMobileSection === link.title && "rotate-180"
+                            )} />
+                          </CollapsibleTrigger>
+                          <CollapsibleContent className="pl-4 space-y-1 bg-background">
+                            {/* Main link to section */}
+                            <Link
+                              to={link.href}
+                              className="flex items-center gap-3 py-3 px-4 text-sm font-medium font-sans text-copper rounded-xl hover:bg-cream-warm active:bg-cream-warm touch-manipulation"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              View All {link.title} →
+                            </Link>
+                            {/* Sub-items based on dropdown type */}
+                            {hasDropdown === "services" && services.map((item) => (
                               <Link
                                 key={item.title}
                                 to={item.href}
-                                className="flex items-center gap-3 py-2.5 px-4 text-sm font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
+                                className="flex items-center gap-3 py-3 px-4 text-sm font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
                                 onClick={() => setIsOpen(false)}
                               >
                                 <item.icon className="h-4 w-4 text-copper/70" />
                                 {item.title}
-                                {item.isNew && <span className="text-[10px] bg-copper/10 text-copper px-1.5 py-0.5 rounded-full">New</span>}
                               </Link>
                             ))}
-                          </>
+                            {hasDropdown === "resources" && (
+                              <>
+                                <p className="text-xs text-muted-foreground uppercase tracking-wider px-4 pt-2 pb-1">Technical Deep-Dives</p>
+                                {technicalDeepDives.slice(0, 6).map((item) => (
+                                  <Link
+                                    key={item.title}
+                                    to={item.href}
+                                    className="flex items-center gap-3 py-2.5 px-4 text-sm font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
+                                    onClick={() => setIsOpen(false)}
+                                  >
+                                    <item.icon className="h-4 w-4 text-copper/70" />
+                                    {item.title}
+                                    {item.isNew && <span className="text-[10px] bg-copper/10 text-copper px-1.5 py-0.5 rounded-full">New</span>}
+                                  </Link>
+                                ))}
+                              </>
+                            )}
+                            {hasDropdown === "about" && aboutLinks.map((item) => (
+                              <Link
+                                key={item.title}
+                                to={item.href}
+                                className="flex items-center gap-3 py-3 px-4 text-sm font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <item.icon className="h-4 w-4 text-copper/70" />
+                                {item.title}
+                              </Link>
+                            ))}
+                          </CollapsibleContent>
+                        </Collapsible>
+                      </motion.div>
+                    );
+                  }
+                  
+                  return (
+                    <motion.div
+                      key={link.title}
+                      variants={{
+                        hidden: { opacity: 0, x: 20 },
+                        visible: { opacity: 1, x: 0, transition: { duration: 0.3 } }
+                      }}
+                    >
+                      <Link
+                        to={link.href}
+                        className={cn(
+                          "flex items-center py-4 px-4 text-base font-medium font-sans rounded-xl transition-all active:scale-[0.98] touch-manipulation",
+                          location.pathname === link.href
+                            ? "bg-cream-warm text-copper"
+                            : "text-muted-foreground hover:bg-cream-warm hover:text-foreground active:bg-cream-warm"
                         )}
-                        {hasDropdown === "about" && aboutLinks.map((item) => (
-                          <Link
-                            key={item.title}
-                            to={item.href}
-                            className="flex items-center gap-3 py-3 px-4 text-sm font-medium font-sans text-muted-foreground rounded-xl hover:bg-cream-warm hover:text-foreground active:bg-cream-warm touch-manipulation"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <item.icon className="h-4 w-4 text-copper/70" />
-                            {item.title}
-                          </Link>
-                        ))}
-                      </CollapsibleContent>
-                    </Collapsible>
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.title}
+                      </Link>
+                    </motion.div>
                   );
-                }
-                
-                return (
-                  <Link
-                    key={link.title}
-                    to={link.href}
-                    className={cn(
-                      "flex items-center py-4 px-4 text-base font-medium font-sans rounded-xl transition-all active:scale-[0.98] touch-manipulation",
-                      location.pathname === link.href
-                        ? "bg-cream-warm text-copper"
-                        : "text-muted-foreground hover:bg-cream-warm hover:text-foreground active:bg-cream-warm"
-                    )}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.title}
-                  </Link>
-                );
-              })}
+                })}
+              </motion.div>
               
               {/* Technical Deep-Dives Section on Mobile */}
               <div className="pt-2 mt-2 border-t border-border">
