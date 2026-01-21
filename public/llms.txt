@@ -352,6 +352,30 @@ A: Yes. Bibliography Creation ($40) creates properly formatted reference lists f
 ### Q: What's the turnaround for Quick Services?
 A: Most Quick Services are delivered within 24-72 hours depending on the task. Express Proofreading and AI Detection Reports are typically 24-48 hours. Larger tasks like Conclusion Polish may take 48-72 hours.
 
+### Q: Can I use AI tools like ChatGPT in my dissertation?
+A: It depends on your university's policy. Many institutions now allow AI for brainstorming, editing, or research support but prohibit AI-generated content. Always check your institution's guidelines first. Use our free policy checker: https://dissertlypro.com/tools/ai-policy-checker
+
+### Q: How do AI detection tools work?
+A: AI detectors (GPTZero, Turnitin AI, Originality.ai) analyze text patterns like perplexity, burstiness, and sentence uniformity. They're not 100% accurate—false positives occur with non-native speakers and technical writing. Learn more: https://dissertlypro.com/ai-detection-guide
+
+### Q: How do I cite ChatGPT or AI tools in my dissertation?
+A: APA 7th: OpenAI. (2024). ChatGPT (Mar 14 version) [Large language model]. MLA 9th: "Prompt text" ChatGPT, 14 Mar. 2024, chat.openai.com. Include the prompt, date, and version. Full citation guide: https://dissertlypro.com/citing-ai
+
+### Q: What is the CLEAR Framework for AI use?
+A: CLEAR is an ethical framework: Consult your institution's policy, Limit AI to appropriate tasks, Edit and verify all outputs, Attribute AI contributions properly, Retain human authorship. Learn more: https://dissertlypro.com/ai-academia
+
+### Q: Can AI help with literature reviews?
+A: Yes, ethically. AI tools like Elicit and Semantic Scholar help with search queries and paper summaries. ChatGPT can assist with synthesis and gap identification. Always verify sources and maintain academic integrity. Guide: https://dissertlypro.com/ai-literature-review
+
+### Q: Will my dissertation get flagged by AI detection?
+A: AI detectors have limitations and can flag human-written text, especially formal academic writing. Focus on authentic voice, varied sentence structure, and proper citations. Avoid AI-generated content and paraphrase thoroughly. Learn strategies: https://dissertlypro.com/ai-detection-guide
+
+### Q: How do I disclose AI use in my dissertation?
+A: Include a disclosure statement in your methodology or declaration section. State which AI tools were used, for what purpose, and how you verified outputs. Our AI Policy Checker generates templates: https://dissertlypro.com/tools/ai-policy-checker
+
+### Q: What's my university's AI policy?
+A: Use our AI Use Policy Checker with 165+ university-specific policies and 35+ regional defaults. Enter your institution to get specific guidelines and disclosure templates: https://dissertlypro.com/tools/ai-policy-checker
+
 ---
 
 ## Machine-Readable Context
