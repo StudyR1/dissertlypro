@@ -133,6 +133,59 @@ Create professional PRISMA 2020 flow diagrams for systematic reviews and meta-an
 **URL:** https://dissertlypro.com/tools/reference-manager
 Save, organize, tag, and export your dissertation citations. Build your bibliography library with multiple source types (journal articles, books, websites, conference papers, theses). Features include tag organization, search and filter, BibTeX and RIS export, and one-click APA citation copying. References are saved locally in your browser. Free, no sign-up required.
 
+### AI Use Policy Checker
+**URL:** https://dissertlypro.com/tools/ai-policy-checker
+Check your university's AI use policy for dissertations and theses. Database of 165+ university-specific policies and 35+ regional defaults covering Europe, Asia, and global regions. Generates disclosure templates for methodology and declaration sections based on your institution's requirements. Free, no sign-up required.
+
+## Quick Services - Fast Academic Tasks
+
+**Quick Services Hub:** https://dissertlypro.com/quick-services
+
+DissertlyPro Quick Services offers fast, affordable micro-tasks for graduate students with fixed pricing ($15-$75) and 24-72 hour turnarounds.
+
+### Available Quick Services:
+- **Express Proofreading** ($15) - Grammar, spelling, punctuation check for up to 2,000 words
+- **Reference Check** ($25) - Verify and fix all citations and bibliography entries
+- **AI Detection Report** ($20) - Check your work for AI detection flags with detailed report
+- **Abstract Writing** ($35) - Professional 250-word abstract for your dissertation
+- **Executive Summary** ($45) - 500-word executive summary of your research
+- **Formatting Fix** ($30) - Fix APA/MLA/Chicago formatting throughout your document
+- **Turnitin Report** ($25) - Originality check with similarity score and highlighted areas
+- **Bibliography Creation** ($40) - Create properly formatted bibliography from your sources
+- **Outline Review** ($35) - Expert feedback on your dissertation/thesis outline
+- **Conclusion Polish** ($50) - Professional editing of your conclusion chapter
+
+### Bundle Discounts:
+- 2 services: 10% discount
+- 3+ services: 15% discount
+
+## AI in Academia Hub
+
+**AI Academia Hub:** https://dissertlypro.com/ai-academia
+
+Comprehensive resource hub for navigating AI tools in academic research. Covers ethical frameworks, detection avoidance, proper citation, and institutional policies.
+
+### CLEAR Framework for AI Use:
+- **C**onsult your institution's policy
+- **L**imit AI to appropriate tasks
+- **E**dit and verify all outputs
+- **A**ttribute AI contributions properly
+- **R**etain human authorship
+
+### AI in Academia Guides:
+
+#### AI Detection Guide
+**URL:** https://dissertlypro.com/ai-detection-guide
+Understand how AI detection tools work (GPTZero, Turnitin AI, Originality.ai). Learn about false positives, limitations, and how to write authentically to avoid detection flags. Includes practical strategies for human-sounding academic writing.
+
+#### Citing AI in Your Dissertation
+**URL:** https://dissertlypro.com/citing-ai
+Complete guide to properly citing AI tools like ChatGPT, Claude, and Gemini in APA 7th, MLA 9th, Chicago, and Harvard styles. Includes citation examples, in-text citation formats, and reference list entries for AI-generated content.
+
+#### AI for Literature Reviews
+**URL:** https://dissertlypro.com/ai-literature-review
+Learn how to ethically use AI assistants like Elicit, Semantic Scholar, and ChatGPT for literature reviews. Covers search query generation, synthesis support, gap identification, and maintaining academic integrity.
+
 ## Downloadable Templates
 
 ### Free Dissertation & Thesis Templates

@@ -116,8 +116,74 @@
       "description": "Save, organize, tag and export citations. BibTeX and RIS export supported.",
       "applicationCategory": "EducationalApplication",
       "offers": { "@type": "Offer", "price": "0" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AI Use Policy Checker",
+      "url": "https://dissertlypro.com/tools/ai-policy-checker",
+      "description": "Check your university's AI use policy with 165+ institution-specific policies and disclosure templates.",
+      "applicationCategory": "EducationalApplication",
+      "offers": { "@type": "Offer", "price": "0" }
     }
   ],
+  
+  "quickServices": {
+    "@type": "Service",
+    "name": "Quick Services",
+    "url": "https://dissertlypro.com/quick-services",
+    "description": "Fast, affordable micro-tasks for graduate students with fixed pricing ($15-$75) and 24-72 hour turnarounds.",
+    "serviceType": "Academic Quick Tasks",
+    "offers": [
+      { "@type": "Offer", "name": "Express Proofreading", "price": "15", "priceCurrency": "USD", "description": "Grammar, spelling, punctuation check (up to 2,000 words)" },
+      { "@type": "Offer", "name": "Reference Check", "price": "25", "priceCurrency": "USD", "description": "Verify and fix all citations and bibliography" },
+      { "@type": "Offer", "name": "AI Detection Report", "price": "20", "priceCurrency": "USD", "description": "Check for AI detection flags with detailed report" },
+      { "@type": "Offer", "name": "Abstract Writing", "price": "35", "priceCurrency": "USD", "description": "Professional 250-word abstract" },
+      { "@type": "Offer", "name": "Executive Summary", "price": "45", "priceCurrency": "USD", "description": "500-word executive summary" },
+      { "@type": "Offer", "name": "Formatting Fix", "price": "30", "priceCurrency": "USD", "description": "Fix APA/MLA/Chicago formatting" },
+      { "@type": "Offer", "name": "Turnitin Report", "price": "25", "priceCurrency": "USD", "description": "Originality check with similarity score" },
+      { "@type": "Offer", "name": "Bibliography Creation", "price": "40", "priceCurrency": "USD", "description": "Create properly formatted bibliography" },
+      { "@type": "Offer", "name": "Outline Review", "price": "35", "priceCurrency": "USD", "description": "Expert feedback on dissertation outline" },
+      { "@type": "Offer", "name": "Conclusion Polish", "price": "50", "priceCurrency": "USD", "description": "Professional editing of conclusion chapter" }
+    ],
+    "bundleDiscounts": {
+      "twoServices": "10% discount",
+      "threeOrMoreServices": "15% discount"
+    }
+  },
+  
+  "aiAcademiaHub": {
+    "@type": "WebPage",
+    "name": "AI in Academia Hub",
+    "url": "https://dissertlypro.com/ai-academia",
+    "description": "Comprehensive resource hub for navigating AI tools in academic research ethically.",
+    "clearFramework": {
+      "C": "Consult your institution's policy",
+      "L": "Limit AI to appropriate tasks",
+      "E": "Edit and verify all outputs",
+      "A": "Attribute AI contributions properly",
+      "R": "Retain human authorship"
+    },
+    "guides": [
+      {
+        "@type": "Article",
+        "name": "AI Detection Guide",
+        "url": "https://dissertlypro.com/ai-detection-guide",
+        "description": "Understand how AI detection tools work and how to write authentically."
+      },
+      {
+        "@type": "Article",
+        "name": "Citing AI in Your Dissertation",
+        "url": "https://dissertlypro.com/citing-ai",
+        "description": "Properly cite AI tools in APA, MLA, Chicago, and Harvard styles."
+      },
+      {
+        "@type": "Article",
+        "name": "AI for Literature Reviews",
+        "url": "https://dissertlypro.com/ai-literature-review",
+        "description": "Ethically use AI assistants for literature review synthesis and gap identification."
+      }
+    ]
+  },
   
   "frequentlyAskedQuestions": [
     {
