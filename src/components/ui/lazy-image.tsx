@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, memo } from 'react';
 import { cn } from '@/lib/utils';
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -7,19 +7,24 @@ interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   placeholder?: string;
   aspectRatio?: string;
   priority?: boolean;
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
-const LazyImage = ({
+const LazyImage = memo(({
   src,
   alt,
   placeholder,
   aspectRatio,
   priority = false,
+  fetchPriority = 'auto',
   className,
+  width,
+  height,
   ...props
 }: LazyImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
+  const [hasError, setHasError] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
@@ -36,7 +41,7 @@ const LazyImage = ({
         }
       },
       {
-        rootMargin: '50px',
+        rootMargin: '100px', // Load slightly before in view
         threshold: 0.01,
       }
     );
@@ -48,6 +53,11 @@ const LazyImage = ({
     return () => observer.disconnect();
   }, [priority]);
 
+  // Calculate aspect ratio style for CLS prevention
+  const aspectStyle = width && height 
+    ? { aspectRatio: `${width} / ${height}` }
+    : undefined;
+
   return (
     <div
       ref={imgRef}
@@ -56,25 +66,38 @@ const LazyImage = ({
         aspectRatio,
         className
       )}
+      style={aspectStyle}
     >
-      {/* Placeholder blur */}
-      {!isLoaded && (
+      {/* Skeleton placeholder for CLS prevention */}
+      {!isLoaded && !hasError && (
         <div 
-          className="absolute inset-0 animate-pulse bg-gradient-to-r from-muted via-muted-foreground/5 to-muted"
+          className="absolute inset-0 animate-pulse bg-gradient-to-r from-muted via-muted-foreground/10 to-muted"
+          aria-hidden="true"
           style={{
             backgroundSize: '200% 100%',
-            animation: 'shimmer 1.5s infinite',
           }}
         />
       )}
       
-      {isInView && (
+      {/* Error state */}
+      {hasError && (
+        <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground">
+          <span className="text-xs">Image unavailable</span>
+        </div>
+      )}
+      
+      {isInView && !hasError && (
         <img
           src={src}
           alt={alt}
+          width={width}
+          height={height}
           loading={priority ? 'eager' : 'lazy'}
-          decoding="async"
+          decoding={priority ? 'sync' : 'async'}
+          // @ts-ignore - fetchpriority is valid but not in all TS types yet
+          fetchpriority={priority ? 'high' : fetchPriority}
           onLoad={() => setIsLoaded(true)}
+          onError={() => setHasError(true)}
           className={cn(
             'h-full w-full object-cover transition-opacity duration-300',
             isLoaded ? 'opacity-100' : 'opacity-0'
@@ -84,6 +107,8 @@ const LazyImage = ({
       )}
     </div>
   );
-};
+});
+
+LazyImage.displayName = 'LazyImage';
 
 export default LazyImage;
