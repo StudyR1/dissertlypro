@@ -1,7 +1,8 @@
 /**
- * Google Sheets Order Logging Integration
+ * Google Sheets Order Logging Integration with Email Notifications
  * 
- * This utility sends order data to a Google Sheets spreadsheet via Google Apps Script.
+ * This utility sends order data to a Google Sheets spreadsheet via Google Apps Script
+ * AND sends email notifications to your inbox.
  * 
  * SETUP INSTRUCTIONS:
  * 
@@ -13,11 +14,15 @@
  * 
  * 3. Replace the code with:
  * 
+ *    // ⚠️ IMPORTANT: Replace with your email address
+ *    var NOTIFICATION_EMAIL = "your-email@example.com";
+ *    
  *    function doPost(e) {
  *      try {
  *        var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
  *        var data = JSON.parse(e.postData.contents);
  *        
+ *        // Log to spreadsheet
  *        sheet.appendRow([
  *          data.orderNumber,
  *          data.orderType,
@@ -31,12 +36,41 @@
  *          data.status
  *        ]);
  *        
+ *        // Send email notification
+ *        sendOrderNotification(data);
+ *        
  *        return ContentService.createTextOutput(JSON.stringify({ success: true }))
  *          .setMimeType(ContentService.MimeType.JSON);
  *      } catch (error) {
  *        return ContentService.createTextOutput(JSON.stringify({ success: false, error: error.toString() }))
  *          .setMimeType(ContentService.MimeType.JSON);
  *      }
+ *    }
+ *    
+ *    function sendOrderNotification(data) {
+ *      var subject = "🆕 New " + data.orderType + " Order: " + data.orderNumber;
+ *      
+ *      var body = "NEW ORDER RECEIVED\\n";
+ *      body += "========================\\n\\n";
+ *      body += "Order Number: " + data.orderNumber + "\\n";
+ *      body += "Order Type: " + data.orderType + "\\n";
+ *      body += "Date: " + data.orderDate + "\\n\\n";
+ *      body += "CUSTOMER DETAILS\\n";
+ *      body += "----------------\\n";
+ *      body += "Name: " + data.customerName + "\\n";
+ *      body += "Email: " + data.customerEmail + "\\n\\n";
+ *      body += "ORDER DETAILS\\n";
+ *      body += "-------------\\n";
+ *      body += "Services: " + data.services + "\\n";
+ *      body += "Amount: " + data.totalAmount + "\\n";
+ *      body += "Payment ID: " + data.paymentId + "\\n\\n";
+ *      body += "INSTRUCTIONS\\n";
+ *      body += "------------\\n";
+ *      body += data.instructions + "\\n\\n";
+ *      body += "========================\\n";
+ *      body += "View all orders in Google Sheets";
+ *      
+ *      MailApp.sendEmail(NOTIFICATION_EMAIL, subject, body);
  *    }
  * 
  * 4. Click Deploy > New deployment
@@ -45,6 +79,9 @@
  *    - Who has access: Anyone
  * 
  * 5. Copy the Web App URL and paste it below in GOOGLE_SHEETS_WEBHOOK_URL
+ * 
+ * NOTE: When you first deploy, Google will ask you to authorize the script
+ *       to send emails on your behalf. Click "Allow" to enable email notifications.
  */
 
 // Replace with your Google Apps Script Web App URL after setup
