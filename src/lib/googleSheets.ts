@@ -84,8 +84,11 @@
  *       to send emails on your behalf. Click "Allow" to enable email notifications.
  */
 
-// Replace with your Google Apps Script Web App URL after setup
-const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxWOhdXgM3FU9IzxKmc51jKshaB-PrgQTlLSRdql7sOylP0Cgj33APfX1ULogOqFnXGaw/exec";
+// Quick Service orders webhook
+const QUICK_SERVICE_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxWOhdXgM3FU9IzxKmc51jKshaB-PrgQTlLSRdql7sOylP0Cgj33APfX1ULogOqFnXGaw/exec";
+
+// Full orders webhook (separate sheet)
+const FULL_ORDER_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwvgWB5j6Kt0XkiUlz5MSIDBpWQ77FZLHb2-qXpDHNdHbsAgmPcSq83tkcKXByBQuS7/exec";
 
 export interface QuickServiceOrderData {
   orderNumber: string;
@@ -120,7 +123,7 @@ export interface FullOrderData {
  * Log a quick service order to Google Sheets
  */
 export const logQuickServiceOrder = async (order: QuickServiceOrderData): Promise<boolean> => {
-  if (!GOOGLE_SHEETS_WEBHOOK_URL) {
+  if (!QUICK_SERVICE_WEBHOOK_URL) {
     console.warn("Google Sheets webhook URL not configured. Order not logged to spreadsheet.");
     return false;
   }
@@ -139,7 +142,7 @@ export const logQuickServiceOrder = async (order: QuickServiceOrderData): Promis
       status: "Pending",
     };
 
-    await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+    await fetch(QUICK_SERVICE_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       mode: "no-cors", // Required for Google Apps Script
@@ -158,7 +161,7 @@ export const logQuickServiceOrder = async (order: QuickServiceOrderData): Promis
  * Log a full dissertation order to Google Sheets
  */
 export const logFullOrder = async (order: FullOrderData): Promise<boolean> => {
-  if (!GOOGLE_SHEETS_WEBHOOK_URL) {
+  if (!FULL_ORDER_WEBHOOK_URL) {
     console.warn("Google Sheets webhook URL not configured. Order not logged to spreadsheet.");
     return false;
   }
@@ -185,7 +188,7 @@ export const logFullOrder = async (order: FullOrderData): Promise<boolean> => {
       status: "Pending Review",
     };
 
-    await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+    await fetch(FULL_ORDER_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       mode: "no-cors",
@@ -204,5 +207,5 @@ export const logFullOrder = async (order: FullOrderData): Promise<boolean> => {
  * Check if Google Sheets integration is configured
  */
 export const isGoogleSheetsConfigured = (): boolean => {
-  return !!GOOGLE_SHEETS_WEBHOOK_URL;
+  return !!QUICK_SERVICE_WEBHOOK_URL || !!FULL_ORDER_WEBHOOK_URL;
 };
