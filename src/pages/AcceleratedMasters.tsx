@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, AggregateRatingSchema, FAQSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema, FAQSchema, EducationalCredentialSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -216,6 +216,18 @@ const AcceleratedMasters = () => {
         reviewCount={1834}
         itemName="Accelerated Master's Program Guide"
         itemType="EducationalOrganization"
+      />
+      <EducationalCredentialSchema
+        name="Accelerated Master's Degree Program"
+        description="Complete your Master's degree in 12-18 months with intensive study. Strategic planning, time management, and thesis completion strategies for fast-track programs."
+        url="/accelerated-masters"
+        credentialCategory="degree"
+        educationalLevel="Master's Degree"
+        timeToComplete="P12M"
+        occupationalCredentialAwarded="Master of Arts / Master of Science"
+        competencyRequired={["Bachelor's Degree", "Strong Academic Background", "Time Management Skills"]}
+        programPrerequisites={["Bachelor's Degree"]}
+        aggregateRating={{ ratingValue: 4.9, reviewCount: 1834 }}
       />
       <FAQSchema faqs={faqs} />
 
