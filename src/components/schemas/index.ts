@@ -14,3 +14,4 @@ export { default as PersonSchema, expertPersonData } from './PersonSchema';
 export { default as SpeakableSchema } from './SpeakableSchema';
 export { default as LocalBusinessSchema } from './LocalBusinessSchema';
 export { default as FAQToolSchema, toolFAQs } from './FAQToolSchema';
+export { default as VideoObjectSchema } from './VideoObjectSchema';

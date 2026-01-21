@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema, VideoObjectSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -343,6 +343,20 @@ FREQUENCIES VARIABLES=gender marital_status
         reviewCount={2847}
         itemName="SPSS Tutorial for Dissertation Analysis"
         itemType="EducationalOrganization"
+      />
+      <VideoObjectSchema
+        name="SPSS Tutorial: Complete Guide to Dissertation Data Analysis"
+        description="Master SPSS for your dissertation with this comprehensive video tutorial. Step-by-step guides for data entry, statistical tests, regression analysis, interpretation, and APA reporting."
+        thumbnailUrl="https://dissertlypro.com/og-images/og-tools.jpg"
+        uploadDate="2026-01-15"
+        duration="PT7H30M"
+        hasPart={[
+          { name: "Data Entry & Preparation", startOffset: 0, endOffset: 2700 },
+          { name: "Descriptive Statistics", startOffset: 2700, endOffset: 6300 },
+          { name: "Inferential Statistics", startOffset: 6300, endOffset: 11700 },
+          { name: "Regression Analysis", startOffset: 11700, endOffset: 18900 },
+          { name: "Advanced Techniques", startOffset: 18900, endOffset: 27000 }
+        ]}
       />
 
       {/* Hero Section */}

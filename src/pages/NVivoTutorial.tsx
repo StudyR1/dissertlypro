@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema, VideoObjectSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -173,6 +173,21 @@ const NVivoTutorial = () => {
         itemName="NVivo Tutorial for Qualitative Research"
         ratingValue={4.9}
         reviewCount={1847}
+      />
+      <VideoObjectSchema
+        name="NVivo Tutorial: Complete Guide to Qualitative Data Analysis"
+        description="Master NVivo for your dissertation with this comprehensive video tutorial. Learn project setup, coding techniques, queries, visualizations, and best practices for qualitative research analysis."
+        thumbnailUrl="https://dissertlypro.com/og-images/og-tools.jpg"
+        uploadDate="2026-01-15"
+        duration="PT6H30M"
+        hasPart={[
+          { name: "Project Setup & Data Import", startOffset: 0, endOffset: 2700 },
+          { name: "Coding Fundamentals", startOffset: 2700, endOffset: 6300 },
+          { name: "Advanced Coding & Organization", startOffset: 6300, endOffset: 10800 },
+          { name: "Queries & Analysis", startOffset: 10800, endOffset: 16200 },
+          { name: "Visualization & Reporting", startOffset: 16200, endOffset: 19800 },
+          { name: "Team Collaboration & Quality", startOffset: 19800, endOffset: 23400 }
+        ]}
       />
 
       {/* Hero Section */}
