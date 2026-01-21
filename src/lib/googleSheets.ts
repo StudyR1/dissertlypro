@@ -85,7 +85,7 @@
  */
 
 // Replace with your Google Apps Script Web App URL after setup
-const GOOGLE_SHEETS_WEBHOOK_URL = "";
+const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxWOhdXgM3FU9IzxKmc51jKshaB-PrgQTlLSRdql7sOylP0Cgj33APfX1ULogOqFnXGaw/exec";
 
 export interface QuickServiceOrderData {
   orderNumber: string;
