@@ -337,6 +337,54 @@
         "@type": "Answer",
         "text": "APA 7th: OpenAI. (2024). ChatGPT (version) [Large language model]. MLA 9th: 'Prompt' ChatGPT, date, chat.openai.com. Include prompt, date, and version. Full guide at dissertlypro.com/citing-ai."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Quick Services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quick Services are fast, affordable micro-tasks with fixed pricing ($15-$75) and 24-72 hour turnarounds. Includes express proofreading, reference checks, AI detection reports, abstract writing, and more at dissertlypro.com/quick-services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does express proofreading cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Express proofreading is $15 for up to 2,000 words with 24-48 hour turnaround. Order at dissertlypro.com/quick-services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get an AI detection report for my dissertation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our AI Detection Report ($20) analyzes your text using multiple detection tools and provides a detailed report with flagged sections and recommendations at dissertlypro.com/quick-services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer bundle discounts for Quick Services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Order 2 services for 10% off, or 3+ services for 15% off. Popular bundles include Proofreading + Reference Check at dissertlypro.com/quick-services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can you write an abstract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our Abstract Writing service ($35) delivers a professional 250-word abstract within 24-48 hours at dissertlypro.com/quick-services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the turnaround for Quick Services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most Quick Services are delivered within 24-72 hours. Express Proofreading and AI Detection are typically 24-48 hours. Larger tasks like Conclusion Polish may take 48-72 hours."
+      }
     }
   ],
   
