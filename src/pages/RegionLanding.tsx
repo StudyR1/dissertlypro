@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { FAQSchema, BreadcrumbSchema, ProfessionalServiceSchema } from "@/components/schemas";
+import { FAQSchema, BreadcrumbSchema, ProfessionalServiceSchema, GeoTargetingSchema } from "@/components/schemas";
 import { homepageFAQs } from "@/data/serviceFAQs";
 import { regionData, formatPrice, getRegionByCode } from "@/data/regionData";
 import { getUniversitiesByRegion } from "@/data/universityData";
@@ -53,7 +53,9 @@ const RegionLanding = () => {
         description={`Premium dissertation and thesis support for Master's and PhD students in ${name}. Expert guidance from ${stats.experts} PhD-qualified consultants. Prices from ${formatPrice(pricing.chapter, currency)}.`}
         canonical={`/${region}`}
         keywords={[`dissertation help ${name}`, `thesis support ${name}`, `PhD assistance ${name}`, `masters thesis ${name}`]}
+        geoRegion={region as 'us' | 'uk' | 'au' | 'ca'}
       />
+      <GeoTargetingSchema primaryRegion={region as 'us' | 'uk' | 'au' | 'ca'} />
       <FAQSchema faqs={homepageFAQs} />
       <BreadcrumbSchema items={[
         { name: "Home", url: "/" },
@@ -62,6 +64,7 @@ const RegionLanding = () => {
       <ProfessionalServiceSchema 
         serviceName={`DissertlyPro ${name} - Dissertation Support`}
         description={`Premium dissertation and thesis support services for postgraduate students in ${name}.`}
+        regionCode={region as 'us' | 'uk' | 'au' | 'ca'}
       />
 
       {/* Hero Section */}
