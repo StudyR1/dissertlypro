@@ -1,26 +1,23 @@
 import { memo, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, Clock } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MobileCTA = memo(() => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Always visible initially
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleScroll = useCallback(() => {
     const currentScrollY = window.scrollY;
     
-    // Show after scrolling down 300px
+    // Always visible, but change style based on scroll
     if (currentScrollY > 300) {
-      // Hide when scrolling down, show when scrolling up
       if (currentScrollY < lastScrollY || currentScrollY > 500) {
         setIsVisible(true);
-      } else {
-        setIsVisible(false);
       }
     } else {
-      setIsVisible(false);
+      setIsVisible(true);
     }
     
     setLastScrollY(currentScrollY);
@@ -30,6 +27,17 @@ const MobileCTA = memo(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
+
+  const openChat = () => {
+    // Access the global Tawk_API
+    const tawkApi = (window as any).Tawk_API;
+    if (tawkApi?.showWidget) {
+      tawkApi.showWidget();
+    }
+    if (tawkApi?.maximize) {
+      tawkApi.maximize();
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -42,21 +50,21 @@ const MobileCTA = memo(() => {
           className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-t border-border safe-area-bottom"
           style={{ boxShadow: "0 -4px 20px -5px hsl(220 25% 18% / 0.1)" }}
         >
-          <div className="container px-4 py-3 flex items-center gap-2">
+          <div className="container px-3 py-2.5 flex items-center gap-1.5">
             <Button 
               variant="midnight-outline" 
               size="sm" 
-              className="flex-1 h-11 text-sm font-medium touch-manipulation"
+              className="flex-1 h-10 text-xs font-medium touch-manipulation px-2"
               asChild
             >
               <a href="tel:+18126905122">
-                <Phone className="h-4 w-4 mr-1.5" />
+                <Phone className="h-3.5 w-3.5 mr-1" />
                 Call
               </a>
             </Button>
             <Button 
               size="sm" 
-              className="flex-1 h-11 text-sm font-medium touch-manipulation bg-[#25D366] hover:bg-[#20BD5A] text-white"
+              className="flex-1 h-10 text-xs font-medium touch-manipulation px-2 bg-[#25D366] hover:bg-[#20BD5A] text-white"
               asChild
             >
               <a 
@@ -64,28 +72,25 @@ const MobileCTA = memo(() => {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <MessageCircle className="h-4 w-4 mr-1.5" />
+                <MessageCircle className="h-3.5 w-3.5 mr-1" />
                 WhatsApp
               </a>
             </Button>
             <Button 
-              variant="outline" 
               size="sm" 
-              className="flex-1 h-11 text-sm font-medium touch-manipulation border-copper/50 text-copper"
-              asChild
+              onClick={openChat}
+              className="flex-1 h-10 text-xs font-medium touch-manipulation px-2 bg-copper hover:bg-copper-dark text-white"
             >
-              <Link to="/quick-services">
-                <Clock className="h-4 w-4 mr-1.5" />
-                Quick
-              </Link>
+              <MessageCircle className="h-3.5 w-3.5 mr-1" />
+              Chat
             </Button>
             <Button 
               variant="copper" 
               size="sm" 
-              className="flex-1 h-11 text-sm font-medium touch-manipulation"
+              className="flex-1 h-10 text-xs font-medium touch-manipulation px-2"
               asChild
             >
-              <Link to="/consultation">
+              <Link to="/order">
                 Order
               </Link>
             </Button>
