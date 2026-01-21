@@ -15,11 +15,22 @@ interface SEOProps {
   noindex?: boolean;
   articleTags?: string[];
   articleSection?: string;
+  /** Primary region for geo-targeting (us, uk, au, ca, or global) */
+  geoRegion?: 'us' | 'uk' | 'au' | 'ca' | 'global';
 }
 
 const SITE_NAME = 'DissertlyPro';
 const SITE_URL = 'https://dissertlypro.com';
 const DEFAULT_IMAGE = '/og-image.jpg';
+
+// Geo data for regional targeting
+const geoData = {
+  us: { code: 'US', coords: '39.8283, -98.5795', placename: 'United States', lang: 'en-US' },
+  uk: { code: 'GB', coords: '51.5074, -0.1278', placename: 'London, United Kingdom', lang: 'en-GB' },
+  au: { code: 'AU', coords: '-33.8688, 151.2093', placename: 'Sydney, Australia', lang: 'en-AU' },
+  ca: { code: 'CA', coords: '43.6532, -79.3832', placename: 'Toronto, Canada', lang: 'en-CA' },
+  global: { code: 'US', coords: '39.8283, -98.5795', placename: 'Worldwide', lang: 'en' },
+};
 
 const SEO = ({
   title,
@@ -35,7 +46,9 @@ const SEO = ({
   noindex = false,
   articleTags = [],
   articleSection,
+  geoRegion = 'global',
 }: SEOProps) => {
+  const geo = geoData[geoRegion];
   const fullTitle = title === 'Home' 
     ? `${SITE_NAME} - Premium Master's & PhD Dissertation Support`
     : `${title} | ${SITE_NAME}`;
@@ -118,22 +131,29 @@ const SEO = ({
       {/* Default English for all pages */}
       <link rel="alternate" hrefLang="en" href={fullUrl} />
 
-      {/* Geographic targeting meta tags */}
-      <meta name="geo.region" content="US" />
-      <meta name="geo.region" content="GB" />
-      <meta name="geo.region" content="AU" />
-      <meta name="geo.region" content="CA" />
-      <meta name="ICBM" content="51.5074, -0.1278" />
-      <meta name="geo.position" content="51.5074;-0.1278" />
-      <meta name="geo.placename" content="London, United Kingdom" />
+      {/* Dynamic geographic targeting based on geoRegion prop */}
+      <meta name="geo.region" content={geo.code} />
+      <meta name="geo.position" content={geo.coords.replace(', ', ';')} />
+      <meta name="ICBM" content={geo.coords} />
+      <meta name="geo.placename" content={geo.placename} />
+      
+      {/* All target markets */}
+      <meta name="geo.country" content="US" />
+      <meta name="geo.country" content="GB" />
+      <meta name="geo.country" content="AU" />
+      <meta name="geo.country" content="CA" />
+      
+      {/* Dublin Core for academic crawlers */}
+      <meta name="DC.coverage" content={geo.placename} />
+      <meta name="DC.coverage.spatial" content="United States; United Kingdom; Australia; Canada" />
 
       {/* Language and content targeting */}
-      <meta httpEquiv="content-language" content="en" />
+      <meta httpEquiv="content-language" content={geo.lang} />
       <meta name="language" content="English" />
       <meta name="audience" content="Graduate Students, PhD Candidates, Masters Students, Working Professionals" />
-      <meta name="coverage" content="Worldwide" />
+      <meta name="coverage" content="United States, United Kingdom, Australia, Canada" />
       <meta name="distribution" content="Global" />
-      <meta name="target" content="all" />
+      <meta name="target" content="Graduate Students" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
