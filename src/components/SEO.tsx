@@ -67,17 +67,29 @@ const SEO = ({
 
   const allKeywords = [...new Set([...keywords, ...defaultKeywords])];
 
-  // Generate hreflang URLs for international targeting
-  const hreflangRegions = [
-    { lang: 'en-US', region: 'us' },
-    { lang: 'en-GB', region: 'uk' },
-    { lang: 'en-AU', region: 'au' },
-    { lang: 'en-CA', region: 'ca' },
-    { lang: 'en-NZ', region: 'nz' },
-    { lang: 'en-IE', region: 'ie' },
-    { lang: 'en-SG', region: 'sg' },
-    { lang: 'en', region: null }, // Default English (x-default)
+  // Regional landing pages (standalone, not variants of every page)
+  const regionalLandingPages = [
+    { lang: 'en-US', path: '/us' },
+    { lang: 'en-GB', path: '/uk' },
+    { lang: 'en-AU', path: '/au' },
+    { lang: 'en-CA', path: '/ca' },
   ];
+
+  // Check if current page is homepage or a regional landing
+  const isHomepage = !canonical || canonical === '/';
+  const isRegionalPage = canonical && ['/us', '/uk', '/au', '/ca'].includes(canonical);
+  
+  // Determine which hreflang tags to include
+  const getHreflangTags = () => {
+    if (isHomepage || isRegionalPage) {
+      // Homepage and regional pages link to each other
+      return regionalLandingPages;
+    }
+    // Other pages just declare their own language
+    return [];
+  };
+
+  const hreflangTags = getHreflangTags();
 
   return (
     <Helmet>
@@ -90,16 +102,21 @@ const SEO = ({
       <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
       <link rel="canonical" href={fullUrl} />
 
-      {/* Hreflang tags for international SEO - UK, US, Australia, Canada + others */}
-      {hreflangRegions.map(({ lang, region }) => (
+      {/* Hreflang tags - regional landing pages link to each other */}
+      {hreflangTags.map(({ lang, path }) => (
         <link 
           key={lang}
           rel="alternate" 
           hrefLang={lang} 
-          href={region ? `${SITE_URL}/${region}${canonical || ''}` : fullUrl} 
+          href={`${SITE_URL}${path}`} 
         />
       ))}
-      <link rel="alternate" hrefLang="x-default" href={fullUrl} />
+      {/* x-default points to main homepage */}
+      {(isHomepage || isRegionalPage) && (
+        <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
+      )}
+      {/* Default English for all pages */}
+      <link rel="alternate" hrefLang="en" href={fullUrl} />
 
       {/* Geographic targeting meta tags */}
       <meta name="geo.region" content="US" />
