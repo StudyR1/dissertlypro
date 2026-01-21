@@ -105,7 +105,6 @@ const Header = () => {
   const navLinks = [
     { title: "Home", href: "/" },
     { title: "Services", href: "/services", hasDropdown: "services" },
-    { title: "Subjects", href: "/subjects" },
     { title: "Pricing", href: "/pricing" },
     { title: "Resources", href: "/resources", hasDropdown: "resources" },
     { title: "About", href: "/about", hasDropdown: "about" },
@@ -497,14 +496,7 @@ const Header = () => {
 
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center gap-2">
-          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
-            <Link to="/blog">Blog</Link>
-          </Button>
-          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
-            <Link to="/working-professionals">Professionals</Link>
-          </Button>
-          <div className="w-px h-5 bg-border mx-1" />
-          <Button variant="outline" size="sm" className="border-copper/40 text-copper hover:bg-copper/10 hover:text-copper-dark" asChild>
+          <Button variant="outline" size="sm" className="border-copper/40 text-copper hover:bg-copper/10" asChild>
             <Link to="/quick-services" className="flex items-center gap-1.5">
               <Clock className="h-3.5 w-3.5" />
               Quick Tasks
