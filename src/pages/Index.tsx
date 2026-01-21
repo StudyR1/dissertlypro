@@ -254,6 +254,13 @@ const Index = () => {
                     Free Consultation
                   </Link>
                 </Button>
+                <Button variant="outline" size="lg" className="w-full sm:w-auto h-12 sm:h-14 text-base border-copper/40 text-copper-light hover:bg-copper/10 hover:text-white touch-manipulation group" asChild>
+                  <Link to="/quick-services" className="flex items-center gap-2">
+                    <Clock className="h-4 w-4" />
+                    Quick Tasks
+                    <span className="text-xs bg-copper/20 px-2 py-0.5 rounded-full group-hover:bg-copper/30 transition-colors">From $15</span>
+                  </Link>
+                </Button>
               </div>
 
               {/* Trust Indicators */}
