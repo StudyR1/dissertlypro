@@ -17,7 +17,7 @@ const TestWebhook = () => {
       orderNumber: `TEST-${Date.now()}`,
       orderType: "Quick Service",
       customerName: "Test Customer",
-      customerEmail: "test@example.com",
+      customerEmail: "tutorsgallery@gmail.com",
       services: "Express Proofreading, Citation Formatting",
       instructions: "This is a TEST order to verify the webhook and email notifications are working correctly.",
       totalAmount: "$55.00",
