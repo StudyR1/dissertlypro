@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BlogPostSchema, BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { BlogPostSchema, BreadcrumbSchema, FAQSchema, CitationSchema } from "@/components/schemas";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, List, GraduationCap, MapPin } from "lucide-react";
 import AuthorBio from "@/components/blog/AuthorBio";
@@ -85,6 +85,24 @@ const BlogPost = () => {
         authorBio={post.authorBio}
         category={post.category}
         readTime={post.readTime}
+      />
+      <CitationSchema
+        title={post.title}
+        description={post.metaDescription}
+        url={`/blog/${slug}`}
+        datePublished={post.date}
+        author={{
+          name: post.author,
+          credentials: post.authorBio?.includes("PhD") ? "PhD" : post.authorBio?.includes("EdD") ? "EdD" : undefined,
+          affiliation: "DissertlyPro"
+        }}
+        keywords={post.keywords}
+        wordCount={parseInt(post.readTime) * 200}
+        isPartOf={{
+          name: "DissertlyPro Academic Blog",
+          publisher: "DissertlyPro"
+        }}
+        copyrightYear={new Date(post.date).getFullYear()}
       />
       <BreadcrumbSchema items={[
         { name: "Home", url: "/" },

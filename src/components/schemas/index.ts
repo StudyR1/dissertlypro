@@ -18,3 +18,4 @@ export { default as VideoObjectSchema } from './VideoObjectSchema';
 export { default as CourseSchema } from './CourseSchema';
 export { default as LearningResourceSchema } from './LearningResourceSchema';
 export { default as EducationalCredentialSchema } from './EducationalCredentialSchema';
+export { default as CitationSchema } from './CitationSchema';
