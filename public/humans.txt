@@ -1,0 +1,13 @@
+/* TEAM */
+Name: DissertlyPro
+Site: https://dissertlypro.com
+Location: London, United Kingdom
+
+/* SITE */
+Last update: 2025-01-21
+Standards: HTML5, CSS3, ES6+
+Components: React 18, Vite, Tailwind CSS, TypeScript
+Software: Lovable
+
+/* THANKS */
+All the graduate students and PhD candidates who trust us with their academic journey.

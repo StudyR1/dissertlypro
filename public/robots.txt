@@ -1,5 +1,6 @@
 # DissertlyPro Robots.txt
 # https://dissertlypro.com
+# Last Updated: 2025-01-21
 
 # Allow all crawlers
 User-agent: *
@@ -8,9 +9,10 @@ Allow: /
 # Sitemap location
 Sitemap: https://dissertlypro.com/sitemap.xml
 
-# LLM and AI Crawler Information Files
-# For AI systems: See /llms.txt for structured content summary
-# For comprehensive information: See /llms-full.txt for complete details
+# Additional discovery files
+# LLM/AI Context: /llms.txt, /llms-full.txt, /ai-context.json
+# Security: /.well-known/security.txt
+# Humans: /humans.txt
 
 # Google
 User-agent: Googlebot
