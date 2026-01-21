@@ -4,6 +4,7 @@ import { BreadcrumbSchema, HowToSchema, AggregateRatingSchema } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SeeAlso } from "@/components/ui/see-also";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -404,6 +405,9 @@ const CandidacyExams = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/candidacy-exams" />
     </Layout>
   );
 };

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { motion } from "framer-motion";
 import { 
   Shield, 
@@ -514,6 +515,9 @@ const IRBEthicsGuide = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/irb-ethics-guide" />
     </Layout>
   );
 };

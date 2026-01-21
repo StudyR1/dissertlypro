@@ -37,6 +37,7 @@ export const topicClusters: TopicCluster[] = [
     spokes: [
       { title: "Systematic Literature Review", url: "/systematic-literature-review", description: "PRISMA methodology for systematic reviews", type: "guide" },
       { title: "Citation Mastery", url: "/citation-mastery", description: "Master academic citation styles", type: "guide" },
+      { title: "AI for Literature Reviews", url: "/ai-literature-review", description: "AI tools for literature search", type: "guide" },
       { title: "Citation Styles Guide", url: "/blog/citation-styles-guide-apa-mla-chicago-harvard", description: "APA, MLA, Chicago, Harvard formatting", type: "blog" }
     ],
     tools: [
@@ -96,16 +97,16 @@ export const topicClusters: TopicCluster[] = [
     id: "data-analysis",
     name: "Data Analysis",
     pillar: {
-      title: "Data Analysis Services",
-      url: "/services/data-analysis",
-      description: "Professional data analysis support",
-      type: "service"
+      title: "SPSS Tutorial",
+      url: "/spss-tutorial",
+      description: "Complete SPSS analysis guide for dissertation research",
+      type: "guide"
     },
     spokes: [
-      { title: "SPSS Tutorial", url: "/spss-tutorial", description: "Complete SPSS analysis guide", type: "guide" },
       { title: "NVivo Tutorial", url: "/nvivo-tutorial", description: "Qualitative analysis with NVivo", type: "guide" },
       { title: "Data Visualization", url: "/data-visualization", description: "Creating effective charts and figures", type: "guide" },
-      { title: "Qualitative Analysis", url: "/qualitative-analysis", description: "Coding and thematic analysis", type: "guide" }
+      { title: "Qualitative Analysis", url: "/qualitative-analysis", description: "Coding and thematic analysis", type: "guide" },
+      { title: "Data Analysis Services", url: "/services/data-analysis", description: "Professional data analysis support", type: "service" }
     ],
     tools: [
       { title: "Methodology Selector", url: "/tools/methodology-selector", description: "Choose the right analysis method", type: "tool" }
@@ -146,9 +147,11 @@ export const topicClusters: TopicCluster[] = [
       { title: "Candidacy Exams", url: "/candidacy-exams", description: "Preparing for qualifying exams", type: "guide" },
       { title: "PhD Funding Guide", url: "/phd-funding", description: "Funding your doctoral studies", type: "guide" },
       { title: "PhD Publishing", url: "/phd-publishing", description: "Publishing during your PhD", type: "guide" },
-      { title: "Mental Health Hub", url: "/mental-health-hub", description: "PhD mental health support", type: "guide" },
+      { title: "PhD Mental Health Hub", url: "/phd-mental-health", description: "PhD mental health support", type: "guide" },
       { title: "Part-Time PhD", url: "/part-time-phd", description: "Balancing PhD with work", type: "guide" },
-      { title: "International PhD", url: "/international-phd", description: "International doctoral studies", type: "guide" }
+      { title: "International PhD", url: "/international-phd", description: "International doctoral studies", type: "guide" },
+      { title: "PhD to Industry", url: "/phd-industry", description: "Transitioning from academia to industry", type: "guide" },
+      { title: "Academic Networking", url: "/academic-networking", description: "Building your academic network", type: "guide" }
     ],
     tools: [
       { title: "Personalization Quiz", url: "/tools/personalization-quiz", description: "Get personalized recommendations", type: "tool" },
@@ -170,7 +173,10 @@ export const topicClusters: TopicCluster[] = [
       { title: "Master's Defense", url: "/masters-defense", description: "Preparing for your defense", type: "guide" },
       { title: "Accelerated Masters", url: "/accelerated-masters", description: "Fast-track Master's programs", type: "guide" },
       { title: "Coursework to Thesis", url: "/coursework-to-thesis", description: "Transitioning from coursework", type: "guide" },
-      { title: "Thesis Topic Selection", url: "/thesis-topic-selection", description: "Choosing your thesis topic", type: "guide" }
+      { title: "Thesis Topic Selection", url: "/thesis-topic-selection", description: "Choosing your thesis topic", type: "guide" },
+      { title: "Limited Supervision", url: "/limited-supervision", description: "Working with limited supervisor support", type: "guide" },
+      { title: "Dissertation vs Thesis", url: "/dissertation-vs-thesis", description: "Key differences explained", type: "guide" },
+      { title: "International Students", url: "/international-students", description: "Guide for international graduate students", type: "guide" }
     ],
     tools: [
       { title: "Thesis Builder", url: "/tools/thesis-builder", description: "Build your thesis statement", type: "tool" },
@@ -189,7 +195,7 @@ export const topicClusters: TopicCluster[] = [
     },
     spokes: [
       { title: "AI Detection Guide", url: "/ai-detection-guide", description: "Understanding AI detection tools", type: "guide" },
-      { title: "Citing AI Guide", url: "/citing-ai", description: "How to cite AI tools properly", type: "guide" },
+      { title: "Citing AI Guide", url: "/citing-ai-guide", description: "How to cite AI tools properly", type: "guide" },
       { title: "AI for Literature Reviews", url: "/ai-literature-review", description: "AI tools for literature search", type: "guide" },
       { title: "IRB Ethics Guide", url: "/irb-ethics-guide", description: "Research ethics and AI considerations", type: "guide" }
     ],
@@ -197,6 +203,27 @@ export const topicClusters: TopicCluster[] = [
       { title: "AI Policy Checker", url: "/tools/ai-policy-checker", description: "Check university AI policies", type: "tool" }
     ],
     keywords: ["AI in research", "ChatGPT dissertation", "AI disclosure", "AI detection", "ethical AI use", "citing AI", "AI academic policy"]
+  },
+  {
+    id: "deadlines-planning",
+    name: "Deadlines & Planning",
+    pillar: {
+      title: "Deadlines & Deferrals Guide",
+      url: "/deadlines-deferrals",
+      description: "Managing academic deadlines and extensions",
+      type: "guide"
+    },
+    spokes: [
+      { title: "Chapter Timeline Planner", url: "/tools/chapter-planner", description: "Plan your dissertation timeline", type: "guide" },
+      { title: "Part-Time PhD", url: "/part-time-phd", description: "Balancing PhD with work", type: "guide" },
+      { title: "Working Professionals", url: "/working-professionals", description: "Support for working professionals", type: "guide" }
+    ],
+    tools: [
+      { title: "Deadline Risk Checker", url: "/tools/deadline-checker", description: "Assess your timeline risk", type: "tool" },
+      { title: "Chapter Planner", url: "/tools/chapter-planner", description: "Plan completion milestones", type: "tool" },
+      { title: "Quote Calculator", url: "/tools/quote-calculator", description: "Get a support quote", type: "tool" }
+    ],
+    keywords: ["dissertation deadline", "thesis extension", "deferral", "time management", "academic planning"]
   }
 ];
 

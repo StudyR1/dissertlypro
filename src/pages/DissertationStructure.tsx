@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SeeAlso } from "@/components/ui/see-also";
 import { Link } from "react-router-dom";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { motion } from "framer-motion";
 import { 
   FileText,
@@ -453,6 +454,9 @@ const DissertationStructure = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/dissertation-structure" />
     </Layout>
   );
 };

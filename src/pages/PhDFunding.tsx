@@ -4,6 +4,7 @@ import { BreadcrumbSchema, HowToSchema, AggregateRatingSchema } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { motion } from "framer-motion";
 import { 
   TrendingUp,
@@ -406,6 +407,9 @@ const PhDFunding = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/phd-funding" />
     </Layout>
   );
 };
