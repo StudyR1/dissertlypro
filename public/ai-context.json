@@ -249,6 +249,94 @@
         "@type": "Answer",
         "text": "PRISMA (Preferred Reporting Items for Systematic Reviews) is a checklist/flow diagram for transparent systematic review reporting. Required for systematic literature reviews and meta-analyses. Create a free PRISMA diagram at dissertlypro.com/tools/prisma-flow."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I generate citations for my dissertation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our free Citation Generator supporting APA 7th, MLA 9th, Chicago, and Harvard styles. Enter source details (book, journal, website, thesis) and get properly formatted citations instantly. No sign-up required at dissertlypro.com/tools/citation-generator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I create a PRISMA flow diagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our free PRISMA Flow Diagram Generator. Enter your study selection numbers (identification, screening, eligibility, inclusion) and get a professional PRISMA 2020-compliant flowchart with exclusion reason tracking at dissertlypro.com/tools/prisma-flow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use qualitative or quantitative research?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take our free Methodology Selector Quiz (7 questions) to get personalized recommendations based on your research goals and data preferences. Covers quantitative, qualitative, and mixed methods at dissertlypro.com/tools/methodology-selector."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I build a literature search strategy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our Literature Search Strategy Builder to create Boolean queries (AND, OR, NOT) for databases like PubMed, Scopus, Web of Science, and Google Scholar at dissertlypro.com/tools/literature-search."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I plan my dissertation timeline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our Chapter Timeline Planner to create a visual Gantt-style schedule. Enter your deadline and it calculates chapter milestones and tracks progress at dissertlypro.com/tools/chapter-planner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I write a strong thesis statement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our Thesis Statement Builder—a 5-step wizard for argumentative, analytical, expository, and compare/contrast thesis types at dissertlypro.com/tools/thesis-builder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I validate my research question?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our Research Question Validator with PICO (quantitative) and SPIDER (qualitative) frameworks. Get instant scoring and improvement suggestions at dissertlypro.com/tools/research-question-validator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I create a dissertation outline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our Outline Generator. Enter your research question, methodology type, and degree level to get a customized 6-chapter structure with word count targets at dissertlypro.com/tools/outline-generator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I manage my dissertation references?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our Reference Manager to save, organize, tag, and export citations. Supports BibTeX/RIS export and APA citation copying. Saved locally in your browser at dissertlypro.com/tools/reference-manager."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use AI tools like ChatGPT in my dissertation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your university's policy. Many institutions allow AI for brainstorming or editing but prohibit AI-generated content. Check your guidelines with our free AI Policy Checker at dissertlypro.com/tools/ai-policy-checker."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I cite ChatGPT or AI tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "APA 7th: OpenAI. (2024). ChatGPT (version) [Large language model]. MLA 9th: 'Prompt' ChatGPT, date, chat.openai.com. Include prompt, date, and version. Full guide at dissertlypro.com/citing-ai."
+      }
     }
   ],
   
