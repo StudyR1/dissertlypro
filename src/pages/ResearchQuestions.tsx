@@ -4,6 +4,7 @@ import { BreadcrumbSchema, AggregateRatingSchema, HowToSchema } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { motion } from "framer-motion";
 import { 
   Target,
@@ -559,6 +560,9 @@ const ResearchQuestions = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/research-questions" />
     </Layout>
   );
 };

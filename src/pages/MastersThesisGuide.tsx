@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { SeeAlso } from "@/components/ui/see-also";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
+import RelatedContent from "@/components/ui/RelatedContent";
 import { motion } from "framer-motion";
 import { 
   AlertTriangle, 
@@ -827,6 +828,9 @@ const MastersThesisGuide = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Content Section */}
+      <RelatedContent currentUrl="/masters-thesis-guide" />
     </Layout>
   );
 };
