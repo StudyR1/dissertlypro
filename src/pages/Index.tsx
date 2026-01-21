@@ -109,19 +109,19 @@ const processSteps = [
 const testimonials = [
   {
     quote: "DissertlyPro helped me transform my scattered ideas into a coherent dissertation proposal. My committee approved it on the first submission.",
-    author: "Dr. Sarah M.",
+    author: "Rebecca T.",
     role: "PhD in Education, University of Michigan",
     rating: 5,
   },
   {
     quote: "As a working professional, I needed flexible support. Their team worked around my schedule and helped me complete my MBA thesis while managing my full-time job.",
-    author: "Michael T.",
+    author: "Nathan L.",
     role: "Master's in Business Administration, NYU",
     rating: 5,
   },
   {
     quote: "The data analysis support was exceptional. They didn't just run the numbers—they taught me to interpret and present my findings with confidence.",
-    author: "Dr. Priya K.",
+    author: "Aisha B.",
     role: "PhD in Public Health, Johns Hopkins",
     rating: 5,
   },
