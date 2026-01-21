@@ -8,22 +8,38 @@
     <meta name="author" content="DissertlyPro" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
+    
+    <!-- Mobile Web App Capable -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="DissertlyPro" />
+    
+    <!-- Handheldfriendly for older mobile browsers -->
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/logo-icon.png" />
     <link rel="apple-touch-icon" href="/logo-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
 
-    <!-- Preconnect for performance -->
+    <!-- Preconnect for performance (Critical for LCP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Preload critical fonts -->
+    <!-- Preload critical fonts (LCP optimization) -->
     <link rel="preload" href="https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQEl5Cu0ubxvvy.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="https://fonts.gstatic.com/s/dmsans/v14/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <!-- Preload hero image for LCP -->
+    <link rel="preload" as="image" href="/og-image.jpg" fetchpriority="high" />
     
     <!-- DNS Prefetch for external resources -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -54,12 +70,24 @@
     <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM Information" />
     
     <!-- Theme -->
-    <meta name="theme-color" content="#0f1629" />
+    <meta name="theme-color" content="#0f1629" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f4f1" media="(prefers-color-scheme: light)" />
     <meta name="msapplication-TileColor" content="#0f1629" />
     
-    <!-- Additional SEO -->
+    <!-- Additional SEO & Mobile -->
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    
+    <!-- Critical CSS inline for faster FCP -->
+    <style>
+      /* Critical above-the-fold styles */
+      *{box-sizing:border-box}
+      html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+      body{margin:0;font-family:'DM Sans',system-ui,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+      #root{min-height:100vh;display:flex;flex-direction:column}
+      .loading-skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);animation:shimmer 1.5s infinite}
+      @keyframes shimmer{0%{background-position:-200px 0}100%{background-position:200px 0}}
+    </style>
   </head>
 
   <body>
