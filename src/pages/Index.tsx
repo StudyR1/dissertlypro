@@ -36,7 +36,8 @@ import {
   defaultHowToSteps,
   AggregateRatingSchema,
   defaultAggregateRating,
-  ProfessionalServiceSchema
+  ProfessionalServiceSchema,
+  GeoTargetingSchema
 } from "@/components/schemas";
 import SpeakableSchema from "@/components/schemas/SpeakableSchema";
 import { homepageFAQs } from "@/data/serviceFAQs";
@@ -155,6 +156,7 @@ const Index = () => {
       />
       <AggregateRatingSchema {...defaultAggregateRating} />
       <ProfessionalServiceSchema />
+      <GeoTargetingSchema primaryRegion="global" targetRegions={['us', 'uk', 'au', 'ca']} />
       <SpeakableSchema 
         name="DissertlyPro - Premium Dissertation Support"
         description="Expert dissertation and thesis support for Master's and PhD students worldwide"
