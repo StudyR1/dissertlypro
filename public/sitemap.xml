@@ -7,10 +7,10 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   
-  <!-- Main Pages -->
+  <!-- Main Pages - Updated 2026-01-21 (SEO enhancements, OG images, internal linking) -->
   <url>
     <loc>https://dissertlypro.com/</loc>
-    <lastmod>2025-01-21</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <mobile:mobile/>
@@ -22,28 +22,32 @@
   
   <url>
     <loc>https://dissertlypro.com/services</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-images/og-services.jpg</image:loc>
+      <image:title>Dissertation Services - DissertlyPro</image:title>
+    </image:image>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/about</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/experts</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/subjects</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -57,7 +61,7 @@
   
   <url>
     <loc>https://dissertlypro.com/pricing</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -67,32 +71,36 @@
     <lastmod>2026-01-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-images/og-blog.jpg</image:loc>
+      <image:title>Academic Blog - DissertlyPro</image:title>
+    </image:image>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/faq</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/ethics</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/contact</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/consultation</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -100,52 +108,56 @@
   <!-- Universities Hub -->
   <url>
     <loc>https://dissertlypro.com/universities</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-images/og-universities.jpg</image:loc>
+      <image:title>University PhD Guides - DissertlyPro</image:title>
+    </image:image>
   </url>
   
   <!-- Regional Landing Pages -->
   <url>
     <loc>https://dissertlypro.com/uk</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://dissertlypro.com/og-image.jpg</image:loc>
+      <image:loc>https://dissertlypro.com/og-images/og-universities.jpg</image:loc>
       <image:title>Dissertation Help UK - DissertlyPro</image:title>
     </image:image>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/us</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://dissertlypro.com/og-image.jpg</image:loc>
+      <image:loc>https://dissertlypro.com/og-images/og-universities.jpg</image:loc>
       <image:title>Dissertation Help USA - DissertlyPro</image:title>
     </image:image>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/au</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://dissertlypro.com/og-image.jpg</image:loc>
+      <image:loc>https://dissertlypro.com/og-images/og-universities.jpg</image:loc>
       <image:title>Dissertation Help Australia - DissertlyPro</image:title>
     </image:image>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/ca</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://dissertlypro.com/og-image.jpg</image:loc>
+      <image:loc>https://dissertlypro.com/og-images/og-universities.jpg</image:loc>
       <image:title>Dissertation Help Canada - DissertlyPro</image:title>
     </image:image>
   </url>
@@ -269,262 +281,267 @@
   <!-- Service Detail Pages -->
   <url>
     <loc>https://dissertlypro.com/services/dissertation-proposal</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/services/thesis-writing</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/services/methodology</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/services/data-analysis</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/services/literature-review</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/services/editing</loc>
-    <lastmod>2025-01-14</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Blog Posts - Phase 1: Foundation Articles -->
+  <!-- Blog Posts - Updated with article:tag meta (2026-01-21) -->
   <url>
     <loc>https://dissertlypro.com/blog/how-to-write-dissertation-complete-guide</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/dissertation-vs-thesis-key-differences</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/how-to-write-literature-review-complete-guide</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/research-methodology-types-examples-guide</loc>
-    <lastmod>2026-01-11</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Blog Posts - Phase 2: Deep Dive Articles -->
   <url>
     <loc>https://dissertlypro.com/blog/how-to-structure-phd-dissertation</loc>
-    <lastmod>2026-01-10</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/writing-dissertation-introduction-step-by-step</loc>
-    <lastmod>2026-01-09</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/how-to-write-dissertation-conclusion</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/literature-review-examples-annotated-samples</loc>
-    <lastmod>2026-01-07</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/systematic-literature-review-methodology-prisma</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/how-to-synthesize-sources-literature-review</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/dissertation-proposal-template-free-download</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Blog Posts - Legacy Articles -->
   <url>
     <loc>https://dissertlypro.com/blog/handling-supervisor-feedback</loc>
-    <lastmod>2026-01-03</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/balancing-work-doctoral-research</loc>
-    <lastmod>2026-01-02</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/avoiding-plagiarism-graduate-research</loc>
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Blog Posts - Phase 3: Technical Tutorials -->
   <url>
     <loc>https://dissertlypro.com/blog/spss-tutorial-dissertation-data-analysis</loc>
-    <lastmod>2026-01-11</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/statistical-tests-dissertation-which-to-use</loc>
-    <lastmod>2026-01-10</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/thematic-analysis-dissertation-guide</loc>
-    <lastmod>2026-01-09</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/presenting-research-findings-dissertation</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Blog Posts - Phase 4: Academic Writing -->
   <url>
     <loc>https://dissertlypro.com/blog/write-dissertation-faster-productivity-tips</loc>
-    <lastmod>2026-01-07</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/dissertation-writers-block-overcome</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/academic-writing-style-dissertation</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/dissertation-editing-proofreading-guide</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Blog Posts - Phase 5: Career & Professional -->
   <url>
     <loc>https://dissertlypro.com/blog/publish-dissertation-journal-articles</loc>
-    <lastmod>2026-01-03</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/academic-job-market-phd-graduates</loc>
-    <lastmod>2026-01-02</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/career-options-after-phd</loc>
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/academic-networking-phd-students</loc>
-    <lastmod>2025-12-31</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Resources Hub -->
+  <!-- Resources Hub - Updated with RelatedContent (2026-01-21) -->
   <url>
     <loc>https://dissertlypro.com/resources</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-images/og-resources.jpg</image:loc>
+      <image:title>Academic Resources - DissertlyPro</image:title>
+    </image:image>
   </url>
   
-  <!-- PhD Resources Hub -->
   <url>
     <loc>https://dissertlypro.com/phd-resources</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-images/og-resources.jpg</image:loc>
+      <image:title>PhD Resources - DissertlyPro</image:title>
+    </image:image>
   </url>
   
-  <!-- Master's Resources Hub -->
   <url>
     <loc>https://dissertlypro.com/masters-resources</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-images/og-resources.jpg</image:loc>
+      <image:title>Master's Resources - DissertlyPro</image:title>
+    </image:image>
   </url>
   
-  <!-- PhD Resource Pages - Tier 1: Core Essential Guides -->
+  <!-- PhD Resource Pages - Updated with internal linking (2026-01-21) -->
   <url>
     <loc>https://dissertlypro.com/supervisor-guide</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -545,7 +562,7 @@
   
   <url>
     <loc>https://dissertlypro.com/candidacy-exams</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -557,7 +574,6 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- PhD Resource Pages - Tier 2: Specialized Guides -->
   <url>
     <loc>https://dissertlypro.com/deadlines-deferrals</loc>
     <lastmod>2026-01-17</lastmod>
@@ -574,7 +590,7 @@
   
   <url>
     <loc>https://dissertlypro.com/phd-funding</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -588,7 +604,7 @@
   
   <url>
     <loc>https://dissertlypro.com/phd-publishing</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -607,10 +623,10 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- PhD Resource Pages - Tier 3: Technical Deep-Dives -->
+  <!-- Technical Deep-Dive Pages - Updated with internal linking (2026-01-21) -->
   <url>
     <loc>https://dissertlypro.com/spss-tutorial</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -631,7 +647,7 @@
   
   <url>
     <loc>https://dissertlypro.com/dissertation-structure</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -643,10 +659,10 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Master's Thesis Resource Pages - Tier 1: Core Guides -->
+  <!-- Master's Thesis Resource Pages -->
   <url>
     <loc>https://dissertlypro.com/masters-thesis-guide</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -667,19 +683,18 @@
   
   <url>
     <loc>https://dissertlypro.com/thesis-structure</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/masters-defense</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Master's Thesis Resource Pages - Tier 2: Specialized Guides -->
   <url>
     <loc>https://dissertlypro.com/accelerated-masters</loc>
     <lastmod>2026-01-17</lastmod>
@@ -710,15 +725,14 @@
   
   <url>
     <loc>https://dissertlypro.com/committee-communication</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Master's Thesis Resource Pages - Tier 3: Technical Deep-Dives -->
   <url>
     <loc>https://dissertlypro.com/research-questions</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -732,24 +746,28 @@
   
   <url>
     <loc>https://dissertlypro.com/citation-mastery</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/academic-writing</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Free Academic Tools -->
+  <!-- Free Academic Tools Hub -->
   <url>
     <loc>https://dissertlypro.com/tools</loc>
-    <lastmod>2026-01-17</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-images/og-tools.jpg</image:loc>
+      <image:title>Free Academic Tools - DissertlyPro</image:title>
+    </image:image>
   </url>
   
   <url>
@@ -801,86 +819,6 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://dissertlypro.com/privacy</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/terms</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/gdpr</loc>
-    <lastmod>2025-01-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- Tool-Focused Blog Posts -->
-  <url>
-    <loc>https://dissertlypro.com/blog/how-to-write-thesis-statement-guide</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/blog/dissertation-timeline-planning-guide</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/blog/citation-styles-guide-apa-mla-chicago-harvard</loc>
-    <lastmod>2025-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Technical Deep-Dives -->
-  <url>
-    <loc>https://dissertlypro.com/nvivo-tutorial</loc>
-    <lastmod>2026-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/systematic-literature-review</loc>
-    <lastmod>2026-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/mixed-methods-research</loc>
-    <lastmod>2026-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/irb-ethics-guide</loc>
-    <lastmod>2026-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/data-visualization</loc>
-    <lastmod>2026-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
   <url>
     <loc>https://dissertlypro.com/tools/personalization-quiz</loc>
     <lastmod>2026-01-17</lastmod>
@@ -893,13 +831,6 @@
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/templates</loc>
-    <lastmod>2026-01-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   
   <url>
@@ -937,129 +868,224 @@
     <priority>0.9</priority>
   </url>
   
+  <url>
+    <loc>https://dissertlypro.com/tools/ai-policy-checker</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://dissertlypro.com/privacy</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/terms</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/gdpr</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Templates -->
+  <url>
+    <loc>https://dissertlypro.com/templates</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Additional Technical Deep-Dives -->
+  <url>
+    <loc>https://dissertlypro.com/nvivo-tutorial</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/systematic-literature-review</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/mixed-methods-research</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/irb-ethics-guide</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/data-visualization</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Tool-Focused Blog Posts -->
+  <url>
+    <loc>https://dissertlypro.com/blog/how-to-write-thesis-statement-guide</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/dissertation-timeline-planning-guide</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dissertlypro.com/blog/citation-styles-guide-apa-mla-chicago-harvard</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- University-Specific Blog Posts -->
   <url>
-    <loc>https://dissertlypro.com/blog/oxford-dphil-timeline-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <loc>https://dissertlypro.com/blog/oxford-dphil-timeline-complete-guide</loc>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://dissertlypro.com/blog/harvard-dissertation-requirements</loc>
-    <lastmod>2026-01-18</lastmod>
+    <loc>https://dissertlypro.com/blog/harvard-dissertation-requirements-complete-guide</loc>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://dissertlypro.com/blog/cambridge-phd-thesis-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <loc>https://dissertlypro.com/blog/cambridge-phd-guide-milestones-requirements</loc>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://dissertlypro.com/blog/mit-thesis-writing-strategies</loc>
-    <lastmod>2026-01-18</lastmod>
+    <loc>https://dissertlypro.com/blog/mit-thesis-requirements-complete-guide</loc>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://dissertlypro.com/blog/stanford-dissertation-excellence</loc>
-    <lastmod>2026-01-18</lastmod>
+    <loc>https://dissertlypro.com/blog/stanford-dissertation-guide-requirements-process</loc>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://dissertlypro.com/blog/melbourne-thesis-completion-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <loc>https://dissertlypro.com/blog/melbourne-phd-candidature-confirmation-guide</loc>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/imperial-college-phd-research-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/ucl-phd-doctoral-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/yale-phd-dissertation-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/princeton-phd-dissertation-excellence</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/anu-phd-thesis-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/monash-phd-candidature-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/waterloo-phd-thesis-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/lse-phd-dissertation-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/sydney-phd-thesis-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/toronto-phd-dissertation-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/ubc-phd-thesis-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://dissertlypro.com/blog/mcgill-phd-thesis-guide</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1093,6 +1119,10 @@
     <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dissertlypro.com/og-images/og-ai-academia.jpg</image:loc>
+      <image:title>AI in Academia Hub - DissertlyPro</image:title>
+    </image:image>
   </url>
   
   <url>
@@ -1114,13 +1144,6 @@
     <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://dissertlypro.com/tools/ai-policy-checker</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   
 </urlset>
