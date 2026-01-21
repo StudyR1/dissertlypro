@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import { Lightbulb, ArrowRight, BookOpen, Quote } from "lucide-react";
 import { glossaryTerms, categoryLabels } from "@/data/glossaryTerms";
 
-// Daily tips for academic success
+// Daily tips for academic success - 40 tips for full monthly rotation
 const dailyTips = [
+  // Writing & Productivity (1-10)
   { tip: "Write for 25 minutes, then take a 5-minute break. The Pomodoro Technique helps maintain focus during long writing sessions.", author: "Productivity Research" },
   { tip: "Read your work aloud—you'll catch awkward phrasing and grammatical errors your eyes miss when reading silently.", author: "Editing Best Practice" },
   { tip: "Keep a 'parking lot' document for ideas that don't fit your current chapter. They may be perfect for later sections.", author: "Writing Strategy" },
@@ -16,8 +17,42 @@ const dailyTips = [
   { tip: "Take a 10-minute walk when stuck. Physical movement activates different brain regions and sparks creativity.", author: "Neuroscience Research" },
   { tip: "Keep your thesis statement visible while writing. Every paragraph should connect back to your central argument.", author: "Academic Writing" },
   { tip: "Read one paper from your field every day, even if just the abstract. Cumulative knowledge compounds rapidly.", author: "Research Habit" },
+  
+  // Research & Organization (11-20)
   { tip: "Use reference management software from day one. Organizing 200+ sources manually is a recipe for citation errors.", author: "Research Organization" },
   { tip: "Celebrate small wins: completed paragraphs, submitted drafts, positive feedback. Dissertation work is a marathon.", author: "Mental Wellness" },
+  { tip: "Create a reverse outline of your draft to check logical flow. Summarize each paragraph in one sentence.", author: "Revision Strategy" },
+  { tip: "Set 'office hours' for yourself. Consistent writing times train your brain to be productive on schedule.", author: "Habit Formation" },
+  { tip: "Don't edit while you write. Drafting and editing use different cognitive processes—keep them separate.", author: "Writing Psychology" },
+  { tip: "Use the 'two-minute rule': if a task takes less than two minutes, do it immediately rather than adding it to your list.", author: "David Allen" },
+  { tip: "Write your methodology chapter as you conduct research, not after. Fresh details make for better documentation.", author: "Research Practice" },
+  { tip: "Keep a research journal. Daily entries about progress, challenges, and insights become valuable reflections.", author: "Reflective Practice" },
+  { tip: "Break large chapters into smaller sections. 'Write section 2.3' is less daunting than 'write literature review.'", author: "Task Management" },
+  { tip: "Review your notes within 24 hours of taking them. This simple practice dramatically improves retention.", author: "Learning Science" },
+  
+  // Supervisor & Communication (21-30)
+  { tip: "Send your supervisor regular updates, even when you feel stuck. Silence often causes more concern than problems.", author: "Supervisor Relations" },
+  { tip: "Before meetings with your supervisor, prepare specific questions. Vague check-ins waste both your time.", author: "Meeting Efficiency" },
+  { tip: "Learn to accept feedback without becoming defensive. Every critique is an opportunity to strengthen your work.", author: "Growth Mindset" },
+  { tip: "Build relationships with peers in your program. They understand your challenges like no one else can.", author: "Academic Community" },
+  { tip: "Attend departmental seminars, even outside your specialty. Exposure to diverse methods sparks innovation.", author: "Intellectual Growth" },
+  { tip: "Practice explaining your research to non-experts. If you can't simplify it, you may not fully understand it.", author: "Einstein Principle" },
+  { tip: "Keep a 'wins' file. When imposter syndrome strikes, review evidence of your genuine accomplishments.", author: "Self-Compassion" },
+  { tip: "Your dissertation doesn't need to change the world—it needs to demonstrate your research competence.", author: "Expectations Management" },
+  { tip: "Network at conferences by asking questions after talks. Speakers remember engaged audience members.", author: "Academic Networking" },
+  { tip: "When receiving conflicting feedback, focus on the underlying concerns rather than surface-level contradictions.", author: "Feedback Navigation" },
+  
+  // Wellbeing & Balance (31-40)
+  { tip: "Protect at least one full day per week for rest. Burnout recovery takes far longer than prevention.", author: "Sustainable Productivity" },
+  { tip: "Exercise isn't a luxury during dissertation work—it's essential for cognitive function and stress management.", author: "Health Research" },
+  { tip: "Set boundaries on your availability. Being always 'on' leads to being always exhausted.", author: "Work-Life Balance" },
+  { tip: "Comparison is the thief of joy. Your timeline is valid, regardless of others' seemingly faster progress.", author: "Theodore Roosevelt" },
+  { tip: "Sleep deprivation impairs cognitive function more than alcohol intoxication. Prioritize rest.", author: "Sleep Science" },
+  { tip: "It's normal to feel like a fraud sometimes. Most successful academics have experienced imposter syndrome.", author: "Psychological Research" },
+  { tip: "Find writing accountability partners. Shared commitment increases follow-through significantly.", author: "Behavioral Science" },
+  { tip: "Your worth is not determined by your productivity. You are more than your dissertation output.", author: "Self-Worth" },
+  { tip: "Take real breaks—scrolling social media doesn't count. Step away from screens to actually recharge.", author: "Digital Wellness" },
+  { tip: "Finished is better than perfect. A submitted dissertation opens doors that a perfect unfinished one never will.", author: "Completion Mindset" },
 ];
 
 const TermOfTheDay = () => {
