@@ -448,9 +448,8 @@ const Index = () => {
         <div className="container px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Live Pulse Feed */}
-            <div className="space-y-6">
+            <div>
               <LiveResearchPulse />
-              <TermOfTheDay />
             </div>
             
             {/* Social Proof Text */}
@@ -487,6 +486,11 @@ const Index = () => {
                 </Button>
               </div>
             </div>
+          </div>
+          
+          {/* Term of the Day - Full Width */}
+          <div className="mt-8 lg:mt-12">
+            <TermOfTheDay />
           </div>
         </div>
       </section>
