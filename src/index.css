@@ -579,6 +579,57 @@
     @apply fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-t border-border p-3 safe-area-bottom;
     box-shadow: 0 -4px 20px -5px hsl(220 25% 18% / 0.1);
   }
+  
+  /* Mobile-first spacing utilities */
+  .mobile-padding {
+    @apply px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-12;
+  }
+  
+  .mobile-section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+  
+  /* Mobile-first text utilities */
+  .mobile-heading {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+  
+  .mobile-subheading {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+  
+  .mobile-body {
+    @apply text-sm sm:text-base;
+  }
+  
+  /* Mobile card spacing */
+  .mobile-card {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  /* Stack on mobile utility */
+  .mobile-stack {
+    @apply flex flex-col sm:flex-row;
+  }
+  
+  /* Mobile gap utilities */
+  .mobile-gap {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+  
+  /* Hide on mobile / show on desktop */
+  .mobile-hide {
+    @apply hidden sm:block;
+  }
+  
+  .desktop-hide {
+    @apply block sm:hidden;
+  }
+  
+  /* Mobile full-width buttons */
+  .mobile-full-btn {
+    @apply w-full sm:w-auto;
+  }
 }
 
 
@@ -625,6 +676,57 @@
     font-size: 16px !important; /* Prevents zoom on iOS */
   }
 
+  /* Better heading scale on mobile */
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Stack grids on mobile */
+  .grid-cols-2, .grid-cols-3, .grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Extra small mobile optimizations */
+@media (max-width: 375px) {
+  .container {
+    @apply px-3;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  h2 {
+    font-size: 1.375rem !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .container {
+    @apply px-6;
+  }
+  
+  /* Two-column grids on tablet */
+  .grid-cols-3, .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 /* Tawk.to Widget Override - Hide default button, show only chat panel */
