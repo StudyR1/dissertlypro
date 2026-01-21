@@ -22,6 +22,12 @@ const services = [
   { title: "Literature Review", href: "/services/literature-review", description: "Thematic analysis & reviews", icon: BookOpen },
   { title: "Editing & Proofreading", href: "/services/editing", description: "Academic English & citations", icon: FileText },
   { title: "Quick Services", href: "/quick-services", description: "Fast tasks from $15", icon: Clock, isNew: true },
+  { title: "Browse by Subject", href: "/subjects", description: "Find your discipline", icon: GraduationCap },
+];
+
+const quickLinks = [
+  { title: "Blog", href: "/blog", description: "Guides & tutorials", icon: Newspaper },
+  { title: "For Professionals", href: "/working-professionals", description: "Balance work & study", icon: Briefcase },
 ];
 
 const featuredPosts = [
@@ -206,44 +212,52 @@ const Header = () => {
                               </motion.div>
                             </div>
                             
-                            {/* Featured Posts Column */}
+                            {/* Quick Links Column */}
                             <motion.div 
                               className="col-span-2 bg-cream-warm/50 rounded-xl p-4"
                               initial={{ opacity: 0, x: 10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.1, duration: 0.2 }}
                             >
-                              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Featured Articles</h4>
-                              <ul className="space-y-2">
-                                {featuredPosts.map((post, index) => (
+                              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Explore</h4>
+                              <ul className="space-y-1.5">
+                                {quickLinks.map((item, index) => (
                                   <motion.li 
-                                    key={post.title}
+                                    key={item.title}
                                     initial={{ opacity: 0, x: 5 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.15 + 0.05 * index }}
                                   >
                                     <NavigationMenuLink asChild>
                                       <Link
-                                        to={post.href}
-                                        className="block rounded-lg p-2.5 hover:bg-background transition-all group"
+                                        to={item.href}
+                                        className="flex items-start gap-3 rounded-lg p-2.5 hover:bg-background transition-all group"
                                       >
-                                        <span className="text-[10px] font-semibold text-copper uppercase tracking-wider">{post.tag}</span>
-                                        <div className="text-sm font-medium leading-snug font-sans group-hover:text-copper transition-colors mt-0.5">
-                                          {post.title}
+                                        <item.icon className="h-4 w-4 mt-0.5 text-copper/70 group-hover:text-copper transition-colors shrink-0" />
+                                        <div>
+                                          <div className="text-sm font-medium leading-none font-sans group-hover:text-copper transition-colors">{item.title}</div>
+                                          <p className="text-xs leading-snug text-muted-foreground mt-1">
+                                            {item.description}
+                                          </p>
                                         </div>
                                       </Link>
                                     </NavigationMenuLink>
                                   </motion.li>
                                 ))}
                               </ul>
-                              <NavigationMenuLink asChild>
-                                <Link
-                                  to="/blog"
-                                  className="flex items-center gap-2 mt-3 pt-3 border-t border-border/50 text-xs font-medium text-copper hover:text-copper-dark transition-colors"
-                                >
-                                  Browse All Articles →
-                                </Link>
-                              </NavigationMenuLink>
+                              <div className="border-t border-border/50 mt-3 pt-3 space-y-1">
+                                {featuredPosts.slice(0, 2).map((post) => (
+                                  <NavigationMenuLink key={post.title} asChild>
+                                    <Link
+                                      to={post.href}
+                                      className="block text-xs text-muted-foreground hover:text-copper transition-colors py-1"
+                                    >
+                                      <span className="text-[9px] font-semibold text-copper uppercase tracking-wider mr-1">{post.tag}:</span>
+                                      {post.title}
+                                    </Link>
+                                  </NavigationMenuLink>
+                                ))}
+                              </div>
                             </motion.div>
                           </div>
                         </motion.div>
