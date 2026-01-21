@@ -11,6 +11,8 @@ interface SEOProps {
   author?: string;
   keywords?: string[];
   noindex?: boolean;
+  articleTags?: string[];
+  articleSection?: string;
 }
 
 const SITE_NAME = 'DissertlyPro';
@@ -28,6 +30,8 @@ const SEO = ({
   author,
   keywords = [],
   noindex = false,
+  articleTags = [],
+  articleSection,
 }: SEOProps) => {
   const fullTitle = title === 'Home' 
     ? `${SITE_NAME} - Premium Master's & PhD Dissertation Support`
@@ -132,6 +136,12 @@ const SEO = ({
       {type === 'article' && author && (
         <meta property="article:author" content={author} />
       )}
+      {type === 'article' && articleSection && (
+        <meta property="article:section" content={articleSection} />
+      )}
+      {type === 'article' && articleTags.map((tag, index) => (
+        <meta key={`article-tag-${index}`} property="article:tag" content={tag} />
+      ))}
 
       {/* Additional SEO */}
       <meta name="theme-color" content="#0f1629" />
