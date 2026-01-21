@@ -41,7 +41,7 @@ import {
 import SpeakableSchema from "@/components/schemas/SpeakableSchema";
 import { homepageFAQs } from "@/data/serviceFAQs";
 import { AnimatedCounter, TrustBadges, TrustStrip } from "@/components/cro";
-import { LiveResearchPulse } from "@/components/features";
+import { LiveResearchPulse, TermOfTheDay } from "@/components/features";
 import { TLDRBlock, KeyTakeaways } from "@/components/ui/QuickAnswer";
 
 const services = [
@@ -441,8 +441,9 @@ const Index = () => {
         <div className="container px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Live Pulse Feed */}
-            <div>
+            <div className="space-y-6">
               <LiveResearchPulse />
+              <TermOfTheDay />
             </div>
             
             {/* Social Proof Text */}
