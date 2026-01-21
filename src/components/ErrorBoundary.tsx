@@ -20,18 +20,21 @@ class ErrorBoundary extends Component<Props, State> {
   };
 
   public static getDerivedStateFromError(error: Error): State {
+    console.error("[ErrorBoundary] getDerivedStateFromError:", error.message, error.stack);
     return { hasError: true, error };
   }
 
   public componentDidUpdate(prevProps: Props) {
     // Reset error state when resetKey changes (i.e., on navigation)
     if (this.state.hasError && prevProps.resetKey !== this.props.resetKey) {
+      console.log("[ErrorBoundary] Resetting error state on navigation:", prevProps.resetKey, "->", this.props.resetKey);
       this.setState({ hasError: false, error: null });
     }
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("ErrorBoundary caught an error:", error, errorInfo);
+    console.error("[ErrorBoundary] componentDidCatch:", error.message);
+    console.error("[ErrorBoundary] Component Stack:", errorInfo.componentStack);
   }
 
   private handleRetry = () => {
