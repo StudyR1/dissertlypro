@@ -73,6 +73,8 @@ const BlogPost = () => {
         publishedTime={post.date}
         author={post.author}
         keywords={post.keywords}
+        articleSection={post.category}
+        articleTags={[post.category, ...post.keywords]}
       />
       <BlogPostSchema
         title={post.title}
