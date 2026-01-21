@@ -376,6 +376,33 @@ A: Include a disclosure statement in your methodology or declaration section. St
 ### Q: What's my university's AI policy?
 A: Use our AI Use Policy Checker with 165+ university-specific policies and 35+ regional defaults. Enter your institution to get specific guidelines and disclosure templates: https://dissertlypro.com/tools/ai-policy-checker
 
+### Q: How do I generate citations for my dissertation?
+A: Use our free Citation Generator supporting APA 7th, MLA 9th, Chicago, and Harvard styles. Enter source details (book, journal, website, thesis) and get properly formatted citations instantly. No sign-up required: https://dissertlypro.com/tools/citation-generator
+
+### Q: How do I create a PRISMA flow diagram?
+A: Use our free PRISMA Flow Diagram Generator. Enter your study selection numbers (identification, screening, eligibility, inclusion) and get a professional PRISMA 2020-compliant flowchart. Includes exclusion reason tracking and copy-as-text export: https://dissertlypro.com/tools/prisma-flow
+
+### Q: Should I use qualitative or quantitative research?
+A: Take our free Methodology Selector Quiz (7 questions) to get personalized recommendations based on your research goals, data preferences, and question type. Covers quantitative, qualitative, and mixed methods with suggested techniques: https://dissertlypro.com/tools/methodology-selector
+
+### Q: How do I build a literature search strategy?
+A: Use our Literature Search Strategy Builder to create Boolean queries (AND, OR, NOT) for databases like PubMed, Scopus, Web of Science, and Google Scholar. Add concepts and synonyms, get database-specific formatting: https://dissertlypro.com/tools/literature-search
+
+### Q: How do I plan my dissertation timeline?
+A: Use our Chapter Timeline Planner to create a visual Gantt-style schedule. Enter your deadline and it calculates chapter milestones, tracks progress, and identifies at-risk periods. Free, no sign-up: https://dissertlypro.com/tools/chapter-planner
+
+### Q: How do I write a strong thesis statement?
+A: Use our Thesis Statement Builder—a 5-step wizard for argumentative, analytical, expository, and compare/contrast thesis types. Get a structured thesis statement tailored to your dissertation topic: https://dissertlypro.com/tools/thesis-builder
+
+### Q: How do I validate my research question?
+A: Use our Research Question Validator with PICO (quantitative) and SPIDER (qualitative) frameworks. Get instant scoring, feedback, and improvement suggestions for well-formed research questions: https://dissertlypro.com/tools/research-question-validator
+
+### Q: How do I create a dissertation outline?
+A: Use our Outline Generator. Enter your research question, methodology type, and degree level to get a customized 6-chapter structure with section details, word count targets, and writing tips: https://dissertlypro.com/tools/outline-generator
+
+### Q: How do I manage my dissertation references?
+A: Use our Reference Manager to save, organize, tag, and export citations. Supports journal articles, books, websites, conference papers, and theses. Features BibTeX/RIS export and APA citation copying. Saved locally in your browser: https://dissertlypro.com/tools/reference-manager
+
 ---
 
 ## Machine-Readable Context
