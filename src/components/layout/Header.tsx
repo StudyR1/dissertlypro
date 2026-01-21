@@ -579,7 +579,7 @@ const Header = () => {
                           openMobileSection === link.title && "rotate-180"
                         )} />
                       </CollapsibleTrigger>
-                      <CollapsibleContent className="pl-4 space-y-1">
+                      <CollapsibleContent className="pl-4 space-y-1 bg-background">
                         {/* Main link to section */}
                         <Link
                           to={link.href}
