@@ -6,56 +6,149 @@ import { BreadcrumbSchema } from "@/components/schemas";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
 import { ArrowRight, Clock, User, Sparkles, Filter, CalendarDays } from "lucide-react";
 import { blogPosts, blogCategories, getFeaturedPosts, getPostImage, BlogPost } from "@/data/blogPosts";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
-// Simplified Blog Post Card Component (removed HoverCard to prevent portal issues during navigation)
-const BlogPostCard = ({ post }: { post: BlogPost }) => (
-  <Link
-    to={`/blog/${post.slug}`}
-    className="group bg-card rounded-xl border border-border shadow-subtle hover:shadow-card transition-all duration-300 overflow-hidden block"
-  >
-    <div className="aspect-video relative overflow-hidden">
-      <img 
-        src={getPostImage(post)} 
-        alt={`${post.title} - ${post.category} article by ${post.author}`}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-      {post.featured && (
-        <div className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
-          <Sparkles className="h-3 w-3" />
-          Featured
-        </div>
-      )}
-    </div>
-    <div className="p-6">
-      <span className="inline-block text-gold font-sans text-xs font-semibold tracking-wider uppercase mb-3">
-        {post.category}
-      </span>
-      <h3 className="text-lg font-serif font-semibold text-foreground mb-2 group-hover:text-gold transition-colors line-clamp-2">
-        {post.title}
-      </h3>
-      <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4 line-clamp-3">
-        {post.excerpt}
-      </p>
-      <div className="flex items-center gap-4 text-xs text-muted-foreground font-sans">
-        <span className="flex items-center gap-1">
-          <User className="h-3 w-3" />
-          {post.author}
-        </span>
-        <span className="flex items-center gap-1">
-          <Clock className="h-3 w-3" />
-          {post.readTime}
-        </span>
+// Hook to detect if device supports hover (desktop)
+const useSupportsHover = () => {
+  const [supportsHover, setSupportsHover] = useState(false);
+  
+  useEffect(() => {
+    // Check if device supports hover (non-touch desktop)
+    const mediaQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+    setSupportsHover(mediaQuery.matches);
+    
+    const handler = (e: MediaQueryListEvent) => setSupportsHover(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
+  
+  return supportsHover;
+};
+
+// Blog Post Card with optional HoverCard (desktop only)
+const BlogPostCard = ({ post, enableHover }: { post: BlogPost; enableHover: boolean }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  // Close hover card on any navigation attempt
+  const handleClick = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  const cardContent = (
+    <Link
+      to={`/blog/${post.slug}`}
+      onClick={handleClick}
+      className="group bg-card rounded-xl border border-border shadow-subtle hover:shadow-card transition-all duration-300 overflow-hidden block"
+    >
+      <div className="aspect-video relative overflow-hidden">
+        <img 
+          src={getPostImage(post)} 
+          alt={`${post.title} - ${post.category} article by ${post.author}`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+        {post.featured && (
+          <div className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+            <Sparkles className="h-3 w-3" />
+            Featured
+          </div>
+        )}
       </div>
-    </div>
-  </Link>
-);
+      <div className="p-6">
+        <span className="inline-block text-gold font-sans text-xs font-semibold tracking-wider uppercase mb-3">
+          {post.category}
+        </span>
+        <h3 className="text-lg font-serif font-semibold text-foreground mb-2 group-hover:text-gold transition-colors line-clamp-2">
+          {post.title}
+        </h3>
+        <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4 line-clamp-3">
+          {post.excerpt}
+        </p>
+        <div className="flex items-center gap-4 text-xs text-muted-foreground font-sans">
+          <span className="flex items-center gap-1">
+            <User className="h-3 w-3" />
+            {post.author}
+          </span>
+          <span className="flex items-center gap-1">
+            <Clock className="h-3 w-3" />
+            {post.readTime}
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+
+  // Only wrap with HoverCard on desktop devices
+  if (!enableHover) {
+    return cardContent;
+  }
+
+  return (
+    <HoverCard 
+      openDelay={300} 
+      closeDelay={0} 
+      open={isOpen} 
+      onOpenChange={setIsOpen}
+    >
+      <HoverCardTrigger asChild>
+        {cardContent}
+      </HoverCardTrigger>
+      <HoverCardContent 
+        className="w-80 p-0 overflow-hidden hidden lg:block" 
+        side="right" 
+        align="start"
+        sideOffset={12}
+        onPointerDownOutside={() => setIsOpen(false)}
+      >
+        <div className="relative h-32 overflow-hidden">
+          <img 
+            src={getPostImage(post)} 
+            alt={`Featured image for ${post.title}`}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <span className="absolute bottom-3 left-3 text-white text-xs font-semibold uppercase tracking-wider bg-copper/90 px-2 py-1 rounded">
+            {post.category}
+          </span>
+        </div>
+        <div className="p-4">
+          <h4 className="font-serif font-semibold text-foreground text-sm leading-snug mb-2">
+            {post.title}
+          </h4>
+          <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3 mb-3">
+            {post.excerpt}
+          </p>
+          <div className="flex items-center gap-3 pt-3 border-t border-border">
+            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+              <User className="h-4 w-4 text-primary" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs font-medium text-foreground truncate">{post.author}</p>
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <CalendarDays className="h-3 w-3" />
+                <span>{post.date}</span>
+                <span>•</span>
+                <Clock className="h-3 w-3" />
+                <span>{post.readTime}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  );
+};
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All Posts");
   const [isScrolled, setIsScrolled] = useState(false);
+  const supportsHover = useSupportsHover();
   const featuredPosts = getFeaturedPosts();
   
   const filteredPosts = activeCategory === "All Posts" 
@@ -205,7 +298,7 @@ const Blog = () => {
         <div className="container px-4 sm:px-6">
           <div id="blog-posts-grid" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="tabpanel">
             {filteredPosts.map((post) => (
-              <BlogPostCard key={post.slug} post={post} />
+              <BlogPostCard key={post.slug} post={post} enableHover={supportsHover} />
             ))}
           </div>
         </div>
