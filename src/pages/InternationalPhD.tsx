@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, HowToSchema, AggregateRatingSchema } from "@/components/schemas";
+import { BreadcrumbSchema, HowToSchema, AggregateRatingSchema, EducationalCredentialSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -138,6 +138,18 @@ const InternationalPhD = () => {
         reviewCount={1543}
         itemName="DissertlyPro International PhD Guide"
         itemType="EducationalOrganization"
+      />
+      <EducationalCredentialSchema
+        name="International Doctoral Program"
+        description="Navigate doctoral study in a foreign country. Visa guidance, cultural adaptation, funding strategies, and support networks for international PhD students."
+        url="/international-phd"
+        credentialCategory="degree"
+        educationalLevel="Doctoral Degree"
+        timeToComplete="P4Y"
+        occupationalCredentialAwarded="Doctor of Philosophy (PhD)"
+        competencyRequired={["Master's Degree", "Language Proficiency", "Cross-Cultural Adaptability"]}
+        programPrerequisites={["Master's Degree", "Valid Student Visa"]}
+        aggregateRating={{ ratingValue: 4.9, reviewCount: 1543 }}
       />
 
       {/* Hero Section */}

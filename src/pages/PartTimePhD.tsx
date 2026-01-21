@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema } from "@/components/schemas";
+import { BreadcrumbSchema, FAQSchema, AggregateRatingSchema, EducationalCredentialSchema } from "@/components/schemas";
 import HowToSchema from "@/components/schemas/HowToSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -340,6 +340,18 @@ Best regards,
         reviewCount={2847}
         itemName="Part-Time PhD Guide"
         itemType="EducationalOrganization"
+      />
+      <EducationalCredentialSchema
+        name="Part-Time Doctoral Program"
+        description="Complete your PhD while maintaining employment. Strategies for work-life-research balance, employer negotiation, and successful doctoral completion over 5-8 years."
+        url="/part-time-phd"
+        credentialCategory="degree"
+        educationalLevel="Doctoral Degree"
+        timeToComplete="P6Y"
+        occupationalCredentialAwarded="Doctor of Philosophy (PhD)"
+        competencyRequired={["Master's Degree", "Research Experience", "Time Management", "Self-Discipline"]}
+        programPrerequisites={["Master's Degree"]}
+        aggregateRating={{ ratingValue: 4.9, reviewCount: 2847 }}
       />
 
       {/* Hero Section */}
