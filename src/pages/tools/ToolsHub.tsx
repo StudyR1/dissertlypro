@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree, FlaskConical, Search, GitBranch, Library } from "lucide-react";
+import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, CheckCircle, Star, Users, Zap, Lightbulb, HelpCircle, Brain, Scale, ListTree, FlaskConical, Search, GitBranch, Library, Layers } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
@@ -166,6 +166,16 @@ const tools = [
     icon: Brain,
     href: "/tools/glossary-quiz",
     features: ["38+ terms", "Category filters", "Score tracking"],
+    badge: "New",
+    badgeVariant: "default" as const,
+  },
+  {
+    id: "glossary-flashcards",
+    title: "Glossary Flashcards",
+    description: "Master academic terminology with spaced repetition flashcards. Flip cards, track progress, and reinforce learning with science-based intervals.",
+    icon: Layers,
+    href: "/tools/glossary-flashcards",
+    features: ["Spaced repetition", "Progress tracking", "Flip animations"],
     badge: "New",
     badgeVariant: "default" as const,
   },

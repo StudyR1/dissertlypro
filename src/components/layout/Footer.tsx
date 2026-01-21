@@ -16,9 +16,9 @@ const Footer = () => {
     ],
     resources: [
       { title: "Supervisor Guide", href: "/supervisor-guide" },
-      { title: "PhD Mental Health", href: "/phd-mental-health" },
       { title: "Academic Glossary", href: "/glossary" },
       { title: "Glossary Quiz", href: "/tools/glossary-quiz" },
+      { title: "Flashcards", href: "/tools/glossary-flashcards" },
       { title: "Free Tools", href: "/tools" },
       { title: "Blog & Articles", href: "/blog" },
     ],
