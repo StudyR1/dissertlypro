@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, AggregateRatingSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema, LearningResourceSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -325,6 +325,23 @@ const MastersResources = () => {
         reviewCount={3124}
         itemName="DissertlyPro Master's Resources"
         itemType="EducationalOrganization"
+      />
+      <LearningResourceSchema
+        name="Master's Thesis Resource Hub"
+        description="Comprehensive guides, technical tutorials, and expert strategies designed specifically for master's students from topic selection to defense."
+        url="/masters-resources"
+        educationalLevel="Master's"
+        audience="Master's Student"
+        resources={resources.map(r => ({
+          name: r.title,
+          description: r.description,
+          url: r.href,
+          educationalLevel: "Master's",
+          learningResourceType: r.tier === 3 ? "Tutorial" : "Guide",
+          timeRequired: `PT${parseInt(r.readTime) || 30}M`,
+          keywords: r.tags
+        }))}
+        aggregateRating={{ ratingValue: 4.9, reviewCount: 3124 }}
       />
 
       {/* Hero Section */}

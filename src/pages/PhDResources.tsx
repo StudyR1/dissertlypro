@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, AggregateRatingSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema, LearningResourceSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -333,6 +333,23 @@ const PhDResources = () => {
         reviewCount={3567}
         itemName="DissertlyPro PhD Resources"
         itemType="EducationalOrganization"
+      />
+      <LearningResourceSchema
+        name="PhD & Doctoral Resource Hub"
+        description="Comprehensive guides, technical tutorials, and expert strategies designed specifically for doctoral researchers from candidacy to viva."
+        url="/phd-resources"
+        educationalLevel="Doctoral"
+        audience="PhD Student"
+        resources={resources.map(r => ({
+          name: r.title,
+          description: r.description,
+          url: r.href,
+          educationalLevel: "Doctoral",
+          learningResourceType: r.tier === 3 ? "Tutorial" : "Guide",
+          timeRequired: `PT${parseInt(r.readTime) || 30}M`,
+          keywords: r.tags
+        }))}
+        aggregateRating={{ ratingValue: 4.9, reviewCount: 3567 }}
       />
 
       {/* Hero Section */}
