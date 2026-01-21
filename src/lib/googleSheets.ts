@@ -88,7 +88,7 @@
 const QUICK_SERVICE_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxWOhdXgM3FU9IzxKmc51jKshaB-PrgQTlLSRdql7sOylP0Cgj33APfX1ULogOqFnXGaw/exec";
 
 // Full orders webhook (separate sheet)
-const FULL_ORDER_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwvgWB5j6Kt0XkiUlz5MSIDBpWQ77FZLHb2-qXpDHNdHbsAgmPcSq83tkcKXByBQuS7/exec";
+const FULL_ORDER_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycby4T9LL8j8RedRvI0Jmhk1LdgKiKEnm00eR66Jdp2wTsjB3k_rnmNpXrImXrz9399Zv/exec";
 
 export interface QuickServiceOrderData {
   orderNumber: string;
