@@ -54,6 +54,7 @@ const technicalDeepDives = [
   { title: "Data Visualization", href: "/data-visualization", description: "Charts, figures & tables", icon: PieChart },
   { title: "Research Methodology", href: "/research-methodology", description: "Qual, quant & mixed", icon: Brain },
   { title: "Literature Review", href: "/literature-review-guide", description: "Search & synthesize", icon: BookOpen },
+  { title: "Academic Glossary", href: "/glossary", description: "Research terminology A-Z", icon: BookOpen },
   { title: "Free Templates", href: "/templates", description: "Proposal & chapter templates", icon: Download },
 ];
 
