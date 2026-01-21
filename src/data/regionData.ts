@@ -55,19 +55,19 @@ export const regionData: Record<string, RegionData> = {
     testimonials: [
       {
         quote: "DissertlyPro helped me complete my PhD at Stanford while working full-time in Silicon Valley. Their flexibility and expertise were exactly what I needed.",
-        author: "Dr. Michael Chen",
+        author: "Kevin L.",
         role: "PhD Computer Science, Stanford University",
         rating: 5,
       },
       {
         quote: "The methodology support I received was exceptional. My committee at Harvard approved my proposal on the first submission.",
-        author: "Dr. Sarah Williams",
+        author: "Rachel H.",
         role: "PhD Public Policy, Harvard Kennedy School",
         rating: 5,
       },
       {
         quote: "As an EdD student at Columbia, I struggled with my lit review. DissertlyPro's experts helped me synthesize 200+ sources into a coherent narrative.",
-        author: "Dr. James Rodriguez",
+        author: "Marcus D.",
         role: "EdD, Columbia Teachers College",
         rating: 5,
       },
@@ -105,19 +105,19 @@ export const regionData: Record<string, RegionData> = {
     testimonials: [
       {
         quote: "Completing my DPhil at Oxford whilst teaching was incredibly demanding. DissertlyPro provided the structured support I needed to finish on time.",
-        author: "Dr. Emma Thompson",
+        author: "Charlotte B.",
         role: "DPhil History, University of Oxford",
         rating: 5,
       },
       {
         quote: "The data analysis support using SPSS was brilliant. My supervisors at Cambridge were impressed with the rigour of my quantitative chapter.",
-        author: "Dr. Raj Patel",
+        author: "Vikram S.",
         role: "PhD Economics, University of Cambridge",
         rating: 5,
       },
       {
         quote: "As an international student at LSE, academic writing was my biggest challenge. The editing service transformed my thesis.",
-        author: "Dr. Liu Wei",
+        author: "Wei L.",
         role: "PhD International Relations, LSE",
         rating: 5,
       },
@@ -155,19 +155,19 @@ export const regionData: Record<string, RegionData> = {
     testimonials: [
       {
         quote: "Balancing my PhD at Melbourne with family commitments seemed impossible. DissertlyPro's flexible support made it achievable.",
-        author: "Dr. Sarah Mitchell",
+        author: "Olivia M.",
         role: "PhD Psychology, University of Melbourne",
         rating: 5,
       },
       {
         quote: "The qualitative analysis support using NVivo was exceptional. My thesis on Indigenous education received high distinction.",
-        author: "Dr. Daniel Cooper",
+        author: "Daniel C.",
         role: "PhD Education, University of Sydney",
         rating: 5,
       },
       {
         quote: "As a distance student at ANU, I needed expert guidance I couldn't get locally. DissertlyPro bridged that gap perfectly.",
-        author: "Dr. Priya Sharma",
+        author: "Ananya R.",
         role: "PhD Public Health, Australian National University",
         rating: 5,
       },
@@ -205,19 +205,19 @@ export const regionData: Record<string, RegionData> = {
     testimonials: [
       {
         quote: "My PhD journey at U of T was transformed by DissertlyPro. Their methodology experts helped me design a robust mixed-methods study.",
-        author: "Dr. Jennifer Walsh",
+        author: "Sophia W.",
         role: "PhD Sociology, University of Toronto",
         rating: 5,
       },
       {
         quote: "Writing my thesis in English as my second language was daunting. The editing support ensured my research at McGill met the highest standards.",
-        author: "Dr. François Leblanc",
+        author: "François L.",
         role: "PhD Political Science, McGill University",
         rating: 5,
       },
       {
         quote: "The statistical analysis support was invaluable for my health sciences dissertation at UBC. Highly recommended for Canadian grad students.",
-        author: "Dr. Amir Hassan",
+        author: "Amir H.",
         role: "PhD Health Sciences, University of British Columbia",
         rating: 5,
       },
