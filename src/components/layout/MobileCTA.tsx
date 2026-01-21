@@ -1,7 +1,7 @@
 import { memo, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone } from "lucide-react";
+import { MessageCircle, Phone, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MobileCTA = memo(() => {
@@ -67,6 +67,17 @@ const MobileCTA = memo(() => {
                 <MessageCircle className="h-4 w-4 mr-1.5" />
                 WhatsApp
               </a>
+            </Button>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="flex-1 h-11 text-sm font-medium touch-manipulation border-copper/50 text-copper"
+              asChild
+            >
+              <Link to="/quick-services">
+                <Clock className="h-4 w-4 mr-1.5" />
+                Quick
+              </Link>
             </Button>
             <Button 
               variant="copper" 
