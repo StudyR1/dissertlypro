@@ -284,7 +284,7 @@ const AIAcademiaHub = () => {
             >
               <img
                 src={heroImage}
-                alt="AI in academic research workspace"
+                alt="AI tools for academic research - student using artificial intelligence for dissertation writing and literature review"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-xl shadow-lg border">

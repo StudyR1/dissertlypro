@@ -25,7 +25,7 @@ const BlogPostCard = ({ post }: { post: BlogPost }) => (
         <div className="aspect-video relative overflow-hidden">
           <img 
             src={getPostImage(post)} 
-            alt={post.title}
+            alt={`${post.title} - ${post.category} article by ${post.author}`}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
@@ -68,7 +68,7 @@ const BlogPostCard = ({ post }: { post: BlogPost }) => (
       <div className="relative h-32 overflow-hidden">
         <img 
           src={getPostImage(post)} 
-          alt={post.title}
+          alt={`Featured image for ${post.title} - ${post.category} guide`}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
