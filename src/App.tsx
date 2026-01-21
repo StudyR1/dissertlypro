@@ -79,6 +79,7 @@ const SystematicLiteratureReview = lazy(() => import("./pages/SystematicLiteratu
 const MixedMethodsResearch = lazy(() => import("./pages/MixedMethodsResearch"));
 const IRBEthicsGuide = lazy(() => import("./pages/IRBEthicsGuide"));
 const DataVisualization = lazy(() => import("./pages/DataVisualization"));
+const Glossary = lazy(() => import("./pages/Glossary"));
 const CitationGeneratorPage = lazy(() => import("./pages/tools/CitationGeneratorPage"));
 const ChapterPlannerPage = lazy(() => import("./pages/tools/ChapterPlannerPage"));
 const ToolsHub = lazy(() => import("./pages/tools/ToolsHub"));
@@ -183,6 +184,7 @@ const AppRoutes = () => {
         <Route path="/research-methodology" element={<Suspense fallback={<ArticleSkeleton />}><ResearchMethodology /></Suspense>} />
         <Route path="/literature-review-guide" element={<Suspense fallback={<ArticleSkeleton />}><LiteratureReviewGuide /></Suspense>} />
         <Route path="/resources" element={<Suspense fallback={<ServicesGridSkeleton />}><Resources /></Suspense>} />
+        <Route path="/glossary" element={<Suspense fallback={<ArticleSkeleton />}><Glossary /></Suspense>} />
         <Route path="/phd-resources" element={<Suspense fallback={<ServicesGridSkeleton />}><PhDResources /></Suspense>} />
         <Route path="/candidacy-exams" element={<Suspense fallback={<ArticleSkeleton />}><CandidacyExams /></Suspense>} />
         <Route path="/phd-funding" element={<Suspense fallback={<ArticleSkeleton />}><PhDFunding /></Suspense>} />
