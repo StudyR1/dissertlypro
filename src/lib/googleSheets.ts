@@ -14,8 +14,8 @@
  * 
  * 3. Replace the code with:
  * 
- *    // ⚠️ IMPORTANT: Replace with your email address
- *    var NOTIFICATION_EMAIL = "your-email@example.com";
+ *    // Your notification email
+ *    var NOTIFICATION_EMAIL = "tutorsgallery@gmail.com";
  *    
  *    function doPost(e) {
  *      try {
