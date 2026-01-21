@@ -17,10 +17,9 @@ const Footer = () => {
     resources: [
       { title: "Supervisor Guide", href: "/supervisor-guide" },
       { title: "PhD Mental Health", href: "/phd-mental-health" },
-      { title: "Committee Conflicts", href: "/committee-conflicts" },
-      { title: "Deadlines & Deferrals", href: "/deadlines-deferrals" },
       { title: "Academic Glossary", href: "/glossary" },
-      { title: "Viva Preparation", href: "/viva-preparation" },
+      { title: "Glossary Quiz", href: "/tools/glossary-quiz" },
+      { title: "Free Tools", href: "/tools" },
       { title: "Blog & Articles", href: "/blog" },
     ],
     company: [

@@ -96,6 +96,7 @@ const mastersResourceLinks = [
 
 const toolLinks = [
   { title: "Personalization Quiz", href: "/tools/personalization-quiz", description: "Get tailored recommendations", icon: Brain },
+  { title: "Glossary Quiz", href: "/tools/glossary-quiz", description: "Test your terminology knowledge", icon: HelpCircle, isNew: true },
   { title: "Outline Generator", href: "/tools/outline-generator", description: "Chapter structure builder", icon: ListTree },
   { title: "DIY vs Expert", href: "/tools/diy-comparison", description: "Compare costs & time", icon: Scale },
   { title: "Deadline Checker", href: "/tools/deadline-checker", description: "Assess your timeline risk", icon: Clock },
