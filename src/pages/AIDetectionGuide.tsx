@@ -308,7 +308,7 @@ const AIDetectionGuide = () => {
           <SeeAlso
             links={[
               { title: "AI in Academia Hub", href: "/ai-academia" },
-              { title: "How to Cite AI", href: "/citing-ai" }
+              { title: "How to Cite AI", href: "/citing-ai-guide" }
             ]}
             variant="highlight"
           />

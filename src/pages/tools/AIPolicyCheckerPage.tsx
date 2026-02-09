@@ -559,7 +559,7 @@ const AIPolicyCheckerPage = () => {
                     <CardContent className="pt-6">
                       <h4 className="font-semibold mb-4">Related Resources</h4>
                       <div className="grid sm:grid-cols-2 gap-4">
-                        <Link to="/citing-ai" className="flex items-center gap-3 p-3 bg-card rounded-lg border hover:border-primary/50 transition-colors">
+                        <Link to="/citing-ai-guide" className="flex items-center gap-3 p-3 bg-card rounded-lg border hover:border-primary/50 transition-colors">
                           <FileText className="w-5 h-5 text-primary" />
                           <div>
                             <div className="font-medium text-sm">How to Cite AI</div>

@@ -634,7 +634,7 @@ const AIAcademiaHub = () => {
               </Card>
             </Link>
 
-            <Link to="/citing-ai" className="group">
+            <Link to="/citing-ai-guide" className="group">
               <Card className="h-full hover:shadow-lg transition-all hover:border-primary/50">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">

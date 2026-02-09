@@ -53,15 +53,19 @@ const SEO = ({
     ? `${SITE_NAME} - Premium Master's & PhD Dissertation Support`
     : `${title} | ${SITE_NAME}`;
   
-  const fullUrl = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
+  // Normalize canonical: strip site URL prefix if accidentally passed as full URL
+  const normalizedCanonical = canonical?.startsWith(SITE_URL) 
+    ? canonical.slice(SITE_URL.length) 
+    : canonical;
+  const fullUrl = normalizedCanonical ? `${SITE_URL}${normalizedCanonical}` : SITE_URL;
   
   // Determine OG image: explicit image > category-based > path-based > default
   const resolvedImage = image 
     ? image 
     : ogCategory 
       ? getOGImageByCategory(ogCategory)
-      : canonical 
-        ? getOGImageForPath(canonical)
+      : normalizedCanonical 
+        ? getOGImageForPath(normalizedCanonical)
         : DEFAULT_IMAGE;
   const fullImage = resolvedImage.startsWith('http') ? resolvedImage : `${SITE_URL}${resolvedImage}`;
 
@@ -89,8 +93,8 @@ const SEO = ({
   ];
 
   // Check if current page is homepage or a regional landing
-  const isHomepage = !canonical || canonical === '/';
-  const isRegionalPage = canonical && ['/us', '/uk', '/au', '/ca'].includes(canonical);
+  const isHomepage = !normalizedCanonical || normalizedCanonical === '/';
+  const isRegionalPage = normalizedCanonical && ['/us', '/uk', '/au', '/ca'].includes(normalizedCanonical);
   
   // Determine which hreflang tags to include
   const getHreflangTags = () => {
@@ -161,6 +165,7 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullImage} />
+      <meta property="og:image:alt" content={fullTitle} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="en_US" />
       <meta property="og:locale:alternate" content="en_GB" />
