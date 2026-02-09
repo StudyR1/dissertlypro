@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { ServicesListSchema, BreadcrumbSchema, FAQSchema } from "@/components/schemas";
+import { ServicesListSchema, BreadcrumbSchema, FAQSchema, ItemListSchema } from "@/components/schemas";
 import { servicesPageFAQs } from "@/data/serviceFAQs";
 import { FloatingOrderButton } from "@/components/cro";
 import { 
@@ -165,6 +165,15 @@ const Services = () => {
         keywords={['dissertation services', 'thesis writing help', 'research methodology', 'data analysis', 'academic editing']}
       />
       <ServicesListSchema />
+      <ItemListSchema
+        name="Dissertation & Thesis Services"
+        description="Professional academic support services for Master's and PhD students"
+        items={services.map(s => ({
+          name: s.title,
+          url: `/services/${s.slug}`,
+          description: s.description,
+        }))}
+      />
       <BreadcrumbSchema items={[
         { name: "Home", url: "/" },
         { name: "Services", url: "/services" }

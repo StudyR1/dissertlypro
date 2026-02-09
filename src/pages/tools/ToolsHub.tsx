@@ -4,6 +4,7 @@ import { BookOpen, GanttChart, Calculator, FileText, Sparkles, ArrowRight, Check
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import FAQSchema from "@/components/schemas/FAQSchema";
+import { ItemListSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -220,6 +221,15 @@ const ToolsHub = () => {
         keywords={["free dissertation tools", "academic tools", "citation generator", "dissertation planner", "thesis tools", "research tools", "free academic resources", "PhD tools", "Masters thesis tools"]}
       />
       <FAQSchema faqs={toolsFAQs} />
+      <ItemListSchema
+        name="Free Academic Dissertation Tools"
+        description="Free online tools for dissertation and thesis students including citation generators, planners, and research aids"
+        items={tools.map(t => ({
+          name: t.title,
+          url: t.href,
+          description: t.description,
+        }))}
+      />
 
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 px-4 overflow-hidden">

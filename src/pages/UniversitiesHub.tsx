@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema } from "@/components/schemas";
+import { BreadcrumbSchema, ItemListSchema } from "@/components/schemas";
 import { TLDRBlock } from "@/components/ui/QuickAnswer";
 import { universityData, getUniversitiesByRegion } from "@/data/universityData";
 import { 
@@ -79,6 +79,15 @@ const UniversitiesHub = () => {
         { name: "Home", url: "/" },
         { name: "Universities", url: "/universities" },
       ]} />
+      <ItemListSchema
+        name="University-Specific Dissertation Support"
+        description="Expert dissertation help for students at top universities worldwide"
+        items={allUniversities.map(uni => ({
+          name: `${uni.name} Dissertation Support`,
+          url: `/${uni.region}/${uni.shortName.toLowerCase()}`,
+          description: `Expert dissertation help for ${uni.name} students in ${uni.city}`,
+        }))}
+      />
 
       {/* Hero Section */}
       <section className="relative py-16 lg:py-24 bg-gradient-to-br from-midnight via-midnight-rich to-midnight-soft overflow-hidden">

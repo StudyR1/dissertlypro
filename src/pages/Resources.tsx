@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import { BreadcrumbSchema, AggregateRatingSchema, LearningResourceSchema } from "@/components/schemas";
+import { BreadcrumbSchema, AggregateRatingSchema, LearningResourceSchema, ItemListSchema } from "@/components/schemas";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -289,6 +289,15 @@ const Resources = () => {
         canonical="https://dissertlypro.com/resources"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
+      <ItemListSchema
+        name="PhD & Dissertation Resources"
+        description="Comprehensive free guides and tutorials for Master's and PhD students"
+        items={resources.map(r => ({
+          name: r.title,
+          url: r.href,
+          description: r.description,
+        }))}
+      />
       <AggregateRatingSchema 
         ratingValue={4.9}
         reviewCount={2847}
