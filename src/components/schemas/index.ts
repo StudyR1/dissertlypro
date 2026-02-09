@@ -21,3 +21,5 @@ export { default as EducationalCredentialSchema } from './EducationalCredentialS
 export { default as CitationSchema } from './CitationSchema';
 export { default as DefinedTermSetSchema } from './DefinedTermSetSchema';
 export { default as GeoTargetingSchema, geoData } from './GeoTargetingSchema';
+export { default as ItemListSchema } from './ItemListSchema';
+export { default as SoftwareApplicationSchema } from './SoftwareApplicationSchema';

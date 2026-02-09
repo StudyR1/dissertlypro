@@ -45,7 +45,7 @@ export const getOGImageForPath = (path: string): string => {
   }
   
   // AI in Academia section
-  if (path.startsWith('/ai-') || path === '/ai-academia' || path === '/citing-ai') {
+  if (path.startsWith('/ai-') || path === '/ai-academia' || path === '/citing-ai-guide') {
     return ogImagePaths['ai-academia'];
   }
   

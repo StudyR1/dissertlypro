@@ -140,7 +140,7 @@ const CitingAIGuide = () => {
       <SEO
         title="How to Cite AI (ChatGPT) | APA, MLA, Chicago, Harvard | DissertlyPro"
         description="Complete guide to citing AI tools like ChatGPT in academic work. Includes APA 7th, MLA 9th, Chicago, and Harvard citation formats with examples."
-        canonical="https://dissertlypro.com/citing-ai"
+        canonical="https://dissertlypro.com/citing-ai-guide"
         keywords={["cite ChatGPT", "cite AI APA", "cite AI MLA", "ChatGPT citation", "AI academic citation", "cite Claude", "AI reference format"]}
       />
       <FAQSchema faqs={faqs} />
@@ -148,7 +148,7 @@ const CitingAIGuide = () => {
         items={[
           { name: "Home", url: "https://dissertlypro.com" },
           { name: "AI in Academia", url: "https://dissertlypro.com/ai-academia" },
-          { name: "Citing AI Guide", url: "https://dissertlypro.com/citing-ai" }
+          { name: "Citing AI Guide", url: "https://dissertlypro.com/citing-ai-guide" }
         ]}
       />
 
