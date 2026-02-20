@@ -1,222 +1,106 @@
-# DissertlyPro Apache/LiteSpeed Configuration for cPanel
-# Enables SPA routing, caching, compression, and security headers
+# ----------------------------------------------------------------------
+# DissertlyPro cPanel production configuration
+# ----------------------------------------------------------------------
 
-# ============================================
-# REWRITE ENGINE - SPA FALLBACK ROUTING
-# ============================================
+# Disable directory browsing
+Options -Indexes
+
+# ----------------------------------------------------------------------
+# Canonical host + HTTPS
+# ----------------------------------------------------------------------
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
-  
-  # Force HTTPS (uncomment when SSL is configured)
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-  
-  # Remove www (choose one: www or non-www)
-  # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-  # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-  
-  # Handle React Router - serve index.html for all non-file requests
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+  # Force non-www
+  RewriteCond %{HTTP_HOST} ^www\.dissertlypro\.com$ [NC]
+  RewriteRule ^ https://dissertlypro.com%{REQUEST_URI} [L,R=301,NE]
+
+  # Legacy URL redirects
+  RewriteRule ^citing-ai/?$ /citing-ai-guide [R=301,L]
+
+  # Remove trailing slash for non-directories
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} .+/$
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # SPA fallback for React Router
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
 </IfModule>
 
-# ============================================
-# COMPRESSION - GZIP/BROTLI
-# ============================================
-<IfModule mod_deflate.c>
-  # Compress HTML, CSS, JavaScript, Text, XML and fonts
-  AddOutputFilterByType DEFLATE application/javascript
-  AddOutputFilterByType DEFLATE application/json
-  AddOutputFilterByType DEFLATE application/ld+json
-  AddOutputFilterByType DEFLATE application/rss+xml
-  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
-  AddOutputFilterByType DEFLATE application/x-font-ttf
-  AddOutputFilterByType DEFLATE application/x-javascript
-  AddOutputFilterByType DEFLATE application/xhtml+xml
-  AddOutputFilterByType DEFLATE application/xml
-  AddOutputFilterByType DEFLATE font/opentype
-  AddOutputFilterByType DEFLATE font/otf
-  AddOutputFilterByType DEFLATE font/ttf
-  AddOutputFilterByType DEFLATE font/woff
-  AddOutputFilterByType DEFLATE font/woff2
-  AddOutputFilterByType DEFLATE image/svg+xml
-  AddOutputFilterByType DEFLATE image/x-icon
-  AddOutputFilterByType DEFLATE text/css
-  AddOutputFilterByType DEFLATE text/html
-  AddOutputFilterByType DEFLATE text/javascript
-  AddOutputFilterByType DEFLATE text/plain
-  AddOutputFilterByType DEFLATE text/xml
-  
-  # Remove browser bugs (only needed for ancient browsers)
-  BrowserMatch ^Mozilla/4 gzip-only-text/html
-  BrowserMatch ^Mozilla/4\.0[678] no-gzip
-  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-  Header append Vary User-Agent
+# ----------------------------------------------------------------------
+# Compression (Brotli + Gzip)
+# ----------------------------------------------------------------------
+<IfModule mod_brotli.c>
+  BrotliCompressionQuality 5
+  AddOutputFilterByType BROTLI_COMPRESS text/plain text/html text/xml text/css application/javascript application/json application/xml image/svg+xml
 </IfModule>
 
-# ============================================
-# BROWSER CACHING - EXPIRES HEADERS
-# ============================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Caching strategy
+# ----------------------------------------------------------------------
 <IfModule mod_expires.c>
   ExpiresActive On
-  
-  # Default expiration: 1 month
-  ExpiresDefault "access plus 1 month"
-  
-  # HTML - short cache (changes frequently)
-  ExpiresByType text/html "access plus 0 seconds"
-  
-  # Data files - short cache
-  ExpiresByType application/json "access plus 1 hour"
-  ExpiresByType application/ld+json "access plus 1 day"
-  ExpiresByType application/xml "access plus 1 hour"
-  ExpiresByType text/xml "access plus 1 hour"
-  ExpiresByType text/plain "access plus 1 day"
-  
-  # CSS and JavaScript - long cache (hashed by Vite)
+
+  # HTML should refresh quickly
+  ExpiresByType text/html "access plus 5 minutes"
+
+  # App assets (Vite hashed files)
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
-  ExpiresByType application/x-javascript "access plus 1 year"
   ExpiresByType text/javascript "access plus 1 year"
-  
-  # Images - long cache
-  ExpiresByType image/gif "access plus 1 year"
+
+  # Static media
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/avif "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType image/x-icon "access plus 1 year"
-  ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
-  
-  # Fonts - long cache
-  ExpiresByType font/woff "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
-  ExpiresByType font/ttf "access plus 1 year"
-  ExpiresByType font/otf "access plus 1 year"
-  ExpiresByType font/eot "access plus 1 year"
-  ExpiresByType application/font-woff "access plus 1 year"
   ExpiresByType application/font-woff2 "access plus 1 year"
-  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
-  
-  # Manifest and service worker
-  ExpiresByType application/manifest+json "access plus 1 week"
-  ExpiresByType text/cache-manifest "access plus 0 seconds"
+
+  # SEO/Discovery files should refresh often
+  ExpiresByType text/plain "access plus 1 day"
+  ExpiresByType application/xml "access plus 1 day"
+  ExpiresByType text/xml "access plus 1 day"
+  ExpiresByType application/json "access plus 1 day"
 </IfModule>
 
-# ============================================
-# CACHE-CONTROL HEADERS
-# ============================================
 <IfModule mod_headers.c>
-  # index.html - no cache (SPA entry point)
-  <FilesMatch "^index\.html$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires "0"
-  </FilesMatch>
-  
-  # SEO files - short cache
-  <FilesMatch "\.(xml|txt|json)$">
-    Header set Cache-Control "public, max-age=3600"
-  </FilesMatch>
-  
-  # Sitemap - 1 hour cache
-  <FilesMatch "sitemap\.xml$">
-    Header set Cache-Control "public, max-age=3600"
-  </FilesMatch>
-  
-  # Static assets in /assets - immutable (Vite hashes these)
-  <FilesMatch "\.(js|css|woff2?|ttf|otf|eot)$">
+  # Immutable cache for build artifacts
+  <FilesMatch "\.(?:css|js|woff2)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  
-  # Images - long cache
-  <FilesMatch "\.(ico|gif|jpg|jpeg|png|webp|avif|svg)$">
-    Header set Cache-Control "public, max-age=31536000"
+
+  # Discovery + HTML freshness
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
   </FilesMatch>
-</IfModule>
 
-# ============================================
-# SECURITY HEADERS
-# ============================================
-<IfModule mod_headers.c>
-  # Prevent MIME type sniffing
+  <FilesMatch "\.(?:xml|txt|json)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+
+  # Security hardening
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   Header always set X-Content-Type-Options "nosniff"
-  
-  # Clickjacking protection
-  Header always set X-Frame-Options "SAMEORIGIN"
-  
-  # XSS Protection (legacy browsers)
-  Header always set X-XSS-Protection "1; mode=block"
-  
-  # Referrer Policy
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  
-  # Permissions Policy (formerly Feature-Policy)
-  Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
-  
-  # HSTS - Strict Transport Security (uncomment after SSL is confirmed working)
-  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set X-Frame-Options "SAMEORIGIN"
+
 </IfModule>
 
-# ============================================
-# MIME TYPES
-# ============================================
-<IfModule mod_mime.c>
-  # JavaScript
-  AddType application/javascript js mjs
-  
-  # JSON
-  AddType application/json json
-  AddType application/ld+json jsonld
-  
-  # Fonts
-  AddType font/woff woff
-  AddType font/woff2 woff2
-  AddType font/ttf ttf
-  AddType font/otf otf
-  AddType application/vnd.ms-fontobject eot
-  
-  # Images
-  AddType image/webp webp
-  AddType image/avif avif
-  AddType image/svg+xml svg svgz
-  
-  # Manifest
-  AddType application/manifest+json webmanifest
-  
-  # Text
-  AddType text/plain txt
-  AddType text/xml xml
-</IfModule>
-
-# ============================================
-# PREVENT HOTLINKING (optional - uncomment to enable)
-# ============================================
-# <IfModule mod_rewrite.c>
-#   RewriteCond %{HTTP_REFERER} !^$
-#   RewriteCond %{HTTP_REFERER} !^https?://(www\.)?dissertlypro\.com [NC]
-#   RewriteRule \.(jpg|jpeg|png|gif|webp|svg)$ - [F,NC,L]
-# </IfModule>
-
-# ============================================
-# ERROR DOCUMENTS
-# ============================================
-ErrorDocument 404 /index.html
-ErrorDocument 403 /index.html
-
-# ============================================
-# DISABLE DIRECTORY BROWSING
-# ============================================
-Options -Indexes
-
-# ============================================
-# BLOCK SENSITIVE FILES
-# ============================================
-<FilesMatch "(^\.htaccess|\.env|\.git|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock)$">
-  Order allow,deny
-  Deny from all
-</FilesMatch>
+# ----------------------------------------------------------------------
+# 404 + UTF-8 handling
+# ----------------------------------------------------------------------
+AddDefaultCharset UTF-8
