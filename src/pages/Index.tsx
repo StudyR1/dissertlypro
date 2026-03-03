@@ -550,13 +550,21 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-10 sm:mt-14">
-            <Button variant="midnight-outline" size="lg" className="w-full sm:w-auto h-12 touch-manipulation" asChild>
-              <Link to="/services">
-                View All Services
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+          <div className="text-center mt-10 sm:mt-14 space-y-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="midnight-outline" size="lg" className="w-full sm:w-auto h-12 touch-manipulation" asChild>
+                <Link to="/services">
+                  View All Services
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button variant="copper" size="lg" className="w-full sm:w-auto h-12 touch-manipulation" asChild>
+                <Link to="/dissertation-writing-services">
+                  Dissertation Writing Services
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

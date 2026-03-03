@@ -248,6 +248,27 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Pillar Page CTA */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-cream">
+        <div className="container px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-3 sm:mb-4">
+              Looking for Complete Dissertation Support?
+            </h2>
+            <p className="text-muted-foreground font-sans text-base sm:text-lg mb-6 sm:mb-8 px-2">
+              Explore our comprehensive dissertation writing services — from proposal to defence, 
+              with PhD-qualified experts in 50+ subjects.
+            </p>
+            <Button variant="copper" size="lg" className="w-full sm:w-auto touch-manipulation" asChild>
+              <Link to="/dissertation-writing-services">
+                Explore Dissertation Writing Services
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-28 bg-ivory-warm">
         <div className="container px-4 sm:px-6">
