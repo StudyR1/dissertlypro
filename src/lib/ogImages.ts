@@ -35,7 +35,7 @@ export const getOGImageForPath = (path: string): string => {
   }
   
   // Services pages
-  if (path === '/services' || path.startsWith('/services/')) {
+  if (path === '/services' || path.startsWith('/services/') || path === '/dissertation-writing-services') {
     return ogImagePaths.services;
   }
   
