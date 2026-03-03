@@ -74,6 +74,7 @@ const PhDIndustry = lazy(() => import("./pages/PhDIndustry"));
 const InternationalPhD = lazy(() => import("./pages/InternationalPhD"));
 const DissertationStructure = lazy(() => import("./pages/DissertationStructure"));
 const DissertationWriting = lazy(() => import("./pages/DissertationWriting"));
+const DissertationWritingServices = lazy(() => import("./pages/DissertationWritingServices"));
 const NVivoTutorial = lazy(() => import("./pages/NVivoTutorial"));
 const SystematicLiteratureReview = lazy(() => import("./pages/SystematicLiteratureReview"));
 const MixedMethodsResearch = lazy(() => import("./pages/MixedMethodsResearch"));
@@ -196,6 +197,7 @@ const AppRoutes = () => {
         <Route path="/international-phd" element={<Suspense fallback={<ArticleSkeleton />}><InternationalPhD /></Suspense>} />
         <Route path="/dissertation-structure" element={<Suspense fallback={<ArticleSkeleton />}><DissertationStructure /></Suspense>} />
         <Route path="/dissertation-writing" element={<Suspense fallback={<ArticleSkeleton />}><DissertationWriting /></Suspense>} />
+        <Route path="/dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><DissertationWritingServices /></Suspense>} />
         
         {/* Technical Deep-Dives */}
         <Route path="/nvivo-tutorial" element={<Suspense fallback={<ArticleSkeleton />}><NVivoTutorial /></Suspense>} />
