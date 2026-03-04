@@ -262,6 +262,7 @@ const AppRoutes = () => {
         <Route path="/tools/ai-policy-checker" element={<Suspense fallback={<ToolPageSkeleton />}><AIPolicyCheckerPage /></Suspense>} />
         <Route path="/ai-detection-guide" element={<Suspense fallback={<ArticleSkeleton />}><AIDetectionGuide /></Suspense>} />
         <Route path="/citing-ai-guide" element={<Suspense fallback={<ArticleSkeleton />}><CitingAIGuide /></Suspense>} />
+        <Route path="/citing-ai" element={<Suspense fallback={<ArticleSkeleton />}><CitingAIGuide /></Suspense>} />
         <Route path="/ai-literature-review" element={<Suspense fallback={<ArticleSkeleton />}><AILiteratureReview /></Suspense>} />
         
         {/* Quick Services */}

@@ -5024,6 +5024,133 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
+
+  {
+    slug: "dissertation-discussion-chapter-example-template",
+    title: "Dissertation Discussion Chapter: Structure, Template, and Real Examples",
+    excerpt: "Learn exactly how to write a high-scoring dissertation discussion chapter with a practical structure, paragraph template, and examiner-focused checklist.",
+    metaDescription: "Master your dissertation discussion chapter with a proven structure, paragraph templates, examples, and common mistakes to avoid for Master's and PhD theses.",
+    category: "Dissertation Writing",
+    author: "Dr. Helena Vranos",
+    authorBio: "PhD in Social Research Methods, dissertation coach for 900+ postgraduate students",
+    date: "February 18, 2026",
+    readTime: "14 min read",
+    keywords: ["dissertation discussion chapter", "how to write discussion chapter", "dissertation chapter template", "thesis discussion example"],
+    tableOfContents: [
+      { id: "purpose", title: "What the Discussion Chapter Must Do" },
+      { id: "structure", title: "Recommended Discussion Chapter Structure" },
+      { id: "paragraph-template", title: "Paragraph Template You Can Reuse" },
+      { id: "mistakes", title: "Common Mistakes Examiners Flag" },
+      { id: "checklist", title: "Final Submission Checklist" }
+    ],
+    content: [
+      "The discussion chapter explains what your findings mean, why they matter, and how they connect to your research questions and literature. Many students lose marks by repeating results instead of interpreting them. This guide shows a clear, examiner-friendly way to write the chapter.",
+      "## What the Discussion Chapter Must Do",
+      "Your discussion chapter should interpret findings, connect them to prior studies, explain theoretical implications, and acknowledge limitations. A strong chapter answers the \"so what?\" question after each major result.",
+      "## Recommended Discussion Chapter Structure",
+      "Use a predictable structure: (1) chapter overview, (2) interpretation by research question, (3) comparison with literature, (4) theoretical implications, (5) practical implications, (6) limitations, and (7) transition to conclusion.",
+      "## Paragraph Template You Can Reuse",
+      "Use this sequence for each key finding: **Finding recap (1-2 sentences)** → **Interpretation** → **Comparison to prior research** → **Implication** → **Mini conclusion**. This creates analytical depth and keeps your argument coherent.",
+      "## Common Mistakes Examiners Flag",
+      "Common issues include restating data without interpretation, introducing new results not shown in the findings chapter, overclaiming causality, and ignoring contradictory evidence. Address these directly to strengthen credibility.",
+      "## Final Submission Checklist",
+      "Before submission, verify that every research question is answered, each major claim links to evidence, limitations are explicit, and recommendations align with your findings. A tight discussion chapter often distinguishes pass-level work from distinction-level work."
+    ],
+    faqs: [
+      {
+        question: "How long should a dissertation discussion chapter be?",
+        answer: "A common range is 15-25% of the dissertation word count, but requirements vary by institution and discipline."
+      },
+      {
+        question: "Can I include new sources in the discussion chapter?",
+        answer: "Yes—if they help interpret findings. Keep them focused and consistent with your literature review framework."
+      }
+    ]
+  },
+  {
+    slug: "sample-size-for-dissertation-quantitative-qualitative-guide",
+    title: "How to Choose Sample Size for a Dissertation (Quantitative and Qualitative)",
+    excerpt: "A practical guide to choosing, justifying, and defending sample size decisions for surveys, experiments, interviews, and mixed-methods dissertations.",
+    metaDescription: "Learn how to determine and justify dissertation sample size for quantitative, qualitative, and mixed methods research with formulas, examples, and examiner tips.",
+    category: "Research Methodology",
+    author: "Dr. Nathaniel Ashford",
+    authorBio: "PhD in Applied Statistics, specialist in research design and power analysis",
+    date: "February 18, 2026",
+    readTime: "16 min read",
+    keywords: ["sample size dissertation", "power analysis", "qualitative sample size", "mixed methods sample size"],
+    tableOfContents: [
+      { id: "why-matters", title: "Why Sample Size Matters" },
+      { id: "quantitative", title: "Quantitative Sample Size Approach" },
+      { id: "qualitative", title: "Qualitative Sample Size and Saturation" },
+      { id: "mixed-methods", title: "Mixed-Methods Sample Logic" },
+      { id: "defend", title: "How to Defend Your Sample in Viva" }
+    ],
+    content: [
+      "Sample size is both a methodological and a credibility decision. If your sample is too small, your findings may be underpowered; if poorly justified, examiners may challenge validity. This guide helps you choose and defend sample size with confidence.",
+      "## Why Sample Size Matters",
+      "Sample size affects precision, statistical power, transferability, and trustworthiness. Your method section should explain not just the number, but the logic behind the number.",
+      "## Quantitative Sample Size Approach",
+      "For quantitative studies, justify sample size using power analysis (alpha, power, and effect size assumptions). Report software or formula used, expected attrition, and minimum analyzable sample.",
+      "## Qualitative Sample Size and Saturation",
+      "For qualitative designs, justify sample size through information power and thematic saturation. Explain participant diversity, interview depth, and how you monitored saturation during coding.",
+      "## Mixed-Methods Sample Logic",
+      "Use separate justifications for each strand. For example, a survey may require power analysis while interviews are justified by saturation. Explain integration points and whether one strand prioritizes explanation or exploration.",
+      "## How to Defend Your Sample in Viva",
+      "Defend sample choices by linking them to research questions, design, feasibility, and ethics constraints. Examiners respond well to transparent trade-offs rather than inflated sample claims."
+    ],
+    faqs: [
+      {
+        question: "What is a good sample size for a Master's dissertation survey?",
+        answer: "Many projects target 100-300 responses, but the correct number depends on analysis type, effect size assumptions, and subgroup comparisons."
+      },
+      {
+        question: "How many interviews are enough for qualitative research?",
+        answer: "Many studies use 12-30 interviews, but adequacy depends on scope, participant heterogeneity, and saturation depth."
+      }
+    ]
+  },
+  {
+    slug: "dissertation-gantt-chart-timeline-realistic-plan",
+    title: "Dissertation Timeline and Gantt Chart: Build a Realistic Plan That You Can Finish",
+    excerpt: "Create a realistic dissertation schedule with milestone planning, chapter-level targets, risk buffers, and a Gantt chart workflow used by successful PhD and Master's students.",
+    metaDescription: "Build a realistic dissertation timeline with chapter milestones, risk buffers, and a practical Gantt chart framework for Master's and PhD projects.",
+    category: "Writing Tips",
+    author: "Dr. Isabelle Fontaine",
+    authorBio: "PhD in Higher Education, academic productivity strategist for graduate researchers",
+    date: "February 18, 2026",
+    readTime: "12 min read",
+    keywords: ["dissertation timeline", "dissertation gantt chart", "phd project planning", "thesis schedule"],
+    tableOfContents: [
+      { id: "timeline-errors", title: "Why Most Dissertation Timelines Fail" },
+      { id: "milestones", title: "Milestone-Based Planning Framework" },
+      { id: "gantt", title: "How to Build a Gantt Chart for Your Thesis" },
+      { id: "buffers", title: "Add Risk Buffers and Recovery Windows" },
+      { id: "weekly", title: "Weekly Review System" }
+    ],
+    content: [
+      "Most dissertation delays happen because plans are activity-based (\"write chapter 2\") instead of milestone-based (\"submit reviewed chapter 2 draft\"). This guide shows how to convert vague goals into a finishable plan.",
+      "## Why Most Dissertation Timelines Fail",
+      "Common issues include optimistic time estimates, missing buffer periods, no dependency mapping, and undefined supervisor review cycles. A realistic timeline assumes revision loops and admin delays.",
+      "## Milestone-Based Planning Framework",
+      "Define milestone outcomes first: approved proposal, ethics clearance, completed data collection, full draft, submission-ready manuscript, viva prep. Then break each milestone into tasks with owners and deadlines.",
+      "## How to Build a Gantt Chart for Your Thesis",
+      "Create lanes for literature review, methods, data, analysis, writing, and admin. Add dependencies so downstream tasks move automatically when upstream work slips.",
+      "## Add Risk Buffers and Recovery Windows",
+      "Insert 10-20% buffer time around high-risk phases like participant recruitment, data cleaning, and chapter revisions. Plan one monthly catch-up week to absorb slippage without derailing submission.",
+      "## Weekly Review System",
+      "Run a 20-minute weekly review: check progress, update blockers, and re-prioritize next 3 critical tasks. This rhythm keeps momentum and reveals delay risks early."
+    ],
+    faqs: [
+      {
+        question: "How far in advance should I plan my dissertation?",
+        answer: "Plan the full project at milestone level, then keep a detailed rolling plan for the next 6-8 weeks."
+      },
+      {
+        question: "Should I share my Gantt chart with my supervisor?",
+        answer: "Yes. Sharing your timeline improves alignment on review cycles, deliverables, and realistic expectations."
+      }
+    ]
+  },
 ];
 
 // Helper function to get featured posts
