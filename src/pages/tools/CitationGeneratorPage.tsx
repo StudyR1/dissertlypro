@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import FAQToolSchema from "@/components/schemas/FAQToolSchema";
 import { Button } from "@/components/ui/button";
@@ -462,6 +463,13 @@ const CitationGeneratorPage = () => {
           bestRating: "5",
           worstRating: "1"
         }}
+      />
+      <SoftwareApplicationSchema
+        name="Free Citation Generator"
+        description="Generate accurate academic citations in APA, MLA, Chicago, and Harvard styles."
+        url="/tools/citation-generator"
+        featureList={features}
+        aggregateRating={{ ratingValue: "4.9", ratingCount: "1247" }}
       />
       <FAQSchema faqs={toolFAQs} />
 

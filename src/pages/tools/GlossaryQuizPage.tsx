@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { BreadcrumbSchema, FAQToolSchema } from "@/components/schemas";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -177,6 +178,11 @@ const GlossaryQuizPage = () => {
         toolName="Academic Glossary Quiz"
         toolUrl="https://dissertlypro.com/tools/glossary-quiz"
         faqs={glossaryQuizFAQs}
+      />
+      <SoftwareApplicationSchema
+        name="Academic Glossary Quiz"
+        description="Test your knowledge of academic terminology with an interactive quiz."
+        url="/tools/glossary-quiz"
       />
 
       <section className="py-12 md:py-20 bg-gradient-to-b from-midnight via-midnight-rich to-background">

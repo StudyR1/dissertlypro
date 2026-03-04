@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { GitBranch, Download, RotateCcw, ArrowDown, Copy, Check, Info } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import { motion } from "framer-motion";
 
 interface PRISMAData {
@@ -148,6 +149,11 @@ Studies included in quantitative synthesis (meta-analysis): ${data.studiesInclud
           "Copy as text export",
           "Real-time calculations"
         ]}
+      />
+      <SoftwareApplicationSchema
+        name="PRISMA Flow Diagram Generator"
+        description="Create professional PRISMA flow diagrams for systematic reviews."
+        url="/tools/prisma-flow"
       />
 
       <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">

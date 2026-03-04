@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 
 interface Concept {
   id: string;
@@ -238,6 +239,11 @@ const LiteratureSearchPage = () => {
           "One-click copy",
           "PubMed, Scopus, Web of Science support"
         ]}
+      />
+      <SoftwareApplicationSchema
+        name="Literature Search Strategy Builder"
+        description="Build systematic database search queries with Boolean operators."
+        url="/tools/literature-search"
       />
 
       <section className="py-12 md:py-16 bg-gradient-to-b from-background to-secondary/20">

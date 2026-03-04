@@ -5,6 +5,7 @@ import { HelpCircle, CheckCircle, XCircle, AlertTriangle, ArrowRight, ArrowLeft,
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -256,6 +257,13 @@ const ResearchQuestionValidatorPage = () => {
           bestRating: "5",
           worstRating: "1"
         }}
+      />
+      <SoftwareApplicationSchema
+        name="Research Question Validator"
+        description="Validate and improve your research question using PICO and SPIDER frameworks."
+        url="/tools/research-question-validator"
+        featureList={features}
+        aggregateRating={{ ratingValue: "4.8", ratingCount: "723" }}
       />
       <FAQSchema faqs={toolFAQs} />
 

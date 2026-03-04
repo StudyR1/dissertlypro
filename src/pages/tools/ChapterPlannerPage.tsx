@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -162,6 +163,13 @@ const ChapterPlannerPage = () => {
           bestRating: "5",
           worstRating: "1"
         }}
+      />
+      <SoftwareApplicationSchema
+        name="Dissertation Chapter Timeline Planner"
+        description="Plan your dissertation timeline with a visual Gantt-style interface."
+        url="/tools/chapter-planner"
+        featureList={features}
+        aggregateRating={{ ratingValue: "4.8", ratingCount: "892" }}
       />
       <FAQSchema faqs={toolFAQs} />
 

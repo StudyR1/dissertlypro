@@ -20,6 +20,7 @@ import {
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import FAQToolSchema, { toolFAQs } from "@/components/schemas/FAQToolSchema";
 import BreadcrumbSchema from "@/components/schemas/BreadcrumbSchema";
 import { Button } from "@/components/ui/button";
@@ -177,6 +178,12 @@ const AIPolicyCheckerPage = () => {
         name="AI Use Policy Checker"
         description="Check your university's AI policy for dissertations. Find out what AI use is allowed, required disclosure formats, and get acknowledgment templates."
         url="https://dissertlypro.com/tools/ai-policy-checker"
+        featureList={["50+ university policies", "Disclosure templates", "Use-by-use analysis"]}
+      />
+      <SoftwareApplicationSchema
+        name="AI Use Policy Checker"
+        description="Check your university's AI policy for dissertations."
+        url="/tools/ai-policy-checker"
         featureList={["50+ university policies", "Disclosure templates", "Use-by-use analysis"]}
       />
       <FAQToolSchema

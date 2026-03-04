@@ -22,6 +22,7 @@ import {
   FileText
 } from "lucide-react";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 
 interface Question {
   id: string;
@@ -382,6 +383,11 @@ const MethodologySelectorPage = () => {
           "Suggested research methods",
           "Instant results"
         ]}
+      />
+      <SoftwareApplicationSchema
+        name="Methodology Selector Quiz"
+        description="Interactive quiz to choose between quantitative, qualitative, and mixed methods."
+        url="/tools/methodology-selector"
       />
 
       <section className="py-12 md:py-16 bg-gradient-to-b from-background to-secondary/20">

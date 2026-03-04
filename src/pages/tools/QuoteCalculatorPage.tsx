@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -94,6 +95,11 @@ const QuoteCalculatorPage = () => {
         name="Dissertation Quote Calculator"
         description="Free instant quote calculator for dissertation and thesis services. Get transparent pricing for writing, editing, and research support."
         url="https://dissertlypro.com/tools/quote-calculator"
+      />
+      <SoftwareApplicationSchema
+        name="Dissertation Quote Calculator"
+        description="Free instant quote calculator for dissertation and thesis services."
+        url="/tools/quote-calculator"
       />
       <FAQSchema faqs={faqs} />
 
