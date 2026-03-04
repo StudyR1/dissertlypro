@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { glossaryTerms, GlossaryTerm } from "@/data/glossaryTerms";
 import { BreadcrumbSchema } from "@/components/schemas";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import SEO from "@/components/SEO";
 
 interface CardProgress {
@@ -232,6 +233,11 @@ const GlossaryFlashcardsPage = () => {
           { name: "Tools", url: "https://dissertlypro.com/tools" },
           { name: "Glossary Flashcards", url: "https://dissertlypro.com/tools/glossary-flashcards" },
         ]}
+      />
+      <SoftwareApplicationSchema
+        name="Academic Glossary Flashcards"
+        description="Master academic terminology with interactive flashcards using spaced repetition."
+        url="/tools/glossary-flashcards"
       />
 
       <div className="container py-8 md:py-12">

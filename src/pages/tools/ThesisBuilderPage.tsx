@@ -5,6 +5,7 @@ import { Lightbulb, ArrowRight, ArrowLeft, CheckCircle, Copy, Check, RotateCcw, 
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -242,6 +243,13 @@ const ThesisBuilderPage = () => {
           bestRating: "5",
           worstRating: "1"
         }}
+      />
+      <SoftwareApplicationSchema
+        name="Thesis Statement Builder"
+        description="Build a strong thesis statement with a step-by-step wizard."
+        url="/tools/thesis-builder"
+        featureList={features}
+        aggregateRating={{ ratingValue: "4.9", ratingCount: "956" }}
       />
       <FAQSchema faqs={toolFAQs} />
 

@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -29,7 +29,9 @@ import {
 } from "lucide-react";
 
 const UniversityLanding = () => {
-  const { region, university } = useParams<{ region: string; university: string }>();
+  const { university } = useParams<{ university: string }>();
+  const location = useLocation();
+  const region = location.pathname.split('/')[1];
   
   const universityInfo = university ? getUniversityBySlug(university) : undefined;
   const regionInfo = region ? getRegionByCode(region) : undefined;

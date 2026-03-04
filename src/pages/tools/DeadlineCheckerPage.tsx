@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -204,6 +205,11 @@ const DeadlineCheckerPage = () => {
         name="Dissertation Deadline Checker"
         description="Free deadline risk assessment tool for dissertation and thesis students. Calculates time remaining, risk level, and provides actionable recommendations."
         url="https://dissertlypro.com/tools/deadline-checker"
+      />
+      <SoftwareApplicationSchema
+        name="Dissertation Deadline Checker"
+        description="Free deadline risk assessment tool for dissertation and thesis students."
+        url="/tools/deadline-checker"
       />
       <FAQSchema faqs={faqs} />
 

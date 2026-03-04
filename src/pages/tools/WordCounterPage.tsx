@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -113,6 +114,11 @@ const WordCounterPage = () => {
         name="Word Count Calculator"
         description="Free word count calculator for dissertations and academic writing. Convert words to pages, calculate reading time, and track your progress."
         url="https://dissertlypro.com/tools/word-counter"
+      />
+      <SoftwareApplicationSchema
+        name="Word Count Calculator"
+        description="Free word count calculator for dissertations and academic writing."
+        url="/tools/word-counter"
       />
       <FAQSchema faqs={faqs} />
 

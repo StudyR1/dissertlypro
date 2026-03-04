@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import { motion } from "framer-motion";
 
 interface Reference {
@@ -270,6 +271,11 @@ const ReferenceManagerPage = () => {
           "RIS export",
           "APA formatted citations"
         ]}
+      />
+      <SoftwareApplicationSchema
+        name="Reference Manager"
+        description="Save, organize, tag, and export citations from multiple sources."
+        url="/tools/reference-manager"
       />
 
       <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">

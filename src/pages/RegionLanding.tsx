@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -35,7 +35,8 @@ const services = [
 ];
 
 const RegionLanding = () => {
-  const { region } = useParams<{ region: string }>();
+  const location = useLocation();
+  const region = location.pathname.split('/')[1];
   const regionInfo = region ? getRegionByCode(region) : undefined;
 
   if (!regionInfo) {

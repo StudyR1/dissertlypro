@@ -23,6 +23,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import BreadcrumbSchema from "@/components/schemas/BreadcrumbSchema";
 import { 
   FileText, 
@@ -710,6 +711,11 @@ const OutlineGeneratorPage = () => {
           "Word count targets",
           "Copy to clipboard functionality"
         ]}
+      />
+      <SoftwareApplicationSchema
+        name="Dissertation Outline Generator"
+        description="Generate a customized dissertation or thesis chapter outline."
+        url="/tools/outline-generator"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
 

@@ -17,6 +17,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import BreadcrumbSchema from "@/components/schemas/BreadcrumbSchema";
 import { 
   Clock, 
@@ -203,6 +204,11 @@ const DIYComparisonCalculatorPage = () => {
           "Service cost estimates",
           "Personalized recommendations"
         ]}
+      />
+      <SoftwareApplicationSchema
+        name="DIY vs Expert Help Comparison Calculator"
+        description="Calculate and compare the true cost of completing your dissertation yourself versus getting professional help."
+        url="/tools/diy-comparison"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
 

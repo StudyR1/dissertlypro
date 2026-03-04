@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import ToolSchema from "@/components/schemas/ToolSchema";
+import SoftwareApplicationSchema from "@/components/schemas/SoftwareApplicationSchema";
 import BreadcrumbSchema from "@/components/schemas/BreadcrumbSchema";
 import { 
   GraduationCap, 
@@ -523,6 +524,11 @@ const PersonalizationQuizPage = () => {
           "Priority-ranked results",
           "Works for Master's and PhD students"
         ]}
+      />
+      <SoftwareApplicationSchema
+        name="Academic Stage Personalization Quiz"
+        description="Discover personalized resources and recommendations for your dissertation or thesis."
+        url="/tools/personalization-quiz"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
 
