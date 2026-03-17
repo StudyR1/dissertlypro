@@ -36,7 +36,11 @@ const AuthorBio = ({ authorName, authorBio, variant = "default" }: AuthorBioProp
           <img 
             src={author.image} 
             alt={author.name}
+            width={40}
+            height={40}
             className="h-10 w-10 rounded-full object-cover border-2 border-copper/20"
+            loading="lazy"
+            decoding="async"
           />
         ) : (
           <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
@@ -61,7 +65,11 @@ const AuthorBio = ({ authorName, authorBio, variant = "default" }: AuthorBioProp
           <img 
             src={author.image} 
             alt={author.name}
+            width={96}
+            height={96}
             className="h-24 w-24 rounded-full object-cover border-4 border-copper/20 shadow-md flex-shrink-0 mx-auto sm:mx-0"
+            loading="lazy"
+            decoding="async"
           />
         ) : (
           <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">

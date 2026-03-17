@@ -87,7 +87,11 @@ const Footer = () => {
               <img 
                 src={logoIcon} 
                 alt="DissertlyPro Logo" 
+                width={56}
+                height={56}
                 className="h-12 w-12 sm:h-14 sm:w-14 rounded-xl shadow-copper group-hover:scale-105 transition-transform"
+                loading="lazy"
+                decoding="async"
               />
               <div className="flex flex-col">
                 <span className="text-lg sm:text-xl font-serif font-bold tracking-tight">

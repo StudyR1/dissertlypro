@@ -50,8 +50,11 @@ const BlogPostCard = ({ post, enableHover }: { post: BlogPost; enableHover: bool
         <img 
           src={getPostImage(post)} 
           alt={`${post.title} - ${post.category} article by ${post.author}`}
+          width={800}
+          height={450}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
+          decoding="async"
         />
         {post.featured && (
           <div className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
@@ -110,7 +113,11 @@ const BlogPostCard = ({ post, enableHover }: { post: BlogPost; enableHover: bool
           <img 
             src={getPostImage(post)} 
             alt={`Featured image for ${post.title}`}
+            width={640}
+            height={360}
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <span className="absolute bottom-3 left-3 text-white text-xs font-semibold uppercase tracking-wider bg-copper/90 px-2 py-1 rounded">
@@ -220,8 +227,11 @@ const Blog = () => {
                     <img 
                       src={getPostImage(post)} 
                       alt={post.title}
+                      width={640}
+                      height={360}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="p-4">

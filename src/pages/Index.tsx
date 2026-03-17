@@ -303,7 +303,7 @@ const Index = () => {
                 <div className="relative bg-white/[0.03] backdrop-blur-md rounded-3xl border border-white/[0.08] p-8">
                   {/* Logo */}
                   <div className="flex items-center gap-4 mb-8">
-                    <img src={logoIcon} alt="DissertlyPro - Premium PhD and Master's dissertation support services" className="h-14 w-14 rounded-xl" />
+                    <img src={logoIcon} alt="DissertlyPro - Premium PhD and Master's dissertation support services" width={56} height={56} className="h-14 w-14 rounded-xl" loading="eager" decoding="async" fetchPriority="high" />
                     <div>
                       <h3 className="text-lg font-serif font-bold text-white/90">DissertlyPro</h3>
                       <p className="text-white/40 text-sm font-sans">Academic Excellence Partner</p>

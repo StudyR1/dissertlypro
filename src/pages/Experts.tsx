@@ -251,7 +251,11 @@ const Experts = () => {
                     <img 
                       src={expert.image} 
                       alt={`${expert.name} - ${expert.title}, PhD dissertation expert with expertise in ${expert.expertise.slice(0, 2).join(' and ')}`}
+                      width={80}
+                      height={80}
                       className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border-2 border-copper/20"
+                      loading="lazy"
+                      decoding="async"
                     />
                     {/* Small indicator dot on avatar */}
                     <ExpertAvailabilityBadge 

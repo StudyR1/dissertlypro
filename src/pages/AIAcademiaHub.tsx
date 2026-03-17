@@ -285,7 +285,12 @@ const AIAcademiaHub = () => {
               <img
                 src={heroImage}
                 alt="AI tools for academic research - student using artificial intelligence for dissertation writing and literature review"
+                width={720}
+                height={480}
                 className="rounded-2xl shadow-2xl"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
               <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-xl shadow-lg border">
                 <div className="flex items-center gap-3">

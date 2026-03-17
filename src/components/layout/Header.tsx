@@ -543,7 +543,7 @@ const Header = () => {
             {/* Header with close button */}
             <div className="flex items-center justify-between p-4 border-b border-border">
               <Link to="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                <img src={logoIcon} alt="DissertlyPro" className="h-8 w-8 rounded-lg" />
+                <img src={logoIcon} alt="DissertlyPro" className="h-8 w-8 rounded-lg" loading="lazy" decoding="async" />
                 <span className="font-serif font-bold text-foreground">DissertlyPro</span>
               </Link>
               <button
