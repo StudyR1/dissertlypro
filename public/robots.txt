@@ -1,36 +1,38 @@
-# DissertlyPro Robots.txt
+# DissertlyPro robots.txt
 # https://dissertlypro.com
-# Last Updated: 2025-01-21
+# Updated: 2026-02-18
 
-# Allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_internal/
 
-# Sitemap location
+# Crawl budget guidance for non-Google crawlers
+Crawl-delay: 1
+
+# Primary discovery files
+Sitemap: https://dissertlypro.com/sitemap-index.xml
 Sitemap: https://dissertlypro.com/sitemap.xml
+Sitemap: https://dissertlypro.com/llms-sitemap.xml
+Host: dissertlypro.com
 
-# Additional discovery files
-# LLM/AI Context: /llms.txt, /llms-full.txt, /ai-context.json
-# Security: /.well-known/security.txt
-# Humans: /humans.txt
-
-# Google
+# Explicitly allow major search and social crawlers
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
-User-agent: Google-Extended
+User-agent: Applebot
 Allow: /
 
-# Bing
-User-agent: Bingbot
+User-agent: DuckDuckBot
 Allow: /
-Crawl-delay: 1
 
-# Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
 
@@ -40,10 +42,7 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-User-agent: FacebookBot
-Allow: /
-
-# AI/LLM Crawlers - All Welcome
+# AI/LLM crawlers (explicit opt-in)
 User-agent: GPTBot
 Allow: /
 
@@ -59,13 +58,7 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Applebot-Extended
-Allow: /
-
 User-agent: CCBot
-Allow: /
-
-User-agent: Omgilibot
 Allow: /
 
 User-agent: Bytespider
@@ -80,10 +73,5 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-User-agent: YouBot
+User-agent: Omgilibot
 Allow: /
-
-# Disallow admin/private areas
-Disallow: /api/
-Disallow: /admin/
-Disallow: /_internal/

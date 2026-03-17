@@ -179,7 +179,7 @@ Comprehensive resource hub for navigating AI tools in academic research. Covers 
 Understand how AI detection tools work (GPTZero, Turnitin AI, Originality.ai). Learn about false positives, limitations, and how to write authentically to avoid detection flags. Includes practical strategies for human-sounding academic writing.
 
 #### Citing AI in Your Dissertation
-**URL:** https://dissertlypro.com/citing-ai
+**URL:** https://dissertlypro.com/citing-ai-guide
 Complete guide to properly citing AI tools like ChatGPT, Claude, and Gemini in APA 7th, MLA 9th, Chicago, and Harvard styles. Includes citation examples, in-text citation formats, and reference list entries for AI-generated content.
 
 #### AI for Literature Reviews
@@ -359,7 +359,7 @@ A: It depends on your university's policy. Many institutions now allow AI for br
 A: AI detectors (GPTZero, Turnitin AI, Originality.ai) analyze text patterns like perplexity, burstiness, and sentence uniformity. They're not 100% accurate—false positives occur with non-native speakers and technical writing. Learn more: https://dissertlypro.com/ai-detection-guide
 
 ### Q: How do I cite ChatGPT or AI tools in my dissertation?
-A: APA 7th: OpenAI. (2024). ChatGPT (Mar 14 version) [Large language model]. MLA 9th: "Prompt text" ChatGPT, 14 Mar. 2024, chat.openai.com. Include the prompt, date, and version. Full citation guide: https://dissertlypro.com/citing-ai
+A: APA 7th: OpenAI. (2024). ChatGPT (Mar 14 version) [Large language model]. MLA 9th: "Prompt text" ChatGPT, 14 Mar. 2024, chat.openai.com. Include the prompt, date, and version. Full citation guide: https://dissertlypro.com/citing-ai-guide
 
 ### Q: What is the CLEAR Framework for AI use?
 A: CLEAR is an ethical framework: Consult your institution's policy, Limit AI to appropriate tasks, Edit and verify all outputs, Attribute AI contributions properly, Retain human authorship. Learn more: https://dissertlypro.com/ai-academia
