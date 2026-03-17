@@ -57,7 +57,12 @@ const SEO = ({
   const normalizedCanonical = canonical?.startsWith(SITE_URL) 
     ? canonical.slice(SITE_URL.length) 
     : canonical;
-  const fullUrl = normalizedCanonical ? `${SITE_URL}${normalizedCanonical}` : SITE_URL;
+  const normalizedPath = normalizedCanonical
+    ? normalizedCanonical === '/'
+      ? '/'
+      : normalizedCanonical.replace(/\/$/, '')
+    : '/';
+  const fullUrl = `${SITE_URL}${normalizedPath}`;
   
   // Determine OG image: explicit image > category-based > path-based > default
   const resolvedImage = image 
@@ -116,7 +121,7 @@ const SEO = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={allKeywords.join(', ')} />
       <meta name="author" content={author || SITE_NAME} />
-      <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+      <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
       <link rel="canonical" href={fullUrl} />
 
       {/* Hreflang tags - regional landing pages link to each other */}
@@ -142,10 +147,7 @@ const SEO = ({
       <meta name="geo.placename" content={geo.placename} />
       
       {/* All target markets */}
-      <meta name="geo.country" content="US" />
-      <meta name="geo.country" content="GB" />
-      <meta name="geo.country" content="AU" />
-      <meta name="geo.country" content="CA" />
+      <meta name="geo.country" content="US,GB,AU,CA" />
       
       {/* Dublin Core for academic crawlers */}
       <meta name="DC.coverage" content={geo.placename} />
@@ -200,7 +202,6 @@ const SEO = ({
       {/* Additional SEO */}
       <meta name="theme-color" content="#0f1629" />
       <meta name="format-detection" content="telephone=no" />
-      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
     </Helmet>
   );
 };
