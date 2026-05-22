@@ -306,6 +306,114 @@ const DissertationWritingServices = () => {
         </div>
       </section>
 
+      {/* Complete Service Breakdown — Hub */}
+      <section className="py-16 lg:py-24 bg-cream-warm">
+        <div className="container mx-auto px-4">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-center mb-12 max-w-3xl mx-auto">
+            <span className="inline-block text-copper font-sans font-semibold text-sm tracking-widest uppercase mb-3">
+              Everything Included
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
+              Every Stage of Your Dissertation, Covered
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Pick a single service or combine them for end-to-end support. All services are delivered by the same PhD expert assigned to your project.
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {[
+              { slug: "dissertation-proposal", icon: FileText, title: "Dissertation Proposal", text: "Topic refinement, problem statement, research questions, and approval-ready proposals." },
+              { slug: "literature-review", icon: BookOpen, title: "Literature Review", text: "Systematic searches, thematic synthesis, and theoretical framework development." },
+              { slug: "methodology", icon: Layers, title: "Research Methodology", text: "Qualitative, quantitative, and mixed-methods design with ethics approval support." },
+              { slug: "data-analysis", icon: BarChart3, title: "Data Analysis", text: "SPSS, R, STATA, NVivo, and ATLAS.ti analysis with results interpretation." },
+              { slug: "thesis-writing", icon: PenTool, title: "Chapter Writing", text: "Chapter-by-chapter drafting with argument development and academic voice coaching." },
+              { slug: "editing", icon: BadgeCheck, title: "Editing & Proofreading", text: "Academic English refinement, formatting (APA, MLA, Harvard, Chicago), and reference verification." },
+              { slug: "similarity-reduction", icon: Shield, title: "Turnitin Reduction", text: "Expert paraphrasing and citation integration to meet institutional originality thresholds." },
+              { slug: "supervisor-revisions", icon: MessageCircle, title: "Supervisor Revisions", text: "Strategic responses to committee feedback and structured revision planning." },
+              { slug: "formatting", icon: GraduationCap, title: "Formatting & Submission", text: "University template compliance, table of contents, and submission-ready packaging." },
+            ].map((svc, i) => (
+              <motion.div key={svc.slug} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ ...fadeIn, visible: { ...fadeIn.visible, transition: { delay: i * 0.05, duration: 0.4 } } }}>
+                <Link to={`/services/${svc.slug}`} className="block group h-full">
+                  <Card className="h-full border-border hover:border-copper/40 hover:shadow-lg transition-all">
+                    <CardContent className="p-6">
+                      <svc.icon className="w-8 h-8 text-copper mb-3" />
+                      <h3 className="font-serif text-lg text-foreground mb-2 group-hover:text-copper transition-colors">
+                        {svc.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-3">{svc.text}</p>
+                      <span className="inline-flex items-center gap-1 text-copper text-sm font-medium">
+                        Learn more <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Button asChild variant="outline" size="lg" className="border-copper text-copper hover:bg-copper hover:text-white">
+              <Link to="/services">
+                View All Services <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Expert Showcase */}
+      <section className="py-16 lg:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <span className="inline-block text-copper font-sans font-semibold text-sm tracking-widest uppercase mb-3">
+                  Meet Your Expert
+                </span>
+                <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
+                  Written By PhDs Who've Defended Their Own Dissertations
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Every project is matched to an expert holding a doctorate in your discipline — not a generalist writer. Our 500+ verified academics come from leading institutions across the UK, US, Australia, Canada, and the EU.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Verified doctoral credentials and publication records",
+                    "Discipline-specific match within 24 hours",
+                    "Direct communication — no account managers in between",
+                    "Familiar with your university's submission standards",
+                  ].map((point) => (
+                    <li key={point} className="flex items-start gap-2 text-muted-foreground">
+                      <CheckCircle className="w-5 h-5 text-copper mt-0.5 flex-shrink-0" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild className="bg-copper hover:bg-copper-dark text-white">
+                  <Link to="/experts">
+                    Meet Our Experts <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </Button>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { stat: "500+", label: "PhD-Qualified Experts" },
+                  { stat: "50+", label: "Disciplines Covered" },
+                  { stat: "15,000+", label: "Students Supported" },
+                  { stat: "4.9/5", label: "Average Rating" },
+                ].map((item) => (
+                  <Card key={item.label} className="border-border bg-cream">
+                    <CardContent className="p-6 text-center">
+                      <div className="font-serif text-3xl text-copper mb-1">{item.stat}</div>
+                      <div className="text-muted-foreground text-sm">{item.label}</div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Quality Assurance */}
       <section className="py-16 lg:py-24 bg-cream">
         <div className="container mx-auto px-4">
