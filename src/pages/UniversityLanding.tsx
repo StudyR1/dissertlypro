@@ -291,6 +291,33 @@ const UniversityLanding = () => {
           </div>
         </section>
       )}
+
+      {/* Dissertation Writing Services Pillar Link */}
+      <section className="py-12 bg-background">
+        <div className="container px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <Link
+              to="/dissertation-writing-services"
+              className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 bg-gradient-to-br from-midnight to-midnight-rich text-white rounded-2xl border border-copper/20 hover:border-copper/50 hover:shadow-copper transition-all group"
+            >
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-copper/20 rounded-xl">
+                  <FileText className="h-6 w-6 text-copper-light" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-serif font-semibold mb-1 group-hover:text-copper-light transition-colors">
+                    Complete Dissertation Writing Services for {universityInfo.shortName} Students
+                  </h3>
+                  <p className="text-ivory font-sans text-sm">
+                    End-to-end dissertation writing support — proposal, chapters, methodology, analysis, editing, and viva prep, tailored to {universityInfo.name} standards.
+                  </p>
+                </div>
+              </div>
+              <ArrowRight className="h-5 w-5 text-copper-light group-hover:translate-x-1 transition-transform shrink-0" />
+            </Link>
+          </div>
+        </div>
+      </section>
       {/* Key Takeaways */}
       <section className="py-16 lg:py-24 bg-background">
         <div className="container px-4 sm:px-6">
