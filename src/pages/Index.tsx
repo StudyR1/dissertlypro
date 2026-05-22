@@ -140,7 +140,7 @@ const Index = () => {
     <Layout>
       <SEO 
         title="Home"
-        description="DissertlyPro provides premium dissertation and thesis support for Master's and PhD students. Expert research guidance, data analysis, editing, and academic writing services worldwide."
+        description="Premium dissertation and thesis support for Master's and PhD students — expert research guidance, data analysis, editing, and academic writing."
         canonical="/"
         keywords={['dissertation help', 'thesis support', 'PhD assistance', 'masters thesis', 'academic writing']}
       />

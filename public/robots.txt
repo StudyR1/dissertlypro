@@ -1,5 +1,5 @@
 # DissertlyPro Robots.txt
-# https://dissertlypro.com
+# https://dissertlypro.lovable.app
 # Last Updated: 2025-01-21
 
 # Allow all crawlers
@@ -7,7 +7,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://dissertlypro.com/sitemap.xml
+Sitemap: https://dissertlypro.lovable.app/sitemap.xml
 
 # Additional discovery files
 # LLM/AI Context: /llms.txt, /llms-full.txt, /ai-context.json
