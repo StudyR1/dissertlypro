@@ -12,6 +12,34 @@ DissertlyPro is a premium academic support service founded to help postgraduate 
 - 50+ countries served
 - Available 24/7
 
+## Pages
+
+- [Home](/): Premium dissertation and thesis support for Master's and PhD students.
+- [Dissertation Writing Services](/dissertation-writing-services): End-to-end dissertation writing — proposal through viva prep.
+- [All Services](/services): Full catalogue of academic support services.
+- [Pricing](/pricing): Transparent pricing for chapters, full dissertations, and monthly plans.
+- [Free Consultation](/consultation): Book a free consultation with a subject expert.
+- [Order Now](/order): Start a new order with your requirements.
+- [Experts](/experts): Meet our PhD-qualified academic experts.
+- [Subjects](/subjects): Disciplines and fields we cover.
+- [Universities Hub](/universities): Country and university-specific dissertation support.
+- [Tools Hub](/tools): Free academic tools — citation generator, planner, more.
+- [Resources](/resources): Guides, templates, and academic resources.
+- [Blog](/blog): Articles on dissertation writing, research, and academic life.
+- [About](/about): About DissertlyPro and our mission.
+- [Contact](/contact): Get in touch with our team.
+- [FAQ](/faq): Frequently asked questions about our services.
+- [Pricing & Quote Calculator](/tools/quote-calculator): Estimate the cost of your project.
+- [Citation Generator](/tools/citation-generator): Free APA, MLA, Harvard, Chicago citation tool.
+- [Dissertation Writing Guide](/dissertation-writing): Step-by-step dissertation writing guide.
+- [Literature Review Guide](/literature-review-guide): How to write a strong literature review.
+- [Research Methodology](/research-methodology): Choosing and designing your methodology.
+- [UK Dissertation Help](/uk): Support for UK postgraduate students.
+- [US Dissertation Help](/us): Support for US graduate students.
+- [Australia Dissertation Help](/au): Support for Australian postgraduates.
+- [Canada Dissertation Help](/ca): Support for Canadian postgraduates.
+- [Glossary](/glossary): Academic and research terminology glossary.
+
 ## Our Services
 
 ### Dissertation Proposal Development
@@ -407,4 +435,4 @@ A: Use our Reference Manager to save, organize, tag, and export citations. Suppo
 
 ## Machine-Readable Context
 
-For structured data about DissertlyPro services, tools, experts, and FAQs, see: https://dissertlypro.com/ai-context.json
+For structured data about DissertlyPro services, tools, experts, and FAQs, see: https://dissertlypro.lovable.app/ai-context.json
