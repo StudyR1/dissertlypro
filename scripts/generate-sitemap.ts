@@ -45,53 +45,53 @@ const staticEntries: SitemapEntry[] = staticPaths.map((p) => ({
   priority: priorityFor(p),
 }));
 
-// ---- 2. Dynamic content ----
-async function loadDynamic(): Promise<SitemapEntry[]> {
+// ---- 2. Dynamic content (regex-extracted to avoid TS/JSX import resolution) ----
+function extractSlugs(file: string, key = "slug"): string[] {
+  try {
+    const src = readFileSync(resolve(file), "utf8");
+    const re = new RegExp(`${key}:\\s*["'\`]([a-z0-9-]+)["'\`]`, "g");
+    return [...src.matchAll(re)].map((m) => m[1]);
+  } catch {
+    return [];
+  }
+}
+
+function extractUniversities(): Array<{ slug: string; region: string }> {
+  try {
+    const src = readFileSync(resolve("src/data/universityData.ts"), "utf8");
+    // Match each object with slug + region (in any order, within ~600 chars)
+    const objects = src.split(/\{\s*\n/).slice(1);
+    const out: Array<{ slug: string; region: string }> = [];
+    for (const obj of objects) {
+      const slugMatch = obj.match(/slug:\s*["']([a-z0-9-]+)["']/);
+      const regionMatch = obj.match(/region:\s*["'](uk|us|au|ca)["']/);
+      if (slugMatch && regionMatch) {
+        out.push({ slug: slugMatch[1], region: regionMatch[1] });
+      }
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
+function loadDynamic(): SitemapEntry[] {
   const entries: SitemapEntry[] = [];
 
   // Blog posts
-  try {
-    const { blogPosts } = await import(resolve("src/data/blogPosts.ts"));
-    for (const post of blogPosts as Array<{ slug: string; date?: string; publishedAt?: string }>) {
-      entries.push({
-        path: `/blog/${post.slug}`,
-        lastmod: (post.date || post.publishedAt || today).slice(0, 10),
-        changefreq: "monthly",
-        priority: "0.8",
-      });
-    }
-  } catch (e) {
-    console.warn("sitemap: blogPosts import failed", (e as Error).message);
+  for (const slug of extractSlugs("src/data/blogPosts.ts")) {
+    entries.push({ path: `/blog/${slug}`, lastmod: today, changefreq: "monthly", priority: "0.8" });
   }
 
-  // Universities (per region)
-  try {
-    const { universityData } = await import(resolve("src/data/universityData.ts"));
-    for (const uni of universityData as Array<{ slug: string; region: string }>) {
-      entries.push({
-        path: `/${uni.region}/${uni.slug}`,
-        lastmod: today,
-        changefreq: "monthly",
-        priority: "0.75",
-      });
-    }
-  } catch (e) {
-    console.warn("sitemap: universityData import failed", (e as Error).message);
+  // Universities
+  for (const uni of extractUniversities()) {
+    entries.push({ path: `/${uni.region}/${uni.slug}`, lastmod: today, changefreq: "monthly", priority: "0.75" });
   }
 
-  // Services subroutes — hardcoded slug list (keep in sync with Services.tsx)
-  const serviceSlugs = [
-    "dissertation-proposal", "thesis-writing", "methodology", "data-analysis",
-    "literature-review", "editing", "similarity-reduction",
-    "supervisor-revisions", "journal-preparation", "formatting",
-  ];
+  // Service detail pages
+  const serviceSlugs = extractSlugs("src/pages/Services.tsx");
   for (const slug of serviceSlugs) {
-    entries.push({
-      path: `/services/${slug}`,
-      lastmod: today,
-      changefreq: "monthly",
-      priority: "0.85",
-    });
+    entries.push({ path: `/services/${slug}`, lastmod: today, changefreq: "monthly", priority: "0.85" });
   }
 
   return entries;
@@ -117,11 +117,10 @@ function buildXml(entries: SitemapEntry[]) {
   ].join("\n");
 }
 
-async function main() {
-  const dynamicEntries = await loadDynamic();
+function main() {
+  const dynamicEntries = loadDynamic();
   const all = [...staticEntries, ...dynamicEntries];
 
-  // De-dupe by path
   const seen = new Set<string>();
   const unique = all.filter((e) => {
     if (seen.has(e.path)) return false;
@@ -129,7 +128,6 @@ async function main() {
     return true;
   });
 
-  // Sort: home first, then alpha
   unique.sort((a, b) => {
     if (a.path === "/") return -1;
     if (b.path === "/") return 1;
@@ -139,13 +137,12 @@ async function main() {
   writeFileSync(resolve("public/sitemap.xml"), buildXml(unique));
   console.log(`sitemap.xml generated with ${unique.length} entries → ${BASE_URL}`);
 
-  // Refresh robots.txt Sitemap directive
   const robotsPath = resolve("public/robots.txt");
   try {
     const robots = readFileSync(robotsPath, "utf8");
     const updated = robots
       .replace(/^Sitemap:.*$/m, `Sitemap: ${BASE_URL}/sitemap.xml`)
-      .replace(/^# https:\/\/.*$/m, `# ${BASE_URL}`);
+      .replace(/^# https?:\/\/[^\s]+$/m, `# ${BASE_URL}`);
     writeFileSync(robotsPath, updated);
     console.log(`robots.txt updated → ${BASE_URL}/sitemap.xml`);
   } catch {
@@ -153,7 +150,9 @@ async function main() {
   }
 }
 
-main().catch((e) => {
+try {
+  main();
+} catch (e) {
   console.error("sitemap generation failed", e);
   process.exit(1);
-});
+}
