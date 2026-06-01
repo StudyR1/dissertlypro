@@ -81,6 +81,49 @@
     <!-- Additional SEO & Mobile -->
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- Sitewide JSON-LD: visible to non-JS crawlers (AI search, social previews) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://dissertlypro.com/#organization",
+          "name": "DissertlyPro",
+          "url": "https://dissertlypro.com",
+          "logo": "https://dissertlypro.com/logo-icon.png",
+          "description": "Premium dissertation and thesis support for Master's and PhD students worldwide — expert research guidance, data analysis, editing, and academic writing.",
+          "sameAs": [
+            "https://twitter.com/DissertlyPro",
+            "https://www.linkedin.com/company/dissertlypro",
+            "https://www.facebook.com/DissertlyPro"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-812-690-5122",
+            "contactType": "customer service",
+            "availableLanguage": "English",
+            "areaServed": "Worldwide"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://dissertlypro.com/#website",
+          "url": "https://dissertlypro.com",
+          "name": "DissertlyPro",
+          "publisher": { "@id": "https://dissertlypro.com/#organization" },
+          "inLanguage": "en",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://dissertlypro.com/blog?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+
     
     <!-- Critical CSS inline for faster FCP -->
     <style>
