@@ -73,14 +73,14 @@ const ServicePillarPage = ({ config }: Props) => {
       />
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dissertlypro.com/" },
+          { name: "Home", url: "/" },
           {
             name: "Dissertation Writing Services",
-            url: "https://dissertlypro.com/dissertation-writing-services",
+            url: "/dissertation-writing-services",
           },
           {
             name: config.breadcrumbLabel,
-            url: `https://dissertlypro.com${config.path}`,
+            url: config.path,
           },
         ]}
       />
@@ -93,7 +93,7 @@ const ServicePillarPage = ({ config }: Props) => {
       <AggregateRatingSchema ratingValue={4.9} reviewCount={2847} />
 
       {/* HERO */}
-      <section className="relative bg-gradient-to-b from-midnight via-midnight to-midnight-light py-20 md:py-28 text-cream">
+      <section className="relative bg-gradient-to-b from-midnight via-midnight to-midnight-soft py-20 md:py-28 text-cream">
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <p className="text-sm uppercase tracking-widest text-copper mb-4">
             Premium Academic Support
@@ -134,7 +134,7 @@ const ServicePillarPage = ({ config }: Props) => {
       </section>
 
       {/* TL;DR */}
-      <section className="py-12 bg-cream-light">
+      <section className="py-12 bg-cream-warm">
         <div className="container mx-auto px-4 max-w-4xl">
           <Card className="border-l-4 border-l-copper bg-white">
             <CardContent className="p-6 md:p-8">
@@ -157,7 +157,7 @@ const ServicePillarPage = ({ config }: Props) => {
             {config.whoFor.map((item, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 p-5 rounded-lg bg-cream-light border border-cream-dark/20"
+                className="flex items-start gap-3 p-5 rounded-lg bg-cream-warm border border-cream-rich/30"
               >
                 <CheckCircle className="h-5 w-5 text-copper mt-1 flex-shrink-0" />
                 <p className="text-midnight">{item}</p>
@@ -168,7 +168,7 @@ const ServicePillarPage = ({ config }: Props) => {
       </section>
 
       {/* WHAT'S INCLUDED */}
-      <section className="py-16 bg-cream-light">
+      <section className="py-16 bg-cream-warm">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="font-serif text-3xl md:text-4xl text-midnight mb-4 text-center">
             What's included in every engagement
@@ -217,7 +217,7 @@ const ServicePillarPage = ({ config }: Props) => {
             {config.process.map((p, i) => (
               <li
                 key={i}
-                className="flex gap-5 p-6 rounded-lg bg-midnight-light/50 border border-cream/10"
+                className="flex gap-5 p-6 rounded-lg bg-midnight-soft/50 border border-cream/10"
               >
                 <span className="flex-shrink-0 w-12 h-12 rounded-full bg-copper text-white flex items-center justify-center font-serif text-xl">
                   {i + 1}
@@ -233,7 +233,7 @@ const ServicePillarPage = ({ config }: Props) => {
       </section>
 
       {/* DELIVERABLES */}
-      <section className="py-16 bg-cream-light">
+      <section className="py-16 bg-cream-warm">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-serif text-3xl md:text-4xl text-midnight mb-8 text-center">
             What you receive
@@ -280,7 +280,7 @@ const ServicePillarPage = ({ config }: Props) => {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-cream-light">
+      <section className="py-16 bg-cream-warm">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="font-serif text-3xl md:text-4xl text-midnight mb-8 text-center">
             Frequently asked questions
@@ -290,7 +290,7 @@ const ServicePillarPage = ({ config }: Props) => {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="bg-white rounded-lg border border-cream-dark/30 px-5"
+                className="bg-white rounded-lg border border-cream-rich/30 px-5"
               >
                 <AccordionTrigger className="text-left font-serif text-lg text-midnight hover:no-underline">
                   {faq.question}
@@ -316,7 +316,7 @@ const ServicePillarPage = ({ config }: Props) => {
                 <Link
                   key={i}
                   to={r.href}
-                  className="block p-5 bg-cream-light hover:bg-cream rounded-lg border border-cream-dark/20 transition-colors text-midnight font-medium"
+                  className="block p-5 bg-cream-warm hover:bg-cream rounded-lg border border-cream-rich/30 transition-colors text-midnight font-medium"
                 >
                   {r.label} <ArrowRight className="inline h-4 w-4 ml-1" />
                 </Link>
@@ -339,7 +339,7 @@ const ServicePillarPage = ({ config }: Props) => {
           <Button
             asChild
             size="lg"
-            className="bg-white text-copper-dark hover:bg-cream-light"
+            className="bg-white text-copper-dark hover:bg-cream-warm"
           >
             <Link to="/consultation">
               Book Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
