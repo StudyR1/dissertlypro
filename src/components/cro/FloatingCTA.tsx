@@ -35,20 +35,35 @@ const FloatingCTA = memo(() => {
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
 
-    // Set callback for when Tawk loads - hide the default widget
+    // Auto-open the chat panel once per browser session
+    const autoOpenIfFirstVisit = () => {
+      try {
+        const alreadyOpened = sessionStorage.getItem('tawk_auto_opened');
+        if (!alreadyOpened) {
+          sessionStorage.setItem('tawk_auto_opened', '1');
+          window.Tawk_API?.showWidget?.();
+          // Slight delay so the iframe is fully mounted before maximize
+          setTimeout(() => window.Tawk_API?.maximize?.(), 400);
+        } else {
+          window.Tawk_API?.showWidget?.();
+        }
+      } catch {
+        window.Tawk_API?.showWidget?.();
+      }
+    };
+
+    // Set callback for when Tawk loads
     window.Tawk_API.onLoad = () => {
       window.__tawkLoaded = true;
       setIsTawkLoaded(true);
-      // Hide the default Tawk.to widget button
-      if (window.Tawk_API?.hideWidget) {
-        window.Tawk_API.hideWidget();
-      }
+      autoOpenIfFirstVisit();
     };
 
     // Check if script already exists
     const existingScript = document.querySelector('script[src*="tawk.to"]');
     if (existingScript) {
       setIsTawkLoaded(true);
+      autoOpenIfFirstVisit();
       return;
     }
 
@@ -61,14 +76,13 @@ const FloatingCTA = memo(() => {
     const firstScript = document.getElementsByTagName('script')[0];
     firstScript?.parentNode?.insertBefore(script, firstScript);
 
-    // Fallback: set loaded after timeout and try to hide widget
+    // Fallback: set loaded after timeout and try to auto-open
     const timeout = setTimeout(() => {
       window.__tawkLoaded = true;
       setIsTawkLoaded(true);
-      if (window.Tawk_API?.hideWidget) {
-        window.Tawk_API.hideWidget();
-      }
-    }, 3000);
+      autoOpenIfFirstVisit();
+    }, 3500);
+
 
     return () => {
       clearTimeout(timeout);
@@ -127,22 +141,8 @@ const FloatingCTA = memo(() => {
         </motion.button>
       </div>
 
-      {/* Hide Tawk.to default button with aggressive CSS */}
+      {/* Allow Tawk.to native widget to render so it can auto-open on first visit */}
       <style>{`
-        /* Hide Tawk.to default widget button everywhere */
-        iframe[title="chat widget"],
-        iframe[src*="tawk.to"]:not(.tawk-chat-panel),
-        .widget-visible,
-        #tawk-default-container,
-        .tawk-min-container,
-        .tawk-button-circle,
-        div[class*="widget-visible"] {
-          display: none !important;
-          visibility: hidden !important;
-          opacity: 0 !important;
-          pointer-events: none !important;
-        }
-        /* But show the chat window when opened */
         iframe.tawk-chat-panel,
         .tawk-chat-panel {
           display: block !important;
@@ -151,6 +151,7 @@ const FloatingCTA = memo(() => {
           pointer-events: auto !important;
         }
       `}</style>
+
     </>
   );
 });

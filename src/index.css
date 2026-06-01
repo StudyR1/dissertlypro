@@ -924,12 +924,13 @@ section:not(:first-of-type) {
   }
 }
 
-/* Tawk.to Widget Override - Hide default button, show only chat panel */
+/* Tawk.to Widget — allow native panel to render (auto-opens on first visit) */
 .tawk-min-container,
 .tawk-button-container,
 #tawk-bubble-container,
 div[class*="tawk"][class*="min"],
 div[class*="tawk"][class*="bubble"],
+
 iframe[title="chat widget"] {
   display: none !important;
   visibility: hidden !important;
