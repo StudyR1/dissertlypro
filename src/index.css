@@ -924,18 +924,5 @@ section:not(:first-of-type) {
   }
 }
 
-/* Tawk.to Widget — allow native panel to render (auto-opens on first visit) */
-.tawk-min-container,
-.tawk-button-container,
-#tawk-bubble-container,
-div[class*="tawk"][class*="min"],
-div[class*="tawk"][class*="bubble"],
+/* Tawk.to: allow native widget + chat panel to render (auto-opens on first visit) */
 
-iframe[title="chat widget"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  pointer-events: none !important;
-}
