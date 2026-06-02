@@ -21,9 +21,20 @@ const pathMatches = [...appSource.matchAll(/path="([^"]+)"/g)].map((m) => m[1]);
 
 const EXCLUDE = new Set<string>([
   "*",
-  "/order", // keep order page out? leave in
+  // Legacy URL redirects (do not advertise these to crawlers)
+  "/quick-checkout",
+  "/services/academic-editing",
+  "/services/proposal-development",
+  "/services/dissertation-writing",
+  "/services/research-methodology",
+  "/refund-policy",
+  "/privacy-policy",
+  "/terms-and-conditions",
+  "/blog/mit-thesis-writing-strategies",
+  "/blog/stanford-dissertation-excellence",
+  // Internal utility pages
+  "/search",
 ]);
-EXCLUDE.delete("/order");
 
 const staticPaths = [...new Set(pathMatches)]
   .filter((p) => !p.includes(":") && !EXCLUDE.has(p));
