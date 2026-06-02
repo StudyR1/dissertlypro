@@ -35,18 +35,46 @@ const FloatingCTA = memo(() => {
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
 
-    // Auto-open the chat panel once per browser session
+    // Auto-open the chat panel once per browser session.
+    // Mobile users get a softer experience: widget appears but we only
+    // auto-maximize after 8s of dwell + meaningful scroll, and we bail
+    // entirely if they're actively interacting with a form/CTA.
     const autoOpenIfFirstVisit = () => {
       try {
         const alreadyOpened = sessionStorage.getItem('tawk_auto_opened');
-        if (!alreadyOpened) {
-          sessionStorage.setItem('tawk_auto_opened', '1');
-          window.Tawk_API?.showWidget?.();
-          // Slight delay so the iframe is fully mounted before maximize
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+        // Always show the widget so the user can tap it themselves
+        window.Tawk_API?.showWidget?.();
+        if (alreadyOpened) return;
+        sessionStorage.setItem('tawk_auto_opened', '1');
+
+        if (!isMobile) {
           setTimeout(() => window.Tawk_API?.maximize?.(), 400);
-        } else {
-          window.Tawk_API?.showWidget?.();
+          return;
         }
+
+        // Mobile: wait for dwell + scroll, skip if user is typing
+        let scrolled = false;
+        let cancelled = false;
+        const onScroll = () => {
+          if (window.scrollY > 400) scrolled = true;
+        };
+        const onInteract = (e: Event) => {
+          const target = e.target as HTMLElement | null;
+          if (target && target.closest('input, textarea, select, button, a')) {
+            cancelled = true;
+          }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('touchstart', onInteract, { passive: true, capture: true });
+
+        setTimeout(() => {
+          window.removeEventListener('scroll', onScroll);
+          window.removeEventListener('touchstart', onInteract, { capture: true } as EventListenerOptions);
+          if (cancelled || !scrolled) return;
+          window.Tawk_API?.maximize?.();
+        }, 8000);
       } catch {
         window.Tawk_API?.showWidget?.();
       }

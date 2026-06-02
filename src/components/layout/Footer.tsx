@@ -43,6 +43,17 @@ const Footer = () => {
       { title: "Literature Reviews", href: "/services/literature-review" },
       { title: "Editing & Proofreading", href: "/services/editing" },
     ],
+    dissertationServices: [
+      { title: "PhD Dissertation Writing", href: "/phd-dissertation-writing-services" },
+      { title: "Master's Dissertation Writing", href: "/masters-dissertation-writing-services" },
+      { title: "MBA Dissertation Writing", href: "/mba-dissertation-writing-services" },
+      { title: "Medical Dissertation Writing", href: "/medical-dissertation-writing-services" },
+      { title: "Proposal Writing Services", href: "/dissertation-proposal-writing-services" },
+      { title: "Capstone Dissertation", href: "/capstone-dissertation-writing-services" },
+      { title: "Online Dissertation Help", href: "/online-dissertation-writing-services" },
+      { title: "Affordable Dissertation Help", href: "/cheap-dissertation-writing-services" },
+      { title: "Service Reviews", href: "/dissertation-writing-services-reviews" },
+    ],
     resources: [
       { title: "Supervisor Guide", href: "/supervisor-guide" },
       { title: "Academic Glossary", href: "/glossary" },
