@@ -107,6 +107,18 @@ const QuickServices = lazy(() => import("./pages/QuickServices"));
 const QuickServiceCheckout = lazy(() => import("./pages/QuickServiceCheckout"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+// Keyword-targeted dissertation service pages
+const PhDDissertationWritingServices = lazy(() => import("./pages/services/PhDDissertationWritingServices"));
+const MastersDissertationWritingServices = lazy(() => import("./pages/services/MastersDissertationWritingServices"));
+const MBADissertationWritingServices = lazy(() => import("./pages/services/MBADissertationWritingServices"));
+const MedicalDissertationWritingServices = lazy(() => import("./pages/services/MedicalDissertationWritingServices"));
+const CheapDissertationWritingServices = lazy(() => import("./pages/services/CheapDissertationWritingServices"));
+const DissertationWritingServicesReviews = lazy(() => import("./pages/services/DissertationWritingServicesReviews"));
+const OnlineDissertationWritingServices = lazy(() => import("./pages/services/OnlineDissertationWritingServices"));
+const DissertationProposalWritingServices = lazy(() => import("./pages/services/DissertationProposalWritingServices"));
+const CapstoneDissertationWritingServices = lazy(() => import("./pages/services/CapstoneDissertationWritingServices"));
+
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -267,8 +279,20 @@ const AppRoutes = () => {
         {/* Quick Services */}
         <Route path="/quick-services" element={<Suspense fallback={<ServicesGridSkeleton />}><QuickServices /></Suspense>} />
         <Route path="/quick-services/checkout" element={<Suspense fallback={<SkeletonPage />}><QuickServiceCheckout /></Suspense>} />
-        
+
+        {/* Keyword-targeted dissertation service pages */}
+        <Route path="/phd-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><PhDDissertationWritingServices /></Suspense>} />
+        <Route path="/masters-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><MastersDissertationWritingServices /></Suspense>} />
+        <Route path="/mba-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><MBADissertationWritingServices /></Suspense>} />
+        <Route path="/medical-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><MedicalDissertationWritingServices /></Suspense>} />
+        <Route path="/cheap-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><CheapDissertationWritingServices /></Suspense>} />
+        <Route path="/dissertation-writing-services-reviews" element={<Suspense fallback={<ArticleSkeleton />}><DissertationWritingServicesReviews /></Suspense>} />
+        <Route path="/online-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><OnlineDissertationWritingServices /></Suspense>} />
+        <Route path="/dissertation-proposal-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><DissertationProposalWritingServices /></Suspense>} />
+        <Route path="/capstone-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><CapstoneDissertationWritingServices /></Suspense>} />
+
         {/* ADD ALL CUSTOM ROUTES ABOVE THIS LINE - Catch-all 404 must be last */}
+
         <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
       </Routes>
     </ErrorBoundary>

@@ -924,17 +924,5 @@ section:not(:first-of-type) {
   }
 }
 
-/* Tawk.to Widget Override - Hide default button, show only chat panel */
-.tawk-min-container,
-.tawk-button-container,
-#tawk-bubble-container,
-div[class*="tawk"][class*="min"],
-div[class*="tawk"][class*="bubble"],
-iframe[title="chat widget"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  pointer-events: none !important;
-}
+/* Tawk.to: allow native widget + chat panel to render (auto-opens on first visit) */
+
