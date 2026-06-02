@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation, Navigate, useLocation as useRouterLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "@/components/ScrollToTop";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -121,7 +121,7 @@ const SearchPage = lazy(() => import("./pages/Search"));
 
 // Preserves ?query string when redirecting legacy URLs
 const LegacyRedirect = ({ to }: { to: string }) => {
-  const loc = useRouterLocation();
+  const loc = useLocation();
   return <Navigate to={`${to}${loc.search}`} replace />;
 };
 
