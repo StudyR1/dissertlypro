@@ -91,7 +91,7 @@ const Footer = () => {
       
       {/* Main Footer */}
       <div className="container py-12 sm:py-20 px-4 sm:px-6 relative">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 lg:gap-6">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 group">
@@ -143,6 +143,23 @@ const Footer = () => {
             <h4 className="font-serif font-semibold text-sm sm:text-base mb-4 sm:mb-5 text-primary-foreground">Services</h4>
             <ul className="space-y-2 sm:space-y-3">
               {footerLinks.services.slice(0, 5).map((link) => (
+                <li key={link.title}>
+                  <Link
+                    to={link.href}
+                    className="text-xs sm:text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors"
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Dissertation Services (new column) */}
+          <div>
+            <h4 className="font-serif font-semibold text-sm sm:text-base mb-4 sm:mb-5 text-primary-foreground">Dissertation Services</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              {footerLinks.dissertationServices.map((link) => (
                 <li key={link.title}>
                   <Link
                     to={link.href}
