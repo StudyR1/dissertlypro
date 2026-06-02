@@ -20,6 +20,9 @@ import {
   Clock,
   GraduationCap,
   MessageCircle,
+  UserCheck,
+  FileEdit,
+  RefreshCw,
 } from "lucide-react";
 
 export interface ServicePillarConfig {
@@ -229,6 +232,100 @@ const ServicePillarPage = ({ config }: Props) => {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* EXPERT TEAM & HOW ASSIGNMENTS WORK */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12">
+            <p className="text-sm uppercase tracking-widest text-copper mb-3">Your expert team</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-midnight mb-4">
+              PhD-qualified experts matched to your discipline
+            </h2>
+            <p className="text-midnight/70 max-w-2xl mx-auto">
+              Every project is led by one named expert with a doctorate in your field — never a content mill, never a rotating team.
+              Browse a sample of the researchers who handle dissertations like yours.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                initials: "S.M.",
+                role: "Senior Research Methodologist",
+                creds: "PhD, Research Methods (Stanford). 15+ years, 200+ dissertations guided.",
+                cover: "Qualitative · Mixed methods · Grounded theory",
+              },
+              {
+                initials: "M.C.",
+                role: "Statistical Analysis Expert",
+                creds: "PhD, Statistics (MIT). Former Research Director, Harvard Medical School.",
+                cover: "SPSS · R · SEM · Multivariate · ML",
+              },
+              {
+                initials: "E.R.",
+                role: "Doctoral Writing Specialist",
+                creds: "PhD, Education (Oxford). 18+ years coaching PhD candidates to viva.",
+                cover: "Argument structure · Viva prep · Literature synthesis",
+              },
+            ].map((e) => (
+              <Card key={e.initials} className="bg-cream-warm border-cream-rich/30">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="h-14 w-14 rounded-full bg-midnight text-cream font-serif text-xl flex items-center justify-center">
+                      {e.initials}
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-lg text-midnight">{e.role}</h3>
+                      <p className="text-xs text-copper">PhD verified</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-midnight/80 mb-3 leading-relaxed">{e.creds}</p>
+                  <p className="text-xs text-midnight/60 italic">{e.cover}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mb-12">
+            <Button asChild variant="outline" className="border-copper text-copper hover:bg-copper hover:text-white">
+              <Link to="/experts">
+                See all experts <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="border-t border-cream-rich/40 pt-12">
+            <h3 className="font-serif text-2xl md:text-3xl text-midnight mb-8 text-center">
+              How assignments and revisions work
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: UserCheck,
+                  title: "1. Expert assignment in 24 hours",
+                  body: "After your free consultation we match you with a named PhD expert in your subject. You receive a written scoping document — research questions, chapter milestones, citation style, and deliverable dates — before any payment is taken.",
+                },
+                {
+                  icon: FileEdit,
+                  title: "2. Milestone drafting with tracked changes",
+                  body: "Drafts arrive as Word files with tracked changes, a written cover note explaining decisions, and references in your required style. Each milestone passes a senior reviewer's quality check before it reaches you.",
+                },
+                {
+                  icon: RefreshCw,
+                  title: "3. Unlimited revisions until sign-off",
+                  body: "Return inline comments and your expert revises within 48–72 hours. The cycle repeats until you sign off the milestone. Want a different expert? We re-match within 24 hours at no extra cost.",
+                },
+              ].map((s) => (
+                <div key={s.title} className="p-6 rounded-lg bg-cream-warm border border-cream-rich/30">
+                  <s.icon className="h-8 w-8 text-copper mb-4" />
+                  <h4 className="font-serif text-lg text-midnight mb-2">{s.title}</h4>
+                  <p className="text-sm text-midnight/80 leading-relaxed">{s.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
