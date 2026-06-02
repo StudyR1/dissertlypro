@@ -1,80 +1,82 @@
+# Complete remaining SEO + UX work
 
-## 1. Audit fixes
+## 1. Pillar pages (9 keyword pages)
 
-### CRITICAL — Thin content on `/experts`, `/`, `/about`, `/services`
+**A. New "Your expert team & how it works" section** — added to `ServicePillarPage.tsx` between Process and Deliverables. Shows 3 expert profile cards (name initials, discipline, credentials, sample projects) linking to `/experts`, plus a 3-column "Assignment → Drafting → Revision" explainer covering: how assignments are matched within 24h, how drafts flow with tracked changes, and how the unlimited-revision loop works (turnaround, sign-off, re-match guarantee).
 
-Expand each page with unique, intent-matched body copy (target: >1,500 words each).
+**B. Expand FAQ on each of the 9 configs** — add 5 new shared FAQs tailored to Master's/PhD intent:
+- Confidentiality / NDA / data handling (GDPR)
+- Turnitin similarity thresholds & AI-detection report
+- Whether the work is detectable as ghostwritten / institutional integrity stance
+- Master's vs PhD scope differences and pricing tiers
+- Payment safety, milestones, refund triggers
 
-- **`src/pages/Experts.tsx`** — add "How we vet experts" (~250w), "Subject coverage matrix" (~200w), 6-question FAQ (~400w), expanded testimonial paragraphs.
-- **`src/pages/Index.tsx`** — add "Why postgraduates choose DissertlyPro" (~300w), "What a dissertation engagement looks like" 5-step explainer (~250w), homepage FAQ (6 Q&A, ~400w) wired to `FAQSchema`.
-- **`src/pages/About.tsx`** — add "Methodology & quality standards" (~300w), "Ethics & academic integrity" (~250w), "Who we serve" personas (~200w).
-- **`src/pages/Services.tsx`** — add "How to choose the right service" (~250w), "What's included in every engagement" (~200w), push FAQ from 6 → 10 entries.
+Brings each page to 10+ FAQs. Updates `sharedFaqs` array in `configs.ts`.
 
-### MODERATE — Markup baseline on `/experts`
+## 2. Thin content expansion (audit CRITICAL)
 
-`charset` and `viewport` are already in `index.html` (lines 4–5) and apply to every SPA route. False positive from a non-JS crawler. No code change; mark fixed with verification note in `update_findings`.
+Add unique long-form sections to:
+- `Index.tsx` — narrative "Why postgrads choose DissertlyPro", 5-step explainer, 6-question homepage FAQ (FAQPage schema).
+- `Experts.tsx` — "How we vet experts" (3-step), subject coverage matrix, 6-question FAQ, 3 anonymised testimonials.
+- `About.tsx` — methodology & ethics block, persona section, founder note.
+- `Services.tsx` — decision guide (which service fits which stage), expanded 10-entry FAQ.
 
-### MODERATE — JSON-LD on `/experts`, `/`, `/about`, `/services`
+Each page target: >1,500 words of unique copy.
 
-Move baseline `Organization` + `WebSite` JSON-LD into `index.html` `<head>` so non-JS crawlers see it. Add `FAQPage` schema to the new Index/Experts FAQ blocks; add `ItemList` of experts on `/experts`.
+## 3. Footer "Dissertation Services" column
 
-## 2. New keyword-targeted SEO pages
+Add a 7th column in `Footer.tsx` (`footerLinks.dissertationServices`) linking to the 9 new keyword pages. Adjust grid to `lg:grid-cols-7` and collapse Brand column on large screens, or move Resources/Support balance to keep layout intact.
 
-Cluster 34 keywords into 9 new routes (one route per distinct intent). Keywords like "llm/english/top 10 dissertation writing services" (vol 10, off-fit) become H2 + FAQ inside the closest cluster page to avoid thin-content cannibalization.
+## 4. Tawk.to mobile auto-open behaviour
 
-| New route | Primary keywords | Combined volume |
-|---|---|---|
-| `/phd-dissertation-writing-services` | phd dissertation writing service(s), best/doctoral | 170 |
-| `/masters-dissertation-writing-services` | masters/master/ma dissertation writing services | 150 |
-| `/mba-dissertation-writing-services` | mba dissertation writing services | 10 |
-| `/medical-dissertation-writing-services` | medical dissertation writing services | 10 |
-| `/cheap-dissertation-writing-services` | cheap, cheap online, cost | 140 |
-| `/dissertation-writing-services-reviews` | review(s), best service review(s) | 70 |
-| `/online-dissertation-writing-services` | online dissertation writing service(s) | 110 |
-| `/dissertation-proposal-writing-services` | proposal, abstract writing | 40 |
-| `/capstone-dissertation-writing-services` | capstone and dissertation writing services | 20 |
+Edit `FloatingCTA.tsx` `autoOpenIfFirstVisit`:
+- Detect viewport width (`window.matchMedia('(max-width: 768px)')`).
+- Desktop: keep current 400ms maximize.
+- Mobile: only `showWidget()` immediately, delay `maximize()` by 8 seconds AND require user to have scrolled at least 400px OR remained idle for 8s — whichever first. If user starts interacting with a form/CTA, skip auto-maximize for that session.
+- Still gated by `sessionStorage('tawk_auto_opened')`.
 
-Each new page follows the `DissertationWritingServices` pillar template:
-- Hero H1 = exact-match keyword + CTA
-- TL;DR block (AI Overview-friendly)
-- 1,500–2,000 words: who it's for, what's included, process, deliverables, expert profile
-- Pricing/turnaround block → `/pricing`, `/order`
-- 8–10 page-specific FAQs
-- Schemas: `ServiceSchema`, `FAQSchema`, `BreadcrumbSchema`, `AggregateRatingSchema`
-- `SEO` component with exact title, meta description, canonical
-- Footer cross-links to pillar + siblings
+## 5. Fix Google-reported 404s
 
-## 3. Tawk.to — open immediately on visit
+Map each crawl error to a real route or 301-equivalent (SPA = client redirect via `<Navigate>`):
 
-Currently `FloatingCTA` calls `hideWidget()` on load and only opens the panel on button click. Change behavior so the chat panel appears immediately when a visitor lands on the site.
+| Crawled URL | Fix |
+|---|---|
+| `/quick-checkout` and `/quick-checkout?services=…` | Route already named `/quick-service-checkout`. Add `<Route path="/quick-checkout" element={<Navigate to="/quick-service-checkout" replace />} />` preserving query string. |
+| `/services/academic-editing` | Add redirect → `/services/editing` |
+| `/services/proposal-development` | Redirect → `/services/dissertation-proposal` |
+| `/services/dissertation-writing` | Redirect → `/dissertation-writing-services` (pillar) |
+| `/services/research-methodology` | Redirect → `/services/methodology` |
+| `/refund-policy` | Redirect → `/terms` (refund clauses live there) |
+| `/privacy-policy` | Redirect → `/privacy` |
+| `/terms-and-conditions` | Redirect → `/terms` |
+| `/blog/mit-thesis-writing-strategies` | Redirect → `/blog` (post never existed; tombstone) |
+| `/blog/stanford-dissertation-excellence` | Redirect → `/blog` |
+| `/search?q={search_term_string}` | This is a SearchAction template echo (Google parsed JSON-LD literally). Fix by either (a) adding a real `/search` route that reads `?q=` and renders a results page using existing `topicClusters`/`glossaryTerms`, or (b) removing the SearchAction from sitewide JSON-LD in `index.html`. Plan: build a lightweight `/search` page so the SearchAction stays valid. |
 
-- Edit `src/components/cro/FloatingCTA.tsx`:
-  - In `Tawk_API.onLoad`, replace `hideWidget()` with `showWidget()` + `maximize()` (one-time per session, gated by `sessionStorage` flag `tawk_auto_opened` so we don't re-pop on every internal route change).
-  - Remove the 3-second fallback `hideWidget()` call.
-  - Keep the custom "Chat with Expert" button as a fallback trigger.
-  - Loosen the aggressive hide CSS so the native chat panel renders (already permitted via `.tawk-chat-panel`); keep hiding the small "bubble" mini-launcher only when the panel is already open.
+All redirects added in `src/App.tsx` using `react-router-dom`'s `Navigate`. A small `LegacyRedirect` wrapper preserves the `search` string for `/quick-checkout` variants.
 
-## 4. Wiring
+Also update `scripts/generate-sitemap.ts` to drop the broken URLs and include the canonical replacements.
 
-- `src/App.tsx` — 9 new lazy imports + `<Route>` entries.
-- `scripts/generate-sitemap.ts` — bump priority map for the 9 new routes to `0.9`.
-- `src/components/layout/Footer.tsx` — new "Dissertation services" column linking the 9 pages + pillar.
+## 6. Mark SEO findings fixed
+
+Call `seo_chat--list_findings` → `seo_chat--update_findings` for the thin-content, JSON-LD, and false-positive markup findings once the code above ships.
 
 ## Files changed
 
-- Edit: `index.html`, `src/pages/Experts.tsx`, `src/pages/Index.tsx`, `src/pages/About.tsx`, `src/pages/Services.tsx`, `src/App.tsx`, `src/components/layout/Footer.tsx`, `src/components/cro/FloatingCTA.tsx`, `scripts/generate-sitemap.ts`
-- Create: 9 new page files under `src/pages/services/`
+- `src/components/services/ServicePillarPage.tsx` (expert-team section, revisions explainer)
+- `src/pages/services/configs.ts` (5 new shared FAQs + per-page tailored Q)
+- `src/components/cro/FloatingCTA.tsx` (mobile-aware delay)
+- `src/components/layout/Footer.tsx` (new column)
+- `src/pages/Index.tsx`, `Experts.tsx`, `About.tsx`, `Services.tsx` (thin-content expansion)
+- `src/App.tsx` (legacy-URL redirects + new `/search` route)
+- `src/pages/Search.tsx` (new lightweight results page)
+- `scripts/generate-sitemap.ts` (clean URL set)
+- SEO findings marked fixed at end
 
 ## Verification
 
-1. `bun run build` — sitemap regenerates with new routes, no TS errors.
-2. Preview spot-check `/phd-dissertation-writing-services` + `/masters-dissertation-writing-services` — H1, FAQ accordion, schemas render.
-3. View-source `/` — Organization JSON-LD visible without executing JS.
-4. Reload preview — Tawk.to chat panel opens automatically on first visit; does not re-open after navigating between routes in the same session.
-5. SEO rescan — thin-content + JSON-LD findings cleared; 9 new indexable URLs in sitemap.
-
-## Notes / impact
-
-- 9 new lazy chunks; no initial bundle impact.
-- Auto-opening Tawk on every visit may increase chat staff load — sessionStorage gate limits to once per session per visitor.
-- "Missing charset/viewport" finding documented as SPA-crawler false positive in `update_findings`.
+- `bun run build` → sitemap regenerates, no TS errors
+- Manual spot-check: `/quick-checkout?services=clarity-call` → lands on quick-service-checkout with query preserved
+- Mobile preview (375px) → chat does not pop until 8s + scroll
+- Pillar page → expert section + 10 FAQs visible
+- SEO rescan after deploy

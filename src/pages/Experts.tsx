@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { ExpertAvailabilityBadge, LiveAvailabilityStrip } from "@/components/features";
 import PersonSchema, { expertPersonData } from "@/components/schemas/PersonSchema";
+import LongFormSection from "@/components/seo/LongFormSection";
+import { expertsLongForm } from "@/components/seo/longFormContent";
 
 const experts = [
   {
@@ -453,6 +455,15 @@ const Experts = () => {
           </div>
         </div>
       </section>
+
+      <LongFormSection
+        eyebrow="Vetting & quality"
+        title="How we vet, match, and review every expert"
+        intro="Less than 4% of researchers who apply pass our vetting. Here's how we maintain that bar — and how the senior-reviewer model protects your project."
+        blocks={expertsLongForm.blocks}
+        bullets={expertsLongForm.bullets}
+        faqs={expertsLongForm.faqs}
+      />
 
       {/* CTA Section */}
       <section className="py-16 sm:py-24 bg-hero-gradient">

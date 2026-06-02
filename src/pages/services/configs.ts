@@ -52,12 +52,27 @@ const sharedFaqs = [
   {
     question: "Will my dissertation pass Turnitin and other plagiarism checks?",
     answer:
-      "Yes. Every deliverable is original, written from scratch by your assigned expert, and scanned with Turnitin-compatible tools before release. Because the research is genuine and the analysis is yours, the work consistently passes institutional similarity checks including Turnitin, iThenticate, and SafeAssign.",
+      "Yes. Every deliverable is original, written from scratch by your assigned expert, and scanned with Turnitin-compatible tools before release. We share the originality report with you so you can see the similarity score (typically under 8%) before submission. The work consistently passes Turnitin, iThenticate, and SafeAssign at major UK, US, AU and CA institutions.",
+  },
+  {
+    question: "Is my project confidential? What about my personal data?",
+    answer:
+      "Yes — confidentiality is absolute. Your name, university, project topic and identifying details are never shared, sold, or published. We operate on GDPR-compliant infrastructure with encrypted file storage, signed expert NDAs, anonymised internal references, and a strict no-resale policy on every deliverable. You can also use a pseudonym throughout the engagement if you prefer.",
+  },
+  {
+    question: "Can my supervisor or university detect that I used a writing service?",
+    answer:
+      "No. The work is delivered as Word source files with clean metadata, no watermarks, and no traceable identifiers. We do not retain rights to your deliverable, publish it anywhere, or reuse it for other students — so it does not appear in any database that Turnitin, iThenticate, or AI-content detectors index. Because the research is original and you control all submissions, there is nothing for institutional systems to flag.",
+  },
+  {
+    question: "Will the work trigger AI-content detectors like Turnitin AI or GPTZero?",
+    answer:
+      "No. All writing is produced by human PhD experts, not generative AI. On request, we run the final draft through Turnitin AI and GPTZero before delivery and share the report. If any section scores above 5% AI-likelihood, your expert rewrites it at no charge.",
   },
   {
     question: "Is using a dissertation writing service ethical?",
     answer:
-      "Used as research coaching and structured guidance — the same way a tutor or methodology consultant supports candidates — it is fully ethical. Our experts provide model work, methodology rationale, and iterative feedback that helps you develop your own scholarship. We publish a clear academic integrity policy on our ethics page.",
+      "Used as research coaching and structured guidance — the same way a tutor or methodology consultant supports candidates — it is fully ethical. Our experts provide model work, methodology rationale, and iterative feedback that helps you develop your own scholarship. We publish a clear academic integrity policy on our ethics page and decline projects that would breach institutional honour codes.",
   },
   {
     question: "Can I speak directly to my expert?",
@@ -68,6 +83,21 @@ const sharedFaqs = [
     question: "What if I'm not happy with a draft?",
     answer:
       "You get unlimited revisions within the agreed scope. If you'd prefer a different expert at any point, we will re-match you within 24 hours at no additional cost. Refunds are available under our money-back policy if we cannot deliver on a milestone.",
+  },
+  {
+    question: "How does the assignment and revision process actually work?",
+    answer:
+      "After your free consultation, we match you with a named expert within 24 hours and send a written scoping document. Each milestone is delivered as a tracked-changes Word file with a written cover note. You review, return inline comments, and your expert returns the revised draft — typically within 48–72 hours. The cycle repeats until you sign off the milestone.",
+  },
+  {
+    question: "How is Master's support different from PhD support?",
+    answer:
+      "Master's projects focus on demonstrating mastery of an established literature with a tightly scoped empirical or applied study (10,000–25,000 words). PhD projects require an original theoretical or empirical contribution, defensible methodology under examiner scrutiny, and 60,000–100,000 words. Pricing, timelines and expert seniority differ accordingly — we cost each project transparently after scoping.",
+  },
+  {
+    question: "How are payments and milestones structured?",
+    answer:
+      "You pay by milestone, never upfront for the full project. Each milestone (e.g. chapter, methodology, analysis) has a fixed price agreed in the scoping document. Payments are processed through PayPal or major card networks with full buyer protection. If a milestone is rejected after revision, the payment is refundable under our money-back guarantee.",
   },
   {
     question: "How long does it take?",

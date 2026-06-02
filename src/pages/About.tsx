@@ -21,6 +21,8 @@ import SpeakableSchema from "@/components/schemas/SpeakableSchema";
 import { aboutPageFAQs } from "@/data/serviceFAQs";
 import Breadcrumbs from "@/components/ui/breadcrumbs";
 import { TLDRBlock, ExpertInsight } from "@/components/ui/QuickAnswer";
+import LongFormSection from "@/components/seo/LongFormSection";
+import { aboutLongForm } from "@/components/seo/longFormContent";
 
 const values = [
   {
@@ -338,6 +340,15 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <LongFormSection
+        eyebrow="Our approach"
+        title="Methodology, ethics, and the people we work with"
+        intro="DissertlyPro is a research-coaching practice. Here's how we think about academic integrity, who we work with, and why we built it this way."
+        blocks={aboutLongForm.blocks}
+        faqs={aboutLongForm.faqs}
+        surface="cream"
+      />
 
       {/* CTA Section */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-midnight-rich to-midnight relative overflow-hidden">

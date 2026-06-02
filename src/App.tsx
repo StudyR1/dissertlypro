@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "@/components/ScrollToTop";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -117,6 +117,15 @@ const DissertationWritingServicesReviews = lazy(() => import("./pages/services/D
 const OnlineDissertationWritingServices = lazy(() => import("./pages/services/OnlineDissertationWritingServices"));
 const DissertationProposalWritingServices = lazy(() => import("./pages/services/DissertationProposalWritingServices"));
 const CapstoneDissertationWritingServices = lazy(() => import("./pages/services/CapstoneDissertationWritingServices"));
+const SearchPage = lazy(() => import("./pages/Search"));
+
+// Preserves ?query string when redirecting legacy URLs
+const LegacyRedirect = ({ to }: { to: string }) => {
+  const loc = useLocation();
+  return <Navigate to={`${to}${loc.search}`} replace />;
+};
+
+
 
 
 const queryClient = new QueryClient({
@@ -290,6 +299,21 @@ const AppRoutes = () => {
         <Route path="/online-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><OnlineDissertationWritingServices /></Suspense>} />
         <Route path="/dissertation-proposal-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><DissertationProposalWritingServices /></Suspense>} />
         <Route path="/capstone-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><CapstoneDissertationWritingServices /></Suspense>} />
+
+        {/* Site search (keeps Google's SearchAction template valid) */}
+        <Route path="/search" element={<Suspense fallback={<SkeletonPage />}><SearchPage /></Suspense>} />
+
+        {/* Legacy URL redirects (fix Google Search Console 404s) */}
+        <Route path="/quick-checkout" element={<LegacyRedirect to="/quick-services/checkout" />} />
+        <Route path="/services/academic-editing" element={<Navigate to="/services/editing" replace />} />
+        <Route path="/services/proposal-development" element={<Navigate to="/services/dissertation-proposal" replace />} />
+        <Route path="/services/dissertation-writing" element={<Navigate to="/dissertation-writing-services" replace />} />
+        <Route path="/services/research-methodology" element={<Navigate to="/services/methodology" replace />} />
+        <Route path="/refund-policy" element={<Navigate to="/terms" replace />} />
+        <Route path="/privacy-policy" element={<Navigate to="/privacy" replace />} />
+        <Route path="/terms-and-conditions" element={<Navigate to="/terms" replace />} />
+        <Route path="/blog/mit-thesis-writing-strategies" element={<Navigate to="/blog" replace />} />
+        <Route path="/blog/stanford-dissertation-excellence" element={<Navigate to="/blog" replace />} />
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THIS LINE - Catch-all 404 must be last */}
 

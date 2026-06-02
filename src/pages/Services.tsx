@@ -19,6 +19,8 @@ import {
   Layers,
   CheckCircle
 } from "lucide-react";
+import LongFormSection from "@/components/seo/LongFormSection";
+import { servicesLongForm } from "@/components/seo/longFormContent";
 
 const services = [
   {
@@ -268,6 +270,15 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      <LongFormSection
+        eyebrow="Decision guide"
+        title="Choosing the right service for your stage"
+        intro="Most candidates ask for chapter writing when what they actually need is a methodology review. This guide explains which service unblocks which problem."
+        blocks={servicesLongForm.blocks}
+        faqs={servicesLongForm.faqs}
+        surface="cream"
+      />
 
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-28 bg-ivory-warm">

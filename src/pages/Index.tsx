@@ -44,6 +44,8 @@ import { homepageFAQs } from "@/data/serviceFAQs";
 import { AnimatedCounter, TrustBadges, TrustStrip, GuaranteeBadge, PaymentLogos } from "@/components/cro";
 import { LiveResearchPulse, TermOfTheDay } from "@/components/features";
 import { TLDRBlock, KeyTakeaways } from "@/components/ui/QuickAnswer";
+import LongFormSection from "@/components/seo/LongFormSection";
+import { indexLongForm } from "@/components/seo/longFormContent";
 
 const services = [
   {
@@ -773,6 +775,15 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <LongFormSection
+        eyebrow="Why DissertlyPro"
+        title="Senior research expertise — built for Master's and PhD candidates"
+        intro="Most postgraduate candidates don't need more writing — they need more methodological guidance. Here's how we provide it, what we ask of our experts, and how we protect your work."
+        blocks={indexLongForm.blocks}
+        faqs={indexLongForm.faqs}
+        surface="cream"
+      />
     </Layout>
   );
 };
