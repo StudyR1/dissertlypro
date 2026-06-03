@@ -116,8 +116,7 @@ const ServicePillarPage = ({ config }: Props) => {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-cream/40 text-cream hover:bg-cream/10"
+              variant="hero-outline"
             >
               <Link to="/consultation">Free Consultation</Link>
             </Button>

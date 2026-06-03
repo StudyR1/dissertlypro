@@ -154,7 +154,7 @@ const DissertationWritingServices = () => {
                   Book Free Consultation <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-ivory/30 text-ivory hover:bg-ivory/10 px-8 py-6 text-lg">
+              <Button asChild variant="hero-outline" size="lg" className="px-8 py-6 text-lg">
                 <Link to="/pricing">View Pricing</Link>
               </Button>
             </div>
@@ -578,7 +578,7 @@ const DissertationWritingServices = () => {
                   Book Free Consultation <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-ivory/30 text-ivory hover:bg-ivory/10 px-8 py-6 text-lg">
+              <Button asChild variant="hero-outline" size="lg" className="px-8 py-6 text-lg">
                 <Link to="/order">Place an Order</Link>
               </Button>
             </div>

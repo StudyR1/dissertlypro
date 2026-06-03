@@ -561,7 +561,7 @@ const QuickServices = () => {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+            <Button asChild size="lg" variant="hero-outline">
               <Link to="/consultation">
                 Book Free Consultation
               </Link>

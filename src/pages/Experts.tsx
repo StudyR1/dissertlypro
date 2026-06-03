@@ -483,7 +483,7 @@ const Experts = () => {
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+              <Button variant="hero-outline" size="lg" asChild>
                 <Link to="/services">View Our Services</Link>
               </Button>
             </div>
