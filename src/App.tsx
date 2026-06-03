@@ -305,6 +305,8 @@ const AppRoutes = () => {
 
         {/* Legacy URL redirects (fix Google Search Console 404s) */}
         <Route path="/quick-checkout" element={<LegacyRedirect to="/quick-services/checkout" />} />
+        <Route path="/quick-checkout/*" element={<LegacyRedirect to="/quick-services/checkout" />} />
+        <Route path="/checkout" element={<LegacyRedirect to="/quick-services/checkout" />} />
         <Route path="/services/academic-editing" element={<Navigate to="/services/editing" replace />} />
         <Route path="/services/proposal-development" element={<Navigate to="/services/dissertation-proposal" replace />} />
         <Route path="/services/dissertation-writing" element={<Navigate to="/dissertation-writing-services" replace />} />
