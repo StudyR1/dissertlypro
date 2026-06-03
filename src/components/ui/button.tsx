@@ -11,7 +11,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-midnight-soft shadow-subtle hover:shadow-card",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-muted hover:text-foreground",
+        outline: "border-2 border-primary/70 bg-background text-primary font-medium hover:bg-primary hover:text-primary-foreground shadow-subtle",
         secondary: "bg-secondary text-secondary-foreground hover:bg-cream-rich",
         ghost: "hover:bg-muted hover:text-foreground",
         link: "text-copper underline-offset-4 hover:underline",
@@ -31,9 +31,9 @@ const buttonVariants = cva(
           "before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700",
         ].join(" "),
         "hero-outline": [
-          "border-2 border-primary-foreground/25 text-primary-foreground bg-transparent",
-          "hover:bg-primary-foreground/10 hover:border-primary-foreground/40",
-          "font-medium backdrop-blur-sm",
+          "border-2 border-primary-foreground/70 text-primary-foreground bg-primary-foreground/10",
+          "hover:bg-primary-foreground hover:text-primary",
+          "font-semibold backdrop-blur-sm shadow-subtle",
         ].join(" "),
         midnight: [
           "bg-gradient-to-br from-midnight-rich to-midnight text-primary-foreground font-semibold",
