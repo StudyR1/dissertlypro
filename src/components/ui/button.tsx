@@ -31,9 +31,9 @@ const buttonVariants = cva(
           "before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700",
         ].join(" "),
         "hero-outline": [
-          "border-2 border-primary-foreground/25 text-primary-foreground bg-transparent",
-          "hover:bg-primary-foreground/10 hover:border-primary-foreground/40",
-          "font-medium backdrop-blur-sm",
+          "border-2 border-primary-foreground/70 text-primary-foreground bg-primary-foreground/10",
+          "hover:bg-primary-foreground hover:text-primary",
+          "font-semibold backdrop-blur-sm shadow-subtle",
         ].join(" "),
         midnight: [
           "bg-gradient-to-br from-midnight-rich to-midnight text-primary-foreground font-semibold",
