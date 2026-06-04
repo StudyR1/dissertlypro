@@ -926,3 +926,54 @@ section:not(:first-of-type) {
 
 /* Tawk.to: allow native widget + chat panel to render (auto-opens on first visit) */
 
+/* ============================================
+   GLOBAL OUTLINE BUTTON OVERRIDE FOR DARK CONTAINERS
+   Ensures outline-style buttons remain readable when placed
+   inside dark sections (midnight/primary/hero gradients).
+   Targets the standard outline variant (uses border-primary).
+   ============================================ */
+.bg-midnight button.border-primary\/70,
+.bg-midnight a.border-primary\/70,
+.bg-midnight-rich button.border-primary\/70,
+.bg-midnight-rich a.border-primary\/70,
+.bg-midnight-soft button.border-primary\/70,
+.bg-midnight-soft a.border-primary\/70,
+.bg-primary button.border-primary\/70,
+.bg-primary a.border-primary\/70,
+.bg-foreground button.border-primary\/70,
+.bg-foreground a.border-primary\/70,
+.bg-hero-gradient button.border-primary\/70,
+.bg-hero-gradient a.border-primary\/70,
+.bg-hero-radial button.border-primary\/70,
+.bg-hero-radial a.border-primary\/70,
+[class*="from-midnight"] button.border-primary\/70,
+[class*="from-midnight"] a.border-primary\/70,
+[class*="from-primary"] button.border-primary\/70,
+[class*="from-primary"] a.border-primary\/70 {
+  background-color: hsl(var(--primary-foreground) / 0.12) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  border-color: hsl(var(--primary-foreground) / 0.7) !important;
+}
+
+.bg-midnight button.border-primary\/70:hover,
+.bg-midnight a.border-primary\/70:hover,
+.bg-midnight-rich button.border-primary\/70:hover,
+.bg-midnight-rich a.border-primary\/70:hover,
+.bg-midnight-soft button.border-primary\/70:hover,
+.bg-midnight-soft a.border-primary\/70:hover,
+.bg-primary button.border-primary\/70:hover,
+.bg-primary a.border-primary\/70:hover,
+.bg-foreground button.border-primary\/70:hover,
+.bg-foreground a.border-primary\/70:hover,
+.bg-hero-gradient button.border-primary\/70:hover,
+.bg-hero-gradient a.border-primary\/70:hover,
+.bg-hero-radial button.border-primary\/70:hover,
+.bg-hero-radial a.border-primary\/70:hover,
+[class*="from-midnight"] button.border-primary\/70:hover,
+[class*="from-midnight"] a.border-primary\/70:hover,
+[class*="from-primary"] button.border-primary\/70:hover,
+[class*="from-primary"] a.border-primary\/70:hover {
+  background-color: hsl(var(--primary-foreground)) !important;
+  color: hsl(var(--primary)) !important;
+}
+
