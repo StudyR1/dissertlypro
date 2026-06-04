@@ -139,6 +139,51 @@
 
   <body>
     <div id="root"></div>
+
+    <!-- Crawler & no-JS fallback: ensures search engines and AI crawlers that
+         don't execute JavaScript (GPTBot, Claude-Web, PerplexityBot, older Bingbot)
+         see real content and key navigation instead of a blank #root. -->
+    <noscript>
+      <div style="max-width:960px;margin:0 auto;padding:2rem;font-family:'DM Sans',system-ui,sans-serif;color:#0f1629;background:#f5f4f1">
+        <header>
+          <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:2.25rem;margin:0 0 .5rem">DissertlyPro — Premium Master's &amp; PhD Dissertation Support</h1>
+          <p style="font-size:1.05rem;line-height:1.6">DissertlyPro provides expert dissertation and thesis support for Master's and PhD students worldwide. Our services include research guidance, literature reviews, methodology design, statistical and qualitative data analysis (SPSS, NVivo, R), academic editing, proofreading, formatting, and end-to-end dissertation writing assistance for MBA, medical, capstone, and online programs.</p>
+        </header>
+
+        <section>
+          <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;margin-top:1.5rem">Core Services</h2>
+          <ul>
+            <li><a href="/dissertation-writing-services">Dissertation Writing Services</a></li>
+            <li><a href="/services/phd-dissertation-writing-services">PhD Dissertation Writing Services</a></li>
+            <li><a href="/services/masters-dissertation-writing-services">Master's Dissertation Writing Services</a></li>
+            <li><a href="/services/mba-dissertation-writing-services">MBA Dissertation Writing Services</a></li>
+            <li><a href="/services/medical-dissertation-writing-services">Medical Dissertation Writing Services</a></li>
+            <li><a href="/services/capstone-dissertation-writing-services">Capstone Dissertation Writing Services</a></li>
+            <li><a href="/services/dissertation-proposal-writing-services">Dissertation Proposal Writing Services</a></li>
+            <li><a href="/services/online-dissertation-writing-services">Online Dissertation Writing Services</a></li>
+            <li><a href="/services/cheap-dissertation-writing-services">Affordable Dissertation Writing Services</a></li>
+            <li><a href="/services">All Services</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+          </ul>
+
+          <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;margin-top:1.5rem">Resources &amp; Tools</h2>
+          <ul>
+            <li><a href="/blog">Academic Blog</a></li>
+            <li><a href="/resources">PhD &amp; Master's Resources</a></li>
+            <li><a href="/tools">Free Academic Tools</a></li>
+            <li><a href="/universities">Universities Hub</a></li>
+            <li><a href="/experts">Our Expert Team</a></li>
+            <li><a href="/about">About DissertlyPro</a></li>
+          </ul>
+
+          <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;margin-top:1.5rem">Contact &amp; Consultation</h2>
+          <p>Speak with a dissertation specialist: <a href="tel:+18126905122">+1 (812) 690-5122</a> (Phone / WhatsApp). Book a <a href="/consultation">free consultation</a> or <a href="/order">request a custom quote</a>.</p>
+
+          <p style="margin-top:2rem;font-size:.9rem;color:#555">This page requires JavaScript for the full interactive experience. If you are a crawler, please also see our <a href="/sitemap.xml">sitemap</a>, <a href="/llms.txt">llms.txt</a>, and <a href="/llms-full.txt">llms-full.txt</a> for structured site context.</p>
+        </section>
+      </div>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
