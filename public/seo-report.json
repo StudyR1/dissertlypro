@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-06-04T11:23:42.539Z",
+  "totals": {
+    "ok": 10,
+    "warn": 2,
+    "fail": 0
+  },
+  "routes": {
+    "static": 110,
+    "dynamicTemplates": 6,
+    "blog": 54,
+    "services": 10,
+    "universities": 18,
+    "sitemap": 180
+  },
+  "checks": [
+    {
+      "id": "robots-exists",
+      "label": "robots.txt exists",
+      "severity": "ok"
+    },
+    {
+      "id": "robots-sitemap-ref",
+      "label": "robots.txt references sitemap",
+      "severity": "ok"
+    },
+    {
+      "id": "robots-blocks-all",
+      "label": "robots.txt is not blocking all crawlers",
+      "severity": "ok"
+    },
+    {
+      "id": "noscript-fallback",
+      "label": "index.html has a substantive <noscript> fallback (>300 chars)",
+      "severity": "ok",
+      "detail": "3408 chars"
+    },
+    {
+      "id": "jsonld-sitewide",
+      "label": "index.html contains sitewide JSON-LD",
+      "severity": "ok",
+      "detail": "1 JSON-LD block(s)"
+    },
+    {
+      "id": "title-tag",
+      "label": "index.html <title> is set and not the default",
+      "severity": "ok"
+    },
+    {
+      "id": "sitemap-static-coverage",
+      "label": "Sitemap covers 110/98 static routes",
+      "severity": "ok"
+    },
+    {
+      "id": "sitemap-dyn-blog",
+      "label": "Sitemap covers 54/54 blog entries",
+      "severity": "ok"
+    },
+    {
+      "id": "sitemap-dyn-services",
+      "label": "Sitemap covers 10/10 services entries",
+      "severity": "ok"
+    },
+    {
+      "id": "sitemap-dyn-universities",
+      "label": "Sitemap covers 18/18 university pages",
+      "severity": "ok"
+    },
+    {
+      "id": "seo-component-usage",
+      "label": "Per-page <SEO /> meta component is used",
+      "severity": "warn"
+    },
+    {
+      "id": "prerender-built",
+      "label": "Prerendered build output exists (dist/index.html)",
+      "severity": "warn",
+      "detail": "Run `bun run prerender:cpanel` before deploying to cPanel"
+    }
+  ]
+}
