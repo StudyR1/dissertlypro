@@ -118,6 +118,7 @@ const OnlineDissertationWritingServices = lazy(() => import("./pages/services/On
 const DissertationProposalWritingServices = lazy(() => import("./pages/services/DissertationProposalWritingServices"));
 const CapstoneDissertationWritingServices = lazy(() => import("./pages/services/CapstoneDissertationWritingServices"));
 const SearchPage = lazy(() => import("./pages/Search"));
+const SeoAudit = lazy(() => import("./pages/SeoAudit"));
 
 // Preserves ?query string when redirecting legacy URLs
 const LegacyRedirect = ({ to }: { to: string }) => {
@@ -316,6 +317,9 @@ const AppRoutes = () => {
         <Route path="/terms-and-conditions" element={<Navigate to="/terms" replace />} />
         <Route path="/blog/mit-thesis-writing-strategies" element={<Navigate to="/blog" replace />} />
         <Route path="/blog/stanford-dissertation-excellence" element={<Navigate to="/blog" replace />} />
+
+        {/* Internal SEO audit (noindex) */}
+        <Route path="/seo-audit" element={<Suspense fallback={<SkeletonPage />}><SeoAudit /></Suspense>} />
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THIS LINE - Catch-all 404 must be last */}
 
