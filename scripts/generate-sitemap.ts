@@ -33,7 +33,9 @@ const EXCLUDE = new Set<string>([
   "/blog/mit-thesis-writing-strategies",
   "/blog/stanford-dissertation-excellence",
   // Internal utility pages
+  // Internal utility pages
   "/search",
+  "/seo-audit",
 ]);
 
 const staticPaths = [...new Set(pathMatches)]
