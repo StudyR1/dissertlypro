@@ -10,8 +10,46 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prerender:cpanel": "vite build && react-snap && bunx tsx scripts/seo-validate.ts",
+    "seo:validate": "bunx tsx scripts/seo-validate.ts"
   },
+  "reactSnap": {
+    "source": "dist",
+    "destination": "dist",
+    "inlineCss": false,
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "skipThirdPartyRequests": true,
+    "concurrency": 4,
+    "headless": true,
+    "include": [
+      "/",
+      "/services",
+      "/blog",
+      "/pricing",
+      "/about",
+      "/contact",
+      "/consultation",
+      "/faq",
+      "/experts",
+      "/order",
+      "/templates",
+      "/resources",
+      "/glossary",
+      "/tools",
+      "/universities",
+      "/uk",
+      "/us",
+      "/au",
+      "/ca",
+      "/dissertation-writing-services",
+      "/quick-services",
+      "/phd-resources",
+      "/masters-resources",
+      "/ai-academia"
+    ]
+  },
+
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@paypal/react-paypal-js": "^8.9.2",
