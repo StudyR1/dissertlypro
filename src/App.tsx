@@ -117,6 +117,14 @@ const DissertationWritingServicesReviews = lazy(() => import("./pages/services/D
 const OnlineDissertationWritingServices = lazy(() => import("./pages/services/OnlineDissertationWritingServices"));
 const DissertationProposalWritingServices = lazy(() => import("./pages/services/DissertationProposalWritingServices"));
 const CapstoneDissertationWritingServices = lazy(() => import("./pages/services/CapstoneDissertationWritingServices"));
+// SEO Sprint 2 + 3 keyword-targeted service pages
+const DissertationEditingServices = lazy(() => import("./pages/services/DissertationEditingServices"));
+const DissertationStatisticsHelp = lazy(() => import("./pages/services/DissertationStatisticsHelp"));
+const DissertationCoaching = lazy(() => import("./pages/services/DissertationCoaching"));
+const LiteratureReviewWritingService = lazy(() => import("./pages/services/LiteratureReviewWritingService"));
+const DissertationProposalHelp = lazy(() => import("./pages/services/DissertationProposalHelp"));
+const DissertationMethodologyHelp = lazy(() => import("./pages/services/DissertationMethodologyHelp"));
+const PhDDissertationHelp = lazy(() => import("./pages/services/PhDDissertationHelp"));
 const SearchPage = lazy(() => import("./pages/Search"));
 const SeoAudit = lazy(() => import("./pages/SeoAudit"));
 
@@ -300,6 +308,15 @@ const AppRoutes = () => {
         <Route path="/online-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><OnlineDissertationWritingServices /></Suspense>} />
         <Route path="/dissertation-proposal-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><DissertationProposalWritingServices /></Suspense>} />
         <Route path="/capstone-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><CapstoneDissertationWritingServices /></Suspense>} />
+
+        {/* SEO Sprint 2 + 3 — Quick-Win keyword pages */}
+        <Route path="/dissertation-editing-services" element={<Suspense fallback={<ArticleSkeleton />}><DissertationEditingServices /></Suspense>} />
+        <Route path="/dissertation-statistics-help" element={<Suspense fallback={<ArticleSkeleton />}><DissertationStatisticsHelp /></Suspense>} />
+        <Route path="/dissertation-coaching" element={<Suspense fallback={<ArticleSkeleton />}><DissertationCoaching /></Suspense>} />
+        <Route path="/services/literature-review-writing-service" element={<Suspense fallback={<ArticleSkeleton />}><LiteratureReviewWritingService /></Suspense>} />
+        <Route path="/services/dissertation-proposal-help" element={<Suspense fallback={<ArticleSkeleton />}><DissertationProposalHelp /></Suspense>} />
+        <Route path="/services/dissertation-methodology-help" element={<Suspense fallback={<ArticleSkeleton />}><DissertationMethodologyHelp /></Suspense>} />
+        <Route path="/phd-dissertation-help" element={<Suspense fallback={<ArticleSkeleton />}><PhDDissertationHelp /></Suspense>} />
 
         {/* Site search (keeps Google's SearchAction template valid) */}
         <Route path="/search" element={<Suspense fallback={<SkeletonPage />}><SearchPage /></Suspense>} />
