@@ -12,9 +12,18 @@
   # RewriteCond %{HTTPS} off
   # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   
-  # Remove www (choose one: www or non-www)
-  # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-  # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+  # ============================================
+  # SEO PLAN §1 — Kill subdomain duplication
+  # 301-redirect every us./uk./au./ca. subdomain to the canonical root.
+  # This consolidates link equity and ends the keyword cannibalization
+  # flagged in the Semrush audit (same content ranking twice).
+  # ============================================
+  RewriteCond %{HTTP_HOST} ^(us|uk|au|ca)\.dissertlypro\.com$ [NC]
+  RewriteRule ^(.*)$ https://dissertlypro.com/$1 [L,R=301,NE]
+  
+  # Remove www (canonical = non-www)
+  RewriteCond %{HTTP_HOST} ^www\.dissertlypro\.com$ [NC]
+  RewriteRule ^(.*)$ https://dissertlypro.com/$1 [L,R=301,NE]
   
   # Handle React Router - serve index.html for all non-file requests
   RewriteCond %{REQUEST_FILENAME} !-f
