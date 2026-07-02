@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { 
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -16,49 +16,81 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { GuaranteeBadge, PaymentLogos } from "@/components/cro";
-import { 
-  FileText, 
-  GraduationCap, 
-  Calendar, 
-  User, 
-  BookOpen,
+import {
+  FileText,
   CheckCircle,
-  AlertCircle,
   Clock,
   Shield,
   ArrowRight,
   ArrowLeft,
-  Upload,
-  Receipt
+  Receipt,
+  Minus,
+  Plus,
 } from "lucide-react";
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import { logFullOrder } from "@/lib/googleSheets";
 
-const PAYPAL_CLIENT_ID = "AbqfzvcYIxGrnSHuB9QlTM7bNDxfSVx52sZqAjuuGXqVhmP2bk1ngI37ZoJydg7D7L-5nSBLhh7lzt4M";
+const PAYPAL_CLIENT_ID =
+  "AbqfzvcYIxGrnSHuB9QlTM7bNDxfSVx52sZqAjuuGXqVhmP2bk1ngI37ZoJydg7D7L-5nSBLhh7lzt4M";
 
-// Service types with base price estimates
-const serviceTypes = [
-  { value: "dissertation-proposal", label: "Dissertation Proposal", priceRange: "$800 - $2,500" },
-  { value: "thesis-writing", label: "Full Thesis/Dissertation Writing", priceRange: "$3,000 - $15,000" },
-  { value: "literature-review", label: "Literature Review", priceRange: "$500 - $2,000" },
-  { value: "methodology", label: "Research Methodology", priceRange: "$600 - $1,800" },
-  { value: "data-analysis", label: "Data Analysis", priceRange: "$400 - $2,500" },
-  { value: "editing", label: "Editing & Proofreading", priceRange: "$200 - $1,000" },
-  { value: "chapter-writing", label: "Individual Chapter Writing", priceRange: "$300 - $1,200" },
-  { value: "statistics", label: "Statistical Consulting", priceRange: "$350 - $1,500" },
-  { value: "presentation", label: "Defense Presentation", priceRange: "$250 - $800" },
+// ============ PRICING MODEL ============
+const BASE_PRICE_PER_PAGE = 15; // USD, 275 words / double-spaced
+
+const SERVICE_TYPES = [
+  { value: "writing", label: "Writing (chapters, essays, papers)", multiplier: 1.0 },
+  { value: "dissertation", label: "Full dissertation / thesis writing", multiplier: 1.1 },
+  { value: "proposal", label: "Research proposal", multiplier: 1.0 },
+  { value: "literature-review", label: "Literature review", multiplier: 1.0 },
+  { value: "methodology", label: "Methodology chapter", multiplier: 1.05 },
+  { value: "data-analysis", label: "Data analysis (SPSS/R/NVivo)", multiplier: 1.3 },
+  { value: "statistics", label: "Statistics help", multiplier: 1.4 },
+  { value: "editing", label: "Editing", multiplier: 0.4 },
+  { value: "proofreading", label: "Proofreading", multiplier: 0.3 },
+  { value: "formatting", label: "Formatting / APA fix", multiplier: 0.3 },
+  { value: "presentation", label: "Defense presentation / slides", multiplier: 0.8 },
+] as const;
+
+const LEVELS = [
+  { value: "undergrad", label: "Undergraduate", multiplier: 1.0 },
+  { value: "masters", label: "Master's", multiplier: 1.4 },
+  { value: "phd", label: "PhD / Doctoral", multiplier: 1.8 },
+  { value: "professional", label: "DBA / EdD / Professional", multiplier: 2.0 },
+] as const;
+
+const DEADLINES = [
+  { value: "3mo", label: "3+ months (best rate)", multiplier: 0.9, hours: 2160 },
+  { value: "1mo", label: "1 month", multiplier: 1.0, hours: 720 },
+  { value: "2wk", label: "2 weeks", multiplier: 1.25, hours: 336 },
+  { value: "1wk", label: "1 week", multiplier: 1.4, hours: 168 },
+  { value: "3d", label: "3 days", multiplier: 1.7, hours: 72 },
+  { value: "24h", label: "24 hours (rush)", multiplier: 2.0, hours: 24 },
+] as const;
+
+interface AddOn {
+  id: string;
+  label: string;
+  price: number;
+  perPage?: boolean;
+  hint?: string;
+}
+
+const ADDONS: AddOn[] = [
+  { id: "turnitin", label: "Turnitin similarity report", price: 10, hint: "PDF report with score" },
+  { id: "plag-cert", label: "Plagiarism-free certificate", price: 5 },
+  { id: "ai-report", label: "AI-detection (GPTZero) report", price: 8 },
+  { id: "native", label: "Native English writer", price: 3, perPage: true },
+  { id: "top-tier", label: "Top-tier PhD expert", price: 4, perPage: true },
+  { id: "progressive", label: "Progressive delivery (per chapter)", price: 15 },
+  { id: "dataset", label: "SPSS/NVivo dataset + syntax", price: 25 },
+  { id: "abstract", label: "Abstract (250 words)", price: 10 },
+  { id: "slides", label: "PowerPoint summary (10 slides)", price: 20 },
+  { id: "extended-rev", label: "Extended revisions (30 days)", price: 15 },
 ];
 
-const degreeTypes = [
-  { value: "masters", label: "Master's Degree" },
-  { value: "phd", label: "PhD / Doctoral" },
-  { value: "dba", label: "Doctor of Business Administration (DBA)" },
-  { value: "edd", label: "Doctor of Education (EdD)" },
-  { value: "other", label: "Other Doctoral Degree" },
-];
+const CITATION_STYLES = ["APA 7", "APA 6", "Harvard", "Chicago/Turabian", "MLA", "IEEE", "Vancouver", "Other"];
 
-const subjectAreas = [
+const SUBJECTS = [
   "Business & Management",
   "Education",
   "Healthcare & Nursing",
@@ -72,303 +104,222 @@ const subjectAreas = [
   "Other",
 ];
 
-const deadlineOptions = [
-  { value: "1-week", label: "1 Week (Rush)", surcharge: "+40%" },
-  { value: "2-weeks", label: "2 Weeks (Expedited)", surcharge: "+25%" },
-  { value: "1-month", label: "1 Month (Standard)", surcharge: "" },
-  { value: "2-months", label: "2 Months", surcharge: "" },
-  { value: "3-months", label: "3+ Months (Best Rate)", surcharge: "-10%" },
-  { value: "flexible", label: "Flexible / No Rush", surcharge: "" },
-];
-
-const referralSources = [
-  "Google Search",
-  "Referral from Friend/Colleague",
-  "Social Media",
-  "Academic Forum",
-  "University Recommendation",
-  "Return Client",
-  "Other",
-];
-
-interface OrderFormData {
-  // Personal Info
+interface FormState {
+  serviceType: string;
+  level: string;
+  deadline: string;
+  pages: number;
+  subject: string;
+  citationStyle: string;
+  addons: string[];
+  description: string;
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
-  country: string;
-  
-  // Academic Info
-  degreeType: string;
   university: string;
-  department: string;
-  subjectArea: string;
-  
-  // Project Details
-  serviceType: string;
-  projectTitle: string;
-  projectDescription: string;
-  wordCount: string;
-  pageCount: string;
-  deadline: string;
-  specificDeadlineDate: string;
-  
-  // Additional Requirements
-  researchMethodology: string;
-  citationStyle: string;
-  numberOfSources: string;
-  specialInstructions: string;
-  
-  // Files (stored as file names for display)
-  uploadedFiles: string[];
-  
-  // Preferences
-  preferredCommunication: string;
-  timezone: string;
-  referralSource: string;
-  
-  // Terms
-  agreedToTerms: boolean;
-  agreedToPrivacy: boolean;
+  agreed: boolean;
 }
 
-const initialFormData: OrderFormData = {
+const initial: FormState = {
+  serviceType: "writing",
+  level: "masters",
+  deadline: "1mo",
+  pages: 1,
+  subject: "",
+  citationStyle: "APA 7",
+  addons: [],
+  description: "",
   firstName: "",
   lastName: "",
   email: "",
   phone: "",
-  country: "",
-  degreeType: "",
   university: "",
-  department: "",
-  subjectArea: "",
-  serviceType: "",
-  projectTitle: "",
-  projectDescription: "",
-  wordCount: "",
-  pageCount: "",
-  deadline: "",
-  specificDeadlineDate: "",
-  researchMethodology: "",
-  citationStyle: "",
-  numberOfSources: "",
-  specialInstructions: "",
-  uploadedFiles: [],
-  preferredCommunication: "",
-  timezone: "",
-  referralSource: "",
-  agreedToTerms: false,
-  agreedToPrivacy: false,
+  agreed: false,
 };
 
-// Deposit amount (10% of estimated minimum for quote confirmation)
-const DEPOSIT_AMOUNT = 50;
+function computePrice(f: FormState) {
+  const svc = SERVICE_TYPES.find((s) => s.value === f.serviceType)!;
+  const lvl = LEVELS.find((l) => l.value === f.level)!;
+  const dl = DEADLINES.find((d) => d.value === f.deadline)!;
+  const perPage = BASE_PRICE_PER_PAGE * svc.multiplier * lvl.multiplier * dl.multiplier;
+  const pagesSubtotal = perPage * f.pages;
+
+  let addonsTotal = 0;
+  const addonBreakdown: { label: string; amount: number }[] = [];
+  for (const id of f.addons) {
+    const a = ADDONS.find((x) => x.id === id);
+    if (!a) continue;
+    const amount = a.perPage ? a.price * f.pages : a.price;
+    addonsTotal += amount;
+    addonBreakdown.push({ label: a.label, amount });
+  }
+  const total = Math.max(15, Math.round((pagesSubtotal + addonsTotal) * 100) / 100);
+  return {
+    perPage: Math.round(perPage * 100) / 100,
+    pagesSubtotal: Math.round(pagesSubtotal * 100) / 100,
+    addonsTotal: Math.round(addonsTotal * 100) / 100,
+    total,
+    addonBreakdown,
+    service: svc,
+    level: lvl,
+    deadline: dl,
+  };
+}
 
 const Order = () => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState<OrderFormData>(initialFormData);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [orderComplete, setOrderComplete] = useState(false);
+  const [step, setStep] = useState(1);
+  const [f, setF] = useState<FormState>(initial);
+  const [complete, setComplete] = useState(false);
   const [orderNumber, setOrderNumber] = useState("");
-  const [paymentApproved, setPaymentApproved] = useState(false);
 
-  const totalSteps = 5;
+  const price = useMemo(() => computePrice(f), [f]);
 
-  const updateFormData = (field: keyof OrderFormData, value: string | boolean | string[]) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+  const update = <K extends keyof FormState>(k: K, v: FormState[K]) =>
+    setF((prev) => ({ ...prev, [k]: v }));
+
+  const toggleAddon = (id: string) =>
+    setF((prev) => ({
+      ...prev,
+      addons: prev.addons.includes(id) ? prev.addons.filter((x) => x !== id) : [...prev.addons, id],
+    }));
+
+  const validate = (s: number) => {
+    if (s === 1) return !!(f.serviceType && f.level && f.deadline && f.pages > 0 && f.description.trim().length >= 20);
+    if (s === 2) return !!(f.firstName && f.lastName && f.email && f.phone);
+    if (s === 3) return f.agreed;
+    return false;
   };
 
-  const validateStep = (step: number): boolean => {
-    switch (step) {
-      case 1:
-        return !!(formData.firstName && formData.lastName && formData.email && formData.phone);
-      case 2:
-        return !!(formData.degreeType && formData.university && formData.subjectArea);
-      case 3:
-        return !!(formData.serviceType && formData.projectTitle && formData.projectDescription && formData.deadline);
-      case 4:
-        return !!(formData.citationStyle);
-      case 5:
-        return formData.agreedToTerms && formData.agreedToPrivacy;
-      default:
-        return false;
+  const next = () => {
+    if (!validate(step)) {
+      toast.error(
+        step === 1
+          ? "Please complete the order details (min. 20-character brief)."
+          : step === 2
+          ? "Please fill in your contact details."
+          : "Please agree to the terms."
+      );
+      return;
     }
+    setStep((s) => Math.min(s + 1, 3));
   };
 
-  const nextStep = () => {
-    if (validateStep(currentStep)) {
-      setCurrentStep(prev => Math.min(prev + 1, totalSteps));
-    } else {
-      toast.error("Please fill in all required fields before continuing.");
+  const gen = () => {
+    const t = Date.now().toString(36).toUpperCase();
+    const r = Math.random().toString(36).substring(2, 6).toUpperCase();
+    return `DP-${t}-${r}`;
+  };
+
+  const buildOrderSummary = (num: string, paymentId: string) => {
+    const lines: string[] = [];
+    lines.push(`Order ${num}`);
+    lines.push(`Service: ${price.service.label} (${price.level.label}, ${price.deadline.label})`);
+    lines.push(`Pages: ${f.pages} × $${price.perPage.toFixed(2)}/page = $${price.pagesSubtotal.toFixed(2)}`);
+    if (price.addonBreakdown.length) {
+      lines.push(`Add-ons:`);
+      price.addonBreakdown.forEach((a) => lines.push(`  - ${a.label}: $${a.amount.toFixed(2)}`));
     }
+    lines.push(`Total paid: $${price.total.toFixed(2)}`);
+    lines.push(`Subject: ${f.subject || "—"} · Style: ${f.citationStyle}`);
+    lines.push(`Client: ${f.firstName} ${f.lastName} · ${f.email} · ${f.phone}`);
+    if (f.university) lines.push(`University: ${f.university}`);
+    lines.push(`Payment ID: ${paymentId}`);
+    lines.push(``);
+    lines.push(`Brief:`);
+    lines.push(f.description);
+    return lines.join("\n");
   };
 
-  const prevStep = () => {
-    setCurrentStep(prev => Math.max(prev - 1, 1));
+  const handlePaymentSuccess = async (details: Record<string, unknown>) => {
+    const num = gen();
+    const paymentId = (details as { id?: string }).id || `PAYPAL_${Date.now()}`;
+    setOrderNumber(num);
+
+    const summary = buildOrderSummary(num, paymentId);
+    const projectTitle = f.description.slice(0, 80) + (f.description.length > 80 ? "…" : "");
+
+    // Persist locally
+    try {
+      localStorage.setItem(
+        `order_${num}`,
+        JSON.stringify({ orderNumber: num, ...f, price, paymentId, paymentDate: new Date().toISOString() })
+      );
+    } catch { /* ignore */ }
+
+    // Log to Sheets + email via Apps Script (primary)
+    const ok = await logFullOrder({
+      orderNumber: num,
+      firstName: f.firstName,
+      lastName: f.lastName,
+      email: f.email,
+      phone: f.phone,
+      degreeType: price.level.label,
+      university: f.university,
+      subjectArea: f.subject,
+      serviceType: price.service.label,
+      projectTitle,
+      projectDescription: summary,
+      deadline: price.deadline.label,
+      citationStyle: f.citationStyle,
+      specialInstructions: `Pages: ${f.pages}; Add-ons: ${price.addonBreakdown.map(a => a.label).join(", ") || "none"}`,
+      depositAmount: price.total,
+      paymentId,
+    }).catch(() => false);
+
+    // Mailto fallback (always available as a safety net for the customer if webhook is down)
+    if (!ok) {
+      const mailto = `mailto:tutorsgallery@gmail.com?subject=${encodeURIComponent(
+        `New order ${num} — $${price.total.toFixed(2)}`
+      )}&body=${encodeURIComponent(summary)}`;
+      // Open silently in a new tab; the client's own mail app will draft it as a backup notification.
+      try { window.open(mailto, "_blank"); } catch { /* ignore */ }
+    }
+
+    setComplete(true);
+    toast.success("Payment received — your order is confirmed.");
   };
 
-  const generateOrderNumber = () => {
-    const timestamp = Date.now().toString(36).toUpperCase();
-    const random = Math.random().toString(36).substring(2, 6).toUpperCase();
-    return `DP-${timestamp}-${random}`;
-  };
-
-  const handlePaymentSuccess = (details: Record<string, unknown>) => {
-    const newOrderNumber = generateOrderNumber();
-    setOrderNumber(newOrderNumber);
-    setPaymentApproved(true);
-    
-    const paymentId = (details as { id?: string }).id || "PAYPAL_" + Date.now();
-    
-    // Store order in localStorage for receipt retrieval
-    const orderData = {
-      orderNumber: newOrderNumber,
-      ...formData,
-      depositPaid: DEPOSIT_AMOUNT,
-      paymentId: paymentId,
-      paymentDate: new Date().toISOString(),
-      status: "Pending Review",
-    };
-    
-    localStorage.setItem(`order_${newOrderNumber}`, JSON.stringify(orderData));
-    
-    // Log order to Google Sheets (fire and forget - don't block success flow)
-    logFullOrder({
-      orderNumber: newOrderNumber,
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: formData.phone,
-      degreeType: formData.degreeType,
-      university: formData.university,
-      subjectArea: formData.subjectArea,
-      serviceType: formData.serviceType,
-      projectTitle: formData.projectTitle,
-      projectDescription: formData.projectDescription,
-      deadline: formData.deadline,
-      citationStyle: formData.citationStyle,
-      specialInstructions: formData.specialInstructions,
-      depositAmount: DEPOSIT_AMOUNT,
-      paymentId: paymentId,
-    }).catch(console.error);
-    
-    setOrderComplete(true);
-    toast.success("Payment successful! Your order has been submitted.");
-  };
-
-  const getSelectedServicePrice = () => {
-    const service = serviceTypes.find(s => s.value === formData.serviceType);
-    return service?.priceRange || "Price to be quoted";
-  };
-
-  if (orderComplete) {
+  if (complete) {
     return (
       <Layout>
-        <SEO 
-          title="Order Confirmed"
-          description="Your dissertation support order has been submitted successfully."
-          canonical="/order"
-        />
+        <SEO title="Order Confirmed" description="Your dissertation order has been submitted." canonical="/order" />
         <section className="py-20 lg:py-28">
           <div className="container max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card className="border-success/30 bg-success/5">
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mb-4">
-                    <CheckCircle className="h-8 w-8 text-success" />
+            <Card className="border-success/30 bg-success/5">
+              <CardHeader className="text-center pb-4">
+                <div className="mx-auto w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mb-4">
+                  <CheckCircle className="h-8 w-8 text-success" />
+                </div>
+                <CardTitle className="text-2xl font-serif">Order Confirmed</CardTitle>
+                <CardDescription>Your writer will be assigned within the hour.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="bg-background rounded-xl p-6 border border-border">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Receipt className="h-5 w-5 text-copper" />
+                    <h2 className="font-semibold">Receipt</h2>
                   </div>
-                  <CardTitle className="text-2xl font-serif text-foreground">Order Submitted Successfully!</CardTitle>
-                  <CardDescription className="text-base">
-                    Thank you for choosing DissertlyPro. Your order is now being reviewed.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  {/* Receipt Card */}
-                  <div className="bg-background rounded-xl p-6 border border-border">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Receipt className="h-5 w-5 text-copper" />
-                      <h3 className="font-semibold text-foreground">Order Receipt</h3>
-                    </div>
-                    
-                    <div className="space-y-3 text-sm">
-                      <div className="flex justify-between py-2 border-b border-border">
-                        <span className="text-muted-foreground">Order Number</span>
-                        <span className="font-mono font-bold text-copper">{orderNumber}</span>
-                      </div>
-                      <div className="flex justify-between py-2 border-b border-border">
-                        <span className="text-muted-foreground">Service</span>
-                        <span className="text-foreground">{serviceTypes.find(s => s.value === formData.serviceType)?.label}</span>
-                      </div>
-                      <div className="flex justify-between py-2 border-b border-border">
-                        <span className="text-muted-foreground">Project</span>
-                        <span className="text-foreground truncate max-w-[200px]">{formData.projectTitle}</span>
-                      </div>
-                      <div className="flex justify-between py-2 border-b border-border">
-                        <span className="text-muted-foreground">Deposit Paid</span>
-                        <span className="text-success font-semibold">${DEPOSIT_AMOUNT}.00 USD</span>
-                      </div>
-                      <div className="flex justify-between py-2 border-b border-border">
-                        <span className="text-muted-foreground">Estimated Range</span>
-                        <span className="text-foreground">{getSelectedServicePrice()}</span>
-                      </div>
-                      <div className="flex justify-between py-2">
-                        <span className="text-muted-foreground">Status</span>
-                        <span className="inline-flex items-center gap-1.5 text-amber-600 font-medium">
-                          <Clock className="h-3.5 w-3.5" />
-                          Pending Review
-                        </span>
-                      </div>
-                    </div>
+                  <div className="space-y-2 text-sm">
+                    <Row k="Order #" v={<span className="font-mono font-bold text-copper">{orderNumber}</span>} />
+                    <Row k="Service" v={price.service.label} />
+                    <Row k="Level" v={price.level.label} />
+                    <Row k="Pages" v={String(f.pages)} />
+                    <Row k="Deadline" v={price.deadline.label} />
+                    <Row k="Total paid" v={<strong className="text-success">${price.total.toFixed(2)}</strong>} />
+                    <Row k="Status" v={<span className="text-amber-600 inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" />Writer assignment</span>} />
                   </div>
-
-                  {/* Important Info */}
-                  <div className="bg-cream-warm rounded-xl p-4 border border-copper/20">
-                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <AlertCircle className="h-4 w-4 text-copper" />
-                      What Happens Next?
-                    </h4>
-                    <ul className="text-sm text-muted-foreground space-y-2">
-                      <li className="flex items-start gap-2">
-                        <span className="text-copper font-bold">1.</span>
-                        Our team will review your requirements within 24 hours
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-copper font-bold">2.</span>
-                        You'll receive a detailed quote with timeline via email
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-copper font-bold">3.</span>
-                        Your deposit secures your spot and will be applied to the final cost
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-copper font-bold">4.</span>
-                        Use your order number <strong className="text-copper">{orderNumber}</strong> to check status
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Save Receipt Notice */}
-                  <div className="text-center text-sm text-muted-foreground">
-                    <p>A confirmation email has been sent to <strong>{formData.email}</strong></p>
-                    <p className="mt-1">Please save your order number for future reference.</p>
-                  </div>
-
-                  <div className="flex gap-3 pt-4">
-                    <Button variant="midnight-outline" className="flex-1" onClick={() => window.print()}>
-                      Print Receipt
-                    </Button>
-                    <Button variant="copper" className="flex-1" asChild>
-                      <a href="/">Return Home</a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+                </div>
+                <p className="text-sm text-muted-foreground text-center">
+                  A confirmation was sent to <strong>{f.email}</strong> and to our team at
+                  <strong> tutorsgallery@gmail.com</strong>. Keep your order number handy.
+                </p>
+                <div className="flex gap-3">
+                  <Button variant="hero-outline" className="flex-1" onClick={() => window.print()}>Print</Button>
+                  <Button variant="copper" className="flex-1" asChild><a href="/">Return home</a></Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </Layout>
@@ -377,623 +328,348 @@ const Order = () => {
 
   return (
     <Layout>
-      <SEO 
-        title="Place Your Order"
-        description="Submit your dissertation support request. Comprehensive order form for thesis writing, data analysis, editing, and research methodology services."
+      <SEO
+        title="Order Dissertation Help — from $15/page"
+        description="Order dissertation writing, editing, statistics, or chapter help from $15 per page. Configure pages and add-ons, pay directly. No consultation fee."
         canonical="/order"
-        keywords={['dissertation order', 'thesis writing order', 'academic support request', 'PhD help order']}
+        keywords={["dissertation order", "dissertation writing price", "PhD help order", "thesis editing per page"]}
       />
-      
-      {/* Hero */}
-      <section className="bg-hero-gradient py-12 lg:py-16">
+
+      <section className="bg-hero-gradient py-10 lg:py-14">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-4">
-              Submit Your Project Request
+            <h1 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-3">
+              Order in minutes — from $15 / page
             </h1>
-            <p className="text-lg text-ivory/90 font-sans">
-              Complete the form below to receive a personalized quote. A ${DEPOSIT_AMOUNT} deposit secures your consultation.
+            <p className="text-lg text-ivory/90">
+              No consultation fee. Configure pages, deadline, and add-ons. Pay only for what you order.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Progress Bar */}
+      {/* Progress */}
       <div className="bg-cream-warm border-b border-border sticky top-16 sm:top-20 z-40">
         <div className="container py-4">
-          <div className="flex items-center justify-between max-w-3xl mx-auto">
+          <div className="flex items-center justify-between max-w-2xl mx-auto">
             {[
-              { num: 1, label: "Personal Info", icon: User },
-              { num: 2, label: "Academic Details", icon: GraduationCap },
-              { num: 3, label: "Project", icon: FileText },
-              { num: 4, label: "Requirements", icon: BookOpen },
-              { num: 5, label: "Review & Pay", icon: Shield },
-            ].map((step, idx) => (
-              <div key={step.num} className="flex items-center">
-                <div 
-                  className={`flex items-center gap-2 cursor-pointer transition-all ${
-                    currentStep >= step.num ? 'text-copper' : 'text-muted-foreground'
-                  }`}
-                  onClick={() => currentStep > step.num && setCurrentStep(step.num)}
+              { n: 1, label: "Configure", icon: FileText },
+              { n: 2, label: "Your details", icon: Shield },
+              { n: 3, label: "Review & pay", icon: Receipt },
+            ].map((s, i) => (
+              <div key={s.n} className="flex items-center flex-1">
+                <div
+                  className={`flex items-center gap-2 cursor-pointer ${step >= s.n ? "text-copper" : "text-muted-foreground"}`}
+                  onClick={() => step > s.n && setStep(s.n)}
                 >
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all ${
-                    currentStep > step.num 
-                      ? 'bg-copper text-white' 
-                      : currentStep === step.num 
-                        ? 'bg-copper/20 text-copper border-2 border-copper' 
-                        : 'bg-muted text-muted-foreground'
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
+                    step > s.n ? "bg-copper text-white" : step === s.n ? "bg-copper/20 text-copper border-2 border-copper" : "bg-muted text-muted-foreground"
                   }`}>
-                    {currentStep > step.num ? <CheckCircle className="h-4 w-4" /> : step.num}
+                    {step > s.n ? <CheckCircle className="h-4 w-4" /> : s.n}
                   </div>
-                  <span className="hidden sm:block text-sm font-medium">{step.label}</span>
+                  <span className="hidden sm:block text-sm font-medium">{s.label}</span>
                 </div>
-                {idx < 4 && (
-                  <div className={`w-8 sm:w-12 h-0.5 mx-2 ${
-                    currentStep > step.num ? 'bg-copper' : 'bg-border'
-                  }`} />
-                )}
+                {i < 2 && <div className={`flex-1 h-0.5 mx-2 ${step > s.n ? "bg-copper" : "bg-border"}`} />}
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Form Content */}
-      <section className="py-12 lg:py-16">
+      <section className="py-10 lg:py-14">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentStep}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Card>
-                  <CardContent className="p-6 sm:p-8">
-                    {/* Step 1: Personal Information */}
-                    {currentStep === 1 && (
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-xl font-serif font-bold text-foreground mb-2">Personal Information</h2>
-                          <p className="text-sm text-muted-foreground">Tell us about yourself so we can contact you.</p>
-                        </div>
-                        
-                        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid lg:grid-cols-[1fr_360px] gap-8 max-w-6xl mx-auto">
+            <div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={step}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <Card>
+                    <CardContent className="p-6 sm:p-8 space-y-6">
+                      {step === 1 && (
+                        <>
+                          <h2 className="text-xl font-serif font-bold">Configure your order</h2>
+
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                              <Label htmlFor="serviceType">Service *</Label>
+                              <Select value={f.serviceType} onValueChange={(v) => update("serviceType", v)}>
+                                <SelectTrigger id="serviceType"><SelectValue /></SelectTrigger>
+                                <SelectContent>
+                                  {SERVICE_TYPES.map((s) => (
+                                    <SelectItem key={s.value} value={s.value}>{s.label}</SelectItem>
+                                  ))}
+                                </SelectContent>
+                              </Select>
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="level">Academic level *</Label>
+                              <Select value={f.level} onValueChange={(v) => update("level", v)}>
+                                <SelectTrigger id="level"><SelectValue /></SelectTrigger>
+                                <SelectContent>
+                                  {LEVELS.map((l) => (
+                                    <SelectItem key={l.value} value={l.value}>{l.label}</SelectItem>
+                                  ))}
+                                </SelectContent>
+                              </Select>
+                            </div>
+                          </div>
+
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                              <Label htmlFor="deadline">Deadline *</Label>
+                              <Select value={f.deadline} onValueChange={(v) => update("deadline", v)}>
+                                <SelectTrigger id="deadline"><SelectValue /></SelectTrigger>
+                                <SelectContent>
+                                  {DEADLINES.map((d) => (
+                                    <SelectItem key={d.value} value={d.value}>{d.label}</SelectItem>
+                                  ))}
+                                </SelectContent>
+                              </Select>
+                            </div>
+                            <div className="space-y-2">
+                              <Label>Pages * <span className="text-xs text-muted-foreground">(275 words / page)</span></Label>
+                              <div className="flex items-center gap-2">
+                                <Button type="button" variant="hero-outline" size="icon" aria-label="Decrease pages" onClick={() => update("pages", Math.max(1, f.pages - 1))}>
+                                  <Minus className="h-4 w-4" />
+                                </Button>
+                                <Input
+                                  type="number"
+                                  min={1}
+                                  value={f.pages}
+                                  onChange={(e) => update("pages", Math.max(1, parseInt(e.target.value || "1", 10)))}
+                                  className="text-center"
+                                />
+                                <Button type="button" variant="hero-outline" size="icon" aria-label="Increase pages" onClick={() => update("pages", f.pages + 1)}>
+                                  <Plus className="h-4 w-4" />
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                              <Label htmlFor="subject">Subject area</Label>
+                              <Select value={f.subject} onValueChange={(v) => update("subject", v)}>
+                                <SelectTrigger id="subject"><SelectValue placeholder="Select subject" /></SelectTrigger>
+                                <SelectContent>
+                                  {SUBJECTS.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+                                </SelectContent>
+                              </Select>
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="citation">Citation style</Label>
+                              <Select value={f.citationStyle} onValueChange={(v) => update("citationStyle", v)}>
+                                <SelectTrigger id="citation"><SelectValue /></SelectTrigger>
+                                <SelectContent>
+                                  {CITATION_STYLES.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+                                </SelectContent>
+                              </Select>
+                            </div>
+                          </div>
+
                           <div className="space-y-2">
-                            <Label htmlFor="firstName">First Name *</Label>
-                            <Input
-                              id="firstName"
-                              value={formData.firstName}
-                              onChange={(e) => updateFormData('firstName', e.target.value)}
-                              placeholder="John"
+                            <Label htmlFor="description">Instructions *</Label>
+                            <Textarea
+                              id="description"
+                              rows={5}
+                              value={f.description}
+                              onChange={(e) => update("description", e.target.value)}
+                              placeholder="Topic, chapter, sources required, formatting notes, files you'll send after checkout…"
                             />
+                            <p className="text-xs text-muted-foreground">You can email attachments to tutorsgallery@gmail.com with your order number after payment.</p>
+                          </div>
+
+                          <div className="space-y-3">
+                            <Label className="text-base">Optional add-ons</Label>
+                            <div className="grid sm:grid-cols-2 gap-2">
+                              {ADDONS.map((a) => {
+                                const checked = f.addons.includes(a.id);
+                                const amt = a.perPage ? a.price * f.pages : a.price;
+                                return (
+                                  <label
+                                    key={a.id}
+                                    className={`flex items-start gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
+                                      checked ? "border-copper bg-copper/5" : "border-border hover:border-copper/40"
+                                    }`}
+                                  >
+                                    <Checkbox checked={checked} onCheckedChange={() => toggleAddon(a.id)} />
+                                    <div className="flex-1 text-sm">
+                                      <div className="flex justify-between gap-2">
+                                        <span className="font-medium">{a.label}</span>
+                                        <span className="text-copper font-semibold">
+                                          +${amt.toFixed(2)}{a.perPage && <span className="text-xs text-muted-foreground"> ({f.pages}p)</span>}
+                                        </span>
+                                      </div>
+                                      {a.hint && <p className="text-xs text-muted-foreground mt-0.5">{a.hint}</p>}
+                                    </div>
+                                  </label>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </>
+                      )}
+
+                      {step === 2 && (
+                        <>
+                          <h2 className="text-xl font-serif font-bold">Your details</h2>
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                              <Label htmlFor="firstName">First name *</Label>
+                              <Input id="firstName" value={f.firstName} onChange={(e) => update("firstName", e.target.value)} />
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="lastName">Last name *</Label>
+                              <Input id="lastName" value={f.lastName} onChange={(e) => update("lastName", e.target.value)} />
+                            </div>
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="lastName">Last Name *</Label>
-                            <Input
-                              id="lastName"
-                              value={formData.lastName}
-                              onChange={(e) => updateFormData('lastName', e.target.value)}
-                              placeholder="Smith"
-                            />
+                            <Label htmlFor="email">Email *</Label>
+                            <Input id="email" type="email" value={f.email} onChange={(e) => update("email", e.target.value)} />
                           </div>
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="email">Email Address *</Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={(e) => updateFormData('email', e.target.value)}
-                            placeholder="john.smith@university.edu"
-                          />
-                        </div>
-
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="phone">Phone Number *</Label>
-                            <Input
-                              id="phone"
-                              type="tel"
-                              value={formData.phone}
-                              onChange={(e) => updateFormData('phone', e.target.value)}
-                              placeholder="+1 (555) 123-4567"
-                            />
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                              <Label htmlFor="phone">Phone / WhatsApp *</Label>
+                              <Input id="phone" type="tel" value={f.phone} onChange={(e) => update("phone", e.target.value)} placeholder="+1 555 123 4567" />
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="university">University (optional)</Label>
+                              <Input id="university" value={f.university} onChange={(e) => update("university", e.target.value)} />
+                            </div>
                           </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="country">Country</Label>
-                            <Input
-                              id="country"
-                              value={formData.country}
-                              onChange={(e) => updateFormData('country', e.target.value)}
-                              placeholder="United States"
-                            />
-                          </div>
-                        </div>
+                          <p className="text-xs text-muted-foreground">
+                            We use your details only to deliver your order. See our privacy policy.
+                          </p>
+                        </>
+                      )}
 
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="timezone">Your Timezone</Label>
-                            <Select value={formData.timezone} onValueChange={(v) => updateFormData('timezone', v)}>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select timezone" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="est">Eastern Time (EST/EDT)</SelectItem>
-                                <SelectItem value="cst">Central Time (CST/CDT)</SelectItem>
-                                <SelectItem value="mst">Mountain Time (MST/MDT)</SelectItem>
-                                <SelectItem value="pst">Pacific Time (PST/PDT)</SelectItem>
-                                <SelectItem value="gmt">GMT/UTC</SelectItem>
-                                <SelectItem value="cet">Central European (CET)</SelectItem>
-                                <SelectItem value="ist">India Standard (IST)</SelectItem>
-                                <SelectItem value="other">Other</SelectItem>
-                              </SelectContent>
-                            </Select>
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="communication">Preferred Contact Method</Label>
-                            <Select value={formData.preferredCommunication} onValueChange={(v) => updateFormData('preferredCommunication', v)}>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select method" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="email">Email</SelectItem>
-                                <SelectItem value="phone">Phone Call</SelectItem>
-                                <SelectItem value="whatsapp">WhatsApp</SelectItem>
-                                <SelectItem value="zoom">Zoom/Video Call</SelectItem>
-                              </SelectContent>
-                            </Select>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Step 2: Academic Information */}
-                    {currentStep === 2 && (
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-xl font-serif font-bold text-foreground mb-2">Academic Information</h2>
-                          <p className="text-sm text-muted-foreground">Help us understand your academic context.</p>
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="degreeType">Degree Level *</Label>
-                          <Select value={formData.degreeType} onValueChange={(v) => updateFormData('degreeType', v)}>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select your degree" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              {degreeTypes.map((degree) => (
-                                <SelectItem key={degree.value} value={degree.value}>
-                                  {degree.label}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="university">University/Institution *</Label>
-                          <Input
-                            id="university"
-                            value={formData.university}
-                            onChange={(e) => updateFormData('university', e.target.value)}
-                            placeholder="Harvard University"
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="department">Department/School</Label>
-                          <Input
-                            id="department"
-                            value={formData.department}
-                            onChange={(e) => updateFormData('department', e.target.value)}
-                            placeholder="School of Business"
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="subjectArea">Subject Area *</Label>
-                          <Select value={formData.subjectArea} onValueChange={(v) => updateFormData('subjectArea', v)}>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select subject area" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              {subjectAreas.map((subject) => (
-                                <SelectItem key={subject} value={subject}>
-                                  {subject}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Step 3: Project Details */}
-                    {currentStep === 3 && (
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-xl font-serif font-bold text-foreground mb-2">Project Details</h2>
-                          <p className="text-sm text-muted-foreground">Describe your project requirements.</p>
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="serviceType">Service Required *</Label>
-                          <Select value={formData.serviceType} onValueChange={(v) => updateFormData('serviceType', v)}>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select service" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              {serviceTypes.map((service) => (
-                                <SelectItem key={service.value} value={service.value}>
-                                  <div className="flex justify-between items-center w-full">
-                                    <span>{service.label}</span>
-                                    <span className="text-xs text-muted-foreground ml-4">{service.priceRange}</span>
-                                  </div>
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                          {formData.serviceType && (
-                            <p className="text-xs text-copper">Estimated range: {getSelectedServicePrice()}</p>
-                          )}
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="projectTitle">Project/Thesis Title *</Label>
-                          <Input
-                            id="projectTitle"
-                            value={formData.projectTitle}
-                            onChange={(e) => updateFormData('projectTitle', e.target.value)}
-                            placeholder="The Impact of Remote Work on Employee Productivity in..."
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="projectDescription">Project Description *</Label>
-                          <Textarea
-                            id="projectDescription"
-                            value={formData.projectDescription}
-                            onChange={(e) => updateFormData('projectDescription', e.target.value)}
-                            placeholder="Describe your research topic, objectives, and what you need help with..."
-                            rows={5}
-                          />
-                        </div>
-
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="wordCount">Approximate Word Count</Label>
-                            <Input
-                              id="wordCount"
-                              type="number"
-                              value={formData.wordCount}
-                              onChange={(e) => updateFormData('wordCount', e.target.value)}
-                              placeholder="15000"
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="pageCount">Or Page Count</Label>
-                            <Input
-                              id="pageCount"
-                              type="number"
-                              value={formData.pageCount}
-                              onChange={(e) => updateFormData('pageCount', e.target.value)}
-                              placeholder="60"
-                            />
-                          </div>
-                        </div>
-
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="deadline">Timeline *</Label>
-                            <Select value={formData.deadline} onValueChange={(v) => updateFormData('deadline', v)}>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select timeline" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                {deadlineOptions.map((option) => (
-                                  <SelectItem key={option.value} value={option.value}>
-                                    {option.label} {option.surcharge && <span className="text-copper">{option.surcharge}</span>}
-                                  </SelectItem>
+                      {step === 3 && (
+                        <>
+                          <h2 className="text-xl font-serif font-bold">Review &amp; pay</h2>
+                          <div className="border rounded-lg p-4 space-y-2 text-sm bg-cream-warm/40">
+                            <Row k="Service" v={price.service.label} />
+                            <Row k="Level" v={price.level.label} />
+                            <Row k="Deadline" v={price.deadline.label} />
+                            <Row k="Pages" v={`${f.pages} × $${price.perPage.toFixed(2)} = $${price.pagesSubtotal.toFixed(2)}`} />
+                            {price.addonBreakdown.length > 0 && (
+                              <div className="pt-2 border-t">
+                                {price.addonBreakdown.map((a) => (
+                                  <Row key={a.label} k={a.label} v={`$${a.amount.toFixed(2)}`} />
                                 ))}
-                              </SelectContent>
-                            </Select>
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="specificDate">Specific Deadline Date</Label>
-                            <Input
-                              id="specificDate"
-                              type="date"
-                              value={formData.specificDeadlineDate}
-                              onChange={(e) => updateFormData('specificDeadlineDate', e.target.value)}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Step 4: Additional Requirements */}
-                    {currentStep === 4 && (
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-xl font-serif font-bold text-foreground mb-2">Additional Requirements</h2>
-                          <p className="text-sm text-muted-foreground">Provide specific academic requirements.</p>
-                        </div>
-
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="methodology">Research Methodology</Label>
-                            <Select value={formData.researchMethodology} onValueChange={(v) => updateFormData('researchMethodology', v)}>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select methodology" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="qualitative">Qualitative</SelectItem>
-                                <SelectItem value="quantitative">Quantitative</SelectItem>
-                                <SelectItem value="mixed">Mixed Methods</SelectItem>
-                                <SelectItem value="undecided">Not Yet Decided</SelectItem>
-                                <SelectItem value="na">Not Applicable</SelectItem>
-                              </SelectContent>
-                            </Select>
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="citationStyle">Citation Style *</Label>
-                            <Select value={formData.citationStyle} onValueChange={(v) => updateFormData('citationStyle', v)}>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select style" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="apa7">APA 7th Edition</SelectItem>
-                                <SelectItem value="apa6">APA 6th Edition</SelectItem>
-                                <SelectItem value="harvard">Harvard</SelectItem>
-                                <SelectItem value="chicago">Chicago/Turabian</SelectItem>
-                                <SelectItem value="mla">MLA</SelectItem>
-                                <SelectItem value="ieee">IEEE</SelectItem>
-                                <SelectItem value="vancouver">Vancouver</SelectItem>
-                                <SelectItem value="other">Other (specify below)</SelectItem>
-                              </SelectContent>
-                            </Select>
-                          </div>
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="numberOfSources">Minimum Number of Sources</Label>
-                          <Input
-                            id="numberOfSources"
-                            type="number"
-                            value={formData.numberOfSources}
-                            onChange={(e) => updateFormData('numberOfSources', e.target.value)}
-                            placeholder="50"
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="specialInstructions">Special Instructions or Requirements</Label>
-                          <Textarea
-                            id="specialInstructions"
-                            value={formData.specialInstructions}
-                            onChange={(e) => updateFormData('specialInstructions', e.target.value)}
-                            placeholder="University-specific guidelines, supervisor preferences, software requirements (SPSS, NVivo, etc.)..."
-                            rows={4}
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label>Upload Supporting Documents (Optional)</Label>
-                          <div className="border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-copper/50 transition-colors cursor-pointer">
-                            <Upload className="h-8 w-8 mx-auto text-muted-foreground mb-2" />
-                            <p className="text-sm text-muted-foreground">
-                              Drag & drop files here or click to browse
-                            </p>
-                            <p className="text-xs text-muted-foreground mt-1">
-                              Proposal guidelines, sample chapters, rubrics (PDF, DOC, DOCX)
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="referral">How did you hear about us?</Label>
-                          <Select value={formData.referralSource} onValueChange={(v) => updateFormData('referralSource', v)}>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select source" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              {referralSources.map((source) => (
-                                <SelectItem key={source} value={source}>
-                                  {source}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Step 5: Review & Payment */}
-                    {currentStep === 5 && (
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-xl font-serif font-bold text-foreground mb-2">Review & Submit</h2>
-                          <p className="text-sm text-muted-foreground">Review your order and submit with a refundable deposit.</p>
-                        </div>
-
-                        {/* Order Summary */}
-                        <div className="bg-cream-warm rounded-xl p-5 space-y-3">
-                          <h3 className="font-semibold text-foreground flex items-center gap-2">
-                            <FileText className="h-4 w-4 text-copper" />
-                            Order Summary
-                          </h3>
-                          <div className="grid gap-2 text-sm">
-                            <div className="flex justify-between">
-                              <span className="text-muted-foreground">Client</span>
-                              <span className="text-foreground">{formData.firstName} {formData.lastName}</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-muted-foreground">Email</span>
-                              <span className="text-foreground">{formData.email}</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-muted-foreground">Service</span>
-                              <span className="text-foreground">{serviceTypes.find(s => s.value === formData.serviceType)?.label}</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-muted-foreground">Project</span>
-                              <span className="text-foreground truncate max-w-[200px]">{formData.projectTitle}</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-muted-foreground">Degree</span>
-                              <span className="text-foreground">{degreeTypes.find(d => d.value === formData.degreeType)?.label}</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-muted-foreground">Timeline</span>
-                              <span className="text-foreground">{deadlineOptions.find(d => d.value === formData.deadline)?.label}</span>
+                              </div>
+                            )}
+                            <div className="flex justify-between pt-3 border-t text-base">
+                              <strong>Total</strong>
+                              <strong className="text-copper">${price.total.toFixed(2)} USD</strong>
                             </div>
                           </div>
-                        </div>
 
-                        {/* Pricing Info */}
-                        <div className="bg-midnight/5 rounded-xl p-5 border border-midnight/10">
-                          <div className="flex justify-between items-center mb-3">
-                            <span className="text-foreground font-medium">Estimated Price Range</span>
-                            <span className="text-lg font-bold text-copper">{getSelectedServicePrice()}</span>
-                          </div>
-                          <p className="text-xs text-muted-foreground mb-4">
-                            Final pricing will be confirmed within 24 hours after our team reviews your requirements.
-                          </p>
-                          <div className="flex justify-between items-center pt-3 border-t border-border">
-                            <span className="text-foreground font-semibold">Consultation Deposit</span>
-                            <span className="text-xl font-bold text-foreground">${DEPOSIT_AMOUNT}.00 USD</span>
-                          </div>
-                          <p className="text-xs text-muted-foreground mt-2">
-                            This deposit is fully refundable if we cannot meet your requirements. It will be credited toward your final payment.
-                          </p>
-                        </div>
+                          <label className="flex items-start gap-3 text-sm">
+                            <Checkbox checked={f.agreed} onCheckedChange={(v) => update("agreed", Boolean(v))} />
+                            <span>
+                              I agree to the <a href="/terms-and-conditions" className="underline text-copper">terms</a> and
+                              &nbsp;<a href="/privacy-policy" className="underline text-copper">privacy policy</a>, including confidentiality of my order and files.
+                            </span>
+                          </label>
 
-                        {/* Terms */}
-                        <div className="space-y-3">
-                          <div className="flex items-start gap-3">
-                            <Checkbox 
-                              id="terms" 
-                              checked={formData.agreedToTerms}
-                              onCheckedChange={(checked) => updateFormData('agreedToTerms', checked as boolean)}
-                            />
-                            <Label htmlFor="terms" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
-                              I agree to the <a href="/terms" className="text-copper hover:underline">Terms of Service</a> and understand that DissertlyPro provides academic support and guidance, not plagiarism services.
-                            </Label>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <Checkbox 
-                              id="privacy" 
-                              checked={formData.agreedToPrivacy}
-                              onCheckedChange={(checked) => updateFormData('agreedToPrivacy', checked as boolean)}
-                            />
-                            <Label htmlFor="privacy" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
-                              I agree to the <a href="/privacy" className="text-copper hover:underline">Privacy Policy</a> and consent to my data being processed for this order.
-                            </Label>
-                          </div>
-                        </div>
-
-                        {/* PayPal Button */}
-                        {formData.agreedToTerms && formData.agreedToPrivacy && PAYPAL_CLIENT_ID && (
-                          <div className="pt-4">
-                            <PayPalScriptProvider options={{ clientId: PAYPAL_CLIENT_ID, currency: "USD" }}>
-                              <PayPalButtons
-                                style={{ layout: "vertical", shape: "rect", label: "pay" }}
-                                createOrder={(data, actions) => {
-                                  return actions.order.create({
-                                    intent: "CAPTURE",
-                                    purchase_units: [
-                                      {
-                                        amount: {
-                                          currency_code: "USD",
-                                          value: DEPOSIT_AMOUNT.toString(),
+                          {f.agreed ? (
+                            <div className="pt-2">
+                              <PayPalScriptProvider options={{ clientId: PAYPAL_CLIENT_ID, currency: "USD" }}>
+                                <PayPalButtons
+                                  style={{ layout: "vertical", color: "gold", shape: "rect", label: "pay" }}
+                                  createOrder={(_data, actions) =>
+                                    actions.order.create({
+                                      intent: "CAPTURE",
+                                      purchase_units: [
+                                        {
+                                          description: `${price.service.label} — ${f.pages} page${f.pages > 1 ? "s" : ""} (${price.level.label}, ${price.deadline.label})`,
+                                          amount: { currency_code: "USD", value: price.total.toFixed(2) },
                                         },
-                                        description: `DissertlyPro - ${serviceTypes.find(s => s.value === formData.serviceType)?.label} Consultation Deposit`,
-                                      },
-                                    ],
-                                  });
-                                }}
-                                onApprove={async (data, actions) => {
-                                  if (actions.order) {
-                                    const details = await actions.order.capture();
-                                    handlePaymentSuccess(details as Record<string, unknown>);
+                                      ],
+                                    })
                                   }
-                                }}
-                                onError={(err) => {
-                                  console.error("PayPal Error:", err);
-                                  toast.error("Payment failed. Please try again.");
-                                }}
-                              />
-                            </PayPalScriptProvider>
-                          </div>
-                        )}
+                                  onApprove={async (_data, actions) => {
+                                    const details = await actions.order?.capture();
+                                    await handlePaymentSuccess((details ?? {}) as Record<string, unknown>);
+                                  }}
+                                  onError={(err) => {
+                                    console.error(err);
+                                    toast.error("Payment failed. Please try again or WhatsApp us.");
+                                  }}
+                                />
+                              </PayPalScriptProvider>
+                              <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+                                <PaymentLogos />
+                                <GuaranteeBadge />
+                              </div>
+                            </div>
+                          ) : (
+                            <p className="text-sm text-muted-foreground">Agree to the terms to enable payment.</p>
+                          )}
+                        </>
+                      )}
 
-                        {!PAYPAL_CLIENT_ID && (
-                          <div className="bg-destructive/10 text-destructive rounded-lg p-4 text-sm">
-                            <AlertCircle className="h-4 w-4 inline mr-2" />
-                            PayPal is not configured. Please contact support.
-                          </div>
+                      {/* Navigation */}
+                      <div className="flex justify-between pt-2">
+                        <Button
+                          variant="hero-outline"
+                          onClick={() => setStep((s) => Math.max(1, s - 1))}
+                          disabled={step === 1}
+                        >
+                          <ArrowLeft className="h-4 w-4" /> Back
+                        </Button>
+                        {step < 3 ? (
+                          <Button variant="copper" onClick={next}>
+                            Continue <ArrowRight className="h-4 w-4" />
+                          </Button>
+                        ) : (
+                          <span />
                         )}
                       </div>
-                    )}
-
-                    {/* Navigation Buttons */}
-                    <div className="flex justify-between pt-8 border-t border-border mt-8">
-                      <Button
-                        variant="ghost"
-                        onClick={prevStep}
-                        disabled={currentStep === 1}
-                        className="gap-2"
-                      >
-                        <ArrowLeft className="h-4 w-4" />
-                        Back
-                      </Button>
-                      
-                      {currentStep < totalSteps ? (
-                        <Button variant="copper" onClick={nextStep} className="gap-2">
-                          Continue
-                          <ArrowRight className="h-4 w-4" />
-                        </Button>
-                      ) : null}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Trust Indicators */}
-            <div className="mt-8 space-y-6">
-              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-copper" />
-                  <span>256-bit SSL Encryption</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-copper" />
-                  <span>100% Satisfaction Guarantee</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-copper" />
-                  <span>24-Hour Response</span>
-                </div>
-              </div>
-              
-              {/* Guarantee Badge & Payment Logos */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <GuaranteeBadge variant="compact" />
-                <div className="h-8 w-px bg-border hidden sm:block" />
-                <PaymentLogos variant="compact" showLabel={false} />
-              </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </AnimatePresence>
             </div>
+
+            {/* Sticky price summary */}
+            <aside className="lg:sticky lg:top-32 self-start">
+              <Card className="border-copper/30">
+                <CardHeader>
+                  <CardTitle className="text-lg font-serif">Live total</CardTitle>
+                  <CardDescription>Updates as you configure.</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm">
+                  <Row k="Per page" v={`$${price.perPage.toFixed(2)}`} />
+                  <Row k={`Pages × ${f.pages}`} v={`$${price.pagesSubtotal.toFixed(2)}`} />
+                  {price.addonsTotal > 0 && <Row k="Add-ons" v={`$${price.addonsTotal.toFixed(2)}`} />}
+                  <div className="flex justify-between pt-3 border-t text-base">
+                    <strong>Total</strong>
+                    <strong className="text-copper">${price.total.toFixed(2)}</strong>
+                  </div>
+                  <p className="text-xs text-muted-foreground pt-2">
+                    You pay only what's shown. No hidden fees. Refundable per our guarantee.
+                  </p>
+                </CardContent>
+              </Card>
+            </aside>
           </div>
         </div>
       </section>
     </Layout>
   );
 };
+
+const Row = ({ k, v }: { k: string; v: React.ReactNode }) => (
+  <div className="flex justify-between gap-3">
+    <span className="text-muted-foreground">{k}</span>
+    <span className="text-right">{v}</span>
+  </div>
+);
 
 export default Order;

@@ -597,8 +597,9 @@ const CitationGeneratorPage = () => {
                         size="icon"
                         onClick={handleCopy}
                         className="shrink-0"
+                        aria-label={copied ? "Citation copied" : "Copy citation"}
                       >
-                        {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+                        {copied ? <Check className="w-4 h-4 text-green-500" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
                       </Button>
                     </div>
                   </motion.div>

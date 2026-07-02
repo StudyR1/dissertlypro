@@ -307,7 +307,7 @@ const Index = () => {
                   <div className="flex items-center gap-4 mb-8">
                     <img src={logoIcon} alt="DissertlyPro - Premium PhD and Master's dissertation support services" width={56} height={56} className="h-14 w-14 rounded-xl" loading="eager" decoding="async" fetchPriority="high" />
                     <div>
-                      <h3 className="text-lg font-serif font-bold text-white/90">DissertlyPro</h3>
+                      <h2 className="text-lg font-serif font-bold text-white/90">DissertlyPro</h2>
                       <p className="text-white/40 text-sm font-sans">Academic Excellence Partner</p>
                     </div>
                   </div>
@@ -545,7 +545,7 @@ const Index = () => {
                     </p>
                   </div>
                   <div className="hidden sm:flex items-center text-copper font-sans text-sm font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    Learn more <ArrowRight className="h-4 w-4 ml-1.5" />
+                    Explore {service.title} <ArrowRight className="h-4 w-4 ml-1.5" />
                   </div>
                 </div>
               </Link>
