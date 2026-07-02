@@ -1,5 +1,5 @@
 # DissertlyPro Robots.txt
-# https://dissertlypro.com
+# https://dissertlypro.lovable.app
 # Last Updated: 2025-01-21
 
 # Allow all crawlers
