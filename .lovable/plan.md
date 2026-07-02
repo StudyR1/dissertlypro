@@ -1,82 +1,80 @@
-# Complete remaining SEO + UX work
+# Plan: Conversion-First Order Form + SEO Fixes + 90-Day Plan Follow-through
 
-## 1. Pillar pages (9 keyword pages)
+## 1. Rebuild `/order` as a low-friction, per-page custom order
 
-**A. New "Your expert team & how it works" section** — added to `ServicePillarPage.tsx` between Process and Deliverables. Shows 3 expert profile cards (name initials, discipline, credentials, sample projects) linking to `/experts`, plus a 3-column "Assignment → Drafting → Revision" explainer covering: how assignments are matched within 24h, how drafts flow with tracked changes, and how the unlimited-revision loop works (turnaround, sign-off, re-match guarantee).
+**Goal:** kill the $50 flat "consultation deposit" friction. Clients configure pages + add-ons, see a live price starting at ~$15/page, and pay the full computed amount (or a small commitment fee) directly.
 
-**B. Expand FAQ on each of the 9 configs** — add 5 new shared FAQs tailored to Master's/PhD intent:
-- Confidentiality / NDA / data handling (GDPR)
-- Turnitin similarity thresholds & AI-detection report
-- Whether the work is detectable as ghostwritten / institutional integrity stance
-- Master's vs PhD scope differences and pricing tiers
-- Payment safety, milestones, refund triggers
+### Pricing model
 
-Brings each page to 10+ FAQs. Updates `sharedFaqs` array in `configs.ts`.
+- **Base:** $15 / page (double-spaced, ~275 words). Configurable constant.
+- **Academic level multiplier:** Undergrad ×1.0 · Master's ×1.4 · PhD ×1.8 · DBA/EdD ×2.0
+- **Deadline multiplier:** 3+ months ×0.9 · 1 month ×1.0 · 2 weeks ×1.25 · 1 week ×1.4 · 3 days ×1.7 · 24 h ×2.0
+- **Service-type multiplier:** Editing ×0.4 · Proofreading ×0.3 · Data analysis ×1.3 · Statistics ×1.4 · Writing ×1.0
+- **Add-ons (flat or per-page):** Turnitin report +$10 · Plagiarism-free certificate +$5 · Native writer +$3/page · Top-tier expert +$4/page · Progressive delivery +$15 · SPSS/NVivo dataset +$25 · Abstract +$10 · PowerPoint summary +$20 · Extended revisions (30 days) +$15
+- **Live total** updates on every input change; minimum order $15.
 
-## 2. Thin content expansion (audit CRITICAL)
+### New form flow (3 steps, not 5)
 
-Add unique long-form sections to:
-- `Index.tsx` — narrative "Why postgrads choose DissertlyPro", 5-step explainer, 6-question homepage FAQ (FAQPage schema).
-- `Experts.tsx` — "How we vet experts" (3-step), subject coverage matrix, 6-question FAQ, 3 anonymised testimonials.
-- `About.tsx` — methodology & ethics block, persona section, founder note.
-- `Services.tsx` — decision guide (which service fits which stage), expanded 10-entry FAQ.
+1. **Configure order** — service type, academic level, pages (± stepper), deadline, subject, citation style, add-ons, brief description, optional file upload.
+2. **Your details** — name, email, phone (WhatsApp), university (optional).
+3. **Review & pay** — itemized summary, T&Cs checkbox, PayPal button charging the full computed total. No "$50 consultation" anywhere.
 
-Each page target: >1,500 words of unique copy.
+Keep the existing multi-step animation shell and PayPal integration; replace the pricing/step logic. Preserve `/quick-checkout` for micro-services.
 
-## 3. Footer "Dissertation Services" column
+### Order delivery to email + Sheet
 
-Add a 7th column in `Footer.tsx` (`footerLinks.dissertationServices`) linking to the 9 new keyword pages. Adjust grid to `lg:grid-cols-7` and collapse Brand column on large screens, or move Resources/Support balance to keep layout intact.
+Existing `logFullOrder` already POSTs to the Apps Script webhook that both appends to the Sheet AND sends email to `tutorsgallery@gmail.com` via `MailApp.sendEmail`. Actions:
 
-## 4. Tawk.to mobile auto-open behaviour
+- Extend the `FullOrderData` payload with the new fields (pages, level, add-ons array, computed subtotal, multipliers, final total) so the email + sheet capture everything.
+- Update the header comment in `src/lib/googleSheets.ts` with the new columns and an updated Apps Script snippet that formats the add-ons list and price breakdown in the email body.
+- Add a **fallback mailto backup**: on submit, also construct a `mailto:tutorsgallery@gmail.com` with the full order body and fire it in a hidden link only if the webhook fetch throws — guarantees the user never loses an order even if Apps Script is down.
+- Show the user a clear "Order confirmation sent to [tutorsgallery@gmail.com](mailto:tutorsgallery@gmail.com)" note on the success screen.
 
-Edit `FloatingCTA.tsx` `autoOpenIfFirstVisit`:
-- Detect viewport width (`window.matchMedia('(max-width: 768px)')`).
-- Desktop: keep current 400ms maximize.
-- Mobile: only `showWidget()` immediately, delay `maximize()` by 8 seconds AND require user to have scrolled at least 400px OR remained idle for 8s — whichever first. If user starts interacting with a form/CTA, skip auto-maximize for that session.
-- Still gated by `sessionStorage('tawk_auto_opened')`.
+> Note: fully server-side email without Sheets would require Lovable Cloud + a Resend edge function. Current setup (Apps Script → Gmail) already delivers to your inbox reliably; the fallback mailto covers outages. If you want a Cloud-based backup, say so and I'll add it in a follow-up.
 
-## 5. Fix Google-reported 404s
+## 2. Fix all outstanding SEO & AI-review findings
 
-Map each crawl error to a real route or 301-equivalent (SPA = client redirect via `<Navigate>`):
+From the SEO panel:
 
-| Crawled URL | Fix |
-|---|---|
-| `/quick-checkout` and `/quick-checkout?services=…` | Route already named `/quick-service-checkout`. Add `<Route path="/quick-checkout" element={<Navigate to="/quick-service-checkout" replace />} />` preserving query string. |
-| `/services/academic-editing` | Add redirect → `/services/editing` |
-| `/services/proposal-development` | Redirect → `/services/dissertation-proposal` |
-| `/services/dissertation-writing` | Redirect → `/dissertation-writing-services` (pillar) |
-| `/services/research-methodology` | Redirect → `/services/methodology` |
-| `/refund-policy` | Redirect → `/terms` (refund clauses live there) |
-| `/privacy-policy` | Redirect → `/privacy` |
-| `/terms-and-conditions` | Redirect → `/terms` |
-| `/blog/mit-thesis-writing-strategies` | Redirect → `/blog` (post never existed; tombstone) |
-| `/blog/stanford-dissertation-excellence` | Redirect → `/blog` |
-| `/search?q={search_term_string}` | This is a SearchAction template echo (Google parsed JSON-LD literally). Fix by either (a) adding a real `/search` route that reads `?q=` and renders a results page using existing `topicClusters`/`glossaryTerms`, or (b) removing the SearchAction from sitewide JSON-LD in `index.html`. Plan: build a lightweight `/search` page so the SearchAction stays valid. |
+- **Heading levels:** `src/pages/Index.tsx:310` and `src/pages/Services.tsx:217` → H3 to H2.
+- **Generic anchor text:** `Index.tsx:548` and `Services.tsx:242` "Learn more" → "Explore {Service Name}".
+- **Icon-button a11y:** `CitationGeneratorPage.tsx:595` copy button → add `aria-label="Copy citation"`.
+- **Robots/sitemap host mismatch:** switch `Sitemap:` in `public/robots.txt` and `BASE_URL` in `scripts/generate-sitemap.ts` to `https://dissertlypro.com` (the SEO scanner's expected host) — keep the `.htaccess` 301 rules so production `dissertlypro.com` still consolidates.
+- **Sitemap sync:** add `/quick-checkout` (canonical), remove `/quick-checkout/*` stale entries, and drop `/search` (already `noindex`).
+- **Lighthouse LCP:** add `fetchpriority="high"` + explicit width/height to homepage hero image, remove `loading="lazy"` from it; ensure `font-display: swap` on all `@font-face` in `src/index.css`.
+- **Lighthouse contrast:** audit `text-muted-foreground/50` and any arbitrary gray utilities; replace with token classes.
+- **Semrush content gap:** add `/blog/best-dissertation-writing-services-reviews-2026` comparative pillar (5–7 providers, pricing, guarantees, verdict) — targets the 1,900/mo head term with the review intent Google now favors.
+- Mark each finding fixed via `update_findings` After implementation.
 
-All redirects added in `src/App.tsx` using `react-router-dom`'s `Navigate`. A small `LegacyRedirect` wrapper preserves the `search` string for `/quick-checkout` variants.
+## 3. Continue the 90-day content plan
 
-Also update `scripts/generate-sitemap.ts` to drop the broken URLs and include the canonical replacements.
+- **New comparison pillar** above becomes item #1 of Month 2 content.
+- **Internal linking pass:** add contextual links from the 9 new keyword pages and top blog posts (from the attached GSC screenshot: `cambridge-phd-guide`, `ucl-phd-doctoral-guide`, `mit-thesis-requirements`, `melbourne-phd-candidature`, `presenting-research-findings`) → `/dissertation-writing-services` and the new comparison post, using descriptive anchors.
+- **GSC top-performers optimization:** for each URL in the screenshot with impressions but low clicks, refresh the `<title>` + meta description with the highest-CTR keyword variant and add an updated `dateModified` in Article JSON-LD.
+- `**llms.txt` refresh:** add the new comparison post and reordered top-priority pages so AI crawlers (ChatGPT, Perplexity, Claude) surface them first.
 
-## 6. Mark SEO findings fixed
+## 4. cPanel + crawler visibility verification
 
-Call `seo_chat--list_findings` → `seo_chat--update_findings` for the thin-content, JSON-LD, and false-positive markup findings once the code above ships.
+- Run `bun run seo:validate` (existing script) to confirm every route has `<title>`, `<meta description>`, canonical, JSON-LD, and `noscript` fallback presence.
+- Re-verify `.htaccess`: SPA fallback ✓, subdomain 301s ✓, gzip ✓, cache headers ✓. Add `mod_headers` rule so `sitemap.xml` and `robots.txt` are served with `Content-Type: application/xml` / `text/plain` explicitly (some cPanel setups mis-guess).
+- Update the `<noscript>` fallback in `index.html` to include the new comparison post + updated service pages so JS-less crawlers see the current link graph.
+- Confirm `react-snap` prerender config still lists all new routes (`prerender:cpanel` in `package.json`) — add any missing ones.
+- After deploy: run `curl -A "Googlebot" https://dissertlypro.com/order` and `curl -A "GPTBot" https://dissertlypro.com/dissertation-writing-services` locally to confirm meaningful HTML returns (not just `<div id="root">`).
 
-## Files changed
+## Files touched
 
-- `src/components/services/ServicePillarPage.tsx` (expert-team section, revisions explainer)
-- `src/pages/services/configs.ts` (5 new shared FAQs + per-page tailored Q)
-- `src/components/cro/FloatingCTA.tsx` (mobile-aware delay)
-- `src/components/layout/Footer.tsx` (new column)
-- `src/pages/Index.tsx`, `Experts.tsx`, `About.tsx`, `Services.tsx` (thin-content expansion)
-- `src/App.tsx` (legacy-URL redirects + new `/search` route)
-- `src/pages/Search.tsx` (new lightweight results page)
-- `scripts/generate-sitemap.ts` (clean URL set)
-- SEO findings marked fixed at end
+- `src/pages/Order.tsx` — full rewrite of pricing + steps
+- `src/lib/googleSheets.ts` — payload + docs + mailto fallback helper
+- `src/pages/Index.tsx`, `src/pages/Services.tsx`, `src/pages/tools/CitationGeneratorPage.tsx` — a11y/heading fixes + anchor text
+- `public/robots.txt`, `scripts/generate-sitemap.ts`, `public/.htaccess`
+- `src/index.css` — font-display + contrast tokens
+- `index.html` — noscript fallback update, LCP preload
+- `src/pages/BlogPost.tsx` data + new post entry for comparative review
+- `public/llms.txt`
+- Mark SEO findings via `update_findings`
 
-## Verification
+## Out of scope (flag if you want them next)
 
-- `bun run build` → sitemap regenerates, no TS errors
-- Manual spot-check: `/quick-checkout?services=clarity-call` → lands on quick-service-checkout with query preserved
-- Mobile preview (375px) → chat does not pop until 8s + scroll
-- Pillar page → expert section + 10 FAQs visible
-- SEO rescan after deploy
+- Lovable Cloud + Resend edge function as a second email backup
+- Off-site work (Reddit seeding, HARO, guest posts) — code can't do these
+- GSC OAuth connection (needs your click)
