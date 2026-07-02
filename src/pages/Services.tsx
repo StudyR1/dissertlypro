@@ -214,9 +214,9 @@ const Services = () => {
                       <service.icon className="h-5 w-5 sm:h-7 sm:w-7" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-base sm:text-lg lg:text-xl font-serif font-semibold text-foreground mb-1.5 sm:mb-2 group-hover:text-gold transition-colors">
+                      <h2 className="text-base sm:text-lg lg:text-xl font-serif font-semibold text-foreground mb-1.5 sm:mb-2 group-hover:text-gold transition-colors">
                         {service.title}
-                      </h3>
+                      </h2>
                       <p className="text-muted-foreground font-sans text-xs sm:text-sm leading-relaxed line-clamp-2 sm:line-clamp-none">
                         {service.description}
                       </p>
@@ -238,8 +238,8 @@ const Services = () => {
                   </ul>
 
                   <Button variant="midnight-outline" size="sm" className="w-full sm:w-auto touch-manipulation" asChild>
-                    <Link to={`/services/${service.slug}`}>
-                      Learn More
+                    <Link to={`/services/${service.slug}`} aria-label={`Explore ${service.title}`}>
+                      Explore {service.title}
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
