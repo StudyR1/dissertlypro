@@ -337,7 +337,7 @@ const VivaPreparation = () => {
               Viva & Thesis Defense <span className="text-gradient-copper">Preparation Hub</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-primary-foreground/90 mb-8 max-w-3xl leading-relaxed">
               The viva voce is your chance to demonstrate mastery of your research. 
               This comprehensive guide covers everything from timeline planning and common questions 
               to mock viva strategies and handling every possible outcome.

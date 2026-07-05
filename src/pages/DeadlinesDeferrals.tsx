@@ -347,7 +347,7 @@ Sincerely,
               Academic Deadlines & <span className="text-gradient-copper">Deferrals Guide</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-primary-foreground/90 mb-8 max-w-3xl leading-relaxed">
               Life doesn't pause for dissertations. When circumstances beyond your control threaten your deadline, 
               knowing how to navigate the extension process can save your degree. This guide covers everything 
               from valid grounds to professional request templates.

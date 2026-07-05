@@ -376,7 +376,7 @@ Best regards,
               The Part-Time PhD <span className="text-gradient-copper">Survival Guide</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-primary-foreground/90 mb-8 max-w-3xl leading-relaxed">
               Completing a doctorate while holding down a job, maintaining relationships, and staying sane 
               is one of academia's greatest challenges. This guide covers the unique struggles of part-time 
               doctoral students and practical strategies for reaching the finish line.
