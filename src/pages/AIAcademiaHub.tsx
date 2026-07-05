@@ -196,8 +196,8 @@ const AIAcademiaHub = () => {
   return (
     <Layout>
       <SEO
-        title="AI in Academia Hub | Ethical AI Use for Dissertations | DissertlyPro"
-        description="Navigate AI in your dissertation with confidence. University AI policies, ethical frameworks, disclosure templates, and tools for responsible AI use in graduate research."
+        title="AI in Academia Hub"
+        description="Navigate AI in your dissertation: university AI policies, ethical frameworks, disclosure templates, and tools for responsible AI use in graduate research."
         canonical="https://dissertlypro.com/ai-academia"
         keywords={["AI in academia", "ChatGPT dissertation", "AI disclosure", "AI detection", "ethical AI use", "university AI policy", "cite ChatGPT", "AI academic integrity"]}
       />
