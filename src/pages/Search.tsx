@@ -32,7 +32,7 @@ const INDEX: Hit[] = [
   { title: "Dissertation Proposal", url: "/services/dissertation-proposal", excerpt: "Proposal writing and committee-ready framing." },
   { title: "Thesis Writing", url: "/services/thesis-writing", excerpt: "Full thesis support across chapters." },
   { title: "Pricing", url: "/pricing", excerpt: "Transparent pricing and milestone billing." },
-  { title: "Free Consultation", url: "/consultation", excerpt: "Talk to a PhD expert in your subject within 24 hours." },
+  { title: "Get Free Quote", url: "/order", excerpt: "Talk to a PhD expert in your subject within 24 hours." },
   { title: "Order", url: "/order", excerpt: "Start your project with a guided multi-step order form." },
   { title: "Experts", url: "/experts", excerpt: "Meet our PhD-qualified research and writing experts." },
   { title: "About DissertlyPro", url: "/about", excerpt: "Our methodology, ethics and academic integrity stance." },

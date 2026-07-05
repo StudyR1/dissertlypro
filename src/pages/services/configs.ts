@@ -45,7 +45,7 @@ const baseRelated = [
   { label: "Data analysis services", href: "/services/data-analysis" },
   { label: "Literature review structuring", href: "/services/literature-review" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Free consultation", href: "/consultation" },
+  { label: "Free consultation", href: "/order" },
 ];
 
 const sharedFaqs = [

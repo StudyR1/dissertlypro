@@ -659,8 +659,8 @@ const ThesisBuilderPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
-                <Link to="/consultation">
-                  Book Free Consultation
+                <Link to="/order">
+                  Order Now
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>

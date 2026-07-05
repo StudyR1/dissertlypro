@@ -333,7 +333,7 @@ const QualitativeAnalysis = () => {
 
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                <Link to="/consultation">
+                <Link to="/order">
                   Get Expert Analysis Help
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -688,8 +688,8 @@ const QualitativeAnalysis = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                  <Link to="/consultation">
-                    Book Analysis Consultation
+                  <Link to="/order">
+                    Order Now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

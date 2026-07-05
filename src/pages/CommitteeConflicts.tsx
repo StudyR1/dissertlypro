@@ -821,8 +821,8 @@ Thank you,
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                  <Link to="/consultation">
-                    Book Free Consultation
+                  <Link to="/order">
+                    Order Now
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                 </Button>

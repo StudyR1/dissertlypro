@@ -4,7 +4,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 
-const BASE_URL = "https://dissertlypro.lovable.app";
+const BASE_URL = "https://dissertlypro.com";
 
 interface SitemapEntry {
   path: string;
@@ -21,6 +21,7 @@ const pathMatches = [...appSource.matchAll(/path="([^"]+)"/g)].map((m) => m[1]);
 
 const EXCLUDE = new Set<string>([
   "*",
+  "/quick-checkout/*",
   // Legacy URL redirects (do not advertise these to crawlers)
   "/quick-checkout",
   "/services/academic-editing",
@@ -33,13 +34,12 @@ const EXCLUDE = new Set<string>([
   "/blog/mit-thesis-writing-strategies",
   "/blog/stanford-dissertation-excellence",
   // Internal utility pages
-  // Internal utility pages
   "/search",
   "/seo-audit",
 ]);
 
 const staticPaths = [...new Set(pathMatches)]
-  .filter((p) => !p.includes(":") && !EXCLUDE.has(p));
+  .filter((p) => !p.includes(":") && !p.includes("*") && !EXCLUDE.has(p));
 
 // Priority/changefreq heuristics
 const priorityFor = (p: string): string => {

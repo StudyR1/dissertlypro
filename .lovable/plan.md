@@ -1,80 +1,111 @@
-# Plan: Conversion-First Order Form + SEO Fixes + 90-Day Plan Follow-through
+## 1. Switch canonical host to `https://dissertlypro.com` everywhere
 
-## 1. Rebuild `/order` as a low-friction, per-page custom order
+The production domain is `dissertlypro.com`. Every crawler-visible URL, canonical, `og:url`, sitemap loc, JSON-LD `url`, hreflang, and internal absolute link in the built `dist/` must use `https://dissertlypro.com`. No `dissertlypro.lovable.app` in the shipped build.
 
-**Goal:** kill the $50 flat "consultation deposit" friction. Clients configure pages + add-ons, see a live price starting at ~$15/page, and pay the full computed amount (or a small commitment fee) directly.
+### Code + config changes
 
-### Pricing model
+- `scripts/generate-sitemap.ts` → `BASE_URL = "https://dissertlypro.com"`.
+- `public/robots.txt` → `Sitemap: https://dissertlypro.com/sitemap.xml` and header comment.
+- `index.html` → canonical, `og:url`, `twitter:url`, JSON-LD `url` all → `https://dissertlypro.com`.
+- `src/components/SEO.tsx` and any base-URL constants (`src/lib/ogImages.ts`, schema components under `src/components/schemas/*`) → replace hardcoded `dissertlypro.lovable.app` with `dissertlypro.com`.
+- `public/llms.txt`, `public/llms-full.txt`, `public/ai-context.json`, `public/humans.txt`, `public/security.txt`, `public/.well-known/security.txt`, `public/manifest.json` → replace all lovable.app occurrences.
+- `public/.htaccess` → verify 301 rules canonicalize to `https://dissertlypro.com` (non-www, https). Add rule to 301 `dissertlypro.lovable.app` → `dissertlypro.com` at the app level (defense in depth; primary redirect happens at DNS/host).
+- Search-replace sweep across `src/**` and `public/**` for any remaining `dissertlypro.lovable.app` string; fail the build if any survive.
 
-- **Base:** $15 / page (double-spaced, ~275 words). Configurable constant.
-- **Academic level multiplier:** Undergrad ×1.0 · Master's ×1.4 · PhD ×1.8 · DBA/EdD ×2.0
-- **Deadline multiplier:** 3+ months ×0.9 · 1 month ×1.0 · 2 weeks ×1.25 · 1 week ×1.4 · 3 days ×1.7 · 24 h ×2.0
-- **Service-type multiplier:** Editing ×0.4 · Proofreading ×0.3 · Data analysis ×1.3 · Statistics ×1.4 · Writing ×1.0
-- **Add-ons (flat or per-page):** Turnitin report +$10 · Plagiarism-free certificate +$5 · Native writer +$3/page · Top-tier expert +$4/page · Progressive delivery +$15 · SPSS/NVivo dataset +$25 · Abstract +$10 · PowerPoint summary +$20 · Extended revisions (30 days) +$15
-- **Live total** updates on every input change; minimum order $15.
+### Post-build guard
 
-### New form flow (3 steps, not 5)
+Add a step to `scripts/seo-validate.ts` (or a new small script) that:
 
-1. **Configure order** — service type, academic level, pages (± stepper), deadline, subject, citation style, add-ons, brief description, optional file upload.
-2. **Your details** — name, email, phone (WhatsApp), university (optional).
-3. **Review & pay** — itemized summary, T&Cs checkbox, PayPal button charging the full computed total. No "$50 consultation" anywhere.
+- Greps `dist/` recursively for `dissertlypro.lovable.app`.
+- Exits non-zero if any hit is found, blocking the cPanel zip step.
 
-Keep the existing multi-step animation shell and PayPal integration; replace the pricing/step logic. Preserve `/quick-checkout` for micro-services.
+## 2. Remove consultation fees — replace all consultation CTAs
 
-### Order delivery to email + Sheet
+Every user-facing "Book / Free / Schedule Consultation" button currently routes to `/consultation`, which still implies a paid step. Replace across the site with fee-free actions.
 
-Existing `logFullOrder` already POSTs to the Apps Script webhook that both appends to the Sheet AND sends email to `tutorsgallery@gmail.com` via `MailApp.sendEmail`. Actions:
+### Replacement policy
 
-- Extend the `FullOrderData` payload with the new fields (pages, level, add-ons array, computed subtotal, multipliers, final total) so the email + sheet capture everything.
-- Update the header comment in `src/lib/googleSheets.ts` with the new columns and an updated Apps Script snippet that formats the add-ons list and price breakdown in the email body.
-- Add a **fallback mailto backup**: on submit, also construct a `mailto:tutorsgallery@gmail.com` with the full order body and fire it in a hidden link only if the webhook fetch throws — guarantees the user never loses an order even if Apps Script is down.
-- Show the user a clear "Order confirmation sent to [tutorsgallery@gmail.com](mailto:tutorsgallery@gmail.com)" note on the success screen.
+- **Primary CTA** ("Book Consultation") → **"Order Now"** → `/order`
+- **Secondary CTA** ("Free / Schedule Consultation") → **"Chat With Support"** → opens Tawk.to via `window.Tawk_API.maximize()` (same pattern as `MobileCTA.tsx`)
+- **Tertiary / info surfaces** → **"WhatsApp Us"** → `https://wa.me/18126905122?text=...`
+- No button, card, banner, or schema `potentialAction` may send users to `/consultation`.
 
-> Note: fully server-side email without Sheets would require Lovable Cloud + a Resend edge function. Current setup (Apps Script → Gmail) already delivers to your inbox reliably; the fallback mailto covers outages. If you want a Cloud-based backup, say so and I'll add it in a follow-up.
+### Files to sweep
 
-## 2. Fix all outstanding SEO & AI-review findings
+Pages: `Index.tsx`, `Pricing.tsx`, `About.tsx`, `Contact.tsx`, `Experts.tsx`, `DissertationWritingServices.tsx`, `DissertationWriting.tsx`, `DissertationVsThesis.tsx`, `DissertationStructure.tsx`, `ResearchMethodology.tsx`, `ResearchQuestions.tsx`, `QualitativeAnalysis.tsx`, `MixedMethodsResearch.tsx`, `DataVisualization.tsx`, `AcademicNetworking.tsx`, `AcceleratedMasters.tsx`, `PartTimePhD.tsx`, `CourseworkToThesis.tsx`, `MastersDefense.tsx`, `MastersResources.tsx`, `MastersThesisGuide.tsx`, `PhDResources.tsx`, `PhDFunding.tsx`, `PhDIndustry.tsx`, `PhDPublishing.tsx`, `CandidacyExams.tsx`, `VivaPreparation.tsx`, `ThesisTopicSelection.tsx`, `ThesisStructure.tsx`, `CitationMastery.tsx`, `Glossary.tsx`, `FAQ.tsx`, `IRBEthicsGuide.tsx`, `MentalHealthHub.tsx`, `DeadlinesDeferrals.tsx`, `AIAcademiaHub.tsx`, `LiteratureReviewGuide.tsx`, `Subjects.tsx`, `UniversityLanding.tsx`, `UniversitiesHub.tsx`, `RegionLanding.tsx`, `QuickServices.tsx`, `Order.tsx`.
 
-From the SEO panel:
+Tools: `ToolsHub.tsx`, `WordCounterPage.tsx`, `QuoteCalculatorPage.tsx`, `ThesisBuilderPage.tsx`, `PersonalizationQuizPage.tsx`, `ResearchQuestionValidatorPage.tsx`, `DeadlineCheckerPage.tsx`, `LiteratureSearchPage.tsx`.
 
-- **Heading levels:** `src/pages/Index.tsx:310` and `src/pages/Services.tsx:217` → H3 to H2.
-- **Generic anchor text:** `Index.tsx:548` and `Services.tsx:242` "Learn more" → "Explore {Service Name}".
-- **Icon-button a11y:** `CitationGeneratorPage.tsx:595` copy button → add `aria-label="Copy citation"`.
-- **Robots/sitemap host mismatch:** switch `Sitemap:` in `public/robots.txt` and `BASE_URL` in `scripts/generate-sitemap.ts` to `https://dissertlypro.com` (the SEO scanner's expected host) — keep the `.htaccess` 301 rules so production `dissertlypro.com` still consolidates.
-- **Sitemap sync:** add `/quick-checkout` (canonical), remove `/quick-checkout/*` stale entries, and drop `/search` (already `noindex`).
-- **Lighthouse LCP:** add `fetchpriority="high"` + explicit width/height to homepage hero image, remove `loading="lazy"` from it; ensure `font-display: swap` on all `@font-face` in `src/index.css`.
-- **Lighthouse contrast:** audit `text-muted-foreground/50` and any arbitrary gray utilities; replace with token classes.
-- **Semrush content gap:** add `/blog/best-dissertation-writing-services-reviews-2026` comparative pillar (5–7 providers, pricing, guarantees, verdict) — targets the 1,900/mo head term with the review intent Google now favors.
-- Mark each finding fixed via `update_findings` After implementation.
+Data/config: `src/data/serviceFAQs.ts`, `src/data/blogPosts.ts`, `src/pages/services/configs.ts`, `src/pages/services/seoConfigs.ts`.
 
-## 3. Continue the 90-day content plan
+Layout: `Header.tsx`, `Footer.tsx`, `FloatingCTA.tsx` — verify no `/consultation` links remain.
 
-- **New comparison pillar** above becomes item #1 of Month 2 content.
-- **Internal linking pass:** add contextual links from the 9 new keyword pages and top blog posts (from the attached GSC screenshot: `cambridge-phd-guide`, `ucl-phd-doctoral-guide`, `mit-thesis-requirements`, `melbourne-phd-candidature`, `presenting-research-findings`) → `/dissertation-writing-services` and the new comparison post, using descriptive anchors.
-- **GSC top-performers optimization:** for each URL in the screenshot with impressions but low clicks, refresh the `<title>` + meta description with the highest-CTR keyword variant and add an updated `dateModified` in Article JSON-LD.
-- `**llms.txt` refresh:** add the new comparison post and reordered top-priority pages so AI crawlers (ChatGPT, Perplexity, Claude) surface them first.
+### `/consultation` route
 
-## 4. cPanel + crawler visibility verification
+Keep the route (inbound backlinks/GSC impressions) but repurpose `src/pages/Consultation.tsx` into a fee-free **"Get Your Custom Quote"** page: remove all "$50" and payment copy; leave two CTAs (Order Now, Chat With Support, WhatsApp). Update `llms.txt`, `llms-full.txt`, `ai-context.json` descriptions to match.
 
-- Run `bun run seo:validate` (existing script) to confirm every route has `<title>`, `<meta description>`, canonical, JSON-LD, and `noscript` fallback presence.
-- Re-verify `.htaccess`: SPA fallback ✓, subdomain 301s ✓, gzip ✓, cache headers ✓. Add `mod_headers` rule so `sitemap.xml` and `robots.txt` are served with `Content-Type: application/xml` / `text/plain` explicitly (some cPanel setups mis-guess).
-- Update the `<noscript>` fallback in `index.html` to include the new comparison post + updated service pages so JS-less crawlers see the current link graph.
-- Confirm `react-snap` prerender config still lists all new routes (`prerender:cpanel` in `package.json`) — add any missing ones.
-- After deploy: run `curl -A "Googlebot" https://dissertlypro.com/order` and `curl -A "GPTBot" https://dissertlypro.com/dissertation-writing-services` locally to confirm meaningful HTML returns (not just `<div id="root">`).
+## 3. Fix all SEO & AI-review issues + Semrush gap pass
 
-## Files touched
+### Scanner findings
 
-- `src/pages/Order.tsx` — full rewrite of pricing + steps
-- `src/lib/googleSheets.ts` — payload + docs + mailto fallback helper
-- `src/pages/Index.tsx`, `src/pages/Services.tsx`, `src/pages/tools/CitationGeneratorPage.tsx` — a11y/heading fixes + anchor text
-- `public/robots.txt`, `scripts/generate-sitemap.ts`, `public/.htaccess`
-- `src/index.css` — font-display + contrast tokens
-- `index.html` — noscript fallback update, LCP preload
-- `src/pages/BlogPost.tsx` data + new post entry for comparative review
-- `public/llms.txt`
-- Mark SEO findings via `update_findings`
+- Call `seo_chat--list_findings`, fix every failing item, mark fixed via `seo_chat--update_findings`.
+- Resolve remaining `warn` items from `public/seo-report.json`:
+  - `seo-component-usage` warn → ensure per-page `<SEO />` on all routes still missing it (`Order.tsx`, new service pillars, tools, utility pages).
+  - `prerender-built` warn → resolved by running `bun run prerender:cpanel` in the build step.
 
-## Out of scope (flag if you want them next)
+### Structural / content improvements
 
-- Lovable Cloud + Resend edge function as a second email backup
-- Off-site work (Reddit seeding, HARO, guest posts) — code can't do these
-- GSC OAuth connection (needs your click)
+- Confirm each route's Helmet `canonical` and `og:url` self-reference the route (not the homepage).
+- Confirm every JSON-LD `url` field uses `https://dissertlypro.com`.
+- Update `/consultation` sitemap entry priority to `0.6` (informational, not commercial).
+- Add hreflang alternates on regional landing pages if missing (`/uk`, `/us`, `/au`, `/ca`).
+
+### Semrush gap pass (before build)
+
+1. `semrush--domain_analysis` on `dissertlypro.com` — current keywords + traffic.
+2. `semrush--top_pages` — verify title/description/JSON-LD quality on top URLs.
+3. `semrush--competitive_analysis` — auto-discover competitors, keyword gaps.
+4. `semrush--keyword_research` on 3–5 highest-value gap terms.
+5. `semrush--serp_analysis` on `best dissertation writing services 2026` to validate the comparison pillar's angle.
+
+Actions from Semrush output:
+
+- Add up to 3 new landing pages / blog posts for realistic-difficulty gap keywords.
+- Rewrite titles/descriptions for underperforming top pages (pos 4–15, high impressions).
+- Reorder `llms.txt` to lead with highest-CTR pages.
+- Internal linking pass from top-performing pages → 7 new service pillars + comparison post, using descriptive anchor text.
+
+## 4. cPanel-ready optimized build
+
+Once code changes land:
+
+1. `bun run seo:validate` → all `ok`, no `warn`.
+2. Grep guard: `! rg -q "dissertlypro\.lovable\.app" dist/` after build.
+3. `bun run prerender:cpanel` → prerendered `dist/index.html` per route.
+4. Verify `dist/` contains: prerendered HTMLs, `sitemap.xml`, `robots.txt`, `llms.txt`, `llms-full.txt`, `ai-context.json`, `.htaccess`, `manifest.json`, fingerprinted assets.
+5. Spot-check with `curl -A "Googlebot" file://dist/...` — meaningful HTML in `<body>`, not just `<div id="root">`.
+6. Zip `dist/` → `/mnt/documents/dissertlypro-cpanel-<date>.zip`, surface download link in the reply.
+
+### `.htaccess` verification
+
+- SPA fallback rewrite ✓
+- Force HTTPS + non-www to `https://dissertlypro.com` ✓
+- Redirect `dissertlypro.lovable.app` requests → `https://dissertlypro.com/$1` (301) — add if missing.
+- GZIP + long-cache for `/assets/*`, `/images/*` ✓
+- Explicit `Content-Type` for `sitemap.xml` (`application/xml`) and `robots.txt` (`text/plain`) — add if missing.
+
+## Out of scope
+
+- Removing `/consultation` route entirely (kept, repurposed to free quote).
+- Off-site link-building, GSC OAuth, HARO/Reddit outreach.
+- Backend email replacement (Apps Script + mailto fallback stays).
+
+## Files expected to change
+
+- ~45 page/component files (consultation CTA + host sweep).
+- `src/pages/Consultation.tsx` (repurpose to free quote).
+- `src/components/SEO.tsx`, `src/lib/ogImages.ts`, `src/components/schemas/*` (host constants).
+- `scripts/generate-sitemap.ts`, `scripts/seo-validate.ts` (host + guard).
+- `index.html`, `public/robots.txt`, `public/llms.txt`, `public/llms-full.txt`, `public/ai-context.json`, `public/humans.txt`, `public/security.txt`, `public/.well-known/security.txt`, `public/manifest.json`, `public/.htaccess`.
+- 0–3 new landing/blog files from the Semrush gap pass.
+- Build artifact: `/mnt/documents/dissertlypro-cpanel-<date>.zip`.

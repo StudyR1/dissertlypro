@@ -108,7 +108,7 @@ const About = () => {
     <Layout>
       <SEO 
         title="About Us"
-        description="Learn about DissertlyPro's mission to support Master's and PhD students worldwide. Meet our team of PhD experts and discover our commitment to academic excellence."
+        description="Learn about DissertlyPro's mission to support Master's and PhD students worldwide. Meet our PhD experts committed to academic excellence."
         canonical="/about"
         keywords={['about DissertlyPro', 'academic support team', 'PhD experts', 'dissertation help company', 'thesis writing experts', 'research support service', 'academic consulting firm']}
       />
@@ -143,9 +143,9 @@ const About = () => {
               <span className="text-sm font-sans text-white/80">Our Story</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
-              Empowering the Next Generation of{" "}
+              About DissertlyPro:{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-copper-light via-copper to-copper-dark">
-                Scholars
+                Our Mission & Academic Experts
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-ivory font-sans leading-relaxed max-w-3xl mx-auto">
@@ -367,8 +367,8 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="copper" size="lg" className="touch-manipulation" asChild>
-                <Link to="/consultation">
-                  Book Free Consultation
+                <Link to="/order">
+                  Order Now
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

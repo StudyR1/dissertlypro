@@ -233,7 +233,7 @@ const FAQ = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="copper" size="lg" className="touch-manipulation" asChild>
-                <Link to="/consultation">
+                <Link to="/order">
                   Free Consultation
                   <ArrowRight className="h-4 w-4" />
                 </Link>

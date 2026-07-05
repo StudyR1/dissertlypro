@@ -886,7 +886,7 @@ const VivaPreparation = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                  <Link to="/consultation">
+                  <Link to="/order">
                     Book Mock Viva Session
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>

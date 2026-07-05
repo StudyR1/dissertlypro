@@ -150,8 +150,8 @@ const DissertationWritingServices = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white px-8 py-6 text-lg">
-                <Link to="/consultation">
-                  Book Free Consultation <ArrowRight className="ml-2 w-5 h-5" />
+                <Link to="/order">
+                  Order Now <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
               <Button asChild variant="hero-outline" size="lg" className="px-8 py-6 text-lg">
@@ -269,7 +269,7 @@ const DissertationWritingServices = () => {
           </div>
           <div className="text-center mt-10">
             <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-              <Link to="/consultation">
+              <Link to="/order">
                 Start Your Consultation <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
@@ -301,7 +301,7 @@ const DissertationWritingServices = () => {
           </div>
           <p className="text-center text-muted-foreground">
             Don't see your subject? We cover 50+ disciplines. <Link to="/subjects" className="text-copper hover:underline">Browse all subjects</Link> or{" "}
-            <Link to="/consultation" className="text-copper hover:underline">tell us what you need</Link>.
+            <Link to="/order" className="text-copper hover:underline">tell us what you need</Link>.
           </p>
         </div>
       </section>
@@ -574,8 +574,8 @@ const DissertationWritingServices = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white px-8 py-6 text-lg">
-                <Link to="/consultation">
-                  Book Free Consultation <ArrowRight className="ml-2 w-5 h-5" />
+                <Link to="/order">
+                  Order Now <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
               <Button asChild variant="hero-outline" size="lg" className="px-8 py-6 text-lg">

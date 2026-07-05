@@ -115,7 +115,7 @@ const Pricing = () => {
               Transparent Pricing
             </span>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
-              Investment in Your Academic Success
+              Dissertation Support Pricing &amp; Packages
             </h1>
             <p className="text-xl text-ivory font-sans leading-relaxed">
               Flexible pricing options designed for postgraduate students. 
@@ -176,7 +176,7 @@ const Pricing = () => {
                       size="lg"
                       asChild
                     >
-                      <Link to="/consultation">
+                      <Link to="/order">
                         Get Custom Quote
                         <ArrowRight className="h-4 w-4" />
                       </Link>
@@ -271,8 +271,8 @@ const Pricing = () => {
               proposal with transparent pricing within 24 hours.
             </p>
             <Button variant="hero" size="xl" asChild>
-              <Link to="/consultation">
-                Request Free Consultation
+              <Link to="/order">
+                Order Now
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>

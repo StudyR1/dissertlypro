@@ -562,8 +562,8 @@ const QuickServices = () => {
               </Link>
             </Button>
             <Button asChild size="lg" variant="hero-outline">
-              <Link to="/consultation">
-                Book Free Consultation
+              <Link to="/order">
+                Order Now
               </Link>
             </Button>
           </div>

@@ -256,7 +256,7 @@ const Subjects = () => {
               and we'll match you with a qualified expert.
             </p>
             <Button variant="copper" size="xl" asChild>
-              <Link to="/consultation">
+              <Link to="/order">
                 Discuss Your Research
                 <ArrowRight className="h-5 w-5" />
               </Link>

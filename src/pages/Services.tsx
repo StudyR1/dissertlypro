@@ -292,8 +292,8 @@ const Services = () => {
               recommend the best support package for your research journey.
             </p>
             <Button variant="copper" size="lg" className="w-full sm:w-auto touch-manipulation" asChild>
-              <Link to="/consultation">
-                Request Free Consultation
+              <Link to="/order">
+                Order Now
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>

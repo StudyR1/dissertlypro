@@ -465,4 +465,4 @@ A: Use our Reference Manager to save, organize, tag, and export citations. Suppo
 
 ## Machine-Readable Context
 
-For structured data about DissertlyPro services, tools, experts, and FAQs, see: https://dissertlypro.lovable.app/ai-context.json
+For structured data about DissertlyPro services, tools, experts, and FAQs, see: https://dissertlypro.com/ai-context.json

@@ -84,7 +84,7 @@ export const defaultHowToSteps: HowToStep[] = [
   {
     name: "Submit Your Request",
     text: "Fill out our consultation form with your research requirements, timeline, academic level, and specific needs. Include details about your dissertation topic, methodology preferences, and any challenges you're facing.",
-    url: "https://dissertlypro.com/consultation"
+    url: "https://dissertlypro.com/order"
   },
   {
     name: "Expert Matching",

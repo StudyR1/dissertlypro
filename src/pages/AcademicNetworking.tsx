@@ -173,7 +173,7 @@ const AcademicNetworking = () => {
                 <Link to="/order">Get Career Coaching <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/consultation">Free Consultation</Link>
+                <Link to="/order">Order Now</Link>
               </Button>
             </div>
           </motion.div>
