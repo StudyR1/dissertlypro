@@ -605,7 +605,7 @@ const Index = () => {
               </ul>
               <Button variant="copper" size="lg" className="w-full sm:w-auto h-12 touch-manipulation" asChild>
                 <Link to="/working-professionals">
-                  Learn More
+                  Explore support for working professionals
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
