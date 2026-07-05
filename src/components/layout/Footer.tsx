@@ -73,7 +73,7 @@ const Footer = () => {
       { title: "Subjects Covered", href: "/subjects" },
       { title: "Ethics & Integrity", href: "/ethics" },
       { title: "FAQs", href: "/faq" },
-      { title: "Free Consultation", href: "/consultation" },
+      { title: "Get Free Quote", href: "/order" },
     ],
     legal: [
       { title: "Privacy Policy", href: "/privacy" },

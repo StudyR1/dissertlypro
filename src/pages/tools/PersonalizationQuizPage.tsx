@@ -391,7 +391,7 @@ const generateRecommendations = (answers: Record<string, string | string[]>): Re
     recommendations.push({
       title: "Get a Free Consultation",
       description: "Speak with an expert about fast-track options",
-      href: "/consultation",
+      href: "/order",
       icon: Users,
       priority: "essential",
       type: "service"
