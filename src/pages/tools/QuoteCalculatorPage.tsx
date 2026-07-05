@@ -271,7 +271,7 @@ const QuoteCalculatorPage = () => {
 
                   {/* CTA */}
                   <Button asChild className="w-full group" size="lg">
-                    <Link to="/consultation">
+                    <Link to="/order">
                       Get Precise Quote
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -359,7 +359,7 @@ const QuoteCalculatorPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
-                <Link to="/consultation">Book Free Consultation</Link>
+                <Link to="/order">Order Now</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/tools">Explore More Tools</Link>

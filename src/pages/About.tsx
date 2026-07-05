@@ -367,8 +367,8 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="copper" size="lg" className="touch-manipulation" asChild>
-                <Link to="/consultation">
-                  Book Free Consultation
+                <Link to="/order">
+                  Order Now
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

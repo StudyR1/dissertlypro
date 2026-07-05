@@ -136,7 +136,7 @@ const UniversityLanding = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="copper" size="lg" className="group shadow-copper" asChild>
-                <Link to="/consultation">
+                <Link to="/order">
                   Free Consultation
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -371,7 +371,7 @@ const UniversityLanding = () => {
                 ))}
               </ul>
               <Button variant="midnight-outline" className="w-full" asChild>
-                <Link to="/consultation">Get Quote</Link>
+                <Link to="/order">Get Quote</Link>
               </Button>
             </div>
 
@@ -399,7 +399,7 @@ const UniversityLanding = () => {
                 ))}
               </ul>
               <Button variant="copper" className="w-full" asChild>
-                <Link to="/consultation">
+                <Link to="/order">
                   Get Started
                   <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -425,7 +425,7 @@ const UniversityLanding = () => {
                 ))}
               </ul>
               <Button variant="midnight-outline" className="w-full" asChild>
-                <Link to="/consultation">Learn More</Link>
+                <Link to="/order">Learn More</Link>
               </Button>
             </div>
           </div>
@@ -558,8 +558,8 @@ const UniversityLanding = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="copper" size="lg" asChild>
-                <Link to="/consultation">
-                  Book Free Consultation
+                <Link to="/order">
+                  Order Now
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

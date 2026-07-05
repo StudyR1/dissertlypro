@@ -747,7 +747,7 @@ const PersonalizationQuizPage = () => {
                     <RefreshCw className="h-4 w-4" />
                     Retake Quiz
                   </Button>
-                  <Link to="/consultation">
+                  <Link to="/order">
                     <Button className="w-full sm:w-auto gap-2 bg-copper hover:bg-copper-dark text-white">
                       <Users className="h-4 w-4" />
                       Get Expert Guidance

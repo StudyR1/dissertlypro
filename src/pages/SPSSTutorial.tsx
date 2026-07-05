@@ -753,7 +753,7 @@ FREQUENCIES VARIABLES=gender marital_status
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-copper hover:bg-copper/90 text-white">
-                <Link to="/consultation">
+                <Link to="/order">
                   Book Statistics Consultation
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>

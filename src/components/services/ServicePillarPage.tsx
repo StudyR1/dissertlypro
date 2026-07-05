@@ -118,7 +118,7 @@ const ServicePillarPage = ({ config }: Props) => {
               size="lg"
               variant="hero-outline"
             >
-              <Link to="/consultation">Free Consultation</Link>
+              <Link to="/order">Order Now</Link>
             </Button>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-cream/70">
@@ -437,8 +437,8 @@ const ServicePillarPage = ({ config }: Props) => {
             size="lg"
             className="bg-white text-copper-dark hover:bg-cream-warm"
           >
-            <Link to="/consultation">
-              Book Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
+            <Link to="/order">
+              Order Now <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

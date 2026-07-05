@@ -516,8 +516,8 @@ const LiteratureSearchPage = () => {
                   </div>
                 </div>
                 <Button asChild>
-                  <a href="/consultation">
-                    Book Free Consultation
+                  <a href="/order">
+                    Order Now
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </a>
                 </Button>

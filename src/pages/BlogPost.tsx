@@ -307,8 +307,8 @@ const BlogPost = () => {
                 Our PhD-qualified experts can provide personalized support for your dissertation journey.
               </p>
               <Button variant="copper" size="lg" asChild>
-                <Link to="/consultation">
-                  Request Free Consultation
+                <Link to="/order">
+                  Order Now
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

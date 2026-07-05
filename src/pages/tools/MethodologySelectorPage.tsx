@@ -548,7 +548,7 @@ const MethodologySelectorPage = () => {
                       </div>
                     </div>
                     <Button asChild>
-                      <a href="/consultation">Book Free Consultation</a>
+                      <a href="/order">Order Now</a>
                     </Button>
                   </div>
                 </CardContent>

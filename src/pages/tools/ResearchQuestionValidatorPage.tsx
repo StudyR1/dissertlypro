@@ -770,7 +770,7 @@ const ResearchQuestionValidatorPage = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Button asChild>
-                    <Link to="/consultation">Book Free Consultation</Link>
+                    <Link to="/order">Order Now</Link>
                   </Button>
                   <Button variant="outline" asChild>
                     <Link to="/tools">Explore More Tools</Link>

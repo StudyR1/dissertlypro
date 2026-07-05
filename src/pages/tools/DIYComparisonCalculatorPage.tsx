@@ -507,7 +507,7 @@ const DIYComparisonCalculatorPage = () => {
                             Get Exact Quote
                           </Button>
                         </Link>
-                        <Link to="/consultation" className="flex-1">
+                        <Link to="/order" className="flex-1">
                           <Button className="w-full gap-2 bg-copper hover:bg-copper-dark text-white">
                             <Sparkles className="h-4 w-4" />
                             Free Consultation

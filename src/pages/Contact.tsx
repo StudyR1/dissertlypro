@@ -201,7 +201,7 @@ const Contact = () => {
                   Book a free consultation to discuss your specific research needs with an academic advisor.
                 </p>
                 <Button variant="hero" size="sm" className="touch-manipulation" asChild>
-                  <Link to="/consultation">Book Consultation</Link>
+                  <Link to="/order">Book Consultation</Link>
                 </Button>
               </div>
             </div>
