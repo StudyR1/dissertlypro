@@ -143,9 +143,9 @@ const About = () => {
               <span className="text-sm font-sans text-white/80">Our Story</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
-              Empowering the Next Generation of{" "}
+              About DissertlyPro:{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-copper-light via-copper to-copper-dark">
-                Scholars
+                Our Mission & Academic Experts
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-ivory font-sans leading-relaxed max-w-3xl mx-auto">
