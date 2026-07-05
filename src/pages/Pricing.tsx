@@ -115,7 +115,7 @@ const Pricing = () => {
               Transparent Pricing
             </span>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
-              Investment in Your Academic Success
+              Dissertation Support Pricing &amp; Packages
             </h1>
             <p className="text-xl text-ivory font-sans leading-relaxed">
               Flexible pricing options designed for postgraduate students. 
