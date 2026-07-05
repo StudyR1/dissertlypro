@@ -108,7 +108,7 @@ const About = () => {
     <Layout>
       <SEO 
         title="About Us"
-        description="Learn about DissertlyPro's mission to support Master's and PhD students worldwide. Meet our team of PhD experts and discover our commitment to academic excellence."
+        description="Learn about DissertlyPro's mission to support Master's and PhD students worldwide. Meet our PhD experts committed to academic excellence."
         canonical="/about"
         keywords={['about DissertlyPro', 'academic support team', 'PhD experts', 'dissertation help company', 'thesis writing experts', 'research support service', 'academic consulting firm']}
       />
