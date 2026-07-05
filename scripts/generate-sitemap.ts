@@ -4,7 +4,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 
-const BASE_URL = "https://dissertlypro.lovable.app";
+const BASE_URL = "https://dissertlypro.com";
 
 interface SitemapEntry {
   path: string;
