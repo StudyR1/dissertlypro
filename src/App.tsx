@@ -324,6 +324,16 @@ const AppRoutes = () => {
         <Route path="/services/dissertation-methodology-help" element={<Suspense fallback={<ArticleSkeleton />}><DissertationMethodologyHelp /></Suspense>} />
         <Route path="/phd-dissertation-help" element={<Suspense fallback={<ArticleSkeleton />}><PhDDissertationHelp /></Suspense>} />
 
+        {/* Phase 1 — subdomain equity recovery pillars */}
+        <Route path="/dissertation-help" element={<Suspense fallback={<ArticleSkeleton />}><DissertationHelp /></Suspense>} />
+        <Route path="/dissertation-assistance" element={<Suspense fallback={<ArticleSkeleton />}><DissertationAssistance /></Suspense>} />
+        <Route path="/thesis-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><ThesisWritingServices /></Suspense>} />
+        <Route path="/thesis-editing-services" element={<Suspense fallback={<ArticleSkeleton />}><ThesisEditingServices /></Suspense>} />
+        <Route path="/research-paper-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><ResearchPaperWritingServices /></Suspense>} />
+
+        {/* Phase 3 — findings & results hub */}
+        <Route path="/dissertation-findings-chapter" element={<Suspense fallback={<ArticleSkeleton />}><DissertationFindingsChapter /></Suspense>} />
+
         {/* Site search (keeps Google's SearchAction template valid) */}
         <Route path="/search" element={<Suspense fallback={<SkeletonPage />}><SearchPage /></Suspense>} />
 
