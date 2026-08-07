@@ -125,6 +125,12 @@ const LiteratureReviewWritingService = lazy(() => import("./pages/services/Liter
 const DissertationProposalHelp = lazy(() => import("./pages/services/DissertationProposalHelp"));
 const DissertationMethodologyHelp = lazy(() => import("./pages/services/DissertationMethodologyHelp"));
 const PhDDissertationHelp = lazy(() => import("./pages/services/PhDDissertationHelp"));
+const DissertationHelp = lazy(() => import("./pages/services/DissertationHelp"));
+const DissertationAssistance = lazy(() => import("./pages/services/DissertationAssistance"));
+const ThesisWritingServices = lazy(() => import("./pages/services/ThesisWritingServices"));
+const ThesisEditingServices = lazy(() => import("./pages/services/ThesisEditingServices"));
+const ResearchPaperWritingServices = lazy(() => import("./pages/services/ResearchPaperWritingServices"));
+const DissertationFindingsChapter = lazy(() => import("./pages/DissertationFindingsChapter"));
 const SearchPage = lazy(() => import("./pages/Search"));
 const SeoAudit = lazy(() => import("./pages/SeoAudit"));
 
