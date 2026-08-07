@@ -125,6 +125,12 @@ const LiteratureReviewWritingService = lazy(() => import("./pages/services/Liter
 const DissertationProposalHelp = lazy(() => import("./pages/services/DissertationProposalHelp"));
 const DissertationMethodologyHelp = lazy(() => import("./pages/services/DissertationMethodologyHelp"));
 const PhDDissertationHelp = lazy(() => import("./pages/services/PhDDissertationHelp"));
+const DissertationHelp = lazy(() => import("./pages/services/DissertationHelp"));
+const DissertationAssistance = lazy(() => import("./pages/services/DissertationAssistance"));
+const ThesisWritingServices = lazy(() => import("./pages/services/ThesisWritingServices"));
+const ThesisEditingServices = lazy(() => import("./pages/services/ThesisEditingServices"));
+const ResearchPaperWritingServices = lazy(() => import("./pages/services/ResearchPaperWritingServices"));
+const DissertationFindingsChapter = lazy(() => import("./pages/DissertationFindingsChapter"));
 const SearchPage = lazy(() => import("./pages/Search"));
 const SeoAudit = lazy(() => import("./pages/SeoAudit"));
 
@@ -317,6 +323,16 @@ const AppRoutes = () => {
         <Route path="/services/dissertation-proposal-help" element={<Suspense fallback={<ArticleSkeleton />}><DissertationProposalHelp /></Suspense>} />
         <Route path="/services/dissertation-methodology-help" element={<Suspense fallback={<ArticleSkeleton />}><DissertationMethodologyHelp /></Suspense>} />
         <Route path="/phd-dissertation-help" element={<Suspense fallback={<ArticleSkeleton />}><PhDDissertationHelp /></Suspense>} />
+
+        {/* Phase 1 — subdomain equity recovery pillars */}
+        <Route path="/dissertation-help" element={<Suspense fallback={<ArticleSkeleton />}><DissertationHelp /></Suspense>} />
+        <Route path="/dissertation-assistance" element={<Suspense fallback={<ArticleSkeleton />}><DissertationAssistance /></Suspense>} />
+        <Route path="/thesis-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><ThesisWritingServices /></Suspense>} />
+        <Route path="/thesis-editing-services" element={<Suspense fallback={<ArticleSkeleton />}><ThesisEditingServices /></Suspense>} />
+        <Route path="/research-paper-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><ResearchPaperWritingServices /></Suspense>} />
+
+        {/* Phase 3 — findings & results hub */}
+        <Route path="/dissertation-findings-chapter" element={<Suspense fallback={<ArticleSkeleton />}><DissertationFindingsChapter /></Suspense>} />
 
         {/* Site search (keeps Google's SearchAction template valid) */}
         <Route path="/search" element={<Suspense fallback={<SkeletonPage />}><SearchPage /></Suspense>} />
