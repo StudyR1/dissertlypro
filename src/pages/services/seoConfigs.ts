@@ -3,7 +3,7 @@
 
 import type { ServicePillarConfig } from "@/components/services/ServicePillarPage";
 
-const sharedProcess = [
+export const sharedProcess = [
   {
     title: "Free 30-minute consultation",
     description:
@@ -31,7 +31,7 @@ const sharedProcess = [
   },
 ];
 
-const sharedDeliverables = [
+export const sharedDeliverables = [
   "Direct communication with one named PhD expert",
   "Tracked-changes drafts with a written cover note for each milestone",
   "Originality report (Turnitin/iThenticate-compatible)",
@@ -42,7 +42,7 @@ const sharedDeliverables = [
   "GDPR-compliant confidentiality + signed expert NDA",
 ];
 
-const sharedFaqs = [
+export const sharedFaqs = [
   {
     question: "Will the work pass Turnitin and AI detectors?",
     answer:
