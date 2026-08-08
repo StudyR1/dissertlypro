@@ -49,6 +49,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://dissertlypro.com/answers</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://dissertlypro.com/au</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -565,6 +571,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://dissertlypro.com/dissertation-defense-questions-and-answers</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/dissertation-discussion-chapter-example</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://dissertlypro.com/dissertation-editing-services</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -587,6 +605,12 @@
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/dissertation-results-section-example</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dissertlypro.com/dissertation-statistics-help</loc>
@@ -643,6 +667,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://dissertlypro.com/findings-vs-discussion-difference</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://dissertlypro.com/gdpr</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -653,6 +683,12 @@
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/how-long-is-a-phd-thesis</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dissertlypro.com/international-phd</loc>
@@ -791,6 +827,18 @@
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/presenting-qualitative-findings-themes-quotes</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/presenting-quantitative-results-tables-figures</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dissertlypro.com/pricing</loc>
@@ -941,6 +989,54 @@
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/subjects/business</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/subjects/computer-science</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/subjects/education</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/subjects/engineering</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/subjects/law</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/subjects/nursing</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/subjects/psychology</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dissertlypro.com/subjects/public-health</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dissertlypro.com/supervisor-guide</loc>

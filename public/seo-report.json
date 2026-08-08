@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-06-04T11:23:42.539Z",
+  "generatedAt": "2026-08-08T10:59:54.336Z",
   "totals": {
     "ok": 10,
-    "warn": 2,
-    "fail": 0
+    "warn": 1,
+    "fail": 1
   },
   "routes": {
-    "static": 110,
+    "static": 124,
     "dynamicTemplates": 6,
-    "blog": 54,
+    "blog": 60,
     "services": 10,
     "universities": 18,
-    "sitemap": 180
+    "sitemap": 214
   },
   "checks": [
     {
@@ -48,12 +48,13 @@
     },
     {
       "id": "sitemap-static-coverage",
-      "label": "Sitemap covers 110/98 static routes",
-      "severity": "ok"
+      "label": "Sitemap covers 123/112 static routes",
+      "severity": "fail",
+      "detail": "Missing: /quick-checkout/*"
     },
     {
       "id": "sitemap-dyn-blog",
-      "label": "Sitemap covers 54/54 blog entries",
+      "label": "Sitemap covers 60/60 blog entries",
       "severity": "ok"
     },
     {
@@ -74,8 +75,7 @@
     {
       "id": "prerender-built",
       "label": "Prerendered build output exists (dist/index.html)",
-      "severity": "warn",
-      "detail": "Run `bun run prerender:cpanel` before deploying to cPanel"
+      "severity": "ok"
     }
   ]
 }
