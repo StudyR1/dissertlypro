@@ -101,6 +101,20 @@ function loadDynamic(): SitemapEntry[] {
     entries.push({ path: `/${uni.region}/${uni.slug}`, lastmod: today, changefreq: "monthly", priority: "0.75" });
   }
 
+  // Registry-driven guide hubs (chapter cluster + subject verticals)
+  try {
+    const reg = readFileSync(resolve("src/data/chapterGuides.ts"), "utf8") + readFileSync(resolve("src/data/subjectGuides.ts"), "utf8");
+    for (const m of reg.matchAll(/path:\s*[`"']([\/a-z0-9-]+)[`"']/g)) {
+      entries.push({ path: m[1], lastmod: today, changefreq: "monthly", priority: "0.8" });
+    }
+    const subj = readFileSync(resolve("src/data/subjectGuides.ts"), "utf8");
+    for (const m of subj.matchAll(/slug:\s*"([a-z-]+)"/g)) {
+      entries.push({ path: `/subjects/${m[1]}`, lastmod: today, changefreq: "monthly", priority: "0.8" });
+    }
+  } catch { /* optional */ }
+
+  entries.push({ path: "/answers", lastmod: today, changefreq: "monthly", priority: "0.85" });
+
   // Service detail pages
   const serviceSlugs = extractSlugs("src/pages/Services.tsx");
   for (const slug of serviceSlugs) {
