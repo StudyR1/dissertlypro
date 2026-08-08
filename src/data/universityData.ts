@@ -1,3 +1,5 @@
+import { tier2UniversityData } from "./universityDataTier2";
+
 export interface UniversityData {
   slug: string;
   name: string;
@@ -43,7 +45,7 @@ export interface UniversityData {
   }[];
 }
 
-export const universityData: Record<string, UniversityData> = {
+const coreUniversityData: Record<string, UniversityData> = {
   // UK Universities
   oxford: {
     slug: "oxford",
@@ -821,6 +823,11 @@ export const universityData: Record<string, UniversityData> = {
       },
     ],
   },
+};
+
+export const universityData: Record<string, UniversityData> = {
+  ...coreUniversityData,
+  ...tier2UniversityData,
 };
 
 export const getUniversityBySlug = (slug: string): UniversityData | undefined => {

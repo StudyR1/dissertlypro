@@ -71,7 +71,7 @@ function extractSlugs(file: string, key = "slug"): string[] {
 
 function extractUniversities(): Array<{ slug: string; region: string }> {
   try {
-    const src = readFileSync(resolve("src/data/universityData.ts"), "utf8");
+    const src = readFileSync(resolve("src/data/universityData.ts"), "utf8") + readFileSync(resolve("src/data/universityDataTier2.ts"), "utf8");
     // Match each object with slug + region (in any order, within ~600 chars)
     const objects = src.split(/\{\s*\n/).slice(1);
     const out: Array<{ slug: string; region: string }> = [];
@@ -100,6 +100,20 @@ function loadDynamic(): SitemapEntry[] {
   for (const uni of extractUniversities()) {
     entries.push({ path: `/${uni.region}/${uni.slug}`, lastmod: today, changefreq: "monthly", priority: "0.75" });
   }
+
+  // Registry-driven guide hubs (chapter cluster + subject verticals)
+  try {
+    const reg = readFileSync(resolve("src/data/chapterGuides.ts"), "utf8") + readFileSync(resolve("src/data/subjectGuides.ts"), "utf8");
+    for (const m of reg.matchAll(/path:\s*[`"']([\/a-z0-9-]+)[`"']/g)) {
+      entries.push({ path: m[1], lastmod: today, changefreq: "monthly", priority: "0.8" });
+    }
+    const subj = readFileSync(resolve("src/data/subjectGuides.ts"), "utf8");
+    for (const m of subj.matchAll(/slug:\s*"([a-z-]+)"/g)) {
+      entries.push({ path: `/subjects/${m[1]}`, lastmod: today, changefreq: "monthly", priority: "0.8" });
+    }
+  } catch { /* optional */ }
+
+  entries.push({ path: "/answers", lastmod: today, changefreq: "monthly", priority: "0.85" });
 
   // Service detail pages
   const serviceSlugs = extractSlugs("src/pages/Services.tsx");

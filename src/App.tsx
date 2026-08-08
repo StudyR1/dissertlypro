@@ -22,6 +22,8 @@ import Index from "./pages/Index";
 const Services = lazy(() => import("./pages/Services"));
 const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
 const Subjects = lazy(() => import("./pages/Subjects"));
+const GuideRoute = lazy(() => import("./pages/GuideRoute"));
+const Answers = lazy(() => import("./pages/Answers"));
 const WorkingProfessionals = lazy(() => import("./pages/WorkingProfessionals"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -180,6 +182,8 @@ const BlogPostWithSkeleton = () => (
 // Removed unused ResourceWithSkeleton wrapper to prevent potential lazy-loading issues
 
 // Inner component that uses useLocation for ErrorBoundary reset
+import { guidePaths } from "@/data/guideRegistry";
+
 const AppRoutes = () => {
   const location = useLocation();
   
@@ -333,6 +337,15 @@ const AppRoutes = () => {
 
         {/* Phase 3 — findings & results hub */}
         <Route path="/dissertation-findings-chapter" element={<Suspense fallback={<ArticleSkeleton />}><DissertationFindingsChapter /></Suspense>} />
+
+
+        {/* Phases 3 & 5 — chapter guides and subject verticals (registry-driven) */}
+        {guidePaths.map((gp) => (
+          <Route key={gp} path={gp} element={<Suspense fallback={<ArticleSkeleton />}><GuideRoute /></Suspense>} />
+        ))}
+
+        {/* Phase 6 — Q&A answers library */}
+        <Route path="/answers" element={<Suspense fallback={<ArticleSkeleton />}><Answers /></Suspense>} />
 
         {/* Site search (keeps Google's SearchAction template valid) */}
         <Route path="/search" element={<Suspense fallback={<SkeletonPage />}><SearchPage /></Suspense>} />
