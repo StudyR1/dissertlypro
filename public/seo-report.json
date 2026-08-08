@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-08-08T10:59:54.336Z",
+  "generatedAt": "2026-08-08T11:00:05.253Z",
   "totals": {
-    "ok": 10,
+    "ok": 11,
     "warn": 1,
-    "fail": 1
+    "fail": 0
   },
   "routes": {
     "static": 124,
     "dynamicTemplates": 6,
     "blog": 60,
     "services": 10,
-    "universities": 18,
-    "sitemap": 214
+    "universities": 38,
+    "sitemap": 234
   },
   "checks": [
     {
@@ -48,9 +48,8 @@
     },
     {
       "id": "sitemap-static-coverage",
-      "label": "Sitemap covers 123/112 static routes",
-      "severity": "fail",
-      "detail": "Missing: /quick-checkout/*"
+      "label": "Sitemap covers 124/110 static routes",
+      "severity": "ok"
     },
     {
       "id": "sitemap-dyn-blog",
@@ -64,7 +63,7 @@
     },
     {
       "id": "sitemap-dyn-universities",
-      "label": "Sitemap covers 18/18 university pages",
+      "label": "Sitemap covers 38/38 university pages",
       "severity": "ok"
     },
     {

@@ -77,7 +77,7 @@ const excluded = new Set([
   "/quick-checkout","/services/academic-editing","/services/proposal-development",
   "/services/dissertation-writing","/services/research-methodology","/refund-policy",
   "/privacy-policy","/terms-and-conditions","/blog/mit-thesis-writing-strategies",
-  "/blog/stanford-dissertation-excellence","/search","/seo-audit","*",
+  "/blog/stanford-dissertation-excellence","/search","/seo-audit","*","/quick-checkout/*","/checkout",
 ]);
 const missingFromSitemap = staticRoutes.filter((p) => !excluded.has(p) && !sitemapSet.has(p));
 add({
@@ -94,7 +94,7 @@ function slugsFrom(file: string): string[] {
 }
 const blogSlugs = slugsFrom("src/data/blogPosts.ts");
 const servSlugs = slugsFrom("src/pages/Services.tsx");
-const uniSrc = read("src/data/universityData.ts") || "";
+const uniSrc = (read("src/data/universityData.ts") || "") + (read("src/data/universityDataTier2.ts") || "");
 const uniEntries = [...uniSrc.split(/\{\s*\n/).slice(1)].map((o) => {
   const s = o.match(/slug:\s*["']([a-z0-9-]+)["']/)?.[1];
   const r = o.match(/region:\s*["'](uk|us|au|ca)["']/)?.[1];

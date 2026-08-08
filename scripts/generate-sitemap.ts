@@ -71,7 +71,7 @@ function extractSlugs(file: string, key = "slug"): string[] {
 
 function extractUniversities(): Array<{ slug: string; region: string }> {
   try {
-    const src = readFileSync(resolve("src/data/universityData.ts"), "utf8");
+    const src = readFileSync(resolve("src/data/universityData.ts"), "utf8") + readFileSync(resolve("src/data/universityDataTier2.ts"), "utf8");
     // Match each object with slug + region (in any order, within ~600 chars)
     const objects = src.split(/\{\s*\n/).slice(1);
     const out: Array<{ slug: string; region: string }> = [];
