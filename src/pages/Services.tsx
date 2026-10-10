@@ -292,7 +292,7 @@ const Services = () => {
               recommend the best support package for your research journey.
             </p>
             <Button variant="copper" size="lg" className="w-full sm:w-auto touch-manipulation" asChild>
-              <a href="https://dissertlypro.com/orders/orders/new">
+              <a href="https://dissertlypro.com/orders/stud/new">
                 Order Now
                 <ArrowRight className="h-5 w-5" />
               </a>

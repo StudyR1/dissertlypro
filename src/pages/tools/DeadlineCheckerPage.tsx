@@ -328,7 +328,7 @@ const DeadlineCheckerPage = () => {
 
                       {analysis.level !== "safe" && (
                         <Button asChild className="w-full mt-6 group" size="lg">
-                          <a href="https://dissertlypro.com/orders/orders/new">
+                          <a href="https://dissertlypro.com/orders/stud/new">
                             Get Expert Help Now
                             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                           </a>
@@ -429,7 +429,7 @@ const DeadlineCheckerPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
-                <a href="https://dissertlypro.com/orders/orders/new">Order Now</a>
+                <a href="https://dissertlypro.com/orders/stud/new">Order Now</a>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/tools">Explore More Tools</Link>

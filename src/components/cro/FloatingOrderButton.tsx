@@ -48,7 +48,7 @@ const FloatingOrderButton = () => {
                 className="flex-1 h-11 text-sm font-medium touch-manipulation"
                 asChild
               >
-                <a href="https://dissertlypro.com/orders/orders/new">
+                <a href="https://dissertlypro.com/orders/stud/new">
                   <ShoppingCart className="h-4 w-4 mr-2" />
                   Order Now
                 </a>
@@ -70,7 +70,7 @@ const FloatingOrderButton = () => {
               className="shadow-copper hover:scale-105 transition-transform group"
               asChild
             >
-              <a href="https://dissertlypro.com/orders/orders/new">
+              <a href="https://dissertlypro.com/orders/stud/new">
                 <ShoppingCart className="h-5 w-5 mr-2 group-hover:animate-pulse" />
                 Order Now
               </a>

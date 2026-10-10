@@ -770,7 +770,7 @@ const ResearchQuestionValidatorPage = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Button asChild>
-                    <a href="https://dissertlypro.com/orders/orders/new">Order Now</a>
+                    <a href="https://dissertlypro.com/orders/stud/new">Order Now</a>
                   </Button>
                   <Button variant="outline" asChild>
                     <Link to="/tools">Explore More Tools</Link>

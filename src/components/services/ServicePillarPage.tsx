@@ -109,7 +109,7 @@ const ServicePillarPage = ({ config }: Props) => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-              <a href="https://dissertlypro.com/orders/orders/new">
+              <a href="https://dissertlypro.com/orders/stud/new">
                 Start Your Order <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
@@ -118,7 +118,7 @@ const ServicePillarPage = ({ config }: Props) => {
               size="lg"
               variant="hero-outline"
             >
-              <a href="https://dissertlypro.com/orders/orders/new">Order Now</a>
+              <a href="https://dissertlypro.com/orders/stud/new">Order Now</a>
             </Button>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-cream/70">
@@ -361,7 +361,7 @@ const ServicePillarPage = ({ config }: Props) => {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="https://dissertlypro.com/orders/orders/new">Start Your Order</a>
+              <a href="https://dissertlypro.com/orders/stud/new">Start Your Order</a>
             </Button>
           </div>
           <div className="mt-6 flex justify-center gap-6 text-sm text-midnight/70">
@@ -437,7 +437,7 @@ const ServicePillarPage = ({ config }: Props) => {
             size="lg"
             className="bg-white text-copper-dark hover:bg-cream-warm"
           >
-            <a href="https://dissertlypro.com/orders/orders/new">
+            <a href="https://dissertlypro.com/orders/stud/new">
               Order Now <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>

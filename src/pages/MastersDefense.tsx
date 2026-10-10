@@ -390,7 +390,7 @@ const MastersDefense = () => {
 
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                <a href="https://dissertlypro.com/orders/orders/new">
+                <a href="https://dissertlypro.com/orders/stud/new">
                   Get Defense Coaching
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
@@ -767,7 +767,7 @@ const MastersDefense = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                  <a href="https://dissertlypro.com/orders/orders/new">
+                  <a href="https://dissertlypro.com/orders/stud/new">
                     Book Defense Coaching
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>

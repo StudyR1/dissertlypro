@@ -19,7 +19,7 @@
   # flagged in the Semrush audit (same content ranking twice).
   # ============================================
   # ORDER PORTAL — legacy order/checkout URLs on any host go straight to the cPanel portal
-  RewriteRule ^(order|order/.*|quick-checkout|quick-checkout/.*|checkout|quick-services/checkout)/?$ https://dissertlypro.com/orders/orders/new [L,R=301,QSD]
+  RewriteRule ^(order|order/.*|quick-checkout|quick-checkout/.*|checkout|quick-services/checkout)/?$ https://dissertlypro.com/orders/stud/new [L,R=301,QSD]
   RewriteRule ^login/?$ https://dissertlypro.com/orders/login [L,R=301,QSD]
 
   # Let the cPanel order portal (/orders/) handle its own requests
