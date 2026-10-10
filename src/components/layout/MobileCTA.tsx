@@ -90,7 +90,7 @@ const MobileCTA = memo(() => {
               className="flex-1 h-10 text-xs font-medium touch-manipulation px-2"
               asChild
             >
-              <Link to="/order">
+              <a href="https://dissertlypro.com/orders/orders/new">
                 Order
               </Link>
             </Button>

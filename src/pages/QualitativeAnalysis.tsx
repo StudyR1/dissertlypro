@@ -333,7 +333,7 @@ const QualitativeAnalysis = () => {
 
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                <Link to="/order">
+                <a href="https://dissertlypro.com/orders/orders/new">
                   Get Expert Analysis Help
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -688,7 +688,7 @@ const QualitativeAnalysis = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                  <Link to="/order">
+                  <a href="https://dissertlypro.com/orders/orders/new">
                     Order Now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

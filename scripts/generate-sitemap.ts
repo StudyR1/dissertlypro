@@ -22,6 +22,7 @@ const pathMatches = [...appSource.matchAll(/path="([^"]+)"/g)].map((m) => m[1]);
 const EXCLUDE = new Set<string>([
   "*",
   "/quick-checkout/*",
+  "/order", "/order/*", "/order-draft", "/login", "/checkout", "/quick-services/checkout", "/quick-services-draft/checkout",
   // Legacy URL redirects (do not advertise these to crawlers)
   "/quick-checkout",
   "/services/academic-editing",

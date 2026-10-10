@@ -494,7 +494,7 @@ const ServiceDetail = () => {
 
                   <div className="space-y-3">
                     <Button variant="copper" className="w-full" size="lg" asChild>
-                      <Link to="/order">
+                      <a href="https://dissertlypro.com/orders/orders/new">
                         Get Expert Help
                         <ArrowRight className="h-4 w-4" />
                       </Link>

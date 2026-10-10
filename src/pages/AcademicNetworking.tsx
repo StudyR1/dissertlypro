@@ -170,10 +170,10 @@ const AcademicNetworking = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-copper hover:bg-copper/90">
-                <Link to="/order">Get Career Coaching <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Get Career Coaching <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/order">Order Now</Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Order Now</Link>
               </Button>
             </div>
           </motion.div>
@@ -408,7 +408,7 @@ const AcademicNetworking = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-copper hover:bg-copper/90">
-                <Link to="/order">Get Career Support <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Get Career Support <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/phd-resources">Explore More PhD Resources</Link>

@@ -467,7 +467,7 @@ const ThesisStructure = () => {
                 on structure, flow, and chapter development.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/order">
+                <a href="https://dissertlypro.com/orders/orders/new">
                   <Button size="lg" className="bg-copper hover:bg-copper-dark text-white">
                     Order Now
                     <ArrowRight className="ml-2 h-4 w-4" />

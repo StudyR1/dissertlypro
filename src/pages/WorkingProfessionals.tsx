@@ -109,7 +109,7 @@ const WorkingProfessionals = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>
-                  <Link to="/order">
+                  <a href="https://dissertlypro.com/orders/orders/new">
                     Schedule Consultation
                     <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -294,7 +294,7 @@ const WorkingProfessionals = () => {
               plan that respects your professional and personal commitments.
             </p>
             <Button variant="copper" size="xl" asChild>
-              <Link to="/order">
+              <a href="https://dissertlypro.com/orders/orders/new">
                 Book Your Free Consultation
                 <ArrowRight className="h-5 w-5" />
               </Link>

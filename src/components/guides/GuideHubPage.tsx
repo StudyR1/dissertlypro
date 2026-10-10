@@ -67,7 +67,7 @@ const GuideHubPage = ({ config }: { config: GuideHubConfig }) => {
           <p className="text-lg text-primary-foreground/90 leading-relaxed">{config.lead}</p>
           <div className="flex flex-wrap gap-3 mt-8">
             <Button asChild size="lg">
-              <Link to="/order">
+              <a href="https://dissertlypro.com/orders/orders/new">
                 Get expert help <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -224,7 +224,7 @@ const GuideHubPage = ({ config }: { config: GuideHubConfig }) => {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Button asChild size="lg">
-                <Link to="/order">Start an order from $15/page</Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Start an order from $15/page</Link>
               </Button>
               <Button asChild variant="hero-outline" size="lg">
                 <Link to="/pricing">See transparent pricing</Link>

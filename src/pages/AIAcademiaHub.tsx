@@ -709,7 +709,7 @@ const AIAcademiaHub = () => {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button asChild size="lg" variant="secondary">
-              <Link to="/order">
+              <a href="https://dissertlypro.com/orders/orders/new">
                 Order Now
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
