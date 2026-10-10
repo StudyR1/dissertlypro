@@ -562,9 +562,9 @@ const QuickServices = () => {
               </Link>
             </Button>
             <Button asChild size="lg" variant="hero-outline">
-              <Link to="/order">
+              <a href="https://dissertlypro.com/orders/orders/new">
                 Order Now
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

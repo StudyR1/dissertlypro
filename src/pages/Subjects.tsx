@@ -256,10 +256,10 @@ const Subjects = () => {
               and we'll match you with a qualified expert.
             </p>
             <Button variant="copper" size="xl" asChild>
-              <Link to="/order">
+              <a href="https://dissertlypro.com/orders/orders/new">
                 Discuss Your Research
                 <ArrowRight className="h-5 w-5" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

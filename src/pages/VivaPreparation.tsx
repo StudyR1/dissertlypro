@@ -886,10 +886,10 @@ const VivaPreparation = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                  <Link to="/order">
+                  <a href="https://dissertlypro.com/orders/orders/new">
                     Book Mock Viva Session
                     <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/services/editing">

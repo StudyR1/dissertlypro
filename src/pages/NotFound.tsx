@@ -43,10 +43,10 @@ const NotFound = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button variant="copper" size="lg" asChild>
-                <Link to="/order">
+                <a href="https://dissertlypro.com/orders/orders/new">
                   <MessageCircle className="h-4 w-4 mr-2" />
                   Get Expert Help — Free
-                </Link>
+                </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <a href={waLink} target="_blank" rel="noopener noreferrer">

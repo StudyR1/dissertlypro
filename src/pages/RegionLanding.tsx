@@ -108,10 +108,10 @@ const RegionLanding = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="copper" size="lg" className="group shadow-copper" asChild>
-                <Link to="/order">
+                <a href="https://dissertlypro.com/orders/orders/new">
                   Free Consultation
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
               </Button>
               <Button variant="glass" size="lg" asChild>
                 <a href={`tel:${phone.replace(/\s/g, '')}`}>
@@ -165,7 +165,7 @@ const RegionLanding = () => {
                 ))}
               </ul>
               <Button variant="midnight-outline" className="w-full" asChild>
-                <Link to="/order">Get Quote</Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Get Quote</a>
               </Button>
             </div>
 
@@ -193,10 +193,10 @@ const RegionLanding = () => {
                 ))}
               </ul>
               <Button variant="copper" className="w-full" asChild>
-                <Link to="/order">
+                <a href="https://dissertlypro.com/orders/orders/new">
                   Get Started
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
             </div>
 
@@ -219,7 +219,7 @@ const RegionLanding = () => {
                 ))}
               </ul>
               <Button variant="midnight-outline" className="w-full" asChild>
-                <Link to="/order">Learn More</Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Learn More</a>
               </Button>
             </div>
           </div>
@@ -367,10 +367,10 @@ const RegionLanding = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="copper" size="lg" asChild>
-                <Link to="/order">
+                <a href="https://dissertlypro.com/orders/orders/new">
                   Order Now
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button variant="glass" size="lg" asChild>
                 <Link to="/pricing">View All Pricing</Link>

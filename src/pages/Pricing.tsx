@@ -176,10 +176,10 @@ const Pricing = () => {
                       size="lg"
                       asChild
                     >
-                      <Link to="/order">
+                      <a href="https://dissertlypro.com/orders/orders/new">
                         Get Custom Quote
                         <ArrowRight className="h-4 w-4" />
-                      </Link>
+                      </a>
                     </Button>
                   </div>
                 ))}
@@ -271,10 +271,10 @@ const Pricing = () => {
               proposal with transparent pricing within 24 hours.
             </p>
             <Button variant="hero" size="xl" asChild>
-              <Link to="/order">
+              <a href="https://dissertlypro.com/orders/orders/new">
                 Order Now
                 <ArrowRight className="h-5 w-5" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

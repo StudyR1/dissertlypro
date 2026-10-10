@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download, ListTree, Home, ChevronDown } from "lucide-react";
+import { ORDER_URL, LOGIN_URL } from "@/lib/orderLinks";
+import { LogIn, Menu, X, BookOpen, FileText, BarChart3, HelpCircle, Users, Building2, Heart, UserCheck, Scale, Clock, Calculator, Receipt, Calendar, Mic, Briefcase, Brain, Search, GraduationCap, Quote, Target, Layers, Globe, PenTool, Award, DollarSign, Network, Newspaper, Factory, MapPin, BookMarked, Edit3, GanttChart, Wrench, Shield, PieChart, Combine, Download, ListTree, Home, ChevronDown } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -519,13 +520,13 @@ const Header = () => {
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center gap-2">
           <Button variant="outline" size="sm" className="border-copper/40 text-copper hover:bg-copper/10" asChild>
-            <Link to="/quick-services" className="flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5" />
-              Quick Tasks
-            </Link>
+            <a href={LOGIN_URL} className="flex items-center gap-1.5">
+              <LogIn className="h-3.5 w-3.5" />
+              Client Login
+            </a>
           </Button>
           <Button variant="copper" size="sm" asChild>
-            <Link to="/order">Order Now</Link>
+            <a href={ORDER_URL}>Order Now</a>
           </Button>
         </div>
 
@@ -556,6 +557,18 @@ const Header = () => {
             </div>
             
             <nav className="py-4 px-4 space-y-1 pb-24">
+              {/* Primary account actions */}
+              <div className="grid grid-cols-1 gap-2 mb-4 pb-4 border-b border-border">
+                <Button variant="copper" className="w-full h-12 text-base touch-manipulation" asChild>
+                  <a href={ORDER_URL}>Order Now</a>
+                </Button>
+                <Button variant="midnight-outline" className="w-full h-12 text-base touch-manipulation" asChild>
+                  <a href={LOGIN_URL} className="flex items-center justify-center gap-2">
+                    <LogIn className="h-4 w-4" />
+                    Client Login
+                  </a>
+                </Button>
+              </div>
               {/* Quick Access Section */}
               <motion.div 
                 className="grid grid-cols-2 gap-2 mb-4 pb-4 border-b border-border"
@@ -799,9 +812,6 @@ const Header = () => {
               <div className="pt-4 space-y-3 border-t border-border mt-4">
                 <Button variant="midnight-outline" className="w-full h-12 text-base touch-manipulation" asChild>
                   <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
-                </Button>
-                <Button variant="copper" className="w-full h-12 text-base touch-manipulation" asChild>
-                  <Link to="/order" onClick={() => setIsOpen(false)}>Order Now</Link>
                 </Button>
               </div>
             </nav>

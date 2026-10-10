@@ -507,12 +507,12 @@ const DIYComparisonCalculatorPage = () => {
                             Get Exact Quote
                           </Button>
                         </Link>
-                        <Link to="/order" className="flex-1">
+                        <a href="https://dissertlypro.com/orders/orders/new" className="flex-1">
                           <Button className="w-full gap-2 bg-copper hover:bg-copper-dark text-white">
                             <Sparkles className="h-4 w-4" />
                             Free Consultation
                           </Button>
-                        </Link>
+                        </a>
                       </div>
                     </CardContent>
                   </Card>

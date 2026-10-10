@@ -233,10 +233,10 @@ const FAQ = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="copper" size="lg" className="touch-manipulation" asChild>
-                <Link to="/order">
+                <a href="https://dissertlypro.com/orders/orders/new">
                   Free Consultation
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button variant="midnight-outline" size="lg" className="touch-manipulation" asChild>
                 <Link to="/contact">Contact Us</Link>

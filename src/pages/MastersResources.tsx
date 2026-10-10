@@ -607,12 +607,12 @@ const MastersResources = () => {
                 Get the hands-on help you need to succeed.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/order">
+                <a href="https://dissertlypro.com/orders/orders/new">
                   <Button size="lg" className="bg-copper hover:bg-copper-dark text-white">
                     Order Now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
                 <Link to="/services">
                   <Button size="lg" variant="outline">
                     Explore Our Services

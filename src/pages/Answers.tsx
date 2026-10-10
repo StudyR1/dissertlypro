@@ -94,9 +94,9 @@ const Answers = () => (
             what the work would involve. Pricing starts at $15 per page and there is no consultation fee.
           </p>
           <Button asChild size="lg">
-            <Link to="/order">
+            <a href="https://dissertlypro.com/orders/orders/new">
               Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </Button>
         </div>
       </div>

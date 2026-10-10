@@ -356,10 +356,10 @@ const UniversitiesHub = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="copper" size="lg" asChild>
-                <Link to="/order">
+                <a href="https://dissertlypro.com/orders/orders/new">
                   Order Now
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button variant="glass" size="lg" asChild>
                 <Link to="/services">View All Services</Link>

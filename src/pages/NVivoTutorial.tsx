@@ -540,10 +540,10 @@ const NVivoTutorial = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
-              <Link to="/order">
+              <a href="https://dissertlypro.com/orders/orders/new">
                 Order Now
                 <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+              </a>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link to="/services/data-analysis">Data Analysis Services</Link>
