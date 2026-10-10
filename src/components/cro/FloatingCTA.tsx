@@ -118,60 +118,9 @@ const FloatingCTA = memo(() => {
     }
   };
 
-  return (
-    <>
-      {/* Desktop Floating Button - Bottom Right */}
-      <div className="fixed bottom-6 right-6 z-50 hidden md:block">
-        <motion.button
-          initial={{ opacity: 0, scale: 0, y: 20 }}
-          animate={{ 
-            opacity: 1, 
-            scale: 1, 
-            y: 0,
-          }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
-          transition={{ 
-            type: "spring", 
-            stiffness: 260, 
-            damping: 20,
-            delay: 1.5,
-          }}
-          onClick={openChat}
-          className="relative flex items-center gap-3 bg-gradient-to-r from-copper to-copper-dark text-white rounded-full pl-5 pr-6 py-4 shadow-copper group overflow-hidden"
-        >
-          {/* Shimmer effect */}
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-          
-          {/* Pulse ring */}
-          <span className="absolute inset-0 rounded-full animate-ping bg-copper/30 opacity-75" style={{ animationDuration: '2s' }} />
-          
-          <span className="relative flex items-center justify-center h-8 w-8 rounded-full bg-white/20">
-            <MessageCircle className="h-5 w-5" />
-          </span>
-          <span className="relative font-sans font-semibold">Chat with Expert</span>
-          
-          {/* Online indicator */}
-          <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-          </span>
-        </motion.button>
-      </div>
-
-      {/* Allow Tawk.to native widget to render so it can auto-open on first visit */}
-      <style>{`
-        iframe.tawk-chat-panel,
-        .tawk-chat-panel {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          pointer-events: auto !important;
-        }
-      `}</style>
-
-    </>
-  );
+  // Native Tawk.to widget is the sole floating chat launcher (no custom overlay button).
+  void openChat;
+  return null;
 });
 
 FloatingCTA.displayName = 'FloatingCTA';
