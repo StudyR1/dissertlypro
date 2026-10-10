@@ -1,4 +1,6 @@
 import { Suspense, lazy } from "react";
+import ExternalRedirect from "@/components/ExternalRedirect";
+import { ORDER_URL, LOGIN_URL } from "@/lib/orderLinks";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -213,7 +215,10 @@ const AppRoutes = () => {
         <Route path="/gdpr" element={<Suspense fallback={<SkeletonPage />}><GDPR /></Suspense>} />
         <Route path="/about" element={<Suspense fallback={<SkeletonPage />}><About /></Suspense>} />
         <Route path="/experts" element={<Suspense fallback={<SkeletonPage />}><Experts /></Suspense>} />
-        <Route path="/order" element={<Suspense fallback={<SkeletonPage />}><Order /></Suspense>} />
+        <Route path="/order" element={<ExternalRedirect to={ORDER_URL} />} />
+        <Route path="/order/*" element={<ExternalRedirect to={ORDER_URL} />} />
+        <Route path="/login" element={<ExternalRedirect to={LOGIN_URL} />} />
+        <Route path="/order-draft" element={<Suspense fallback={<SkeletonPage />}><Order /></Suspense>} />
         <Route path="/templates" element={<Suspense fallback={<ServicesGridSkeleton />}><Templates /></Suspense>} />
         
         {/* Resource/Article pages with article skeleton */}
@@ -306,7 +311,6 @@ const AppRoutes = () => {
         
         {/* Quick Services */}
         <Route path="/quick-services" element={<Suspense fallback={<ServicesGridSkeleton />}><QuickServices /></Suspense>} />
-        <Route path="/quick-services/checkout" element={<Suspense fallback={<SkeletonPage />}><QuickServiceCheckout /></Suspense>} />
 
         {/* Keyword-targeted dissertation service pages */}
         <Route path="/phd-dissertation-writing-services" element={<Suspense fallback={<ArticleSkeleton />}><PhDDissertationWritingServices /></Suspense>} />
@@ -351,9 +355,11 @@ const AppRoutes = () => {
         <Route path="/search" element={<Suspense fallback={<SkeletonPage />}><SearchPage /></Suspense>} />
 
         {/* Legacy URL redirects (fix Google Search Console 404s) */}
-        <Route path="/quick-checkout" element={<LegacyRedirect to="/quick-services/checkout" />} />
-        <Route path="/quick-checkout/*" element={<LegacyRedirect to="/quick-services/checkout" />} />
-        <Route path="/checkout" element={<LegacyRedirect to="/quick-services/checkout" />} />
+        <Route path="/quick-checkout" element={<ExternalRedirect to={ORDER_URL} />} />
+        <Route path="/quick-checkout/*" element={<ExternalRedirect to={ORDER_URL} />} />
+        <Route path="/checkout" element={<ExternalRedirect to={ORDER_URL} />} />
+        <Route path="/quick-services/checkout" element={<ExternalRedirect to={ORDER_URL} />} />
+        <Route path="/quick-services-draft/checkout" element={<Suspense fallback={<SkeletonPage />}><QuickServiceCheckout /></Suspense>} />
         <Route path="/services/academic-editing" element={<Navigate to="/services/editing" replace />} />
         <Route path="/services/proposal-development" element={<Navigate to="/services/dissertation-proposal" replace />} />
         <Route path="/services/dissertation-writing" element={<Navigate to="/dissertation-writing-services" replace />} />

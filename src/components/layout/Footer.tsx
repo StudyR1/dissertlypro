@@ -196,12 +196,21 @@ const Footer = () => {
             <ul className="space-y-2 sm:space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.title}>
-                  <Link
-                    to={link.href}
-                    className="text-xs sm:text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors"
-                  >
-                    {link.title}
-                  </Link>
+                  {link.href.startsWith("http") ? (
+                    <a
+                      href={link.href}
+                      className="text-xs sm:text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors"
+                    >
+                      {link.title}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-xs sm:text-sm font-sans text-primary-foreground/60 hover:text-copper transition-colors"
+                    >
+                      {link.title}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
