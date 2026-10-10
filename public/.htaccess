@@ -18,6 +18,13 @@
   # This consolidates link equity and ends the keyword cannibalization
   # flagged in the Semrush audit (same content ranking twice).
   # ============================================
+  # ORDER PORTAL — legacy order/checkout URLs on any host go straight to the cPanel portal
+  RewriteRule ^(order|order/.*|quick-checkout|quick-checkout/.*|checkout|quick-services/checkout)/?$ https://dissertlypro.com/orders/orders/new [L,R=301,QSD]
+  RewriteRule ^login/?$ https://dissertlypro.com/orders/login [L,R=301,QSD]
+
+  # Let the cPanel order portal (/orders/) handle its own requests
+  RewriteRule ^orders(/.*)?$ - [L]
+
   RewriteCond %{HTTP_HOST} ^(us|uk|au|ca)\.dissertlypro\.com$ [NC]
   RewriteRule ^(.*)$ https://dissertlypro.com/$1 [L,R=301,NE]
   
