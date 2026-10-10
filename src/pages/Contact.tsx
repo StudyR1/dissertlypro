@@ -201,7 +201,7 @@ const Contact = () => {
                   Book a free consultation to discuss your specific research needs with an academic advisor.
                 </p>
                 <Button variant="hero" size="sm" className="touch-manipulation" asChild>
-                  <a href="https://dissertlypro.com/orders/orders/new">Book Consultation</a>
+                  <a href="https://dissertlypro.com/orders/stud/new">Book Consultation</a>
                 </Button>
               </div>
             </div>

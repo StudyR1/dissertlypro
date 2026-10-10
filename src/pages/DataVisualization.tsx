@@ -534,7 +534,7 @@ const DataVisualization = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
-              <a href="https://dissertlypro.com/orders/orders/new">
+              <a href="https://dissertlypro.com/orders/stud/new">
                 Order Now
                 <ArrowRight className="ml-2 w-4 h-4" />
               </a>

@@ -176,7 +176,7 @@ const Pricing = () => {
                       size="lg"
                       asChild
                     >
-                      <a href="https://dissertlypro.com/orders/orders/new">
+                      <a href="https://dissertlypro.com/orders/stud/new">
                         Get Custom Quote
                         <ArrowRight className="h-4 w-4" />
                       </a>
@@ -271,7 +271,7 @@ const Pricing = () => {
               proposal with transparent pricing within 24 hours.
             </p>
             <Button variant="hero" size="xl" asChild>
-              <a href="https://dissertlypro.com/orders/orders/new">
+              <a href="https://dissertlypro.com/orders/stud/new">
                 Order Now
                 <ArrowRight className="h-5 w-5" />
               </a>

@@ -211,10 +211,10 @@ const DissertationStructure = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-copper hover:bg-copper/90">
-                <a href="https://dissertlypro.com/orders/orders/new">Get Writing Support <ArrowRight className="ml-2 w-4 h-4" /></a>
+                <a href="https://dissertlypro.com/orders/stud/new">Get Writing Support <ArrowRight className="ml-2 w-4 h-4" /></a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="https://dissertlypro.com/orders/orders/new">Order Now</a>
+                <a href="https://dissertlypro.com/orders/stud/new">Order Now</a>
               </Button>
             </div>
           </motion.div>
@@ -445,7 +445,7 @@ const DissertationStructure = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-copper hover:bg-copper/90">
-                <a href="https://dissertlypro.com/orders/orders/new">Get Writing Support <ArrowRight className="ml-2 w-4 h-4" /></a>
+                <a href="https://dissertlypro.com/orders/stud/new">Get Writing Support <ArrowRight className="ml-2 w-4 h-4" /></a>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/phd-resources">Explore More PhD Resources</Link>

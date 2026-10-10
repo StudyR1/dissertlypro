@@ -747,7 +747,7 @@ const PersonalizationQuizPage = () => {
                     <RefreshCw className="h-4 w-4" />
                     Retake Quiz
                   </Button>
-                  <a href="https://dissertlypro.com/orders/orders/new">
+                  <a href="https://dissertlypro.com/orders/stud/new">
                     <Button className="w-full sm:w-auto gap-2 bg-copper hover:bg-copper-dark text-white">
                       <Users className="h-4 w-4" />
                       Get Expert Guidance

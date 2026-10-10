@@ -136,7 +136,7 @@ const UniversityLanding = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="copper" size="lg" className="group shadow-copper" asChild>
-                <a href="https://dissertlypro.com/orders/orders/new">
+                <a href="https://dissertlypro.com/orders/stud/new">
                   Free Consultation
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -371,7 +371,7 @@ const UniversityLanding = () => {
                 ))}
               </ul>
               <Button variant="midnight-outline" className="w-full" asChild>
-                <a href="https://dissertlypro.com/orders/orders/new">Get Quote</a>
+                <a href="https://dissertlypro.com/orders/stud/new">Get Quote</a>
               </Button>
             </div>
 
@@ -399,7 +399,7 @@ const UniversityLanding = () => {
                 ))}
               </ul>
               <Button variant="copper" className="w-full" asChild>
-                <a href="https://dissertlypro.com/orders/orders/new">
+                <a href="https://dissertlypro.com/orders/stud/new">
                   Get Started
                   <ArrowRight className="h-4 w-4" />
                 </a>
@@ -425,7 +425,7 @@ const UniversityLanding = () => {
                 ))}
               </ul>
               <Button variant="midnight-outline" className="w-full" asChild>
-                <a href="https://dissertlypro.com/orders/orders/new">Learn More</a>
+                <a href="https://dissertlypro.com/orders/stud/new">Learn More</a>
               </Button>
             </div>
           </div>
@@ -558,7 +558,7 @@ const UniversityLanding = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="copper" size="lg" asChild>
-                <a href="https://dissertlypro.com/orders/orders/new">
+                <a href="https://dissertlypro.com/orders/stud/new">
                   Order Now
                   <ArrowRight className="h-4 w-4" />
                 </a>

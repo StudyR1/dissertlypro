@@ -256,7 +256,7 @@ const Subjects = () => {
               and we'll match you with a qualified expert.
             </p>
             <Button variant="copper" size="xl" asChild>
-              <a href="https://dissertlypro.com/orders/orders/new">
+              <a href="https://dissertlypro.com/orders/stud/new">
                 Discuss Your Research
                 <ArrowRight className="h-5 w-5" />
               </a>

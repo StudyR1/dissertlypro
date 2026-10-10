@@ -307,7 +307,7 @@ const BlogPost = () => {
                 Our PhD-qualified experts can provide personalized support for your dissertation journey.
               </p>
               <Button variant="copper" size="lg" asChild>
-                <a href="https://dissertlypro.com/orders/orders/new">
+                <a href="https://dissertlypro.com/orders/stud/new">
                   Order Now
                   <ArrowRight className="h-4 w-4" />
                 </a>

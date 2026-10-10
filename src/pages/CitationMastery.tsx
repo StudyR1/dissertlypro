@@ -356,7 +356,7 @@ const CitationMastery = () => {
 
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                <a href="https://dissertlypro.com/orders/orders/new">
+                <a href="https://dissertlypro.com/orders/stud/new">
                   Get Citation Help
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
@@ -792,7 +792,7 @@ const CitationMastery = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
-                  <a href="https://dissertlypro.com/orders/orders/new">
+                  <a href="https://dissertlypro.com/orders/stud/new">
                     Book Citation Review
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>

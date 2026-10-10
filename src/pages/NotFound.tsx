@@ -43,7 +43,7 @@ const NotFound = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button variant="copper" size="lg" asChild>
-                <a href="https://dissertlypro.com/orders/orders/new">
+                <a href="https://dissertlypro.com/orders/stud/new">
                   <MessageCircle className="h-4 w-4 mr-2" />
                   Get Expert Help — Free
                 </a>

@@ -502,7 +502,7 @@ const TemplatesPage = () => {
                     Take the Quiz
                   </Button>
                 </Link>
-                <a href="https://dissertlypro.com/orders/orders/new">
+                <a href="https://dissertlypro.com/orders/stud/new">
                   <Button className="gap-2 bg-copper hover:bg-copper-dark text-white">
                     <Users className="h-4 w-4" />
                     Free Consultation
