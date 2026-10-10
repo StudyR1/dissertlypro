@@ -393,7 +393,7 @@ const MastersDefense = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Get Defense Coaching
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/services">
@@ -770,7 +770,7 @@ const MastersDefense = () => {
                   <a href="https://dissertlypro.com/orders/orders/new">
                     Book Defense Coaching
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/viva-preparation">

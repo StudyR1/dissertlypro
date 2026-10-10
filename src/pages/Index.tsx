@@ -251,12 +251,12 @@ const Index = () => {
                   <a href="https://dissertlypro.com/orders/orders/new">
                     Get Started
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button variant="hero-outline" size="lg" className="w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
                   <a href="https://dissertlypro.com/orders/orders/new">
                     Free Consultation
-                  </Link>
+                  </a>
                 </Button>
                 <Button variant="outline" size="lg" className="w-full sm:w-auto h-12 sm:h-14 text-base border-copper/40 text-copper-light hover:bg-copper/10 hover:text-white touch-manipulation group" asChild>
                   <Link to="/quick-services" className="flex items-center gap-2">
@@ -484,7 +484,7 @@ const Index = () => {
                   <a href="https://dissertlypro.com/orders/orders/new">
                     Join the Community
                     <ArrowRight className="h-4 w-4 ml-2" />
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -761,7 +761,7 @@ const Index = () => {
                   <a href="https://dissertlypro.com/orders/orders/new">
                     Get Expert Help
                     <ArrowRight className="h-5 w-5" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button variant="midnight-outline" size="lg" className="w-full sm:w-auto h-12 sm:h-14 text-base touch-manipulation" asChild>
                   <Link to="/pricing">View Pricing</Link>

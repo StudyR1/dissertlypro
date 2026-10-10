@@ -51,7 +51,7 @@ const FloatingOrderButton = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   <ShoppingCart className="h-4 w-4 mr-2" />
                   Order Now
-                </Link>
+                </a>
               </Button>
             </div>
           </motion.div>
@@ -73,7 +73,7 @@ const FloatingOrderButton = () => {
               <a href="https://dissertlypro.com/orders/orders/new">
                 <ShoppingCart className="h-5 w-5 mr-2 group-hover:animate-pulse" />
                 Order Now
-              </Link>
+              </a>
             </Button>
           </motion.div>
         </>

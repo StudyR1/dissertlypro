@@ -512,7 +512,7 @@ const DIYComparisonCalculatorPage = () => {
                             <Sparkles className="h-4 w-4" />
                             Free Consultation
                           </Button>
-                        </Link>
+                        </a>
                       </div>
                     </CardContent>
                   </Card>

@@ -712,7 +712,7 @@ const AIAcademiaHub = () => {
               <a href="https://dissertlypro.com/orders/orders/new">
                 Order Now
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+              </a>
             </Button>
             <Button asChild size="lg" variant="glass">
               <Link to="/services">

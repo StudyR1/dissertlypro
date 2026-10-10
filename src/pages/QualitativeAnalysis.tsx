@@ -336,7 +336,7 @@ const QualitativeAnalysis = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Get Expert Analysis Help
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/services">
@@ -691,7 +691,7 @@ const QualitativeAnalysis = () => {
                   <a href="https://dissertlypro.com/orders/orders/new">
                     Order Now
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/services/data-analysis">

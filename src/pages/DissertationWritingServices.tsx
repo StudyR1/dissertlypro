@@ -152,7 +152,7 @@ const DissertationWritingServices = () => {
               <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white px-8 py-6 text-lg">
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Order Now <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="hero-outline" size="lg" className="px-8 py-6 text-lg">
                 <Link to="/pricing">View Pricing</Link>
@@ -271,7 +271,7 @@ const DissertationWritingServices = () => {
             <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
               <a href="https://dissertlypro.com/orders/orders/new">
                 Start Your Consultation <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
@@ -301,7 +301,7 @@ const DissertationWritingServices = () => {
           </div>
           <p className="text-center text-muted-foreground">
             Don't see your subject? We cover 50+ disciplines. <Link to="/subjects" className="text-copper hover:underline">Browse all subjects</Link> or{" "}
-            <a href="https://dissertlypro.com/orders/orders/new" className="text-copper hover:underline">tell us what you need</Link>.
+            <a href="https://dissertlypro.com/orders/orders/new" className="text-copper hover:underline">tell us what you need</a>.
           </p>
         </div>
       </section>
@@ -576,10 +576,10 @@ const DissertationWritingServices = () => {
               <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white px-8 py-6 text-lg">
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Order Now <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="hero-outline" size="lg" className="px-8 py-6 text-lg">
-                <a href="https://dissertlypro.com/orders/orders/new">Place an Order</Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Place an Order</a>
               </Button>
             </div>
             <p className="text-ivory/60 text-sm mt-6">

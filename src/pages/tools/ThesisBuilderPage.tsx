@@ -662,7 +662,7 @@ const ThesisBuilderPage = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Order Now
                   <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/tools">View All Tools</Link>

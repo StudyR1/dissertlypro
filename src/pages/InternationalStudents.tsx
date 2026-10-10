@@ -464,7 +464,7 @@ const InternationalStudents = () => {
                     Order Now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
                 <Link to="/services/editing">
                   <Button size="lg" variant="outline">
                     Explore Editing Services

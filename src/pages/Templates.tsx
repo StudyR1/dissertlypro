@@ -508,7 +508,7 @@ const TemplatesPage = () => {
                     Free Consultation
                     <ArrowRight className="h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
               </div>
             </CardContent>
           </Card>

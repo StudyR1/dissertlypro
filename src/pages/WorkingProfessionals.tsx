@@ -112,7 +112,7 @@ const WorkingProfessionals = () => {
                   <a href="https://dissertlypro.com/orders/orders/new">
                     Schedule Consultation
                     <ArrowRight className="h-5 w-5" />
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -297,7 +297,7 @@ const WorkingProfessionals = () => {
               <a href="https://dissertlypro.com/orders/orders/new">
                 Book Your Free Consultation
                 <ArrowRight className="h-5 w-5" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

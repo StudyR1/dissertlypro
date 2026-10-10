@@ -274,7 +274,7 @@ const QuoteCalculatorPage = () => {
                     <a href="https://dissertlypro.com/orders/orders/new">
                       Get Precise Quote
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
                   </Button>
 
                   <p className="text-xs text-center text-muted-foreground">
@@ -359,7 +359,7 @@ const QuoteCalculatorPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
-                <a href="https://dissertlypro.com/orders/orders/new">Order Now</Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Order Now</a>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/tools">Explore More Tools</Link>

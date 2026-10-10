@@ -139,7 +139,7 @@ const UniversityLanding = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Free Consultation
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
               </Button>
               <Button variant="glass" size="lg" asChild>
                 <a href={`tel:${phone.replace(/\s/g, '')}`}>
@@ -371,7 +371,7 @@ const UniversityLanding = () => {
                 ))}
               </ul>
               <Button variant="midnight-outline" className="w-full" asChild>
-                <a href="https://dissertlypro.com/orders/orders/new">Get Quote</Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Get Quote</a>
               </Button>
             </div>
 
@@ -402,7 +402,7 @@ const UniversityLanding = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Get Started
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
             </div>
 
@@ -425,7 +425,7 @@ const UniversityLanding = () => {
                 ))}
               </ul>
               <Button variant="midnight-outline" className="w-full" asChild>
-                <a href="https://dissertlypro.com/orders/orders/new">Learn More</Link>
+                <a href="https://dissertlypro.com/orders/orders/new">Learn More</a>
               </Button>
             </div>
           </div>
@@ -561,7 +561,7 @@ const UniversityLanding = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Order Now
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button variant="glass" size="lg" asChild>
                 <Link to={`/${region}`}>View All {regionInfo.name} Services</Link>

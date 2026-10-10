@@ -111,14 +111,14 @@ const ServicePillarPage = ({ config }: Props) => {
             <Button asChild size="lg" className="bg-copper hover:bg-copper-dark text-white">
               <a href="https://dissertlypro.com/orders/orders/new">
                 Start Your Order <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
             <Button
               asChild
               size="lg"
               variant="hero-outline"
             >
-              <a href="https://dissertlypro.com/orders/orders/new">Order Now</Link>
+              <a href="https://dissertlypro.com/orders/orders/new">Order Now</a>
             </Button>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-cream/70">
@@ -361,7 +361,7 @@ const ServicePillarPage = ({ config }: Props) => {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="https://dissertlypro.com/orders/orders/new">Start Your Order</Link>
+              <a href="https://dissertlypro.com/orders/orders/new">Start Your Order</a>
             </Button>
           </div>
           <div className="mt-6 flex justify-center gap-6 text-sm text-midnight/70">
@@ -439,7 +439,7 @@ const ServicePillarPage = ({ config }: Props) => {
           >
             <a href="https://dissertlypro.com/orders/orders/new">
               Order Now <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </Button>
         </div>
       </section>

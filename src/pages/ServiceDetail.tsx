@@ -497,7 +497,7 @@ const ServiceDetail = () => {
                       <a href="https://dissertlypro.com/orders/orders/new">
                         Get Expert Help
                         <ArrowRight className="h-4 w-4" />
-                      </Link>
+                      </a>
                     </Button>
                     <Button variant="midnight-outline" className="w-full" asChild>
                       <Link to="/contact">Order Now</Link>

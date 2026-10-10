@@ -96,7 +96,7 @@ const Answers = () => (
           <Button asChild size="lg">
             <a href="https://dissertlypro.com/orders/orders/new">
               Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </Button>
         </div>
       </div>

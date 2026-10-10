@@ -752,7 +752,7 @@ const PersonalizationQuizPage = () => {
                       <Users className="h-4 w-4" />
                       Get Expert Guidance
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             )}

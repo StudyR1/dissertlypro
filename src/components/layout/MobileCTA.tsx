@@ -92,7 +92,7 @@ const MobileCTA = memo(() => {
             >
               <a href="https://dissertlypro.com/orders/orders/new">
                 Order
-              </Link>
+              </a>
             </Button>
           </div>
         </motion.div>

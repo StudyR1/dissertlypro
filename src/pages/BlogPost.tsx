@@ -310,7 +310,7 @@ const BlogPost = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Order Now
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
             </div>
           </div>

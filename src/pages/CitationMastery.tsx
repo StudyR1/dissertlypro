@@ -359,7 +359,7 @@ const CitationMastery = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Get Citation Help
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/services/editing">
@@ -795,7 +795,7 @@ const CitationMastery = () => {
                   <a href="https://dissertlypro.com/orders/orders/new">
                     Book Citation Review
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/services/editing">

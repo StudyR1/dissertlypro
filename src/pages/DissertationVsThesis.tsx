@@ -761,7 +761,7 @@ const DissertationVsThesis = () => {
                 <a href="https://dissertlypro.com/orders/orders/new">
                   Get Free Consultation
                   <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
+                </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-copper text-copper hover:bg-copper/10">
                 <Link to="/services">
