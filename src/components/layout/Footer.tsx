@@ -73,7 +73,8 @@ const Footer = () => {
       { title: "Subjects Covered", href: "/subjects" },
       { title: "Ethics & Integrity", href: "/ethics" },
       { title: "FAQs", href: "/faq" },
-      { title: "Get Free Quote", href: "/order" },
+      { title: "Order Now", href: "https://dissertlypro.com/orders/orders/new" },
+      { title: "Client Login", href: "https://dissertlypro.com/orders/login" },
     ],
     legal: [
       { title: "Privacy Policy", href: "/privacy" },

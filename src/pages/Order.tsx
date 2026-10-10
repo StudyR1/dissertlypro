@@ -331,7 +331,8 @@ const Order = () => {
       <SEO
         title="Order Dissertation Help — from $15/page"
         description="Order dissertation writing, editing, statistics, or chapter help from $15 per page. Configure pages and add-ons, pay directly. No consultation fee."
-        canonical="/order"
+        canonical="/order-draft"
+        noindex
         keywords={["dissertation order", "dissertation writing price", "PhD help order", "thesis editing per page"]}
       />
 
