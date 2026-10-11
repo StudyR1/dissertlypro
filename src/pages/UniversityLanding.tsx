@@ -10,6 +10,9 @@ import {
 import LocalBusinessSchema from "@/components/schemas/LocalBusinessSchema";
 import { getUniversityBySlug, getUniversitiesByRegion } from "@/data/universityData";
 import { getRegionByCode, formatPrice } from "@/data/regionData";
+import { getAnswerBox } from "@/data/universityAnswerBoxes";
+import UniversityAnswerBox from "@/components/seo/UniversityAnswerBox";
+import NotFound from "@/pages/NotFound";
 import { TLDRBlock, KeyTakeaways } from "@/components/ui/QuickAnswer";
 import { 
   ArrowRight, 
@@ -37,7 +40,7 @@ const UniversityLanding = () => {
   const regionInfo = region ? getRegionByCode(region) : undefined;
 
   if (!universityInfo || !regionInfo || universityInfo.region !== region) {
-    return <Navigate to={region ? `/${region}` : "/"} replace />;
+    return <NotFound />;
   }
 
   const otherUniversities = getUniversitiesByRegion(region).filter(
@@ -45,12 +48,14 @@ const UniversityLanding = () => {
   ).slice(0, 4);
 
   const { currency, pricing, phone } = regionInfo;
+  const answerBox = getAnswerBox(universityInfo.slug);
+  const allFaqs = answerBox ? [...answerBox.faqs, ...universityInfo.faqs] : universityInfo.faqs;
 
   return (
     <Layout>
       <SEO 
-        title={`Dissertation Help for ${universityInfo.name} Students`}
-        description={`Expert dissertation and thesis support for ${universityInfo.name} students. Understand ${universityInfo.shortName} requirements. ${universityInfo.stats.studentsHelped} students helped with ${universityInfo.stats.completionRate} completion rate.`}
+        title={answerBox?.seoTitle ?? `Dissertation Help for ${universityInfo.name} Students`}
+        description={answerBox?.seoDescription ?? `Expert dissertation and thesis support for ${universityInfo.name} students. Understand ${universityInfo.shortName} requirements. ${universityInfo.stats.studentsHelped} students helped with ${universityInfo.stats.completionRate} completion rate.`}
         canonical={`/${region}/${university}`}
         keywords={[
           `${universityInfo.name} dissertation help`,
@@ -61,7 +66,7 @@ const UniversityLanding = () => {
         ]}
       />
       
-      <FAQSchema faqs={universityInfo.faqs} />
+      <FAQSchema faqs={allFaqs} />
       
       <BreadcrumbSchema items={[
         { name: "Home", url: "/" },
@@ -137,7 +142,7 @@ const UniversityLanding = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="copper" size="lg" className="group shadow-copper" asChild>
                 <a href="https://dissertlypro.com/orders/stud/new">
-                  Free Consultation
+                  Get Expert Help
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -151,6 +156,8 @@ const UniversityLanding = () => {
           </div>
         </div>
       </section>
+
+      {answerBox && <UniversityAnswerBox box={answerBox} shortName={universityInfo.shortName} />}
 
       {/* TL;DR Section */}
       <section className="py-12 bg-background">
