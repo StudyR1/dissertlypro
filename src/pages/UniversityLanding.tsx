@@ -483,7 +483,7 @@ const UniversityLanding = () => {
       )}
 
       {/* FAQs */}
-      {universityInfo.faqs.length > 0 && (
+      {allFaqs.length > 0 && (
         <section className="py-16 lg:py-24 bg-cream-warm">
           <div className="container px-4 sm:px-6">
             <div className="text-center max-w-2xl mx-auto mb-12">
@@ -496,7 +496,7 @@ const UniversityLanding = () => {
             </div>
 
             <div className="max-w-3xl mx-auto space-y-4">
-              {universityInfo.faqs.map((faq, index) => (
+              {allFaqs.map((faq, index) => (
                 <div 
                   key={index}
                   className="bg-card rounded-xl border border-border p-6 shadow-subtle"
