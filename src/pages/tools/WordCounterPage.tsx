@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
+import ChapterEstimator from "@/components/seo/ChapterEstimator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const formatOptions = {
@@ -105,7 +106,7 @@ const WordCounterPage = () => {
   return (
     <Layout>
       <SEO 
-        title="Free Word Count Calculator | Pages, Reading Time & More"
+        title="Free Dissertation Word Counter & Chapter Estimator (2026)"
         description="Calculate dissertation pages, reading time, and character count instantly. Free word counter tool for academic writing with multiple format options."
         keywords={["word count calculator", "words to pages", "dissertation word count", "thesis word count", "academic word counter", "reading time calculator"]}
         canonical="https://dissertlypro.com/tools/word-counter"
@@ -306,6 +307,8 @@ const WordCounterPage = () => {
           </div>
         </div>
       </section>
+
+      <ChapterEstimator />
 
       {/* FAQ Section */}
       <section className="py-16 bg-muted/30">

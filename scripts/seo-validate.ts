@@ -77,7 +77,7 @@ const excluded = new Set([
   "/quick-checkout","/services/academic-editing","/services/proposal-development",
   "/services/dissertation-writing","/services/research-methodology","/refund-policy",
   "/privacy-policy","/terms-and-conditions","/blog/mit-thesis-writing-strategies",
-  "/blog/stanford-dissertation-excellence","/search","/seo-audit","*","/quick-checkout/*","/checkout",
+  "/blog/stanford-dissertation-excellence","/search","/seo-audit","*","/quick-checkout/*","/checkout","/order","/order/*","/login","/order-draft","/quick-services/checkout","/quick-services-draft/checkout",
 ]);
 const missingFromSitemap = staticRoutes.filter((p) => !excluded.has(p) && !sitemapSet.has(p));
 add({
