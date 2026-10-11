@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-11T06:47:25.514Z",
+  "generatedAt": "2026-10-11T06:47:38.803Z",
   "totals": {
-    "ok": 10,
+    "ok": 11,
     "warn": 1,
-    "fail": 1
+    "fail": 0
   },
   "routes": {
     "static": 128,
@@ -48,9 +48,8 @@
     },
     {
       "id": "sitemap-static-coverage",
-      "label": "Sitemap covers 122/114 static routes",
-      "severity": "fail",
-      "detail": "Missing: /order, /order/*, /login, /order-draft, /quick-services/checkout, /quick-services-draft/checkout"
+      "label": "Sitemap covers 128/108 static routes",
+      "severity": "ok"
     },
     {
       "id": "sitemap-dyn-blog",
