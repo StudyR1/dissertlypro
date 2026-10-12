@@ -375,6 +375,57 @@ const AppRoutes = () => {
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THIS LINE - Catch-all 404 must be last */}
 
+        <Route path="/adelaide-assignment-help" element={<LegacyRedirect to="/au" />} />
+        <Route path="/curtin-assignment-help" element={<LegacyRedirect to="/au" />} />
+        <Route path="/unsw-assignment-help" element={<LegacyRedirect to="/au/unsw" />} />
+        <Route path="/uq-assignment-help" element={<LegacyRedirect to="/au/queensland" />} />
+        <Route path="/usyd-assignment-help" element={<LegacyRedirect to="/au/sydney" />} />
+        <Route path="/uts-assignment-help" element={<LegacyRedirect to="/au" />} />
+        <Route path="/aglc4-referencing-guide" element={<LegacyRedirect to="/citation-mastery" />} />
+        <Route path="/macquarie-referencing-guide" element={<LegacyRedirect to="/citation-mastery" />} />
+        <Route path="/rmit-referencing-guide" element={<LegacyRedirect to="/citation-mastery" />} />
+        <Route path="/unsw-referencing-guide" element={<LegacyRedirect to="/citation-mastery" />} />
+        <Route path="/uts-referencing-guide" element={<LegacyRedirect to="/citation-mastery" />} />
+        <Route path="/biology-assignment-help" element={<LegacyRedirect to="/subjects" />} />
+        <Route path="/physics-assignment-help" element={<LegacyRedirect to="/subjects" />} />
+        <Route path="/sociology-assignment-help" element={<LegacyRedirect to="/subjects" />} />
+        <Route path="/finance-assignment-help" element={<LegacyRedirect to="/subjects" />} />
+        <Route path="/data-analytics-assignment-help" element={<LegacyRedirect to="/dissertation-statistics-help" />} />
+        <Route path="/capstone-project-help" element={<LegacyRedirect to="/capstone-dissertation-writing-services" />} />
+        <Route path="/data-collection-analysis" element={<LegacyRedirect to="/services/data-analysis" />} />
+        <Route path="/do-my-dissertation" element={<LegacyRedirect to="/dissertation-writing-services" />} />
+        <Route path="/do-my-essay" element={<LegacyRedirect to="/dissertation-writing-services" />} />
+        <Route path="/pay-someone-to-write-my-assignment" element={<LegacyRedirect to="/dissertation-writing-services" />} />
+        <Route path="/how-to-write-a-literature-review-australia" element={<LegacyRedirect to="/literature-review-guide" />} />
+        <Route path="/hrec-ethics-application-guide" element={<LegacyRedirect to="/irb-ethics-guide" />} />
+        <Route path="/ca/uoft" element={<LegacyRedirect to="/ca/toronto" />} />
+        <Route path="/services/capstone-dissertation-writing-services" element={<LegacyRedirect to="/capstone-dissertation-writing-services" />} />
+        <Route path="/services/cheap-dissertation-writing-services" element={<LegacyRedirect to="/cheap-dissertation-writing-services" />} />
+        <Route path="/services/dissertation-proposal-writing-services" element={<LegacyRedirect to="/dissertation-proposal-writing-services" />} />
+        <Route path="/services/online-dissertation-writing-services" element={<LegacyRedirect to="/online-dissertation-writing-services" />} />
+        <Route path="/services/masters-dissertation-writing-services" element={<LegacyRedirect to="/masters-dissertation-writing-services" />} />
+        <Route path="/services/medical-dissertation-writing-services" element={<LegacyRedirect to="/medical-dissertation-writing-services" />} />
+        <Route path="/case-studies/distinction-masters-dissertation-uq-nursing" element={<LegacyRedirect to="/blog" />} />
+        <Route path="/case-studies/engineering-thesis-unsw-fatigue-hd" element={<LegacyRedirect to="/blog" />} />
+        <Route path="/case-studies/mba-capstone-monash-strategy-hd" element={<LegacyRedirect to="/blog" />} />
+        <Route path="/blog/harvard-dissertation-requirements" element={<LegacyRedirect to="/blog/harvard-dissertation-requirements-complete-guide" />} />
+        <Route path="/blog/ai-thesis-writing-guide" element={<LegacyRedirect to="/blog/can-i-use-chatgpt-for-dissertation-complete-guide" />} />
+        <Route path="/blog/using-ai-tools-ethically-australian-thesis" element={<LegacyRedirect to="/blog/can-i-use-chatgpt-for-dissertation-complete-guide" />} />
+        <Route path="/blog/dissertation-discussion-chapter-example" element={<LegacyRedirect to="/dissertation-findings-chapter" />} />
+        <Route path="/blog/dissertation-results-section-example" element={<LegacyRedirect to="/dissertation-findings-chapter" />} />
+        <Route path="/blog/findings-vs-discussion-difference" element={<LegacyRedirect to="/dissertation-findings-chapter" />} />
+        <Route path="/blog/literature-review-tips-australian-thesis" element={<LegacyRedirect to="/blog/how-to-write-literature-review-complete-guide" />} />
+        <Route path="/blog/systematic-review-methodology-australian-thesis" element={<LegacyRedirect to="/blog/systematic-literature-review-methodology-prisma" />} />
+        <Route path="/blog/survey-design-tips-postgraduate-research" element={<LegacyRedirect to="/blog/research-methodology-types-examples-guide" />} />
+        <Route path="/blog/post-phd-career-options-australia" element={<LegacyRedirect to="/blog/career-options-after-phd" />} />
+        <Route path="/blog/time-management-postgraduate-students-australia" element={<LegacyRedirect to="/blog/write-dissertation-faster-productivity-tips" />} />
+        <Route path="/blog/viva-voce-examination-australian-universities" element={<LegacyRedirect to="/viva-preparation" />} />
+        <Route path="/blog/international-students-thesis-guide-australia" element={<LegacyRedirect to="/international-students" />} />
+        <Route path="/blog/research-training-program-rtp-guide-australia" element={<LegacyRedirect to="/phd-funding" />} />
+        <Route path="/blog/abstract-writing-guide-australian-thesis" element={<LegacyRedirect to="/blog/how-to-write-dissertation-complete-guide" />} />
+        <Route path="/blog/data-management-plan-australian-research" element={<LegacyRedirect to="/research-methodology" />} />
+        <Route path="/blog/how-to-write-first-class-honours-thesis-australia" element={<LegacyRedirect to="/blog/how-to-write-dissertation-complete-guide" />} />
+        <Route path="/blog/understanding-australian-grading-system-postgraduate" element={<LegacyRedirect to="/au" />} />
         <Route path="*" element={<Suspense fallback={<SkeletonPage />}><NotFound /></Suspense>} />
       </Routes>
     </ErrorBoundary>

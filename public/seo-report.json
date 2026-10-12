@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-11T06:47:38.803Z",
+  "generatedAt": "2026-10-12T03:20:08.976Z",
   "totals": {
     "ok": 11,
     "warn": 1,
     "fail": 0
   },
   "routes": {
-    "static": 128,
+    "static": 179,
     "dynamicTemplates": 6,
     "blog": 60,
     "services": 10,
@@ -48,7 +48,7 @@
     },
     {
       "id": "sitemap-static-coverage",
-      "label": "Sitemap covers 128/108 static routes",
+      "label": "Sitemap covers 179/108 static routes",
       "severity": "ok"
     },
     {

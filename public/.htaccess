@@ -7,6 +7,7 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  DirectorySlash Off
   
   # Force HTTPS (uncomment when SSL is configured)
   # RewriteCond %{HTTPS} off
@@ -32,6 +33,79 @@
   RewriteCond %{HTTP_HOST} ^www\.dissertlypro\.com$ [NC]
   RewriteRule ^(.*)$ https://dissertlypro.com/$1 [L,R=301,NE]
   
+  # GSC SOFT-404 RECOVERY — retired URLs → closest live page (single hop)
+  RewriteRule ^adelaide-assignment-help/?$ https://dissertlypro.com/au [L,R=301,QSD]
+  RewriteRule ^curtin-assignment-help/?$ https://dissertlypro.com/au [L,R=301,QSD]
+  RewriteRule ^unsw-assignment-help/?$ https://dissertlypro.com/au/unsw [L,R=301,QSD]
+  RewriteRule ^uq-assignment-help/?$ https://dissertlypro.com/au/queensland [L,R=301,QSD]
+  RewriteRule ^usyd-assignment-help/?$ https://dissertlypro.com/au/sydney [L,R=301,QSD]
+  RewriteRule ^uts-assignment-help/?$ https://dissertlypro.com/au [L,R=301,QSD]
+  RewriteRule ^aglc4-referencing-guide/?$ https://dissertlypro.com/citation-mastery [L,R=301,QSD]
+  RewriteRule ^macquarie-referencing-guide/?$ https://dissertlypro.com/citation-mastery [L,R=301,QSD]
+  RewriteRule ^rmit-referencing-guide/?$ https://dissertlypro.com/citation-mastery [L,R=301,QSD]
+  RewriteRule ^unsw-referencing-guide/?$ https://dissertlypro.com/citation-mastery [L,R=301,QSD]
+  RewriteRule ^uts-referencing-guide/?$ https://dissertlypro.com/citation-mastery [L,R=301,QSD]
+  RewriteRule ^biology-assignment-help/?$ https://dissertlypro.com/subjects [L,R=301,QSD]
+  RewriteRule ^physics-assignment-help/?$ https://dissertlypro.com/subjects [L,R=301,QSD]
+  RewriteRule ^sociology-assignment-help/?$ https://dissertlypro.com/subjects [L,R=301,QSD]
+  RewriteRule ^finance-assignment-help/?$ https://dissertlypro.com/subjects [L,R=301,QSD]
+  RewriteRule ^data-analytics-assignment-help/?$ https://dissertlypro.com/dissertation-statistics-help [L,R=301,QSD]
+  RewriteRule ^capstone-project-help/?$ https://dissertlypro.com/capstone-dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^data-collection-analysis/?$ https://dissertlypro.com/services/data-analysis [L,R=301,QSD]
+  RewriteRule ^do-my-dissertation/?$ https://dissertlypro.com/dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^do-my-essay/?$ https://dissertlypro.com/dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^pay-someone-to-write-my-assignment/?$ https://dissertlypro.com/dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^how-to-write-a-literature-review-australia/?$ https://dissertlypro.com/literature-review-guide [L,R=301,QSD]
+  RewriteRule ^hrec-ethics-application-guide/?$ https://dissertlypro.com/irb-ethics-guide [L,R=301,QSD]
+  RewriteRule ^privacy-policy/?$ https://dissertlypro.com/privacy [L,R=301,QSD]
+  RewriteRule ^refund-policy/?$ https://dissertlypro.com/terms [L,R=301,QSD]
+  RewriteRule ^terms-and-conditions/?$ https://dissertlypro.com/terms [L,R=301,QSD]
+  RewriteRule ^ca/uoft/?$ https://dissertlypro.com/ca/toronto [L,R=301,QSD]
+  RewriteRule ^services/academic-editing/?$ https://dissertlypro.com/services/editing [L,R=301,QSD]
+  RewriteRule ^services/capstone-dissertation-writing-services/?$ https://dissertlypro.com/capstone-dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^services/cheap-dissertation-writing-services/?$ https://dissertlypro.com/cheap-dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^services/dissertation-proposal-writing-services/?$ https://dissertlypro.com/dissertation-proposal-writing-services [L,R=301,QSD]
+  RewriteRule ^services/dissertation-writing/?$ https://dissertlypro.com/dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^services/online-dissertation-writing-services/?$ https://dissertlypro.com/online-dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^services/proposal-development/?$ https://dissertlypro.com/services/dissertation-proposal [L,R=301,QSD]
+  RewriteRule ^services/research-methodology/?$ https://dissertlypro.com/services/methodology [L,R=301,QSD]
+  RewriteRule ^services/masters-dissertation-writing-services/?$ https://dissertlypro.com/masters-dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^services/medical-dissertation-writing-services/?$ https://dissertlypro.com/medical-dissertation-writing-services [L,R=301,QSD]
+  RewriteRule ^case-studies/distinction-masters-dissertation-uq-nursing/?$ https://dissertlypro.com/blog [L,R=301,QSD]
+  RewriteRule ^case-studies/engineering-thesis-unsw-fatigue-hd/?$ https://dissertlypro.com/blog [L,R=301,QSD]
+  RewriteRule ^case-studies/mba-capstone-monash-strategy-hd/?$ https://dissertlypro.com/blog [L,R=301,QSD]
+  RewriteRule ^blog/harvard-dissertation-requirements/?$ https://dissertlypro.com/blog/harvard-dissertation-requirements-complete-guide [L,R=301,QSD]
+  RewriteRule ^blog/mit-thesis-writing-strategies/?$ https://dissertlypro.com/blog/mit-thesis-requirements-complete-guide [L,R=301,QSD]
+  RewriteRule ^blog/stanford-dissertation-excellence/?$ https://dissertlypro.com/blog/stanford-dissertation-guide-requirements-process [L,R=301,QSD]
+  RewriteRule ^blog/ai-thesis-writing-guide/?$ https://dissertlypro.com/blog/can-i-use-chatgpt-for-dissertation-complete-guide [L,R=301,QSD]
+  RewriteRule ^blog/using-ai-tools-ethically-australian-thesis/?$ https://dissertlypro.com/blog/can-i-use-chatgpt-for-dissertation-complete-guide [L,R=301,QSD]
+  RewriteRule ^blog/dissertation-discussion-chapter-example/?$ https://dissertlypro.com/dissertation-findings-chapter [L,R=301,QSD]
+  RewriteRule ^blog/dissertation-results-section-example/?$ https://dissertlypro.com/dissertation-findings-chapter [L,R=301,QSD]
+  RewriteRule ^blog/findings-vs-discussion-difference/?$ https://dissertlypro.com/dissertation-findings-chapter [L,R=301,QSD]
+  RewriteRule ^blog/literature-review-tips-australian-thesis/?$ https://dissertlypro.com/blog/how-to-write-literature-review-complete-guide [L,R=301,QSD]
+  RewriteRule ^blog/systematic-review-methodology-australian-thesis/?$ https://dissertlypro.com/blog/systematic-literature-review-methodology-prisma [L,R=301,QSD]
+  RewriteRule ^blog/survey-design-tips-postgraduate-research/?$ https://dissertlypro.com/blog/research-methodology-types-examples-guide [L,R=301,QSD]
+  RewriteRule ^blog/post-phd-career-options-australia/?$ https://dissertlypro.com/blog/career-options-after-phd [L,R=301,QSD]
+  RewriteRule ^blog/time-management-postgraduate-students-australia/?$ https://dissertlypro.com/blog/write-dissertation-faster-productivity-tips [L,R=301,QSD]
+  RewriteRule ^blog/viva-voce-examination-australian-universities/?$ https://dissertlypro.com/viva-preparation [L,R=301,QSD]
+  RewriteRule ^blog/international-students-thesis-guide-australia/?$ https://dissertlypro.com/international-students [L,R=301,QSD]
+  RewriteRule ^blog/research-training-program-rtp-guide-australia/?$ https://dissertlypro.com/phd-funding [L,R=301,QSD]
+  RewriteRule ^blog/abstract-writing-guide-australian-thesis/?$ https://dissertlypro.com/blog/how-to-write-dissertation-complete-guide [L,R=301,QSD]
+  RewriteRule ^blog/data-management-plan-australian-research/?$ https://dissertlypro.com/research-methodology [L,R=301,QSD]
+  RewriteRule ^blog/how-to-write-first-class-honours-thesis-australia/?$ https://dissertlypro.com/blog/how-to-write-dissertation-complete-guide [L,R=301,QSD]
+  RewriteRule ^blog/understanding-australian-grading-system-postgraduate/?$ https://dissertlypro.com/au [L,R=301,QSD]
+
+  # Trailing slash: /page/ → /page (one hop, keeps query string)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} ^/(.+)/$
+  RewriteRule ^(.+)/$ https://dissertlypro.com/$1 [L,R=301]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ https://dissertlypro.com/$1 [L,R=301]
+
+  # Serve prerendered /page/index.html for /page without a slash redirect
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+?)/?$ /$1/index.html [L]
+
   # Handle React Router - serve index.html for all non-file requests
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
