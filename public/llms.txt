@@ -18,8 +18,9 @@ DissertlyPro is a premium academic support service founded to help postgraduate 
 - [Dissertation Writing Services](/dissertation-writing-services): End-to-end dissertation writing — proposal through viva prep.
 - [All Services](/services): Full catalogue of academic support services.
 - [Pricing](/pricing): Transparent pricing for chapters, full dissertations, and monthly plans.
-- [Free Consultation](/consultation): Book a free consultation with a subject expert.
-- [Order Now](/order): Start a new order with your requirements.
+- [How It Works](/consultation): Free information on how ordering works — no consultation fee.
+- [Order Now](https://dissertlypro.com/orders/stud/new): Secure order portal — price shown instantly, from $15/page.
+- [Client Login](https://dissertlypro.com/orders/login): Track order progress.
 - [Experts](/experts): Meet our PhD-qualified academic experts.
 - [Subjects](/subjects): Disciplines and fields we cover.
 - [Universities Hub](/universities): Country and university-specific dissertation support.

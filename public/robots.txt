@@ -1,6 +1,6 @@
 # DissertlyPro Robots.txt
 # https://dissertlypro.com
-# Last Updated: 2025-01-21
+# Last Updated: 2026-11-06
 
 # Allow all crawlers
 User-agent: *

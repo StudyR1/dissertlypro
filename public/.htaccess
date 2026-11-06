@@ -10,8 +10,9 @@
   DirectorySlash Off
   
   # Force HTTPS (uncomment when SSL is configured)
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://dissertlypro.com/$1 [L,R=301,NE]
   
   # ============================================
   # SEO PLAN §1 — Kill subdomain duplication

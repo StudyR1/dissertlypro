@@ -2,12 +2,13 @@
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "DissertlyPro",
-  "alternateName": ["Dissertly Pro", "Dissertly"],
+  "alternateName": [
+    "Dissertly Pro",
+    "Dissertly"
+  ],
   "url": "https://dissertlypro.com",
   "description": "Premium dissertation and thesis support service providing expert academic guidance for Master's and PhD students worldwide. Founded to help postgraduate students succeed with PhD-qualified experts across all disciplines.",
-  
   "tldr": "DissertlyPro provides dissertation help, thesis writing support, and research methodology guidance from 500+ PhD experts. Services include data analysis (SPSS, R, NVivo), literature reviews, academic editing, and proposal development. 15,000+ students helped with 98% satisfaction.",
-  
   "services": [
     {
       "@type": "Service",
@@ -51,7 +52,6 @@
       "serviceType": "Academic Editing"
     }
   ],
-  
   "freeTools": [
     {
       "@type": "SoftwareApplication",
@@ -59,7 +59,10 @@
       "url": "https://dissertlypro.com/tools/citation-generator",
       "description": "Generate accurate APA 7th, MLA 9th, Chicago, and Harvard citations. Supports 6 source types.",
       "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -67,7 +70,10 @@
       "url": "https://dissertlypro.com/tools/thesis-builder",
       "description": "5-step wizard to create argumentative, analytical, expository, or compare/contrast thesis statements.",
       "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -75,7 +81,10 @@
       "url": "https://dissertlypro.com/tools/research-question-validator",
       "description": "Validate research questions using PICO and SPIDER frameworks with instant scoring.",
       "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -83,7 +92,10 @@
       "url": "https://dissertlypro.com/tools/methodology-selector",
       "description": "7-question quiz to determine if quantitative, qualitative, or mixed methods is best.",
       "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -91,7 +103,10 @@
       "url": "https://dissertlypro.com/tools/literature-search",
       "description": "Build Boolean search queries for PubMed, Scopus, Web of Science, and ERIC.",
       "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -99,7 +114,10 @@
       "url": "https://dissertlypro.com/tools/prisma-flow",
       "description": "Create PRISMA 2020 flow diagrams for systematic reviews and meta-analyses.",
       "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -107,7 +125,10 @@
       "url": "https://dissertlypro.com/tools/chapter-planner",
       "description": "Gantt-style dissertation timeline planner with chapter deadline calculations.",
       "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -115,7 +136,10 @@
       "url": "https://dissertlypro.com/tools/reference-manager",
       "description": "Save, organize, tag and export citations. BibTeX and RIS export supported.",
       "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -123,10 +147,12 @@
       "url": "https://dissertlypro.com/tools/ai-policy-checker",
       "description": "Check your university's AI use policy with 165+ institution-specific policies and disclosure templates.",
       "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
     }
   ],
-  
   "quickServices": {
     "@type": "Service",
     "name": "Quick Services",
@@ -134,23 +160,82 @@
     "description": "Fast, affordable micro-tasks for graduate students with fixed pricing ($15-$75) and 24-72 hour turnarounds.",
     "serviceType": "Academic Quick Tasks",
     "offers": [
-      { "@type": "Offer", "name": "Express Proofreading", "price": "15", "priceCurrency": "USD", "description": "Grammar, spelling, punctuation check (up to 2,000 words)" },
-      { "@type": "Offer", "name": "Reference Check", "price": "25", "priceCurrency": "USD", "description": "Verify and fix all citations and bibliography" },
-      { "@type": "Offer", "name": "AI Detection Report", "price": "20", "priceCurrency": "USD", "description": "Check for AI detection flags with detailed report" },
-      { "@type": "Offer", "name": "Abstract Writing", "price": "35", "priceCurrency": "USD", "description": "Professional 250-word abstract" },
-      { "@type": "Offer", "name": "Executive Summary", "price": "45", "priceCurrency": "USD", "description": "500-word executive summary" },
-      { "@type": "Offer", "name": "Formatting Fix", "price": "30", "priceCurrency": "USD", "description": "Fix APA/MLA/Chicago formatting" },
-      { "@type": "Offer", "name": "Turnitin Report", "price": "25", "priceCurrency": "USD", "description": "Originality check with similarity score" },
-      { "@type": "Offer", "name": "Bibliography Creation", "price": "40", "priceCurrency": "USD", "description": "Create properly formatted bibliography" },
-      { "@type": "Offer", "name": "Outline Review", "price": "35", "priceCurrency": "USD", "description": "Expert feedback on dissertation outline" },
-      { "@type": "Offer", "name": "Conclusion Polish", "price": "50", "priceCurrency": "USD", "description": "Professional editing of conclusion chapter" }
+      {
+        "@type": "Offer",
+        "name": "Express Proofreading",
+        "price": "15",
+        "priceCurrency": "USD",
+        "description": "Grammar, spelling, punctuation check (up to 2,000 words)"
+      },
+      {
+        "@type": "Offer",
+        "name": "Reference Check",
+        "price": "25",
+        "priceCurrency": "USD",
+        "description": "Verify and fix all citations and bibliography"
+      },
+      {
+        "@type": "Offer",
+        "name": "AI Detection Report",
+        "price": "20",
+        "priceCurrency": "USD",
+        "description": "Check for AI detection flags with detailed report"
+      },
+      {
+        "@type": "Offer",
+        "name": "Abstract Writing",
+        "price": "35",
+        "priceCurrency": "USD",
+        "description": "Professional 250-word abstract"
+      },
+      {
+        "@type": "Offer",
+        "name": "Executive Summary",
+        "price": "45",
+        "priceCurrency": "USD",
+        "description": "500-word executive summary"
+      },
+      {
+        "@type": "Offer",
+        "name": "Formatting Fix",
+        "price": "30",
+        "priceCurrency": "USD",
+        "description": "Fix APA/MLA/Chicago formatting"
+      },
+      {
+        "@type": "Offer",
+        "name": "Turnitin Report",
+        "price": "25",
+        "priceCurrency": "USD",
+        "description": "Originality check with similarity score"
+      },
+      {
+        "@type": "Offer",
+        "name": "Bibliography Creation",
+        "price": "40",
+        "priceCurrency": "USD",
+        "description": "Create properly formatted bibliography"
+      },
+      {
+        "@type": "Offer",
+        "name": "Outline Review",
+        "price": "35",
+        "priceCurrency": "USD",
+        "description": "Expert feedback on dissertation outline"
+      },
+      {
+        "@type": "Offer",
+        "name": "Conclusion Polish",
+        "price": "50",
+        "priceCurrency": "USD",
+        "description": "Professional editing of conclusion chapter"
+      }
     ],
     "bundleDiscounts": {
       "twoServices": "10% discount",
       "threeOrMoreServices": "15% discount"
     }
   },
-  
   "aiAcademiaHub": {
     "@type": "WebPage",
     "name": "AI in Academia Hub",
@@ -184,7 +269,6 @@
       }
     ]
   },
-  
   "frequentlyAskedQuestions": [
     {
       "@type": "Question",
@@ -387,14 +471,33 @@
       }
     }
   ],
-  
   "experts": {
     "count": "500+",
     "qualifications": "All experts hold doctoral degrees (PhD, EdD, DBA) from accredited universities",
-    "disciplines": ["Business & Management", "Psychology", "Education", "Healthcare & Nursing", "Law", "Engineering", "Computer Science", "Social Sciences", "Humanities", "Natural Sciences", "Economics"],
-    "tools": ["SPSS", "R & RStudio", "STATA", "NVivo", "ATLAS.ti", "AMOS", "Python", "SAS"]
+    "disciplines": [
+      "Business & Management",
+      "Psychology",
+      "Education",
+      "Healthcare & Nursing",
+      "Law",
+      "Engineering",
+      "Computer Science",
+      "Social Sciences",
+      "Humanities",
+      "Natural Sciences",
+      "Economics"
+    ],
+    "tools": [
+      "SPSS",
+      "R & RStudio",
+      "STATA",
+      "NVivo",
+      "ATLAS.ti",
+      "AMOS",
+      "Python",
+      "SAS"
+    ]
   },
-  
   "statistics": {
     "studentsHelped": "15000+",
     "expertCount": "500+",
@@ -402,14 +505,12 @@
     "countriesServed": "50+",
     "availability": "24/7"
   },
-  
   "regions": {
     "unitedKingdom": "https://dissertlypro.com/uk",
     "unitedStates": "https://dissertlypro.com/us",
     "australia": "https://dissertlypro.com/au",
     "canada": "https://dissertlypro.com/ca"
   },
-  
   "universitySupport": {
     "description": "DissertlyPro provides specialized dissertation support for students at leading universities worldwide, with institution-specific expertise in requirements, deadlines, and academic expectations.",
     "universities": [
@@ -421,7 +522,11 @@
         "location": "Oxford, United Kingdom",
         "description": "DPhil and MPhil support with deep understanding of Oxford's tutorial system and collegiate structure.",
         "studentsHelped": "450+",
-        "specializations": ["DPhil thesis support", "Confirmation of status preparation", "Tutorial system guidance"],
+        "specializations": [
+          "DPhil thesis support",
+          "Confirmation of status preparation",
+          "Tutorial system guidance"
+        ],
         "typicalRequirements": {
           "masters": "15,000-20,000 words for MSc/MPhil",
           "phd": "80,000-100,000 words for DPhil"
@@ -435,7 +540,11 @@
         "location": "Cambridge, United Kingdom",
         "description": "PhD and MPhil thesis support with expertise in Cambridge's registration review process.",
         "studentsHelped": "380+",
-        "specializations": ["First-year registration support", "MPhil thesis guidance", "Viva preparation"],
+        "specializations": [
+          "First-year registration support",
+          "MPhil thesis guidance",
+          "Viva preparation"
+        ],
         "typicalRequirements": {
           "masters": "12,000-15,000 words for MPhil",
           "phd": "80,000 words maximum"
@@ -449,7 +558,11 @@
         "location": "London, United Kingdom",
         "description": "MSc dissertation and PhD support with quantitative methods expertise for social sciences.",
         "studentsHelped": "520+",
-        "specializations": ["Econometrics support", "STATA and R analysis", "Social science methodology"],
+        "specializations": [
+          "Econometrics support",
+          "STATA and R analysis",
+          "Social science methodology"
+        ],
         "typicalRequirements": {
           "masters": "10,000-12,000 words for MSc",
           "phd": "100,000 words maximum"
@@ -463,7 +576,11 @@
         "location": "London, United Kingdom",
         "description": "STEM thesis support for engineering, medicine, and natural sciences with technical writing expertise.",
         "studentsHelped": "390+",
-        "specializations": ["Engineering thesis support", "Technical writing", "Early stage assessment preparation"],
+        "specializations": [
+          "Engineering thesis support",
+          "Technical writing",
+          "Early stage assessment preparation"
+        ],
         "typicalRequirements": {
           "masters": "10,000-15,000 words for MSc",
           "phd": "80,000 words maximum"
@@ -477,7 +594,11 @@
         "location": "London, United Kingdom",
         "description": "Interdisciplinary research support across diverse faculties with cross-disciplinary expertise.",
         "studentsHelped": "480+",
-        "specializations": ["Interdisciplinary research", "MRes support", "Cross-faculty thesis guidance"],
+        "specializations": [
+          "Interdisciplinary research",
+          "MRes support",
+          "Cross-faculty thesis guidance"
+        ],
         "typicalRequirements": {
           "masters": "15,000-20,000 words",
           "phd": "80,000-100,000 words"
@@ -491,7 +612,11 @@
         "location": "Cambridge, MA, United States",
         "description": "Doctoral dissertation support across all Harvard schools including HBS, HLS, and GSAS.",
         "studentsHelped": "620+",
-        "specializations": ["Prospectus development", "Qualifying exam preparation", "EdD capstone support"],
+        "specializations": [
+          "Prospectus development",
+          "Qualifying exam preparation",
+          "EdD capstone support"
+        ],
         "typicalRequirements": {
           "masters": "50-100 pages typically",
           "phd": "200-400 pages typically"
@@ -505,7 +630,11 @@
         "location": "Stanford, CA, United States",
         "description": "Technical thesis support for engineering, CS, and business with innovation-focused approach.",
         "studentsHelped": "410+",
-        "specializations": ["Technical writing for CS/Engineering", "ML research support", "GSB dissertation guidance"],
+        "specializations": [
+          "Technical writing for CS/Engineering",
+          "ML research support",
+          "GSB dissertation guidance"
+        ],
         "typicalRequirements": {
           "masters": "Programme dependent",
           "phd": "Quality over quantity focus"
@@ -519,7 +648,11 @@
         "location": "Cambridge, MA, United States",
         "description": "SM thesis and PhD support with deep technical expertise in engineering and sciences.",
         "studentsHelped": "340+",
-        "specializations": ["SM thesis support", "Technical exposition", "EECS dissertation guidance"],
+        "specializations": [
+          "SM thesis support",
+          "Technical exposition",
+          "EECS dissertation guidance"
+        ],
         "typicalRequirements": {
           "masters": "50-100 pages for SM thesis",
           "phd": "Department dependent"
@@ -533,7 +666,11 @@
         "location": "New Haven, CT, United States",
         "description": "Humanities PhD excellence with strong tradition in drama, law, and political science.",
         "studentsHelped": "320+",
-        "specializations": ["Humanities dissertation support", "Prospectus development", "Law and drama theses"],
+        "specializations": [
+          "Humanities dissertation support",
+          "Prospectus development",
+          "Law and drama theses"
+        ],
         "typicalRequirements": {
           "masters": "50-80 pages typically",
           "phd": "200-350 pages typically"
@@ -547,7 +684,11 @@
         "location": "Princeton, NJ, United States",
         "description": "Direct PhD programme support with expertise in mathematics, physics, and public policy.",
         "studentsHelped": "280+",
-        "specializations": ["Direct PhD entry support", "General exam preparation", "Mathematics/Physics dissertations"],
+        "specializations": [
+          "Direct PhD entry support",
+          "General exam preparation",
+          "Mathematics/Physics dissertations"
+        ],
         "typicalRequirements": {
           "masters": "No traditional masters; PhD direct entry",
           "phd": "Department dependent; rigorous standards"
@@ -561,7 +702,11 @@
         "location": "Melbourne, Australia",
         "description": "PhD and research masters support with Melbourne Model expertise.",
         "studentsHelped": "680+",
-        "specializations": ["Candidature confirmation", "Annual progress review", "Melbourne Model navigation"],
+        "specializations": [
+          "Candidature confirmation",
+          "Annual progress review",
+          "Melbourne Model navigation"
+        ],
         "typicalRequirements": {
           "masters": "15,000-25,000 words for research masters",
           "phd": "80,000-100,000 words"
@@ -575,7 +720,11 @@
         "location": "Sydney, Australia",
         "description": "HDR and professional doctorate support with annual progress review expertise.",
         "studentsHelped": "720+",
-        "specializations": ["HDR thesis support", "Annual Progress Review preparation", "Professional doctorate guidance"],
+        "specializations": [
+          "HDR thesis support",
+          "Annual Progress Review preparation",
+          "Professional doctorate guidance"
+        ],
         "typicalRequirements": {
           "masters": "15,000-20,000 words",
           "phd": "80,000-100,000 words"
@@ -589,7 +738,11 @@
         "location": "Canberra, Australia",
         "description": "National research university expertise with strong focus on public policy and international relations.",
         "studentsHelped": "420+",
-        "specializations": ["HDR milestone support", "Public policy research", "Asia-Pacific studies"],
+        "specializations": [
+          "HDR milestone support",
+          "Public policy research",
+          "Asia-Pacific studies"
+        ],
         "typicalRequirements": {
           "masters": "20,000-40,000 words for research masters",
           "phd": "80,000-100,000 words"
@@ -603,7 +756,11 @@
         "location": "Melbourne, Australia",
         "description": "Multi-campus support with expertise in pharmacy, education, and business research.",
         "studentsHelped": "580+",
-        "specializations": ["Multi-campus expertise", "Pharmacy research", "Education dissertations"],
+        "specializations": [
+          "Multi-campus expertise",
+          "Pharmacy research",
+          "Education dissertations"
+        ],
         "typicalRequirements": {
           "masters": "15,000-50,000 words depending on programme",
           "phd": "80,000-100,000 words"
@@ -617,7 +774,11 @@
         "location": "Toronto, Canada",
         "description": "Thesis-stream masters and PhD support across St. George, UTM, and UTSC campuses.",
         "studentsHelped": "890+",
-        "specializations": ["Thesis-stream masters support", "Comprehensive exam preparation", "Multi-campus expertise"],
+        "specializations": [
+          "Thesis-stream masters support",
+          "Comprehensive exam preparation",
+          "Multi-campus expertise"
+        ],
         "typicalRequirements": {
           "masters": "50-100 pages for thesis stream",
           "phd": "200-300 pages typically"
@@ -631,7 +792,11 @@
         "location": "Vancouver, Canada",
         "description": "Doctoral comprehensive exam and thesis support with West Coast expertise.",
         "studentsHelped": "560+",
-        "specializations": ["Comprehensive examination prep", "Thesis writing guidance", "Doctoral milestones support"],
+        "specializations": [
+          "Comprehensive examination prep",
+          "Thesis writing guidance",
+          "Doctoral milestones support"
+        ],
         "typicalRequirements": {
           "masters": "Programme dependent",
           "phd": "Department dependent"
@@ -645,7 +810,11 @@
         "location": "Montreal, Canada",
         "description": "Bilingual dissertation support with French and English language expertise.",
         "studentsHelped": "420+",
-        "specializations": ["Bilingual support (French/English)", "Quebec health policy research", "Schulich Music theses"],
+        "specializations": [
+          "Bilingual support (French/English)",
+          "Quebec health policy research",
+          "Schulich Music theses"
+        ],
         "typicalRequirements": {
           "masters": "75-150 pages typically",
           "phd": "Department dependent"
@@ -659,7 +828,11 @@
         "location": "Waterloo, ON, Canada",
         "description": "CS and Mathematics thesis support with strong technical writing expertise for STEM programmes.",
         "studentsHelped": "440+",
-        "specializations": ["Computer Science theses", "Mathematics research", "Technical thesis writing"],
+        "specializations": [
+          "Computer Science theses",
+          "Mathematics research",
+          "Technical thesis writing"
+        ],
         "typicalRequirements": {
           "masters": "80-120 pages for thesis option",
           "phd": "Department dependent; strong technical focus"
@@ -675,13 +848,18 @@
       "Timezone-appropriate support availability"
     ]
   },
-  
   "contact": {
     "website": "https://dissertlypro.com",
     "consultation": "https://dissertlypro.com/consultation",
     "services": "https://dissertlypro.com/services",
     "pricing": "https://dissertlypro.com/pricing"
   },
-  
-  "academicIntegrity": "DissertlyPro operates as an educational support service providing guidance, coaching, and tutoring. We help students develop their own original academic work while adhering to strict ethical guidelines. Learn more: https://dissertlypro.com/ethics"
+  "academicIntegrity": "DissertlyPro operates as an educational support service providing guidance, coaching, and tutoring. We help students develop their own original academic work while adhering to strict ethical guidelines. Learn more: https://dissertlypro.com/ethics",
+  "ordering": {
+    "orderPortal": "https://dissertlypro.com/orders/stud/new",
+    "clientLogin": "https://dissertlypro.com/orders/login",
+    "startingPrice": "From $15 per page",
+    "fees": "No consultation fee and no order-form fee",
+    "revisions": "Free revisions"
+  }
 }
