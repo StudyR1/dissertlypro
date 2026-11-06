@@ -291,7 +291,12 @@ export const mastersConfig: ServicePillarConfig = {
     {
       heading: "Subjects we cover at Master's level",
       body:
-        "Business, Finance, Marketing, HRM, International Business, Project Management, Education, Public Health, Nursing, Social Work, Psychology, Law (LLM), Politics & IR, International Development, Sociology, Criminology, Engineering, Computer Science, Data Science, Healthcare Management, Sustainability, Sports Science, Architecture, Media & Communications. If your subject isn't listed, send us your brief — we'll confirm fit within 24 hours.",
+        "Business, Finance, Marketing, HRM, International Business, Project Management, Education, Public Health, Nursing, Social Work, Psychology, Law (LLM), Politics & IR, International Development, Sociology, Criminology, Engineering, Computer Science, Data Science, Healthcare Management, Sustainability, Sports Science, Architecture, Media & Communications, Linguistics & Applied Linguistics, TESOL. If your subject isn't listed, send us your brief — we'll confirm fit within 24 hours.",
+    },
+    {
+      heading: "Linguistics dissertation writing service (MA & MSc)",
+      body:
+        "Our linguistics dissertation writing service pairs you with a PhD linguist in your exact area — applied linguistics, TESOL, sociolinguistics, discourse analysis, corpus linguistics, phonetics or second-language acquisition. Experts help with research design, corpus and transcription work, coding of interview or classroom data, and analysis in tools like AntConc, NVivo, Praat and R. Pricing starts from $15 per page, shown before you pay, with free revisions.",
     },
     {
       heading: "Working with your university's marking scheme",
